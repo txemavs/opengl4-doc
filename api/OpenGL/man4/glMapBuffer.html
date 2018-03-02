@@ -1,0 +1,240 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glMapBuffer &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glMapBufferRange" href="glMapBufferRange.html" />
+    <link rel="prev" title="function glLogicOp" href="glLogicOp.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glMapBufferRange.html" title="function glMapBufferRange"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glLogicOp.html" title="function glLogicOp"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glmapbuffer">
+<h1>function <cite>glMapBuffer</cite><a class="headerlink" href="#function-glmapbuffer" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Map a buffer object&#8217;s data store</p>
+<dl class="function">
+<dt id="glMapBuffer">
+<tt class="descname">glMapBuffer</tt><big>(</big><big>)</big><a class="headerlink" href="#glMapBuffer" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>target</strong> &#8211; Specifies the target buffer object being mapped.
+The symbolic constant must be
+<tt class="docutils literal"><span class="pre">GL_ARRAY_BUFFER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_ATOMIC_COUNTER_BUFFER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_COPY_READ_BUFFER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_COPY_WRITE_BUFFER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_ELEMENT_ARRAY_BUFFER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_PIXEL_PACK_BUFFER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_PIXEL_UNPACK_BUFFER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_BUFFER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TRANSFORM_FEEDBACK_BUFFER</span></tt> or
+<tt class="docutils literal"><span class="pre">GL_UNIFORM_BUFFER</span></tt>.</li>
+<li><strong>access</strong> &#8211; Specifies the access policy, indicating whether it will be possible to read from, write to,
+or both read from and write to the buffer object&#8217;s mapped data store. The symbolic constant must be
+<tt class="docutils literal"><span class="pre">GL_READ_ONLY</span></tt>, <tt class="docutils literal"><span class="pre">GL_WRITE_ONLY</span></tt>, or <tt class="docutils literal"><span class="pre">GL_READ_WRITE</span></tt>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void * <tt class="descname">glMapBuffer</tt><big>(</big>GLenum <em>&nbsp;target</em>, GLenum <em>&nbsp;access</em><big>)</big></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="glUnmapBuffer">
+GLboolean <tt class="descname">glUnmapBuffer</tt><big>(</big>GLenum <em>&nbsp;target</em><big>)</big><a class="headerlink" href="#glUnmapBuffer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glBindBuffer.html#glBindBuffer" title="glBindBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glBindBuffer()</span></tt></a>,
+<a class="reference internal" href="glBindBufferBase.html#glBindBufferBase" title="glBindBufferBase"><tt class="xref c c-func docutils literal"><span class="pre">glBindBufferBase()</span></tt></a>,
+<a class="reference internal" href="glBindBufferRange.html#glBindBufferRange" title="glBindBufferRange"><tt class="xref c c-func docutils literal"><span class="pre">glBindBufferRange()</span></tt></a>,
+<a class="reference internal" href="glBufferData.html#glBufferData" title="glBufferData"><tt class="xref c c-func docutils literal"><span class="pre">glBufferData()</span></tt></a>,
+<a class="reference internal" href="glBufferSubData.html#glBufferSubData" title="glBufferSubData"><tt class="xref c c-func docutils literal"><span class="pre">glBufferSubData()</span></tt></a>,
+<a class="reference internal" href="glDeleteBuffers.html#glDeleteBuffers" title="glDeleteBuffers"><tt class="xref c c-func docutils literal"><span class="pre">glDeleteBuffers()</span></tt></a></p>
+</div>
+<p class="rubric">Parameters</p>
+<blockquote>
+<div><p><em>target</em></p>
+<blockquote>
+<div>Specifies the target buffer object being unmapped.
+The symbolic constant must be
+<tt class="docutils literal"><span class="pre">GL_ARRAY_BUFFER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_COPY_READ_BUFFER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_COPY_WRITE_BUFFER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_ELEMENT_ARRAY_BUFFER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_PIXEL_PACK_BUFFER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_PIXEL_UNPACK_BUFFER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_BUFFER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TRANSFORM_FEEDBACK_BUFFER</span></tt> or
+<tt class="docutils literal"><span class="pre">GL_UNIFORM_BUFFER</span></tt>.</div></blockquote>
+</div></blockquote>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glMapBuffer" title="glMapBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glMapBuffer()</span></tt></a> maps to the client&#8217;s address space the entire data store of the buffer object
+currently bound to <em>target</em>. The data can then be directly read and/or written relative to
+the returned pointer, depending on the specified <em>access</em> policy. If the GL is unable to
+map the buffer object&#8217;s data store, <a class="reference internal" href="#glMapBuffer" title="glMapBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glMapBuffer()</span></tt></a> generates an error and returns
+<tt class="docutils literal"><span class="pre">NULL</span></tt>. This may occur for system-specific reasons, such as low virtual memory availability.
+If no error occurs, the returned pointer will have an alignment of at least <tt class="docutils literal"><span class="pre">GL_MIN_MAP_BUFFER_ALIGNMENT</span></tt>
+basic machine units. The value of <tt class="docutils literal"><span class="pre">GL_MIN_MAP_BUFFER_ALIGNMENT</span></tt> can be retrieved by calling
+<a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with <em>pname</em> set to
+<tt class="docutils literal"><span class="pre">GL_MIN_MAP_BUFFER_ALIGNMENT</span></tt> and must be a power of two that is at least 64.</p>
+<p>If a mapped data store is accessed in a way inconsistent with the specified <em>access</em> policy,
+no error is generated, but performance may be negatively impacted and system errors, including program
+termination, may result. Unlike the <em>usage</em> parameter of <a class="reference internal" href="glBufferData.html#glBufferData" title="glBufferData"><tt class="xref c c-func docutils literal"><span class="pre">glBufferData()</span></tt></a>,
+<em>access</em> is not a hint, and does in fact constrain the usage of the mapped data store on
+some GL implementations. In order to achieve the highest performance available, a buffer object&#8217;s data store
+should be used in ways consistent with both its specified <em>usage</em> and
+<em>access</em> parameters.</p>
+<p>A mapped data store must be unmapped with <a class="reference internal" href="#glUnmapBuffer" title="glUnmapBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glUnmapBuffer()</span></tt></a> before its buffer object is used.
+Otherwise an error will be generated by any GL command that attempts to dereference the buffer object&#8217;s data store.
+When a data store is unmapped, the pointer to its data store becomes invalid. <a class="reference internal" href="#glUnmapBuffer" title="glUnmapBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glUnmapBuffer()</span></tt></a>
+returns <tt class="docutils literal"><span class="pre">GL_TRUE</span></tt> unless the data store contents have become corrupt during the time
+the data store was mapped. This can occur for system-specific reasons that affect the availability of graphics
+memory, such as screen mode changes. In such situations, <tt class="docutils literal"><span class="pre">GL_FALSE</span></tt> is returned and the
+data store contents are undefined. An application must detect this rare condition and reinitialize the data store.</p>
+<p>A buffer object&#8217;s mapped data store is automatically unmapped when the buffer object is deleted or its data store
+is recreated with <a class="reference internal" href="glBufferData.html#glBufferData" title="glBufferData"><tt class="xref c c-func docutils literal"><span class="pre">glBufferData()</span></tt></a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>If an error is generated, <a class="reference internal" href="#glMapBuffer" title="glMapBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glMapBuffer()</span></tt></a> returns <tt class="docutils literal"><span class="pre">NULL</span></tt>, and
+<a class="reference internal" href="#glUnmapBuffer" title="glUnmapBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glUnmapBuffer()</span></tt></a> returns <tt class="docutils literal"><span class="pre">GL_FALSE</span></tt>.</p>
+<p>Parameter values passed to GL commands may not be sourced from the returned pointer. No error will be generated,
+but results will be undefined and will likely vary across GL implementations.</p>
+<p class="last">Alignment of the returned pointer is guaranteed only if the version
+of the GL version is 4.2 or greater. Also, the <tt class="docutils literal"><span class="pre">GL_ATOMIC_COUNTER_BUFFER</span></tt>
+target is accepted only if the GL version is 4.2 or greater.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>target</em> is not one of the accepted targets.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>access</em> is not <tt class="docutils literal"><span class="pre">GL_READ_ONLY</span></tt>, <tt class="docutils literal"><span class="pre">GL_WRITE_ONLY</span></tt>, or <tt class="docutils literal"><span class="pre">GL_READ_WRITE</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_OUT_OF_MEMORY</span></tt> is generated when <a class="reference internal" href="#glMapBuffer" title="glMapBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glMapBuffer()</span></tt></a> is executed if the GL is unable to map the buffer object&#8217;s data store. This may occur for a variety of system-specific reasons, such as the absence of sufficient remaining virtual memory.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if the reserved buffer object name 0 is bound to <em>target</em>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <a class="reference internal" href="#glMapBuffer" title="glMapBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glMapBuffer()</span></tt></a> is executed for a buffer object whose data store is already mapped.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <a class="reference internal" href="#glUnmapBuffer" title="glUnmapBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glUnmapBuffer()</span></tt></a> is executed for a buffer object whose data store is not currently mapped.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glGetBufferPointerv.html#glGetBufferPointerv" title="glGetBufferPointerv"><tt class="xref c c-func docutils literal"><span class="pre">glGetBufferPointerv()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_BUFFER_MAP_POINTER</span></tt></li>
+<li><tt class="xref c c-func docutils literal"><span class="pre">glGetBufferParameter()</span></tt> with argument <tt class="docutils literal"><span class="pre">GL_BUFFER_MAPPED</span></tt>, <tt class="docutils literal"><span class="pre">GL_BUFFER_ACCESS</span></tt>, or <tt class="docutils literal"><span class="pre">GL_BUFFER_USAGE</span></tt></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)2005 Addison-Wesley. (c)2010-2011 Khronos Group. Open Publication License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glLogicOp.html"
+                        title="previous chapter">function <cite>glLogicOp</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glMapBufferRange.html"
+                        title="next chapter">function <cite>glMapBufferRange</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glMapBuffer.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glMapBufferRange.html" title="function glMapBufferRange"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glLogicOp.html" title="function glLogicOp"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

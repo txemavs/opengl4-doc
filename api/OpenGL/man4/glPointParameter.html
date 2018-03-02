@@ -1,0 +1,194 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glPointParameter &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glPointSize" href="glPointSize.html" />
+    <link rel="prev" title="function glPixelStore" href="glPixelStore.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glPointSize.html" title="function glPointSize"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glPixelStore.html" title="function glPixelStore"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glpointparameter">
+<h1>function <cite>glPointParameter</cite><a class="headerlink" href="#function-glpointparameter" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Specify point parameters</p>
+<dl class="function">
+<dt id="glPointParameter">
+<tt class="descname">glPointParameter</tt><big>(</big><big>)</big><a class="headerlink" href="#glPointParameter" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>pname</strong> &#8211; Specifies a single-valued point parameter.
+<tt class="docutils literal"><span class="pre">GL_POINT_FADE_THRESHOLD_SIZE</span></tt>, and
+<tt class="docutils literal"><span class="pre">GL_POINT_SPRITE_COORD_ORIGIN</span></tt>
+are accepted.</li>
+<li><strong>param</strong> &#8211; Specifies the value that <em>pname</em> will be set to.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt id="glPointParameterf">
+void <tt class="descname">glPointParameterf</tt><big>(</big>GLenum <em>&nbsp;pname</em>, GLfloat <em>&nbsp;param</em>, GLenum <em>&nbsp;pname</em>, GLint <em>&nbsp;param</em><big>)</big><a class="headerlink" href="#glPointParameterf" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="glPointParameterfv">
+void <tt class="descname">glPointParameterfv</tt><big>(</big>GLenum <em>&nbsp;pname</em>, const GLfloat * <em>&nbsp;params</em>, GLenum <em>&nbsp;pname</em>, const GLint * <em>&nbsp;params</em><big>)</big><a class="headerlink" href="#glPointParameterfv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glPointSize.html#glPointSize" title="glPointSize"><tt class="xref c c-func docutils literal"><span class="pre">glPointSize()</span></tt></a></p>
+</div>
+<p class="rubric">Parameters</p>
+<blockquote>
+<div><p><em>pname</em></p>
+<blockquote>
+<div>Specifies a point parameter.
+<tt class="docutils literal"><span class="pre">GL_POINT_FADE_THRESHOLD_SIZE</span></tt>, and
+<tt class="docutils literal"><span class="pre">GL_POINT_SPRITE_COORD_ORIGIN</span></tt>
+are accepted.</div></blockquote>
+<p><em>params</em></p>
+<blockquote>
+<div>Specifies the value to be assigned to <em>pname</em>..</div></blockquote>
+</div></blockquote>
+<p class="rubric">Description</p>
+<p>The following values are accepted for <em>pname</em> :</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">GL_POINT_FADE_THRESHOLD_SIZE</span></tt></p>
+<blockquote>
+<div><em>params</em> is a single floating-point value that specifies the threshold value
+to which point sizes are clamped if they exceed the specified value.  The
+default value is 1.0.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_POINT_SPRITE_COORD_ORIGIN</span></tt></p>
+<blockquote>
+<div><em>params</em> is a single enum specifying the point sprite texture coordinate origin, either <tt class="docutils literal"><span class="pre">GL_LOWER_LEFT</span></tt> or <tt class="docutils literal"><span class="pre">GL_UPPER_LEFT</span></tt>.
+The default value is <tt class="docutils literal"><span class="pre">GL_UPPER_LEFT</span></tt>.</div></blockquote>
+</div></blockquote>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if the value specified for <tt class="docutils literal"><span class="pre">GL_POINT_FADE_THRESHOLD_SIZE</span></tt> is less than zero.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated If the value specified for <tt class="docutils literal"><span class="pre">GL_POINT_SPRITE_COORD_ORIGIN</span></tt> is not <tt class="docutils literal"><span class="pre">GL_LOWER_LEFT</span></tt> or <tt class="docutils literal"><span class="pre">GL_UPPER_LEFT</span></tt>.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_POINT_FADE_THRESHOLD_SIZE</span></tt></li>
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_POINT_SPRITE_COORD_ORIGIN</span></tt></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. (c)2010 Khronos Group. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glPixelStore.html"
+                        title="previous chapter">function <cite>glPixelStore</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glPointSize.html"
+                        title="next chapter">function <cite>glPointSize</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glPointParameter.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glPointSize.html" title="function glPointSize"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glPixelStore.html" title="function glPixelStore"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

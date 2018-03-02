@@ -1,0 +1,88 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glLineStipple`
+------------------------
+
+.. source file man/glLineStipple
+
+.. currentmodule:: OpenGL.GL
+
+Specify the line stipple pattern
+
+.. c:function:: glLineStipple
+.. c:function:: void glLineStipple(GLint  factor, GLushort  pattern)
+   :noindex: 
+
+
+   
+   :param factor:
+      Specifies a multiplier for each bit in the line stipple pattern. If *factor* is 3, for example, each bit in the pattern is used three times before the next bit in the pattern is used. *factor* is clamped to the range [1, 256] and defaults to 1.
+   
+   :param pattern:
+      Specifies a 16-bit integer whose bit pattern determines which fragments of a line will be drawn when the line is rasterized. Bit zero is used first; the default pattern is all 1's.
+   
+
+.. seealso::
+
+   
+   :c:func:`glLineWidth`, :c:func:`glPolygonStipple`
+   
+.. rubric:: Description
+
+
+Line stippling masks out certain fragments produced by rasterization; those fragments will not be drawn. The masking is achieved by using three parameters: the 16-bit line stipple pattern *pattern* , the repeat count *factor* , and an integer stipple counter |EQUATION_1_| .
+
+Counter |EQUATION_2_| is reset to 0 whenever :c:func:`glBegin` is called and before each line segment of a :c:func:`glBegin`(``GL_LINES``)/:c:func:`glEnd` sequence is generated. It is incremented after each fragment of a unit width aliased line segment is generated or after each |EQUATION_3_| fragments of an |EQUATION_4_| width line segment are generated. The |EQUATION_5_| fragments associated with count |EQUATION_6_| are masked out if
+
+*pattern* bit |EQUATION_7_|
+
+is 0, otherwise these fragments are sent to the frame buffer. Bit zero of *pattern* is the least significant bit.
+
+Antialiased lines are treated as a sequence of |EQUATION_8_| rectangles for purposes of stippling. Whether rectangle |EQUATION_9_| is rasterized or not depends on the fragment rule described for aliased lines, counting rectangles rather than groups of fragments.
+
+To enable and disable line stippling, call :c:func:`glEnable` and :c:func:`glDisable` with argument ``GL_LINE_STIPPLE``. When enabled, the line stipple pattern is applied as described above. When disabled, it is as if the pattern were all 1's. Initially, line stippling is disabled.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGet` with argument ``GL_LINE_STIPPLE_PATTERN``
+   * :c:func:`glGet` with argument ``GL_LINE_STIPPLE_REPEAT``
+   * :c:func:`glIsEnabled` with argument ``GL_LINE_STIPPLE``
+
+**Errors:**
+
+   * ``GL_INVALID_OPERATION`` is generated if :c:func:`glLineStipple` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`.
+
+
+.. role:: mml(raw)
+   :format: html
+
+
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">s</mi></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">s</mi></math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math>` 
+
+.. |EQUATION_4_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math>` 
+
+.. |EQUATION_5_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math>` 
+
+.. |EQUATION_6_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">s</mi></math>` 
+
+.. |EQUATION_7_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mfenced open="(" close=")"> <mfrac> <mi mathvariant="italic">s</mi> <mi mathvariant="italic">factor</mi> </mfrac> </mfenced> <mo>%</mo> <mn>16</mn> </mrow> </math>` 
+
+.. |EQUATION_8_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mn>1</mn> <mo>&times;</mo> <mi mathvariant="italic">width</mi> </mrow> </math>` 
+
+.. |EQUATION_9_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">s</mi></math>` 
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

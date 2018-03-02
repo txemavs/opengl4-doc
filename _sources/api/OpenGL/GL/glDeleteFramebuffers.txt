@@ -1,0 +1,48 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glDeleteFramebuffers`
+-------------------------------
+
+.. source file man4/glDeleteFramebuffers
+
+.. currentmodule:: OpenGL.GL
+
+Delete framebuffer objects
+
+.. c:function:: glDeleteFramebuffers
+.. c:function:: void glDeleteFramebuffers(GLsizei  n, GLuint * framebuffers)
+   :noindex: 
+
+
+   
+   :param n:
+      Specifies the number of framebuffer objects to be deleted.
+   
+   :param framebuffers:
+      A pointer to an array containing *n* framebuffer objects to be deleted.
+   
+
+.. seealso::
+
+   
+   :c:func:`glGenFramebuffers`, :c:func:`glBindFramebuffer`, :c:func:`glCheckFramebufferStatus`
+   
+.. rubric:: Description
+
+
+:c:func:`glDeleteFramebuffers` deletes the *n* framebuffer objects whose names are stored in the array addressed by *framebuffers* . The name zero is reserved by the GL and is silently ignored, should it occur in *framebuffers* , as are other unused names. Once a framebuffer object is deleted, its name is again unused and it has no attachments. If a framebuffer that is currently bound to one or more of the targets ``GL_DRAW_FRAMEBUFFER`` or ``GL_READ_FRAMEBUFFER`` is deleted, it is as though :c:func:`glBindFramebuffer` had been executed with the corresponding *target* and *framebuffer* zero.
+
+
+**Errors:**
+
+   * ``GL_INVALID_VALUE`` is generated if *n* is negative.
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

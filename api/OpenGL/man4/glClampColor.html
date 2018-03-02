@@ -1,0 +1,162 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glClampColor &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glClear" href="glClear.html" />
+    <link rel="prev" title="function glCheckFramebufferStatus" href="glCheckFramebufferStatus.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glClear.html" title="function glClear"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glCheckFramebufferStatus.html" title="function glCheckFramebufferStatus"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glclampcolor">
+<h1>function <cite>glClampColor</cite><a class="headerlink" href="#function-glclampcolor" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Specify whether data read via</p>
+<dl class="function">
+<dt id="glClampColor">
+<tt class="descname">glClampColor</tt><big>(</big><big>)</big><a class="headerlink" href="#glClampColor" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>target</strong> &#8211; Target for color clamping. <em>target</em> must be <tt class="docutils literal"><span class="pre">GL_CLAMP_READ_COLOR</span></tt>.</li>
+<li><strong>clamp</strong> &#8211; Specifies whether to apply color clamping. <em>clamp</em> must be <tt class="docutils literal"><span class="pre">GL_TRUE</span></tt> or <tt class="docutils literal"><span class="pre">GL_FALSE</span></tt>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glClampColor</tt><big>(</big>GLenum <em>&nbsp;target</em>, GLenum <em>&nbsp;clamp</em><big>)</big></dt>
+<dd></dd></dl>
+
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glClampColor" title="glClampColor"><tt class="xref c c-func docutils literal"><span class="pre">glClampColor()</span></tt></a> controls color clamping that is performed during <a class="reference internal" href="glReadPixels.html#glReadPixels" title="glReadPixels"><tt class="xref c c-func docutils literal"><span class="pre">glReadPixels()</span></tt></a>.
+<em>target</em> must be <tt class="docutils literal"><span class="pre">GL_CLAMP_READ_COLOR</span></tt>. If <em>clamp</em> is <tt class="docutils literal"><span class="pre">GL_TRUE</span></tt>,
+read color clamping is enabled; if <em>clamp</em> is <tt class="docutils literal"><span class="pre">GL_FALSE</span></tt>, read color clamping is disabled. If
+<em>clamp</em> is <tt class="docutils literal"><span class="pre">GL_FIXED_ONLY</span></tt>, read color clamping is enabled only if the selected read buffer has
+fixed point components and disabled otherwise.</p>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>target</em> is not <tt class="docutils literal"><span class="pre">GL_CLAMP_READ_COLOR</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>clamp</em> is not <tt class="docutils literal"><span class="pre">GL_TRUE</span></tt> or <tt class="docutils literal"><span class="pre">GL_FALSE</span></tt>.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_CLAMP_READ_COLOR</span></tt>.</li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)2010 Khronos Group. Open Publication License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glCheckFramebufferStatus.html"
+                        title="previous chapter">function <cite>glCheckFramebufferStatus</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glClear.html"
+                        title="next chapter">function <cite>glClear</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glClampColor.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glClear.html" title="function glClear"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glCheckFramebufferStatus.html" title="function glCheckFramebufferStatus"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

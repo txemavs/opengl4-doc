@@ -1,0 +1,76 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:30
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glResumeTransformFeedback.xml'
+.. (c)2010 Khronos Group.
+.. See license details at http://opencontent.org/openpub/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glResumeTransformFeedback`
+------------------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Resume transform feedback operations
+
+.. c:function:: glResumeTransformFeedback
+
+
+.. rubric:: Specification
+
+.. c:function:: void glResumeTransformFeedback()
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glGenTransformFeedbacks`\ ,
+            :c:func:`glBindTransformFeedback`\ ,
+            :c:func:`glBeginTransformFeedback`\ ,
+            :c:func:`glPauseTransformFeedback`\ ,
+            :c:func:`glEndTransformFeedback`\ ,
+            :c:func:`glDeleteTransformFeedbacks`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glResumeTransformFeedback` resumes transform feedback operations on the currently active transform feedback
+object. When transform feedback operations are paused, transform feedback is still considered active and changing most
+transform feedback state related to the object results in an error. However, a new transform feedback object may be bound
+while transform feedback is paused.
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_OPERATION`` is generated if the currently bound transform feedback object is not active or is not paused.
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glResumeTransformFeedback'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )2010 Khronos Group. Open Publication License.
+

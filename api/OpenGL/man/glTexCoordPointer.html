@@ -1,0 +1,248 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glTexCoordPointer &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function glTexEnv" href="glTexEnv.html" />
+    <link rel="prev" title="function glTexCoord" href="glTexCoord.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glTexEnv.html" title="function glTexEnv"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glTexCoord.html" title="function glTexCoord"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-gltexcoordpointer">
+<h1>function <cite>glTexCoordPointer</cite><a class="headerlink" href="#function-gltexcoordpointer" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Define an array of texture coordinates</p>
+<dl class="function">
+<dt id="glTexCoordPointer">
+<tt class="descname">glTexCoordPointer</tt><big>(</big><big>)</big><a class="headerlink" href="#glTexCoordPointer" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>size</strong> &#8211; Specifies the number of coordinates per array element. Must be 1, 2, 3,
+or 4. The initial value is 4.</li>
+<li><strong>type</strong> &#8211; Specifies the data type of each texture coordinate.
+Symbolic constants
+<tt class="docutils literal"><span class="pre">GL_SHORT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_INT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_FLOAT</span></tt>,
+or <tt class="docutils literal"><span class="pre">GL_DOUBLE</span></tt>
+are accepted. The initial value is <tt class="docutils literal"><span class="pre">GL_FLOAT</span></tt>.</li>
+<li><strong>stride</strong> &#8211; Specifies the byte offset between consecutive texture coordinate sets.
+If <em>stride</em> is 0, the array elements are understood
+to be tightly packed. The initial value is 0.</li>
+<li><strong>pointer</strong> &#8211; Specifies a pointer to the first coordinate of the first texture coordinate set in the
+array. The initial value is 0.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glTexCoordPointer</tt><big>(</big>GLint <em>&nbsp;size</em>, GLenum <em>&nbsp;type</em>, GLsizei <em>&nbsp;stride</em>, const GLvoid * <em>&nbsp;pointer</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glArrayElement.html#glArrayElement" title="glArrayElement"><tt class="xref c c-func docutils literal"><span class="pre">glArrayElement()</span></tt></a>,
+<a class="reference internal" href="../man4/glBindBuffer.html#glBindBuffer" title="glBindBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glBindBuffer()</span></tt></a>,
+<a class="reference internal" href="glClientActiveTexture.html#glClientActiveTexture" title="glClientActiveTexture"><tt class="xref c c-func docutils literal"><span class="pre">glClientActiveTexture()</span></tt></a>,
+<a class="reference internal" href="glColorPointer.html#glColorPointer" title="glColorPointer"><tt class="xref c c-func docutils literal"><span class="pre">glColorPointer()</span></tt></a>,
+<a class="reference internal" href="glEnableClientState.html#glDisableClientState" title="glDisableClientState"><tt class="xref c c-func docutils literal"><span class="pre">glDisableClientState()</span></tt></a>,
+<a class="reference internal" href="../man4/glDrawArrays.html#glDrawArrays" title="glDrawArrays"><tt class="xref c c-func docutils literal"><span class="pre">glDrawArrays()</span></tt></a>,
+<a class="reference internal" href="../man4/glDrawElements.html#glDrawElements" title="glDrawElements"><tt class="xref c c-func docutils literal"><span class="pre">glDrawElements()</span></tt></a>,
+<a class="reference internal" href="../man4/glDrawRangeElements.html#glDrawRangeElements" title="glDrawRangeElements"><tt class="xref c c-func docutils literal"><span class="pre">glDrawRangeElements()</span></tt></a>,
+<a class="reference internal" href="glEdgeFlagPointer.html#glEdgeFlagPointer" title="glEdgeFlagPointer"><tt class="xref c c-func docutils literal"><span class="pre">glEdgeFlagPointer()</span></tt></a>,
+<a class="reference internal" href="glEnableClientState.html#glEnableClientState" title="glEnableClientState"><tt class="xref c c-func docutils literal"><span class="pre">glEnableClientState()</span></tt></a>,
+<a class="reference internal" href="glFogCoordPointer.html#glFogCoordPointer" title="glFogCoordPointer"><tt class="xref c c-func docutils literal"><span class="pre">glFogCoordPointer()</span></tt></a>,
+<a class="reference internal" href="glIndexPointer.html#glIndexPointer" title="glIndexPointer"><tt class="xref c c-func docutils literal"><span class="pre">glIndexPointer()</span></tt></a>,
+<a class="reference internal" href="glInterleavedArrays.html#glInterleavedArrays" title="glInterleavedArrays"><tt class="xref c c-func docutils literal"><span class="pre">glInterleavedArrays()</span></tt></a>,
+<a class="reference internal" href="../man4/glMultiDrawArrays.html#glMultiDrawArrays" title="glMultiDrawArrays"><tt class="xref c c-func docutils literal"><span class="pre">glMultiDrawArrays()</span></tt></a>,
+<a class="reference internal" href="../man4/glMultiDrawElements.html#glMultiDrawElements" title="glMultiDrawElements"><tt class="xref c c-func docutils literal"><span class="pre">glMultiDrawElements()</span></tt></a>,
+<a class="reference internal" href="../man3/glMultiTexCoord.html#glMultiTexCoord" title="glMultiTexCoord"><tt class="xref c c-func docutils literal"><span class="pre">glMultiTexCoord()</span></tt></a>,
+<a class="reference internal" href="glNormalPointer.html#glNormalPointer" title="glNormalPointer"><tt class="xref c c-func docutils literal"><span class="pre">glNormalPointer()</span></tt></a>,
+<a class="reference internal" href="glPushClientAttrib.html#glPopClientAttrib" title="glPopClientAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glPopClientAttrib()</span></tt></a>,
+<a class="reference internal" href="glPushClientAttrib.html#glPushClientAttrib" title="glPushClientAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glPushClientAttrib()</span></tt></a>,
+<a class="reference internal" href="glSecondaryColorPointer.html#glSecondaryColorPointer" title="glSecondaryColorPointer"><tt class="xref c c-func docutils literal"><span class="pre">glSecondaryColorPointer()</span></tt></a>,
+<a class="reference internal" href="glTexCoord.html#glTexCoord" title="glTexCoord"><tt class="xref c c-func docutils literal"><span class="pre">glTexCoord()</span></tt></a>,
+<a class="reference internal" href="../man4/glVertexAttribPointer.html#glVertexAttribPointer" title="glVertexAttribPointer"><tt class="xref c c-func docutils literal"><span class="pre">glVertexAttribPointer()</span></tt></a>,
+<a class="reference internal" href="glVertexPointer.html#glVertexPointer" title="glVertexPointer"><tt class="xref c c-func docutils literal"><span class="pre">glVertexPointer()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glTexCoordPointer" title="glTexCoordPointer"><tt class="xref c c-func docutils literal"><span class="pre">glTexCoordPointer()</span></tt></a> specifies the location and data format of an array of texture
+coordinates to use when rendering.
+<em>size</em> specifies the number of coordinates per
+texture coordinate set, and must be 1, 2, 3, or 4.
+<em>type</em> specifies the data type of each texture coordinate,
+and <em>stride</em> specifies the byte stride from one
+texture coordinate set to the next, allowing vertices and attributes
+to be packed into a single array or stored in separate arrays.
+(Single-array storage may be more efficient on some implementations;
+see
+<a class="reference internal" href="glInterleavedArrays.html#glInterleavedArrays" title="glInterleavedArrays"><tt class="xref c c-func docutils literal"><span class="pre">glInterleavedArrays()</span></tt></a>.)</p>
+<p>If a non-zero named buffer object is bound to the <tt class="docutils literal"><span class="pre">GL_ARRAY_BUFFER</span></tt> target
+(see <a class="reference internal" href="../man4/glBindBuffer.html#glBindBuffer" title="glBindBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glBindBuffer()</span></tt></a>) while a texture coordinate array is
+specified, <em>pointer</em> is treated as a byte offset into the buffer object&#8217;s data store.
+Also, the buffer object binding (<tt class="docutils literal"><span class="pre">GL_ARRAY_BUFFER_BINDING</span></tt>) is saved as texture coordinate vertex array
+client-side state (<tt class="docutils literal"><span class="pre">GL_TEXTURE_COORD_ARRAY_BUFFER_BINDING</span></tt>).</p>
+<p>When a texture coordinate array is specified,
+<em>size</em>, <em>type</em>, <em>stride</em>, and <em>pointer</em> are saved as client-side
+state, in addition to the current vertex array buffer object binding.</p>
+<p>To enable and disable a texture coordinate array, call <a class="reference internal" href="glEnableClientState.html#glEnableClientState" title="glEnableClientState"><tt class="xref c c-func docutils literal"><span class="pre">glEnableClientState()</span></tt></a> and
+<a class="reference internal" href="glEnableClientState.html#glDisableClientState" title="glDisableClientState"><tt class="xref c c-func docutils literal"><span class="pre">glDisableClientState()</span></tt></a> with the argument
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_COORD_ARRAY</span></tt>. If enabled, the texture coordinate array is used when
+<a class="reference internal" href="glArrayElement.html#glArrayElement" title="glArrayElement"><tt class="xref c c-func docutils literal"><span class="pre">glArrayElement()</span></tt></a>, <a class="reference internal" href="../man4/glDrawArrays.html#glDrawArrays" title="glDrawArrays"><tt class="xref c c-func docutils literal"><span class="pre">glDrawArrays()</span></tt></a>, <a class="reference internal" href="../man4/glMultiDrawArrays.html#glMultiDrawArrays" title="glMultiDrawArrays"><tt class="xref c c-func docutils literal"><span class="pre">glMultiDrawArrays()</span></tt></a>,
+<a class="reference internal" href="../man4/glDrawElements.html#glDrawElements" title="glDrawElements"><tt class="xref c c-func docutils literal"><span class="pre">glDrawElements()</span></tt></a>, <a class="reference internal" href="../man4/glMultiDrawElements.html#glMultiDrawElements" title="glMultiDrawElements"><tt class="xref c c-func docutils literal"><span class="pre">glMultiDrawElements()</span></tt></a>, or <a class="reference internal" href="../man4/glDrawRangeElements.html#glDrawRangeElements" title="glDrawRangeElements"><tt class="xref c c-func docutils literal"><span class="pre">glDrawRangeElements()</span></tt></a>
+is called.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><a class="reference internal" href="#glTexCoordPointer" title="glTexCoordPointer"><tt class="xref c c-func docutils literal"><span class="pre">glTexCoordPointer()</span></tt></a> is available only if the GL version is 1.1 or greater.</p>
+<p>For OpenGL versions 1.3 and greater, or when the <tt class="docutils literal"><span class="pre">ARB_multitexture</span></tt>
+extension is supported, <a class="reference internal" href="#glTexCoordPointer" title="glTexCoordPointer"><tt class="xref c c-func docutils literal"><span class="pre">glTexCoordPointer()</span></tt></a> updates the
+texture coordinate array state of the active client texture unit,
+specified with <a class="reference internal" href="glClientActiveTexture.html#glClientActiveTexture" title="glClientActiveTexture"><tt class="xref c c-func docutils literal"><span class="pre">glClientActiveTexture()</span></tt></a>.</p>
+<p>Each texture coordinate array is initially disabled and isn&#8217;t accessed when
+<a class="reference internal" href="glArrayElement.html#glArrayElement" title="glArrayElement"><tt class="xref c c-func docutils literal"><span class="pre">glArrayElement()</span></tt></a>, <a class="reference internal" href="../man4/glDrawElements.html#glDrawElements" title="glDrawElements"><tt class="xref c c-func docutils literal"><span class="pre">glDrawElements()</span></tt></a>, <a class="reference internal" href="../man4/glDrawRangeElements.html#glDrawRangeElements" title="glDrawRangeElements"><tt class="xref c c-func docutils literal"><span class="pre">glDrawRangeElements()</span></tt></a>,
+<a class="reference internal" href="../man4/glDrawArrays.html#glDrawArrays" title="glDrawArrays"><tt class="xref c c-func docutils literal"><span class="pre">glDrawArrays()</span></tt></a>, <a class="reference internal" href="../man4/glMultiDrawArrays.html#glMultiDrawArrays" title="glMultiDrawArrays"><tt class="xref c c-func docutils literal"><span class="pre">glMultiDrawArrays()</span></tt></a>, or <a class="reference internal" href="../man4/glMultiDrawElements.html#glMultiDrawElements" title="glMultiDrawElements"><tt class="xref c c-func docutils literal"><span class="pre">glMultiDrawElements()</span></tt></a>
+is called.</p>
+<p>Execution of <a class="reference internal" href="#glTexCoordPointer" title="glTexCoordPointer"><tt class="xref c c-func docutils literal"><span class="pre">glTexCoordPointer()</span></tt></a> is not allowed between the execution of
+<a class="reference internal" href="glBegin.html#glBegin" title="glBegin"><tt class="xref c c-func docutils literal"><span class="pre">glBegin()</span></tt></a> and the corresponding execution of <a class="reference internal" href="glBegin.html#glEnd" title="glEnd"><tt class="xref c c-func docutils literal"><span class="pre">glEnd()</span></tt></a>,
+but an error may or may not be generated. If no error is generated,
+the operation is undefined.</p>
+<p><a class="reference internal" href="#glTexCoordPointer" title="glTexCoordPointer"><tt class="xref c c-func docutils literal"><span class="pre">glTexCoordPointer()</span></tt></a> is typically implemented on the client side.</p>
+<p class="last">Texture coordinate array parameters are client-side state and are therefore
+not saved or restored by <a class="reference internal" href="glPushAttrib.html#glPushAttrib" title="glPushAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glPushAttrib()</span></tt></a> and <a class="reference internal" href="glPushAttrib.html#glPopAttrib" title="glPopAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glPopAttrib()</span></tt></a>.
+Use <a class="reference internal" href="glPushClientAttrib.html#glPushClientAttrib" title="glPushClientAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glPushClientAttrib()</span></tt></a> and
+<a class="reference internal" href="glPushClientAttrib.html#glPopClientAttrib" title="glPopClientAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glPopClientAttrib()</span></tt></a> instead.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>size</em> is not 1, 2, 3, or 4.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>type</em> is not an accepted value.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>stride</em> is negative.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="../man4/glIsEnabled.html#glIsEnabled" title="glIsEnabled"><tt class="xref c c-func docutils literal"><span class="pre">glIsEnabled()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_TEXTURE_COORD_ARRAY</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_TEXTURE_COORD_ARRAY_SIZE</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_TEXTURE_COORD_ARRAY_TYPE</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_TEXTURE_COORD_ARRAY_STRIDE</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_TEXTURE_COORD_ARRAY_BUFFER_BINDING</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_ARRAY_BUFFER_BINDING</span></tt></li>
+<li><a class="reference internal" href="glGetPointerv.html#glGetPointerv" title="glGetPointerv"><tt class="xref c c-func docutils literal"><span class="pre">glGetPointerv()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_TEXTURE_COORD_ARRAY_POINTER</span></tt></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glTexCoord.html"
+                        title="previous chapter">function <cite>glTexCoord</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glTexEnv.html"
+                        title="next chapter">function <cite>glTexEnv</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/glTexCoordPointer.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glTexEnv.html" title="function glTexEnv"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glTexCoord.html" title="function glTexCoord"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,187 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glIsProgram &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glIsProgramPipeline" href="glIsProgramPipeline.html" />
+    <link rel="prev" title="function glIsFramebuffer" href="glIsFramebuffer.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glIsProgramPipeline.html" title="function glIsProgramPipeline"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glIsFramebuffer.html" title="function glIsFramebuffer"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glisprogram">
+<h1>function <cite>glIsProgram</cite><a class="headerlink" href="#function-glisprogram" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Determines if a name corresponds to a program object</p>
+<dl class="function">
+<dt id="glIsProgram">
+<tt class="descname">glIsProgram</tt><big>(</big><big>)</big><a class="headerlink" href="#glIsProgram" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>program</strong> &#8211; Specifies a potential program object.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+GLboolean <tt class="descname">glIsProgram</tt><big>(</big>GLuint <em>&nbsp;program</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glAttachShader.html#glAttachShader" title="glAttachShader"><tt class="xref c c-func docutils literal"><span class="pre">glAttachShader()</span></tt></a>,
+<a class="reference internal" href="glBindAttribLocation.html#glBindAttribLocation" title="glBindAttribLocation"><tt class="xref c c-func docutils literal"><span class="pre">glBindAttribLocation()</span></tt></a>,
+<a class="reference internal" href="glCreateProgram.html#glCreateProgram" title="glCreateProgram"><tt class="xref c c-func docutils literal"><span class="pre">glCreateProgram()</span></tt></a>,
+<a class="reference internal" href="glDeleteProgram.html#glDeleteProgram" title="glDeleteProgram"><tt class="xref c c-func docutils literal"><span class="pre">glDeleteProgram()</span></tt></a>,
+<a class="reference internal" href="glDetachShader.html#glDetachShader" title="glDetachShader"><tt class="xref c c-func docutils literal"><span class="pre">glDetachShader()</span></tt></a>,
+<a class="reference internal" href="glLinkProgram.html#glLinkProgram" title="glLinkProgram"><tt class="xref c c-func docutils literal"><span class="pre">glLinkProgram()</span></tt></a>,
+<a class="reference internal" href="glUniform.html#glUniform" title="glUniform"><tt class="xref c c-func docutils literal"><span class="pre">glUniform()</span></tt></a>,
+<a class="reference internal" href="glUseProgram.html#glUseProgram" title="glUseProgram"><tt class="xref c c-func docutils literal"><span class="pre">glUseProgram()</span></tt></a>,
+<a class="reference internal" href="glValidateProgram.html#glValidateProgram" title="glValidateProgram"><tt class="xref c c-func docutils literal"><span class="pre">glValidateProgram()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glIsProgram" title="glIsProgram"><tt class="xref c c-func docutils literal"><span class="pre">glIsProgram()</span></tt></a> returns
+<tt class="docutils literal"><span class="pre">GL_TRUE</span></tt> if <em>program</em>
+is the name of a program object previously created with
+<a class="reference internal" href="glCreateProgram.html#glCreateProgram" title="glCreateProgram"><tt class="xref c c-func docutils literal"><span class="pre">glCreateProgram()</span></tt></a>
+and not yet deleted with <a class="reference internal" href="glDeleteProgram.html#glDeleteProgram" title="glDeleteProgram"><tt class="xref c c-func docutils literal"><span class="pre">glDeleteProgram()</span></tt></a>.
+If <em>program</em> is zero or a non-zero value that
+is not the name of a program object, or if an error occurs,
+<a class="reference internal" href="#glIsProgram" title="glIsProgram"><tt class="xref c c-func docutils literal"><span class="pre">glIsProgram()</span></tt></a> returns <tt class="docutils literal"><span class="pre">GL_FALSE</span></tt>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>No error is generated if <em>program</em> is
+not a valid program object name.</p>
+<p class="last">A program object marked for deletion with <a class="reference internal" href="glDeleteProgram.html#glDeleteProgram" title="glDeleteProgram"><tt class="xref c c-func docutils literal"><span class="pre">glDeleteProgram()</span></tt></a>
+but still in use as part of current rendering state is still considered
+a program object and <a class="reference internal" href="#glIsProgram" title="glIsProgram"><tt class="xref c c-func docutils literal"><span class="pre">glIsProgram()</span></tt></a> will return <tt class="docutils literal"><span class="pre">GL_TRUE</span></tt>.</p>
+</div>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with the argument <tt class="docutils literal"><span class="pre">GL_CURRENT_PROGRAM</span></tt></li>
+<li><a class="reference internal" href="glGetActiveAttrib.html#glGetActiveAttrib" title="glGetActiveAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glGetActiveAttrib()</span></tt></a> with arguments <em>program</em> and the index of an active attribute variable</li>
+<li><a class="reference internal" href="glGetActiveUniform.html#glGetActiveUniform" title="glGetActiveUniform"><tt class="xref c c-func docutils literal"><span class="pre">glGetActiveUniform()</span></tt></a> with arguments <em>program</em> and the index of an active uniform variable</li>
+<li><a class="reference internal" href="glGetAttachedShaders.html#glGetAttachedShaders" title="glGetAttachedShaders"><tt class="xref c c-func docutils literal"><span class="pre">glGetAttachedShaders()</span></tt></a> with argument <em>program</em></li>
+<li><a class="reference internal" href="glGetAttribLocation.html#glGetAttribLocation" title="glGetAttribLocation"><tt class="xref c c-func docutils literal"><span class="pre">glGetAttribLocation()</span></tt></a> with arguments <em>program</em> and the name of an attribute variable</li>
+<li><a class="reference internal" href="glGetProgram.html#glGetProgram" title="glGetProgram"><tt class="xref c c-func docutils literal"><span class="pre">glGetProgram()</span></tt></a> with arguments <em>program</em> and the parameter to be queried</li>
+<li><a class="reference internal" href="glGetProgramInfoLog.html#glGetProgramInfoLog" title="glGetProgramInfoLog"><tt class="xref c c-func docutils literal"><span class="pre">glGetProgramInfoLog()</span></tt></a> with argument <em>program</em></li>
+<li><a class="reference internal" href="glGetUniform.html#glGetUniform" title="glGetUniform"><tt class="xref c c-func docutils literal"><span class="pre">glGetUniform()</span></tt></a> with arguments <em>program</em> and the location of a uniform variable</li>
+<li><a class="reference internal" href="glGetUniformLocation.html#glGetUniformLocation" title="glGetUniformLocation"><tt class="xref c c-func docutils literal"><span class="pre">glGetUniformLocation()</span></tt></a> with arguments <em>program</em> and the name of a uniform variable</li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)2003-2005 3Dlabs Inc. Ltd. Open Publication License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glIsFramebuffer.html"
+                        title="previous chapter">function <cite>glIsFramebuffer</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glIsProgramPipeline.html"
+                        title="next chapter">function <cite>glIsProgramPipeline</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glIsProgram.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glIsProgramPipeline.html" title="function glIsProgramPipeline"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glIsFramebuffer.html" title="function glIsFramebuffer"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

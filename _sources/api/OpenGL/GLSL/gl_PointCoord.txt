@@ -1,0 +1,48 @@
+.. nabla.opengl-sphinx project
+
+.. ---------------------------
+
+.. this dodument source file 'man/gl_PointCoord'is copyrighted by Khronos Group
+   See license details at http://opencontent.org/openpub/
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   
+
+function `gl_PointCoord`
+------------------------
+
+.. currentmodule:: OpenGL.GLSL
+
+Contains the coordinate of a fragment within a point
+
+.. c:function:: gl_PointCoord
+
+
+.. rubric:: Specification
+
+.. c:function:: in vec2 gl_PointCoord)
+
+.. seealso::
+
+   
+   :c:func:`gl_FragCoord`, :c:func:`gl_FragDepth`
+   
+.. rubric:: Description
+
+
+:c:func:`gl_PointCoord` is a fragment language input variable that contains the two-dimensional coordinates indicating where within a point primitive the current fragment is located. If the current primitive is not a point, then values read from :c:func:`gl_PointCoord` are undefined.
+
+:c:func:`gl_PointCoord.s` ranges from 0.0 to 1.0 across the point horizontally from left to right. If ``GL_POINT_SPRITE_COORD_ORIGIN`` is ``GL_LOWER_LEFT``, :c:func:`gl_PointCoord.t` varies from 0.0 to 1.0 vertically from bottom to top. Otherwise, if ``GL_POINT_SPRITE_COORD_ORIGIN`` is ``GL_UPPER_LEFT`` then :c:func:`gl_PointCoord.t` varies from 0.0 to 1.0 vertically from top to bottom. The default value of ``GL_POINT_SPRITE_COORD_ORIGIN`` is ``GL_UPPER_LEFT``.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2011 Khronos Group. Open Publication License.
+

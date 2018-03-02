@@ -1,0 +1,98 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `gluLookAt`
+--------------------
+
+.. source file man/gluLookAt
+
+.. currentmodule:: OpenGL.GLU
+
+Define a viewing transformation
+
+.. c:function:: gluLookAt
+.. c:function:: void gluLookAt(GLdouble  eyeX, GLdouble  eyeY, GLdouble  eyeZ, GLdouble  centerX, GLdouble  centerY, GLdouble  centerZ, GLdouble  upX, GLdouble  upY, GLdouble  upZ)
+   :noindex: 
+
+
+   
+   :param eyeX:
+      Specifies the position of the eye point.
+   
+   :param centerX:
+      Specifies the position of the reference point.
+   
+   :param upX:
+      Specifies the direction of the *`up`* vector.
+   
+
+.. seealso::
+
+   
+   :c:func:`gluPerspective`, :c:func:`glFrustum`
+   
+.. rubric:: Description
+
+
+:c:func:`gluLookAt` creates a viewing matrix derived from an eye point, a reference point indicating the center of the scene, and an *`UP`* vector.
+
+The matrix maps the reference point to the negative *`z`* axis and the eye point to the origin. When a typical projection matrix is used, the center of the scene therefore maps to the center of the viewport. Similarly, the direction described by the *`UP`* vector projected onto the viewing plane is mapped to the positive *`y`* axis so that it points upward in the viewport. The *`UP`* vector must not be parallel to the line of sight from the eye point to the reference point.
+
+Let
+
+|EQUATION_1_|
+
+
+
+Let *`UP`* be the vector |EQUATION_2_| .
+
+Then normalize as follows: |EQUATION_3_|
+
+|EQUATION_4_|
+
+
+
+Finally, let |EQUATION_5_| , and |EQUATION_6_| .
+
+
+
+M is then constructed as follows: |EQUATION_7_|
+
+and :c:func:`gluLookAt` is equivalent to 
+
+.. code-block:: c
+
+   
+   glMultMatrixf(M);
+   glTranslated(-eyex, -eyey, -eyez);
+               
+
+
+
+
+.. role:: mml(raw)
+   :format: html
+
+
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mi mathvariant="italic">F</mi> <mo>=</mo> <mfenced open="(" close=")"> <mtable> <mtr> <mtd> <mrow> <mi mathvariant="italic">centerX</mi> <mo>-</mo> <mi mathvariant="italic">eyeX</mi> </mrow> </mtd> </mtr> <mtr> <mtd> <mrow> <mi mathvariant="italic">centerY</mi> <mo>-</mo> <mi mathvariant="italic">eyeY</mi> </mrow> </mtd> </mtr> <mtr> <mtd> <mrow> <mi mathvariant="italic">centerZ</mi> <mo>-</mo> <mi mathvariant="italic">eyeZ</mi> </mrow> </mtd> </mtr> </mtable> </mfenced> </mrow> </math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"> <mi mathvariant="italic">upX</mi> <mi mathvariant="italic">upY</mi> <mi mathvariant="italic">upZ</mi> </mfenced> </math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mi mathvariant="italic">f</mi> <mo>=</mo> <mfrac> <mi mathvariant="italic">F</mi> <mfenced open="" close=""> <mfenced open="&DoubleVerticalBar;" close="&DoubleVerticalBar;"> <mi mathvariant="italic">F</mi> </mfenced> </mfenced> </mfrac> </mrow> </math>` 
+
+.. |EQUATION_4_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <msup><mi mathvariant="italic">UP</mi> <mo>&Prime;</mo> </msup> <mo>=</mo> <mfrac> <mi mathvariant="italic">UP</mi> <mfenced open="" close=""> <mfenced open="&DoubleVerticalBar;" close="&DoubleVerticalBar;"> <mi mathvariant="italic">UP</mi> </mfenced> </mfenced> </mfrac> </mrow> </math>` 
+
+.. |EQUATION_5_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mi mathvariant="italic">s</mi> <mo>=</mo> <mrow> <mi mathvariant="italic">f</mi> <mo>&times;</mo> <msup><mi mathvariant="italic">UP</mi> <mo>&Prime;</mo> </msup> </mrow> </mrow> </math>` 
+
+.. |EQUATION_6_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mi mathvariant="italic">u</mi> <mo>=</mo> <mrow> <mi mathvariant="italic">s</mi> <mo>&times;</mo> <mi mathvariant="italic">f</mi> </mrow> </mrow> </math>` 
+
+.. |EQUATION_7_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mi mathvariant="italic">M</mi> <mo>=</mo> <mfenced open="(" close=")"> <mtable> <mtr> <mtd> <mrow> <mi mathvariant="italic">s</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>0</mn> </mfenced> </mrow> </mtd> <mtd> <mrow> <mi mathvariant="italic">s</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>1</mn> </mfenced> </mrow> </mtd> <mtd> <mrow> <mi mathvariant="italic">s</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>2</mn> </mfenced> </mrow> </mtd> <mtd> <mn>0</mn> </mtd> </mtr> <mtr> <mtd> <mrow> <mi mathvariant="italic">u</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>0</mn> </mfenced> </mrow> </mtd> <mtd> <mrow> <mi mathvariant="italic">u</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>1</mn> </mfenced> </mrow> </mtd> <mtd> <mrow> <mi mathvariant="italic">u</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>2</mn> </mfenced> </mrow> </mtd> <mtd> <mn>0</mn> </mtd> </mtr> <mtr> <mtd> <mrow> <mo>-</mo> <mrow> <mi mathvariant="italic">f</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>0</mn> </mfenced> </mrow> </mrow> </mtd> <mtd> <mrow> <mo>-</mo> <mrow> <mi mathvariant="italic">f</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>1</mn> </mfenced> </mrow> </mrow> </mtd> <mtd> <mrow> <mo>-</mo> <mrow> <mi mathvariant="italic">f</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>2</mn> </mfenced> </mrow> </mrow> </mtd> <mtd> <mn>0</mn> </mtd> </mtr> <mtr> <mtd> <mn>0</mn> </mtd> <mtd> <mn>0</mn> </mtd> <mtd> <mn>0</mn> </mtd> <mtd> <mn>1</mn> </mtd> </mtr> </mtable> </mfenced> </mrow> </math>` 
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

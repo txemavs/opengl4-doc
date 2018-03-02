@@ -1,0 +1,113 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `gluBuild3DMipmaps`
+----------------------------
+
+.. source file man/gluBuild3DMipmaps
+
+.. currentmodule:: OpenGL.GLU
+
+Builds a three-dimensional mipmap
+
+.. c:function:: gluBuild3DMipmaps
+.. c:function:: GLint gluBuild3DMipmaps(GLenum  target, GLint  internalFormat, GLsizei  width, GLsizei  height, GLsizei  depth, GLenum  format, GLenum  type, const void *  data)
+   :noindex: 
+
+
+   
+   :param target:
+      Specifies the target texture. Must be ``GLU_TEXTURE_3D``.
+   
+   :param internalFormat:
+      Requests the internal storage format of the texture image. The most current version of the SGI implementation of GLU does not check this value for validity before passing it on to the underlying OpenGL implementation. A value that is not accepted by the OpenGL implementation will lead to an OpenGL error. The benefit of not checking this value at the GLU level is that OpenGL extensions can add new internal texture formats without requiring a revision of the GLU implementation. Older implementations of GLU check this value and raise a GLU error if it is not 1, 2, 3, or 4 or one of the following symbolic constants: ``GLU_ALPHA``, ``GLU_ALPHA4``, ``GLU_ALPHA8``, ``GLU_ALPHA12``, ``GLU_ALPHA16``, ``GLU_LUMINANCE``, ``GLU_LUMINANCE4``, ``GLU_LUMINANCE8``, ``GLU_LUMINANCE12``, ``GLU_LUMINANCE16``, ``GLU_LUMINANCE_ALPHA``, ``GLU_LUMINANCE4_ALPHA4``, ``GLU_LUMINANCE6_ALPHA2``, ``GLU_LUMINANCE8_ALPHA8``, ``GLU_LUMINANCE12_ALPHA4``, ``GLU_LUMINANCE12_ALPHA12``, ``GLU_LUMINANCE16_ALPHA16``, ``GLU_INTENSITY``, ``GLU_INTENSITY4``, ``GLU_INTENSITY8``, ``GLU_INTENSITY12``, ``GLU_INTENSITY16``, ``GLU_RGB``, ``GLU_R3_G3_B2``, ``GLU_RGB4``, ``GLU_RGB5``, ``GLU_RGB8``, ``GLU_RGB10``, ``GLU_RGB12``, ``GLU_RGB16``, ``GLU_RGBA``, ``GLU_RGBA2``, ``GLU_RGBA4``, ``GLU_RGB5_A1``, ``GLU_RGBA8``, ``GLU_RGB10_A2``, ``GLU_RGBA12``, or ``GLU_RGBA16``.
+   
+   :param width:
+      Specifies in pixels the width, height and depth respectively, in pixels of the texture image.
+   
+   :param format:
+      Specifies the format of the pixel data. Must be one of ``GLU_COLOR_INDEX``, ``GLU_DEPTH_COMPONENT``, ``GLU_RED``, ``GLU_GREEN``, ``GLU_BLUE``, ``GLU_ALPHA``, ``GLU_RGB``, ``GLU_RGBA``, ``GLU_BGR``, ``GLU_BGRA``, ``GLU_LUMINANCE``, or ``GLU_LUMINANCE_ALPHA``.
+   
+   :param type:
+      Specifies the data type for *data* . Must be one of: ``GLU_UNSIGNED_BYTE``, ``GLU_BYTE``, ``GLU_BITMAP``, ``GLU_UNSIGNED_SHORT``, ``GLU_SHORT``, ``GLU_UNSIGNED_INT``, ``GLU_INT``, ``GLU_FLOAT``, ``GLU_UNSIGNED_BYTE_3_3_2``, ``GLU_UNSIGNED_BYTE_2_3_3_REV``, ``GLU_UNSIGNED_SHORT_5_6_5``, ``GLU_UNSIGNED_SHORT_5_6_5_REV``, ``GLU_UNSIGNED_SHORT_4_4_4_4``, ``GLU_UNSIGNED_SHORT_4_4_4_4_REV``, ``GLU_UNSIGNED_SHORT_5_5_5_1``, ``GLU_UNSIGNED_SHORT_1_5_5_5_REV``, ``GLU_UNSIGNED_INT_8_8_8_8``, ``GLU_UNSIGNED_INT_8_8_8_8_REV``, ``GLU_UNSIGNED_INT_10_10_10_2``, or ``GLU_UNSIGNED_INT_2_10_10_10_REV``.
+   
+   :param data:
+      Specifies a pointer to the image data in memory.
+   
+
+.. seealso::
+
+   
+   :c:func:`gluBuild1DMipmapLevels`, :c:func:`gluBuild1DMipmaps`, :c:func:`gluBuild2DMipmapLevels`, :c:func:`gluBuild3DMipmapLevels`, :c:func:`gluBuild3DMipmaps`, :c:func:`gluErrorString`, :c:func:`glDrawPixels`, :c:func:`glGetTexImage`, :c:func:`glGetTexLevelParameter`, :c:func:`glTexImage1D`, :c:func:`glTexImage2D`, :c:func:`glTexImage3D`
+   
+.. rubric:: Description
+
+
+:c:func:`gluBuild3DMipmaps` builds a series of prefiltered three-dimensional texture maps of decreasing resolutions called a mipmap. This is used for the antialiasing of texture-mapped primitives.
+
+A return value of zero indicates success, otherwise a GLU error code is returned (see :c:func:`gluErrorString`).
+
+Initially, the *width* , *height* and *depth* of *data* are checked to see if they are a power of 2. If not, a copy of *data* is made and scaled up or down to the nearest power of 2. (If *width* , *height* , or *depth* is exactly between powers of 2, then the copy of *data* will scale upwards.) This copy will be used for subsequent mipmapping operations described below. For example, if *width* is 57, *height* is 23, and *depth* is 24, then a copy of *data* will scale up to 64 in width, down to 16 in height, and up to 32 in depth before mipmapping takes place.
+
+Then, proxy textures (see :c:func:`glTexImage3D`) are used to determine if the implementation can fit the requested texture. If not, all three dimensions are continually halved until it fits.
+
+Next, a series of mipmap levels is built by decimating a copy of *data* in half along all three dimensions until size |EQUATION_1_| is reached. At each level, each texel in the halved mipmap level is an average of the corresponding eight texels in the larger mipmap level. (If exactly one of the dimensions is 1, four texels are averaged. If exactly two of the dimensions are 1, two texels are averaged.)
+
+:c:func:`glTexImage3D` is called to load each of these mipmap levels. Level 0 is a copy of *data* . The highest level is |EQUATION_2_| . For example, if *width* is 64, *height* is 16, and *depth* is 32, and the implementation can store a texture of this size, the following mipmap levels are built: |EQUATION_3_| , |EQUATION_4_| , |EQUATION_5_| , |EQUATION_6_| , |EQUATION_7_| , |EQUATION_8_| , and |EQUATION_9_| . These correspond to levels 0 through 6, respectively.
+
+See the :c:func:`glTexImage1D` reference page for a description of the acceptable values for *format* parameter. See the :c:func:`glDrawPixels` reference page for a description of the acceptable values for *type* parameter.
+
+
+**Errors:**
+
+   * ``GLU_INVALID_VALUE`` is returned if *width* , *height* , or *depth* is < 1.
+   * ``GLU_INVALID_ENUM`` is returned if *internalFormat* , *format* , or *type* is not legal.
+   * ``GLU_INVALID_OPERATION`` is returned if *type* is ``GLU_UNSIGNED_BYTE_3_3_2`` or ``GLU_UNSIGNED_BYTE_2_3_3_REV`` and *format* is not ``GLU_RGB``.
+   * ``GLU_INVALID_OPERATION`` is returned if *type* is ``GLU_UNSIGNED_SHORT_5_6_5`` or ``GLU_UNSIGNED_SHORT_5_6_5_REV`` and *format* is not ``GLU_RGB``.
+   * ``GLU_INVALID_OPERATION`` is returned if *type* is ``GLU_UNSIGNED_SHORT_4_4_4_4`` or ``GLU_UNSIGNED_SHORT_4_4_4_4_REV`` and *format* is neither ``GLU_RGBA`` nor ``GLU_BGRA``.
+   * ``GLU_INVALID_OPERATION`` is returned if *type* is ``GLU_UNSIGNED_SHORT_5_5_5_1`` or ``GLU_UNSIGNED_SHORT_1_5_5_5_REV`` and *format* is neither ``GLU_RGBA`` nor ``GLU_BGRA``.
+   * ``GLU_INVALID_OPERATION`` is returned if *type* is ``GLU_UNSIGNED_INT_8_8_8_8`` or ``GLU_UNSIGNED_INT_8_8_8_8_REV`` and *format* is neither ``GLU_RGBA`` nor ``GLU_BGRA``.
+   * ``GLU_INVALID_OPERATION`` is returned if *type* is ``GLU_UNSIGNED_INT_10_10_10_2`` or ``GLU_UNSIGNED_INT_2_10_10_10_REV`` and *format* is neither ``GLU_RGBA`` nor ``GLU_BGRA``.
+
+
+
+.. note::
+
+   * Note that there is no direct way of querying the maximum level. This can be derived indirectly via :c:func:`glGetTexLevelParameter`. First, query the width, height, and depth actually used at level 0. (The width, height, and depth may not be equal to *width* , *height* , and *depth* respectively since proxy textures might have scaled them to fit the implementation.) Then the maximum level can be derived from the formula |EQUATION_10_| .
+   * :c:func:`gluBuild3DMipmaps` is only available if the GLU version is 1.3 or greater.
+   * Formats ``GLU_BGR``, and ``GLU_BGRA``, and types ``GLU_UNSIGNED_BYTE_3_3_2``, ``GLU_UNSIGNED_BYTE_2_3_3_REV``, ``GLU_UNSIGNED_SHORT_5_6_5``, ``GLU_UNSIGNED_SHORT_5_6_5_REV``, ``GLU_UNSIGNED_SHORT_4_4_4_4``, ``GLU_UNSIGNED_SHORT_4_4_4_4_REV``, ``GLU_UNSIGNED_SHORT_5_5_5_1``, ``GLU_UNSIGNED_SHORT_1_5_5_5_REV``, ``GLU_UNSIGNED_INT_8_8_8_8``, ``GLU_UNSIGNED_INT_8_8_8_8_REV``, ``GLU_UNSIGNED_INT_10_10_10_2``, and ``GLU_UNSIGNED_INT_2_10_10_10_REV`` are only available if the GL version is 1.2 or greater.
+
+
+
+.. role:: mml(raw)
+   :format: html
+
+
+
+.. |EQUATION_10_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mfenced open="" close=""> <msub><mi mathvariant="italic">log</mi> <mn>2</mn> </msub> </mfenced> <mo>&af;</mo> <mfenced open="(" close=")"> <mrow> <mi mathvariant="italic">max</mi> <mo>&af;</mo> <mfenced open="(" close=")"> <mi mathvariant="italic">width</mi> <mi mathvariant="italic">height</mi> <mi mathvariant="italic">depth</mi> </mfenced> </mrow> </mfenced> </mrow> </math>` 
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mn>1</mn> <mo>&times;</mo> <mn>1</mn> <mo>&times;</mo> <mn>1</mn> </mrow> </math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mfenced open="" close=""> <msub><mi mathvariant="italic">log</mi> <mn>2</mn> </msub> </mfenced> <mo>&af;</mo> <mfenced open="(" close=")"> <mrow> <mi mathvariant="italic">max</mi> <mo>&af;</mo> <mfenced open="(" close=")"> <mi mathvariant="italic">width</mi> <mi mathvariant="italic">height</mi> <mi mathvariant="italic">depth</mi> </mfenced> </mrow> </mfenced> </mrow> </math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mn>64</mn> <mo>&times;</mo> <mn>16</mn> <mo>&times;</mo> <mn>32</mn> </mrow> </math>` 
+
+.. |EQUATION_4_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mn>32</mn> <mo>&times;</mo> <mn>8</mn> <mo>&times;</mo> <mn>16</mn> </mrow> </math>` 
+
+.. |EQUATION_5_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mn>16</mn> <mo>&times;</mo> <mn>4</mn> <mo>&times;</mo> <mn>8</mn> </mrow> </math>` 
+
+.. |EQUATION_6_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mn>8</mn> <mo>&times;</mo> <mn>2</mn> <mo>&times;</mo> <mn>4</mn> </mrow> </math>` 
+
+.. |EQUATION_7_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mn>4</mn> <mo>&times;</mo> <mn>1</mn> <mo>&times;</mo> <mn>2</mn> </mrow> </math>` 
+
+.. |EQUATION_8_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mn>2</mn> <mo>&times;</mo> <mn>1</mn> <mo>&times;</mo> <mn>1</mn> </mrow> </math>` 
+
+.. |EQUATION_9_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mn>1</mn> <mo>&times;</mo> <mn>1</mn> <mo>&times;</mo> <mn>1</mn> </mrow> </math>` 
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

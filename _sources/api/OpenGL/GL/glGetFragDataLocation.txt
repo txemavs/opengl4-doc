@@ -1,0 +1,48 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glGetFragDataLocation`
+--------------------------------
+
+.. source file man4/glGetFragDataLocation
+
+.. currentmodule:: OpenGL.GL
+
+Query the bindings of color numbers to user-defined varying out variables
+
+.. c:function:: glGetFragDataLocation
+.. c:function:: GLint glGetFragDataLocation(GLuint  program, const char *  name)
+   :noindex: 
+
+
+   
+   :param program:
+      The name of the program containing varying out variable whose binding to query
+   
+   :param name:
+      The name of the user-defined varying out variable whose binding to query
+   
+
+.. seealso::
+
+   
+   :c:func:`glCreateProgram`, :c:func:`glBindFragDataLocation`
+   
+.. rubric:: Description
+
+
+:c:func:`glGetFragDataLocation` retrieves the assigned color number binding for the user-defined varying out variable *name* for program *program* . *program* must have previously been linked. *name* must be a null-terminated string. If *name* is not the name of an active user-defined varying out fragment shader variable within *program* , -1 will be returned.
+
+
+**Errors:**
+
+   * ``GL_INVALID_OPERATION`` is generated if *program* is not the name of a program object.
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

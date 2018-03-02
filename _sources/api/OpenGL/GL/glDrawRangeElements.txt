@@ -1,0 +1,97 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glDrawRangeElements`
+------------------------------
+
+.. source file man4/glDrawRangeElements
+
+.. currentmodule:: OpenGL.GL
+
+Render primitives from array data
+
+.. c:function:: glDrawRangeElements
+.. c:function:: void glDrawRangeElements(GLenum  mode, GLuint  start, GLuint  end, GLsizei  count, GLenum  type, const GLvoid *  indices)
+   :noindex: 
+
+
+   
+   :param mode:
+      Specifies what kind of primitives to render. Symbolic constants ``GL_POINTS``, ``GL_LINE_STRIP``, ``GL_LINE_LOOP``, ``GL_LINES``, ``GL_LINE_STRIP_ADJACENCY``, ``GL_LINES_ADJACENCY``, ``GL_TRIANGLE_STRIP``, ``GL_TRIANGLE_FAN``, ``GL_TRIANGLES``, ``GL_TRIANGLE_STRIP_ADJACENCY``, ``GL_TRIANGLES_ADJACENCY`` and ``GL_PATCHES`` are accepted.
+   
+   :param start:
+      Specifies the minimum array index contained in *indices* .
+   
+   :param end:
+      Specifies the maximum array index contained in *indices* .
+   
+   :param count:
+      Specifies the number of elements to be rendered.
+   
+   :param type:
+      Specifies the type of the values in *indices* . Must be one of ``GL_UNSIGNED_BYTE``, ``GL_UNSIGNED_SHORT``, or ``GL_UNSIGNED_INT``.
+   
+   :param indices:
+      Specifies a pointer to the location where the indices are stored.
+   
+
+.. seealso::
+
+   
+   :c:func:`glDrawArrays`, :c:func:`glDrawElements`, :c:func:`glDrawElementsBaseVertex`
+   
+.. rubric:: Description
+
+
+:c:func:`glDrawRangeElements` is a restricted form of :c:func:`glDrawElements`. *mode* , *start* , *end* , and *count* match the corresponding arguments to :c:func:`glDrawElements`, with the additional constraint that all values in the arrays *count* must lie between *start* and *end* , inclusive.
+
+Implementations denote recommended maximum amounts of vertex and index data, which may be queried by calling :c:func:`glGet` with argument ``GL_MAX_ELEMENTS_VERTICES`` and ``GL_MAX_ELEMENTS_INDICES``. If |EQUATION_1_| is greater than the value of ``GL_MAX_ELEMENTS_VERTICES``, or if *count* is greater than the value of ``GL_MAX_ELEMENTS_INDICES``, then the call may operate at reduced performance. There is no requirement that all vertices in the range |EQUATION_2_| be referenced. However, the implementation may partially process unused vertices, reducing performance from what could be achieved with an optimal index set.
+
+When :c:func:`glDrawRangeElements` is called, it uses *count* sequential elements from an enabled array, starting at *start* to construct a sequence of geometric primitives. *mode* specifies what kind of primitives are constructed, and how the array elements construct these primitives. If more than one array is enabled, each is used.
+
+Vertex attributes that are modified by :c:func:`glDrawRangeElements` have an unspecified value after :c:func:`glDrawRangeElements` returns. Attributes that aren't modified maintain their previous values.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGet` with argument ``GL_MAX_ELEMENTS_VERTICES``
+   * :c:func:`glGet` with argument ``GL_MAX_ELEMENTS_INDICES``
+
+**Errors:**
+
+   * It is an error for indices to lie outside the range |EQUATION_3_| , but implementations may not check for this situation. Such indices cause implementation-dependent behavior.
+   * ``GL_INVALID_ENUM`` is generated if *mode* is not an accepted value.
+   * ``GL_INVALID_VALUE`` is generated if *count* is negative.
+   * ``GL_INVALID_VALUE`` is generated if |EQUATION_4_| .
+   * ``GL_INVALID_OPERATION`` is generated if a geometry shader is active and *mode* is incompatible with the input primitive type of the geometry shader in the currently installed program object.
+   * ``GL_INVALID_OPERATION`` is generated if a non-zero buffer object name is bound to an enabled array or the element array and the buffer object's data store is currently mapped.
+
+
+
+.. note::
+
+   * ``GL_LINE_STRIP_ADJACENCY``, ``GL_LINES_ADJACENCY``, ``GL_TRIANGLE_STRIP_ADJACENCY`` and ``GL_TRIANGLES_ADJACENCY`` are available only if the GL version is 3.2 or greater.
+
+
+
+.. role:: mml(raw)
+   :format: html
+
+
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mi mathvariant="italic">end</mi> <mo>-</mo> <mi mathvariant="italic">start</mi> <mo>+</mo> <mn>1</mn> </mrow> </math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"> <mi mathvariant="italic">start</mi> <mi mathvariant="italic">end</mi> </mfenced> </math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"> <mi mathvariant="italic">start</mi> <mi mathvariant="italic">end</mi> </mfenced> </math>` 
+
+.. |EQUATION_4_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mi mathvariant="italic">end</mi> <mo>&lt;</mo> <mi mathvariant="italic">start</mi> </mrow> </math>` 
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

@@ -1,0 +1,182 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glXUseXFont &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function glXWaitGL" href="glXWaitGL.html" />
+    <link rel="prev" title="function glXSwapBuffers" href="glXSwapBuffers.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glXWaitGL.html" title="function glXWaitGL"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glXSwapBuffers.html" title="function glXSwapBuffers"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glxusexfont">
+<h1>function <cite>glXUseXFont</cite><a class="headerlink" href="#function-glxusexfont" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Create bitmap display lists from an X font</p>
+<dl class="function">
+<dt id="glXUseXFont">
+<tt class="descname">glXUseXFont</tt><big>(</big><big>)</big><a class="headerlink" href="#glXUseXFont" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>font</strong> &#8211; Specifies the font from which character glyphs are to be taken.</li>
+<li><strong>first</strong> &#8211; Specifies the index of the first glyph to be taken.</li>
+<li><strong>count</strong> &#8211; Specifies the number of glyphs to be taken.</li>
+<li><strong>listBase</strong> &#8211; Specifies the index of the first display list to be generated.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glXUseXFont</tt><big>(</big>Font <em>&nbsp;font</em>, int <em>&nbsp;first</em>, int <em>&nbsp;count</em>, int <em>&nbsp;listBase</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glBitmap.html#glBitmap" title="glBitmap"><tt class="xref c c-func docutils literal"><span class="pre">glBitmap()</span></tt></a>,
+<a class="reference internal" href="glXMakeCurrent.html#glXMakeCurrent" title="glXMakeCurrent"><tt class="xref c c-func docutils literal"><span class="pre">glXMakeCurrent()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glXUseXFont" title="glXUseXFont"><tt class="xref c c-func docutils literal"><span class="pre">glXUseXFont()</span></tt></a> generates <em>count</em> display lists,
+named <em>listBase</em> through <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">listBase</mi><mo>+</mo><mi mathvariant="italic">count</mi><mo>-</mo><mn>1</mn></mrow></math></span>,
+each containing a single <a class="reference internal" href="glBitmap.html#glBitmap" title="glBitmap"><tt class="xref c c-func docutils literal"><span class="pre">glBitmap()</span></tt></a> command.
+The parameters of the <a class="reference internal" href="glBitmap.html#glBitmap" title="glBitmap"><tt class="xref c c-func docutils literal"><span class="pre">glBitmap()</span></tt></a> command of display list <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">listBase</mi><mo>+</mo><mi mathvariant="italic">i</mi></mrow></math></span> are derived from glyph <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">first</mi><mo>+</mo><mi mathvariant="italic">i</mi></mrow></math></span>.
+Bitmap parameters <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">xorig</mi></math></span>, <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">yorig</mi></math></span>, <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">width</mi></math></span>,
+and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">height</mi></math></span> are computed from font metrics as <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">descent</mi><mo>-</mo><mn>1</mn></mrow></math></span>, <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mo>-</mo><mi mathvariant="italic">lbearing</mi></mrow></math></span>,
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">rbearing</mi><mo>-</mo><mi mathvariant="italic">lbearing</mi></mrow></math></span>,
+and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">ascent</mi><mo>+</mo><mi mathvariant="italic">descent</mi></mrow></math></span>,
+respectively. <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">xmove</mi></math></span> is taken from the glyph&#8217;s <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">width</mi></math></span> metric,
+and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">ymove</mi></math></span> is set to zero.
+Finally,
+the glyph&#8217;s image is converted to the appropriate format for <a class="reference internal" href="glBitmap.html#glBitmap" title="glBitmap"><tt class="xref c c-func docutils literal"><span class="pre">glBitmap()</span></tt></a>.</p>
+<p>Using <a class="reference internal" href="#glXUseXFont" title="glXUseXFont"><tt class="xref c c-func docutils literal"><span class="pre">glXUseXFont()</span></tt></a> may be more efficient than accessing the X font and generating
+the display lists explicitly,
+both because the display lists are created on the server without requiring
+a round trip of the glyph data,
+and because the server may choose to delay the creation of each
+bitmap until it is accessed.</p>
+<p>Empty display lists are created for all glyphs that are requested and
+are not defined in <em>font</em>.
+<a class="reference internal" href="#glXUseXFont" title="glXUseXFont"><tt class="xref c c-func docutils literal"><span class="pre">glXUseXFont()</span></tt></a> is ignored if there is no current GLX context.</p>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">BadFont</span></tt> is generated if <em>font</em> is not a valid font.</li>
+<li><tt class="docutils literal"><span class="pre">GLXBadContextState</span></tt> is generated if the current GLX context is in display-list construction mode.</li>
+<li><tt class="docutils literal"><span class="pre">GLXBadCurrentWindow</span></tt> is generated if the drawable associated with the current context of the calling thread is a window, and that window is no longer valid.</li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glXSwapBuffers.html"
+                        title="previous chapter">function <cite>glXSwapBuffers</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glXWaitGL.html"
+                        title="next chapter">function <cite>glXWaitGL</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/glXUseXFont.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glXWaitGL.html" title="function glXWaitGL"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glXSwapBuffers.html" title="function glXSwapBuffers"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

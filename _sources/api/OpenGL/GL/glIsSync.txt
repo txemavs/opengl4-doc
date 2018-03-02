@@ -1,0 +1,48 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glIsSync`
+-------------------
+
+.. source file man4/glIsSync
+
+.. currentmodule:: OpenGL.GL
+
+Determine if a name corresponds to a sync object
+
+.. c:function:: glIsSync
+.. c:function:: GLboolean glIsSync(GLsync  sync)
+   :noindex: 
+
+
+   
+   :param sync:
+      Specifies a value that may be the name of a sync object.
+   
+
+.. seealso::
+
+   
+   :c:func:`glFenceSync`, :c:func:`glWaitSync`, :c:func:`glClientWaitSync`, :c:func:`glDeleteSync`
+   
+.. rubric:: Description
+
+
+:c:func:`glIsSync` returns ``GL_TRUE`` if *sync* is currently the name of a sync object. If *sync* is not the name of a sync object, or if an error occurs, :c:func:`glIsSync` returns ``GL_FALSE``. Note that zero is not the name of a sync object.
+
+
+
+
+.. note::
+
+   * :c:func:`glIsSync` is available only if the GL version is 3.2 or greater.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

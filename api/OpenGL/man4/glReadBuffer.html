@@ -1,0 +1,199 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glReadBuffer &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glReadPixels" href="glReadPixels.html" />
+    <link rel="prev" title="function glQueryCounter" href="glQueryCounter.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glReadPixels.html" title="function glReadPixels"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glQueryCounter.html" title="function glQueryCounter"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glreadbuffer">
+<h1>function <cite>glReadBuffer</cite><a class="headerlink" href="#function-glreadbuffer" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Select a color buffer source for pixels</p>
+<dl class="function">
+<dt id="glReadBuffer">
+<tt class="descname">glReadBuffer</tt><big>(</big><big>)</big><a class="headerlink" href="#glReadBuffer" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>mode</strong> &#8211; Specifies a color buffer.
+Accepted values are
+<tt class="docutils literal"><span class="pre">GL_FRONT_LEFT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_FRONT_RIGHT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_BACK_LEFT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_BACK_RIGHT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_FRONT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_BACK</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LEFT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RIGHT</span></tt>, and the constants
+<tt class="docutils literal"><span class="pre">GL_COLOR_ATTACHMENT</span> <span class="pre">i</span></tt>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glReadBuffer</tt><big>(</big>GLenum <em>&nbsp;mode</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glCopyTexImage1D.html#glCopyTexImage1D" title="glCopyTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexImage1D()</span></tt></a>,
+<a class="reference internal" href="glCopyTexImage2D.html#glCopyTexImage2D" title="glCopyTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexImage2D()</span></tt></a>,
+<a class="reference internal" href="glCopyTexSubImage1D.html#glCopyTexSubImage1D" title="glCopyTexSubImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexSubImage1D()</span></tt></a>,
+<a class="reference internal" href="glCopyTexSubImage2D.html#glCopyTexSubImage2D" title="glCopyTexSubImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexSubImage2D()</span></tt></a>,
+<a class="reference internal" href="glCopyTexSubImage3D.html#glCopyTexSubImage3D" title="glCopyTexSubImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexSubImage3D()</span></tt></a>,
+<a class="reference internal" href="glDrawBuffer.html#glDrawBuffer" title="glDrawBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glDrawBuffer()</span></tt></a>,
+<a class="reference internal" href="glReadPixels.html#glReadPixels" title="glReadPixels"><tt class="xref c c-func docutils literal"><span class="pre">glReadPixels()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glReadBuffer" title="glReadBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glReadBuffer()</span></tt></a> specifies a color buffer as the source for subsequent
+<a class="reference internal" href="glReadPixels.html#glReadPixels" title="glReadPixels"><tt class="xref c c-func docutils literal"><span class="pre">glReadPixels()</span></tt></a>, <a class="reference internal" href="glCopyTexImage1D.html#glCopyTexImage1D" title="glCopyTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexImage1D()</span></tt></a>, <a class="reference internal" href="glCopyTexImage2D.html#glCopyTexImage2D" title="glCopyTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexImage2D()</span></tt></a>,
+<a class="reference internal" href="glCopyTexSubImage1D.html#glCopyTexSubImage1D" title="glCopyTexSubImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexSubImage1D()</span></tt></a>, <a class="reference internal" href="glCopyTexSubImage2D.html#glCopyTexSubImage2D" title="glCopyTexSubImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexSubImage2D()</span></tt></a>, and
+<a class="reference internal" href="glCopyTexSubImage3D.html#glCopyTexSubImage3D" title="glCopyTexSubImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexSubImage3D()</span></tt></a> commands.
+<em>mode</em> accepts one of twelve or more predefined values.
+In a fully configured system,
+<tt class="docutils literal"><span class="pre">GL_FRONT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LEFT</span></tt>, and
+<tt class="docutils literal"><span class="pre">GL_FRONT_LEFT</span></tt> all name the front left buffer,
+<tt class="docutils literal"><span class="pre">GL_FRONT_RIGHT</span></tt> and
+<tt class="docutils literal"><span class="pre">GL_RIGHT</span></tt> name the front right buffer, and
+<tt class="docutils literal"><span class="pre">GL_BACK_LEFT</span></tt> and
+<tt class="docutils literal"><span class="pre">GL_BACK</span></tt> name the back left buffer.
+Further more, the constants <tt class="docutils literal"><span class="pre">GL_COLOR_ATTACHMENT</span> <span class="pre">i</span></tt> may be used to indicate the
+<strong>i</strong> <sup>th</sup> color attachment where <strong>i</strong> ranges from zero to the
+value of <tt class="docutils literal"><span class="pre">GL_MAX_COLOR_ATTACHMENTS</span></tt> minus one.</p>
+<p>Nonstereo double-buffered configurations have only a front left and a
+back left buffer.
+Single-buffered configurations have a front left and a front right
+buffer if stereo, and only a front left buffer if nonstereo.
+It is an error to specify a nonexistent buffer to <a class="reference internal" href="#glReadBuffer" title="glReadBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glReadBuffer()</span></tt></a>.</p>
+<p><em>mode</em> is initially <tt class="docutils literal"><span class="pre">GL_FRONT</span></tt> in single-buffered configurations
+and <tt class="docutils literal"><span class="pre">GL_BACK</span></tt> in double-buffered configurations.</p>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>mode</em> is not one of the twelve (or more) accepted values.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <em>mode</em> specifies a buffer that does not exist.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_READ_BUFFER</span></tt></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. (c)2011 Khronos Group. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glQueryCounter.html"
+                        title="previous chapter">function <cite>glQueryCounter</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glReadPixels.html"
+                        title="next chapter">function <cite>glReadPixels</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glReadBuffer.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glReadPixels.html" title="function glReadPixels"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glQueryCounter.html" title="function glQueryCounter"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:29
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glGenFramebuffers.xml'
+.. (c)2010 Khronos Group.
+.. See license details at http://opencontent.org/openpub/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glGenFramebuffers`
+----------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Generate framebuffer object names
+
+.. c:function:: glGenFramebuffers
+
+
+         :param n:
+
+                  Specifies the number of framebuffer object names to generate.
+
+         :param ids:
+
+                  Specifies an array in which the generated framebuffer object names are stored.
+
+.. rubric:: Specification
+
+.. c:function:: void glGenFramebuffers(GLsizei  n, GLuint * ids)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glBindFramebuffer`\ ,
+            :c:func:`glDeleteFramebuffers`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glGenFramebuffers` returns *n* framebuffer object names in *ids*\ .
+There is no guarantee that the names form a contiguous set of integers; however, it is guaranteed that none of the returned names
+was in use immediately before the call to :c:func:`glGenFramebuffers`\ .
+
+
+Framebuffer object names returned by a call to :c:func:`glGenFramebuffers` are not returned by subsequent calls, unless
+they are first deleted with :c:func:`glDeleteFramebuffers`\ .
+
+
+The names returned in *ids* are marked as used, for the purposes of :c:func:`glGenFramebuffers` only,
+but they acquire state and type only when they are first bound.
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_VALUE`` is generated if *n* is negative.
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glGenFramebuffers'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )2010 Khronos Group. Open Publication License.
+

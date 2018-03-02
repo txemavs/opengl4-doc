@@ -1,0 +1,53 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `gluOrtho2D`
+---------------------
+
+.. source file man/gluOrtho2D
+
+.. currentmodule:: OpenGL.GLU
+
+Define a 2D orthographic projection matrix
+
+.. c:function:: gluOrtho2D
+.. c:function:: void gluOrtho2D(GLdouble  left, GLdouble  right, GLdouble  bottom, GLdouble  top)
+   :noindex: 
+
+
+   
+   :param left:
+      Specify the coordinates for the left and right vertical clipping planes.
+   
+   :param bottom:
+      Specify the coordinates for the bottom and top horizontal clipping planes.
+   
+
+.. seealso::
+
+   
+   :c:func:`glOrtho`, :c:func:`gluPerspective`
+   
+.. rubric:: Description
+
+
+:c:func:`gluOrtho2D` sets up a two-dimensional orthographic viewing region. This is equivalent to calling :c:func:`glOrtho` with |EQUATION_1_| and |EQUATION_2_| .
+
+
+
+.. role:: mml(raw)
+   :format: html
+
+
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mi mathvariant="italic">near</mi> <mo>=</mo> <mn>-1</mn> </mrow> </math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mi mathvariant="italic">far</mi> <mo>=</mo> <mn>1</mn> </mrow> </math>` 
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

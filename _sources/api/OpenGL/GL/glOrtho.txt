@@ -1,0 +1,88 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glOrtho`
+------------------
+
+.. source file man/glOrtho
+
+.. currentmodule:: OpenGL.GL
+
+Multiply the current matrix with an orthographic matrix
+
+.. c:function:: glOrtho
+.. c:function:: void glOrtho(GLdouble  left, GLdouble  right, GLdouble  bottom, GLdouble  top, GLdouble  nearVal, GLdouble  farVal)
+   :noindex: 
+
+
+   
+   :param left:
+      Specify the coordinates for the left and right vertical clipping planes.
+   
+   :param bottom:
+      Specify the coordinates for the bottom and top horizontal clipping planes.
+   
+   :param nearVal:
+      Specify the distances to the nearer and farther depth clipping planes. These values are negative if the plane is to be behind the viewer.
+   
+
+.. seealso::
+
+   
+   :c:func:`glFrustum`, :c:func:`glMatrixMode`, :c:func:`glMultMatrix`, :c:func:`glPushMatrix`, :c:func:`glViewport`
+   
+.. rubric:: Description
+
+
+:c:func:`glOrtho` describes a transformation that produces a parallel projection. The current matrix (see :c:func:`glMatrixMode`) is multiplied by this matrix and the result replaces the current matrix, as if :c:func:`glMultMatrix` were called with the following matrix as its argument:
+
+|EQUATION_1_|
+
+where |EQUATION_2_| |EQUATION_3_| |EQUATION_4_|
+
+Typically, the matrix mode is ``GL_PROJECTION``, and |EQUATION_5_| and |EQUATION_6_| specify the points on the near clipping plane that are mapped to the lower left and upper right corners of the window, respectively, assuming that the eye is located at (0, 0, 0). |EQUATION_7_| specifies the location of the far clipping plane. Both *nearVal* and *farVal* can be either positive or negative.
+
+Use :c:func:`glPushMatrix` and :c:func:`glPopMatrix` to save and restore the current matrix stack.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGet` with argument ``GL_MATRIX_MODE``
+   * :c:func:`glGet` with argument ``GL_COLOR_MATRIX``
+   * :c:func:`glGet` with argument ``GL_MODELVIEW_MATRIX``
+   * :c:func:`glGet` with argument ``GL_PROJECTION_MATRIX``
+   * :c:func:`glGet` with argument ``GL_TEXTURE_MATRIX``
+
+**Errors:**
+
+   * ``GL_INVALID_VALUE`` is generated if *left* = *right* , or *bottom* = *top* , or *near* = *far* .
+   * ``GL_INVALID_OPERATION`` is generated if :c:func:`glOrtho` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`.
+
+
+.. role:: mml(raw)
+   :format: html
+
+
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"> <mtable> <mtr> <mtd> <mfenced open="" close=""> <mfrac> <mn>2</mn> <mfenced open="" close=""> <mrow> <mi mathvariant="italic">right</mi> <mo>-</mo> <mi mathvariant="italic">left</mi> </mrow> </mfenced> </mfrac> </mfenced> </mtd> <mtd> <mn>0</mn> </mtd> <mtd> <mn>0</mn> </mtd> <mtd> <mfenced open="" close=""> <msub><mi mathvariant="italic">t</mi> <mi mathvariant="italic">x</mi> </msub> </mfenced> </mtd> </mtr> <mtr> <mtd> <mn>0</mn> </mtd> <mtd> <mfenced open="" close=""> <mfrac> <mn>2</mn> <mfenced open="" close=""> <mrow> <mi mathvariant="italic">top</mi> <mo>-</mo> <mi mathvariant="italic">bottom</mi> </mrow> </mfenced> </mfrac> </mfenced> </mtd> <mtd> <mn>0</mn> </mtd> <mtd> <mfenced open="" close=""> <msub><mi mathvariant="italic">t</mi> <mi mathvariant="italic">y</mi> </msub> </mfenced> </mtd> </mtr> <mtr> <mtd> <mn>0</mn> </mtd> <mtd> <mn>0</mn> </mtd> <mtd> <mfenced open="" close=""> <mfrac> <mn>-2</mn> <mfenced open="" close=""> <mrow> <mi mathvariant="italic">farVal</mi> <mo>-</mo> <mi mathvariant="italic">nearVal</mi> </mrow> </mfenced> </mfrac> </mfenced> </mtd> <mtd> <mfenced open="" close=""> <msub><mi mathvariant="italic">t</mi> <mi mathvariant="italic">z</mi> </msub> </mfenced> </mtd> </mtr> <mtr> <mtd> <mn>0</mn> </mtd> <mtd> <mn>0</mn> </mtd> <mtd> <mn>0</mn> </mtd> <mtd> <mn>1</mn> </mtd> </mtr> </mtable> </mfenced> </math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <msub><mi mathvariant="italic">t</mi> <mi mathvariant="italic">x</mi> </msub> <mo>=</mo> <mrow> <mo>-</mo> <mfenced open="" close=""> <mfrac> <mfenced open="" close=""> <mrow> <mi mathvariant="italic">right</mi> <mo>+</mo> <mi mathvariant="italic">left</mi> </mrow> </mfenced> <mfenced open="" close=""> <mrow> <mi mathvariant="italic">right</mi> <mo>-</mo> <mi mathvariant="italic">left</mi> </mrow> </mfenced> </mfrac> </mfenced> </mrow> </mrow> </math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <msub><mi mathvariant="italic">t</mi> <mi mathvariant="italic">y</mi> </msub> <mo>=</mo> <mrow> <mo>-</mo> <mfenced open="" close=""> <mfrac> <mfenced open="" close=""> <mrow> <mi mathvariant="italic">top</mi> <mo>+</mo> <mi mathvariant="italic">bottom</mi> </mrow> </mfenced> <mfenced open="" close=""> <mrow> <mi mathvariant="italic">top</mi> <mo>-</mo> <mi mathvariant="italic">bottom</mi> </mrow> </mfenced> </mfrac> </mfenced> </mrow> </mrow> </math>` 
+
+.. |EQUATION_4_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <msub><mi mathvariant="italic">t</mi> <mi mathvariant="italic">z</mi> </msub> <mo>=</mo> <mrow> <mo>-</mo> <mfenced open="" close=""> <mfrac> <mfenced open="" close=""> <mrow> <mi mathvariant="italic">farVal</mi> <mo>+</mo> <mi mathvariant="italic">nearVal</mi> </mrow> </mfenced> <mfenced open="" close=""> <mrow> <mi mathvariant="italic">farVal</mi> <mo>-</mo> <mi mathvariant="italic">nearVal</mi> </mrow> </mfenced> </mfrac> </mfenced> </mrow> </mrow> </math>` 
+
+.. |EQUATION_5_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"> <mi mathvariant="italic">left</mi> <mi mathvariant="italic">bottom</mi> <mrow> <mo>-</mo> <mi mathvariant="italic">nearVal</mi> </mrow> </mfenced> </math>` 
+
+.. |EQUATION_6_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"> <mi mathvariant="italic">right</mi> <mi mathvariant="italic">top</mi> <mrow> <mo>-</mo> <mi mathvariant="italic">nearVal</mi> </mrow> </mfenced> </math>` 
+
+.. |EQUATION_7_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mo>-</mo> <mi mathvariant="italic">farVal</mi> </mrow> </math>` 
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

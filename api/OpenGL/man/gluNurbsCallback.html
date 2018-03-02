@@ -1,0 +1,318 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function gluNurbsCallback &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function gluNurbsCallbackData" href="gluNurbsCallbackData.html" />
+    <link rel="prev" title="function gluNextContour" href="gluNextContour.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="gluNurbsCallbackData.html" title="function gluNurbsCallbackData"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="gluNextContour.html" title="function gluNextContour"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glunurbscallback">
+<h1>function <cite>gluNurbsCallback</cite><a class="headerlink" href="#function-glunurbscallback" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Define a callback for a NURBS object</p>
+<dl class="function">
+<dt id="gluNurbsCallback">
+<tt class="descname">gluNurbsCallback</tt><big>(</big><big>)</big><a class="headerlink" href="#gluNurbsCallback" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>nurb</strong> &#8211; Specifies the NURBS object (created with <a class="reference internal" href="gluNewNurbsRenderer.html#gluNewNurbsRenderer" title="gluNewNurbsRenderer"><tt class="xref c c-func docutils literal"><span class="pre">gluNewNurbsRenderer()</span></tt></a>).</li>
+<li><strong>which</strong> &#8211; Specifies the callback being defined.
+Valid values are <tt class="docutils literal"><span class="pre">GLU_NURBS_BEGIN</span></tt>, <tt class="docutils literal"><span class="pre">GLU_NURBS_VERTEX</span></tt>, <tt class="docutils literal"><span class="pre">GLU_NURBS_NORMAL</span></tt>, <tt class="docutils literal"><span class="pre">GLU_NURBS_COLOR</span></tt>, <tt class="docutils literal"><span class="pre">GLU_NURBS_TEXTURE_COORD</span></tt>, <tt class="docutils literal"><span class="pre">GLU_NURBS_END</span></tt>, <tt class="docutils literal"><span class="pre">GLU_NURBS_BEGIN_DATA</span></tt>, <tt class="docutils literal"><span class="pre">GLU_NURBS_VERTEX_DATA</span></tt>, <tt class="docutils literal"><span class="pre">GLU_NURBS_NORMAL_DATA</span></tt>, <tt class="docutils literal"><span class="pre">GLU_NURBS_COLOR_DATA</span></tt>, <tt class="docutils literal"><span class="pre">GLU_NURBS_TEXTURE_COORD_DATA</span></tt>, <tt class="docutils literal"><span class="pre">GLU_NURBS_END_DATA</span></tt>, and <tt class="docutils literal"><span class="pre">GLU_NURBS_ERROR</span></tt>.</li>
+<li><strong>CallBackFunc</strong> &#8211; Specifies the function that the callback calls.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">gluNurbsCallback</tt><big>(</big>GLUnurbs* <em>&nbsp;nurb</em>, GLenum <em>&nbsp;which</em>, _GLUfuncptr <em>&nbsp;CallBackFunc</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="gluErrorString.html#gluErrorString" title="gluErrorString"><tt class="xref c c-func docutils literal"><span class="pre">gluErrorString()</span></tt></a>,
+<a class="reference internal" href="gluNewNurbsRenderer.html#gluNewNurbsRenderer" title="gluNewNurbsRenderer"><tt class="xref c c-func docutils literal"><span class="pre">gluNewNurbsRenderer()</span></tt></a>,
+<a class="reference internal" href="gluNurbsCallbackData.html#gluNurbsCallbackData" title="gluNurbsCallbackData"><tt class="xref c c-func docutils literal"><span class="pre">gluNurbsCallbackData()</span></tt></a>,
+<a class="reference internal" href="gluNurbsProperty.html#gluNurbsProperty" title="gluNurbsProperty"><tt class="xref c c-func docutils literal"><span class="pre">gluNurbsProperty()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#gluNurbsCallback" title="gluNurbsCallback"><tt class="xref c c-func docutils literal"><span class="pre">gluNurbsCallback()</span></tt></a> is used to define a callback to be used by a NURBS
+object.
+If the specified callback is already defined, then it is replaced.  If
+<em>CallBackFunc</em> is NULL, then this callback will not get
+invoked and the related data, if any, will be lost.</p>
+<p>Except the error callback, these callbacks are used by NURBS tessellator (when <tt class="docutils literal"><span class="pre">GLU_NURBS_MODE</span></tt> is set to be <tt class="docutils literal"><span class="pre">GLU_NURBS_TESSELLATOR</span></tt>) to return back the OpenGL
+polygon primitives resulting from the tessellation. Note that there are two
+versions of each callback: one with a user data pointer and one without. If both versions for a particular callback are specified then the callback with
+the user data pointer will be used. Note that &#8220;userData&#8221; is a copy of the pointer that was specified at the last call to <a class="reference internal" href="gluNurbsCallbackData.html#gluNurbsCallbackData" title="gluNurbsCallbackData"><tt class="xref c c-func docutils literal"><span class="pre">gluNurbsCallbackData()</span></tt></a>.</p>
+<p>The error callback function is effective no matter which value that
+<tt class="docutils literal"><span class="pre">GLU_NURBS_MODE</span></tt> is set to.
+All other callback functions are effective only when <tt class="docutils literal"><span class="pre">GLU_NURBS_MODE</span></tt>
+is set to <tt class="docutils literal"><span class="pre">GLU_NURBS_TESSELLATOR</span></tt>.</p>
+<p>The legal callbacks are as follows:</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">GLU_NURBS_BEGIN</span></tt></p>
+<blockquote>
+<div><p>The begin callback indicates the start of a primitive. The function
+takes a single argument of type GLenum, which can be one of
+<tt class="docutils literal"><span class="pre">GLU_LINES</span></tt>, <tt class="docutils literal"><span class="pre">GLU_LINE_STRIP</span></tt>, <tt class="docutils literal"><span class="pre">GLU_TRIANGLE_FAN</span></tt>, <tt class="docutils literal"><span class="pre">GLU_TRIANGLE_STRIP</span></tt>, <tt class="docutils literal"><span class="pre">GLU_TRIANGLES</span></tt>, or <tt class="docutils literal"><span class="pre">GLU_QUAD_STRIP</span></tt>. The
+default begin callback function is NULL. The function prototype
+for this callback looks like:</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="kt">void</span> <span class="n">begin</span><span class="p">(</span> <span class="n">GLenum</span> <span class="n">type</span> <span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLU_NURBS_BEGIN_DATA</span></tt></p>
+<blockquote>
+<div><p>The same as the <tt class="docutils literal"><span class="pre">GLU_NURBS_BEGIN</span></tt> callback except that it takes an
+additional pointer argument. This pointer is a copy of the pointer that
+was specified at the last call to <a class="reference internal" href="gluNurbsCallbackData.html#gluNurbsCallbackData" title="gluNurbsCallbackData"><tt class="xref c c-func docutils literal"><span class="pre">gluNurbsCallbackData()</span></tt></a>.  The
+default callback function is NULL. The function prototype for this
+callback function looks like:</p>
+<div class="highlight-c"><pre>void beginData(GLenum type, void \*userData);</pre>
+</div>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLU_NURBS_VERTEX</span></tt></p>
+<blockquote>
+<div><p>The vertex callback indicates a vertex of the primitive. The
+coordinates of the vertex are stored in the parameter &#8220;vertex&#8221;. All
+the generated vertices have dimension 3; that is, homogeneous
+coordinates have been transformed into affine coordinates. The default
+vertex callback function is NULL. The function prototype for this
+callback function looks like:</p>
+<div class="highlight-c"><pre>void vertex( GLfloat \*vertex );</pre>
+</div>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLU_NURBS_VERTEX_DATA</span></tt></p>
+<blockquote>
+<div><p>This is the same as the <tt class="docutils literal"><span class="pre">GLU_NURBS_VERTEX</span></tt> callback, except that
+it takes an additional pointer argument. This pointer is a copy of the
+pointer that was specified at the last call to
+<a class="reference internal" href="gluNurbsCallbackData.html#gluNurbsCallbackData" title="gluNurbsCallbackData"><tt class="xref c c-func docutils literal"><span class="pre">gluNurbsCallbackData()</span></tt></a>.  The default callback function is NULL. The
+function prototype for this callback function looks like:</p>
+<div class="highlight-c"><pre>void vertexData( GLfloat \*vertex, void \*userData );</pre>
+</div>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLU_NURBS_NORMAL</span></tt></p>
+<blockquote>
+<div><p>The normal callback is invoked as the vertex normal is generated.
+The components of the normal are stored in the parameter &#8220;normal.&#8221;
+In the case of a NURBS curve, the callback function is effective only when
+the user provides a normal map (<tt class="docutils literal"><span class="pre">GLU_MAP1_NORMAL</span></tt>).
+In the case of a NURBS surface, if a normal map (<tt class="docutils literal"><span class="pre">GLU_MAP2_NORMAL</span></tt>)
+is provided, then the generated normal is computed from the normal map.
+If a normal map is not provided, then a surface normal is computed in
+a manner similar to that described for evaluators when <tt class="docutils literal"><span class="pre">GLU_AUTO_NORMAL</span></tt>
+is enabled.
+The default normal callback function is NULL. The function
+prototype for this callback function looks like:</p>
+<div class="highlight-c"><pre>void normal( GLfloat \*normal );</pre>
+</div>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLU_NURBS_NORMAL_DATA</span></tt></p>
+<blockquote>
+<div><p>The same as the <tt class="docutils literal"><span class="pre">GLU_NURBS_NORMAL</span></tt> callback except that it
+takes an additional pointer argument. This pointer is a copy of the pointer
+that was specified at the last call to <a class="reference internal" href="gluNurbsCallbackData.html#gluNurbsCallbackData" title="gluNurbsCallbackData"><tt class="xref c c-func docutils literal"><span class="pre">gluNurbsCallbackData()</span></tt></a>.  The default callback function is NULL. The function prototype for this callback function looks like:</p>
+<div class="highlight-c"><pre>void normalData( GLfloat \*normal, void \*userData );</pre>
+</div>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLU_NURBS_COLOR</span></tt></p>
+<blockquote>
+<div><p>The color callback is invoked as the color of a vertex is generated.
+The components of the color are stored in the parameter &#8220;color.&#8221;
+This callback is effective only when the user provides a color map
+(<tt class="docutils literal"><span class="pre">GLU_MAP1_COLOR_4</span></tt> or <tt class="docutils literal"><span class="pre">GLU_MAP2_COLOR_4</span></tt>). &#8220;color&#8221; contains four
+components: R, G, B, A. The default color callback function is NULL.
+The prototype for this callback function looks like:</p>
+<div class="highlight-c"><pre>void color( GLfloat \*color );</pre>
+</div>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLU_NURBS_COLOR_DATA</span></tt></p>
+<blockquote>
+<div><p>The same as the <tt class="docutils literal"><span class="pre">GLU_NURBS_COLOR</span></tt> callback except that it
+takes an additional pointer argument. This pointer is a copy of the pointer
+that was specified at the last call to <a class="reference internal" href="gluNurbsCallbackData.html#gluNurbsCallbackData" title="gluNurbsCallbackData"><tt class="xref c c-func docutils literal"><span class="pre">gluNurbsCallbackData()</span></tt></a>.  The default callback function is NULL. The function prototype for this callback function looks like:</p>
+<div class="highlight-c"><pre>void colorData( GLfloat \*color, void \*userData );</pre>
+</div>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLU_NURBS_TEXTURE_COORD</span></tt></p>
+<blockquote>
+<div><p>The texture callback is invoked as the texture coordinates
+of a vertex are generated. These coordinates are stored in the parameter
+&#8220;texCoord.&#8221; The number of texture coordinates can be 1, 2, 3, or 4 depending
+on which type of texture map is specified
+(<tt class="docutils literal"><span class="pre">GLU_MAP1_TEXTURE_COORD_1</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_MAP1_TEXTURE_COORD_2</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_MAP1_TEXTURE_COORD_3</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_MAP1_TEXTURE_COORD_4</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_MAP2_TEXTURE_COORD_1</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_MAP2_TEXTURE_COORD_2</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_MAP2_TEXTURE_COORD_3</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_MAP2_TEXTURE_COORD_4</span></tt>).
+If no texture map is specified, this callback function will not be called.
+The default texture callback function is NULL. The function prototype
+for this callback function looks like:</p>
+<div class="highlight-c"><pre>void texCoord( GLfloat \*texCoord );</pre>
+</div>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLU_NURBS_TEXTURE_COORD_DATA</span></tt></p>
+<blockquote>
+<div><p>This is the same as the <tt class="docutils literal"><span class="pre">GLU_NURBS_TEXTURE_COORD</span></tt> callback, except that it
+takes an additional pointer argument. This pointer is a copy of the pointer
+that was specified at the last call to <a class="reference internal" href="gluNurbsCallbackData.html#gluNurbsCallbackData" title="gluNurbsCallbackData"><tt class="xref c c-func docutils literal"><span class="pre">gluNurbsCallbackData()</span></tt></a>.  The default callback function is NULL. The function prototype for this callback function looks like:</p>
+<div class="highlight-c"><pre>void texCoordData( GLfloat \*texCoord, void \*userData );</pre>
+</div>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLU_NURBS_END</span></tt></p>
+<blockquote>
+<div><p>The end callback is invoked at the end of a primitive. The default end callback function is NULL. The function prototype for this callback function looks like:</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="kt">void</span> <span class="n">end</span><span class="p">(</span> <span class="kt">void</span> <span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLU_NURBS_END_DATA</span></tt></p>
+<blockquote>
+<div><p>This is the same as the <tt class="docutils literal"><span class="pre">GLU_NURBS_END</span></tt> callback, except that it
+takes an additional pointer argument. This pointer is a copy of the pointer
+that was specified at the last call to <a class="reference internal" href="gluNurbsCallbackData.html#gluNurbsCallbackData" title="gluNurbsCallbackData"><tt class="xref c c-func docutils literal"><span class="pre">gluNurbsCallbackData()</span></tt></a>.  The default callback function is NULL. The function prototype for this callback function looks like:</p>
+<div class="highlight-c"><pre>void endData( void  \*userData );</pre>
+</div>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLU_NURBS_ERROR</span></tt></p>
+<blockquote>
+<div>The error function is called when an error is encountered.
+Its single argument
+is of type GLenum, and it indicates the specific error that occurred.
+There are 37 errors unique to NURBS, named
+<tt class="docutils literal"><span class="pre">GLU_NURBS_ERROR1</span></tt> through <tt class="docutils literal"><span class="pre">GLU_NURBS_ERROR37</span></tt>.
+Character strings describing these errors can be retrieved with
+<a class="reference internal" href="gluErrorString.html#gluErrorString" title="gluErrorString"><tt class="xref c c-func docutils literal"><span class="pre">gluErrorString()</span></tt></a>.</div></blockquote>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><a class="reference internal" href="#gluNurbsCallback" title="gluNurbsCallback"><tt class="xref c c-func docutils literal"><span class="pre">gluNurbsCallback()</span></tt></a> is available only if the GLU version is 1.2 or greater.</p>
+<p class="last">GLU version 1.2 supports only the <tt class="docutils literal"><span class="pre">GLU_ERROR</span></tt> parameter for
+<em>which</em>. The <tt class="docutils literal"><span class="pre">GLU_ERROR</span></tt> value is deprecated in GLU version 1.3 in
+favor of <tt class="docutils literal"><span class="pre">GLU_NURBS_ERROR</span></tt>.  All other accepted values for <em>CallBackFunc</em>
+are available only if the GLU version is 1.3 or greater.</p>
+</div>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="gluNextContour.html"
+                        title="previous chapter">function <cite>gluNextContour</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="gluNurbsCallbackData.html"
+                        title="next chapter">function <cite>gluNurbsCallbackData</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/gluNurbsCallback.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="gluNurbsCallbackData.html" title="function gluNurbsCallbackData"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="gluNextContour.html" title="function gluNextContour"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

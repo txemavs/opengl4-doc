@@ -1,0 +1,49 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glDeleteTransformFeedbacks`
+-------------------------------------
+
+.. source file man4/glDeleteTransformFeedbacks
+
+.. currentmodule:: OpenGL.GL
+
+Delete transform feedback objects
+
+.. c:function:: glDeleteTransformFeedbacks
+.. c:function:: void glDeleteTransformFeedbacks(GLsizei  n, const GLuint * ids)
+   :noindex: 
+
+
+   
+   :param n:
+      Specifies the number of transform feedback objects to delete.
+   
+   :param ids:
+      Specifies an array of names of transform feedback objects to delete.
+   
+
+.. seealso::
+
+   
+   :c:func:`glGenTransformFeedbacks`, :c:func:`glBindTransformFeedback`, :c:func:`glIsTransformFeedback`, :c:func:`glBeginTransformFeedback`, :c:func:`glPauseTransformFeedback`, :c:func:`glResumeTransformFeedback`, :c:func:`glEndTransformFeedback`
+   
+.. rubric:: Description
+
+
+:c:func:`glDeleteTransformFeedbacks` deletes the *n* transform feedback objects whose names are stored in the array *ids* . Unused names in *ids* are ignored, as is the name zero. After a transform feedback object is deleted, its name is again unused and it has no contents. If an active transform feedback object is deleted, its name immediately becomes unused, but the underlying object is not deleted until it is no longer active.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGet` with argument ``GL_TRANSFORM_FEEDBACK_BINDING``
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

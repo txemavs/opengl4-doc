@@ -1,0 +1,184 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glBindTransformFeedback &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glBindVertexArray" href="glBindVertexArray.html" />
+    <link rel="prev" title="function glBindTexture" href="glBindTexture.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glBindVertexArray.html" title="function glBindVertexArray"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glBindTexture.html" title="function glBindTexture"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glbindtransformfeedback">
+<h1>function <cite>glBindTransformFeedback</cite><a class="headerlink" href="#function-glbindtransformfeedback" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Bind a transform feedback object</p>
+<dl class="function">
+<dt id="glBindTransformFeedback">
+<tt class="descname">glBindTransformFeedback</tt><big>(</big><big>)</big><a class="headerlink" href="#glBindTransformFeedback" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>target</strong> &#8211; Specifies the target to which to bind the transform feedback object <em>id</em>. <em>target</em>
+must be <tt class="docutils literal"><span class="pre">GL_TRANSFORM_FEEDBACK</span></tt>.</li>
+<li><strong>id</strong> &#8211; Specifies the name of a transform feedback object reserved by <a class="reference internal" href="glGenTransformFeedbacks.html#glGenTransformFeedbacks" title="glGenTransformFeedbacks"><tt class="xref c c-func docutils literal"><span class="pre">glGenTransformFeedbacks()</span></tt></a>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glBindTransformFeedback</tt><big>(</big>GLenum <em>&nbsp;target</em>, GLuint <em>&nbsp;id</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glGenTransformFeedbacks.html#glGenTransformFeedbacks" title="glGenTransformFeedbacks"><tt class="xref c c-func docutils literal"><span class="pre">glGenTransformFeedbacks()</span></tt></a>,
+<a class="reference internal" href="glDeleteTransformFeedbacks.html#glDeleteTransformFeedbacks" title="glDeleteTransformFeedbacks"><tt class="xref c c-func docutils literal"><span class="pre">glDeleteTransformFeedbacks()</span></tt></a>,
+<a class="reference internal" href="glIsTransformFeedback.html#glIsTransformFeedback" title="glIsTransformFeedback"><tt class="xref c c-func docutils literal"><span class="pre">glIsTransformFeedback()</span></tt></a>,
+<a class="reference internal" href="glBeginTransformFeedback.html#glBeginTransformFeedback" title="glBeginTransformFeedback"><tt class="xref c c-func docutils literal"><span class="pre">glBeginTransformFeedback()</span></tt></a>,
+<a class="reference internal" href="glPauseTransformFeedback.html#glPauseTransformFeedback" title="glPauseTransformFeedback"><tt class="xref c c-func docutils literal"><span class="pre">glPauseTransformFeedback()</span></tt></a>,
+<a class="reference internal" href="glResumeTransformFeedback.html#glResumeTransformFeedback" title="glResumeTransformFeedback"><tt class="xref c c-func docutils literal"><span class="pre">glResumeTransformFeedback()</span></tt></a>,
+<a class="reference internal" href="glBeginTransformFeedback.html#glEndTransformFeedback" title="glEndTransformFeedback"><tt class="xref c c-func docutils literal"><span class="pre">glEndTransformFeedback()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glBindTransformFeedback" title="glBindTransformFeedback"><tt class="xref c c-func docutils literal"><span class="pre">glBindTransformFeedback()</span></tt></a> binds the transform feedback object with name <em>id</em> to the current
+GL state. <em>id</em> must be a name previously returned from a call to
+<a class="reference internal" href="glGenTransformFeedbacks.html#glGenTransformFeedbacks" title="glGenTransformFeedbacks"><tt class="xref c c-func docutils literal"><span class="pre">glGenTransformFeedbacks()</span></tt></a>. If <em>id</em> has not
+previously been bound, a new transform feedback object with name <em>id</em> and initialized with with the
+default transform state vector is created.</p>
+<p>In the initial state, a default transform feedback object is bound and treated as
+a transform feedback object with a name of zero. If the name zero is subsequently bound, the default
+transform feedback object is again bound to the GL state.</p>
+<p>While a transform feedback buffer object is bound, GL operations on the target
+to which it is bound affect the bound transform feedback object, and queries of the
+target to which a transform feedback object is bound return state from the bound
+object. When buffer objects are bound for transform feedback, they are attached to
+the currently bound transform feedback object. Buffer objects are used for trans-
+form feedback only if they are attached to the currently bound transform feedback
+object.</p>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>target</em> is not <tt class="docutils literal"><span class="pre">GL_TRANSFORM_FEEDBACK</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if the transform feedback operation is active on the currently bound transform feedback object, and that operation is not paused.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <em>id</em> is not zero or the name of a transform feedback object returned from a previous call to <a class="reference internal" href="glGenTransformFeedbacks.html#glGenTransformFeedbacks" title="glGenTransformFeedbacks"><tt class="xref c c-func docutils literal"><span class="pre">glGenTransformFeedbacks()</span></tt></a>, or if such a name has been deleted by <a class="reference internal" href="glDeleteTransformFeedbacks.html#glDeleteTransformFeedbacks" title="glDeleteTransformFeedbacks"><tt class="xref c c-func docutils literal"><span class="pre">glDeleteTransformFeedbacks()</span></tt></a>.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_TRANSFORM_FEEDBACK_BINDING</span></tt></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)2010 Khronos Group. Open Publication License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glBindTexture.html"
+                        title="previous chapter">function <cite>glBindTexture</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glBindVertexArray.html"
+                        title="next chapter">function <cite>glBindVertexArray</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glBindTransformFeedback.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glBindVertexArray.html" title="function glBindVertexArray"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glBindTexture.html" title="function glBindTexture"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

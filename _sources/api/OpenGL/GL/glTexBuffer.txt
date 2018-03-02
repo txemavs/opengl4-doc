@@ -1,0 +1,71 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glTexBuffer`
+----------------------
+
+.. source file man4/glTexBuffer
+
+.. currentmodule:: OpenGL.GL
+
+Attach the storage for a buffer object to the active buffer texture
+
+.. c:function:: glTexBuffer
+.. c:function:: void glTexBuffer(GLenum  target, GLenum  internalFormat, Gluint buffer)
+   :noindex: 
+
+
+   
+   :param target:
+      Specifies the target of the operation and must be ``GL_TEXTURE_BUFFER``.
+   
+   :param internalFormat:
+      Specifies the internal format of the data in the store belonging to *buffer* .
+   
+   :param buffer:
+      Specifies the name of the buffer object whose storage to attach to the active buffer texture.
+   
+
+.. seealso::
+
+   
+   :c:func:`glGenBuffers`, :c:func:`glBindBuffer`, :c:func:`glBufferData`, :c:func:`glDeleteBuffers`, :c:func:`glGenTextures`, :c:func:`glBindTexture`, :c:func:`glDeleteTextures`
+   
+.. rubric:: Description
+
+
+:c:func:`glTexBuffer` attaches the storage for the buffer object named *buffer* to the active buffer texture, and specifies the internal format for the texel array found in the attached buffer object. If *buffer* is zero, any buffer object attached to the buffer texture is detached and no new buffer object is attached. If *buffer* is non-zero, it must be the name of an existing buffer object. *target* must be ``GL_TEXTURE_BUFFER``. *internalformat* specifies the storage format, and must be one of the following sized internal formats:
+
+When a buffer object is attached to a buffer texture, the buffer object's data store is taken as the texture's texel array. The number of texels in the buffer texture's texel array is given by
+
+where *`buffer_size`* is the size of the buffer object, in basic machine units and components and base type are the element count and base data type for elements, as specified in the table above. The number of texels in the texel array is then clamped to the implementation-dependent limit ``GL_MAX_TEXTURE_BUFFER_SIZE``. When a buffer texture is accessed in a shader, the results of a texel fetch are undefined if the specified texel coordinate is negative, or greater than or equal to the clamped number of texels in the texel array.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGet` with argument ``GL_MAX_TEXTURE_BUFFER_SIZE``
+   * :c:func:`glGet` with argument ``GL_TEXTURE_BINDING_BUFFER``
+   * :c:func:`glGetTexLevelParameter` with argument ``GL_TEXTURE_BUFFER_DATA_STORE_BINDING``
+
+**Errors:**
+
+   * ``GL_INVALID_ENUM`` is generated if *target* is not ``GL_TEXTURE_BUFFER``.
+   * ``GL_INVALID_ENUM`` is generated if *internalFormat* is not one of the accepted tokens.
+   * ``GL_INVALID_OPERATION`` is generated if *buffer* is not zero or the name of an existing buffer object.
+
+
+
+.. note::
+
+   * :c:func:`glTexBuffer` is available only if the GL version is 3.1 or greater.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

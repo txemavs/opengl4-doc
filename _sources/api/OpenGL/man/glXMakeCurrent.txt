@@ -1,0 +1,145 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:28
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glXMakeCurrent.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glXMakeCurrent`
+-------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Attach a GLX context to a window or a GLX pixmap
+
+.. c:function:: glXMakeCurrent
+
+
+         :param dpy:
+
+                  Specifies the connection to the X server.
+
+         :param drawable:
+
+                  Specifies a GLX drawable.
+                  Must be either an X window ID or a GLX pixmap ID.
+
+         :param ctx:
+
+                  Specifies a GLX rendering context that is to be attached to *drawable*\ .
+
+.. rubric:: Specification
+
+.. c:function:: Bool glXMakeCurrent(Display *  dpy, GLXDrawable  drawable, GLXContext  ctx)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glXCreateContext`\ ,
+            :c:func:`glXCreateGLXPixmap`
+            :c:func:`glXGetCurrentContext`\ ,
+            :c:func:`glXGetCurrentDisplay`\ ,
+            :c:func:`glXGetCurrentDrawable`\ ,
+            :c:func:`glXGetCurrentReadDrawable`\ ,
+            :c:func:`glXMakeContextCurrent`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glXMakeCurrent` does two things:
+It makes *ctx* the current GLX rendering context of the calling thread,
+replacing the previously current context if there was one,
+and it attaches *ctx* to a GLX drawable,
+either a window or a GLX pixmap.
+As a result of these two actions,
+subsequent GL rendering calls
+use rendering context *ctx* to modify GLX drawable *drawable* (for
+reading and writing).
+Because :c:func:`glXMakeCurrent` always replaces the current rendering context with *ctx*\ ,
+there can be only one current context per thread.
+
+
+Pending commands to the
+previous context, if any, are flushed before it is released.
+
+
+The first time *ctx* is made current to any thread,
+its viewport is set to the full size of *drawable*\ .
+Subsequent calls by any thread to :c:func:`glXMakeCurrent` with *ctx*
+have no effect on its viewport.
+
+
+To release the current context without assigning a new one,
+call :c:func:`glXMakeCurrent` with *drawable* set to ``None`` and *ctx*
+set to ``NULL``\ .
+
+
+:c:func:`glXMakeCurrent` returns ``True`` if it is successful,
+``False`` otherwise.
+If ``False`` is returned, the previously current rendering context
+and drawable (if any) remain unchanged.
+
+
+.. note::
+
+
+   A :strong:`process` is a single-execution environment,
+   implemented in a single address space,
+   consisting of one or more threads.
+
+
+   A :strong:`thread` is one of a set of subprocesses that share
+   a single address space,
+   but maintain separate program counters,
+   stack spaces,
+   and other related global data.
+   A :strong:`thread` that is the only member of its subprocess group
+   is equivalent to a :strong:`process`\ .
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``BadMatch`` is generated if *drawable* was not created with the same X screen and visual as *ctx*\ . It is also generated if *drawable* is ``None`` and *ctx* is not ``NULL``\ .
+* ``BadAccess`` is generated if *ctx* was current to another thread at the time :c:func:`glXMakeCurrent` was called.
+* ``GLXBadDrawable`` is generated if *drawable* is not a valid GLX drawable.
+* ``GLXBadContext`` is generated if *ctx* is not a valid GLX context.
+* ``GLXBadContextState`` is generated if :c:func:`glXMakeCurrent` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`\ .
+* ``GLXBadContextState`` is also generated if the rendering context current to the calling thread has GL renderer state ``GLX_FEEDBACK`` or ``GLX_SELECT``\ .
+* ``GLXBadCurrentWindow`` is generated if there are pending GL commands for the previous context and the current drawable is a window that is no longer valid.
+* ``BadAlloc`` may be generated if the server has delayed allocation of ancillary buffers until :c:func:`glXMakeCurrent` is called, only to find that it has insufficient resources to complete the allocation.
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glXMakeCurrent'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

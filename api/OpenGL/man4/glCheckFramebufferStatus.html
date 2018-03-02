@@ -1,0 +1,176 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glCheckFramebufferStatus &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glClampColor" href="glClampColor.html" />
+    <link rel="prev" title="function glBufferSubData" href="glBufferSubData.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glClampColor.html" title="function glClampColor"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glBufferSubData.html" title="function glBufferSubData"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glcheckframebufferstatus">
+<h1>function <cite>glCheckFramebufferStatus</cite><a class="headerlink" href="#function-glcheckframebufferstatus" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Check the completeness status of a framebuffer</p>
+<dl class="function">
+<dt id="glCheckFramebufferStatus">
+<tt class="descname">glCheckFramebufferStatus</tt><big>(</big><big>)</big><a class="headerlink" href="#glCheckFramebufferStatus" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>target</strong> &#8211; Specify the target of the framebuffer completeness check.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+GLenum <tt class="descname">glCheckFramebufferStatus</tt><big>(</big>GLenum <em>&nbsp;target</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glGenFramebuffers.html#glGenFramebuffers" title="glGenFramebuffers"><tt class="xref c c-func docutils literal"><span class="pre">glGenFramebuffers()</span></tt></a>,
+<a class="reference internal" href="glDeleteFramebuffers.html#glDeleteFramebuffers" title="glDeleteFramebuffers"><tt class="xref c c-func docutils literal"><span class="pre">glDeleteFramebuffers()</span></tt></a>
+<a class="reference internal" href="glBindFramebuffer.html#glBindFramebuffer" title="glBindFramebuffer"><tt class="xref c c-func docutils literal"><span class="pre">glBindFramebuffer()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glCheckFramebufferStatus" title="glCheckFramebufferStatus"><tt class="xref c c-func docutils literal"><span class="pre">glCheckFramebufferStatus()</span></tt></a> queries the completeness status of the framebuffer object currently bound to <em>target</em>.
+<em>target</em> must be <tt class="docutils literal"><span class="pre">GL_DRAW_FRAMEBUFFER</span></tt>, <tt class="docutils literal"><span class="pre">GL_READ_FRAMEBUFFER</span></tt> or <tt class="docutils literal"><span class="pre">GL_FRAMEBUFFER</span></tt>.
+<tt class="docutils literal"><span class="pre">GL_FRAMEBUFFER</span></tt> is equivalent to <tt class="docutils literal"><span class="pre">GL_DRAW_FRAMEBUFFER</span></tt>.</p>
+<p>The return value is <tt class="docutils literal"><span class="pre">GL_FRAMEBUFFER_COMPLETE</span></tt> if the framebuffer bound to <em>target</em> is complete. Otherwise,
+the return value is determined as follows:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_FRAMEBUFFER_UNDEFINED</span></tt> is returned if <em>target</em> is the default framebuffer, but the default framebuffer does not exist.</li>
+<li><tt class="docutils literal"><span class="pre">GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT</span></tt> is returned if any of the framebuffer attachment points are framebuffer incomplete.</li>
+<li><tt class="docutils literal"><span class="pre">GL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT</span></tt> is returned if the framebuffer does not have at least one image attached to it.</li>
+<li><tt class="docutils literal"><span class="pre">GL_FRAMEBUFFER_INCOMPLETE_DRAW_BUFFER</span></tt> is returned if the value of <tt class="docutils literal"><span class="pre">GL_FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE</span></tt> is <tt class="docutils literal"><span class="pre">GL_NONE</span></tt> for any color attachment point(s) named by <tt class="docutils literal"><span class="pre">GL_DRAWBUFFERi</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_FRAMEBUFFER_INCOMPLETE_READ_BUFFER</span></tt> is returned if <tt class="docutils literal"><span class="pre">GL_READ_BUFFER</span></tt> is not <tt class="docutils literal"><span class="pre">GL_NONE</span></tt> and the value of <tt class="docutils literal"><span class="pre">GL_FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE</span></tt> is <tt class="docutils literal"><span class="pre">GL_NONE</span></tt> for the color attachment point named by <tt class="docutils literal"><span class="pre">GL_READ_BUFFER</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_FRAMEBUFFER_UNSUPPORTED</span></tt> is returned if the combination of internal formats of the attached images violates an implementation-dependent set of restrictions.</li>
+<li><tt class="docutils literal"><span class="pre">GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE</span></tt> is returned if the value of <tt class="docutils literal"><span class="pre">GL_RENDERBUFFER_SAMPLES</span></tt> is not the same for all attached renderbuffers; if the value of <tt class="docutils literal"><span class="pre">GL_TEXTURE_SAMPLES</span></tt> is the not same for all attached textures; or, if the attached images are a mix of renderbuffers and textures, the value of <tt class="docutils literal"><span class="pre">GL_RENDERBUFFER_SAMPLES</span></tt> does not match the value of <tt class="docutils literal"><span class="pre">GL_TEXTURE_SAMPLES</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE</span></tt> is also returned if the value of <tt class="docutils literal"><span class="pre">GL_TEXTURE_FIXED_SAMPLE_LOCATIONS</span></tt> is not the same for all attached textures; or, if the attached images are a mix of renderbuffers and textures, the value of <tt class="docutils literal"><span class="pre">GL_TEXTURE_FIXED_SAMPLE_LOCATIONS</span></tt> is not <tt class="docutils literal"><span class="pre">GL_TRUE</span></tt> for all attached textures.</li>
+<li><tt class="docutils literal"><span class="pre">GL_FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS</span></tt> is returned if any framebuffer attachment is layered, and any populated attachment is not layered, or if all populated color attachments are not from textures of the same target.</li>
+</ul>
+</div></blockquote>
+<p>Additionally, if an error occurs, zero is returned.</p>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>target</em> is not <tt class="docutils literal"><span class="pre">GL_DRAW_FRAMEBUFFER</span></tt>, <tt class="docutils literal"><span class="pre">GL_READ_FRAMEBUFFER</span></tt> or <tt class="docutils literal"><span class="pre">GL_FRAMEBUFFER</span></tt>.</li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)2010 Khronos Group. Open Publication License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glBufferSubData.html"
+                        title="previous chapter">function <cite>glBufferSubData</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glClampColor.html"
+                        title="next chapter">function <cite>glClampColor</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glCheckFramebufferStatus.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glClampColor.html" title="function glClampColor"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glBufferSubData.html" title="function glBufferSubData"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

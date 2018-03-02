@@ -1,0 +1,72 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:30
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glIsTransformFeedback.xml'
+.. (c)2010 Khronos Group.
+.. See license details at http://opencontent.org/openpub/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glIsTransformFeedback`
+--------------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Determine if a name corresponds to a transform feedback object
+
+.. c:function:: glIsTransformFeedback
+
+
+         :param id:
+
+                  Specifies a value that may be the name of a transform feedback object.
+
+.. rubric:: Specification
+
+.. c:function:: GLboolean glIsTransformFeedback(GLuint  id)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glGenTransformFeedbacks`\ ,
+            :c:func:`glBindTransformFeedback`\ ,
+            :c:func:`glDeleteTransformFeedbacks`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glIsTransformFeedback` returns ``GL_TRUE`` if *id* is currently the name of a transform feedback
+object. If *id* is zero, or if ``id`` is not the name of a transform feedback object, or if an error
+occurs, :c:func:`glIsTransformFeedback` returns ``GL_FALSE``\ . If *id* is a name returned by
+:c:func:`glGenTransformFeedbacks`\ , but that has not yet been bound through a call to
+:c:func:`glBindTransformFeedback`\ , then the name is not a transform feedback object and :c:func:`glIsTransformFeedback`
+returns ``GL_FALSE``\ .
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glIsTransformFeedback'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )2010 Khronos Group. Open Publication License.
+

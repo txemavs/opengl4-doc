@@ -1,0 +1,53 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glFlushMappedBufferRange`
+-----------------------------------
+
+.. source file man4/glFlushMappedBufferRange
+
+.. currentmodule:: OpenGL.GL
+
+Indicate modifications to a range of a mapped buffer
+
+.. c:function:: glFlushMappedBufferRange
+.. c:function:: GLsync glFlushMappedBufferRange(GLenum  target, GLintptr  offset, GLsizeiptr  length)
+   :noindex: 
+
+
+   
+   :param target:
+      Specifies the target of the flush operation. *target* must be ``GL_ARRAY_BUFFER``, ``GL_COPY_READ_BUFFER``, ``GL_COPY_WRITE_BUFFER``, ``GL_ELEMENT_ARRAY_BUFFER``, ``GL_PIXEL_PACK_BUFFER``, ``GL_PIXEL_UNPACK_BUFFER``, ``GL_TEXTURE_BUFFER``, ``GL_TRANSFORM_FEEDBACK_BUFFER``, or ``GL_UNIFORM_BUFFER``.
+   
+   :param offset:
+      Specifies the start of the buffer subrange, in basic machine units.
+   
+   :param length:
+      Specifies the length of the buffer subrange, in basic machine units.
+   
+
+.. seealso::
+
+   
+   :c:func:`glMapBufferRange`, :c:func:`glMapBuffer`, :c:func:`glUnmapBuffer`
+   
+.. rubric:: Description
+
+
+:c:func:`glFlushMappedBufferRange` indicates that modifications have been made to a range of a mapped buffer. The buffer must previously have been mapped with the ``GL_MAP_FLUSH_EXPLICIT`` flag. *offset* and *length* indicate the modified subrange of the mapping, in basic units. The specified subrange to flush is relative to the start of the currently mapped range of the buffer. :c:func:`glFlushMappedBufferRange` may be called multiple times to indicate distinct subranges of the mapping which require flushing.
+
+
+**Errors:**
+
+   * ``GL_INVALID_VALUE`` is generated if *offset* or *length* is negative, or if *offset* + *length* exceeds the size of the mapping.
+   * ``GL_INVALID_OPERATION`` is generated if zero is bound to *target* .
+   * ``GL_INVALID_OPERATION`` is generated if the buffer bound to *target* is not mapped, or is mapped without the ``GL_MAP_FLUSH_EXPLICIT`` flag.
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

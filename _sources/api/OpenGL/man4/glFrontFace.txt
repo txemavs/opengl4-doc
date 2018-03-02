@@ -1,0 +1,106 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:29
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glFrontFace.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glFrontFace`
+----------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Define front- and back-facing polygons
+
+.. c:function:: glFrontFace
+
+
+         :param mode:
+
+                  Specifies the orientation of front-facing polygons.
+                  ``GL_CW`` and ``GL_CCW`` are accepted.
+                  The initial value is ``GL_CCW``\ .
+
+.. rubric:: Specification
+
+.. c:function:: void glFrontFace(GLenum  mode)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glCullFace`\ ,
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+In a scene composed entirely of opaque closed surfaces,
+back-facing polygons are never visible.
+Eliminating these invisible polygons has the obvious benefit
+of speeding up the rendering of the image.
+To enable and disable elimination of back-facing polygons, call :c:func:`glEnable`
+and :c:func:`glDisable` with argument ``GL_CULL_FACE``\ .
+
+
+The projection of a polygon to window coordinates is said to have
+clockwise winding if an imaginary object following the path
+from its first vertex,
+its second vertex,
+and so on,
+to its last vertex,
+and finally back to its first vertex,
+moves in a clockwise direction about the interior of the polygon.
+The polygon's winding is said to be counterclockwise if the imaginary
+object following the same path moves in a counterclockwise direction
+about the interior of the polygon.
+:c:func:`glFrontFace` specifies whether polygons with clockwise winding in window coordinates,
+or counterclockwise winding in window coordinates,
+are taken to be front-facing.
+Passing ``GL_CCW`` to *mode* selects counterclockwise polygons as
+front-facing;
+``GL_CW`` selects clockwise polygons as front-facing.
+By default, counterclockwise polygons are taken to be front-facing.
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_ENUM`` is generated if *mode* is not an accepted value.
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGet` with argument ``GL_FRONT_FACE``
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glFrontFace'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

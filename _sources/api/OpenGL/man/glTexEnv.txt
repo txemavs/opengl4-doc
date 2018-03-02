@@ -1,0 +1,803 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:27
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glTexEnv.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glTexEnv`
+-------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Set texture environment parameters
+
+.. c:function:: glTexEnv
+
+
+         :param target:
+
+                  Specifies a texture environment.
+                  May be ``GL_TEXTURE_ENV``\ , ``GL_TEXTURE_FILTER_CONTROL`` or ``GL_POINT_SPRITE``\ .
+
+         :param pname:
+
+                  Specifies the symbolic name of a single-valued texture environment parameter.
+                  May be either ``GL_TEXTURE_ENV_MODE``\ , ``GL_TEXTURE_LOD_BIAS``\ ,
+                  ``GL_COMBINE_RGB``\ ,
+                  ``GL_COMBINE_ALPHA``\ ,
+                  ``GL_SRC0_RGB``\ ,
+                  ``GL_SRC1_RGB``\ ,
+                  ``GL_SRC2_RGB``\ ,
+                  ``GL_SRC0_ALPHA``\ ,
+                  ``GL_SRC1_ALPHA``\ ,
+                  ``GL_SRC2_ALPHA``\ ,
+                  ``GL_OPERAND0_RGB``\ ,
+                  ``GL_OPERAND1_RGB``\ ,
+                  ``GL_OPERAND2_RGB``\ ,
+                  ``GL_OPERAND0_ALPHA``\ ,
+                  ``GL_OPERAND1_ALPHA``\ ,
+                  ``GL_OPERAND2_ALPHA``\ ,
+                  ``GL_RGB_SCALE``\ ,
+                  ``GL_ALPHA_SCALE``\ , or
+                  ``GL_COORD_REPLACE``\ .
+
+         :param param:
+
+                  Specifies a single symbolic constant, one of ``GL_ADD``\ ,
+                  ``GL_ADD_SIGNED``\ , ``GL_INTERPOLATE``\ , ``GL_MODULATE``\ , ``GL_DECAL``\ ,
+                  ``GL_BLEND``\ , ``GL_REPLACE``\ , ``GL_SUBTRACT``\ , ``GL_COMBINE``\ ,
+                  ``GL_TEXTURE``\ , ``GL_CONSTANT``\ , ``GL_PRIMARY_COLOR``\ , ``GL_PREVIOUS``\ ,
+                  ``GL_SRC_COLOR``\ , ``GL_ONE_MINUS_SRC_COLOR``\ , ``GL_SRC_ALPHA``\ ,
+                  ``GL_ONE_MINUS_SRC_ALPHA``\ ,
+                  a single boolean value for the point sprite texture coordinate replacement,
+                  a single floating-point value for the texture level-of-detail bias,
+                  or 1.0, 2.0, or 4.0 when specifying the ``GL_RGB_SCALE`` or ``GL_ALPHA_SCALE``\ .
+
+.. rubric:: Specification
+
+.. c:function:: void glTexEnvf(GLenum  target, GLenum  pname, GLfloat  param, GLenum  target, GLenum  pname, GLint  param)
+.. c:function:: void glTexEnvfv(GLenum  target, GLenum  pname, const GLfloat *  params, GLenum  target, GLenum  pname, const GLint *  params)
+
+
+.. seealso::
+
+
+            :c:func:`glActiveTexture`\ ,
+            :c:func:`glCopyPixels`\ ,
+            :c:func:`glCopyTexImage1D`\ ,
+            :c:func:`glCopyTexImage2D`\ ,
+            :c:func:`glCopyTexSubImage1D`\ ,
+            :c:func:`glCopyTexSubImage2D`\ ,
+            :c:func:`glCopyTexSubImage3D`\ ,
+            :c:func:`glTexImage1D`\ ,
+            :c:func:`glTexImage2D`\ ,
+            :c:func:`glTexImage3D`\ ,
+            :c:func:`glTexParameter`\ ,
+            :c:func:`glTexSubImage1D`\ ,
+            :c:func:`glTexSubImage2D`\ ,
+            :c:func:`glTexSubImage3D`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Parameters
+
+..
+
+
+      *target*
+
+
+            Specifies a texture environment.
+            May be either ``GL_TEXTURE_ENV``\ , or ``GL_TEXTURE_FILTER_CONTROL``\ .
+
+
+      *pname*
+
+
+            Specifies the symbolic name of a texture environment parameter.
+            Accepted values are ``GL_TEXTURE_ENV_MODE``\ , ``GL_TEXTURE_ENV_COLOR``\ , or
+            ``GL_TEXTURE_LOD_BIAS``\ .
+
+
+      *params*
+
+
+            Specifies a pointer to a parameter array that contains
+            either a single symbolic constant, single floating-point number, or an RGBA
+            color.
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+A texture environment specifies how texture values are interpreted when a
+fragment is textured.  When *target* is ``GL_TEXTURE_FILTER_CONTROL``\ ,
+*pname* must be ``GL_TEXTURE_LOD_BIAS``\ .  When *target* is
+``GL_TEXTURE_ENV``\ , *pname* can be ``GL_TEXTURE_ENV_MODE``\ ,
+``GL_TEXTURE_ENV_COLOR``\ , ``GL_COMBINE_RGB``\ , ``GL_COMBINE_ALPHA``\ ,
+``GL_RGB_SCALE``\ , ``GL_ALPHA_SCALE``\ ,
+``GL_SRC0_RGB``\ , ``GL_SRC1_RGB``\ , ``GL_SRC2_RGB``\ ,
+``GL_SRC0_ALPHA``\ , ``GL_SRC1_ALPHA``\ , or ``GL_SRC2_ALPHA``\ .
+
+
+If *pname* is ``GL_TEXTURE_ENV_MODE``\ ,
+then *params* is (or points to) the symbolic name of a texture function.
+Six texture functions may be specified:
+``GL_ADD``\ ,
+``GL_MODULATE``\ ,
+``GL_DECAL``\ ,
+``GL_BLEND``\ ,
+``GL_REPLACE``\ , or
+``GL_COMBINE``\ .
+
+
+The following table shows the correspondence of filtered texture
+values
+|EQUATION_1_|\ ,
+|EQUATION_2_|\ ,
+|EQUATION_3_|\ ,
+|EQUATION_4_|\ ,
+|EQUATION_5_|\ ,
+|EQUATION_6_| to texture source components. |EQUATION_7_| and |EQUATION_8_| are used by the texture functions described below.
+
+
++------------------------------+---------------------------------------------------------+
+| Texture Base Internal Format | |EQUATION_9_|                                           |
++------------------------------+---------------------------------------------------------+
+| ``GL_ALPHA``                 | (0, 0, 0)                                               |
++------------------------------+---------------------------------------------------------+
+| ``GL_LUMINANCE``             | ( |EQUATION_12_|\ , |EQUATION_13_|\ , |EQUATION_14_|\ ) |
++------------------------------+---------------------------------------------------------+
+| ``GL_LUMINANCE_ALPHA``       | ( |EQUATION_15_|\ , |EQUATION_16_|\ , |EQUATION_17_|\ ) |
++------------------------------+---------------------------------------------------------+
+| ``GL_INTENSITY``             | ( |EQUATION_19_|\ , |EQUATION_20_|\ , |EQUATION_21_|\ ) |
++------------------------------+---------------------------------------------------------+
+| ``GL_RGB``                   | ( |EQUATION_23_|\ , |EQUATION_24_|\ , |EQUATION_25_|\ ) |
++------------------------------+---------------------------------------------------------+
+| ``GL_RGBA``                  | ( |EQUATION_26_|\ , |EQUATION_27_|\ , |EQUATION_28_|\ ) |
++------------------------------+---------------------------------------------------------+
+
+
+A texture function acts on the fragment to be textured using
+the texture image value that applies to the fragment
+(see :c:func:`glTexParameter`\ )
+and produces an RGBA color for that fragment.
+The following table shows how the RGBA color is produced for each
+of the first five texture functions that can be chosen. |EQUATION_30_| is a triple of color values (RGB) and |EQUATION_31_| is the associated alpha value.
+RGBA values extracted from a texture image are in the range [0,1].
+The subscript |EQUATION_32_| refers to the color computed from the previous texture stage (or the incoming fragment if processing texture stage 0),
+the subscript |EQUATION_33_| to the texture source color,
+the subscript |EQUATION_34_| to the texture environment color,
+and the subscript |EQUATION_35_| indicates a value produced by the texture function.
+
+
++------------------------------+----------------+-------------------------+--------------------------+-----------------------+-----------------------+---------------------+
+| Texture Base Internal Format | ``Value``      | ``GL_REPLACE`` Function | ``GL_MODULATE`` Function | ``GL_DECAL`` Function | ``GL_BLEND`` Function | ``GL_ADD`` Function |
++------------------------------+----------------+-------------------------+--------------------------+-----------------------+-----------------------+---------------------+
+| ``GL_ALPHA``                 | |EQUATION_36_| | |EQUATION_37_|          | |EQUATION_38_|           | undefined             | |EQUATION_39_|        | |EQUATION_40_|      |
++------------------------------+----------------+-------------------------+--------------------------+-----------------------+-----------------------+---------------------+
+|                              | |EQUATION_41_| | |EQUATION_42_|          | |EQUATION_43_|           |                       | |EQUATION_44_|        | |EQUATION_45_|      |
++------------------------------+----------------+-------------------------+--------------------------+-----------------------+-----------------------+---------------------+
+| ``GL_LUMINANCE``             | |EQUATION_46_| | |EQUATION_47_|          | |EQUATION_48_|           | undefined             | |EQUATION_49_|        | |EQUATION_50_|      |
++------------------------------+----------------+-------------------------+--------------------------+-----------------------+-----------------------+---------------------+
+| (or 1)                       | |EQUATION_51_| | |EQUATION_52_|          | |EQUATION_53_|           |                       | |EQUATION_54_|        | |EQUATION_55_|      |
++------------------------------+----------------+-------------------------+--------------------------+-----------------------+-----------------------+---------------------+
+| ``GL_LUMINANCE_ALPHA``       | |EQUATION_56_| | |EQUATION_57_|          | |EQUATION_58_|           | undefined             | |EQUATION_59_|        | |EQUATION_60_|      |
++------------------------------+----------------+-------------------------+--------------------------+-----------------------+-----------------------+---------------------+
+| (or 2)                       | |EQUATION_61_| | |EQUATION_62_|          | |EQUATION_63_|           |                       | |EQUATION_64_|        | |EQUATION_65_|      |
++------------------------------+----------------+-------------------------+--------------------------+-----------------------+-----------------------+---------------------+
+| ``GL_INTENSITY``             | |EQUATION_66_| | |EQUATION_67_|          | |EQUATION_68_|           | undefined             | |EQUATION_69_|        | |EQUATION_70_|      |
++------------------------------+----------------+-------------------------+--------------------------+-----------------------+-----------------------+---------------------+
+|                              | |EQUATION_71_| | |EQUATION_72_|          | |EQUATION_73_|           |                       | |EQUATION_74_|        | |EQUATION_75_|      |
++------------------------------+----------------+-------------------------+--------------------------+-----------------------+-----------------------+---------------------+
+| ``GL_RGB``                   | |EQUATION_76_| | |EQUATION_77_|          | |EQUATION_78_|           | |EQUATION_79_|        | |EQUATION_80_|        | |EQUATION_81_|      |
++------------------------------+----------------+-------------------------+--------------------------+-----------------------+-----------------------+---------------------+
+| (or 3)                       | |EQUATION_82_| | |EQUATION_83_|          | |EQUATION_84_|           | |EQUATION_85_|        | |EQUATION_86_|        | |EQUATION_87_|      |
++------------------------------+----------------+-------------------------+--------------------------+-----------------------+-----------------------+---------------------+
+| ``GL_RGBA``                  | |EQUATION_88_| | |EQUATION_89_|          | |EQUATION_90_|           | |EQUATION_91_|        | |EQUATION_92_|        | |EQUATION_93_|      |
++------------------------------+----------------+-------------------------+--------------------------+-----------------------+-----------------------+---------------------+
+| (or 4)                       | |EQUATION_94_| | |EQUATION_95_|          | |EQUATION_96_|           | |EQUATION_97_|        | |EQUATION_98_|        | |EQUATION_99_|      |
++------------------------------+----------------+-------------------------+--------------------------+-----------------------+-----------------------+---------------------+
+
+
+If *pname* is ``GL_TEXTURE_ENV_MODE``\ , and *params* is ``GL_COMBINE``\ , the
+form of the texture function depends on the values of ``GL_COMBINE_RGB``
+and ``GL_COMBINE_ALPHA``\ .
+
+
+The following describes how the texture sources, as specified by
+``GL_SRC0_RGB``\ , ``GL_SRC1_RGB``\ , ``GL_SRC2_RGB``\ ,
+``GL_SRC0_ALPHA``\ , ``GL_SRC1_ALPHA``\ , and ``GL_SRC2_ALPHA``\ ,
+are combined to produce a final texture color. In the following tables,
+``GL_SRC0_c`` is represented by |EQUATION_100_|\ ,
+``GL_SRC1_c`` is
+represented by |EQUATION_101_|\ ,
+and ``GL_SRC2_c`` is represented by |EQUATION_102_|\ .
+
+
+``GL_COMBINE_RGB`` accepts any of ``GL_REPLACE``\ , ``GL_MODULATE``\ ,
+``GL_ADD``\ , ``GL_ADD_SIGNED``\ , ``GL_INTERPOLATE``\ , ``GL_SUBTRACT``\ ,
+``GL_DOT3_RGB``\ , or ``GL_DOT3_RGBA``\ .
+
+
++-------------------------------------+----------------------------+
+| :strong:```GL_COMBINE_RGB```        | :strong:`Texture Function` |
++-------------------------------------+----------------------------+
+| ``GL_REPLACE``                      | |EQUATION_103_|            |
++-------------------------------------+----------------------------+
+| ``GL_MODULATE``                     | |EQUATION_104_|            |
++-------------------------------------+----------------------------+
+| ``GL_ADD``                          | |EQUATION_105_|            |
++-------------------------------------+----------------------------+
+| ``GL_ADD_SIGNED``                   | |EQUATION_106_|            |
++-------------------------------------+----------------------------+
+| ``GL_INTERPOLATE``                  | |EQUATION_107_|            |
++-------------------------------------+----------------------------+
+| ``GL_SUBTRACT``                     | |EQUATION_108_|            |
++-------------------------------------+----------------------------+
+| ``GL_DOT3_RGB`` or ``GL_DOT3_RGBA`` | |EQUATION_109_|            |
++-------------------------------------+----------------------------+
+
+
+The scalar results for ``GL_DOT3_RGB`` and ``GL_DOT3_RGBA`` are placed
+into each of the 3 (RGB) or 4 (RGBA) components on output.
+
+
+Likewise, ``GL_COMBINE_ALPHA`` accepts any of ``GL_REPLACE``\ ,
+``GL_MODULATE``\ , ``GL_ADD``\ , ``GL_ADD_SIGNED``\ , ``GL_INTERPOLATE``\ , or
+``GL_SUBTRACT``\ .  The following table describes how alpha values are
+combined:
+
+
++--------------------------------+----------------------------+
+| :strong:```GL_COMBINE_ALPHA``` | :strong:`Texture Function` |
++--------------------------------+----------------------------+
+| ``GL_REPLACE``                 | |EQUATION_110_|            |
++--------------------------------+----------------------------+
+| ``GL_MODULATE``                | |EQUATION_111_|            |
++--------------------------------+----------------------------+
+| ``GL_ADD``                     | |EQUATION_112_|            |
++--------------------------------+----------------------------+
+| ``GL_ADD_SIGNED``              | |EQUATION_113_|            |
++--------------------------------+----------------------------+
+| ``GL_INTERPOLATE``             | |EQUATION_114_|            |
++--------------------------------+----------------------------+
+| ``GL_SUBTRACT``                | |EQUATION_115_|            |
++--------------------------------+----------------------------+
+
+
+In the following tables, the value
+|EQUATION_116_| represents the color sampled
+from the currently bound texture, |EQUATION_117_| represents the constant
+texture-environment color, |EQUATION_118_| represents the primary color of the
+incoming fragment, and |EQUATION_119_| represents the color computed from the
+previous texture stage or |EQUATION_120_| if processing texture stage 0.  Likewise, |EQUATION_121_|\ ,
+|EQUATION_122_|\ ,
+|EQUATION_123_|\ ,
+and |EQUATION_124_| represent the respective
+alpha values.
+
+
+The following table describes the values assigned to
+|EQUATION_125_|\ ,
+|EQUATION_126_|\ ,
+and |EQUATION_127_| based upon the RGB sources and operands:
+
+
++---------------------------+-------------------------------+--------------------------+
+| :strong:```GL_SRCn_RGB``` | :strong:```GL_OPERANDn_RGB``` | :strong:`Argument Value` |
++---------------------------+-------------------------------+--------------------------+
+| ``GL_TEXTURE``            | ``GL_SRC_COLOR``              | |EQUATION_128_|          |
++---------------------------+-------------------------------+--------------------------+
+|                           | ``GL_ONE_MINUS_SRC_COLOR``    | |EQUATION_129_|          |
++---------------------------+-------------------------------+--------------------------+
+|                           | ``GL_SRC_ALPHA``              | |EQUATION_130_|          |
++---------------------------+-------------------------------+--------------------------+
+|                           | ``GL_ONE_MINUS_SRC_ALPHA``    | |EQUATION_131_|          |
++---------------------------+-------------------------------+--------------------------+
+| ``GL_TEXTUREn``           | ``GL_SRC_COLOR``              | |EQUATION_132_|          |
++---------------------------+-------------------------------+--------------------------+
+|                           | ``GL_ONE_MINUS_SRC_COLOR``    | |EQUATION_133_|          |
++---------------------------+-------------------------------+--------------------------+
+|                           | ``GL_SRC_ALPHA``              | |EQUATION_134_|          |
++---------------------------+-------------------------------+--------------------------+
+|                           | ``GL_ONE_MINUS_SRC_ALPHA``    | |EQUATION_135_|          |
++---------------------------+-------------------------------+--------------------------+
+| ``GL_CONSTANT``           | ``GL_SRC_COLOR``              | |EQUATION_136_|          |
++---------------------------+-------------------------------+--------------------------+
+|                           | ``GL_ONE_MINUS_SRC_COLOR``    | |EQUATION_137_|          |
++---------------------------+-------------------------------+--------------------------+
+|                           | ``GL_SRC_ALPHA``              | |EQUATION_138_|          |
++---------------------------+-------------------------------+--------------------------+
+|                           | ``GL_ONE_MINUS_SRC_ALPHA``    | |EQUATION_139_|          |
++---------------------------+-------------------------------+--------------------------+
+| ``GL_PRIMARY_COLOR``      | ``GL_SRC_COLOR``              | |EQUATION_140_|          |
++---------------------------+-------------------------------+--------------------------+
+|                           | ``GL_ONE_MINUS_SRC_COLOR``    | |EQUATION_141_|          |
++---------------------------+-------------------------------+--------------------------+
+|                           | ``GL_SRC_ALPHA``              | |EQUATION_142_|          |
++---------------------------+-------------------------------+--------------------------+
+|                           | ``GL_ONE_MINUS_SRC_ALPHA``    | |EQUATION_143_|          |
++---------------------------+-------------------------------+--------------------------+
+| ``GL_PREVIOUS``           | ``GL_SRC_COLOR``              | |EQUATION_144_|          |
++---------------------------+-------------------------------+--------------------------+
+|                           | ``GL_ONE_MINUS_SRC_COLOR``    | |EQUATION_145_|          |
++---------------------------+-------------------------------+--------------------------+
+|                           | ``GL_SRC_ALPHA``              | |EQUATION_146_|          |
++---------------------------+-------------------------------+--------------------------+
+|                           | ``GL_ONE_MINUS_SRC_ALPHA``    | |EQUATION_147_|          |
++---------------------------+-------------------------------+--------------------------+
+
+
+For ``GL_TEXTUREn`` sources, |EQUATION_148_| and |EQUATION_149_| represent the color
+and alpha, respectively, produced from texture stage |EQUATION_150_|\ .
+
+
+The follow table describes the values assigned to
+|EQUATION_151_|\ ,
+|EQUATION_152_|\ ,
+and |EQUATION_153_| based upon the alpha sources and operands:
+
+
++-----------------------------+---------------------------------+--------------------------+
+| :strong:```GL_SRCn_ALPHA``` | :strong:```GL_OPERANDn_ALPHA``` | :strong:`Argument Value` |
++-----------------------------+---------------------------------+--------------------------+
+| ``GL_TEXTURE``              | ``GL_SRC_ALPHA``                | |EQUATION_154_|          |
++-----------------------------+---------------------------------+--------------------------+
+|                             | ``GL_ONE_MINUS_SRC_ALPHA``      | |EQUATION_155_|          |
++-----------------------------+---------------------------------+--------------------------+
+| ``GL_TEXTUREn``             | ``GL_SRC_ALPHA``                | |EQUATION_156_|          |
++-----------------------------+---------------------------------+--------------------------+
+|                             | ``GL_ONE_MINUS_SRC_ALPHA``      | |EQUATION_157_|          |
++-----------------------------+---------------------------------+--------------------------+
+| ``GL_CONSTANT``             | ``GL_SRC_ALPHA``                | |EQUATION_158_|          |
++-----------------------------+---------------------------------+--------------------------+
+|                             | ``GL_ONE_MINUS_SRC_ALPHA``      | |EQUATION_159_|          |
++-----------------------------+---------------------------------+--------------------------+
+| ``GL_PRIMARY_COLOR``        | ``GL_SRC_ALPHA``                | |EQUATION_160_|          |
++-----------------------------+---------------------------------+--------------------------+
+|                             | ``GL_ONE_MINUS_SRC_ALPHA``      | |EQUATION_161_|          |
++-----------------------------+---------------------------------+--------------------------+
+| ``GL_PREVIOUS``             | ``GL_SRC_ALPHA``                | |EQUATION_162_|          |
++-----------------------------+---------------------------------+--------------------------+
+|                             | ``GL_ONE_MINUS_SRC_ALPHA``      | |EQUATION_163_|          |
++-----------------------------+---------------------------------+--------------------------+
+
+
+The RGB and alpha results of the texture function are multipled by the
+values of ``GL_RGB_SCALE`` and ``GL_ALPHA_SCALE``\ , respectively, and
+clamped to the range |EQUATION_164_|\ .
+
+
+If *pname* is ``GL_TEXTURE_ENV_COLOR``\ ,
+*params* is a pointer to an array that holds an RGBA color consisting of four
+values.
+Integer color components are interpreted linearly such that the most
+positive integer maps to 1.0,
+and the most negative integer maps to -1.0.
+The values are clamped to the range [0,1] when they are specified. |EQUATION_165_| takes these four values.
+
+
+If *pname* is ``GL_TEXTURE_LOD_BIAS``\ , the value specified is added to the
+texture level-of-detail parameter, that selects which mipmap, or mipmaps
+depending upon the selected ``GL_TEXTURE_MIN_FILTER``\ , will be sampled.
+
+
+``GL_TEXTURE_ENV_MODE`` defaults to ``GL_MODULATE`` and
+``GL_TEXTURE_ENV_COLOR`` defaults to (0, 0, 0, 0).
+
+
+If *target* is ``GL_POINT_SPRITE`` and *pname* is ``GL_COORD_REPLACE``\ , the boolean value specified
+is used to either enable or disable point sprite texture coordinate replacement. The default value is ``GL_FALSE``\ .
+
+
+.. note::
+
+
+   ``GL_REPLACE`` may only be used if the GL version is 1.1 or greater.
+
+
+   ``GL_TEXTURE_FILTER_CONTROL`` and ``GL_TEXTURE_LOD_BIAS`` may only be
+   used if the GL version is 1.4 or greater.
+
+
+   ``GL_COMBINE`` mode and its associated constants may only be used if the
+   GL version is 1.3 or greater.
+
+
+   ``GL_TEXTUREn`` may only be used if the GL version is 1.4 or greater.
+
+
+   Internal formats other than 1, 2, 3, or 4 may only be used if the GL
+   version is 1.1 or greater.
+
+
+   For OpenGL versions 1.3 and greater, or when the ``ARB_multitexture`` extension is supported, :c:func:`glTexEnv` controls
+   the texture environment for the current active texture unit, selected by
+   :c:func:`glActiveTexture`\ .
+
+
+   ``GL_POINT_SPRITE`` and ``GL_COORD_REPLACE`` are available
+   only if the GL version is 2.0 or greater.
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_ENUM`` is generated when *target* or *pname* is not one of the accepted defined values, or when *params* should have a defined constant value (based on the value of *pname*\ ) and does not.
+* ``GL_INVALID_VALUE`` is generated if the *params* value for ``GL_RGB_SCALE`` or ``GL_ALPHA_SCALE`` are not one of 1.0, 2.0, or 4.0.
+* ``GL_INVALID_OPERATION`` is generated if :c:func:`glTexEnv` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`\ .
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGetTexEnv`
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glTexEnv'>
+
+.. role:: mml(raw)
+   :format: html
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">R</mi><mi mathvariant="italic">t</mi></msub></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">G</mi><mi mathvariant="italic">t</mi></msub></math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">B</mi><mi mathvariant="italic">t</mi></msub></math>` 
+
+.. |EQUATION_4_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">t</mi></msub></math>` 
+
+.. |EQUATION_5_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">L</mi><mi mathvariant="italic">t</mi></msub></math>` 
+
+.. |EQUATION_6_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">I</mi><mi mathvariant="italic">t</mi></msub></math>` 
+
+.. |EQUATION_7_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></math>` 
+
+.. |EQUATION_8_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></math>` 
+
+.. |EQUATION_9_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="bold-italic">C</mi><mi mathvariant="italic">s</mi></msub></math>` 
+
+.. |EQUATION_10_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="bold-italic">A</mi><mi mathvariant="italic">s</mi></msub></math>` 
+
+.. |EQUATION_11_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">t</mi></msub></math>` 
+
+.. |EQUATION_12_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">L</mi><mi mathvariant="italic">t</mi></msub></math>` 
+
+.. |EQUATION_13_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">L</mi><mi mathvariant="italic">t</mi></msub></math>` 
+
+.. |EQUATION_14_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">L</mi><mi mathvariant="italic">t</mi></msub></math>` 
+
+.. |EQUATION_15_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">L</mi><mi mathvariant="italic">t</mi></msub></math>` 
+
+.. |EQUATION_16_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">L</mi><mi mathvariant="italic">t</mi></msub></math>` 
+
+.. |EQUATION_17_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">L</mi><mi mathvariant="italic">t</mi></msub></math>` 
+
+.. |EQUATION_18_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">t</mi></msub></math>` 
+
+.. |EQUATION_19_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">I</mi><mi mathvariant="italic">t</mi></msub></math>` 
+
+.. |EQUATION_20_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">I</mi><mi mathvariant="italic">t</mi></msub></math>` 
+
+.. |EQUATION_21_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">I</mi><mi mathvariant="italic">t</mi></msub></math>` 
+
+.. |EQUATION_22_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">I</mi><mi mathvariant="italic">t</mi></msub></math>` 
+
+.. |EQUATION_23_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">R</mi><mi mathvariant="italic">t</mi></msub></math>` 
+
+.. |EQUATION_24_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">G</mi><mi mathvariant="italic">t</mi></msub></math>` 
+
+.. |EQUATION_25_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">B</mi><mi mathvariant="italic">t</mi></msub></math>` 
+
+.. |EQUATION_26_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">R</mi><mi mathvariant="italic">t</mi></msub></math>` 
+
+.. |EQUATION_27_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">G</mi><mi mathvariant="italic">t</mi></msub></math>` 
+
+.. |EQUATION_28_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">B</mi><mi mathvariant="italic">t</mi></msub></math>` 
+
+.. |EQUATION_29_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">t</mi></msub></math>` 
+
+.. |EQUATION_30_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">C</mi></math>` 
+
+.. |EQUATION_31_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">A</mi></math>` 
+
+.. |EQUATION_32_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">p</mi></math>` 
+
+.. |EQUATION_33_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">s</mi></math>` 
+
+.. |EQUATION_34_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">c</mi></math>` 
+
+.. |EQUATION_35_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">v</mi></math>` 
+
+.. |EQUATION_36_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">v</mi></msub><mo>=</mo></mrow></math>` 
+
+.. |EQUATION_37_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">p</mi></msub></mrow></math>` 
+
+.. |EQUATION_38_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">p</mi></msub></mrow></math>` 
+
+.. |EQUATION_39_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">p</mi></msub></mrow></math>` 
+
+.. |EQUATION_40_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">p</mi></msub></mrow></math>` 
+
+.. |EQUATION_41_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">v</mi></msub><mo>=</mo></mrow></math>` 
+
+.. |EQUATION_42_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mrow></math>` 
+
+.. |EQUATION_43_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub><mo>&it;</mo><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math>` 
+
+.. |EQUATION_44_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">v</mi></msub><mo>=</mo><mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub><mo>&it;</mo><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math>` 
+
+.. |EQUATION_45_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub><mo>&it;</mo><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math>` 
+
+.. |EQUATION_46_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">v</mi></msub><mo>=</mo></mrow></math>` 
+
+.. |EQUATION_47_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></math>` 
+
+.. |EQUATION_48_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">p</mi></msub><mo>&it;</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math>` 
+
+.. |EQUATION_49_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">p</mi></msub><mo>&it;</mo><mfenced open="(" close=")"><mrow><mn>1</mn><mo>-</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></mfenced><mo>+</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">c</mi></msub><mo>&it;</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math>` 
+
+.. |EQUATION_50_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">p</mi></msub><mo>+</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math>` 
+
+.. |EQUATION_51_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">v</mi></msub><mo>=</mo></mrow></math>` 
+
+.. |EQUATION_52_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub></mrow></math>` 
+
+.. |EQUATION_53_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub></mrow></math>` 
+
+.. |EQUATION_54_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub></mrow></math>` 
+
+.. |EQUATION_55_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub></mrow></math>` 
+
+.. |EQUATION_56_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">v</mi></msub><mo>=</mo></mrow></math>` 
+
+.. |EQUATION_57_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></math>` 
+
+.. |EQUATION_58_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">p</mi></msub><mo>&it;</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math>` 
+
+.. |EQUATION_59_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">p</mi></msub><mo>&it;</mo><mfenced open="(" close=")"><mrow><mn>1</mn><mo>-</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></mfenced><mo>+</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">c</mi></msub><mo>&it;</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math>` 
+
+.. |EQUATION_60_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">p</mi></msub><mo>+</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math>` 
+
+.. |EQUATION_61_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">v</mi></msub><mo>=</mo></mrow></math>` 
+
+.. |EQUATION_62_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mrow></math>` 
+
+.. |EQUATION_63_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub><mo>&it;</mo><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math>` 
+
+.. |EQUATION_64_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub><mo>&it;</mo><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math>` 
+
+.. |EQUATION_65_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub><mo>&it;</mo><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math>` 
+
+.. |EQUATION_66_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">v</mi></msub><mo>=</mo></mrow></math>` 
+
+.. |EQUATION_67_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></math>` 
+
+.. |EQUATION_68_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">p</mi></msub><mo>&it;</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math>` 
+
+.. |EQUATION_69_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">p</mi></msub><mo>&it;</mo><mfenced open="(" close=")"><mrow><mn>1</mn><mo>-</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></mfenced><mo>+</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">c</mi></msub><mo>&it;</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math>` 
+
+.. |EQUATION_70_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">p</mi></msub><mo>+</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math>` 
+
+.. |EQUATION_71_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">v</mi></msub><mo>=</mo></mrow></math>` 
+
+.. |EQUATION_72_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mrow></math>` 
+
+.. |EQUATION_73_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub><mo>&it;</mo><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math>` 
+
+.. |EQUATION_74_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub><mo>&it;</mo><mfenced open="(" close=")"><mrow><mn>1</mn><mo>-</mo><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mrow></mfenced><mo>+</mo><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">c</mi></msub><mo>&it;</mo><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math>` 
+
+.. |EQUATION_75_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub><mo>+</mo><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math>` 
+
+.. |EQUATION_76_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">v</mi></msub><mo>=</mo></mrow></math>` 
+
+.. |EQUATION_77_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></math>` 
+
+.. |EQUATION_78_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">p</mi></msub><mo>&it;</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math>` 
+
+.. |EQUATION_79_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></math>` 
+
+.. |EQUATION_80_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">p</mi></msub><mo>&it;</mo><mfenced open="(" close=")"><mrow><mn>1</mn><mo>-</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></mfenced><mo>+</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">c</mi></msub><mo>&it;</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math>` 
+
+.. |EQUATION_81_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">p</mi></msub><mo>+</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math>` 
+
+.. |EQUATION_82_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">v</mi></msub><mo>=</mo></mrow></math>` 
+
+.. |EQUATION_83_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub></mrow></math>` 
+
+.. |EQUATION_84_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub></mrow></math>` 
+
+.. |EQUATION_85_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub></mrow></math>` 
+
+.. |EQUATION_86_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub></mrow></math>` 
+
+.. |EQUATION_87_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub></mrow></math>` 
+
+.. |EQUATION_88_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">v</mi></msub><mo>=</mo></mrow></math>` 
+
+.. |EQUATION_89_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></math>` 
+
+.. |EQUATION_90_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">p</mi></msub><mo>&it;</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math>` 
+
+.. |EQUATION_91_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">p</mi></msub><mo>&it;</mo><mfenced open="(" close=")"><mrow><mn>1</mn><mo>-</mo><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mrow></mfenced><mo>+</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub><mo>&it;</mo><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math>` 
+
+.. |EQUATION_92_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">p</mi></msub><mo>&it;</mo><mfenced open="(" close=")"><mrow><mn>1</mn><mo>-</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></mfenced><mo>+</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">c</mi></msub><mo>&it;</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math>` 
+
+.. |EQUATION_93_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">p</mi></msub><mo>+</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math>` 
+
+.. |EQUATION_94_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">v</mi></msub><mo>=</mo></mrow></math>` 
+
+.. |EQUATION_95_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mrow></math>` 
+
+.. |EQUATION_96_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub><mo>&it;</mo><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math>` 
+
+.. |EQUATION_97_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub></mrow></math>` 
+
+.. |EQUATION_98_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub><mo>&it;</mo><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math>` 
+
+.. |EQUATION_99_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub><mo>&it;</mo><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math>` 
+
+.. |EQUATION_100_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">Arg0</mi></math>` 
+
+.. |EQUATION_101_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">Arg1</mi></math>` 
+
+.. |EQUATION_102_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">Arg2</mi></math>` 
+
+.. |EQUATION_103_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">Arg0</mi></math>` 
+
+.. |EQUATION_104_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">Arg0</mi><mo>&times;</mo><mi mathvariant="italic">Arg1</mi></mrow></math>` 
+
+.. |EQUATION_105_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">Arg0</mi><mo>+</mo><mi mathvariant="italic">Arg1</mi></mrow></math>` 
+
+.. |EQUATION_106_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">Arg0</mi><mo>+</mo><mi mathvariant="italic">Arg1</mi><mo>-</mo><mn>0.5</mn></mrow></math>` 
+
+.. |EQUATION_107_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><mi mathvariant="italic">Arg0</mi><mo>&times;</mo><mi mathvariant="italic">Arg2</mi></mrow><mo>+</mo><mrow><mi mathvariant="italic">Arg1</mi><mo>&times;</mo><mfenced open="(" close=")"><mrow><mn>1</mn><mo>-</mo><mi mathvariant="italic">Arg2</mi></mrow></mfenced></mrow></mrow></math>` 
+
+.. |EQUATION_108_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">Arg0</mi><mo>-</mo><mi mathvariant="italic">Arg1</mi></mrow></math>` 
+
+.. |EQUATION_109_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mn>4</mn><mo>&times;</mo><mfenced open="(" close=")"><mrow><mfenced open="(" close=")"><mrow><mfenced open="(" close=")"><mrow><mfenced open="" close=""><msub><mi mathvariant="italic">Arg0</mi><mi mathvariant="italic">r</mi></msub></mfenced><mo>-</mo><mn>0.5</mn></mrow></mfenced><mo>&times;</mo><mfenced open="(" close=")"><mrow><mfenced open="" close=""><msub><mi mathvariant="italic">Arg1</mi><mi mathvariant="italic">r</mi></msub></mfenced><mo>-</mo><mn>0.5</mn></mrow></mfenced></mrow></mfenced><mo>+</mo><mfenced open="(" close=")"><mrow><mfenced open="(" close=")"><mrow><mfenced open="" close=""><msub><mi mathvariant="italic">Arg0</mi><mi mathvariant="italic">g</mi></msub></mfenced><mo>-</mo><mn>0.5</mn></mrow></mfenced><mo>&times;</mo><mfenced open="(" close=")"><mrow><mfenced open="" close=""><msub><mi mathvariant="italic">Arg1</mi><mi mathvariant="italic">g</mi></msub></mfenced><mo>-</mo><mn>0.5</mn></mrow></mfenced></mrow></mfenced><mo>+</mo><mfenced open="(" close=")"><mrow><mfenced open="(" close=")"><mrow><mfenced open="" close=""><msub><mi mathvariant="italic">Arg0</mi><mi mathvariant="italic">b</mi></msub></mfenced><mo>-</mo><mn>0.5</mn></mrow></mfenced><mo>&times;</mo><mfenced open="(" close=")"><mrow><mfenced open="" close=""><msub><mi mathvariant="italic">Arg1</mi><mi mathvariant="italic">b</mi></msub></mfenced><mo>-</mo><mn>0.5</mn></mrow></mfenced></mrow></mfenced></mrow></mfenced></mrow></math>` 
+
+.. |EQUATION_110_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">Arg0</mi></math>` 
+
+.. |EQUATION_111_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">Arg0</mi><mo>&times;</mo><mi mathvariant="italic">Arg1</mi></mrow></math>` 
+
+.. |EQUATION_112_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">Arg0</mi><mo>+</mo><mi mathvariant="italic">Arg1</mi></mrow></math>` 
+
+.. |EQUATION_113_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">Arg0</mi><mo>+</mo><mi mathvariant="italic">Arg1</mi><mo>-</mo><mn>0.5</mn></mrow></math>` 
+
+.. |EQUATION_114_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><mi mathvariant="italic">Arg0</mi><mo>&times;</mo><mi mathvariant="italic">Arg2</mi></mrow><mo>+</mo><mrow><mi mathvariant="italic">Arg1</mi><mo>&times;</mo><mfenced open="(" close=")"><mrow><mn>1</mn><mo>-</mo><mi mathvariant="italic">Arg2</mi></mrow></mfenced></mrow></mrow></math>` 
+
+.. |EQUATION_115_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">Arg0</mi><mo>-</mo><mi mathvariant="italic">Arg1</mi></mrow></math>` 
+
+.. |EQUATION_116_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></math>` 
+
+.. |EQUATION_117_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">c</mi></msub></math>` 
+
+.. |EQUATION_118_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">f</mi></msub></math>` 
+
+.. |EQUATION_119_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">p</mi></msub></math>` 
+
+.. |EQUATION_120_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">f</mi></msub></math>` 
+
+.. |EQUATION_121_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></math>` 
+
+.. |EQUATION_122_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">c</mi></msub></math>` 
+
+.. |EQUATION_123_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">f</mi></msub></math>` 
+
+.. |EQUATION_124_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub></math>` 
+
+.. |EQUATION_125_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">Arg0</mi></math>` 
+
+.. |EQUATION_126_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">Arg1</mi></math>` 
+
+.. |EQUATION_127_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">Arg2</mi></math>` 
+
+.. |EQUATION_128_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="" close=""><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mfenced></math>` 
+
+.. |EQUATION_129_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>1</mn><mo>-</mo><mfenced open="" close=""><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mfenced></mrow></math>` 
+
+.. |EQUATION_130_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="" close=""><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mfenced></math>` 
+
+.. |EQUATION_131_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>1</mn><mo>-</mo><mfenced open="" close=""><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mfenced></mrow></math>` 
+
+.. |EQUATION_132_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="" close=""><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mfenced></math>` 
+
+.. |EQUATION_133_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>1</mn><mo>-</mo><mfenced open="" close=""><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mfenced></mrow></math>` 
+
+.. |EQUATION_134_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="" close=""><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mfenced></math>` 
+
+.. |EQUATION_135_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>1</mn><mo>-</mo><mfenced open="" close=""><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mfenced></mrow></math>` 
+
+.. |EQUATION_136_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="" close=""><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">c</mi></msub></mfenced></math>` 
+
+.. |EQUATION_137_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>1</mn><mo>-</mo><mfenced open="" close=""><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">c</mi></msub></mfenced></mrow></math>` 
+
+.. |EQUATION_138_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="" close=""><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">c</mi></msub></mfenced></math>` 
+
+.. |EQUATION_139_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>1</mn><mo>-</mo><mfenced open="" close=""><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">c</mi></msub></mfenced></mrow></math>` 
+
+.. |EQUATION_140_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="" close=""><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">f</mi></msub></mfenced></math>` 
+
+.. |EQUATION_141_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>1</mn><mo>-</mo><mfenced open="" close=""><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">f</mi></msub></mfenced></mrow></math>` 
+
+.. |EQUATION_142_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="" close=""><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">f</mi></msub></mfenced></math>` 
+
+.. |EQUATION_143_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>1</mn><mo>-</mo><mfenced open="" close=""><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">f</mi></msub></mfenced></mrow></math>` 
+
+.. |EQUATION_144_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="" close=""><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">p</mi></msub></mfenced></math>` 
+
+.. |EQUATION_145_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>1</mn><mo>-</mo><mfenced open="" close=""><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">p</mi></msub></mfenced></mrow></math>` 
+
+.. |EQUATION_146_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="" close=""><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub></mfenced></math>` 
+
+.. |EQUATION_147_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>1</mn><mo>-</mo><mfenced open="" close=""><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub></mfenced></mrow></math>` 
+
+.. |EQUATION_148_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></math>` 
+
+.. |EQUATION_149_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></math>` 
+
+.. |EQUATION_150_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math>` 
+
+.. |EQUATION_151_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">Arg0</mi></math>` 
+
+.. |EQUATION_152_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">Arg1</mi></math>` 
+
+.. |EQUATION_153_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">Arg2</mi></math>` 
+
+.. |EQUATION_154_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="" close=""><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mfenced></math>` 
+
+.. |EQUATION_155_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>1</mn><mo>-</mo><mfenced open="" close=""><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mfenced></mrow></math>` 
+
+.. |EQUATION_156_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="" close=""><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mfenced></math>` 
+
+.. |EQUATION_157_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>1</mn><mo>-</mo><mfenced open="" close=""><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mfenced></mrow></math>` 
+
+.. |EQUATION_158_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="" close=""><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">c</mi></msub></mfenced></math>` 
+
+.. |EQUATION_159_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>1</mn><mo>-</mo><mfenced open="" close=""><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">c</mi></msub></mfenced></mrow></math>` 
+
+.. |EQUATION_160_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="" close=""><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">f</mi></msub></mfenced></math>` 
+
+.. |EQUATION_161_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>1</mn><mo>-</mo><mfenced open="" close=""><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">f</mi></msub></mfenced></mrow></math>` 
+
+.. |EQUATION_162_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="" close=""><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub></mfenced></math>` 
+
+.. |EQUATION_163_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>1</mn><mo>-</mo><mfenced open="" close=""><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub></mfenced></mrow></math>` 
+
+.. |EQUATION_164_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"><mn>0</mn><mn>1</mn></mfenced></math>` 
+
+.. |EQUATION_165_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">c</mi></msub></math>` 
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

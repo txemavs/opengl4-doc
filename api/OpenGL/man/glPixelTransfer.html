@@ -1,0 +1,638 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glPixelTransfer &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function glPixelZoom" href="glPixelZoom.html" />
+    <link rel="prev" title="function glPixelMap" href="glPixelMap.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glPixelZoom.html" title="function glPixelZoom"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glPixelMap.html" title="function glPixelMap"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glpixeltransfer">
+<h1>function <cite>glPixelTransfer</cite><a class="headerlink" href="#function-glpixeltransfer" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Set pixel transfer modes</p>
+<dl class="function">
+<dt id="glPixelTransfer">
+<tt class="descname">glPixelTransfer</tt><big>(</big><big>)</big><a class="headerlink" href="#glPixelTransfer" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>pname</strong> &#8211; <p>Specifies the symbolic name of the pixel transfer parameter to be set.
+Must be one of the following:
+<tt class="docutils literal"><span class="pre">GL_MAP_COLOR</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_MAP_STENCIL</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_INDEX_SHIFT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_INDEX_OFFSET</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RED_SCALE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RED_BIAS</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_GREEN_SCALE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_GREEN_BIAS</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_BLUE_SCALE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_BLUE_BIAS</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_ALPHA_SCALE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_ALPHA_BIAS</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_DEPTH_SCALE</span></tt>, or
+<tt class="docutils literal"><span class="pre">GL_DEPTH_BIAS</span></tt>.</p>
+<p>Additionally, if the <tt class="docutils literal"><span class="pre">ARB_imaging</span></tt> extension is supported, the
+following symbolic names are accepted:
+<tt class="docutils literal"><span class="pre">GL_POST_COLOR_MATRIX_RED_SCALE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_POST_COLOR_MATRIX_GREEN_SCALE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_POST_COLOR_MATRIX_BLUE_SCALE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_POST_COLOR_MATRIX_ALPHA_SCALE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_POST_COLOR_MATRIX_RED_BIAS</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_POST_COLOR_MATRIX_GREEN_BIAS</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_POST_COLOR_MATRIX_BLUE_BIAS</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_POST_COLOR_MATRIX_ALPHA_BIAS</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_POST_CONVOLUTION_RED_SCALE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_POST_CONVOLUTION_GREEN_SCALE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_POST_CONVOLUTION_BLUE_SCALE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_POST_CONVOLUTION_ALPHA_SCALE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_POST_CONVOLUTION_RED_BIAS</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_POST_CONVOLUTION_GREEN_BIAS</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_POST_CONVOLUTION_BLUE_BIAS</span></tt>, and
+<tt class="docutils literal"><span class="pre">GL_POST_CONVOLUTION_ALPHA_BIAS</span></tt>.</p>
+</li>
+<li><strong>param</strong> &#8211; Specifies the value that <em>pname</em> is set to.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt id="glPixelTransferf">
+void <tt class="descname">glPixelTransferf</tt><big>(</big>GLenum <em>&nbsp;pname</em>, GLfloat <em>&nbsp;param</em>, GLenum <em>&nbsp;pname</em>, GLint <em>&nbsp;param</em><big>)</big><a class="headerlink" href="#glPixelTransferf" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glCallList.html#glCallList" title="glCallList"><tt class="xref c c-func docutils literal"><span class="pre">glCallList()</span></tt></a>,
+<a class="reference internal" href="glColorTable.html#glColorTable" title="glColorTable"><tt class="xref c c-func docutils literal"><span class="pre">glColorTable()</span></tt></a>,
+<a class="reference internal" href="glColorSubTable.html#glColorSubTable" title="glColorSubTable"><tt class="xref c c-func docutils literal"><span class="pre">glColorSubTable()</span></tt></a>,
+<a class="reference internal" href="glConvolutionFilter1D.html#glConvolutionFilter1D" title="glConvolutionFilter1D"><tt class="xref c c-func docutils literal"><span class="pre">glConvolutionFilter1D()</span></tt></a>,
+<a class="reference internal" href="glConvolutionFilter2D.html#glConvolutionFilter2D" title="glConvolutionFilter2D"><tt class="xref c c-func docutils literal"><span class="pre">glConvolutionFilter2D()</span></tt></a>,
+<a class="reference internal" href="glCopyPixels.html#glCopyPixels" title="glCopyPixels"><tt class="xref c c-func docutils literal"><span class="pre">glCopyPixels()</span></tt></a>,
+<a class="reference internal" href="../man4/glCopyTexImage1D.html#glCopyTexImage1D" title="glCopyTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexImage1D()</span></tt></a>,
+<a class="reference internal" href="../man4/glCopyTexImage2D.html#glCopyTexImage2D" title="glCopyTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexImage2D()</span></tt></a>,
+<a class="reference internal" href="../man4/glCopyTexSubImage1D.html#glCopyTexSubImage1D" title="glCopyTexSubImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexSubImage1D()</span></tt></a>,
+<a class="reference internal" href="../man4/glCopyTexSubImage2D.html#glCopyTexSubImage2D" title="glCopyTexSubImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexSubImage2D()</span></tt></a>,
+<a class="reference internal" href="../man4/glCopyTexSubImage3D.html#glCopyTexSubImage3D" title="glCopyTexSubImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexSubImage3D()</span></tt></a>,
+<a class="reference internal" href="glDrawPixels.html#glDrawPixels" title="glDrawPixels"><tt class="xref c c-func docutils literal"><span class="pre">glDrawPixels()</span></tt></a>,
+<a class="reference internal" href="glNewList.html#glNewList" title="glNewList"><tt class="xref c c-func docutils literal"><span class="pre">glNewList()</span></tt></a>,
+<a class="reference internal" href="glPixelMap.html#glPixelMap" title="glPixelMap"><tt class="xref c c-func docutils literal"><span class="pre">glPixelMap()</span></tt></a>,
+<a class="reference internal" href="../man4/glPixelStore.html#glPixelStore" title="glPixelStore"><tt class="xref c c-func docutils literal"><span class="pre">glPixelStore()</span></tt></a>,
+<a class="reference internal" href="glPixelZoom.html#glPixelZoom" title="glPixelZoom"><tt class="xref c c-func docutils literal"><span class="pre">glPixelZoom()</span></tt></a>,
+<a class="reference internal" href="../man4/glReadPixels.html#glReadPixels" title="glReadPixels"><tt class="xref c c-func docutils literal"><span class="pre">glReadPixels()</span></tt></a>,
+<a class="reference internal" href="../man4/glTexImage1D.html#glTexImage1D" title="glTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage1D()</span></tt></a>,
+<a class="reference internal" href="../man4/glTexImage2D.html#glTexImage2D" title="glTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage2D()</span></tt></a>,
+<a class="reference internal" href="../man4/glTexImage3D.html#glTexImage3D" title="glTexImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage3D()</span></tt></a>,
+<a class="reference internal" href="../man4/glTexSubImage1D.html#glTexSubImage1D" title="glTexSubImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage1D()</span></tt></a>,
+<a class="reference internal" href="../man4/glTexSubImage2D.html#glTexSubImage2D" title="glTexSubImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage2D()</span></tt></a>,
+<a class="reference internal" href="../man4/glTexSubImage3D.html#glTexSubImage3D" title="glTexSubImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage3D()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glPixelTransfer" title="glPixelTransfer"><tt class="xref c c-func docutils literal"><span class="pre">glPixelTransfer()</span></tt></a> sets pixel transfer modes that affect the operation of subsequent
+<a class="reference internal" href="glCopyPixels.html#glCopyPixels" title="glCopyPixels"><tt class="xref c c-func docutils literal"><span class="pre">glCopyPixels()</span></tt></a>,
+<a class="reference internal" href="../man4/glCopyTexImage1D.html#glCopyTexImage1D" title="glCopyTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexImage1D()</span></tt></a>,
+<a class="reference internal" href="../man4/glCopyTexImage2D.html#glCopyTexImage2D" title="glCopyTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexImage2D()</span></tt></a>,
+<a class="reference internal" href="../man4/glCopyTexSubImage1D.html#glCopyTexSubImage1D" title="glCopyTexSubImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexSubImage1D()</span></tt></a>,
+<a class="reference internal" href="../man4/glCopyTexSubImage2D.html#glCopyTexSubImage2D" title="glCopyTexSubImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexSubImage2D()</span></tt></a>,
+<a class="reference internal" href="../man4/glCopyTexSubImage3D.html#glCopyTexSubImage3D" title="glCopyTexSubImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexSubImage3D()</span></tt></a>,
+<a class="reference internal" href="glDrawPixels.html#glDrawPixels" title="glDrawPixels"><tt class="xref c c-func docutils literal"><span class="pre">glDrawPixels()</span></tt></a>,
+<a class="reference internal" href="../man4/glReadPixels.html#glReadPixels" title="glReadPixels"><tt class="xref c c-func docutils literal"><span class="pre">glReadPixels()</span></tt></a>,
+<a class="reference internal" href="../man4/glTexImage1D.html#glTexImage1D" title="glTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage1D()</span></tt></a>,
+<a class="reference internal" href="../man4/glTexImage2D.html#glTexImage2D" title="glTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage2D()</span></tt></a>,
+<a class="reference internal" href="../man4/glTexImage3D.html#glTexImage3D" title="glTexImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage3D()</span></tt></a>,
+<a class="reference internal" href="../man4/glTexSubImage1D.html#glTexSubImage1D" title="glTexSubImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage1D()</span></tt></a>,
+<a class="reference internal" href="../man4/glTexSubImage2D.html#glTexSubImage2D" title="glTexSubImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage2D()</span></tt></a>, and
+<a class="reference internal" href="../man4/glTexSubImage3D.html#glTexSubImage3D" title="glTexSubImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage3D()</span></tt></a> commands.
+Additionally, if the <tt class="docutils literal"><span class="pre">ARB_imaging</span></tt> subset is supported, the
+routines
+<a class="reference internal" href="glColorTable.html#glColorTable" title="glColorTable"><tt class="xref c c-func docutils literal"><span class="pre">glColorTable()</span></tt></a>,
+<a class="reference internal" href="glColorSubTable.html#glColorSubTable" title="glColorSubTable"><tt class="xref c c-func docutils literal"><span class="pre">glColorSubTable()</span></tt></a>,
+<a class="reference internal" href="glConvolutionFilter1D.html#glConvolutionFilter1D" title="glConvolutionFilter1D"><tt class="xref c c-func docutils literal"><span class="pre">glConvolutionFilter1D()</span></tt></a>,
+<a class="reference internal" href="glConvolutionFilter2D.html#glConvolutionFilter2D" title="glConvolutionFilter2D"><tt class="xref c c-func docutils literal"><span class="pre">glConvolutionFilter2D()</span></tt></a>,
+<a class="reference internal" href="glHistogram.html#glHistogram" title="glHistogram"><tt class="xref c c-func docutils literal"><span class="pre">glHistogram()</span></tt></a>,
+<a class="reference internal" href="glMinmax.html#glMinmax" title="glMinmax"><tt class="xref c c-func docutils literal"><span class="pre">glMinmax()</span></tt></a>, and
+<a class="reference internal" href="glSeparableFilter2D.html#glSeparableFilter2D" title="glSeparableFilter2D"><tt class="xref c c-func docutils literal"><span class="pre">glSeparableFilter2D()</span></tt></a> are also affected.
+The algorithms that are specified by pixel transfer modes operate on
+pixels after they are read from the frame buffer
+(<a class="reference internal" href="glCopyPixels.html#glCopyPixels" title="glCopyPixels"><tt class="xref c c-func docutils literal"><span class="pre">glCopyPixels()</span></tt></a>
+<a class="reference internal" href="../man4/glCopyTexImage1D.html#glCopyTexImage1D" title="glCopyTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexImage1D()</span></tt></a>,
+<a class="reference internal" href="../man4/glCopyTexImage2D.html#glCopyTexImage2D" title="glCopyTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexImage2D()</span></tt></a>,
+<a class="reference internal" href="../man4/glCopyTexSubImage1D.html#glCopyTexSubImage1D" title="glCopyTexSubImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexSubImage1D()</span></tt></a>,
+<a class="reference internal" href="../man4/glCopyTexSubImage2D.html#glCopyTexSubImage2D" title="glCopyTexSubImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexSubImage2D()</span></tt></a>,
+<a class="reference internal" href="../man4/glCopyTexSubImage3D.html#glCopyTexSubImage3D" title="glCopyTexSubImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexSubImage3D()</span></tt></a>, and
+<a class="reference internal" href="../man4/glReadPixels.html#glReadPixels" title="glReadPixels"><tt class="xref c c-func docutils literal"><span class="pre">glReadPixels()</span></tt></a>),
+or unpacked from client memory
+(<a class="reference internal" href="glDrawPixels.html#glDrawPixels" title="glDrawPixels"><tt class="xref c c-func docutils literal"><span class="pre">glDrawPixels()</span></tt></a>, <a class="reference internal" href="../man4/glTexImage1D.html#glTexImage1D" title="glTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage1D()</span></tt></a>, <a class="reference internal" href="../man4/glTexImage2D.html#glTexImage2D" title="glTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage2D()</span></tt></a>, <a class="reference internal" href="../man4/glTexImage3D.html#glTexImage3D" title="glTexImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage3D()</span></tt></a>,
+<a class="reference internal" href="../man4/glTexSubImage1D.html#glTexSubImage1D" title="glTexSubImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage1D()</span></tt></a>, <a class="reference internal" href="../man4/glTexSubImage2D.html#glTexSubImage2D" title="glTexSubImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage2D()</span></tt></a>, and <a class="reference internal" href="../man4/glTexSubImage3D.html#glTexSubImage3D" title="glTexSubImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage3D()</span></tt></a>).
+Pixel transfer operations happen in the same order,
+and in the same manner,
+regardless of the command that resulted in the pixel operation.
+Pixel storage modes
+(see <a class="reference internal" href="../man4/glPixelStore.html#glPixelStore" title="glPixelStore"><tt class="xref c c-func docutils literal"><span class="pre">glPixelStore()</span></tt></a>)
+control the unpacking of pixels being read from client memory
+and the packing of pixels being written back into client memory.</p>
+<p>Pixel transfer operations handle four fundamental pixel types:
+<strong>color</strong>,
+<strong>color index</strong>,
+<strong>depth</strong>, and
+<strong>stencil</strong>.
+<strong>Color</strong> pixels consist of four floating-point values
+with unspecified mantissa and exponent sizes,
+scaled such that 0 represents zero intensity
+and 1 represents full intensity.
+<strong>Color indices</strong> comprise a single fixed-point value,
+with unspecified precision to the right of the binary point.
+<strong>Depth</strong> pixels comprise a single floating-point value,
+with unspecified mantissa and exponent sizes,
+scaled such that 0.0 represents the minimum depth buffer value,
+and 1.0 represents the maximum depth buffer value.
+Finally,
+<strong>stencil</strong> pixels comprise a single fixed-point value,
+with unspecified precision to the right of the binary point.</p>
+<p>The pixel transfer operations performed on the four basic pixel types are
+as follows:</p>
+<blockquote>
+<div><p><strong>Color</strong></p>
+<blockquote>
+<div><p>Each of the four color components is multiplied by a scale factor,
+then added to a bias factor.
+That is,
+the red component is multiplied by <tt class="docutils literal"><span class="pre">GL_RED_SCALE</span></tt>,
+then added to <tt class="docutils literal"><span class="pre">GL_RED_BIAS</span></tt>;
+the green component is multiplied by <tt class="docutils literal"><span class="pre">GL_GREEN_SCALE</span></tt>,
+then added to <tt class="docutils literal"><span class="pre">GL_GREEN_BIAS</span></tt>;
+the blue component is multiplied by <tt class="docutils literal"><span class="pre">GL_BLUE_SCALE</span></tt>,
+then added to <tt class="docutils literal"><span class="pre">GL_BLUE_BIAS</span></tt>; and
+the alpha component is multiplied by <tt class="docutils literal"><span class="pre">GL_ALPHA_SCALE</span></tt>,
+then added to <tt class="docutils literal"><span class="pre">GL_ALPHA_BIAS</span></tt>.
+After all four color components are scaled and biased,
+each is clamped to the range <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"><mn>0</mn><mn>1</mn></mfenced></math></span>.
+All color, scale, and bias values are specified with <a class="reference internal" href="#glPixelTransfer" title="glPixelTransfer"><tt class="xref c c-func docutils literal"><span class="pre">glPixelTransfer()</span></tt></a>.</p>
+<p>If <tt class="docutils literal"><span class="pre">GL_MAP_COLOR</span></tt> is true,
+each color component is scaled by the size of the corresponding
+color-to-color map,
+then replaced by the contents of that map indexed by the scaled component.
+That is,
+the red component is scaled by <tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_R_TO_R_SIZE</span></tt>,
+then replaced by the contents of <tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_R_TO_R</span></tt> indexed by itself.
+The green component is scaled by <tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_G_TO_G_SIZE</span></tt>,
+then replaced by the contents of <tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_G_TO_G</span></tt> indexed by itself.
+The blue component is scaled by <tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_B_TO_B_SIZE</span></tt>,
+then replaced by the contents of <tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_B_TO_B</span></tt> indexed by itself.
+And
+the alpha component is scaled by <tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_A_TO_A_SIZE</span></tt>,
+then replaced by the contents of <tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_A_TO_A</span></tt> indexed by itself.
+All components taken from the maps are then clamped to the range <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"><mn>0</mn><mn>1</mn></mfenced></math></span>.
+<tt class="docutils literal"><span class="pre">GL_MAP_COLOR</span></tt> is specified with <a class="reference internal" href="#glPixelTransfer" title="glPixelTransfer"><tt class="xref c c-func docutils literal"><span class="pre">glPixelTransfer()</span></tt></a>.
+The contents of the various maps are specified with <a class="reference internal" href="glPixelMap.html#glPixelMap" title="glPixelMap"><tt class="xref c c-func docutils literal"><span class="pre">glPixelMap()</span></tt></a>.</p>
+<p>If the <tt class="docutils literal"><span class="pre">ARB_imaging</span></tt> extension is supported, each of the four
+color components may be scaled and biased after transformation by the
+color matrix.
+That is,
+the red component is multiplied by <tt class="docutils literal"><span class="pre">GL_POST_COLOR_MATRIX_RED_SCALE</span></tt>,
+then added to <tt class="docutils literal"><span class="pre">GL_POST_COLOR_MATRIX_RED_BIAS</span></tt>;
+the green component is multiplied by <tt class="docutils literal"><span class="pre">GL_POST_COLOR_MATRIX_GREEN_SCALE</span></tt>,
+then added to <tt class="docutils literal"><span class="pre">GL_POST_COLOR_MATRIX_GREEN_BIAS</span></tt>;
+the blue component is multiplied by <tt class="docutils literal"><span class="pre">GL_POST_COLOR_MATRIX_BLUE_SCALE</span></tt>,
+then added to <tt class="docutils literal"><span class="pre">GL_POST_COLOR_MATRIX_BLUE_BIAS</span></tt>; and
+the alpha component is multiplied by <tt class="docutils literal"><span class="pre">GL_POST_COLOR_MATRIX_ALPHA_SCALE</span></tt>,
+then added to <tt class="docutils literal"><span class="pre">GL_POST_COLOR_MATRIX_ALPHA_BIAS</span></tt>.
+After all four color components are scaled and biased,
+each is clamped to the range <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"><mn>0</mn><mn>1</mn></mfenced></math></span>.</p>
+<p>Similarly, if the <tt class="docutils literal"><span class="pre">ARB_imaging</span></tt> extension is supported, each of
+the four color components may be scaled and biased after processing by
+the enabled convolution filter.
+That is,
+the red component is multiplied by <tt class="docutils literal"><span class="pre">GL_POST_CONVOLUTION_RED_SCALE</span></tt>,
+then added to <tt class="docutils literal"><span class="pre">GL_POST_CONVOLUTION_RED_BIAS</span></tt>;
+the green component is multiplied by <tt class="docutils literal"><span class="pre">GL_POST_CONVOLUTION_GREEN_SCALE</span></tt>,
+then added to <tt class="docutils literal"><span class="pre">GL_POST_CONVOLUTION_GREEN_BIAS</span></tt>;
+the blue component is multiplied by <tt class="docutils literal"><span class="pre">GL_POST_CONVOLUTION_BLUE_SCALE</span></tt>,
+then added to <tt class="docutils literal"><span class="pre">GL_POST_CONVOLUTION_BLUE_BIAS</span></tt>; and
+the alpha component is multiplied by <tt class="docutils literal"><span class="pre">GL_POST_CONVOLUTION_ALPHA_SCALE</span></tt>,
+then added to <tt class="docutils literal"><span class="pre">GL_POST_CONVOLUTION_ALPHA_BIAS</span></tt>.
+After all four color components are scaled and biased,
+each is clamped to the range <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"><mn>0</mn><mn>1</mn></mfenced></math></span>.</p>
+</div></blockquote>
+<p><strong>Color index</strong></p>
+<blockquote>
+<div><p>Each color index is shifted left by <tt class="docutils literal"><span class="pre">GL_INDEX_SHIFT</span></tt> bits; any bits
+beyond the number of fraction bits carried
+by the fixed-point index are filled with zeros.
+If <tt class="docutils literal"><span class="pre">GL_INDEX_SHIFT</span></tt> is negative,
+the shift is to the right,
+again zero filled.
+Then <tt class="docutils literal"><span class="pre">GL_INDEX_OFFSET</span></tt> is added to the index.
+<tt class="docutils literal"><span class="pre">GL_INDEX_SHIFT</span></tt> and <tt class="docutils literal"><span class="pre">GL_INDEX_OFFSET</span></tt> are specified with
+<a class="reference internal" href="#glPixelTransfer" title="glPixelTransfer"><tt class="xref c c-func docutils literal"><span class="pre">glPixelTransfer()</span></tt></a>.</p>
+<p>From this point, operation diverges depending on the required format of
+the resulting pixels.
+If the resulting pixels are to be written to a color index buffer,
+or if they are being read back to client memory in <tt class="docutils literal"><span class="pre">GL_COLOR_INDEX</span></tt> format,
+the pixels continue to be treated as indices.
+If <tt class="docutils literal"><span class="pre">GL_MAP_COLOR</span></tt> is true,
+each index is masked by <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mi mathvariant="italic">n</mi></msup><mo>-</mo><mn>1</mn></mrow></math></span>,
+where <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math></span> is <tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_I_TO_I_SIZE</span></tt>,
+then replaced by the contents of <tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_I_TO_I</span></tt> indexed by the
+masked value.
+<tt class="docutils literal"><span class="pre">GL_MAP_COLOR</span></tt> is specified with <a class="reference internal" href="#glPixelTransfer" title="glPixelTransfer"><tt class="xref c c-func docutils literal"><span class="pre">glPixelTransfer()</span></tt></a>.
+The contents of the index map is specified with <a class="reference internal" href="glPixelMap.html#glPixelMap" title="glPixelMap"><tt class="xref c c-func docutils literal"><span class="pre">glPixelMap()</span></tt></a>.</p>
+<p>If the resulting pixels are to be written to an RGBA color buffer,
+or if they are read back to client memory in a format other than
+<tt class="docutils literal"><span class="pre">GL_COLOR_INDEX</span></tt>,
+the pixels are converted from indices to colors by referencing the
+four maps
+<tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_I_TO_R</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_I_TO_G</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_I_TO_B</span></tt>, and
+<tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_I_TO_A</span></tt>.
+Before being dereferenced,
+the index is masked by <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mi mathvariant="italic">n</mi></msup><mo>-</mo><mn>1</mn></mrow></math></span>,
+where <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math></span> is
+<tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_I_TO_R_SIZE</span></tt> for the red map,
+<tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_I_TO_G_SIZE</span></tt> for the green map,
+<tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_I_TO_B_SIZE</span></tt> for the blue map, and
+<tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_I_TO_A_SIZE</span></tt> for the alpha map.
+All components taken from the maps are then clamped to the range <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"><mn>0</mn><mn>1</mn></mfenced></math></span>.
+The contents of the four maps is specified with <a class="reference internal" href="glPixelMap.html#glPixelMap" title="glPixelMap"><tt class="xref c c-func docutils literal"><span class="pre">glPixelMap()</span></tt></a>.</p>
+</div></blockquote>
+<p><strong>Depth</strong></p>
+<blockquote>
+<div>Each depth value is multiplied by <tt class="docutils literal"><span class="pre">GL_DEPTH_SCALE</span></tt>,
+added to <tt class="docutils literal"><span class="pre">GL_DEPTH_BIAS</span></tt>,
+then clamped to the range <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"><mn>0</mn><mn>1</mn></mfenced></math></span>.</div></blockquote>
+<p><strong>Stencil</strong></p>
+<blockquote>
+<div>Each index is shifted <tt class="docutils literal"><span class="pre">GL_INDEX_SHIFT</span></tt> bits just as a color index is,
+then added to <tt class="docutils literal"><span class="pre">GL_INDEX_OFFSET</span></tt>.
+If <tt class="docutils literal"><span class="pre">GL_MAP_STENCIL</span></tt> is true,
+each index is masked by <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mi mathvariant="italic">n</mi></msup><mo>-</mo><mn>1</mn></mrow></math></span>,
+where <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math></span> is <tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_S_TO_S_SIZE</span></tt>,
+then replaced by the contents of <tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_S_TO_S</span></tt> indexed by the
+masked value.</div></blockquote>
+</div></blockquote>
+<p>The following table gives the type,
+initial value,
+and range of valid values for each of the pixel transfer parameters
+that are set with <a class="reference internal" href="#glPixelTransfer" title="glPixelTransfer"><tt class="xref c c-func docutils literal"><span class="pre">glPixelTransfer()</span></tt></a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="37%" />
+<col width="16%" />
+<col width="25%" />
+<col width="23%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>*pname*</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Initial Value</strong></td>
+<td><strong>Valid Range</strong></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_MAP_COLOR</span></tt></td>
+<td>boolean</td>
+<td>false</td>
+<td>true/false</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_MAP_STENCIL</span></tt></td>
+<td>boolean</td>
+<td>false</td>
+<td>true/false</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_INDEX_SHIFT</span></tt></td>
+<td>integer</td>
+<td>0</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mrow><mo>-</mo><infinity/></mrow><infinity/></mfenced></math></span></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_INDEX_OFFSET</span></tt></td>
+<td>integer</td>
+<td>0</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mrow><mo>-</mo><infinity/></mrow><infinity/></mfenced></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RED_SCALE</span></tt></td>
+<td>float</td>
+<td>1</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mrow><mo>-</mo><infinity/></mrow><infinity/></mfenced></math></span></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_GREEN_SCALE</span></tt></td>
+<td>float</td>
+<td>1</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mrow><mo>-</mo><infinity/></mrow><infinity/></mfenced></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_BLUE_SCALE</span></tt></td>
+<td>float</td>
+<td>1</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mrow><mo>-</mo><infinity/></mrow><infinity/></mfenced></math></span></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_ALPHA_SCALE</span></tt></td>
+<td>float</td>
+<td>1</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mrow><mo>-</mo><infinity/></mrow><infinity/></mfenced></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_DEPTH_SCALE</span></tt></td>
+<td>float</td>
+<td>1</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mrow><mo>-</mo><infinity/></mrow><infinity/></mfenced></math></span></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RED_BIAS</span></tt></td>
+<td>float</td>
+<td>0</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mrow><mo>-</mo><infinity/></mrow><infinity/></mfenced></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_GREEN_BIAS</span></tt></td>
+<td>float</td>
+<td>0</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mrow><mo>-</mo><infinity/></mrow><infinity/></mfenced></math></span></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_BLUE_BIAS</span></tt></td>
+<td>float</td>
+<td>0</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mrow><mo>-</mo><infinity/></mrow><infinity/></mfenced></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_ALPHA_BIAS</span></tt></td>
+<td>float</td>
+<td>0</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mrow><mo>-</mo><infinity/></mrow><infinity/></mfenced></math></span></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_DEPTH_BIAS</span></tt></td>
+<td>float</td>
+<td>0</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mrow><mo>-</mo><infinity/></mrow><infinity/></mfenced></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_POST_COLOR_MATRIX_RED_SCALE</span></tt></td>
+<td>float</td>
+<td>1</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mrow><mo>-</mo><infinity/></mrow><infinity/></mfenced></math></span></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_POST_COLOR_MATRIX_GREEN_SCALE</span></tt></td>
+<td>float</td>
+<td>1</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mrow><mo>-</mo><infinity/></mrow><infinity/></mfenced></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_POST_COLOR_MATRIX_BLUE_SCALE</span></tt></td>
+<td>float</td>
+<td>1</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mrow><mo>-</mo><infinity/></mrow><infinity/></mfenced></math></span></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_POST_COLOR_MATRIX_ALPHA_SCALE</span></tt></td>
+<td>float</td>
+<td>1</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mrow><mo>-</mo><infinity/></mrow><infinity/></mfenced></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_POST_COLOR_MATRIX_RED_BIAS</span></tt></td>
+<td>float</td>
+<td>0</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mrow><mo>-</mo><infinity/></mrow><infinity/></mfenced></math></span></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_POST_COLOR_MATRIX_GREEN_BIAS</span></tt></td>
+<td>float</td>
+<td>0</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mrow><mo>-</mo><infinity/></mrow><infinity/></mfenced></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_POST_COLOR_MATRIX_BLUE_BIAS</span></tt></td>
+<td>float</td>
+<td>0</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mrow><mo>-</mo><infinity/></mrow><infinity/></mfenced></math></span></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_POST_COLOR_MATRIX_ALPHA_BIAS</span></tt></td>
+<td>float</td>
+<td>0</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mrow><mo>-</mo><infinity/></mrow><infinity/></mfenced></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_POST_CONVOLUTION_RED_SCALE</span></tt></td>
+<td>float</td>
+<td>1</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mrow><mo>-</mo><infinity/></mrow><infinity/></mfenced></math></span></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_POST_CONVOLUTION_GREEN_SCALE</span></tt></td>
+<td>float</td>
+<td>1</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mrow><mo>-</mo><infinity/></mrow><infinity/></mfenced></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_POST_CONVOLUTION_BLUE_SCALE</span></tt></td>
+<td>float</td>
+<td>1</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mrow><mo>-</mo><infinity/></mrow><infinity/></mfenced></math></span></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_POST_CONVOLUTION_ALPHA_SCALE</span></tt></td>
+<td>float</td>
+<td>1</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mrow><mo>-</mo><infinity/></mrow><infinity/></mfenced></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_POST_CONVOLUTION_RED_BIAS</span></tt></td>
+<td>float</td>
+<td>0</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mrow><mo>-</mo><infinity/></mrow><infinity/></mfenced></math></span></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_POST_CONVOLUTION_GREEN_BIAS</span></tt></td>
+<td>float</td>
+<td>0</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mrow><mo>-</mo><infinity/></mrow><infinity/></mfenced></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_POST_CONVOLUTION_BLUE_BIAS</span></tt></td>
+<td>float</td>
+<td>0</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mrow><mo>-</mo><infinity/></mrow><infinity/></mfenced></math></span></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_POST_CONVOLUTION_ALPHA_BIAS</span></tt></td>
+<td>float</td>
+<td>0</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mrow><mo>-</mo><infinity/></mrow><infinity/></mfenced></math></span></td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference internal" href="#glPixelTransferf" title="glPixelTransferf"><tt class="xref c c-func docutils literal"><span class="pre">glPixelTransferf()</span></tt></a> can be used to set any pixel transfer parameter.
+If the parameter type is boolean,
+0 implies false and any other value implies true.
+If <em>pname</em> is an integer parameter,
+<em>param</em> is rounded to the nearest integer.</p>
+<p>Likewise,
+<tt class="xref c c-func docutils literal"><span class="pre">glPixelTransferi()</span></tt> can be used to set any of the
+pixel transfer parameters.
+Boolean parameters are set to false if <em>param</em> is 0 and to true otherwise.
+<em>param</em> is converted to floating point before being assigned to real-valued parameters.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If a
+<a class="reference internal" href="glColorTable.html#glColorTable" title="glColorTable"><tt class="xref c c-func docutils literal"><span class="pre">glColorTable()</span></tt></a>,
+<a class="reference internal" href="glColorSubTable.html#glColorSubTable" title="glColorSubTable"><tt class="xref c c-func docutils literal"><span class="pre">glColorSubTable()</span></tt></a>,
+<a class="reference internal" href="glConvolutionFilter1D.html#glConvolutionFilter1D" title="glConvolutionFilter1D"><tt class="xref c c-func docutils literal"><span class="pre">glConvolutionFilter1D()</span></tt></a>,
+<a class="reference internal" href="glConvolutionFilter2D.html#glConvolutionFilter2D" title="glConvolutionFilter2D"><tt class="xref c c-func docutils literal"><span class="pre">glConvolutionFilter2D()</span></tt></a>,
+<a class="reference internal" href="glCopyPixels.html#glCopyPixels" title="glCopyPixels"><tt class="xref c c-func docutils literal"><span class="pre">glCopyPixels()</span></tt></a>,
+<a class="reference internal" href="../man4/glCopyTexImage1D.html#glCopyTexImage1D" title="glCopyTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexImage1D()</span></tt></a>,
+<a class="reference internal" href="../man4/glCopyTexImage2D.html#glCopyTexImage2D" title="glCopyTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexImage2D()</span></tt></a>,
+<a class="reference internal" href="../man4/glCopyTexSubImage1D.html#glCopyTexSubImage1D" title="glCopyTexSubImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexSubImage1D()</span></tt></a>,
+<a class="reference internal" href="../man4/glCopyTexSubImage2D.html#glCopyTexSubImage2D" title="glCopyTexSubImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexSubImage2D()</span></tt></a>,
+<a class="reference internal" href="../man4/glCopyTexSubImage3D.html#glCopyTexSubImage3D" title="glCopyTexSubImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexSubImage3D()</span></tt></a>,
+<a class="reference internal" href="glDrawPixels.html#glDrawPixels" title="glDrawPixels"><tt class="xref c c-func docutils literal"><span class="pre">glDrawPixels()</span></tt></a>,
+<a class="reference internal" href="../man4/glReadPixels.html#glReadPixels" title="glReadPixels"><tt class="xref c c-func docutils literal"><span class="pre">glReadPixels()</span></tt></a>,
+<a class="reference internal" href="glSeparableFilter2D.html#glSeparableFilter2D" title="glSeparableFilter2D"><tt class="xref c c-func docutils literal"><span class="pre">glSeparableFilter2D()</span></tt></a>,
+<a class="reference internal" href="../man4/glTexImage1D.html#glTexImage1D" title="glTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage1D()</span></tt></a>,
+<a class="reference internal" href="../man4/glTexImage2D.html#glTexImage2D" title="glTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage2D()</span></tt></a>,
+<a class="reference internal" href="../man4/glTexImage3D.html#glTexImage3D" title="glTexImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage3D()</span></tt></a>,
+<a class="reference internal" href="../man4/glTexSubImage1D.html#glTexSubImage1D" title="glTexSubImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage1D()</span></tt></a>,
+<a class="reference internal" href="../man4/glTexSubImage2D.html#glTexSubImage2D" title="glTexSubImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage2D()</span></tt></a>, or
+<a class="reference internal" href="../man4/glTexSubImage3D.html#glTexSubImage3D" title="glTexSubImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage3D()</span></tt></a>
+command is placed in a display list
+(see <a class="reference internal" href="glNewList.html#glNewList" title="glNewList"><tt class="xref c c-func docutils literal"><span class="pre">glNewList()</span></tt></a> and <a class="reference internal" href="glCallList.html#glCallList" title="glCallList"><tt class="xref c c-func docutils literal"><span class="pre">glCallList()</span></tt></a>),
+the pixel transfer mode settings in effect when the display list is
+<strong>executed</strong>
+are the ones that are used.
+They may be different from the settings when the command was compiled
+into the display list.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>pname</em> is not an accepted value.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <a class="reference internal" href="#glPixelTransfer" title="glPixelTransfer"><tt class="xref c c-func docutils literal"><span class="pre">glPixelTransfer()</span></tt></a> is executed between the execution of <a class="reference internal" href="glBegin.html#glBegin" title="glBegin"><tt class="xref c c-func docutils literal"><span class="pre">glBegin()</span></tt></a> and the corresponding execution of <a class="reference internal" href="glBegin.html#glEnd" title="glEnd"><tt class="xref c c-func docutils literal"><span class="pre">glEnd()</span></tt></a>.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_MAP_COLOR</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_MAP_STENCIL</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_INDEX_SHIFT</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_INDEX_OFFSET</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_RED_SCALE</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_RED_BIAS</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_GREEN_SCALE</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_GREEN_BIAS</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_BLUE_SCALE</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_BLUE_BIAS</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_ALPHA_SCALE</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_ALPHA_BIAS</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_DEPTH_SCALE</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_DEPTH_BIAS</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_POST_COLOR_MATRIX_RED_SCALE</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_POST_COLOR_MATRIX_RED_BIAS</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_POST_COLOR_MATRIX_GREEN_SCALE</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_POST_COLOR_MATRIX_GREEN_BIAS</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_POST_COLOR_MATRIX_BLUE_SCALE</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_POST_COLOR_MATRIX_BLUE_BIAS</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_POST_COLOR_MATRIX_ALPHA_SCALE</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_POST_COLOR_MATRIX_ALPHA_BIAS</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_POST_CONVOLUTION_RED_SCALE</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_POST_CONVOLUTION_RED_BIAS</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_POST_CONVOLUTION_GREEN_SCALE</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_POST_CONVOLUTION_GREEN_BIAS</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_POST_CONVOLUTION_BLUE_SCALE</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_POST_CONVOLUTION_BLUE_BIAS</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_POST_CONVOLUTION_ALPHA_SCALE</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_POST_CONVOLUTION_ALPHA_BIAS</span></tt></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glPixelMap.html"
+                        title="previous chapter">function <cite>glPixelMap</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glPixelZoom.html"
+                        title="next chapter">function <cite>glPixelZoom</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/glPixelTransfer.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glPixelZoom.html" title="function glPixelZoom"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glPixelMap.html" title="function glPixelMap"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

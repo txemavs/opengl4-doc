@@ -1,0 +1,383 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function gluTessCallback &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function gluTessEndPolygon" href="gluTessEndPolygon.html" />
+    <link rel="prev" title="function gluTessBeginPolygon" href="gluTessBeginPolygon.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="gluTessEndPolygon.html" title="function gluTessEndPolygon"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="gluTessBeginPolygon.html" title="function gluTessBeginPolygon"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glutesscallback">
+<h1>function <cite>gluTessCallback</cite><a class="headerlink" href="#function-glutesscallback" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Define a callback for a tessellation object</p>
+<dl class="function">
+<dt id="gluTessCallback">
+<tt class="descname">gluTessCallback</tt><big>(</big><big>)</big><a class="headerlink" href="#gluTessCallback" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>tess</strong> &#8211; Specifies the tessellation object (created with <a class="reference internal" href="gluNewTess.html#gluNewTess" title="gluNewTess"><tt class="xref c c-func docutils literal"><span class="pre">gluNewTess()</span></tt></a>).</li>
+<li><strong>which</strong> &#8211; Specifies the callback being defined. The following values are valid:
+<tt class="docutils literal"><span class="pre">GLU_TESS_BEGIN</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_TESS_BEGIN_DATA</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_TESS_EDGE_FLAG</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_TESS_EDGE_FLAG_DATA</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_TESS_VERTEX</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_TESS_VERTEX_DATA</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_TESS_END</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_TESS_END_DATA</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_TESS_COMBINE</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_TESS_COMBINE_DATA</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_TESS_ERROR</span></tt>, and
+<tt class="docutils literal"><span class="pre">GLU_TESS_ERROR_DATA</span></tt>.</li>
+<li><strong>CallBackFunc</strong> &#8211; Specifies the function to be called.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">gluTessCallback</tt><big>(</big>GLUtesselator* <em>&nbsp;tess</em>, GLenum <em>&nbsp;which</em>, _GLUfuncptr <em>&nbsp;CallBackFunc</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="gluErrorString.html#gluErrorString" title="gluErrorString"><tt class="xref c c-func docutils literal"><span class="pre">gluErrorString()</span></tt></a>,
+<a class="reference internal" href="gluNewTess.html#gluNewTess" title="gluNewTess"><tt class="xref c c-func docutils literal"><span class="pre">gluNewTess()</span></tt></a>,
+<a class="reference internal" href="gluTessBeginContour.html#gluTessBeginContour" title="gluTessBeginContour"><tt class="xref c c-func docutils literal"><span class="pre">gluTessBeginContour()</span></tt></a>,
+<a class="reference internal" href="gluTessBeginPolygon.html#gluTessBeginPolygon" title="gluTessBeginPolygon"><tt class="xref c c-func docutils literal"><span class="pre">gluTessBeginPolygon()</span></tt></a>,
+<a class="reference internal" href="gluTessNormal.html#gluTessNormal" title="gluTessNormal"><tt class="xref c c-func docutils literal"><span class="pre">gluTessNormal()</span></tt></a>,
+<a class="reference internal" href="gluTessProperty.html#gluTessProperty" title="gluTessProperty"><tt class="xref c c-func docutils literal"><span class="pre">gluTessProperty()</span></tt></a>,
+<a class="reference internal" href="gluTessVertex.html#gluTessVertex" title="gluTessVertex"><tt class="xref c c-func docutils literal"><span class="pre">gluTessVertex()</span></tt></a>,
+<a class="reference internal" href="glBegin.html#glBegin" title="glBegin"><tt class="xref c c-func docutils literal"><span class="pre">glBegin()</span></tt></a>,
+<a class="reference internal" href="glEdgeFlag.html#glEdgeFlag" title="glEdgeFlag"><tt class="xref c c-func docutils literal"><span class="pre">glEdgeFlag()</span></tt></a>,
+<a class="reference internal" href="glVertex.html#glVertex" title="glVertex"><tt class="xref c c-func docutils literal"><span class="pre">glVertex()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#gluTessCallback" title="gluTessCallback"><tt class="xref c c-func docutils literal"><span class="pre">gluTessCallback()</span></tt></a> is used to indicate a callback to be used by a tessellation object.
+If the specified callback is already defined, then it is replaced. If
+<em>CallBackFunc</em> is NULL, then the existing callback becomes undefined.</p>
+<p>These callbacks are used by the tessellation object to describe how a
+polygon specified by the user is broken into triangles. Note that there
+are two versions of each callback: one with user-specified polygon data
+and one without. If both versions of a particular callback are specified,
+then the callback with user-specified polygon data will be used. Note
+that the <strong>polygon_data</strong> parameter used by some of the functions is
+a copy of the pointer that was specified when
+<a class="reference internal" href="gluTessBeginPolygon.html#gluTessBeginPolygon" title="gluTessBeginPolygon"><tt class="xref c c-func docutils literal"><span class="pre">gluTessBeginPolygon()</span></tt></a> was called. The legal callbacks are as follows:</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">GLU_TESS_BEGIN</span></tt></p>
+<blockquote>
+<div><p>The begin callback is invoked like <a class="reference internal" href="glBegin.html#glBegin" title="glBegin"><tt class="xref c c-func docutils literal"><span class="pre">glBegin()</span></tt></a> to indicate the start of
+a (triangle) primitive. The function takes a single argument of type
+GLenum. If the <tt class="docutils literal"><span class="pre">GLU_TESS_BOUNDARY_ONLY</span></tt> property is set to
+<tt class="docutils literal"><span class="pre">GLU_FALSE</span></tt>, then the argument is set to either
+<tt class="docutils literal"><span class="pre">GLU_TRIANGLE_FAN</span></tt>, <tt class="docutils literal"><span class="pre">GLU_TRIANGLE_STRIP</span></tt>, or <tt class="docutils literal"><span class="pre">GLU_TRIANGLES</span></tt>.
+If the <tt class="docutils literal"><span class="pre">GLU_TESS_BOUNDARY_ONLY</span></tt> property is set to <tt class="docutils literal"><span class="pre">GLU_TRUE</span></tt>,
+then the argument will be set to <tt class="docutils literal"><span class="pre">GLU_LINE_LOOP</span></tt>. The function
+prototype for this callback is:</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="kt">void</span> <span class="n">begin</span><span class="p">(</span> <span class="n">GLenum</span> <span class="n">type</span> <span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLU_TESS_BEGIN_DATA</span></tt></p>
+<blockquote>
+<div><p>The same as the <tt class="docutils literal"><span class="pre">GLU_TESS_BEGIN</span></tt> callback except that it
+takes an additional pointer argument. This pointer is identical to the
+opaque pointer provided when
+<a class="reference internal" href="gluTessBeginPolygon.html#gluTessBeginPolygon" title="gluTessBeginPolygon"><tt class="xref c c-func docutils literal"><span class="pre">gluTessBeginPolygon()</span></tt></a> was called. The function prototype for this callback
+is:</p>
+<div class="highlight-c"><pre>void beginData( GLenum type, void \*polygon_data );</pre>
+</div>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLU_TESS_EDGE_FLAG</span></tt></p>
+<blockquote>
+<div><p>The edge flag callback is similar to <a class="reference internal" href="glEdgeFlag.html#glEdgeFlag" title="glEdgeFlag"><tt class="xref c c-func docutils literal"><span class="pre">glEdgeFlag()</span></tt></a>. The function
+takes a single boolean flag that indicates which edges lie on the
+polygon boundary. If the flag is <tt class="docutils literal"><span class="pre">GLU_TRUE</span></tt>, then each vertex
+that follows begins an edge that lies on the polygon boundary, that is,
+an edge that separates an interior region from an exterior one.
+If the flag is <tt class="docutils literal"><span class="pre">GLU_FALSE</span></tt>, then each vertex that follows begins an edge
+that lies in the polygon interior. The edge flag callback (if defined) is
+invoked before the first vertex callback.</p>
+<p>Since triangle fans and triangle strips do not support edge flags, the begin
+callback is not called with <tt class="docutils literal"><span class="pre">GLU_TRIANGLE_FAN</span></tt> or <tt class="docutils literal"><span class="pre">GLU_TRIANGLE_STRIP</span></tt>
+if a non-NULL edge flag callback is provided. (If the callback is
+initialized to NULL, there is no impact on performance). Instead, the fans and
+strips are converted to independent triangles. The function prototype
+for this callback is:</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="kt">void</span> <span class="n">edgeFlag</span><span class="p">(</span> <span class="n">GLboolean</span> <span class="n">flag</span> <span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLU_TESS_EDGE_FLAG_DATA</span></tt></p>
+<blockquote>
+<div><p>The same as the <tt class="docutils literal"><span class="pre">GLU_TESS_EDGE_FLAG</span></tt> callback except that it takes an additional pointer
+argument. This pointer is identical to the opaque pointer provided when
+<a class="reference internal" href="gluTessBeginPolygon.html#gluTessBeginPolygon" title="gluTessBeginPolygon"><tt class="xref c c-func docutils literal"><span class="pre">gluTessBeginPolygon()</span></tt></a> was called. The function prototype for this callback
+is:</p>
+<div class="highlight-c"><pre>void edgeFlagData( GLboolean flag, void \*polygon_data );</pre>
+</div>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLU_TESS_VERTEX</span></tt></p>
+<blockquote>
+<div><p>The vertex callback is invoked between the begin and end callbacks.
+It is similar to <a class="reference internal" href="glVertex.html#glVertex" title="glVertex"><tt class="xref c c-func docutils literal"><span class="pre">glVertex()</span></tt></a>, and it defines the vertices of the triangles
+created by the tessellation process. The function
+takes a pointer as its only argument.  This pointer is identical to
+the opaque pointer provided by the user when the vertex was described
+(see <a class="reference internal" href="gluTessVertex.html#gluTessVertex" title="gluTessVertex"><tt class="xref c c-func docutils literal"><span class="pre">gluTessVertex()</span></tt></a>). The function prototype for this callback is:</p>
+<div class="highlight-c"><pre>void vertex( void \*vertex_data );</pre>
+</div>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLU_TESS_VERTEX_DATA</span></tt></p>
+<blockquote>
+<div><p>The same as the <tt class="docutils literal"><span class="pre">GLU_TESS_VERTEX</span></tt> callback except that it takes an additional pointer
+argument. This pointer is identical to the opaque pointer provided when
+<a class="reference internal" href="gluTessBeginPolygon.html#gluTessBeginPolygon" title="gluTessBeginPolygon"><tt class="xref c c-func docutils literal"><span class="pre">gluTessBeginPolygon()</span></tt></a> was called. The function prototype for this callback
+is:</p>
+<div class="highlight-c"><pre>void vertexData( void \*vertex_data, void \*polygon_data );</pre>
+</div>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLU_TESS_END</span></tt></p>
+<blockquote>
+<div><p>The end callback serves the same purpose as <a class="reference internal" href="glBegin.html#glEnd" title="glEnd"><tt class="xref c c-func docutils literal"><span class="pre">glEnd()</span></tt></a>. It indicates the
+end of a primitive and it takes no arguments. The function prototype for this
+callback is:</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="kt">void</span> <span class="n">end</span><span class="p">(</span> <span class="kt">void</span> <span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLU_TESS_END_DATA</span></tt></p>
+<blockquote>
+<div><p>The same as the <tt class="docutils literal"><span class="pre">GLU_TESS_END</span></tt> callback except that it takes an additional pointer
+argument. This pointer is identical to the opaque pointer provided when
+<a class="reference internal" href="gluTessBeginPolygon.html#gluTessBeginPolygon" title="gluTessBeginPolygon"><tt class="xref c c-func docutils literal"><span class="pre">gluTessBeginPolygon()</span></tt></a> was called. The function prototype for this callback
+is:</p>
+<div class="highlight-c"><pre>void endData( void \*polygon_data );</pre>
+</div>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLU_TESS_COMBINE</span></tt></p>
+<blockquote>
+<div><p>The combine callback is called to create a new vertex when the tessellation
+detects an intersection or wishes to merge features. The function takes
+four arguments: an array of three elements each of type GLdouble, an array
+of four pointers, an array of four elements each of type GLfloat, and a
+pointer to a pointer. The prototype is:</p>
+<div class="highlight-c"><pre>void combine( GLdouble coords[3], void \*vertex_data[4],
+              GLfloat weight[4], void \*\*outData );</pre>
+</div>
+<p>The vertex is defined as a linear combination of up to four existing vertices,
+stored in <strong>vertex_data</strong>. The coefficients of the linear
+combination are given by <strong>weight</strong>; these weights always add up to 1.
+All vertex pointers are valid even when some of the weights are 0.
+<strong>coords</strong> gives the location of the new vertex.</p>
+<p>The user must allocate another vertex, interpolate parameters using
+<strong>vertex_data</strong> and <strong>weight</strong>, and return the new vertex pointer in
+<strong>outData</strong>. This handle is supplied during rendering callbacks.
+The user is responsible for freeing the memory some time after
+<a class="reference internal" href="gluTessEndPolygon.html#gluTessEndPolygon" title="gluTessEndPolygon"><tt class="xref c c-func docutils literal"><span class="pre">gluTessEndPolygon()</span></tt></a> is called.</p>
+<p>For example, if the polygon lies in an arbitrary plane in 3-space,
+and a color is associated with each vertex, the
+<tt class="docutils literal"><span class="pre">GLU_TESS_COMBINE</span></tt> callback might look like this:</p>
+<div class="highlight-c"><pre>void myCombine( GLdouble coords[3], VERTEX \*d[4],
+                GLfloat w[4], VERTEX \*\*dataOut )
+{
+   VERTEX \*new = new_vertex();
+
+   new-&gt;x = coords[0];
+   new-&gt;y = coords[1];
+   new-&gt;z = coords[2];
+   new-&gt;r = w[0]\*d[0]-&gt;r + w[1]\*d[1]-&gt;r + w[2]\*d[2]-&gt;r + w[3]\*d[3]-&gt;r;
+   new-&gt;g = w[0]\*d[0]-&gt;g + w[1]\*d[1]-&gt;g + w[2]\*d[2]-&gt;g + w[3]\*d[3]-&gt;g;
+   new-&gt;b = w[0]\*d[0]-&gt;b + w[1]\*d[1]-&gt;b + w[2]\*d[2]-&gt;b + w[3]\*d[3]-&gt;b;
+   new-&gt;a = w[0]\*d[0]-&gt;a + w[1]\*d[1]-&gt;a + w[2]\*d[2]-&gt;a + w[3]\*d[3]-&gt;a;
+   \*dataOut = new;
+}</pre>
+</div>
+<p>If the tessellation detects an intersection, then the <tt class="docutils literal"><span class="pre">GLU_TESS_COMBINE</span></tt> or
+<tt class="docutils literal"><span class="pre">GLU_TESS_COMBINE_DATA</span></tt> callback (see below) must be defined, and it must
+write a non-NULL pointer into <strong>dataOut</strong>. Otherwise the
+<tt class="docutils literal"><span class="pre">GLU_TESS_NEED_COMBINE_CALLBACK</span></tt> error occurs, and no
+output is generated.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLU_TESS_COMBINE_DATA</span></tt></p>
+<blockquote>
+<div><p>The same as the <tt class="docutils literal"><span class="pre">GLU_TESS_COMBINE</span></tt> callback except that it takes an additional pointer
+argument. This pointer is identical to the opaque pointer provided when
+<a class="reference internal" href="gluTessBeginPolygon.html#gluTessBeginPolygon" title="gluTessBeginPolygon"><tt class="xref c c-func docutils literal"><span class="pre">gluTessBeginPolygon()</span></tt></a> was called. The function prototype for this callback
+is:</p>
+<div class="highlight-c"><pre>void combineData( GLdouble coords[3], void \*vertex_data[4],
+                  GLfloat weight[4], void \*\*outData,
+                  void \*polygon_data );</pre>
+</div>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLU_TESS_ERROR</span></tt></p>
+<blockquote>
+<div><p>The error callback is called when an error is encountered. The one argument
+is of type GLenum; it indicates the specific error that occurred and will be
+set to one of <tt class="docutils literal"><span class="pre">GLU_TESS_MISSING_BEGIN_POLYGON</span></tt>, <tt class="docutils literal"><span class="pre">GLU_TESS_MISSING_END_POLYGON</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_TESS_MISSING_BEGIN_CONTOUR</span></tt>, <tt class="docutils literal"><span class="pre">GLU_TESS_MISSING_END_CONTOUR</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_TESS_COORD_TOO_LARGE</span></tt>, <tt class="docutils literal"><span class="pre">GLU_TESS_NEED_COMBINE_CALLBACK</span></tt>, or
+<tt class="docutils literal"><span class="pre">GLU_OUT_OF_MEMORY</span></tt>. Character
+strings describing these errors can be retrieved with the
+<a class="reference internal" href="gluErrorString.html#gluErrorString" title="gluErrorString"><tt class="xref c c-func docutils literal"><span class="pre">gluErrorString()</span></tt></a> call. The function prototype for this callback is:</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="kt">void</span> <span class="n">error</span><span class="p">(</span> <span class="n">GLenum</span> <span class="n">errno</span> <span class="p">);</span>
+</pre></div>
+</div>
+<p>The GLU library will recover from the first four
+errors by inserting the missing call(s).
+<tt class="docutils literal"><span class="pre">GLU_TESS_COORD_TOO_LARGE</span></tt> indicates that some vertex coordinate exceeded
+the predefined constant <tt class="docutils literal"><span class="pre">GLU_TESS_MAX_COORD</span></tt> in absolute value, and
+that the value has been clamped. (Coordinate values must be small
+enough so that two can be multiplied together without overflow.)
+<tt class="docutils literal"><span class="pre">GLU_TESS_NEED_COMBINE_CALLBACK</span></tt> indicates that the tessellation
+detected an intersection between two edges in the input data, and the
+<tt class="docutils literal"><span class="pre">GLU_TESS_COMBINE</span></tt> or <tt class="docutils literal"><span class="pre">GLU_TESS_COMBINE_DATA</span></tt> callback was
+not provided. No output is generated. <tt class="docutils literal"><span class="pre">GLU_OUT_OF_MEMORY</span></tt> indicates
+that there is not enough memory so no output is generated.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLU_TESS_ERROR_DATA</span></tt></p>
+<blockquote>
+<div><p>The same as the <tt class="docutils literal"><span class="pre">GLU_TESS_ERROR</span></tt> callback except that it takes an additional pointer
+argument. This pointer is identical to the opaque pointer provided when
+<a class="reference internal" href="gluTessBeginPolygon.html#gluTessBeginPolygon" title="gluTessBeginPolygon"><tt class="xref c c-func docutils literal"><span class="pre">gluTessBeginPolygon()</span></tt></a> was called. The function prototype for this callback
+is:</p>
+<div class="highlight-c"><pre>void errorData( GLenum errno, void \*polygon_data );</pre>
+</div>
+</div></blockquote>
+</div></blockquote>
+<p class="rubric">Example</p>
+<p>Polygons tessellated can be rendered directly like this:</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="n">gluTessCallback</span><span class="p">(</span><span class="n">tobj</span><span class="p">,</span> <span class="n">GLU_TESS_BEGIN</span><span class="p">,</span> <span class="n">glBegin</span><span class="p">);</span>
+<span class="n">gluTessCallback</span><span class="p">(</span><span class="n">tobj</span><span class="p">,</span> <span class="n">GLU_TESS_VERTEX</span><span class="p">,</span> <span class="n">glVertex3dv</span><span class="p">);</span>
+<span class="n">gluTessCallback</span><span class="p">(</span><span class="n">tobj</span><span class="p">,</span> <span class="n">GLU_TESS_END</span><span class="p">,</span> <span class="n">glEnd</span><span class="p">);</span>
+<span class="n">gluTessCallback</span><span class="p">(</span><span class="n">tobj</span><span class="p">,</span> <span class="n">GLU_TESS_COMBINE</span><span class="p">,</span> <span class="n">myCombine</span><span class="p">);</span>
+<span class="n">gluTessBeginPolygon</span><span class="p">(</span><span class="n">tobj</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+   <span class="n">gluTessBeginContour</span><span class="p">(</span><span class="n">tobj</span><span class="p">);</span>
+      <span class="n">gluTessVertex</span><span class="p">(</span><span class="n">tobj</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">v</span><span class="p">);</span>
+      <span class="p">...</span>
+   <span class="n">gluTessEndContour</span><span class="p">(</span><span class="n">tobj</span><span class="p">);</span>
+<span class="n">gluTessEndPolygon</span><span class="p">(</span><span class="n">tobj</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Typically, the tessellated polygon should be stored in a display list so that
+it does not need to be retessellated every time it is rendered.</p>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="gluTessBeginPolygon.html"
+                        title="previous chapter">function <cite>gluTessBeginPolygon</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="gluTessEndPolygon.html"
+                        title="next chapter">function <cite>gluTessEndPolygon</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/gluTessCallback.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="gluTessEndPolygon.html" title="function gluTessEndPolygon"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="gluTessBeginPolygon.html" title="function gluTessBeginPolygon"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

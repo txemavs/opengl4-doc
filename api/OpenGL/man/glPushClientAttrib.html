@@ -1,0 +1,217 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glPushClientAttrib &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function glPushMatrix" href="glPushMatrix.html" />
+    <link rel="prev" title="function glPushAttrib" href="glPushAttrib.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glPushMatrix.html" title="function glPushMatrix"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glPushAttrib.html" title="function glPushAttrib"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glpushclientattrib">
+<h1>function <cite>glPushClientAttrib</cite><a class="headerlink" href="#function-glpushclientattrib" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Push and pop the client attribute stack</p>
+<dl class="function">
+<dt id="glPushClientAttrib">
+<tt class="descname">glPushClientAttrib</tt><big>(</big><big>)</big><a class="headerlink" href="#glPushClientAttrib" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>mask</strong> &#8211; Specifies a mask that indicates which attributes to save.  Values for
+<em>mask</em> are listed below.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glPushClientAttrib</tt><big>(</big>GLbitfield <em>&nbsp;mask</em><big>)</big></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="glPopClientAttrib">
+void <tt class="descname">glPopClientAttrib</tt><big>(</big>void<big>)</big><a class="headerlink" href="#glPopClientAttrib" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glColorPointer.html#glColorPointer" title="glColorPointer"><tt class="xref c c-func docutils literal"><span class="pre">glColorPointer()</span></tt></a>,
+<a class="reference internal" href="glEnableClientState.html#glDisableClientState" title="glDisableClientState"><tt class="xref c c-func docutils literal"><span class="pre">glDisableClientState()</span></tt></a>,
+<a class="reference internal" href="glEdgeFlagPointer.html#glEdgeFlagPointer" title="glEdgeFlagPointer"><tt class="xref c c-func docutils literal"><span class="pre">glEdgeFlagPointer()</span></tt></a>,
+<a class="reference internal" href="glEnableClientState.html#glEnableClientState" title="glEnableClientState"><tt class="xref c c-func docutils literal"><span class="pre">glEnableClientState()</span></tt></a>,
+<a class="reference internal" href="glFogCoordPointer.html#glFogCoordPointer" title="glFogCoordPointer"><tt class="xref c c-func docutils literal"><span class="pre">glFogCoordPointer()</span></tt></a>,
+<a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a>,
+<a class="reference internal" href="../man4/glGetError.html#glGetError" title="glGetError"><tt class="xref c c-func docutils literal"><span class="pre">glGetError()</span></tt></a>,
+<a class="reference internal" href="glIndexPointer.html#glIndexPointer" title="glIndexPointer"><tt class="xref c c-func docutils literal"><span class="pre">glIndexPointer()</span></tt></a>,
+<a class="reference internal" href="glNormalPointer.html#glNormalPointer" title="glNormalPointer"><tt class="xref c c-func docutils literal"><span class="pre">glNormalPointer()</span></tt></a>,
+<a class="reference internal" href="glNewList.html#glNewList" title="glNewList"><tt class="xref c c-func docutils literal"><span class="pre">glNewList()</span></tt></a>,
+<a class="reference internal" href="../man4/glPixelStore.html#glPixelStore" title="glPixelStore"><tt class="xref c c-func docutils literal"><span class="pre">glPixelStore()</span></tt></a>,
+<a class="reference internal" href="glPushAttrib.html#glPushAttrib" title="glPushAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glPushAttrib()</span></tt></a>,
+<a class="reference internal" href="glTexCoordPointer.html#glTexCoordPointer" title="glTexCoordPointer"><tt class="xref c c-func docutils literal"><span class="pre">glTexCoordPointer()</span></tt></a>,
+<a class="reference internal" href="glVertexPointer.html#glVertexPointer" title="glVertexPointer"><tt class="xref c c-func docutils literal"><span class="pre">glVertexPointer()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glPushClientAttrib" title="glPushClientAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glPushClientAttrib()</span></tt></a> takes one argument,
+a mask that indicates which groups of client-state variables
+to save on the client attribute stack.
+Symbolic constants are used to set bits in the mask.
+<em>mask</em>
+is typically constructed by specifying the bitwise-or of several
+of these constants together.
+The special mask
+<tt class="docutils literal"><span class="pre">GL_CLIENT_ALL_ATTRIB_BITS</span></tt>
+can be used to save all stackable client state.</p>
+<p>The symbolic mask constants and their associated GL client state are as follows
+(the second column lists which attributes are saved):</p>
+<p><tt class="docutils literal"><span class="pre">GL_CLIENT_PIXEL_STORE_BIT</span></tt>   Pixel storage modes
+<tt class="docutils literal"><span class="pre">GL_CLIENT_VERTEX_ARRAY_BIT</span></tt>  Vertex arrays (and enables)</p>
+<p><a class="reference internal" href="#glPopClientAttrib" title="glPopClientAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glPopClientAttrib()</span></tt></a> restores the values of the client-state variables
+saved with the last <a class="reference internal" href="#glPushClientAttrib" title="glPushClientAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glPushClientAttrib()</span></tt></a>.
+Those not saved are left unchanged.</p>
+<p>It is an error to push attributes onto a full client attribute stack
+or to pop attributes off an empty stack.
+In either case, the error flag is set,
+and no other change is made to GL state.</p>
+<p>Initially, the client attribute stack is empty.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><a class="reference internal" href="#glPushClientAttrib" title="glPushClientAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glPushClientAttrib()</span></tt></a> is available only if the GL version is 1.1 or greater.</p>
+<p>Not all values for GL client state can be saved on the attribute stack.
+For example, select and feedback state cannot be saved.</p>
+<p>The depth of the attribute stack depends on the implementation,
+but it must be at least 16.</p>
+<p>Use <a class="reference internal" href="glPushAttrib.html#glPushAttrib" title="glPushAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glPushAttrib()</span></tt></a> and <a class="reference internal" href="glPushAttrib.html#glPopAttrib" title="glPopAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glPopAttrib()</span></tt></a> to push and restore
+state that is kept on the server. Only pixel storage modes and
+vertex array state may be pushed and popped with
+<a class="reference internal" href="#glPushClientAttrib" title="glPushClientAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glPushClientAttrib()</span></tt></a> and <a class="reference internal" href="#glPopClientAttrib" title="glPopClientAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glPopClientAttrib()</span></tt></a>.</p>
+<p class="last">For OpenGL versions 1.3 and greater, or when the <tt class="docutils literal"><span class="pre">ARB_multitexture</span></tt> extension is supported, pushing and
+popping client vertex array state applies to all supported texture units,
+and the active client texture state.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_STACK_OVERFLOW</span></tt> is generated if <a class="reference internal" href="#glPushClientAttrib" title="glPushClientAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glPushClientAttrib()</span></tt></a> is called while the attribute stack is full.</li>
+<li><tt class="docutils literal"><span class="pre">GL_STACK_UNDERFLOW</span></tt> is generated if <a class="reference internal" href="#glPopClientAttrib" title="glPopClientAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glPopClientAttrib()</span></tt></a> is called while the attribute stack is empty.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_ATTRIB_STACK_DEPTH</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_MAX_CLIENT_ATTRIB_STACK_DEPTH</span></tt></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glPushAttrib.html"
+                        title="previous chapter">function <cite>glPushAttrib</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glPushMatrix.html"
+                        title="next chapter">function <cite>glPushMatrix</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/glPushClientAttrib.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glPushMatrix.html" title="function glPushMatrix"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glPushAttrib.html" title="function glPushAttrib"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glGetSubroutineIndex`
+-------------------------------
+
+.. source file man4/glGetSubroutineIndex
+
+.. currentmodule:: OpenGL.GL
+
+Retrieve the index of a subroutine uniform of a given shader stage within a program
+
+.. c:function:: glGetSubroutineIndex
+.. c:function:: GLuint glGetSubroutineIndex(GLuint  program, GLenum  shadertype, const GLchar * name)
+   :noindex: 
+
+
+   
+   :param program:
+      Specifies the name of the program containing shader stage.
+   
+   :param shadertype:
+      Specifies the shader stage from which to query for subroutine uniform index. *shadertype* must be one of ``GL_VERTEX_SHADER``, ``GL_TESS_CONTROL_SHADER``, ``GL_TESS_EVALUATION_SHADER``, ``GL_GEOMETRY_SHADER`` or ``GL_FRAGMENT_SHADER``.
+   
+   :param name:
+      Specifies the name of the subroutine uniform whose index to query.
+   
+
+.. seealso::
+
+   
+   :c:func:`glGetProgram`, :c:func:`glGetActiveSubroutineUniform`, :c:func:`glGetActiveSubroutineUniformName`
+   
+.. rubric:: Description
+
+
+:c:func:`glGetSubroutineIndex` returns the index of a subroutine uniform within a shader stage attached to a program object. *program* contains the name of the program to which the shader is attached. *shadertype* specifies the stage from which to query shader subroutine index. *name* contains the null-terminated name of the subroutine uniform whose name to query.
+
+If *name* is not the name of a subroutine uniform in the shader stage, ``GL_INVALID_INDEX`` is returned, but no error is generated. If *name* is the name of a subroutine uniform in the shader stage, a value between zero and the value of ``GL_ACTIVE_SUBROUTINES`` minus one will be returned. Subroutine indices are assigned using consecutive integers in the range from zero to the value of ``GL_ACTIVE_SUBROUTINES`` minus one for the shader stage.
+
+
+**Errors:**
+
+   * ``GL_INVALID_ENUM`` is generated if *shadertype* or *pname* is not one of the accepted values.
+   * ``GL_INVALID_VALUE`` is generated if *program* is not the name of an existing program object.
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

@@ -1,0 +1,55 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glGetFragDataIndex`
+-----------------------------
+
+.. source file man4/glGetFragDataIndex
+
+.. currentmodule:: OpenGL.GL
+
+Query the bindings of color indices to user-defined varying out variables
+
+.. c:function:: glGetFragDataIndex
+.. c:function:: GLint glGetFragDataIndex(GLuint  program, const char *  name)
+   :noindex: 
+
+
+   
+   :param program:
+      The name of the program containing varying out variable whose binding to query
+   
+   :param name:
+      The name of the user-defined varying out variable whose index to query
+   
+
+.. seealso::
+
+   
+   :c:func:`glCreateProgram`, :c:func:`glBindFragDataLocation`, :c:func:`glBindFragDataLocationIndexed`, :c:func:`glGetFragDataLocation`
+   
+.. rubric:: Description
+
+
+:c:func:`glGetFragDataIndex` returns the index of the fragment color to which the variable *name* was bound when the program object *program* was last linked. If *name* is not a varying out variable of *program* , or if an error occurs, -1 will be returned.
+
+
+**Errors:**
+
+   * ``GL_INVALID_OPERATION`` is generated if *program* is not the name of a program object.
+
+
+
+.. note::
+
+   * :c:func:`glGetFragDataIndex` is available only if the GL version is 3.3 or greater.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

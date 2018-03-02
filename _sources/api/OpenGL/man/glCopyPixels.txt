@@ -1,0 +1,389 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:26
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glCopyPixels.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glCopyPixels`
+-----------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Copy pixels in the frame buffer
+
+.. c:function:: glCopyPixels
+
+
+         :param x:
+         :param y:
+
+                  Specify the window coordinates of the lower left corner
+                  of the rectangular region of pixels to be copied.
+
+         :param width:
+         :param height:
+
+                  Specify the dimensions of the rectangular region of pixels to be copied.
+                  Both must be nonnegative.
+
+         :param type:
+
+                  Specifies whether color values,
+                  depth values,
+                  or stencil values are to be copied.
+                  Symbolic constants
+                  ``GL_COLOR``\ ,
+                  ``GL_DEPTH``\ ,
+                  and ``GL_STENCIL`` are accepted.
+
+.. rubric:: Specification
+
+.. c:function:: void glCopyPixels(GLint  x, GLint  y, GLsizei  width, GLsizei  height, GLenum  type)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glColorTable`\ ,
+            :c:func:`glConvolutionFilter1D`\ ,
+            :c:func:`glConvolutionFilter2D`\ ,
+            :c:func:`glDepthFunc`\ ,
+            :c:func:`glDrawBuffer`\ ,
+            :c:func:`glDrawPixels`\ ,
+            :c:func:`glMatrixMode`\ ,
+            :c:func:`glPixelMap`\ ,
+            :c:func:`glPixelTransfer`\ ,
+            :c:func:`glPixelZoom`\ ,
+            :c:func:`glRasterPos`\ ,
+            :c:func:`glReadBuffer`\ ,
+            :c:func:`glReadPixels`\ ,
+            :c:func:`glSeparableFilter2D`\ ,
+            :c:func:`glStencilFunc`\ ,
+            :c:func:`glWindowPos`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glCopyPixels` copies a screen-aligned rectangle of pixels
+from the specified frame buffer location to a region relative to the
+current raster position.
+Its operation is well defined only if the entire pixel source region
+is within the exposed portion of the window.
+Results of copies from outside the window,
+or from regions of the window that are not exposed,
+are hardware dependent and undefined.
+
+
+*x* and *y* specify the window coordinates of
+the lower left corner of the rectangular region to be copied.
+*width* and *height* specify the dimensions of the
+rectangular region to be copied.
+Both *width* and *height* must not be negative.
+
+
+Several parameters control the processing of the pixel data
+while it is being copied.
+These parameters are set with three commands:
+:c:func:`glPixelTransfer`\ ,
+:c:func:`glPixelMap`\ , and
+:c:func:`glPixelZoom`\ .
+This reference page describes the effects on :c:func:`glCopyPixels` of most,
+but not all, of the parameters specified by these three commands.
+
+
+:c:func:`glCopyPixels` copies values from each pixel with the lower left-hand corner at |EQUATION_1_| for |EQUATION_2_| and |EQUATION_3_|\ .
+This pixel is said to be the |EQUATION_4_| th
+pixel in the |EQUATION_5_| th
+row.
+Pixels are copied in row order from the lowest to the highest row,
+left to right in each row.
+
+
+*type* specifies whether color, depth, or stencil data is to be copied.
+The details of the transfer for each data type are as follows:
+
+
+         ``GL_COLOR``
+
+
+               Indices or RGBA colors are read from the buffer currently specified as the
+               read source buffer (see :c:func:`glReadBuffer`\ ).
+               If the GL is in color index mode,
+               each index that is read from this buffer is converted
+               to a fixed-point format with an unspecified
+               number of bits to the right of the binary point.
+               Each index is then shifted left by ``GL_INDEX_SHIFT`` bits,
+               and added to ``GL_INDEX_OFFSET``\ .
+               If ``GL_INDEX_SHIFT`` is negative,
+               the shift is to the right.
+               In either case, zero bits fill otherwise unspecified bit locations in the
+               result.
+               If ``GL_MAP_COLOR`` is true,
+               the index is replaced with the value that it references in lookup table
+               ``GL_PIXEL_MAP_I_TO_I``\ .
+               Whether the lookup replacement of the index is done or not,
+               the integer part of the index is then ANDed with |EQUATION_6_|\ ,
+               where |EQUATION_7_| is the number of bits in a color index buffer.
+
+
+               If the GL is in RGBA mode,
+               the red, green, blue, and alpha components of each pixel that is read
+               are converted to an internal floating-point format with unspecified
+               precision.
+               The conversion maps the largest representable component value to 1.0,
+               and component value 0 to 0.0.
+               The resulting floating-point color values are then multiplied
+               by ``GL_c_SCALE`` and added to ``GL_c_BIAS``\ ,
+               where :strong:`c` is RED, GREEN, BLUE, and ALPHA
+               for the respective color components.
+               The results are clamped to the range [0,1].
+               If ``GL_MAP_COLOR`` is true,
+               each color component is scaled by the size of lookup table
+               ``GL_PIXEL_MAP_c_TO_c``\ ,
+               then replaced by the value that it references in that table.
+               :strong:`c` is R, G, B, or A.
+
+
+               If the ``ARB_imaging`` extension is supported, the color values may
+               be
+               additionally processed by color-table lookups, color-matrix
+               transformations, and convolution filters.
+
+
+               The GL then converts the resulting indices or RGBA colors to fragments
+               by attaching the current raster position :strong:`z` coordinate and
+               texture coordinates to each pixel,
+               then assigning window coordinates |EQUATION_8_|\ ,
+               where |EQUATION_9_| is the current raster position,
+               and the pixel was the |EQUATION_10_| th
+               pixel in the |EQUATION_11_| th
+               row.
+               These pixel fragments are then treated just like the fragments generated by
+               rasterizing points, lines, or polygons.
+               Texture mapping,
+               fog,
+               and all the fragment operations are applied before the fragments are written
+               to the frame buffer.
+
+
+         ``GL_DEPTH``
+
+
+               Depth values are read from the depth buffer and
+               converted directly to an internal floating-point format
+               with unspecified precision.
+               The resulting floating-point depth value is then multiplied
+               by ``GL_DEPTH_SCALE`` and added to ``GL_DEPTH_BIAS``\ .
+               The result is clamped to the range [0,1].
+
+
+               The GL then converts the resulting depth components to fragments
+               by attaching the current raster position color or color index and
+               texture coordinates to each pixel,
+               then assigning window coordinates
+               |EQUATION_12_|\ ,
+               where |EQUATION_13_| is the current raster position,
+               and the pixel was the |EQUATION_14_| th
+               pixel in the |EQUATION_15_| th
+               row.
+               These pixel fragments are then treated just like the fragments generated by
+               rasterizing points, lines, or polygons.
+               Texture mapping,
+               fog,
+               and all the fragment operations are applied before the fragments are written
+               to the frame buffer.
+
+
+         ``GL_STENCIL``
+
+
+               Stencil indices are read from the stencil buffer and
+               converted to an internal fixed-point format
+               with an unspecified number of bits to the right of the binary point.
+               Each fixed-point index is then shifted left by ``GL_INDEX_SHIFT`` bits,
+               and added to ``GL_INDEX_OFFSET``\ .
+               If ``GL_INDEX_SHIFT`` is negative,
+               the shift is to the right.
+               In either case, zero bits fill otherwise unspecified bit locations in the
+               result.
+               If ``GL_MAP_STENCIL`` is true,
+               the index is replaced with the value that it references in lookup table
+               ``GL_PIXEL_MAP_S_TO_S``\ .
+               Whether the lookup replacement of the index is done or not,
+               the integer part of the index is then ANDed with |EQUATION_16_|\ ,
+               where |EQUATION_17_| is the number of bits in the stencil buffer.
+               The resulting stencil indices are then written to the stencil buffer
+               such that the index read from the |EQUATION_18_| th
+               location of the |EQUATION_19_| th
+               row
+               is written to location |EQUATION_20_|\ ,
+               where |EQUATION_21_| is the current raster position.
+               Only the pixel ownership test,
+               the scissor test,
+               and the stencil writemask affect these write operations.
+
+
+The rasterization described thus far assumes pixel zoom factors of 1.0.
+If
+:c:func:`glPixelZoom` is used to change the |EQUATION_22_| and |EQUATION_23_| pixel zoom factors,
+pixels are converted to fragments as follows.
+If |EQUATION_24_| is the current raster position,
+and a given pixel is in the |EQUATION_25_| th
+location in the |EQUATION_26_| th
+row of the source
+pixel rectangle,
+then fragments are generated for pixels whose centers are in the rectangle
+with corners at
+
+
+|EQUATION_27_|
+
+and
+
+
+|EQUATION_28_|
+
+where
+|EQUATION_29_| is the value of ``GL_ZOOM_X`` and |EQUATION_30_| is the value of ``GL_ZOOM_Y``\ .
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Examples
+
+..
+
+
+To copy the color pixel in the lower left corner of the window to the current raster position,
+use
+
+
+.. code-block:: c
+
+
+   glCopyPixels(0, 0, 1, 1, GL_COLOR);
+
+..
+
+
+.. note::
+
+
+   Modes specified by :c:func:`glPixelStore` have no effect on the operation
+   of :c:func:`glCopyPixels`\ .
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_ENUM`` is generated if *type* is not an accepted value.
+* ``GL_INVALID_VALUE`` is generated if either *width* or *height* is negative.
+* ``GL_INVALID_OPERATION`` is generated if *type* is ``GL_DEPTH`` and there is no depth buffer.
+* ``GL_INVALID_OPERATION`` is generated if *type* is ``GL_STENCIL`` and there is no stencil buffer.
+* ``GL_INVALID_OPERATION`` is generated if :c:func:`glCopyPixels` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`\ .
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGet` with argument ``GL_CURRENT_RASTER_POSITION``
+* :c:func:`glGet` with argument ``GL_CURRENT_RASTER_POSITION_VALID``
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glCopyPixels'>
+
+.. role:: mml(raw)
+   :format: html
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mrow><mi mathvariant="italic">x</mi><mo>+</mo><mi mathvariant="italic">i</mi></mrow><mrow><mi mathvariant="italic">y</mi><mo>+</mo><mi mathvariant="italic">j</mi></mrow></mfenced></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>0</mn><mo><=</mo><mi mathvariant="italic">i</mi><mo><</mo><mi mathvariant="italic">width</mi></mrow></math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>0</mn><mo><=</mo><mi mathvariant="italic">j</mi><mo><</mo><mi mathvariant="italic">height</mi></mrow></math>` 
+
+.. |EQUATION_4_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math>` 
+
+.. |EQUATION_5_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">j</mi></math>` 
+
+.. |EQUATION_6_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mi mathvariant="italic">b</mi></msup><mo>-</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_7_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">b</mi></math>` 
+
+.. |EQUATION_8_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mrow><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">r</mi></msub><mo>+</mo><mi mathvariant="italic">i</mi></mrow><mrow><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">r</mi></msub><mo>+</mo><mi mathvariant="italic">j</mi></mrow></mfenced></math>` 
+
+.. |EQUATION_9_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">r</mi></msub><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">r</mi></msub></mfenced></math>` 
+
+.. |EQUATION_10_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math>` 
+
+.. |EQUATION_11_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">j</mi></math>` 
+
+.. |EQUATION_12_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mrow><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">r</mi></msub><mo>+</mo><mi mathvariant="italic">i</mi></mrow><mrow><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">r</mi></msub><mo>+</mo><mi mathvariant="italic">j</mi></mrow></mfenced></math>` 
+
+.. |EQUATION_13_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">r</mi></msub><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">r</mi></msub></mfenced></math>` 
+
+.. |EQUATION_14_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math>` 
+
+.. |EQUATION_15_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">j</mi></math>` 
+
+.. |EQUATION_16_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mi mathvariant="italic">b</mi></msup><mo>-</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_17_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">b</mi></math>` 
+
+.. |EQUATION_18_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math>` 
+
+.. |EQUATION_19_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">j</mi></math>` 
+
+.. |EQUATION_20_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mrow><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">r</mi></msub><mo>+</mo><mi mathvariant="italic">i</mi></mrow><mrow><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">r</mi></msub><mo>+</mo><mi mathvariant="italic">j</mi></mrow></mfenced></math>` 
+
+.. |EQUATION_21_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">r</mi></msub><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">r</mi></msub></mfenced></math>` 
+
+.. |EQUATION_22_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">x</mi></math>` 
+
+.. |EQUATION_23_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">y</mi></math>` 
+
+.. |EQUATION_24_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">r</mi></msub><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">r</mi></msub></mfenced></math>` 
+
+.. |EQUATION_25_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math>` 
+
+.. |EQUATION_26_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">j</mi></math>` 
+
+.. |EQUATION_27_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mrow><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">r</mi></msub><mo>+</mo><mfenced open="" close=""><msub><mi mathvariant="italic">zoom</mi><mi mathvariant="italic">x</mi></msub></mfenced><mo>&it;</mo><mi mathvariant="italic">i</mi></mrow><mrow><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">r</mi></msub><mo>+</mo><mfenced open="" close=""><msub><mi mathvariant="italic">zoom</mi><mi mathvariant="italic">y</mi></msub></mfenced><mo>&it;</mo><mi mathvariant="italic">j</mi></mrow></mfenced></math>` 
+
+.. |EQUATION_28_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mrow><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">r</mi></msub><mo>+</mo><mrow><mfenced open="" close=""><msub><mi mathvariant="italic">zoom</mi><mi mathvariant="italic">x</mi></msub></mfenced><mo>&af;</mo><mfenced open="(" close=")"><mrow><mi mathvariant="italic">i</mi><mo>+</mo><mn>1</mn></mrow></mfenced></mrow></mrow><mrow><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">r</mi></msub><mo>+</mo><mrow><mfenced open="" close=""><msub><mi mathvariant="italic">zoom</mi><mi mathvariant="italic">y</mi></msub></mfenced><mo>&af;</mo><mfenced open="(" close=")"><mrow><mi mathvariant="italic">j</mi><mo>+</mo><mn>1</mn></mrow></mfenced></mrow></mrow></mfenced></math>` 
+
+.. |EQUATION_29_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">zoom</mi><mi mathvariant="italic">x</mi></msub></math>` 
+
+.. |EQUATION_30_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">zoom</mi><mi mathvariant="italic">y</mi></msub></math>` 
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

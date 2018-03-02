@@ -1,0 +1,58 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glCallList`
+---------------------
+
+.. source file man/glCallList
+
+.. currentmodule:: OpenGL.GL
+
+Execute a display list
+
+.. c:function:: glCallList
+.. c:function:: void glCallList(GLuint  list)
+   :noindex: 
+
+
+   
+   :param list:
+      Specifies the integer name of the display list to be executed.
+   
+
+.. seealso::
+
+   
+   :c:func:`glCallLists`, :c:func:`glDeleteLists`, :c:func:`glGenLists`, :c:func:`glNewList`, :c:func:`glPushAttrib`, :c:func:`glPushMatrix`
+   
+.. rubric:: Description
+
+
+:c:func:`glCallList` causes the named display list to be executed. The commands saved in the display list are executed in order, just as if they were called without using a display list. If *list* has not been defined as a display list, :c:func:`glCallList` is ignored.
+
+:c:func:`glCallList` can appear inside a display list. To avoid the possibility of infinite recursion resulting from display lists calling one another, a limit is placed on the nesting level of display lists during display-list execution. This limit is at least 64, and it depends on the implementation.
+
+GL state is not saved and restored across a call to :c:func:`glCallList`. Thus, changes made to GL state during the execution of a display list remain after execution of the display list is completed. Use :c:func:`glPushAttrib`, :c:func:`glPopAttrib`, :c:func:`glPushMatrix`, and :c:func:`glPopMatrix` to preserve GL state across :c:func:`glCallList` calls.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGet` with argument ``GL_MAX_LIST_NESTING``
+   * :c:func:`glIsList`
+
+
+
+.. note::
+
+   * Display lists can be executed between a call to :c:func:`glBegin` and the corresponding call to :c:func:`glEnd`, as long as the display list includes only commands that are allowed in this interval.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

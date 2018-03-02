@@ -1,0 +1,87 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:27
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/gluErrorString.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `gluErrorString`
+-------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Produce an error string from a GL or GLU error code
+
+.. c:function:: gluErrorString
+
+
+         :param error:
+
+                  Specifies a GL or GLU error code.
+
+.. rubric:: Specification
+
+.. c:function:: const GLubyte * gluErrorString(GLenum  error)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`gluNurbsCallback`\ ,
+            :c:func:`gluQuadricCallback`\ ,
+            :c:func:`gluTessCallback`\ ,
+            :c:func:`glGetError`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`gluErrorString` produces an error string from a GL or GLU error code. The string
+is in ISO Latin 1 format. For example,
+:c:func:`gluErrorString` (\ ``GLU_OUT_OF_MEMORY``\ ) returns the string
+:strong:`out of memory`\ .
+
+
+The standard GLU error codes are ``GLU_INVALID_ENUM``\ ,
+``GLU_INVALID_VALUE``\ ,
+and ``GLU_OUT_OF_MEMORY``\ .
+Certain other GLU functions can return specialized error codes
+through callbacks.
+See the :c:func:`glGetError` reference page for the list of
+GL error codes.
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``NULL`` is returned if *error* is not a valid GL or GLU error code.
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'gluErrorString'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

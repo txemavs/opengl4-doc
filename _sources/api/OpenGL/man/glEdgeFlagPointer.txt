@@ -1,0 +1,168 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:26
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glEdgeFlagPointer.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glEdgeFlagPointer`
+----------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Define an array of edge flags
+
+.. c:function:: glEdgeFlagPointer
+
+
+         :param stride:
+
+                  Specifies the byte offset between consecutive edge flags.
+                  If *stride* is 0, the edge flags are understood
+                  to be tightly packed in the array. The initial value is 0.
+
+         :param pointer:
+
+                  Specifies a pointer to the first edge flag in the array. The initial
+                  value is 0.
+
+.. rubric:: Specification
+
+.. c:function:: void glEdgeFlagPointer(GLsizei  stride, const GLvoid *  pointer)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glArrayElement`\ ,
+            :c:func:`glBindBuffer`\ ,
+            :c:func:`glColorPointer`\ ,
+            :c:func:`glDisableClientState`\ ,
+            :c:func:`glDrawArrays`\ ,
+            :c:func:`glDrawElements`\ ,
+            :c:func:`glDrawRangeElements`\ ,
+            :c:func:`glEdgeFlag`\ ,
+            :c:func:`glEnableClientState`\ ,
+            :c:func:`glFogCoordPointer`\ ,
+            :c:func:`glIndexPointer`\ ,
+            :c:func:`glInterleavedArrays`\ ,
+            :c:func:`glMultiDrawArrays`\ ,
+            :c:func:`glMultiDrawElements`\ ,
+            :c:func:`glNormalPointer`\ ,
+            :c:func:`glPopClientAttrib`\ ,
+            :c:func:`glPushClientAttrib`\ ,
+            :c:func:`glSecondaryColorPointer`\ ,
+            :c:func:`glTexCoordPointer`\ ,
+            :c:func:`glVertexAttribPointer`\ ,
+            :c:func:`glVertexPointer`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glEdgeFlagPointer` specifies the location and data format of an array of boolean edge
+flags to use when rendering. *stride* specifies the byte stride from one
+edge flag to the next, allowing vertices and attributes
+to be packed into a single array or stored in separate arrays.
+
+
+If a non-zero named buffer object is bound to the ``GL_ARRAY_BUFFER`` target
+(see :c:func:`glBindBuffer`\ ) while an edge flag array is
+specified, *pointer* is treated as a byte offset into the buffer object's data store.
+Also, the buffer object binding (\ ``GL_ARRAY_BUFFER_BINDING``\ ) is saved as edge flag vertex array
+client-side state (\ ``GL_EDGE_FLAG_ARRAY_BUFFER_BINDING``\ ).
+
+
+When an edge flag array is
+specified, *stride* and *pointer* are saved as client-side
+state, in addition to the current vertex array buffer object binding.
+
+
+To enable and disable the edge flag array, call
+:c:func:`glEnableClientState` and :c:func:`glDisableClientState` with the argument
+``GL_EDGE_FLAG_ARRAY``\ . If
+enabled, the edge flag array is used
+when :c:func:`glDrawArrays`\ , :c:func:`glMultiDrawArrays`\ , :c:func:`glDrawElements`\ ,
+:c:func:`glMultiDrawElements`\ , :c:func:`glDrawRangeElements`\ , or
+:c:func:`glArrayElement` is called.
+
+
+.. note::
+
+
+   :c:func:`glEdgeFlagPointer` is available only if the GL version is 1.1 or greater.
+
+
+   Edge flags are not supported for interleaved vertex array formats
+   (see :c:func:`glInterleavedArrays`\ ).
+
+
+   The edge flag array is initially disabled and isn't accessed when
+   :c:func:`glArrayElement`\ , :c:func:`glDrawElements`\ , :c:func:`glDrawRangeElements`\ ,
+   :c:func:`glDrawArrays`\ , :c:func:`glMultiDrawArrays`\ , or :c:func:`glMultiDrawElements`
+   is called.
+
+
+   Execution of :c:func:`glEdgeFlagPointer` is not allowed between the execution of
+   :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`\ ,
+   but an error may or may not be generated. If no error is generated,
+   the operation is undefined.
+
+
+   :c:func:`glEdgeFlagPointer` is typically implemented on the client side.
+
+
+   Edge flag array parameters are client-side state and are therefore
+   not saved or restored by :c:func:`glPushAttrib` and :c:func:`glPopAttrib`\ .
+   Use :c:func:`glPushClientAttrib` and
+   :c:func:`glPopClientAttrib` instead.
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_ENUM`` is generated if *stride* is negative.
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glIsEnabled` with argument ``GL_EDGE_FLAG_ARRAY``
+* :c:func:`glGet` with argument ``GL_EDGE_FLAG_ARRAY_STRIDE``
+* :c:func:`glGet` with argument ``GL_EDGE_FLAG_ARRAY_BUFFER_BINDING``
+* :c:func:`glGet` with argument ``GL_ARRAY_BUFFER_BINDING``
+* :c:func:`glGetPointerv` with argument ``GL_EDGE_FLAG_ARRAY_POINTER``
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glEdgeFlagPointer'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

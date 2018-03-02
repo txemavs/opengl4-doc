@@ -1,0 +1,106 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:26
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glGetMinmaxParameter.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glGetMinmaxParameter`
+-------------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Get minmax parameters
+
+.. c:function:: glGetMinmaxParameter
+
+
+         :param target:
+
+                  Must be
+                  ``GL_MINMAX``\ .
+
+         :param pname:
+
+                  The parameter to be retrieved.
+                  Must be one of
+                  ``GL_MINMAX_FORMAT`` or
+                  ``GL_MINMAX_SINK``\ .
+
+         :param params:
+
+                  A pointer to storage for the retrieved parameters.
+
+.. rubric:: Specification
+
+.. c:function:: void glGetMinmaxParameterfv(GLenum  target, GLenum  pname, GLfloat *  params, GLenum  target, GLenum  pname, GLint *  params)
+
+
+.. seealso::
+
+
+            :c:func:`glMinmax`\ ,
+            :c:func:`glGetMinmax`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glGetMinmaxParameter` retrieves parameters for the current minmax table by setting
+*pname* to one of the following values:
+
+
++----------------------+---------------------------------------+
+| :strong:`Parameter`  | :strong:`Description`                 |
++----------------------+---------------------------------------+
+| ``GL_MINMAX_FORMAT`` | Internal format of minmax table       |
++----------------------+---------------------------------------+
+| ``GL_MINMAX_SINK``   | Value of the :strong:`sink` parameter |
++----------------------+---------------------------------------+
+
+
+.. note::
+
+
+   :c:func:`glGetMinmaxParameter` is present only if ``ARB_imaging`` is returned when :c:func:`glGetString`
+   is called with an argument of ``GL_EXTENSIONS``\ .
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_ENUM`` is generated if *target* is not ``GL_MINMAX``\ .
+* ``GL_INVALID_ENUM`` is generated if *pname* is not one of the allowable values.
+* ``GL_INVALID_OPERATION`` is generated if :c:func:`glGetMinmaxParameter` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`\ .
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glGetMinmaxParameter'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

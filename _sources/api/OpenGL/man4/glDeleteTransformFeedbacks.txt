@@ -1,0 +1,86 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:29
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glDeleteTransformFeedbacks.xml'
+.. (c)2010 Khronos Group.
+.. See license details at http://opencontent.org/openpub/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glDeleteTransformFeedbacks`
+-------------------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Delete transform feedback objects
+
+.. c:function:: glDeleteTransformFeedbacks
+
+
+         :param n:
+
+                  Specifies the number of transform feedback objects to delete.
+
+         :param ids:
+
+                  Specifies an array of names of transform feedback objects to delete.
+
+.. rubric:: Specification
+
+.. c:function:: void glDeleteTransformFeedbacks(GLsizei  n, const GLuint * ids)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glGenTransformFeedbacks`\ ,
+            :c:func:`glBindTransformFeedback`\ ,
+            :c:func:`glIsTransformFeedback`\ ,
+            :c:func:`glBeginTransformFeedback`\ ,
+            :c:func:`glPauseTransformFeedback`\ ,
+            :c:func:`glResumeTransformFeedback`\ ,
+            :c:func:`glEndTransformFeedback`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glDeleteTransformFeedbacks` deletes the *n* transform feedback objects
+whose names are stored in the array *ids*\ . Unused names in *ids* are
+ignored, as is the name zero. After a transform feedback object is deleted, its name is again unused and it
+has no contents. If an active transform feedback object is deleted, its name immediately becomes unused, but
+the underlying object is not deleted until it is no longer active.
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGet` with argument ``GL_TRANSFORM_FEEDBACK_BINDING``
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glDeleteTransformFeedbacks'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )2010 Khronos Group. Open Publication License.
+

@@ -1,0 +1,46 @@
+.. nabla.opengl-sphinx project
+
+.. ---------------------------
+
+.. this dodument source file 'man/gl_PatchVerticesIn'is copyrighted by Khronos Group
+   See license details at http://opencontent.org/openpub/
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   
+
+function `gl_PatchVerticesIn`
+-----------------------------
+
+.. currentmodule:: OpenGL.GLSL
+
+Contains the number of vertices in the current patch
+
+.. c:function:: gl_PatchVerticesIn
+
+
+.. rubric:: Specification
+
+.. c:function:: in int gl_PatchVerticesIn)
+
+.. seealso::
+
+   
+   :c:func:`gl_TessLevelOuter`, :c:func:`gl_TessLevelInner`, :c:func:`gl_TessCoord`
+   
+.. rubric:: Description
+
+
+Available only in the tessellation control and evaluation languages, :c:func:`gl_PatchVerticesIn` contains the number of vertices in the input being processed by the shader. A single tessellation control or evaluation shader can read patches of differing sizes, and so th value of :c:func:`gl_PatchVertexIn` may differ between patches.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2011 Khronos Group. Open Publication License.
+

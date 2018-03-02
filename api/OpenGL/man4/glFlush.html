@@ -1,0 +1,161 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glFlush &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glFlushMappedBufferRange" href="glFlushMappedBufferRange.html" />
+    <link rel="prev" title="function glFinish" href="glFinish.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glFlushMappedBufferRange.html" title="function glFlushMappedBufferRange"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glFinish.html" title="function glFinish"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glflush">
+<h1>function <cite>glFlush</cite><a class="headerlink" href="#function-glflush" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Force execution of GL commands in finite time</p>
+<dl class="function">
+<dt id="glFlush">
+<tt class="descname">glFlush</tt><big>(</big><big>)</big><a class="headerlink" href="#glFlush" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glFlush</tt><big>(</big>void<big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glFinish.html#glFinish" title="glFinish"><tt class="xref c c-func docutils literal"><span class="pre">glFinish()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p>Different GL implementations buffer commands in several different locations,
+including network buffers and the graphics accelerator itself.
+<a class="reference internal" href="#glFlush" title="glFlush"><tt class="xref c c-func docutils literal"><span class="pre">glFlush()</span></tt></a> empties all of these buffers,
+causing all issued commands to be executed as quickly as
+they are accepted by the actual rendering engine.
+Though this execution may not be completed in any particular
+time period,
+it does complete in finite time.</p>
+<p>Because any GL program might be executed over a network,
+or on an accelerator that buffers commands,
+all programs should call <a class="reference internal" href="#glFlush" title="glFlush"><tt class="xref c c-func docutils literal"><span class="pre">glFlush()</span></tt></a> whenever they count on having
+all of their previously issued commands completed.
+For example,
+call <a class="reference internal" href="#glFlush" title="glFlush"><tt class="xref c c-func docutils literal"><span class="pre">glFlush()</span></tt></a> before waiting for user input that depends on
+the generated image.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><a class="reference internal" href="#glFlush" title="glFlush"><tt class="xref c c-func docutils literal"><span class="pre">glFlush()</span></tt></a> can return at any time.
+It does not wait until the execution of all previously
+issued GL commands is complete.</p>
+</div>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glFinish.html"
+                        title="previous chapter">function <cite>glFinish</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glFlushMappedBufferRange.html"
+                        title="next chapter">function <cite>glFlushMappedBufferRange</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glFlush.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glFlushMappedBufferRange.html" title="function glFlushMappedBufferRange"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glFinish.html" title="function glFinish"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

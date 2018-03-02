@@ -1,0 +1,112 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:30
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glProgramParameter.xml'
+.. (c)2010 Khronos Group.
+.. See license details at http://opencontent.org/openpub/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glProgramParameter`
+-----------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Specify a parameter for a program object
+
+.. c:function:: glProgramParameter
+
+
+         :param program:
+
+               Specifies the name of a program object whose parameter to modify.
+
+         :param pname:
+
+               Specifies the name of the parameter to modify.
+
+         :param value:
+
+               Specifies the new value of the parameter specified by *pname* for *program*\ .
+
+.. rubric:: Specification
+
+.. c:function:: void glProgramParameteri(GLuint  program, GLenum  pname, GLint  value)
+
+
+.. seealso::
+
+
+            :c:func:`glGetProgram`\ ,
+            :c:func:`glGetProgramBinary`\ ,
+            :c:func:`glProgramBinary`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glProgramParameter` specifies a new value for the parameter nameed by
+*pname* for the program object *program*\ .
+
+
+If *pname* is ``GL_PROGRAM_BINARY_RETRIEVABLE_HINT``\ ,
+*value* should be ``GL_FALSE`` or ``GL_TRUE``
+to indicate to the implementation the intention of the application to retrieve the program's
+binary representation with :c:func:`glGetProgramBinary`\ .
+The implementation may use this information to store information that may be useful for a future
+query of the program's binary. It is recommended to set ``GL_PROGRAM_BINARY_RETRIEVABLE_HINT``
+for the program to ``GL_TRUE`` before calling
+:c:func:`glLinkProgram`\ , and
+using the program at run-time if the binary is to be retrieved later.
+
+
+If *pname* is ``GL_PROGRAM_SEPARABLE``\ , *value*
+must be ``GL_TRUE`` or ``GL_FALSE`` and indicates whether
+*program* can be bound to individual pipeline stages via
+:c:func:`glUseProgramStages`\ . A program's
+``GL_PROGRAM_SEPARABLE`` parameter must be set to ``GL_TRUE``
+:strong:`before` :c:func:`glLinkProgram`
+is called in order for it to be usable with a program pipeline object. The initial state of
+``GL_PROGRAM_SEPARABLE`` is ``GL_FALSE``\ .
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_OPERATION`` is generated if *program* is not the name of an existing program object.
+* ``GL_INVALID_ENUM`` is generated if *pname* is not one of the accepted values.
+* ``GL_INVALID_VALUE`` is generated if *value* is not a valid value for the parameter named by *pname*\ .
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGetProgram`\ .
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glProgramParameter'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )2010 Khronos Group. Open Publication License.
+

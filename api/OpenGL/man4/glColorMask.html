@@ -1,0 +1,176 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glColorMask &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glCompileShader" href="glCompileShader.html" />
+    <link rel="prev" title="function glClientWaitSync" href="glClientWaitSync.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glCompileShader.html" title="function glCompileShader"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glClientWaitSync.html" title="function glClientWaitSync"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glcolormask">
+<h1>function <cite>glColorMask</cite><a class="headerlink" href="#function-glcolormask" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Enable and disable writing of frame buffer color components</p>
+<dl class="function">
+<dt id="glColorMask">
+<tt class="descname">glColorMask</tt><big>(</big><big>)</big><a class="headerlink" href="#glColorMask" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>buf</strong> &#8211; For <tt class="xref c c-func docutils literal"><span class="pre">glColorMaski()</span></tt>, specifies the index of the
+draw buffer whose color mask to set.</li>
+<li><strong>red</strong> &#8211; </li>
+<li><strong>green</strong> &#8211; </li>
+<li><strong>blue</strong> &#8211; </li>
+<li><strong>alpha</strong> &#8211; Specify whether red, green, blue, and alpha are to be written
+into the frame buffer.
+The initial values are all <tt class="docutils literal"><span class="pre">GL_TRUE</span></tt>,
+indicating that the color components are written.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glColorMask</tt><big>(</big>GLboolean <em>&nbsp;red</em>, GLboolean <em>&nbsp;green</em>, GLboolean <em>&nbsp;blue</em>, GLboolean <em>&nbsp;alpha</em>, GLuint <em>&nbsp;buf</em>, GLboolean <em>&nbsp;red</em>, GLboolean <em>&nbsp;green</em>, GLboolean <em>&nbsp;blue</em>, GLboolean <em>&nbsp;alpha</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glClear.html#glClear" title="glClear"><tt class="xref c c-func docutils literal"><span class="pre">glClear()</span></tt></a>,
+<a class="reference internal" href="glDepthMask.html#glDepthMask" title="glDepthMask"><tt class="xref c c-func docutils literal"><span class="pre">glDepthMask()</span></tt></a>,
+<a class="reference internal" href="glStencilMask.html#glStencilMask" title="glStencilMask"><tt class="xref c c-func docutils literal"><span class="pre">glStencilMask()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glColorMask" title="glColorMask"><tt class="xref c c-func docutils literal"><span class="pre">glColorMask()</span></tt></a> and <tt class="xref c c-func docutils literal"><span class="pre">glColorMaski()</span></tt> specify whether the individual color components in the frame buffer
+can or cannot be written. <tt class="xref c c-func docutils literal"><span class="pre">glColorMaski()</span></tt> sets the mask for a specific draw buffer, whereas
+<a class="reference internal" href="#glColorMask" title="glColorMask"><tt class="xref c c-func docutils literal"><span class="pre">glColorMask()</span></tt></a> sets the mask for all draw buffers.
+If <em>red</em> is <tt class="docutils literal"><span class="pre">GL_FALSE</span></tt>,
+for example,
+no change is made to the red component of any pixel in any of the
+color buffers,
+regardless of the drawing operation attempted.</p>
+<p>Changes to individual bits of components cannot be controlled.
+Rather,
+changes are either enabled or disabled for entire color components.</p>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_COLOR_WRITEMASK</span></tt></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. (c)2010-2011 Khronos Group. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glClientWaitSync.html"
+                        title="previous chapter">function <cite>glClientWaitSync</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glCompileShader.html"
+                        title="next chapter">function <cite>glCompileShader</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glColorMask.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glCompileShader.html" title="function glCompileShader"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glClientWaitSync.html" title="function glClientWaitSync"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

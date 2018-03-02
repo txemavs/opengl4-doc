@@ -1,0 +1,102 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:28
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glClearColor.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glClearColor`
+-----------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Specify clear values for the color buffers
+
+.. c:function:: glClearColor
+
+
+         :param red:
+         :param green:
+         :param blue:
+         :param alpha:
+
+                  Specify the red, green, blue, and alpha values used when the
+                  color buffers are cleared.
+                  The initial values are all 0.
+
+.. rubric:: Specification
+
+.. c:function:: void glClearColor(GLfloat  red, GLfloat  green, GLfloat  blue, GLfloat  alpha)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glClear`\ ,
+            :c:func:`removedTypes`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glClearColor` specifies the red,
+green,
+blue,
+and alpha values used by :c:func:`glClear` to clear the color buffers.
+Values specified by :c:func:`glClearColor` are clamped to the range |EQUATION_1_|\ .
+
+
+.. note::
+
+
+   The type of the *red*\ ,
+   *green*\ , *blue*\ ,
+   and *alpha* parameters was changed from
+   GLclampf to GLfloat. This change is transparent to user code
+   and is described in detail on the
+   :c:func:`removedTypes`
+   page.
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGet` with argument ``GL_COLOR_CLEAR_VALUE``
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glClearColor'>
+
+.. role:: mml(raw)
+   :format: html
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"><mn>0</mn><mn>1</mn></mfenced></math>` 
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

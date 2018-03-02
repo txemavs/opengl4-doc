@@ -1,0 +1,97 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:29
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glGenSamplers.xml'
+.. (c)2010 Khronos Group.
+.. See license details at http://opencontent.org/openpub/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glGenSamplers`
+------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Generate sampler object names
+
+.. c:function:: glGenSamplers
+
+
+         :param n:
+
+                  Specifies the number of sampler object names to generate.
+
+         :param samplers:
+
+                  Specifies an array in which the generated sampler object names are stored.
+
+.. rubric:: Specification
+
+.. c:function:: void glGenSamplers(GLsizei  n, GLuint * samplers)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glBindSampler`\ ,
+            :c:func:`glIsSampler`\ ,
+            :c:func:`glDeleteSamplers`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glGenSamplers` returns *n* sampler object names in *samplers*\ .
+There is no guarantee that the names form a contiguous set of integers; however, it is guaranteed that none of the returned names
+was in use immediately before the call to :c:func:`glGenSamplers`\ .
+
+
+Sampler object names returned by a call to :c:func:`glGenSamplers` are not returned by subsequent calls, unless
+they are first deleted with :c:func:`glDeleteSamplers`\ .
+
+
+The names returned in *samplers* are marked as used, for the purposes of :c:func:`glGenSamplers` only,
+but they acquire state and type only when they are first bound.
+
+
+.. note::
+
+
+   :c:func:`glGenSamplers` is available only if the GL version is 3.3 or higher.
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_VALUE`` is generated if *n* is negative.
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glGenSamplers'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )2010 Khronos Group. Open Publication License.
+

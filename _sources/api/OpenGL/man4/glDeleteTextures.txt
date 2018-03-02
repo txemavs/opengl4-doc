@@ -1,0 +1,99 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:29
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glDeleteTextures.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glDeleteTextures`
+---------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Delete named textures
+
+.. c:function:: glDeleteTextures
+
+
+         :param n:
+
+                  Specifies the number of textures to be deleted.
+
+         :param textures:
+
+                  Specifies an array of textures to be deleted.
+
+.. rubric:: Specification
+
+.. c:function:: void glDeleteTextures(GLsizei  n, const GLuint *  textures)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glBindTexture`\ ,
+            :c:func:`glCopyTexImage1D`\ ,
+            :c:func:`glCopyTexImage2D`\ ,
+            :c:func:`glGenTextures`\ ,
+            :c:func:`glGet`\ ,
+            :c:func:`glGetTexParameter`\ ,
+            :c:func:`glTexImage1D`\ ,
+            :c:func:`glTexImage2D`\ ,
+            :c:func:`glTexParameter`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glDeleteTextures` deletes *n* textures named by the elements of the array *textures*\ .
+After a texture is deleted, it has no contents or dimensionality,
+and its name is free for reuse (for example by :c:func:`glGenTextures`\ ).
+If a texture that is currently bound is deleted, the binding reverts
+to 0 (the default texture).
+
+
+:c:func:`glDeleteTextures` silently ignores 0's and names that do not correspond to
+existing textures.
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_VALUE`` is generated if *n* is negative.
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glIsTexture`
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glDeleteTextures'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

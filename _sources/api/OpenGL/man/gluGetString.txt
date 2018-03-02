@@ -1,0 +1,118 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:27
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/gluGetString.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `gluGetString`
+-----------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Return a string describing the GLU version or GLU extensions 
+
+.. c:function:: gluGetString
+
+
+         :param name:
+
+                  Specifies a symbolic constant, one of
+                  ``GLU_VERSION``\ , or ``GLU_EXTENSIONS``\ .
+
+.. rubric:: Specification
+
+.. c:function:: const GLubyte * gluGetString(GLenum  name)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glGetString`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`gluGetString` returns a pointer to a static string describing the
+GLU version or the GLU extensions that are supported.
+
+
+The version number is one of the following
+forms:
+
+
+:strong:`major_number.minor_number`
+:strong:`major_number.minor_number.release_number`\ .
+
+
+The version string is of the following form:
+
+
+:strong:`version number<space>vendor-specific information`
+
+
+Vendor-specific information is optional.
+Its format and contents depend on the implementation.
+
+
+The standard GLU contains a basic set of features and capabilities.
+If a company or group of companies wish to support other features,
+these may be included as extensions to the GLU.
+If *name* is
+``GLU_EXTENSIONS``\ , then :c:func:`gluGetString`
+returns a space-separated list of names of supported GLU extensions.
+(Extension names never contain spaces.)
+
+
+All strings are null-terminated.
+
+
+.. note::
+
+
+   :c:func:`gluGetString` only returns information about GLU extensions. Call :c:func:`glGetString`
+   to get a list of GL extensions.
+
+
+   :c:func:`gluGetString` is an initialization routine. Calling it after
+   a :c:func:`glNewList` results in undefined behavior.
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* NULL is returned if *name* is not ``GLU_VERSION`` or ``GLU_EXTENSIONS``\ .
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'gluGetString'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

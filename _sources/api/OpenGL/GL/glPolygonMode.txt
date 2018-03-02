@@ -1,0 +1,73 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glPolygonMode`
+------------------------
+
+.. source file man4/glPolygonMode
+
+.. currentmodule:: OpenGL.GL
+
+Select a polygon rasterization mode
+
+.. c:function:: glPolygonMode
+.. c:function:: void glPolygonMode(GLenum  face, GLenum  mode)
+   :noindex: 
+
+
+   
+   :param face:
+      Specifies the polygons that *mode* applies to. Must be ``GL_FRONT_AND_BACK`` for front- and back-facing polygons.
+   
+   :param mode:
+      Specifies how polygons will be rasterized. Accepted values are ``GL_POINT``, ``GL_LINE``, and ``GL_FILL``. The initial value is ``GL_FILL`` for both front- and back-facing polygons.
+   
+
+.. seealso::
+
+   
+   :c:func:`glLineWidth`, :c:func:`glPointSize`
+   
+.. rubric:: Description
+
+
+:c:func:`glPolygonMode` controls the interpretation of polygons for rasterization. *face* describes which polygons *mode* applies to: both front and back-facing polygons (``GL_FRONT_AND_BACK``). The polygon mode affects only the final rasterization of polygons. In particular, a polygon's vertices are lit and the polygon is clipped and possibly culled before these modes are applied.
+
+Three modes are defined and can be specified in *mode* :
+
+
+   
+   ``GL_POINT``
+      Polygon vertices that are marked as the start of a boundary edge are drawn as points. Point attributes such as ``GL_POINT_SIZE`` and ``GL_POINT_SMOOTH`` control the rasterization of the points. Polygon rasterization attributes other than ``GL_POLYGON_MODE`` have no effect.
+   
+   ``GL_LINE``
+      Boundary edges of the polygon are drawn as line segments. Line attributes such as ``GL_LINE_WIDTH`` and ``GL_LINE_SMOOTH`` control the rasterization of the lines. Polygon rasterization attributes other than ``GL_POLYGON_MODE`` have no effect.
+   
+   ``GL_FILL``
+      The interior of the polygon is filled. Polygon attributes such as ``GL_POLYGON_SMOOTH`` control the rasterization of the polygon.
+   
+
+**Associated gets:**
+
+
+   * :c:func:`glGet` with argument ``GL_POLYGON_MODE``
+
+**Errors:**
+
+   * ``GL_INVALID_ENUM`` is generated if either *face* or *mode* is not an accepted value.
+
+
+
+.. note::
+
+   * Vertices are marked as boundary or nonboundary with an edge flag. Edge flags are generated internally by the GL when it decomposes triangle stips and fans.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

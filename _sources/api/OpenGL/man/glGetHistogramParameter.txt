@@ -1,0 +1,129 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:26
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glGetHistogramParameter.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glGetHistogramParameter`
+----------------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Get histogram parameters
+
+.. c:function:: glGetHistogramParameter
+
+
+         :param target:
+
+                  Must be one of
+                  ``GL_HISTOGRAM`` or
+                  ``GL_PROXY_HISTOGRAM``\ .
+
+         :param pname:
+
+                  The name of the parameter to be retrieved.
+                  Must be one of
+                  ``GL_HISTOGRAM_WIDTH``\ ,
+                  ``GL_HISTOGRAM_FORMAT``\ ,
+                  ``GL_HISTOGRAM_RED_SIZE``\ ,
+                  ``GL_HISTOGRAM_GREEN_SIZE``\ ,
+                  ``GL_HISTOGRAM_BLUE_SIZE``\ ,
+                  ``GL_HISTOGRAM_ALPHA_SIZE``\ ,
+                  ``GL_HISTOGRAM_LUMINANCE_SIZE``\ , or
+                  ``GL_HISTOGRAM_SINK``\ .
+
+         :param params:
+
+                  Pointer to storage for the returned values.
+
+.. rubric:: Specification
+
+.. c:function:: void glGetHistogramParameterfv(GLenum  target, GLenum  pname, GLfloat *  params, GLenum  target, GLenum  pname, GLint *  params)
+
+
+.. seealso::
+
+
+            :c:func:`glGetHistogram`\ ,
+            :c:func:`glHistogram`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glGetHistogramParameter` is used to query parameter values for the current histogram or for
+a proxy.  The histogram state information may be queried by calling
+:c:func:`glGetHistogramParameter` with a *target* of ``GL_HISTOGRAM`` (to
+obtain information for the current histogram table) or
+``GL_PROXY_HISTOGRAM`` (to obtain information from the most recent
+proxy request) and one of the following values for the *pname* argument:
+
+
++---------------------------------+-------------------------------------------+
+| :strong:`Parameter`             | :strong:`Description`                     |
++---------------------------------+-------------------------------------------+
+| ``GL_HISTOGRAM_WIDTH``          | Histogram table width                     |
++---------------------------------+-------------------------------------------+
+| ``GL_HISTOGRAM_FORMAT``         | Internal format                           |
++---------------------------------+-------------------------------------------+
+| ``GL_HISTOGRAM_RED_SIZE``       | Red component counter size, in bits       |
++---------------------------------+-------------------------------------------+
+| ``GL_HISTOGRAM_GREEN_SIZE``     | Green component counter size, in bits     |
++---------------------------------+-------------------------------------------+
+| ``GL_HISTOGRAM_BLUE_SIZE``      | Blue component counter size, in bits      |
++---------------------------------+-------------------------------------------+
+| ``GL_HISTOGRAM_ALPHA_SIZE``     | Alpha component counter size, in bits     |
++---------------------------------+-------------------------------------------+
+| ``GL_HISTOGRAM_LUMINANCE_SIZE`` | Luminance component counter size, in bits |
++---------------------------------+-------------------------------------------+
+| ``GL_HISTOGRAM_SINK``           | Value of the :strong:`sink` parameter     |
++---------------------------------+-------------------------------------------+
+
+
+.. note::
+
+
+   :c:func:`glGetHistogramParameter` is present only if ``ARB_imaging`` is returned when :c:func:`glGetString`
+   is called with an argument of ``GL_EXTENSIONS``\ .
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_ENUM`` is generated if *target* is not one of the allowable values.
+* ``GL_INVALID_ENUM`` is generated if *pname* is not one of the allowable values.
+* ``GL_INVALID_OPERATION`` is generated if :c:func:`glGetHistogramParameter` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`\ .
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glGetHistogramParameter'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

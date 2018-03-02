@@ -1,0 +1,279 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glLinkProgram &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glLogicOp" href="glLogicOp.html" />
+    <link rel="prev" title="function glLineWidth" href="glLineWidth.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glLogicOp.html" title="function glLogicOp"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glLineWidth.html" title="function glLineWidth"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-gllinkprogram">
+<h1>function <cite>glLinkProgram</cite><a class="headerlink" href="#function-gllinkprogram" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Links a program object</p>
+<dl class="function">
+<dt id="glLinkProgram">
+<tt class="descname">glLinkProgram</tt><big>(</big><big>)</big><a class="headerlink" href="#glLinkProgram" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>program</strong> &#8211; Specifies the handle of the program object to be linked.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glLinkProgram</tt><big>(</big>GLuint <em>&nbsp;program</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glAttachShader.html#glAttachShader" title="glAttachShader"><tt class="xref c c-func docutils literal"><span class="pre">glAttachShader()</span></tt></a>,
+<a class="reference internal" href="glBindAttribLocation.html#glBindAttribLocation" title="glBindAttribLocation"><tt class="xref c c-func docutils literal"><span class="pre">glBindAttribLocation()</span></tt></a>,
+<a class="reference internal" href="glCompileShader.html#glCompileShader" title="glCompileShader"><tt class="xref c c-func docutils literal"><span class="pre">glCompileShader()</span></tt></a>,
+<a class="reference internal" href="glCreateProgram.html#glCreateProgram" title="glCreateProgram"><tt class="xref c c-func docutils literal"><span class="pre">glCreateProgram()</span></tt></a>,
+<a class="reference internal" href="glDeleteProgram.html#glDeleteProgram" title="glDeleteProgram"><tt class="xref c c-func docutils literal"><span class="pre">glDeleteProgram()</span></tt></a>,
+<a class="reference internal" href="glDetachShader.html#glDetachShader" title="glDetachShader"><tt class="xref c c-func docutils literal"><span class="pre">glDetachShader()</span></tt></a>,
+<a class="reference internal" href="glUniform.html#glUniform" title="glUniform"><tt class="xref c c-func docutils literal"><span class="pre">glUniform()</span></tt></a>,
+<a class="reference internal" href="glUseProgram.html#glUseProgram" title="glUseProgram"><tt class="xref c c-func docutils literal"><span class="pre">glUseProgram()</span></tt></a>,
+<a class="reference internal" href="glValidateProgram.html#glValidateProgram" title="glValidateProgram"><tt class="xref c c-func docutils literal"><span class="pre">glValidateProgram()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glLinkProgram" title="glLinkProgram"><tt class="xref c c-func docutils literal"><span class="pre">glLinkProgram()</span></tt></a> links the program
+object specified by <em>program</em>. If any
+shader objects of type <tt class="docutils literal"><span class="pre">GL_VERTEX_SHADER</span></tt> are
+attached to <em>program</em>, they will be used to
+create an executable that will run on the programmable vertex
+processor. If any shader objects of type <tt class="docutils literal"><span class="pre">GL_GEOMETRY_SHADER</span></tt>
+are attached to <em>program</em>, they will be used to create
+an executable that will run on the programmable geometry processor.
+If any shader objects of type
+<tt class="docutils literal"><span class="pre">GL_FRAGMENT_SHADER</span></tt> are attached to
+<em>program</em>, they will be used to create an
+executable that will run on the programmable fragment
+processor.</p>
+<p>The status of the link operation will be stored as part of
+the program object&#8217;s state. This value will be set to
+<tt class="docutils literal"><span class="pre">GL_TRUE</span></tt> if the program object was linked
+without errors and is ready for use, and
+<tt class="docutils literal"><span class="pre">GL_FALSE</span></tt> otherwise. It can be queried by
+calling
+<a class="reference internal" href="glGetProgram.html#glGetProgram" title="glGetProgram"><tt class="xref c c-func docutils literal"><span class="pre">glGetProgram()</span></tt></a>
+with arguments <em>program</em> and
+<tt class="docutils literal"><span class="pre">GL_LINK_STATUS</span></tt>.</p>
+<p>As a result of a successful link operation, all active
+user-defined uniform variables belonging to
+<em>program</em> will be initialized to 0, and
+each of the program object&#8217;s active uniform variables will be
+assigned a location that can be queried by calling
+<a class="reference internal" href="glGetUniformLocation.html#glGetUniformLocation" title="glGetUniformLocation"><tt class="xref c c-func docutils literal"><span class="pre">glGetUniformLocation()</span></tt></a>.
+Also, any active user-defined attribute variables that have not
+been bound to a generic vertex attribute index will be bound to
+one at this time.</p>
+<p>Linking of a program object can fail for a number of
+reasons as specified in the <strong>OpenGL Shading Language Specification</strong>. The following lists some of the
+conditions that will cause a link error.</p>
+<ul class="simple">
+<li>The number of active attribute variables supported by the implementation has been exceeded.</li>
+<li>The storage limit for uniform variables has been exceeded.</li>
+<li>The number of active uniform variables supported by the implementation has been exceeded.</li>
+<li>The <tt class="xref c c-func docutils literal"><span class="pre">main()</span></tt> function is missing for the vertex, geometry or fragment shader.</li>
+<li>A varying variable actually used in the fragment shader is not declared in the same way (or is not declared at all) in the vertex shader, or geometry shader shader if present.</li>
+<li>A reference to a function or variable name is unresolved.</li>
+<li>A shared global is declared with two different types or two different initial values.</li>
+<li>One or more of the attached shader objects has not been successfully compiled.</li>
+<li>Binding a generic attribute matrix caused some rows of the matrix to fall outside the allowed maximum of <tt class="docutils literal"><span class="pre">GL_MAX_VERTEX_ATTRIBS</span></tt>.</li>
+<li>Not enough contiguous vertex attribute slots could be found to bind attribute matrices.</li>
+<li>The program object contains objects to form a fragment shader but does not contain objects to form a vertex shader.</li>
+<li>The program object contains objects to form a geometry shader but does not contain objects to form a vertex shader.</li>
+<li>The program object contains objects to form a geometry shader and the input primitive type, output primitive type, or maximum output vertex count is not specified in any compiled geometry shader object.</li>
+<li>The program object contains objects to form a geometry shader and the input primitive type, output primitive type, or maximum output vertex count is specified differently in multiple geometry shader objects.</li>
+<li>The number of active outputs in the fragment shader is greater than the value of <tt class="docutils literal"><span class="pre">GL_MAX_DRAW_BUFFERS</span></tt>.</li>
+<li>The program has an active output assigned to a location greater than or equal to the value of <tt class="docutils literal"><span class="pre">GL_MAX_DUAL_SOURCE_DRAW_BUFFERS</span></tt> and has an active output assigned an index greater than or equal to one.</li>
+<li>More than one varying out variable is bound to the same number and index.</li>
+<li>The explicit binding assigments do not leave enough space for the linker to automatically assign a location for a varying out array, which requires multiple contiguous locations.</li>
+<li>The <em>count</em> specified by <a class="reference internal" href="glTransformFeedbackVaryings.html#glTransformFeedbackVaryings" title="glTransformFeedbackVaryings"><tt class="xref c c-func docutils literal"><span class="pre">glTransformFeedbackVaryings()</span></tt></a> is non-zero, but the program object has no vertex or geometry shader.</li>
+<li>Any variable name specified to <a class="reference internal" href="glTransformFeedbackVaryings.html#glTransformFeedbackVaryings" title="glTransformFeedbackVaryings"><tt class="xref c c-func docutils literal"><span class="pre">glTransformFeedbackVaryings()</span></tt></a> in the <em>varyings</em> array is not declared as an output in the vertex shader (or the geometry shader, if active).</li>
+<li>Any two entries in the <em>varyings</em> array given <a class="reference internal" href="glTransformFeedbackVaryings.html#glTransformFeedbackVaryings" title="glTransformFeedbackVaryings"><tt class="xref c c-func docutils literal"><span class="pre">glTransformFeedbackVaryings()</span></tt></a> specify the same varying variable.</li>
+<li>The total number of components to capture in any transform feedback varying variable is greater than the constant <tt class="docutils literal"><span class="pre">GL_MAX_TRANSFORM_FEEDBACK_SEPARATE_COMPONENTS</span></tt> and the buffer mode is <tt class="docutils literal"><span class="pre">SEPARATE_ATTRIBS</span></tt>.</li>
+</ul>
+<p>When a program object has been successfully linked, the
+program object can be made part of current state by calling
+<a class="reference internal" href="glUseProgram.html#glUseProgram" title="glUseProgram"><tt class="xref c c-func docutils literal"><span class="pre">glUseProgram()</span></tt></a>.
+Whether or not the link operation was successful, the program
+object&#8217;s information log will be overwritten. The information
+log can be retrieved by calling
+<a class="reference internal" href="glGetProgramInfoLog.html#glGetProgramInfoLog" title="glGetProgramInfoLog"><tt class="xref c c-func docutils literal"><span class="pre">glGetProgramInfoLog()</span></tt></a>.</p>
+<p><a class="reference internal" href="#glLinkProgram" title="glLinkProgram"><tt class="xref c c-func docutils literal"><span class="pre">glLinkProgram()</span></tt></a> will also install the
+generated executables as part of the current rendering state if
+the link operation was successful and the specified program
+object is already currently in use as a result of a previous
+call to
+<a class="reference internal" href="glUseProgram.html#glUseProgram" title="glUseProgram"><tt class="xref c c-func docutils literal"><span class="pre">glUseProgram()</span></tt></a>.
+If the program object currently in use is relinked
+unsuccessfully, its link status will be set to
+<tt class="docutils literal"><span class="pre">GL_FALSE</span></tt> , but the executables and
+associated state will remain part of the current state until a
+subsequent call to <a class="reference internal" href="glUseProgram.html#glUseProgram" title="glUseProgram"><tt class="xref c c-func docutils literal"><span class="pre">glUseProgram()</span></tt></a> removes it
+from use. After it is removed from use, it cannot be made part
+of current state until it has been successfully relinked.</p>
+<p>If <em>program</em> contains shader objects
+of type <tt class="docutils literal"><span class="pre">GL_VERTEX_SHADER</span></tt>, and optionally of type <tt class="docutils literal"><span class="pre">GL_GEOMETRY_SHADER</span></tt>,
+but does not contain shader objects of type
+<tt class="docutils literal"><span class="pre">GL_FRAGMENT_SHADER</span></tt>, the vertex shader executable will
+be installed on the programmable vertex processor, the geometry shader executable, if present,
+will be installed on the programmable geometry processor, but no executable will
+be installed on the fragment processor. The results of
+rasterizing primitives with such a program will be undefined.</p>
+<p>The program object&#8217;s information log is updated and the
+program is generated at the time of the link operation. After
+the link operation, applications are free to modify attached
+shader objects, compile attached shader objects, detach shader
+objects, delete shader objects, and attach additional shader
+objects. None of these operations affects the information log or
+the program that is part of the program object.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If the link operation is unsuccessful, any information about a previous link operation on <em>program</em>
+is lost (i.e., a failed link does not restore the old state of <em>program</em>
+). Certain information can still be retrieved from <em>program</em>
+even after an unsuccessful link operation. See for instance <a class="reference internal" href="glGetActiveAttrib.html#glGetActiveAttrib" title="glGetActiveAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glGetActiveAttrib()</span></tt></a>
+and <a class="reference internal" href="glGetActiveUniform.html#glGetActiveUniform" title="glGetActiveUniform"><tt class="xref c c-func docutils literal"><span class="pre">glGetActiveUniform()</span></tt></a>.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>program</em> is not a value generated by OpenGL.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <em>program</em> is not a program object.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <em>program</em> is the currently active program object and transform feedback mode is active.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with the argument <tt class="docutils literal"><span class="pre">GL_CURRENT_PROGRAM</span></tt></li>
+<li><a class="reference internal" href="glGetActiveAttrib.html#glGetActiveAttrib" title="glGetActiveAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glGetActiveAttrib()</span></tt></a> with argument <em>program</em> and the index of an active attribute variable</li>
+<li><a class="reference internal" href="glGetActiveUniform.html#glGetActiveUniform" title="glGetActiveUniform"><tt class="xref c c-func docutils literal"><span class="pre">glGetActiveUniform()</span></tt></a> with argument <em>program</em> and the index of an active uniform variable **</li>
+<li><a class="reference internal" href="glGetAttachedShaders.html#glGetAttachedShaders" title="glGetAttachedShaders"><tt class="xref c c-func docutils literal"><span class="pre">glGetAttachedShaders()</span></tt></a> with argument <em>program</em></li>
+<li><a class="reference internal" href="glGetAttribLocation.html#glGetAttribLocation" title="glGetAttribLocation"><tt class="xref c c-func docutils literal"><span class="pre">glGetAttribLocation()</span></tt></a> with argument <em>program</em> and an attribute variable name</li>
+<li><a class="reference internal" href="glGetProgram.html#glGetProgram" title="glGetProgram"><tt class="xref c c-func docutils literal"><span class="pre">glGetProgram()</span></tt></a> with arguments <em>program</em> and <tt class="docutils literal"><span class="pre">GL_LINK_STATUS</span></tt></li>
+<li><a class="reference internal" href="glGetProgramInfoLog.html#glGetProgramInfoLog" title="glGetProgramInfoLog"><tt class="xref c c-func docutils literal"><span class="pre">glGetProgramInfoLog()</span></tt></a> with argument <em>program</em></li>
+<li><a class="reference internal" href="glGetUniform.html#glGetUniform" title="glGetUniform"><tt class="xref c c-func docutils literal"><span class="pre">glGetUniform()</span></tt></a> with argument <em>program</em> and a uniform variable location</li>
+<li><a class="reference internal" href="glGetUniformLocation.html#glGetUniformLocation" title="glGetUniformLocation"><tt class="xref c c-func docutils literal"><span class="pre">glGetUniformLocation()</span></tt></a> with argument <em>program</em> and a uniform variable name</li>
+<li><a class="reference internal" href="glIsProgram.html#glIsProgram" title="glIsProgram"><tt class="xref c c-func docutils literal"><span class="pre">glIsProgram()</span></tt></a></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)2003-2005 3Dlabs Inc. Ltd. (c)2010 Khronos Group. Open Publication License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glLineWidth.html"
+                        title="previous chapter">function <cite>glLineWidth</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glLogicOp.html"
+                        title="next chapter">function <cite>glLogicOp</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glLinkProgram.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glLogicOp.html" title="function glLogicOp"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glLineWidth.html" title="function glLineWidth"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:28
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glXQueryExtensionsString.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glXQueryExtensionsString`
+-----------------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Return list of supported extensions
+
+.. c:function:: glXQueryExtensionsString
+
+
+         :param dpy:
+
+                  Specifies the connection to the X server.
+
+         :param screen:
+
+                  Specifies the screen number.
+
+.. rubric:: Specification
+
+.. c:function:: const char * glXQueryExtensionsString(Display *  dpy, int  screen)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glGetString`\ ,
+            :c:func:`glXQueryVersion`\ ,
+            :c:func:`glXQueryServerString`\ ,
+            :c:func:`glXGetClientString`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glXQueryExtensionsString`  returns a pointer to a string describing
+which GLX extensions are supported on the connection. The string
+is null-terminated and contains a space-separated list of
+extension names.  (The extension names themselves never contain
+spaces.) If there are no extensions to GLX, then the empty string is
+returned.
+
+
+.. note::
+
+
+   :c:func:`glXQueryExtensionsString` is available only if the GLX version is 1.1 or greater.
+
+
+   :c:func:`glXQueryExtensionsString` only returns information about GLX extensions. Call
+   :c:func:`glGetString` to get a list of GL extensions.
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glXQueryExtensionsString'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

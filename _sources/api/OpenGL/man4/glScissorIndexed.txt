@@ -1,0 +1,122 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:30
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glScissorIndexed.xml'
+.. (c)2010 Khronos Group.
+.. See license details at http://opencontent.org/openpub/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glScissorIndexed`
+---------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Define the scissor box for a specific viewport
+
+.. c:function:: glScissorIndexed
+
+
+         :param index:
+
+               Specifies the index of the viewport whose scissor box to modify.
+
+         :param left:
+         :param bottom:
+
+               Specify the coordinate of the bottom left corner of the scissor box, in pixels.
+
+         :param width:
+         :param height:
+
+               Specify ths dimensions of the scissor box, in pixels.
+
+         :param v:
+
+               For :c:func:`glScissorIndexedv`\ , specifies the address of an array containing the left, bottom, width and height of each
+               scissor box, in that order.
+
+.. rubric:: Specification
+
+.. c:function:: void glScissorIndexed(GLuint  index, GLint  left, GLint  bottom, GLsizei  width, GLsizei  height, GLuint  index, const GLint * v)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glEnable`\ ,
+            :c:func:`glScissor`\ ,
+            :c:func:`glScissorArray`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glScissorIndexed` defines the scissor box for a specified viewport.
+*index* specifies the index of scissor box to modify.
+*index* must be less than the value of ``GL_MAX_VIEWPORTS``\ .
+For :c:func:`glScissorIndexed`\ , *left*\ , *bottom*\ ,
+*width* and *height* specify the left, bottom, width
+and height of the scissor box, in pixels, respectively.
+For :c:func:`glScissorIndexedv`\ , *v* specifies the address of an
+array containing integers specifying the lower left corner of the scissor box, and the width and
+height of the scissor box, in that order.
+
+
+To enable and disable the scissor test, call
+:c:func:`glEnable` and :c:func:`glDisable` with argument
+``GL_SCISSOR_TEST``\ . The test is initially disabled for all viewports.
+While the test is enabled, only pixels that lie within the scissor box
+can be modified by drawing commands.
+Window coordinates have integer values at the shared corners of
+frame buffer pixels.
+``glScissor(0,0,1,1)`` allows modification of only the lower left
+pixel in the window, and ``glScissor(0,0,0,0)`` doesn't allow
+modification of any pixels in the window.
+
+
+When the scissor test is disabled,
+it is as though the scissor box includes the entire window.
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_VALUE`` is generated if *index* is greater than or equal to the value of ``GL_MAX_VIEWPORTS``\ .
+* ``GL_INVALID_VALUE`` is generated if any width or height specified in the array *v* is negative.
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGet` with argument ``GL_SCISSOR_BOX``
+* :c:func:`glIsEnabled` with argument ``GL_SCISSOR_TEST``
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glScissorIndexed'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )2010 Khronos Group. Open Publication License.
+

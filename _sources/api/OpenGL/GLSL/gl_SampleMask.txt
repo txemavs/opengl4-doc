@@ -1,0 +1,46 @@
+.. nabla.opengl-sphinx project
+
+.. ---------------------------
+
+.. this dodument source file 'man/gl_SampleMask'is copyrighted by Khronos Group
+   See license details at http://opencontent.org/openpub/
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   
+
+function `gl_SampleMask`
+------------------------
+
+.. currentmodule:: OpenGL.GLSL
+
+Specifies the sample coverage mask for the current fragment
+
+.. c:function:: gl_SampleMask
+
+
+.. rubric:: Specification
+
+.. c:function:: out int gl_SampleMask[])
+
+.. seealso::
+
+   
+   :c:func:`gl_SampleMaskIn`, :c:func:`gl_SampleID`, :c:func:`gl_SamplePosition`, :c:func:`gl_FragCoord`
+   
+.. rubric:: Description
+
+
+:c:func:`gl_SampleMask` is a fragment language output array that may be used to set the sample mask for the fragment being processed. Coverage for the current fragment will become the logical AND of the coverage mask and the output :c:func:`gl_SampleMask`. That is, setting a bit in :c:func:`gl_SampleMask` to zero will cause the corresponding sample to be considered uncovered for the purposes of multisample fragment operations. However, setting sample mask bits back to one will never enable samples not covered by the original primitive. Bit *`B`* of mask :c:func:`gl_SampleMask[M]` corresponds to sample 32 * *`M`* + *`B`* . This array must be sized in the fragment shader either implicitly or explicitly to be the same size as the implementation-dependent maximum sample-mask (as an array of 32-bit elements), determined by the maximum number of samples. If the fragment shader statically assigns a value to :c:func:`gl_SampleMask`, the sample mask will be undefined for any array elements of any fragment shader invocation that fails to assign a value. If a shader does not statically assign a value to :c:func:`gl_SampleMask`, the sample mask has no effect on the processing of a fragment. If the fragment shader is being evaluated at any frequency other than per-fragment, bits within the sample mask not corresponding to the current fragment shader invocation are ignored.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2011 Khronos Group. Open Publication License.
+

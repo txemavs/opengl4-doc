@@ -1,0 +1,154 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glXGetCurrentReadDrawable &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function glXGetFBConfigAttrib" href="glXGetFBConfigAttrib.html" />
+    <link rel="prev" title="function glXGetCurrentDrawable" href="glXGetCurrentDrawable.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glXGetFBConfigAttrib.html" title="function glXGetFBConfigAttrib"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glXGetCurrentDrawable.html" title="function glXGetCurrentDrawable"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glxgetcurrentreaddrawable">
+<h1>function <cite>glXGetCurrentReadDrawable</cite><a class="headerlink" href="#function-glxgetcurrentreaddrawable" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Return the current drawable</p>
+<dl class="function">
+<dt id="glXGetCurrentReadDrawable">
+<tt class="descname">glXGetCurrentReadDrawable</tt><big>(</big><big>)</big><a class="headerlink" href="#glXGetCurrentReadDrawable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+GLXDrawable <tt class="descname">glXGetCurrentReadDrawable</tt><big>(</big><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glXGetCurrentContext.html#glXGetCurrentContext" title="glXGetCurrentContext"><tt class="xref c c-func docutils literal"><span class="pre">glXGetCurrentContext()</span></tt></a>,
+<a class="reference internal" href="glXGetCurrentDisplay.html#glXGetCurrentDisplay" title="glXGetCurrentDisplay"><tt class="xref c c-func docutils literal"><span class="pre">glXGetCurrentDisplay()</span></tt></a>,
+<a class="reference internal" href="glXGetCurrentDrawable.html#glXGetCurrentDrawable" title="glXGetCurrentDrawable"><tt class="xref c c-func docutils literal"><span class="pre">glXGetCurrentDrawable()</span></tt></a>,
+<a class="reference internal" href="glXMakeContextCurrent.html#glXMakeContextCurrent" title="glXMakeContextCurrent"><tt class="xref c c-func docutils literal"><span class="pre">glXMakeContextCurrent()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glXGetCurrentReadDrawable" title="glXGetCurrentReadDrawable"><tt class="xref c c-func docutils literal"><span class="pre">glXGetCurrentReadDrawable()</span></tt></a> returns the current read drawable,
+as specified by <tt class="docutils literal"><span class="pre">read</span></tt> parameter
+of <a class="reference internal" href="glXMakeContextCurrent.html#glXMakeContextCurrent" title="glXMakeContextCurrent"><tt class="xref c c-func docutils literal"><span class="pre">glXMakeContextCurrent()</span></tt></a>.
+If there is no current drawable,
+<tt class="docutils literal"><span class="pre">None</span></tt> is returned.</p>
+<p><a class="reference internal" href="#glXGetCurrentReadDrawable" title="glXGetCurrentReadDrawable"><tt class="xref c c-func docutils literal"><span class="pre">glXGetCurrentReadDrawable()</span></tt></a> returns client-side information.
+It does not make a round-trip to the server.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><a class="reference internal" href="#glXGetCurrentReadDrawable" title="glXGetCurrentReadDrawable"><tt class="xref c c-func docutils literal"><span class="pre">glXGetCurrentReadDrawable()</span></tt></a> is only supported if the GLX version is 1.3 or greater.</p>
+</div>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glXGetCurrentDrawable.html"
+                        title="previous chapter">function <cite>glXGetCurrentDrawable</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glXGetFBConfigAttrib.html"
+                        title="next chapter">function <cite>glXGetFBConfigAttrib</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/glXGetCurrentReadDrawable.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glXGetFBConfigAttrib.html" title="function glXGetFBConfigAttrib"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glXGetCurrentDrawable.html" title="function glXGetCurrentDrawable"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

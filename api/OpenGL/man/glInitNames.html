@@ -1,0 +1,158 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glInitNames &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function glInterleavedArrays" href="glInterleavedArrays.html" />
+    <link rel="prev" title="function glIndexPointer" href="glIndexPointer.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glInterleavedArrays.html" title="function glInterleavedArrays"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glIndexPointer.html" title="function glIndexPointer"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glinitnames">
+<h1>function <cite>glInitNames</cite><a class="headerlink" href="#function-glinitnames" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Initialize the name stack</p>
+<dl class="function">
+<dt id="glInitNames">
+<tt class="descname">glInitNames</tt><big>(</big><big>)</big><a class="headerlink" href="#glInitNames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glInitNames</tt><big>(</big>void<big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glLoadName.html#glLoadName" title="glLoadName"><tt class="xref c c-func docutils literal"><span class="pre">glLoadName()</span></tt></a>,
+<a class="reference internal" href="glPushName.html#glPushName" title="glPushName"><tt class="xref c c-func docutils literal"><span class="pre">glPushName()</span></tt></a>,
+<a class="reference internal" href="glRenderMode.html#glRenderMode" title="glRenderMode"><tt class="xref c c-func docutils literal"><span class="pre">glRenderMode()</span></tt></a>,
+<a class="reference internal" href="glSelectBuffer.html#glSelectBuffer" title="glSelectBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glSelectBuffer()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p>The name stack is used during selection mode to allow sets of rendering
+commands to be uniquely identified.
+It consists of an ordered set of unsigned integers.
+<a class="reference internal" href="#glInitNames" title="glInitNames"><tt class="xref c c-func docutils literal"><span class="pre">glInitNames()</span></tt></a> causes the name stack to be initialized to its default empty state.</p>
+<p>The name stack is always empty while the render mode is not <tt class="docutils literal"><span class="pre">GL_SELECT</span></tt>.
+Calls to <a class="reference internal" href="#glInitNames" title="glInitNames"><tt class="xref c c-func docutils literal"><span class="pre">glInitNames()</span></tt></a> while the render mode is not <tt class="docutils literal"><span class="pre">GL_SELECT</span></tt> are ignored.</p>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <a class="reference internal" href="#glInitNames" title="glInitNames"><tt class="xref c c-func docutils literal"><span class="pre">glInitNames()</span></tt></a> is executed between the execution of <a class="reference internal" href="glBegin.html#glBegin" title="glBegin"><tt class="xref c c-func docutils literal"><span class="pre">glBegin()</span></tt></a> and the corresponding execution of <a class="reference internal" href="glBegin.html#glEnd" title="glEnd"><tt class="xref c c-func docutils literal"><span class="pre">glEnd()</span></tt></a>.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_NAME_STACK_DEPTH</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_MAX_NAME_STACK_DEPTH</span></tt></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glIndexPointer.html"
+                        title="previous chapter">function <cite>glIndexPointer</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glInterleavedArrays.html"
+                        title="next chapter">function <cite>glInterleavedArrays</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/glInitNames.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glInterleavedArrays.html" title="function glInterleavedArrays"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glIndexPointer.html" title="function glIndexPointer"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

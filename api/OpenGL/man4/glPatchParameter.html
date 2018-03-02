@@ -1,0 +1,176 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glPatchParameter &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glPauseTransformFeedback" href="glPauseTransformFeedback.html" />
+    <link rel="prev" title="function glMultiDrawElementsBaseVertex" href="glMultiDrawElementsBaseVertex.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glPauseTransformFeedback.html" title="function glPauseTransformFeedback"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glMultiDrawElementsBaseVertex.html" title="function glMultiDrawElementsBaseVertex"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glpatchparameter">
+<h1>function <cite>glPatchParameter</cite><a class="headerlink" href="#function-glpatchparameter" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Specifies the parameters for patch primitives</p>
+<dl class="function">
+<dt id="glPatchParameter">
+<tt class="descname">glPatchParameter</tt><big>(</big><big>)</big><a class="headerlink" href="#glPatchParameter" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>pname</strong> &#8211; Specifies the name of the parameter to set. The symbolc constants <tt class="docutils literal"><span class="pre">GL_PATCH_VERTICES</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_PATCH_DEFAULT_OUTER_LEVEL</span></tt>, and <tt class="docutils literal"><span class="pre">GL_PATCH_DEFAULT_INNER_LEVEL</span></tt> are accepted.</li>
+<li><strong>value</strong> &#8211; Specifies the new value for the parameter given by <em>pname</em>.</li>
+<li><strong>values</strong> &#8211; Specifies the address of an array containing the new values for the parameter given by <em>pname</em>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt id="glPatchParameteri">
+void <tt class="descname">glPatchParameteri</tt><big>(</big>GLenum <em>&nbsp;pname</em>, GLint <em>&nbsp;value</em>, GLenum <em>&nbsp;pname</em>, const GLfloat *<em>&nbsp;values</em><big>)</big><a class="headerlink" href="#glPatchParameteri" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glDrawArrays.html#glDrawArrays" title="glDrawArrays"><tt class="xref c c-func docutils literal"><span class="pre">glDrawArrays()</span></tt></a>,
+<a class="reference internal" href="glDrawArraysInstanced.html#glDrawArraysInstanced" title="glDrawArraysInstanced"><tt class="xref c c-func docutils literal"><span class="pre">glDrawArraysInstanced()</span></tt></a>,
+<a class="reference internal" href="glDrawElements.html#glDrawElements" title="glDrawElements"><tt class="xref c c-func docutils literal"><span class="pre">glDrawElements()</span></tt></a>,
+<a class="reference internal" href="glDrawRangeElements.html#glDrawRangeElements" title="glDrawRangeElements"><tt class="xref c c-func docutils literal"><span class="pre">glDrawRangeElements()</span></tt></a>,</p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glPatchParameter" title="glPatchParameter"><tt class="xref c c-func docutils literal"><span class="pre">glPatchParameter()</span></tt></a> specifies the parameters that will be used for patch primitives. <em>pname</em>
+specifies the parameter to modify and must be either <tt class="docutils literal"><span class="pre">GL_PATCH_VERTICES</span></tt>, <tt class="docutils literal"><span class="pre">GL_PATCH_DEFAULT_OUTER_LEVEL</span></tt>
+or <tt class="docutils literal"><span class="pre">GL_PATCH_DEFAULT_INNER_LEVEL</span></tt>. For <a class="reference internal" href="#glPatchParameteri" title="glPatchParameteri"><tt class="xref c c-func docutils literal"><span class="pre">glPatchParameteri()</span></tt></a>, <em>value</em> specifies
+the new value for the parameter specified by <em>pname</em>. For <tt class="xref c c-func docutils literal"><span class="pre">glPatchParameterfv()</span></tt>, <em>values</em>
+specifies the address of an array containing the new values for the parameter specified by <em>pname</em>.</p>
+<p>When <em>pname</em> is <tt class="docutils literal"><span class="pre">GL_PATCH_VERTICES</span></tt>, <em>value</em> specifies the number
+of vertices that will be used to make up a single patch primitive. Patch primitives are consumed by the tessellation control
+shader (if present) and subsequently used for tessellation. When primitives are specified using
+<a class="reference internal" href="glDrawArrays.html#glDrawArrays" title="glDrawArrays"><tt class="xref c c-func docutils literal"><span class="pre">glDrawArrays()</span></tt></a> or a similar function, each patch will be made
+from <em>parameter</em> control points, each represented by a vertex taken from the enabeld vertex arrays.
+<em>parameter</em> must be greater than zero, and less than or equal to the value of <tt class="docutils literal"><span class="pre">GL_MAX_PATCH_VERTICES</span></tt>.</p>
+<p>When <em>pname</em> is <tt class="docutils literal"><span class="pre">GL_PATCH_DEFAULT_OUTER_LEVEL</span></tt> or <tt class="docutils literal"><span class="pre">GL_PATCH_DEFAULT_INNER_LEVEL</span></tt>,
+<em>values</em> contains the address of an array contiaining the default outer or inner tessellation levels, respectively,
+to be used when no tessellation control shader is present.</p>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>pname</em> is not an accepted value.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>pname</em> is <tt class="docutils literal"><span class="pre">GL_PATCH_VERTICES</span></tt> and <em>value</em> is less than or equal to zero, or greater than the value of <tt class="docutils literal"><span class="pre">GL_MAX_PATCH_VERTICES</span></tt>.</li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)2010 Khronos Group. Open Publication License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glMultiDrawElementsBaseVertex.html"
+                        title="previous chapter">function <cite>glMultiDrawElementsBaseVertex</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glPauseTransformFeedback.html"
+                        title="next chapter">function <cite>glPauseTransformFeedback</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glPatchParameter.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glPauseTransformFeedback.html" title="function glPauseTransformFeedback"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glMultiDrawElementsBaseVertex.html" title="function glMultiDrawElementsBaseVertex"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,295 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:27
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glRasterPos.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glRasterPos`
+----------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Specify the raster position for pixel operations
+
+.. c:function:: glRasterPos
+
+
+         :param x:
+         :param y:
+         :param z:
+         :param w:
+
+                  Specify the
+                  |EQUATION_1_|\ ,
+                  |EQUATION_2_|\ ,
+                  |EQUATION_3_|\ ,
+                  and |EQUATION_4_| object coordinates
+                  (if present)
+                  for the raster
+                  position.
+
+.. rubric:: Specification
+
+.. c:function:: void glRasterPos2s(GLshort  x, GLshort  y, GLint  x, GLint  y, GLfloat  x, GLfloat  y, GLdouble  x, GLdouble  y, GLshort  x, GLshort  y, GLshort  z, GLint  x, GLint  y, GLint  z, GLfloat  x, GLfloat  y, GLfloat  z, GLdouble  x, GLdouble  y, GLdouble  z, GLshort  x, GLshort  y, GLshort  z, GLshort  w, GLint  x, GLint  y, GLint  z, GLint  w, GLfloat  x, GLfloat  y, GLfloat  z, GLfloat  w, GLdouble  x, GLdouble  y, GLdouble  z, GLdouble  w)
+.. c:function:: void glRasterPos2sv(const GLshort *  v, const GLint *  v, const GLfloat *  v, const GLdouble *  v, const GLshort *  v, const GLint *  v, const GLfloat *  v, const GLdouble *  v, const GLshort *  v, const GLint *  v, const GLfloat *  v, const GLdouble *  v)
+
+
+.. seealso::
+
+
+            :c:func:`glBitmap`\ ,
+            :c:func:`glCopyPixels`\ ,
+            :c:func:`glDrawArrays`\ ,
+            :c:func:`glDrawElements`\ ,
+            :c:func:`glDrawRangeElements`\ ,
+            :c:func:`glDrawPixels`\ ,
+            :c:func:`glMultiTexCoord`\ ,
+            :c:func:`glTexCoord`\ ,
+            :c:func:`glTexGen`\ ,
+            :c:func:`glVertex`\ ,
+            :c:func:`glWindowPos`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Parameters
+
+..
+
+
+      *v*
+
+
+            Specifies a pointer to an array of two,
+            three,
+            or four elements,
+            specifying
+            |EQUATION_5_|\ ,
+            |EQUATION_6_|\ ,
+            |EQUATION_7_|\ ,
+            and |EQUATION_8_| coordinates, respectively.
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+The GL maintains a 3D position in window coordinates.
+This position,
+called the raster position,
+is used to position pixel and bitmap write operations. It is
+maintained with subpixel accuracy.
+See :c:func:`glBitmap`\ , :c:func:`glDrawPixels`\ , and :c:func:`glCopyPixels`\ .
+
+
+The current raster position consists of three window coordinates
+(\ |EQUATION_9_|\ ,
+|EQUATION_10_|\ ,
+|EQUATION_11_|\ ),
+a clip coordinate value
+(\ |EQUATION_12_|\ ),
+an eye coordinate distance,
+a valid bit,
+and associated color data and texture coordinates.
+The |EQUATION_13_| coordinate is a clip coordinate,
+because |EQUATION_14_| is not projected to window coordinates.
+:c:func:`glRasterPos4` specifies object coordinates |EQUATION_15_|\ ,
+|EQUATION_16_|\ ,
+|EQUATION_17_|\ ,
+and |EQUATION_18_| explicitly.
+:c:func:`glRasterPos3` specifies object coordinate |EQUATION_19_|\ ,
+|EQUATION_20_|\ ,
+and |EQUATION_21_| explicitly,
+while |EQUATION_22_| is implicitly set to 1.
+:c:func:`glRasterPos2` uses the argument values for |EQUATION_23_| and |EQUATION_24_| while
+implicitly setting |EQUATION_25_| and |EQUATION_26_| to 0 and 1.
+
+
+The object coordinates presented by :c:func:`glRasterPos` are treated just like those
+of a :c:func:`glVertex` command:
+They are transformed by the current modelview and projection matrices
+and passed to the clipping stage.
+If the vertex is not culled,
+then it is projected and scaled to window coordinates,
+which become the new current raster position,
+and the ``GL_CURRENT_RASTER_POSITION_VALID`` flag is set.
+If the vertex
+:strong:`is`
+culled,
+then the valid bit is cleared and the current raster position
+and associated color and texture coordinates are undefined.
+
+
+The current raster position also includes some associated color data
+and texture coordinates.
+If lighting is enabled,
+then ``GL_CURRENT_RASTER_COLOR``
+(in RGBA mode)
+or ``GL_CURRENT_RASTER_INDEX``
+(in color index mode)
+is set to the color produced by the lighting calculation
+(see :c:func:`glLight`\ , :c:func:`glLightModel`\ , and
+:c:func:`glShadeModel`\ ).
+If lighting is disabled,
+current color
+(in RGBA mode, state variable ``GL_CURRENT_COLOR``\ )
+or color index
+(in color index mode, state variable ``GL_CURRENT_INDEX``\ )
+is used to update the current raster color.
+``GL_CURRENT_RASTER_SECONDARY_COLOR`` (in RGBA mode) is likewise updated.
+
+
+Likewise,
+``GL_CURRENT_RASTER_TEXTURE_COORDS`` is updated as a function
+of ``GL_CURRENT_TEXTURE_COORDS``\ ,
+based on the texture matrix and the texture generation functions
+(see :c:func:`glTexGen`\ ).
+Finally,
+the distance from the origin of the eye coordinate system to the
+vertex as transformed by only the modelview matrix replaces
+``GL_CURRENT_RASTER_DISTANCE``\ .
+
+
+Initially, the current raster position is (0, 0, 0, 1),
+the current raster distance is 0,
+the valid bit is set,
+the associated RGBA color is (1, 1, 1, 1),
+the associated color index is 1,
+and the associated texture coordinates are (0, 0, 0, 1).
+In RGBA mode,
+``GL_CURRENT_RASTER_INDEX`` is always 1;
+in color index mode,
+the current raster RGBA color always maintains its initial value.
+
+
+.. note::
+
+
+   The raster position is modified by :c:func:`glRasterPos`\ , :c:func:`glBitmap`\ , and :c:func:`glWindowPos`\ .
+
+
+   When the raster position coordinates are invalid,
+   drawing commands that are based on the raster position are
+   ignored (that is, they do not result in changes to GL state).
+
+
+   Calling :c:func:`glDrawElements` or :c:func:`glDrawRangeElements` may leave the
+   current color or index indeterminate.
+   If :c:func:`glRasterPos` is executed while the current color or index is indeterminate, the
+   current raster color or current raster index remains indeterminate.
+
+
+   To set a valid raster position outside the viewport, first set a valid
+   raster position, then call :c:func:`glBitmap` with NULL as the :strong:`bitmap`
+   parameter.
+
+
+   When the ``ARB_imaging`` extension is supported, there are distinct
+   raster texture coordinates for each texture unit. Each texture unit's
+   current raster texture coordinates are updated by :c:func:`glRasterPos`\ .
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_OPERATION`` is generated if :c:func:`glRasterPos` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`\ .
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGet` with argument ``GL_CURRENT_RASTER_POSITION``
+* :c:func:`glGet` with argument ``GL_CURRENT_RASTER_POSITION_VALID``
+* :c:func:`glGet` with argument ``GL_CURRENT_RASTER_DISTANCE``
+* :c:func:`glGet` with argument ``GL_CURRENT_RASTER_COLOR``
+* :c:func:`glGet` with argument ``GL_CURRENT_RASTER_SECONDARY_COLOR``
+* :c:func:`glGet` with argument ``GL_CURRENT_RASTER_INDEX``
+* :c:func:`glGet` with argument ``GL_CURRENT_RASTER_TEXTURE_COORDS``
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glRasterPos'>
+
+.. role:: mml(raw)
+   :format: html
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">x</mi></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">y</mi></math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">z</mi></math>` 
+
+.. |EQUATION_4_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">w</mi></math>` 
+
+.. |EQUATION_5_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">x</mi></math>` 
+
+.. |EQUATION_6_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">y</mi></math>` 
+
+.. |EQUATION_7_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">z</mi></math>` 
+
+.. |EQUATION_8_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">w</mi></math>` 
+
+.. |EQUATION_9_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">x</mi></math>` 
+
+.. |EQUATION_10_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">y</mi></math>` 
+
+.. |EQUATION_11_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">z</mi></math>` 
+
+.. |EQUATION_12_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">w</mi></math>` 
+
+.. |EQUATION_13_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">w</mi></math>` 
+
+.. |EQUATION_14_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">w</mi></math>` 
+
+.. |EQUATION_15_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">x</mi></math>` 
+
+.. |EQUATION_16_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">y</mi></math>` 
+
+.. |EQUATION_17_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">z</mi></math>` 
+
+.. |EQUATION_18_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">w</mi></math>` 
+
+.. |EQUATION_19_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">x</mi></math>` 
+
+.. |EQUATION_20_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">y</mi></math>` 
+
+.. |EQUATION_21_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">z</mi></math>` 
+
+.. |EQUATION_22_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">w</mi></math>` 
+
+.. |EQUATION_23_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">x</mi></math>` 
+
+.. |EQUATION_24_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">y</mi></math>` 
+
+.. |EQUATION_25_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">z</mi></math>` 
+
+.. |EQUATION_26_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">w</mi></math>` 
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

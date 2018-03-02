@@ -1,0 +1,50 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glGenProgramPipelines`
+--------------------------------
+
+.. source file man4/glGenProgramPipelines
+
+.. currentmodule:: OpenGL.GL
+
+Reserve program pipeline object names
+
+.. c:function:: glGenProgramPipelines
+.. c:function:: void glGenProgramPipelines(GLsizei  n, GLuint * pipelines)
+   :noindex: 
+
+
+   
+   :param n:
+      Specifies the number of program pipeline object names to reserve.
+   
+   :param pipelines:
+      Specifies an array of into which the reserved names will be written.
+   
+
+.. seealso::
+
+   
+   :c:func:`glDeleteProgramPipelines`, :c:func:`glBindProgramPipeline`, :c:func:`glIsProgramPipeline`, :c:func:`glUseShaderPrograms`, :c:func:`glUseProgram`
+   
+.. rubric:: Description
+
+
+:c:func:`glGenProgramPipelines` returns *n* previously unused program pipeline object names in *pipelines* . These names are marked as used, for the purposes of :c:func:`glGenProgramPipelines` only, but they acquire program pipeline state only when they are first bound.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGet` with argument ``GL_PROGRAM_PIPELINE_BINDING``
+   * :c:func:`glIsProgramPipeline`
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

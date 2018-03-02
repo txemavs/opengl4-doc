@@ -1,0 +1,76 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glLineWidth`
+----------------------
+
+.. source file man4/glLineWidth
+
+.. currentmodule:: OpenGL.GL
+
+Specify the width of rasterized lines
+
+.. c:function:: glLineWidth
+.. c:function:: void glLineWidth(GLfloat  width)
+   :noindex: 
+
+
+   
+   :param width:
+      Specifies the width of rasterized lines. The initial value is 1.
+   
+
+.. seealso::
+
+   
+   :c:func:`glEnable`
+   
+.. rubric:: Description
+
+
+:c:func:`glLineWidth` specifies the rasterized width of both aliased and antialiased lines. Using a line width other than 1 has different effects, depending on whether line antialiasing is enabled. To enable and disable line antialiasing, call :c:func:`glEnable` and :c:func:`glDisable` with argument ``GL_LINE_SMOOTH``. Line antialiasing is initially disabled.
+
+If line antialiasing is disabled, the actual width is determined by rounding the supplied width to the nearest integer. (If the rounding results in the value 0, it is as if the line width were 1.) If |EQUATION_1_| , *`i`* pixels are filled in each column that is rasterized, where *`i`* is the rounded value of *width* . Otherwise, *`i`* pixels are filled in each row that is rasterized.
+
+If antialiasing is enabled, line rasterization produces a fragment for each pixel square that intersects the region lying within the rectangle having width equal to the current line width, length equal to the actual length of the line, and centered on the mathematical line segment. The coverage value for each fragment is the window coordinate area of the intersection of the rectangular region with the corresponding pixel square. This value is saved and used in the final rasterization step.
+
+Not all widths can be supported when line antialiasing is enabled. If an unsupported width is requested, the nearest supported width is used. Only width 1 is guaranteed to be supported; others depend on the implementation. Likewise, there is a range for aliased line widths as well. To query the range of supported widths and the size difference between supported widths within the range, call :c:func:`glGet` with arguments ``GL_ALIASED_LINE_WIDTH_RANGE``, ``GL_SMOOTH_LINE_WIDTH_RANGE``, and ``GL_SMOOTH_LINE_WIDTH_GRANULARITY``.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGet` with argument ``GL_LINE_WIDTH``
+   * :c:func:`glGet` with argument ``GL_ALIASED_LINE_WIDTH_RANGE``
+   * :c:func:`glGet` with argument ``GL_SMOOTH_LINE_WIDTH_RANGE``
+   * :c:func:`glGet` with argument ``GL_SMOOTH_LINE_WIDTH_GRANULARITY``
+   * :c:func:`glIsEnabled` with argument ``GL_LINE_SMOOTH``
+
+**Errors:**
+
+   * ``GL_INVALID_VALUE`` is generated if *width* is less than or equal to 0.
+
+
+
+.. note::
+
+   * The line width specified by :c:func:`glLineWidth` is always returned when ``GL_LINE_WIDTH`` is queried. Clamping and rounding for aliased and antialiased lines have no effect on the specified value.
+   * Nonantialiased line width may be clamped to an implementation-dependent maximum. Call :c:func:`glGet` with ``GL_ALIASED_LINE_WIDTH_RANGE`` to determine the maximum width.
+   * In OpenGL 1.2, the tokens ``GL_LINE_WIDTH_RANGE`` and ``GL_LINE_WIDTH_GRANULARITY`` were replaced by ``GL_ALIASED_LINE_WIDTH_RANGE``, ``GL_SMOOTH_LINE_WIDTH_RANGE``, and ``GL_SMOOTH_LINE_WIDTH_GRANULARITY``. The old names are retained for backward compatibility, but should not be used in new code.
+
+
+
+.. role:: mml(raw)
+   :format: html
+
+
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mfenced open="&VerticalBar;" close="&VerticalBar;"> <mrow> <mo>&Delta;</mo> <mi mathvariant="italic">x</mi> </mrow> </mfenced> <mo>&gt;=</mo> <mfenced open="&VerticalBar;" close="&VerticalBar;"> <mrow> <mo>&Delta;</mo> <mi mathvariant="italic">y</mi> </mrow> </mfenced> </mrow> </math>` 
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

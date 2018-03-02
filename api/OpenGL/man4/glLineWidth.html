@@ -1,0 +1,210 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glLineWidth &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glLinkProgram" href="glLinkProgram.html" />
+    <link rel="prev" title="function glIsVertexArray" href="glIsVertexArray.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glLinkProgram.html" title="function glLinkProgram"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glIsVertexArray.html" title="function glIsVertexArray"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-gllinewidth">
+<h1>function <cite>glLineWidth</cite><a class="headerlink" href="#function-gllinewidth" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Specify the width of rasterized lines</p>
+<dl class="function">
+<dt id="glLineWidth">
+<tt class="descname">glLineWidth</tt><big>(</big><big>)</big><a class="headerlink" href="#glLineWidth" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>width</strong> &#8211; Specifies the width of rasterized lines.
+The initial value is 1.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glLineWidth</tt><big>(</big>GLfloat <em>&nbsp;width</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glEnable.html#glEnable" title="glEnable"><tt class="xref c c-func docutils literal"><span class="pre">glEnable()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glLineWidth" title="glLineWidth"><tt class="xref c c-func docutils literal"><span class="pre">glLineWidth()</span></tt></a> specifies the rasterized width of both aliased and antialiased
+lines.
+Using a line width other than 1 has different effects,
+depending on whether line antialiasing is enabled.
+To enable and disable line antialiasing, call
+<a class="reference internal" href="glEnable.html#glEnable" title="glEnable"><tt class="xref c c-func docutils literal"><span class="pre">glEnable()</span></tt></a> and <a class="reference internal" href="glEnable.html#glDisable" title="glDisable"><tt class="xref c c-func docutils literal"><span class="pre">glDisable()</span></tt></a>
+with argument <tt class="docutils literal"><span class="pre">GL_LINE_SMOOTH</span></tt>. Line antialiasing is initially
+disabled.</p>
+<p>If line antialiasing is disabled,
+the actual width is determined by rounding the supplied width
+to the nearest integer.
+(If the rounding results in the value 0,
+it is as if the line width were 1.)
+If
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mfenced open="&VerticalBar;" close="&VerticalBar;"><mrow><mo>&Delta;</mo><mi mathvariant="italic">x</mi></mrow></mfenced><mo>>=</mo><mfenced open="&VerticalBar;" close="&VerticalBar;"><mrow><mo>&Delta;</mo><mi mathvariant="italic">y</mi></mrow></mfenced></mrow></math></span>,
+<strong>i</strong> pixels are filled in each column that is rasterized,
+where <strong>i</strong> is the rounded value of <em>width</em>.
+Otherwise,
+<strong>i</strong> pixels are filled in each row that is rasterized.</p>
+<p>If antialiasing is enabled,
+line rasterization produces a fragment for each pixel square
+that intersects the region lying within the rectangle having width
+equal to the current line width,
+length equal to the actual length of the line,
+and centered on the mathematical line segment.
+The coverage value for each fragment is the window coordinate area
+of the intersection of the rectangular region with the corresponding
+pixel square.
+This value is saved and used in the final rasterization step.</p>
+<p>Not all widths can be supported when line antialiasing is enabled. If an
+unsupported width is requested, the nearest supported width is used.
+Only width 1 is guaranteed to be supported; others depend on the
+implementation.  Likewise, there is a range for aliased line widths as well.
+To query the range of supported widths and the size
+difference between supported widths within the range, call <a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a>
+with arguments <tt class="docutils literal"><span class="pre">GL_ALIASED_LINE_WIDTH_RANGE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_SMOOTH_LINE_WIDTH_RANGE</span></tt>, and <tt class="docutils literal"><span class="pre">GL_SMOOTH_LINE_WIDTH_GRANULARITY</span></tt>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The line width specified by <a class="reference internal" href="#glLineWidth" title="glLineWidth"><tt class="xref c c-func docutils literal"><span class="pre">glLineWidth()</span></tt></a> is always returned when <tt class="docutils literal"><span class="pre">GL_LINE_WIDTH</span></tt>
+is queried.
+Clamping and rounding for aliased and antialiased lines have no effect on the specified value.</p>
+<p>Nonantialiased line width may be clamped to an implementation-dependent maximum.  Call <a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with <tt class="docutils literal"><span class="pre">GL_ALIASED_LINE_WIDTH_RANGE</span></tt> to determine the maximum width.</p>
+<p class="last">In OpenGL 1.2, the tokens <tt class="docutils literal"><span class="pre">GL_LINE_WIDTH_RANGE</span></tt> and <tt class="docutils literal"><span class="pre">GL_LINE_WIDTH_GRANULARITY</span></tt> were replaced by <tt class="docutils literal"><span class="pre">GL_ALIASED_LINE_WIDTH_RANGE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_SMOOTH_LINE_WIDTH_RANGE</span></tt>, and <tt class="docutils literal"><span class="pre">GL_SMOOTH_LINE_WIDTH_GRANULARITY</span></tt>.  The old names are retained for backward compatibility, but should not be used in new code.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>width</em> is less than or equal to 0.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_LINE_WIDTH</span></tt></li>
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_ALIASED_LINE_WIDTH_RANGE</span></tt></li>
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_SMOOTH_LINE_WIDTH_RANGE</span></tt></li>
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_SMOOTH_LINE_WIDTH_GRANULARITY</span></tt></li>
+<li><a class="reference internal" href="glIsEnabled.html#glIsEnabled" title="glIsEnabled"><tt class="xref c c-func docutils literal"><span class="pre">glIsEnabled()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_LINE_SMOOTH</span></tt></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glIsVertexArray.html"
+                        title="previous chapter">function <cite>glIsVertexArray</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glLinkProgram.html"
+                        title="next chapter">function <cite>glLinkProgram</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glLineWidth.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glLinkProgram.html" title="function glLinkProgram"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glIsVertexArray.html" title="function glIsVertexArray"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

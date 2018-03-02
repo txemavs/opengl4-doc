@@ -1,0 +1,309 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glGetTexLevelParameter &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glGetTexParameter" href="glGetTexParameter.html" />
+    <link rel="prev" title="function glGetTexImage" href="glGetTexImage.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glGetTexParameter.html" title="function glGetTexParameter"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glGetTexImage.html" title="function glGetTexImage"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glgettexlevelparameter">
+<h1>function <cite>glGetTexLevelParameter</cite><a class="headerlink" href="#function-glgettexlevelparameter" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Return texture parameter values for a specific level of detail</p>
+<dl class="function">
+<dt id="glGetTexLevelParameter">
+<tt class="descname">glGetTexLevelParameter</tt><big>(</big><big>)</big><a class="headerlink" href="#glGetTexLevelParameter" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>target</strong> &#8211; Specifies the symbolic name of the target texture,
+one of
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_1D</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_2D</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_3D</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_1D_ARRAY</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_2D_ARRAY</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_RECTANGLE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_2D_MULTISAMPLE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_2D_MULTISAMPLE_ARRAY</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_POSITIVE_X</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_NEGATIVE_X</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_POSITIVE_Y</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_NEGATIVE_Y</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_POSITIVE_Z</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_NEGATIVE_Z</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_PROXY_TEXTURE_1D</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_PROXY_TEXTURE_2D</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_PROXY_TEXTURE_3D</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_PROXY_TEXTURE_1D_ARRAY</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_PROXY_TEXTURE_2D_ARRAY</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_PROXY_TEXTURE_RECTANGLE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_PROXY_TEXTURE_2D_MULTISAMPLE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_PROXY_TEXTURE_2D_MULTISAMPLE_ARRAY</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_PROXY_TEXTURE_CUBE_MAP</span></tt>, or
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_BUFFER</span></tt>.</li>
+<li><strong>level</strong> &#8211; Specifies the level-of-detail number of the desired image.
+Level 0 is the base image level.
+Level
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math></span> is the <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math></span> th
+mipmap reduction image.</li>
+<li><strong>pname</strong> &#8211; Specifies the symbolic name of a texture parameter.
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_WIDTH</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_HEIGHT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_DEPTH</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_INTERNAL_FORMAT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_BORDER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_RED_SIZE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_GREEN_SIZE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_BLUE_SIZE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_ALPHA_SIZE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_DEPTH_SIZE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_COMPRESSED</span></tt>, and
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_COMPRESSED_IMAGE_SIZE</span></tt>
+are accepted.</li>
+<li><strong>params</strong> &#8211; Returns the requested data.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt id="glGetTexLevelParameterfv">
+void <tt class="descname">glGetTexLevelParameterfv</tt><big>(</big>GLenum <em>&nbsp;target</em>, GLint <em>&nbsp;level</em>, GLenum <em>&nbsp;pname</em>, GLfloat * <em>&nbsp;params</em>, GLenum <em>&nbsp;target</em>, GLint <em>&nbsp;level</em>, GLenum <em>&nbsp;pname</em>, GLint * <em>&nbsp;params</em><big>)</big><a class="headerlink" href="#glGetTexLevelParameterfv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glActiveTexture.html#glActiveTexture" title="glActiveTexture"><tt class="xref c c-func docutils literal"><span class="pre">glActiveTexture()</span></tt></a>,
+<a class="reference internal" href="glGetTexParameter.html#glGetTexParameter" title="glGetTexParameter"><tt class="xref c c-func docutils literal"><span class="pre">glGetTexParameter()</span></tt></a>,
+<a class="reference internal" href="glCopyTexImage1D.html#glCopyTexImage1D" title="glCopyTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexImage1D()</span></tt></a>,
+<a class="reference internal" href="glCopyTexImage2D.html#glCopyTexImage2D" title="glCopyTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexImage2D()</span></tt></a>,
+<a class="reference internal" href="glCopyTexSubImage1D.html#glCopyTexSubImage1D" title="glCopyTexSubImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexSubImage1D()</span></tt></a>,
+<a class="reference internal" href="glCopyTexSubImage2D.html#glCopyTexSubImage2D" title="glCopyTexSubImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexSubImage2D()</span></tt></a>,
+<a class="reference internal" href="glCopyTexSubImage3D.html#glCopyTexSubImage3D" title="glCopyTexSubImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexSubImage3D()</span></tt></a>,
+<a class="reference internal" href="glTexImage1D.html#glTexImage1D" title="glTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage1D()</span></tt></a>,
+<a class="reference internal" href="glTexImage2D.html#glTexImage2D" title="glTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage2D()</span></tt></a>,
+<a class="reference internal" href="glTexImage3D.html#glTexImage3D" title="glTexImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage3D()</span></tt></a>,
+<a class="reference internal" href="glTexSubImage1D.html#glTexSubImage1D" title="glTexSubImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage1D()</span></tt></a>,
+<a class="reference internal" href="glTexSubImage2D.html#glTexSubImage2D" title="glTexSubImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage2D()</span></tt></a>,
+<a class="reference internal" href="glTexSubImage3D.html#glTexSubImage3D" title="glTexSubImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage3D()</span></tt></a>,
+<a class="reference internal" href="glTexParameter.html#glTexParameter" title="glTexParameter"><tt class="xref c c-func docutils literal"><span class="pre">glTexParameter()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glGetTexLevelParameter" title="glGetTexLevelParameter"><tt class="xref c c-func docutils literal"><span class="pre">glGetTexLevelParameter()</span></tt></a> returns in <em>params</em> texture parameter values for a specific
+level-of-detail value,
+specified as <em>level</em>.
+<em>target</em> defines the target texture,
+either <tt class="docutils literal"><span class="pre">GL_TEXTURE_1D</span></tt>, <tt class="docutils literal"><span class="pre">GL_TEXTURE_2D</span></tt>, <tt class="docutils literal"><span class="pre">GL_TEXTURE_3D</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_PROXY_TEXTURE_1D</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_PROXY_TEXTURE_2D</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_PROXY_TEXTURE_3D</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_POSITIVE_X</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_NEGATIVE_X</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_POSITIVE_Y</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_NEGATIVE_Y</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_POSITIVE_Z</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_NEGATIVE_Z</span></tt>, or
+<tt class="docutils literal"><span class="pre">GL_PROXY_TEXTURE_CUBE_MAP</span></tt>.</p>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_TEXTURE_SIZE</span></tt>, and <tt class="docutils literal"><span class="pre">GL_MAX_3D_TEXTURE_SIZE</span></tt> are not really
+descriptive enough.
+It has to report the largest square texture image that can be
+accommodated with mipmaps and borders,
+but a long skinny texture, or a texture without mipmaps and borders, may
+easily fit in texture memory.
+The proxy targets allow the user to more accurately query
+whether the GL can accommodate a texture of a given configuration.
+If the texture cannot be accommodated, the texture state variables, which
+may be queried with <a class="reference internal" href="#glGetTexLevelParameter" title="glGetTexLevelParameter"><tt class="xref c c-func docutils literal"><span class="pre">glGetTexLevelParameter()</span></tt></a>, are set to 0.  If the texture can be accommodated,
+the texture state values will be set as they would be set for a
+non-proxy target.</p>
+<p><em>pname</em> specifies the texture parameter whose value or values
+will be returned.</p>
+<p>The accepted parameter names are as follows:</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">GL_TEXTURE_WIDTH</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single value,
+the width of the texture image.
+This value includes the border of the texture image. The initial value is
+0.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_HEIGHT</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single value,
+the height of the texture image.
+This value includes the border of the texture image. The initial value is
+0.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_DEPTH</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single value,
+the depth of the texture image.
+This value includes the border of the texture image. The initial value is
+0.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_INTERNAL_FORMAT</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single value,
+the internal format of the texture image.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_RED_TYPE</span></tt>,</p>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_GREEN_TYPE</span></tt>,</p>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_BLUE_TYPE</span></tt>,</p>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_ALPHA_TYPE</span></tt>,</p>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_DEPTH_TYPE</span></tt></p>
+<blockquote>
+<div>The data type used to store the component.
+The types <tt class="docutils literal"><span class="pre">GL_NONE</span></tt>, <tt class="docutils literal"><span class="pre">GL_SIGNED_NORMALIZED</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_NORMALIZED</span></tt>, <tt class="docutils literal"><span class="pre">GL_FLOAT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_INT</span></tt>, and <tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT</span></tt> may be returned
+to indicate signed normalized fixed-point, unsigned normalized fixed-point, floating-point, integer unnormalized, and
+unsigned integer unnormalized components, respectively.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_RED_SIZE</span></tt>,</p>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_GREEN_SIZE</span></tt>,</p>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_BLUE_SIZE</span></tt>,</p>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_ALPHA_SIZE</span></tt>,</p>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_DEPTH_SIZE</span></tt></p>
+<blockquote>
+<div>The internal storage resolution of an individual component.
+The resolution chosen by the GL will be a close match for the resolution
+requested by the user with the component argument of <a class="reference internal" href="glTexImage1D.html#glTexImage1D" title="glTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage1D()</span></tt></a>,
+<a class="reference internal" href="glTexImage2D.html#glTexImage2D" title="glTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage2D()</span></tt></a>, <a class="reference internal" href="glTexImage3D.html#glTexImage3D" title="glTexImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage3D()</span></tt></a>, <a class="reference internal" href="glCopyTexImage1D.html#glCopyTexImage1D" title="glCopyTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexImage1D()</span></tt></a>, and
+<a class="reference internal" href="glCopyTexImage2D.html#glCopyTexImage2D" title="glCopyTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexImage2D()</span></tt></a>. The initial value is 0.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_COMPRESSED</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single boolean value indicating if the texture image is
+stored in a compressed internal format.  The initiali value is <tt class="docutils literal"><span class="pre">GL_FALSE</span></tt>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_COMPRESSED_IMAGE_SIZE</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single integer value, the number of unsigned bytes of the
+compressed texture image that would be returned from
+<a class="reference internal" href="glGetCompressedTexImage.html#glGetCompressedTexImage" title="glGetCompressedTexImage"><tt class="xref c c-func docutils literal"><span class="pre">glGetCompressedTexImage()</span></tt></a>.</div></blockquote>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>If an error is generated,
+no change is made to the contents of <em>params</em>.</p>
+<p class="last"><a class="reference internal" href="#glGetTexLevelParameter" title="glGetTexLevelParameter"><tt class="xref c c-func docutils literal"><span class="pre">glGetTexLevelParameter()</span></tt></a> returns the texture level parameters for the active texture unit.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>target</em> or <em>pname</em> is not an accepted value.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>level</em> is less than 0.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> may be generated if <em>level</em> is greater than <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">log</mi><mn>2</mn></msub></math></span> <strong>max</strong>, where <strong>max</strong> is the returned value of <tt class="docutils literal"><span class="pre">GL_MAX_TEXTURE_SIZE</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>target</em> is <tt class="docutils literal"><span class="pre">GL_TEXTURE_BUFFER</span></tt> and <em>level</em> is not zero.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <tt class="docutils literal"><span class="pre">GL_TEXTURE_COMPRESSED_IMAGE_SIZE</span></tt> is queried on texture images with an uncompressed internal format or on proxy targets.</li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. (c)2010 Khronos Group. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glGetTexImage.html"
+                        title="previous chapter">function <cite>glGetTexImage</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glGetTexParameter.html"
+                        title="next chapter">function <cite>glGetTexParameter</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glGetTexLevelParameter.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glGetTexParameter.html" title="function glGetTexParameter"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glGetTexImage.html" title="function glGetTexImage"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

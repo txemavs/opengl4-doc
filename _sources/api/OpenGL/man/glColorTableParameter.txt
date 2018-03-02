@@ -1,0 +1,127 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:26
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glColorTableParameter.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glColorTableParameter`
+--------------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Set color lookup table parameters
+
+.. c:function:: glColorTableParameter
+
+
+         :param target:
+
+                  The target color table.
+                  Must be
+                  ``GL_COLOR_TABLE``\ ,
+                  ``GL_POST_CONVOLUTION_COLOR_TABLE``\ , or
+                  ``GL_POST_COLOR_MATRIX_COLOR_TABLE``\ .
+
+         :param pname:
+
+                  The symbolic name of a texture color lookup table parameter.
+                  Must be one of
+                  ``GL_COLOR_TABLE_SCALE`` or
+                  ``GL_COLOR_TABLE_BIAS``\ .
+
+         :param params:
+
+                  A pointer to an array where the values of the parameters are stored.
+
+.. rubric:: Specification
+
+.. c:function:: void glColorTableParameterfv(GLenum  target, GLenum  pname, const GLfloat *  params, GLenum  target, GLenum  pname, const GLint *  params)
+
+
+.. seealso::
+
+
+            :c:func:`glColorTable`\ ,
+            :c:func:`glPixelTransfer`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glColorTableParameter` is used to specify the scale factors and bias terms applied to
+color components when they are loaded into a color table. *target*
+indicates which color table the scale and bias terms apply to; it
+must be set to
+``GL_COLOR_TABLE``\ ,
+``GL_POST_CONVOLUTION_COLOR_TABLE``\ , or
+``GL_POST_COLOR_MATRIX_COLOR_TABLE``\ .
+
+
+*pname* must be ``GL_COLOR_TABLE_SCALE`` to set the
+scale factors.
+In this case, *params* points to an array of four values, which are
+the scale factors for red, green, blue, and alpha, in that order.
+
+
+*pname* must be ``GL_COLOR_TABLE_BIAS`` to set the
+bias terms. In this case,
+*params* points to an array of four values, which are the bias
+terms for red, green, blue, and alpha, in that order.
+
+
+The color tables themselves are specified by
+calling :c:func:`glColorTable`\ .
+
+
+.. note::
+
+
+   :c:func:`glColorTableParameter` is available only if ``ARB_imaging`` is returned from calling
+   :c:func:`glGetString` with an argument of ``GL_EXTENSIONS``\ .
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_ENUM`` is generated if *target* or *pname* is not an acceptable value.
+* ``GL_INVALID_OPERATION`` is generated if :c:func:`glColorTableParameter` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`\ .
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGetColorTableParameter`
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glColorTableParameter'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

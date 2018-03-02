@@ -1,0 +1,472 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glGetActiveUniformsiv &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glGetAttachedShaders" href="glGetAttachedShaders.html" />
+    <link rel="prev" title="function glGetActiveUniformName" href="glGetActiveUniformName.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glGetAttachedShaders.html" title="function glGetAttachedShaders"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glGetActiveUniformName.html" title="function glGetActiveUniformName"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glgetactiveuniformsiv">
+<h1>function <cite>glGetActiveUniformsiv</cite><a class="headerlink" href="#function-glgetactiveuniformsiv" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Returns information about several active uniform variables for the specified program object</p>
+<dl class="function">
+<dt id="glGetActiveUniformsiv">
+<tt class="descname">glGetActiveUniformsiv</tt><big>(</big><big>)</big><a class="headerlink" href="#glGetActiveUniformsiv" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>program</strong> &#8211; Specifies the program object to be queried.</li>
+<li><strong>uniformCount</strong> &#8211; Specifies both the number of elements in the array of indices <em>uniformIndices</em> and the
+number of parameters written to <em>params</em> upon successful return.</li>
+<li><strong>uniformIndices</strong> &#8211; Specifies the address of an array of <em>uniformCount</em> integers containing the indices of
+uniforms within <em>program</em> whose parameter <em>pname</em> pname.</li>
+<li><strong>pname</strong> &#8211; Specifies the property of the each uniform in <em>uniformIndices</em> that should be
+written into the corresponding element of <em>params</em>.</li>
+<li><strong>params</strong> &#8211; Specifies the address of an array of <em>uniformCount</em> integers which are to
+receive the value of <em>pname</em> for each uniform in <em>uniformIndices</em>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glGetActiveUniformsiv</tt><big>(</big>GLuint <em>&nbsp;program</em>, GLsizei <em>&nbsp;uniformCount</em>, const GLuint *<em>&nbsp;uniformIndices</em>, GLenum <em>&nbsp;pname</em>, GLint *<em>&nbsp;params</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glGetUniform.html#glGetUniform" title="glGetUniform"><tt class="xref c c-func docutils literal"><span class="pre">glGetUniform()</span></tt></a>,
+<a class="reference internal" href="glGetActiveUniform.html#glGetActiveUniform" title="glGetActiveUniform"><tt class="xref c c-func docutils literal"><span class="pre">glGetActiveUniform()</span></tt></a>,
+<a class="reference internal" href="glGetUniformLocation.html#glGetUniformLocation" title="glGetUniformLocation"><tt class="xref c c-func docutils literal"><span class="pre">glGetUniformLocation()</span></tt></a>,
+<a class="reference internal" href="glLinkProgram.html#glLinkProgram" title="glLinkProgram"><tt class="xref c c-func docutils literal"><span class="pre">glLinkProgram()</span></tt></a>,
+<a class="reference internal" href="glUniform.html#glUniform" title="glUniform"><tt class="xref c c-func docutils literal"><span class="pre">glUniform()</span></tt></a>,
+<a class="reference internal" href="glUseProgram.html#glUseProgram" title="glUseProgram"><tt class="xref c c-func docutils literal"><span class="pre">glUseProgram()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glGetActiveUniformsiv" title="glGetActiveUniformsiv"><tt class="xref c c-func docutils literal"><span class="pre">glGetActiveUniformsiv()</span></tt></a> queries the value of the parameter named <em>pname</em>
+for each of the uniforms within <em>program</em> whose indices are specified in the array of
+<em>uniformCount</em> unsigned integers <em>uniformIndices</em>. Upon success,
+the value of the parameter for each uniform is written into the corresponding entry in the array whose
+address is given in <em>params</em>. If an error is generated, nothing is written into
+<em>params</em>.</p>
+<p>If <em>pname</em> is <tt class="docutils literal"><span class="pre">GL_UNIFORM_TYPE</span></tt>, then an array identifying the types
+of uniforms specified by the corresponding array of <em>uniformIndices</em> is returned. The
+returned types can be any of the values from the following table:</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="62%" />
+<col width="38%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Returned Symbolic Contant</strong></td>
+<td><strong>Shader Uniform Type</strong></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_FLOAT</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">float</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_FLOAT_VEC2</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">vec2</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_FLOAT_VEC3</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">vec3</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_FLOAT_VEC4</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">vec4</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_DOUBLE</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">double</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_DOUBLE_VEC2</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">dvec2</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_DOUBLE_VEC3</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">dvec3</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_DOUBLE_VEC4</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">dvec4</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_INT</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">int</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_INT_VEC2</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">ivec2</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_INT_VEC3</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">ivec3</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_INT_VEC4</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">ivec4</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">unsigned</span> <span class="pre">int</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_VEC2</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">uvec2</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_VEC3</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">uvec3</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_VEC4</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">uvec4</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_BOOL</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">bool</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_BOOL_VEC2</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">bvec2</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_BOOL_VEC3</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">bvec3</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_BOOL_VEC4</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">bvec4</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_FLOAT_MAT2</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">mat2</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_FLOAT_MAT3</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">mat3</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_FLOAT_MAT4</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">mat4</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_FLOAT_MAT2x3</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">mat2x3</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_FLOAT_MAT2x4</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">mat2x4</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_FLOAT_MAT3x2</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">mat3x2</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_FLOAT_MAT3x4</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">mat3x4</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_FLOAT_MAT4x2</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">mat4x2</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_FLOAT_MAT4x3</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">mat4x3</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_DOUBLE_MAT2</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">dmat2</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_DOUBLE_MAT3</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">dmat3</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_DOUBLE_MAT4</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">dmat4</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_DOUBLE_MAT2x3</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">dmat2x3</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_DOUBLE_MAT2x4</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">dmat2x4</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_DOUBLE_MAT3x2</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">dmat3x2</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_DOUBLE_MAT3x4</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">dmat3x4</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_DOUBLE_MAT4x2</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">dmat4x2</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_DOUBLE_MAT4x3</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">dmat4x3</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_SAMPLER_1D</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">sampler1D</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_SAMPLER_2D</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">sampler2D</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_SAMPLER_3D</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">sampler3D</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_SAMPLER_CUBE</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">samplerCube</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_SAMPLER_1D_SHADOW</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">sampler1DShadow</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_SAMPLER_2D_SHADOW</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">sampler2DShadow</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_SAMPLER_1D_ARRAY</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">sampler1DArray</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_SAMPLER_2D_ARRAY</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">sampler2DArray</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_SAMPLER_1D_ARRAY_SHADOW</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">sampler1DArrayShadow</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_SAMPLER_2D_ARRAY_SHADOW</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">sampler2DArrayShadow</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_SAMPLER_2D_MULTISAMPLE</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">sampler2DMS</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_SAMPLER_2D_MULTISAMPLE_ARRAY</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">sampler2DMSArray</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_SAMPLER_CUBE_SHADOW</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">samplerCubeShadow</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_SAMPLER_BUFFER</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">samplerBuffer</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_SAMPLER_2D_RECT</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">sampler2DRect</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_SAMPLER_2D_RECT_SHADOW</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">sampler2DRectShadow</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_INT_SAMPLER_1D</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">isampler1D</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_INT_SAMPLER_2D</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">isampler2D</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_INT_SAMPLER_3D</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">isampler3D</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_INT_SAMPLER_CUBE</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">isamplerCube</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_INT_SAMPLER_1D_ARRAY</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">isampler1DArray</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_INT_SAMPLER_2D_ARRAY</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">isampler2DArray</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_INT_SAMPLER_2D_MULTISAMPLE</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">isampler2DMS</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_INT_SAMPLER_2D_MULTISAMPLE_ARRAY</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">isampler2DMSArray</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_INT_SAMPLER_BUFFER</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">isamplerBuffer</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_INT_SAMPLER_2D_RECT</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">isampler2DRect</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_SAMPLER_1D</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">usampler1D</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_SAMPLER_2D</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">usampler2D</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_SAMPLER_3D</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">usampler3D</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_SAMPLER_CUBE</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">usamplerCube</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_SAMPLER_1D_ARRAY</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">usampler2DArray</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_SAMPLER_2D_ARRAY</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">usampler2DArray</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">usampler2DMS</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE_ARRAY</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">usampler2DMSArray</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_SAMPLER_BUFFER</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">usamplerBuffer</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_SAMPLER_2D_RECT</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">usampler2DRect</span></tt></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>If <em>pname</em> is <tt class="docutils literal"><span class="pre">GL_UNIFORM_SIZE</span></tt>, then an array identifying the
+size of the uniforms specified by the corresponding array of <em>uniformIndices</em> is
+returned. The sizes returned are in units of the type returned by a query of <tt class="docutils literal"><span class="pre">GL_UNIFORM_TYPE</span></tt>.
+For active uniforms that are arrays, the size is the number of active elements in the array;
+for all other uniforms, the size is one.</p>
+<p>If <em>pname</em> is <tt class="docutils literal"><span class="pre">GL_UNIFORM_NAME_LENGTH</span></tt>, then an array identifying the
+length, including the terminating null character, of the uniform name strings specified by the corresponding
+array of <em>uniformIndices</em> is returned.</p>
+<p>If <em>pname</em> is <tt class="docutils literal"><span class="pre">GL_UNIFORM_BLOCK_INDEX</span></tt>, then an array identifying the
+the uniform block index of each of the uniforms specified by the corresponding array of <em>uniformIndices</em>
+is returned. The uniform block index of a uniform associated with the default uniform block is -1.</p>
+<p>If <em>pname</em> is <tt class="docutils literal"><span class="pre">GL_UNIFORM_OFFSET</span></tt>, then an array of uniform buffer
+offsets is returned. For uniforms in a named uniform block, the returned value will be its offset, in basic
+machine units, relative to the beginning of the uniform block in the buffer object data store.
+For atomic counter uniforms, the returned value will be its offset relative to the beginning of its active
+atomic counter buffer.
+For all other uniforms, -1 will be returned.</p>
+<p>If <em>pname</em> is <tt class="docutils literal"><span class="pre">GL_UNIFORM_ARRAY_STRIDE</span></tt>, then an array identifying the
+stride between elements of each of the uniforms specified by the corresponding array of
+<em>uniformIndices</em> is returned.
+For uniforms in named uniform blocks and for uniforms declared as atomic counters, the stride is the difference,
+in basic machine units, of consecutive elements in an array, or zero for uniforms not declared as an array.
+For all other uniforms, a stride of -1 will be returned.</p>
+<p>If <em>pname</em> is <tt class="docutils literal"><span class="pre">GL_UNIFORM_MATRIX_STRIDE</span></tt>, then an array identifying the stride
+between columns of a column-major matrix or rows of a row-major matrix, in basic machine units, of each of the uniforms
+specified by the corresponding array of <em>uniformIndices</em> is returned. The matrix stride of a
+uniform associated with the default uniform block is -1. Note that this information only makes sense for uniforms
+that are matrices. For uniforms that are not matrices, but are declared in a named uniform block, a matrix stride of
+zero is returned.</p>
+<p>If <em>pname</em> is <tt class="docutils literal"><span class="pre">GL_UNIFORM_IS_ROW_MAJOR</span></tt>, then an array identifying whether each
+of the uniforms specified by the corresponding array of <em>uniformIndices</em> is a row-major matrix or not is returned. A
+value of one indicates a row-major matrix, and a value of zero indicates a column-major matrix, a matrix in the default
+uniform block, or a non-matrix.</p>
+<p>If <em>pname</em> is <tt class="docutils literal"><span class="pre">GL_UNIFORM_ATOMIC_COUNTER_BUFFER_INDEX</span></tt>, then an array
+identifying the active atomic counter buffer index of each of the uniforms specified by the corresponding array
+of <em>uniformIndices</em> is returned. For uniforms other than atomic counters, the returned buffer
+index is -1. The returned indices may be passed to <a class="reference internal" href="glGetActiveAtomicCounterBufferiv.html#glGetActiveAtomicCounterBufferiv" title="glGetActiveAtomicCounterBufferiv"><tt class="xref c c-func docutils literal"><span class="pre">glGetActiveAtomicCounterBufferiv()</span></tt></a>
+to query the properties of the associated buffer, and not necessarily the binding point specified in the uniform declaration.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The double types, <tt class="docutils literal"><span class="pre">GL_DOUBLE</span></tt>, <tt class="docutils literal"><span class="pre">GL_DOUBLE_VEC2</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_DOUBLE_VEC3</span></tt>, <tt class="docutils literal"><span class="pre">GL_DOUBLE_VEC4</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_DOUBLE_MAT2</span></tt>, <tt class="docutils literal"><span class="pre">GL_DOUBLE_MAT3</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_DOUBLE_MAT4</span></tt>, <tt class="docutils literal"><span class="pre">GL_DOUBLE_MAT2x3</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_DOUBLE_MAT2x4</span></tt>, <tt class="docutils literal"><span class="pre">GL_DOUBLE_MAT3x2</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_DOUBLE_MAT3x4</span></tt>, <tt class="docutils literal"><span class="pre">GL_DOUBLE_MAT4x2</span></tt>,
+and <tt class="docutils literal"><span class="pre">GL_DOUBLE_MAT4x3</span></tt> are only available if the GL
+version is 4.1 or higher.</p>
+<p class="last"><tt class="docutils literal"><span class="pre">GL_UNIFORM_ATOMIC_COUNTER_BUFFER_INDEX</span></tt> is only accepted by <em>pname</em>
+if the GL version is 4.2 or higher.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>program</em> is not a value generated by OpenGL.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <em>program</em> is not a program object.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>uniformCount</em> is greater than or equal to the value of <tt class="docutils literal"><span class="pre">GL_ACTIVE_UNIFORMS</span></tt> for <em>program</em>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>pname</em> is not an accepted token.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_MAX_VERTEX_UNIFORM_COMPONENTS</span></tt>, <tt class="docutils literal"><span class="pre">GL_MAX_TESS_CONTROL_UNIFORM_COMPONENTS</span></tt>, <tt class="docutils literal"><span class="pre">GL_MAX_TESS_EVALUATION_UNIFORM_COMPONENTS</span></tt>, <tt class="docutils literal"><span class="pre">GL_MAX_GEOMETRY_UNIFORM_COMPONENTS</span></tt>, <tt class="docutils literal"><span class="pre">GL_MAX_FRAGMENT_UNIFORM_COMPONENTS</span></tt>, or <tt class="docutils literal"><span class="pre">GL_MAX_COMBINED_UNIFORM_COMPONENTS</span></tt>.</li>
+<li><a class="reference internal" href="glGetProgram.html#glGetProgram" title="glGetProgram"><tt class="xref c c-func docutils literal"><span class="pre">glGetProgram()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_ACTIVE_UNIFORMS</span></tt> or <tt class="docutils literal"><span class="pre">GL_ACTIVE_UNIFORM_MAX_LENGTH</span></tt>.</li>
+<li><a class="reference internal" href="glIsProgram.html#glIsProgram" title="glIsProgram"><tt class="xref c c-func docutils literal"><span class="pre">glIsProgram()</span></tt></a></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)2011 Khronos Group Open Publication License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glGetActiveUniformName.html"
+                        title="previous chapter">function <cite>glGetActiveUniformName</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glGetAttachedShaders.html"
+                        title="next chapter">function <cite>glGetAttachedShaders</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glGetActiveUniformsiv.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glGetAttachedShaders.html" title="function glGetAttachedShaders"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glGetActiveUniformName.html" title="function glGetActiveUniformName"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

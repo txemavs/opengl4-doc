@@ -1,0 +1,124 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glViewportIndexed`
+----------------------------
+
+.. source file man4/glViewportIndexed
+
+.. currentmodule:: OpenGL.GL
+
+Set a specified viewport
+
+.. c:function:: glViewportIndexed
+.. c:function:: void glViewportIndexedf(GLuint  index, GLfloat  x, GLfloat  y, GLfloat  w, GLfloat  h, GLuint  index, const GLfloat * v)
+
+
+   
+   :param index:
+      Specify the first viewport to set.
+   
+   :param x:
+      For :c:func:`glViewportIndexedf`, specifies the lower left corner of the viewport rectangle, in pixels. The initial value is (0,0).
+   
+   :param width:
+      For :c:func:`glViewportIndexedf`, specifies the width and height of the viewport. When a GL context is first attached to a window, *width* and *height* are set to the dimensions of that window.
+   
+   :param v:
+      For :c:func:`glViewportIndexedfv`, specifies the address of an array containing the viewport parameters.
+   
+
+.. seealso::
+
+   
+   :c:func:`glDepthRange`, :c:func:`glViewport`, :c:func:`glViewportArray`
+   
+.. rubric:: Description
+
+
+:c:func:`glViewportIndexedf` and :c:func:`glViewportIndexedfv` specify the parameters for a single viewport. *index* specifies the index of the viewport to modify. *index* must be less than the value of ``GL_MAX_VIEWPORTS``. For :c:func:`glViewportIndexedf`, *x* , *y* , *w* , and *h* specify the left, bottom, width and height of the viewport in pixels, respectively. For :c:func:`glViewportIndexedfv`, *v* contains the address of an array of floating point values specifying the left (|EQUATION_1_| ), bottom (|EQUATION_2_| ), width (|EQUATION_3_| ), and height (|EQUATION_4_| ) of each viewport, in that order. |EQUATION_5_| and |EQUATION_6_| give the location of the viewport's lower left corner, and |EQUATION_7_| and |EQUATION_8_| give the width and height of the viewport, respectively. The viewport specifies the affine transformation of |EQUATION_9_| and |EQUATION_10_| from normalized device coordinates to window coordinates. Let |EQUATION_11_| be normalized device coordinates. Then the window coordinates |EQUATION_12_| are computed as follows:
+
+|EQUATION_13_|
+
+|EQUATION_14_|
+
+The location of the viewport's bottom left corner, given by ( |EQUATION_15_| , |EQUATION_16_| ) is clamped to be within the implementaiton-dependent viewport bounds range. The viewport bounds range [|EQUATION_17_| , |EQUATION_18_| ] can be determined by calling :c:func:`glGet` with argument ``GL_VIEWPORT_BOUNDS_RANGE``. Viewport width and height are silently clamped to a range that depends on the implementation. To query this range, call :c:func:`glGet` with argument ``GL_MAX_VIEWPORT_DIMS``.
+
+The precision with which the GL interprets the floating point viewport bounds is implementation-dependent and may be determined by querying the impementation-defined constant ``GL_VIEWPORT_SUBPIXEL_BITS``.
+
+Calling :c:func:`glViewportIndexedfv` is equivalent to calling :c:func:`glViewportArray` with *first* set to *index* , *count* set to 1 and *v* passsed directly. :c:func:`glViewportIndexedf` is equivalent to:
+
+
+
+.. code-block:: c
+
+       void glViewportIndexedf(GLuint index, GLfloat x, GLfloat y, GLfloat w, GLfloat h)
+       {
+          const float v[4] = { x, y, w, h };
+          glViewportArrayv(index, 1, v);
+       }
+
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGet` with argument ``GL_VIEWPORT``
+   * :c:func:`glGet` with argument ``GL_MAX_VIEWPORT_DIMS``
+   * :c:func:`glGet` with argument ``GL_VIEWPORT_BOUNDS_RANGE``
+   * :c:func:`glGet` with argument ``GL_VIEWPORT_SUBPIXEL_BITS``
+
+**Errors:**
+
+   * ``GL_INVALID_VALUE`` is generated if *index* is greater than or equal to the value of ``GL_MAX_VIEWPORTS``.
+   * ``GL_INVALID_VALUE`` is generated if either *width* or *height* is negative.
+
+
+.. role:: mml(raw)
+   :format: html
+
+
+
+.. |EQUATION_10_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">y</mi></math>` 
+
+.. |EQUATION_11_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"> <msub><mi mathvariant="italic">x</mi> <mi mathvariant="italic">nd</mi> </msub> <msub><mi mathvariant="italic">y</mi> <mi mathvariant="italic">nd</mi> </msub> </mfenced> </math>` 
+
+.. |EQUATION_12_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"> <msub><mi mathvariant="italic">x</mi> <mi mathvariant="italic">w</mi> </msub> <msub><mi mathvariant="italic">y</mi> <mi mathvariant="italic">w</mi> </msub> </mfenced> </math>` 
+
+.. |EQUATION_13_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <msub><mi mathvariant="italic">x</mi> <mi mathvariant="italic">w</mi> </msub> <mo>=</mo> <mrow> <mfenced open="(" close=")"> <mrow> <msub><mi mathvariant="italic">x</mi> <mi mathvariant="italic">nd</mi> </msub> <mo>+</mo> <mn>1</mn> </mrow> </mfenced> <mo>&it;</mo> <mfenced open="(" close=")"> <mfrac> <mi mathvariant="italic">width</mi> <mn>2</mn> </mfrac> </mfenced> <mo>+</mo> <mi mathvariant="italic">x</mi> </mrow> </mrow> </math>` 
+
+.. |EQUATION_14_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <msub><mi mathvariant="italic">y</mi> <mi mathvariant="italic">w</mi> </msub> <mo>=</mo> <mrow> <mfenced open="(" close=")"> <mrow> <msub><mi mathvariant="italic">y</mi> <mi mathvariant="italic">nd</mi> </msub> <mo>+</mo> <mn>1</mn> </mrow> </mfenced> <mo>&it;</mo> <mfenced open="(" close=")"> <mfrac> <mi mathvariant="italic">height</mi> <mn>2</mn> </mfrac> </mfenced> <mo>+</mo> <mi mathvariant="italic">y</mi> </mrow> </mrow> </math>` 
+
+.. |EQUATION_15_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">x</mi></math>` 
+
+.. |EQUATION_16_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">y</mi></math>` 
+
+.. |EQUATION_17_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">min</mi></math>` 
+
+.. |EQUATION_18_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">max</mi></math>` 
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">x</mi></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">y</mi></math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">w</mi></math>` 
+
+.. |EQUATION_4_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">h</mi></math>` 
+
+.. |EQUATION_5_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">x</mi></math>` 
+
+.. |EQUATION_6_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">y</mi></math>` 
+
+.. |EQUATION_7_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">w</mi></math>` 
+
+.. |EQUATION_8_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">h</mi></math>` 
+
+.. |EQUATION_9_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">x</mi></math>` 
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

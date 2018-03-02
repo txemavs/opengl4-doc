@@ -1,0 +1,272 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glBindBuffer &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glBindBufferBase" href="glBindBufferBase.html" />
+    <link rel="prev" title="function glBindAttribLocation" href="glBindAttribLocation.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glBindBufferBase.html" title="function glBindBufferBase"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glBindAttribLocation.html" title="function glBindAttribLocation"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glbindbuffer">
+<h1>function <cite>glBindBuffer</cite><a class="headerlink" href="#function-glbindbuffer" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Bind a named buffer object</p>
+<dl class="function">
+<dt id="glBindBuffer">
+<tt class="descname">glBindBuffer</tt><big>(</big><big>)</big><a class="headerlink" href="#glBindBuffer" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>target</strong> &#8211; Specifies the target to which the buffer object is bound.
+The symbolic constant must be
+<tt class="docutils literal"><span class="pre">GL_ARRAY_BUFFER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_ATOMIC_COUNTER_BUFFER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_COPY_READ_BUFFER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_COPY_WRITE_BUFFER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_DRAW_INDIRECT_BUFFER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_ELEMENT_ARRAY_BUFFER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_PIXEL_PACK_BUFFER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_PIXEL_UNPACK_BUFFER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_BUFFER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TRANSFORM_FEEDBACK_BUFFER</span></tt>, or
+<tt class="docutils literal"><span class="pre">GL_UNIFORM_BUFFER</span></tt>.</li>
+<li><strong>buffer</strong> &#8211; Specifies the name of a buffer object.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glBindBuffer</tt><big>(</big>GLenum <em>&nbsp;target</em>, GLuint <em>&nbsp;buffer</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glGenBuffers.html#glGenBuffers" title="glGenBuffers"><tt class="xref c c-func docutils literal"><span class="pre">glGenBuffers()</span></tt></a>,
+<a class="reference internal" href="glBindBufferBase.html#glBindBufferBase" title="glBindBufferBase"><tt class="xref c c-func docutils literal"><span class="pre">glBindBufferBase()</span></tt></a>,
+<a class="reference internal" href="glBindBufferRange.html#glBindBufferRange" title="glBindBufferRange"><tt class="xref c c-func docutils literal"><span class="pre">glBindBufferRange()</span></tt></a>,
+<a class="reference internal" href="glMapBuffer.html#glMapBuffer" title="glMapBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glMapBuffer()</span></tt></a>,
+<a class="reference internal" href="glMapBuffer.html#glUnmapBuffer" title="glUnmapBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glUnmapBuffer()</span></tt></a>,
+<a class="reference internal" href="glDeleteBuffers.html#glDeleteBuffers" title="glDeleteBuffers"><tt class="xref c c-func docutils literal"><span class="pre">glDeleteBuffers()</span></tt></a>,
+<a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a>,
+<a class="reference internal" href="glIsBuffer.html#glIsBuffer" title="glIsBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glIsBuffer()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glBindBuffer" title="glBindBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glBindBuffer()</span></tt></a> binds a buffer object to the specified buffer binding point. Calling <a class="reference internal" href="#glBindBuffer" title="glBindBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glBindBuffer()</span></tt></a> with
+<em>target</em> set to one of the accepted symbolic constants and <em>buffer</em> set to the name
+of a buffer object binds that buffer object name to the target. If no buffer object with name <em>buffer</em>
+exists, one is created with that name. When a buffer object is bound to a target, the previous binding for that
+target is automatically broken.</p>
+<p>Buffer object names are unsigned integers. The value zero is reserved, but
+there is no default buffer object for each buffer object target. Instead, <em>buffer</em> set to zero
+effectively unbinds any buffer object previously bound, and restores client memory usage for that buffer object target (if supported for that target).
+Buffer object names and the corresponding buffer object contents are local to
+the shared object space of the current
+GL rendering context;
+two rendering contexts share buffer object names only if they
+explicitly enable sharing between contexts through the appropriate GL windows interfaces functions.</p>
+<p><a class="reference internal" href="glGenBuffers.html#glGenBuffers" title="glGenBuffers"><tt class="xref c c-func docutils literal"><span class="pre">glGenBuffers()</span></tt></a> must be used to generate a set of unused buffer object names.</p>
+<p>The state of a buffer object immediately after it is first bound is an unmapped zero-sized memory buffer with
+<tt class="docutils literal"><span class="pre">GL_READ_WRITE</span></tt> access and <tt class="docutils literal"><span class="pre">GL_STATIC_DRAW</span></tt> usage.</p>
+<p>While a non-zero buffer object name is bound, GL operations on the target to which it is
+bound affect the bound buffer object, and queries of the target to which it is bound return state
+from the bound buffer object. While buffer object name zero is bound, as in the initial state,
+attempts to modify or query state on the target to which it is bound generates an
+<tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> error.</p>
+<p>When a non-zero buffer object is bound to the <tt class="docutils literal"><span class="pre">GL_ARRAY_BUFFER</span></tt> target,
+the vertex array pointer parameter is interpreted as an offset within the
+buffer object measured in basic machine units.</p>
+<p>When a non-zero buffer object is bound to the <tt class="docutils literal"><span class="pre">GL_DRAW_INDIRECT_BUFFER</span></tt> target,
+parameters for draws issued through <a class="reference internal" href="glDrawArraysIndirect.html#glDrawArraysIndirect" title="glDrawArraysIndirect"><tt class="xref c c-func docutils literal"><span class="pre">glDrawArraysIndirect()</span></tt></a>
+and <a class="reference internal" href="glDrawElementsIndirect.html#glDrawElementsIndirect" title="glDrawElementsIndirect"><tt class="xref c c-func docutils literal"><span class="pre">glDrawElementsIndirect()</span></tt></a> are sourced
+from that buffer object.</p>
+<p>While a non-zero buffer object is bound to the <tt class="docutils literal"><span class="pre">GL_ELEMENT_ARRAY_BUFFER</span></tt> target,
+the indices parameter of <a class="reference internal" href="glDrawElements.html#glDrawElements" title="glDrawElements"><tt class="xref c c-func docutils literal"><span class="pre">glDrawElements()</span></tt></a>,
+<a class="reference internal" href="glDrawElementsInstanced.html#glDrawElementsInstanced" title="glDrawElementsInstanced"><tt class="xref c c-func docutils literal"><span class="pre">glDrawElementsInstanced()</span></tt></a>,
+<a class="reference internal" href="glDrawElementsBaseVertex.html#glDrawElementsBaseVertex" title="glDrawElementsBaseVertex"><tt class="xref c c-func docutils literal"><span class="pre">glDrawElementsBaseVertex()</span></tt></a>,
+<a class="reference internal" href="glDrawRangeElements.html#glDrawRangeElements" title="glDrawRangeElements"><tt class="xref c c-func docutils literal"><span class="pre">glDrawRangeElements()</span></tt></a>,
+<a class="reference internal" href="glDrawRangeElementsBaseVertex.html#glDrawRangeElementsBaseVertex" title="glDrawRangeElementsBaseVertex"><tt class="xref c c-func docutils literal"><span class="pre">glDrawRangeElementsBaseVertex()</span></tt></a>,
+<a class="reference internal" href="glMultiDrawElements.html#glMultiDrawElements" title="glMultiDrawElements"><tt class="xref c c-func docutils literal"><span class="pre">glMultiDrawElements()</span></tt></a>, or
+<a class="reference internal" href="glMultiDrawElementsBaseVertex.html#glMultiDrawElementsBaseVertex" title="glMultiDrawElementsBaseVertex"><tt class="xref c c-func docutils literal"><span class="pre">glMultiDrawElementsBaseVertex()</span></tt></a> is interpreted as an
+offset within the buffer object measured in basic machine units.</p>
+<p>While a non-zero buffer object is bound to the <tt class="docutils literal"><span class="pre">GL_PIXEL_PACK_BUFFER</span></tt> target,
+the following commands are affected: <a class="reference internal" href="glGetCompressedTexImage.html#glGetCompressedTexImage" title="glGetCompressedTexImage"><tt class="xref c c-func docutils literal"><span class="pre">glGetCompressedTexImage()</span></tt></a>,
+<a class="reference internal" href="glGetTexImage.html#glGetTexImage" title="glGetTexImage"><tt class="xref c c-func docutils literal"><span class="pre">glGetTexImage()</span></tt></a>, and
+<a class="reference internal" href="glReadPixels.html#glReadPixels" title="glReadPixels"><tt class="xref c c-func docutils literal"><span class="pre">glReadPixels()</span></tt></a>. The pointer parameter is
+interpreted as an offset within the buffer object measured in basic machine units.</p>
+<p>While a non-zero buffer object is bound to the <tt class="docutils literal"><span class="pre">GL_PIXEL_UNPACK_BUFFER</span></tt> target,
+the following commands are affected:
+<a class="reference internal" href="glCompressedTexImage1D.html#glCompressedTexImage1D" title="glCompressedTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glCompressedTexImage1D()</span></tt></a>,
+<a class="reference internal" href="glCompressedTexImage2D.html#glCompressedTexImage2D" title="glCompressedTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glCompressedTexImage2D()</span></tt></a>,
+<a class="reference internal" href="glCompressedTexImage3D.html#glCompressedTexImage3D" title="glCompressedTexImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glCompressedTexImage3D()</span></tt></a>,
+<a class="reference internal" href="glCompressedTexSubImage1D.html#glCompressedTexSubImage1D" title="glCompressedTexSubImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glCompressedTexSubImage1D()</span></tt></a>,
+<a class="reference internal" href="glCompressedTexSubImage2D.html#glCompressedTexSubImage2D" title="glCompressedTexSubImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glCompressedTexSubImage2D()</span></tt></a>,
+<a class="reference internal" href="glCompressedTexSubImage3D.html#glCompressedTexSubImage3D" title="glCompressedTexSubImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glCompressedTexSubImage3D()</span></tt></a>,
+<a class="reference internal" href="glTexImage1D.html#glTexImage1D" title="glTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage1D()</span></tt></a>,
+<a class="reference internal" href="glTexImage2D.html#glTexImage2D" title="glTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage2D()</span></tt></a>,
+<a class="reference internal" href="glTexImage3D.html#glTexImage3D" title="glTexImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage3D()</span></tt></a>,
+<a class="reference internal" href="glTexSubImage1D.html#glTexSubImage1D" title="glTexSubImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage1D()</span></tt></a>,
+<a class="reference internal" href="glTexSubImage2D.html#glTexSubImage2D" title="glTexSubImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage2D()</span></tt></a>, and
+<a class="reference internal" href="glTexSubImage3D.html#glTexSubImage3D" title="glTexSubImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage3D()</span></tt></a>. The pointer parameter is
+interpreted as an offset within the buffer object measured in basic machine units.</p>
+<p>The buffer targets <tt class="docutils literal"><span class="pre">GL_COPY_READ_BUFFER</span></tt> and <tt class="docutils literal"><span class="pre">GL_COPY_WRITE_BUFFER</span></tt>
+are provided to allow <a class="reference internal" href="glCopyBufferSubData.html#glCopyBufferSubData" title="glCopyBufferSubData"><tt class="xref c c-func docutils literal"><span class="pre">glCopyBufferSubData()</span></tt></a>
+to be used without disturbing the state of other bindings. However, <a class="reference internal" href="glCopyBufferSubData.html#glCopyBufferSubData" title="glCopyBufferSubData"><tt class="xref c c-func docutils literal"><span class="pre">glCopyBufferSubData()</span></tt></a>
+may be used with any pair of buffer binding points.</p>
+<p>The <tt class="docutils literal"><span class="pre">GL_TRANSFORM_FEEDBACK_BUFFER</span></tt> buffer binding point may be passed to <a class="reference internal" href="#glBindBuffer" title="glBindBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glBindBuffer()</span></tt></a>,
+but will not directly affect transform feedback state. Instead, the indexed <tt class="docutils literal"><span class="pre">GL_TRANSFORM_FEEDBACK_BUFFER</span></tt>
+bindings must be used through a call to <a class="reference internal" href="glBindBufferBase.html#glBindBufferBase" title="glBindBufferBase"><tt class="xref c c-func docutils literal"><span class="pre">glBindBufferBase()</span></tt></a>
+or <a class="reference internal" href="glBindBufferRange.html#glBindBufferRange" title="glBindBufferRange"><tt class="xref c c-func docutils literal"><span class="pre">glBindBufferRange()</span></tt></a>. This will affect the generic
+<tt class="docutils literal"><span class="pre">GL_TRANSFORM_FEEDABCK_BUFFER</span></tt> binding.</p>
+<p>Likewise, the <tt class="docutils literal"><span class="pre">GL_UNIFORM_BUFFER</span></tt> and <tt class="docutils literal"><span class="pre">GL_ATOMIC_COUNTER_BUFFER</span></tt> buffer binding points may
+be used, but do not directly affect uniform buffer or atomic counter buffer state, respectively.
+<a class="reference internal" href="glBindBufferBase.html#glBindBufferBase" title="glBindBufferBase"><tt class="xref c c-func docutils literal"><span class="pre">glBindBufferBase()</span></tt></a>
+or <a class="reference internal" href="glBindBufferRange.html#glBindBufferRange" title="glBindBufferRange"><tt class="xref c c-func docutils literal"><span class="pre">glBindBufferRange()</span></tt></a> must be used to bind a buffer to
+an indexed uniform buffer or atomic counter buffer binding point.</p>
+<p>A buffer object binding created with <a class="reference internal" href="#glBindBuffer" title="glBindBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glBindBuffer()</span></tt></a> remains active until a different
+buffer object name is bound to the same target, or until the bound buffer object is
+deleted with <a class="reference internal" href="glDeleteBuffers.html#glDeleteBuffers" title="glDeleteBuffers"><tt class="xref c c-func docutils literal"><span class="pre">glDeleteBuffers()</span></tt></a>.</p>
+<p>Once created, a named buffer object may be re-bound to any target as often as needed. However,
+the GL implementation may make choices about how to optimize the storage of a buffer object based
+on its initial binding target.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The <tt class="docutils literal"><span class="pre">GL_COPY_READ_BUFFER</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNIFORM_BUFFER</span></tt> and
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_BUFFER</span></tt> targets are available only if the GL version is 3.1 or greater.</p>
+<p class="last">The <tt class="docutils literal"><span class="pre">GL_ATOMIC_COUNTER_BUFER</span></tt> target is available only if the GL version is 4.2 or greater.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>target</em> is not one of the allowable values.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>buffer</em> is not a name previously returned from a call to <a class="reference internal" href="glGenBuffers.html#glGenBuffers" title="glGenBuffers"><tt class="xref c c-func docutils literal"><span class="pre">glGenBuffers()</span></tt></a>.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_ARRAY_BUFFER_BINDING</span></tt></li>
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_ATOMIC_COUNTER_BUFFER_BINDING</span></tt></li>
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_COPY_READ_BUFFER_BINDING</span></tt></li>
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_COPY_WRITE_BUFFER_BINDING</span></tt></li>
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_DRAW_INDIRECT_BUFFER_BINDING</span></tt></li>
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_ELEMENT_ARRAY_BUFFER_BINDING</span></tt></li>
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_PIXEL_PACK_BUFFER_BINDING</span></tt></li>
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_PIXEL_UNPACK_BUFFER_BINDING</span></tt></li>
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_TRANSFORM_FEEDBACK_BUFFER_BINDING</span></tt></li>
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_UNIFORM_BUFFER_BINDING</span></tt></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)2005 Addison-Wesley. (c)2010-2011 Khronos Group. Open Publication License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glBindAttribLocation.html"
+                        title="previous chapter">function <cite>glBindAttribLocation</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glBindBufferBase.html"
+                        title="next chapter">function <cite>glBindBufferBase</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glBindBuffer.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glBindBufferBase.html" title="function glBindBufferBase"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glBindAttribLocation.html" title="function glBindAttribLocation"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,113 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:28
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glXCreateWindow.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glXCreateWindow`
+--------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Create an on-screen rendering area
+
+.. c:function:: glXCreateWindow
+
+
+         :param dpy:
+
+                  Specifies the connection to the X server.
+
+         :param config:
+
+                  Specifies a GLXFBConfig structure with the desired attributes for the
+                  window.
+
+         :param win:
+
+                  Specifies the X window to be used as the rendering area.
+
+         :param attrib_list:
+
+                  Currently unused. This must be set to ``NULL`` or be an empty list
+                  (i.e., one in which the first element is ``None``\ ).
+
+.. rubric:: Specification
+
+.. c:function:: GLXWindow glXCreateWindow(Display *  dpy, GLXFBConfig  config, Window  win, const int *  attrib_list)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glXChooseFBConfig`\ ,
+            :c:func:`glXDestroyPixmap`\ ,
+            :c:func:`glXMakeContextCurrent`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glXCreateWindow` creates an on-screen rendering area from an existing X window
+that was created with a visual matching *config*\ . The XID of the
+GLXWindow is returned.
+Any GLX rendering context that was created with respect to *config*
+can be used to render into this window.
+Use :c:func:`glXMakeContextCurrent` to associate the rendering area with a GLX
+rendering context.
+
+
+.. note::
+
+
+   :c:func:`glXCreateWindow` is available only if the GLX version is 1.3 or greater.
+
+
+   If the GLX version is 1.1 or 1.0, the GL version must be 1.0.
+   If the GLX version is 1.2, then the GL version must be 1.1.
+   If the GLX version is 1.3, then the GL version must be 1.2.
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``BadMatch`` is generated if *win* was not created with a visual that corresponds to *config*\ .
+* ``BadMatch`` is generated if *config* does not support rendering to windows (i.e., ``GLX_DRAWABLE_TYPE`` does not contain ``GLX_WINDOW_BIT``\ ).
+* ``BadWindow`` is generated if *win* is not a valid pixmap XID.
+* ``BadAlloc`` is generated if there is already a GLXFBConfig associated with *win*\ .
+* ``BadAlloc`` is generated if the X server cannot allocate a new GLX window.
+* ``GLXBadFBConfig`` is generated if *config* is not a valid GLXFBConfig.
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glXCreateWindow'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

@@ -1,0 +1,61 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glPassThrough`
+------------------------
+
+.. source file man/glPassThrough
+
+.. currentmodule:: OpenGL.GL
+
+Place a marker in the feedback buffer
+
+.. c:function:: glPassThrough
+.. c:function:: void glPassThrough(GLfloat  token)
+   :noindex: 
+
+
+   
+   :param token:
+      Specifies a marker value to be placed in the feedback buffer following a ``GL_PASS_THROUGH_TOKEN``.
+   
+
+.. seealso::
+
+   
+   :c:func:`glFeedbackBuffer`, :c:func:`glRenderMode`
+   
+.. rubric:: Description
+
+
+
+
+Feedback is a GL render mode. The mode is selected by calling :c:func:`glRenderMode` with ``GL_FEEDBACK``. When the GL is in feedback mode, no pixels are produced by rasterization. Instead, information about primitives that would have been rasterized is fed back to the application using the GL. See the :c:func:`glFeedbackBuffer` reference page for a description of the feedback buffer and the values in it.
+
+:c:func:`glPassThrough` inserts a user-defined marker in the feedback buffer when it is executed in feedback mode. *token* is returned as if it were a primitive; it is indicated with its own unique identifying value: ``GL_PASS_THROUGH_TOKEN``. The order of :c:func:`glPassThrough` commands with respect to the specification of graphics primitives is maintained.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGet` with argument ``GL_RENDER_MODE``
+
+**Errors:**
+
+   * ``GL_INVALID_OPERATION`` is generated if :c:func:`glPassThrough` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`.
+
+
+
+.. note::
+
+   * :c:func:`glPassThrough` is ignored if the GL is not in feedback mode.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

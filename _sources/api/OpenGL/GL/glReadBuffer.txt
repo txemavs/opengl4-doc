@@ -1,0 +1,55 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glReadBuffer`
+-----------------------
+
+.. source file man4/glReadBuffer
+
+.. currentmodule:: OpenGL.GL
+
+Select a color buffer source for pixels
+
+.. c:function:: glReadBuffer
+.. c:function:: void glReadBuffer(GLenum  mode)
+   :noindex: 
+
+
+   
+   :param mode:
+      Specifies a color buffer. Accepted values are ``GL_FRONT_LEFT``, ``GL_FRONT_RIGHT``, ``GL_BACK_LEFT``, ``GL_BACK_RIGHT``, ``GL_FRONT``, ``GL_BACK``, ``GL_LEFT``, ``GL_RIGHT``, and the constants ``GL_COLOR_ATTACHMENT``. *`i`*
+   
+
+.. seealso::
+
+   
+   :c:func:`glCopyTexImage1D`, :c:func:`glCopyTexImage2D`, :c:func:`glCopyTexSubImage1D`, :c:func:`glCopyTexSubImage2D`, :c:func:`glCopyTexSubImage3D`, :c:func:`glDrawBuffer`, :c:func:`glReadPixels`
+   
+.. rubric:: Description
+
+
+:c:func:`glReadBuffer` specifies a color buffer as the source for subsequent :c:func:`glReadPixels`, :c:func:`glCopyTexImage1D`, :c:func:`glCopyTexImage2D`, :c:func:`glCopyTexSubImage1D`, :c:func:`glCopyTexSubImage2D`, and :c:func:`glCopyTexSubImage3D` commands. *mode* accepts one of twelve or more predefined values. In a fully configured system, ``GL_FRONT``, ``GL_LEFT``, and ``GL_FRONT_LEFT`` all name the front left buffer, ``GL_FRONT_RIGHT`` and ``GL_RIGHT`` name the front right buffer, and ``GL_BACK_LEFT`` and ``GL_BACK`` name the back left buffer. Further more, the constants ``GL_COLOR_ATTACHMENT`` may be used to indicate the *`i`* *`i`* th color attachment where *`i`* ranges from zero to the value of ``GL_MAX_COLOR_ATTACHMENTS`` minus one.
+
+Nonstereo double-buffered configurations have only a front left and a back left buffer. Single-buffered configurations have a front left and a front right buffer if stereo, and only a front left buffer if nonstereo. It is an error to specify a nonexistent buffer to :c:func:`glReadBuffer`.
+
+*mode* is initially ``GL_FRONT`` in single-buffered configurations and ``GL_BACK`` in double-buffered configurations.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGet` with argument ``GL_READ_BUFFER``
+
+**Errors:**
+
+   * ``GL_INVALID_ENUM`` is generated if *mode* is not one of the twelve (or more) accepted values.
+   * ``GL_INVALID_OPERATION`` is generated if *mode* specifies a buffer that does not exist.
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

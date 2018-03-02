@@ -1,0 +1,41 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `gluDeleteQuadric`
+---------------------------
+
+.. source file man/gluDeleteQuadric
+
+.. currentmodule:: OpenGL.GLU
+
+Destroy a quadrics object
+
+.. c:function:: gluDeleteQuadric
+.. c:function:: void gluDeleteQuadric(GLUquadric*  quad)
+   :noindex: 
+
+
+   
+   :param quad:
+      Specifies the quadrics object to be destroyed.
+   
+
+.. seealso::
+
+   
+   :c:func:`gluNewQuadric`
+   
+.. rubric:: Description
+
+
+:c:func:`gluDeleteQuadric` destroys the quadrics object (created with :c:func:`gluNewQuadric`) and frees any memory it uses. Once :c:func:`gluDeleteQuadric` has been called, *quad* cannot be used again.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

@@ -1,0 +1,150 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:29
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glGetCompressedTexImage.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glGetCompressedTexImage`
+----------------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Return a compressed texture image
+
+.. c:function:: glGetCompressedTexImage
+
+
+         :param target:
+
+                  Specifies which texture is to be obtained.
+                  ``GL_TEXTURE_1D``\ , ``GL_TEXTURE_2D``\ , ``GL_TEXTURE_3D``\ ,
+                  ``GL_TEXTURE_CUBE_MAP_POSITIVE_X``\ ,
+                  ``GL_TEXTURE_CUBE_MAP_NEGATIVE_X``\ ,
+                  ``GL_TEXTURE_CUBE_MAP_POSITIVE_Y``\ ,
+                  ``GL_TEXTURE_CUBE_MAP_NEGATIVE_Y``\ ,
+                  ``GL_TEXTURE_CUBE_MAP_POSITIVE_Z``\ , and
+                  ``GL_TEXTURE_CUBE_MAP_NEGATIVE_Z``
+                  are accepted.
+
+         :param lod:
+
+                  Specifies the level-of-detail number of the desired image.
+                  Level 0 is the base image level.
+                  Level
+                  |EQUATION_1_| is the |EQUATION_2_| th
+                  mipmap reduction image.
+
+         :param img:
+
+                  Returns the compressed texture image.
+
+.. rubric:: Specification
+
+.. c:function:: void glGetCompressedTexImage(GLenum  target, GLint  lod, GLvoid *  img)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glActiveTexture`\ ,
+            :c:func:`glCompressedTexImage1D`\ ,
+            :c:func:`glCompressedTexImage2D`\ ,
+            :c:func:`glCompressedTexImage3D`\ ,
+            :c:func:`glCompressedTexSubImage1D`\ ,
+            :c:func:`glCompressedTexSubImage2D`\ ,
+            :c:func:`glCompressedTexSubImage3D`\ ,
+            :c:func:`glReadPixels`\ ,
+            :c:func:`glTexImage1D`\ ,
+            :c:func:`glTexImage2D`\ ,
+            :c:func:`glTexImage3D`\ ,
+            :c:func:`glTexParameter`\ ,
+            :c:func:`glTexSubImage1D`\ ,
+            :c:func:`glTexSubImage2D`\ ,
+            :c:func:`glTexSubImage3D`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glGetCompressedTexImage` returns the compressed texture image associated with *target* and *lod*
+into *img*\ . *img* should be an array of
+``GL_TEXTURE_COMPRESSED_IMAGE_SIZE`` bytes.
+*target* specifies whether the desired texture image was one specified by
+:c:func:`glTexImage1D` (\ ``GL_TEXTURE_1D``\ ),
+:c:func:`glTexImage2D` (\ ``GL_TEXTURE_2D`` or any of ``GL_TEXTURE_CUBE_MAP_\*``\ ), or
+:c:func:`glTexImage3D` (\ ``GL_TEXTURE_3D``\ ).
+*lod* specifies the level-of-detail number of the desired image.
+
+
+If a non-zero named buffer object is bound to the ``GL_PIXEL_PACK_BUFFER`` target
+(see :c:func:`glBindBuffer`\ ) while a texture image is
+requested, *img* is treated as a byte offset into the buffer object's data store.
+
+
+To minimize errors, first verify that the texture is compressed by calling
+:c:func:`glGetTexLevelParameter` with argument ``GL_TEXTURE_COMPRESSED``\ .  If
+the texture is compressed, then determine the amount of memory required to
+store the compressed texture by calling :c:func:`glGetTexLevelParameter` with
+argument ``GL_TEXTURE_COMPRESSED_IMAGE_SIZE``\ .  Finally, retrieve the
+internal format of the texture by calling :c:func:`glGetTexLevelParameter` with
+argument ``GL_TEXTURE_INTERNAL_FORMAT``\ .
+To store the texture for later use, associate the internal format and size
+with the retrieved texture image.  These data can be used by the respective
+texture or subtexture loading routine used for loading *target* textures.
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_VALUE`` is generated if *lod* is less than zero or greater than the maximum number of LODs permitted by the implementation.
+* ``GL_INVALID_OPERATION`` is generated if :c:func:`glGetCompressedTexImage` is used to retrieve a texture that is in an uncompressed internal format.
+* ``GL_INVALID_OPERATION`` is generated if a non-zero buffer object name is bound to the ``GL_PIXEL_PACK_BUFFER`` target and the buffer object's data store is currently mapped.
+* ``GL_INVALID_OPERATION`` is generated if a non-zero buffer object name is bound to the ``GL_PIXEL_PACK_BUFFER`` target and the data would be packed to the buffer object such that the memory writes required would exceed the data store size.
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGetTexLevelParameter` with argument ``GL_TEXTURE_COMPRESSED``
+* :c:func:`glGetTexLevelParameter` with argument ``GL_TEXTURE_COMPRESSED_IMAGE_SIZE``
+* :c:func:`glGetTexLevelParameter` with argument ``GL_TEXTURE_INTERNAL_FORMAT``
+* :c:func:`glGet` with argument ``GL_PIXEL_PACK_BUFFER_BINDING``
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glGetCompressedTexImage'>
+
+.. role:: mml(raw)
+   :format: html
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math>` 
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

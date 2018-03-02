@@ -1,0 +1,84 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:29
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glGenProgramPipelines.xml'
+.. (c)2010 Khronos Group.
+.. See license details at http://opencontent.org/openpub/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glGenProgramPipelines`
+--------------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Reserve program pipeline object names
+
+.. c:function:: glGenProgramPipelines
+
+
+         :param n:
+
+                  Specifies the number of program pipeline object names to reserve.
+
+         :param pipelines:
+
+                  Specifies an array of into which the reserved names will be written.
+
+.. rubric:: Specification
+
+.. c:function:: void glGenProgramPipelines(GLsizei  n, GLuint * pipelines)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glDeleteProgramPipelines`\ ,
+            :c:func:`glBindProgramPipeline`\ ,
+            :c:func:`glIsProgramPipeline`\ ,
+            :c:func:`glUseShaderPrograms`\ ,
+            :c:func:`glUseProgram`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glGenProgramPipelines` returns *n* previously unused
+program pipeline object names in *pipelines*\ . These names are marked as used,
+for the purposes of :c:func:`glGenProgramPipelines` only, but they
+acquire program pipeline state only when they are first bound.
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGet` with argument ``GL_PROGRAM_PIPELINE_BINDING``
+* :c:func:`glIsProgramPipeline`
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glGenProgramPipelines'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )2010 Khronos Group. Open Publication License.
+

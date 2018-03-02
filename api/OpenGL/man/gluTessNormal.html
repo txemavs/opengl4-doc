@@ -1,0 +1,173 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function gluTessNormal &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function gluTessProperty" href="gluTessProperty.html" />
+    <link rel="prev" title="function gluTessEndPolygon" href="gluTessEndPolygon.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="gluTessProperty.html" title="function gluTessProperty"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="gluTessEndPolygon.html" title="function gluTessEndPolygon"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glutessnormal">
+<h1>function <cite>gluTessNormal</cite><a class="headerlink" href="#function-glutessnormal" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Specify a normal for a polygon</p>
+<dl class="function">
+<dt id="gluTessNormal">
+<tt class="descname">gluTessNormal</tt><big>(</big><big>)</big><a class="headerlink" href="#gluTessNormal" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>tess</strong> &#8211; Specifies the tessellation object (created with <a class="reference internal" href="gluNewTess.html#gluNewTess" title="gluNewTess"><tt class="xref c c-func docutils literal"><span class="pre">gluNewTess()</span></tt></a>).</li>
+<li><strong>valueX</strong> &#8211; Specifies the first component of the normal.</li>
+<li><strong>valueY</strong> &#8211; Specifies the second component of the normal.</li>
+<li><strong>valueZ</strong> &#8211; Specifies the third component of the normal.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">gluTessNormal</tt><big>(</big>GLUtesselator* <em>&nbsp;tess</em>, GLdouble <em>&nbsp;valueX</em>, GLdouble <em>&nbsp;valueY</em>, GLdouble <em>&nbsp;valueZ</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="gluTessBeginPolygon.html#gluTessBeginPolygon" title="gluTessBeginPolygon"><tt class="xref c c-func docutils literal"><span class="pre">gluTessBeginPolygon()</span></tt></a>,
+<a class="reference internal" href="gluTessEndPolygon.html#gluTessEndPolygon" title="gluTessEndPolygon"><tt class="xref c c-func docutils literal"><span class="pre">gluTessEndPolygon()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#gluTessNormal" title="gluTessNormal"><tt class="xref c c-func docutils literal"><span class="pre">gluTessNormal()</span></tt></a> describes a normal for a polygon that the program is defining.
+All input data will be projected onto a plane perpendicular to one of
+the three coordinate axes before tessellation and all output triangles
+will be oriented CCW with
+respect to the normal (CW orientation can be obtained by reversing the
+sign of the supplied normal). For example, if you know that all polygons
+lie in the x-y plane, call <a class="reference internal" href="#gluTessNormal" title="gluTessNormal"><tt class="xref c c-func docutils literal"><span class="pre">gluTessNormal()</span></tt></a> (tess, 0.0, 0.0, 1.0)
+before rendering any polygons.</p>
+<p>If the supplied normal is (0.0, 0.0, 0.0) (the initial value), the normal is
+determined as follows. The direction of the normal, up to its sign, is
+found by fitting a plane to the vertices, without regard to how the
+vertices are connected. It is expected that the input data lies approximately
+in the plane; otherwise, projection perpendicular to one of the three
+coordinate axes may substantially change the geometry. The sign of the
+normal is chosen so that the sum of the signed areas of all input
+contours is nonnegative (where a CCW contour has positive area).</p>
+<p>The supplied normal persists until it is changed by another call to
+<a class="reference internal" href="#gluTessNormal" title="gluTessNormal"><tt class="xref c c-func docutils literal"><span class="pre">gluTessNormal()</span></tt></a>.</p>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="gluTessEndPolygon.html"
+                        title="previous chapter">function <cite>gluTessEndPolygon</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="gluTessProperty.html"
+                        title="next chapter">function <cite>gluTessProperty</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/gluTessNormal.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="gluTessProperty.html" title="function gluTessProperty"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="gluTessEndPolygon.html" title="function gluTessEndPolygon"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

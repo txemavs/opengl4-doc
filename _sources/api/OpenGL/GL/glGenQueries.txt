@@ -1,0 +1,57 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glGenQueries`
+-----------------------
+
+.. source file man4/glGenQueries
+
+.. currentmodule:: OpenGL.GL
+
+Generate query object names
+
+.. c:function:: glGenQueries
+.. c:function:: void glGenQueries(GLsizei  n, GLuint *  ids)
+   :noindex: 
+
+
+   
+   :param n:
+      Specifies the number of query object names to be generated.
+   
+   :param ids:
+      Specifies an array in which the generated query object names are stored.
+   
+
+.. seealso::
+
+   
+   :c:func:`glBeginQuery`, :c:func:`glDeleteQueries`, :c:func:`glEndQuery`
+   
+.. rubric:: Description
+
+
+:c:func:`glGenQueries` returns *n* query object names in *ids* . There is no guarantee that the names form a contiguous set of integers; however, it is guaranteed that none of the returned names was in use immediately before the call to :c:func:`glGenQueries`.
+
+Query object names returned by a call to :c:func:`glGenQueries` are not returned by subsequent calls, unless they are first deleted with :c:func:`glDeleteQueries`.
+
+No query objects are associated with the returned query object names until they are first used by calling :c:func:`glBeginQuery`.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glIsQuery`
+
+**Errors:**
+
+   * ``GL_INVALID_VALUE`` is generated if *n* is negative.
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

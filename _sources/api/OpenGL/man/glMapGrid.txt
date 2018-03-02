@@ -1,0 +1,194 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:27
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glMapGrid.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glMapGrid`
+--------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Define a one- or two-dimensional mesh
+
+.. c:function:: glMapGrid
+
+
+         :param un:
+
+                  Specifies the number of partitions in the grid range interval
+                  [\ *u1*\ , *u2*\ ].
+                  Must be positive.
+
+         :param u1:
+         :param u2:
+
+                  Specify the mappings for integer grid domain values
+                  |EQUATION_1_| and |EQUATION_2_|\ .
+
+         :param vn:
+
+                  Specifies the number of partitions in the grid range interval
+                  [\ *v1*\ , *v2*\ ]
+                  (\ :c:func:`glMapGrid2` only).
+
+         :param v1:
+         :param v2:
+
+                  Specify the mappings for integer grid domain values
+                  |EQUATION_3_| and |EQUATION_4_| (\ :c:func:`glMapGrid2` only).
+
+.. rubric:: Specification
+
+.. c:function:: void glMapGrid1d(GLint  un, GLdouble  u1, GLdouble  u2, GLint  un, GLfloat  u1, GLfloat  u2, GLint  un, GLdouble  u1, GLdouble  u2, GLint  vn, GLdouble  v1, GLdouble  v2, GLint  un, GLfloat  u1, GLfloat  u2, GLint  vn, GLfloat  v1, GLfloat  v2)
+
+
+.. seealso::
+
+
+            :c:func:`glEvalCoord`\ ,
+            :c:func:`glEvalMesh`\ ,
+            :c:func:`glEvalPoint`\ ,
+            :c:func:`glMap1`\ ,
+            :c:func:`glMap2`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glMapGrid` and :c:func:`glEvalMesh` are used together to efficiently
+generate and evaluate a series of evenly-spaced map domain values.
+:c:func:`glEvalMesh` steps through the integer domain
+of a one- or two-dimensional grid,
+whose range is the domain of the evaluation maps specified by
+:c:func:`glMap1` and :c:func:`glMap2`\ .
+
+
+:c:func:`glMapGrid1` and :c:func:`glMapGrid2` specify the linear grid mappings
+between the |EQUATION_5_| (or |EQUATION_6_| and |EQUATION_7_|\ )
+integer grid coordinates,
+to the |EQUATION_8_| (or |EQUATION_9_| and |EQUATION_10_|\ )
+floating-point evaluation map coordinates.
+See :c:func:`glMap1` and :c:func:`glMap2` for details of how |EQUATION_11_| and |EQUATION_12_| coordinates
+are evaluated.
+
+
+:c:func:`glMapGrid1` specifies a single linear mapping
+such that integer grid coordinate 0 maps exactly to *u1*\ ,
+and integer grid coordinate *un* maps exactly to *u2*\ .
+All other integer grid coordinates |EQUATION_13_| are mapped so that
+
+
+|EQUATION_14_|
+
+
+:c:func:`glMapGrid2` specifies two such linear mappings.
+One maps integer grid coordinate |EQUATION_15_| exactly to *u1*\ ,
+and integer grid coordinate |EQUATION_16_| exactly to *u2*\ .
+The other maps integer grid coordinate |EQUATION_17_| exactly to *v1*\ ,
+and integer grid coordinate |EQUATION_18_| exactly to *v2*\ .
+Other integer grid coordinates |EQUATION_19_| and |EQUATION_20_| are mapped such that
+
+
+|EQUATION_21_|
+
+
+|EQUATION_22_|
+
+
+The mappings specified by :c:func:`glMapGrid` are used identically by
+:c:func:`glEvalMesh` and :c:func:`glEvalPoint`\ .
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_VALUE`` is generated if either *un* or *vn* is not positive.
+* ``GL_INVALID_OPERATION`` is generated if :c:func:`glMapGrid` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`\ .
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGet` with argument ``GL_MAP1_GRID_DOMAIN``
+* :c:func:`glGet` with argument ``GL_MAP2_GRID_DOMAIN``
+* :c:func:`glGet` with argument ``GL_MAP1_GRID_SEGMENTS``
+* :c:func:`glGet` with argument ``GL_MAP2_GRID_SEGMENTS``
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glMapGrid'>
+
+.. role:: mml(raw)
+   :format: html
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">i</mi><mo>=</mo><mn>0</mn></mrow></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">i</mi><mo>=</mo><mi mathvariant="italic">un</mi></mrow></math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">j</mi><mo>=</mo><mn>0</mn></mrow></math>` 
+
+.. |EQUATION_4_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">j</mi><mo>=</mo><mi mathvariant="italic">vn</mi></mrow></math>` 
+
+.. |EQUATION_5_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math>` 
+
+.. |EQUATION_6_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math>` 
+
+.. |EQUATION_7_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">j</mi></math>` 
+
+.. |EQUATION_8_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">u</mi></math>` 
+
+.. |EQUATION_9_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">u</mi></math>` 
+
+.. |EQUATION_10_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">v</mi></math>` 
+
+.. |EQUATION_11_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">u</mi></math>` 
+
+.. |EQUATION_12_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">v</mi></math>` 
+
+.. |EQUATION_13_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math>` 
+
+.. |EQUATION_14_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">u</mi><mo>=</mo><mrow><mfrac><mrow><mi mathvariant="italic">i</mi><mo>&af;</mo><mfenced open="(" close=")"><mrow><mi mathvariant="italic">u2</mi><mo>-</mo><mi mathvariant="italic">u1</mi></mrow></mfenced></mrow><mi mathvariant="italic">un</mi></mfrac><mo>+</mo><mi mathvariant="italic">u1</mi></mrow></mrow></math>` 
+
+.. |EQUATION_15_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">i</mi><mo>=</mo><mn>0</mn></mrow></math>` 
+
+.. |EQUATION_16_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">i</mi><mo>=</mo><mi mathvariant="italic">un</mi></mrow></math>` 
+
+.. |EQUATION_17_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">j</mi><mo>=</mo><mn>0</mn></mrow></math>` 
+
+.. |EQUATION_18_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">j</mi><mo>=</mo><mi mathvariant="italic">vn</mi></mrow></math>` 
+
+.. |EQUATION_19_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math>` 
+
+.. |EQUATION_20_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">j</mi></math>` 
+
+.. |EQUATION_21_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">u</mi><mo>=</mo><mrow><mfrac><mrow><mi mathvariant="italic">i</mi><mo>&af;</mo><mfenced open="(" close=")"><mrow><mi mathvariant="italic">u2</mi><mo>-</mo><mi mathvariant="italic">u1</mi></mrow></mfenced></mrow><mi mathvariant="italic">un</mi></mfrac><mo>+</mo><mi mathvariant="italic">u1</mi></mrow></mrow></math>` 
+
+.. |EQUATION_22_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">v</mi><mo>=</mo><mrow><mfrac><mrow><mi mathvariant="italic">j</mi><mo>&af;</mo><mfenced open="(" close=")"><mrow><mi mathvariant="italic">v2</mi><mo>-</mo><mi mathvariant="italic">v1</mi></mrow></mfenced></mrow><mi mathvariant="italic">vn</mi></mfrac><mo>+</mo><mi mathvariant="italic">v1</mi></mrow></mrow></math>` 
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

@@ -1,0 +1,52 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glGenFramebuffers`
+----------------------------
+
+.. source file man4/glGenFramebuffers
+
+.. currentmodule:: OpenGL.GL
+
+Generate framebuffer object names
+
+.. c:function:: glGenFramebuffers
+.. c:function:: void glGenFramebuffers(GLsizei  n, GLuint * ids)
+   :noindex: 
+
+
+   
+   :param n:
+      Specifies the number of framebuffer object names to generate.
+   
+   :param ids:
+      Specifies an array in which the generated framebuffer object names are stored.
+   
+
+.. seealso::
+
+   
+   :c:func:`glBindFramebuffer`, :c:func:`glDeleteFramebuffers`
+   
+.. rubric:: Description
+
+
+:c:func:`glGenFramebuffers` returns *n* framebuffer object names in *ids* . There is no guarantee that the names form a contiguous set of integers; however, it is guaranteed that none of the returned names was in use immediately before the call to :c:func:`glGenFramebuffers`.
+
+Framebuffer object names returned by a call to :c:func:`glGenFramebuffers` are not returned by subsequent calls, unless they are first deleted with :c:func:`glDeleteFramebuffers`.
+
+The names returned in *ids* are marked as used, for the purposes of :c:func:`glGenFramebuffers` only, but they acquire state and type only when they are first bound.
+
+
+**Errors:**
+
+   * ``GL_INVALID_VALUE`` is generated if *n* is negative.
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

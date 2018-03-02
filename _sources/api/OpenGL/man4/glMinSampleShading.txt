@@ -1,0 +1,107 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:30
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glMinSampleShading.xml'
+.. (c)2011 Khronos Group.
+.. See license details at http://opencontent.org/openpub/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glMinSampleShading`
+-----------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Specifies minimum rate at which sample shaing takes place
+
+.. c:function:: glMinSampleShading
+
+
+         :param value:
+
+                  Specifies the rate at which samples are shaded within each covered pixel.
+
+.. rubric:: Specification
+
+.. c:function:: void glMinSampleShading(GLfloat  value)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`removedTypes`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glMinSampleShading` specifies the rate at which samples are shaded within
+a covered pixel. Sample-rate shading is enabled by calling :c:func:`glEnable`
+with the parameter ``GL_SAMPLE_SHADING``\ . If ``GL_MULTISAMPLE``
+or ``GL_SAMPLE_SHADING`` is disabled, sample shading has no effect.
+Otherwise, an implementation must provide at least as many unique color values for
+each covered fragment as specified by *value* times *samples* where
+*samples* is the value of ``GL_SAMPLES`` for the current
+framebuffer. At least 1 sample for each covered fragment is generated.
+
+
+A *value* of 1.0 indicates that each sample in the framebuffer should be
+indpendently shaded. A *value* of 0.0 effectively allows the GL to ignore
+sample rate shading. Any value between 0.0 and 1.0 allows the GL to shade only a subset
+of the total samples within each covered fragment. Which samples are shaded and the algorithm
+used to select that subset of the fragment's samples is implementation dependent.
+
+
+.. note::
+
+
+   The type of the *value* parameter was
+   changed from GLclampf to GLfloat. This change is transparent
+   to user code and is described in detail on the
+   :c:func:`removedTypes`
+   page.
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* None.
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGet` with argument ``GL_MIN_SAMPLE_SHADING``\ .
+* :c:func:`glGet` with argument ``GL_SAMPLES``\ .
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glMinSampleShading'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )2011 Khronos Group. Open Publication License.
+

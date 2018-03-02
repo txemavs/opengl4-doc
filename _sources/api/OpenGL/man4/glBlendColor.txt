@@ -1,0 +1,101 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:28
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glBlendColor.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glBlendColor`
+-----------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Set the blend color
+
+.. c:function:: glBlendColor
+
+
+         :param red:
+         :param green:
+         :param blue:
+         :param alpha:
+
+                  specify the components of ``GL_BLEND_COLOR``
+
+.. rubric:: Specification
+
+.. c:function:: void glBlendColor(GLfloat  red, GLfloat  green, GLfloat  blue, GLfloat  alpha)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glBlendEquation`\ ,
+            :c:func:`glBlendFunc`\ ,
+            :c:func:`glGetString`\ ,
+            :c:func:`removedTypes`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+The ``GL_BLEND_COLOR`` may be used to calculate the source and destination
+blending factors. The color components are clamped to the range |EQUATION_1_| before being stored. See :c:func:`glBlendFunc` for a complete description of the
+blending operations.
+Initially the ``GL_BLEND_COLOR`` is set to (0, 0, 0, 0).
+
+
+.. note::
+
+
+   The type of the *red*\ ,
+   *green*\ , *blue*\ ,
+   and *alpha* parameters was changed from
+   GLclampf to GLfloat. This change is transparent to user code
+   and is described in detail on the
+   :c:func:`removedTypes`
+   page.
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGet` with an argument of ``GL_BLEND_COLOR``
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glBlendColor'>
+
+.. role:: mml(raw)
+   :format: html
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"><mn>0</mn><mn>1</mn></mfenced></math>` 
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

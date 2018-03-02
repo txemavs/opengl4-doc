@@ -1,0 +1,132 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glGetTexLevelParameter`
+---------------------------------
+
+.. source file man4/glGetTexLevelParameter
+
+.. currentmodule:: OpenGL.GL
+
+Return texture parameter values for a specific level of detail
+
+.. c:function:: glGetTexLevelParameter
+.. c:function:: void glGetTexLevelParameterfv(GLenum  target, GLint  level, GLenum  pname, GLfloat *  params, GLenum  target, GLint  level, GLenum  pname, GLint *  params)
+
+
+   
+   :param target:
+      Specifies the symbolic name of the target texture, one of ``GL_TEXTURE_1D``, ``GL_TEXTURE_2D``, ``GL_TEXTURE_3D``, ``GL_TEXTURE_1D_ARRAY``, ``GL_TEXTURE_2D_ARRAY``, ``GL_TEXTURE_RECTANGLE``, ``GL_TEXTURE_2D_MULTISAMPLE``, ``GL_TEXTURE_2D_MULTISAMPLE_ARRAY``, ``GL_TEXTURE_CUBE_MAP_POSITIVE_X``, ``GL_TEXTURE_CUBE_MAP_NEGATIVE_X``, ``GL_TEXTURE_CUBE_MAP_POSITIVE_Y``, ``GL_TEXTURE_CUBE_MAP_NEGATIVE_Y``, ``GL_TEXTURE_CUBE_MAP_POSITIVE_Z``, ``GL_TEXTURE_CUBE_MAP_NEGATIVE_Z``, ``GL_PROXY_TEXTURE_1D``, ``GL_PROXY_TEXTURE_2D``, ``GL_PROXY_TEXTURE_3D``, ``GL_PROXY_TEXTURE_1D_ARRAY``, ``GL_PROXY_TEXTURE_2D_ARRAY``, ``GL_PROXY_TEXTURE_RECTANGLE``, ``GL_PROXY_TEXTURE_2D_MULTISAMPLE``, ``GL_PROXY_TEXTURE_2D_MULTISAMPLE_ARRAY``, ``GL_PROXY_TEXTURE_CUBE_MAP``, or ``GL_TEXTURE_BUFFER``.
+   
+   :param level:
+      Specifies the level-of-detail number of the desired image. Level 0 is the base image level. Level |EQUATION_1_| is the |EQUATION_2_| th mipmap reduction image.
+   
+   :param pname:
+      Specifies the symbolic name of a texture parameter. ``GL_TEXTURE_WIDTH``, ``GL_TEXTURE_HEIGHT``, ``GL_TEXTURE_DEPTH``, ``GL_TEXTURE_INTERNAL_FORMAT``, ``GL_TEXTURE_BORDER``, ``GL_TEXTURE_RED_SIZE``, ``GL_TEXTURE_GREEN_SIZE``, ``GL_TEXTURE_BLUE_SIZE``, ``GL_TEXTURE_ALPHA_SIZE``, ``GL_TEXTURE_DEPTH_SIZE``, ``GL_TEXTURE_COMPRESSED``, and ``GL_TEXTURE_COMPRESSED_IMAGE_SIZE`` are accepted.
+   
+   :param params:
+      Returns the requested data.
+   
+
+.. seealso::
+
+   
+   :c:func:`glActiveTexture`, :c:func:`glGetTexParameter`, :c:func:`glCopyTexImage1D`, :c:func:`glCopyTexImage2D`, :c:func:`glCopyTexSubImage1D`, :c:func:`glCopyTexSubImage2D`, :c:func:`glCopyTexSubImage3D`, :c:func:`glTexImage1D`, :c:func:`glTexImage2D`, :c:func:`glTexImage3D`, :c:func:`glTexSubImage1D`, :c:func:`glTexSubImage2D`, :c:func:`glTexSubImage3D`, :c:func:`glTexParameter`
+   
+.. rubric:: Description
+
+
+:c:func:`glGetTexLevelParameter` returns in *params* texture parameter values for a specific level-of-detail value, specified as *level* . *target* defines the target texture, either ``GL_TEXTURE_1D``, ``GL_TEXTURE_2D``, ``GL_TEXTURE_3D``, ``GL_PROXY_TEXTURE_1D``, ``GL_PROXY_TEXTURE_2D``, ``GL_PROXY_TEXTURE_3D``, ``GL_TEXTURE_CUBE_MAP_POSITIVE_X``, ``GL_TEXTURE_CUBE_MAP_NEGATIVE_X``, ``GL_TEXTURE_CUBE_MAP_POSITIVE_Y``, ``GL_TEXTURE_CUBE_MAP_NEGATIVE_Y``, ``GL_TEXTURE_CUBE_MAP_POSITIVE_Z``, ``GL_TEXTURE_CUBE_MAP_NEGATIVE_Z``, or ``GL_PROXY_TEXTURE_CUBE_MAP``.
+
+``GL_MAX_TEXTURE_SIZE``, and ``GL_MAX_3D_TEXTURE_SIZE`` are not really descriptive enough. It has to report the largest square texture image that can be accommodated with mipmaps and borders, but a long skinny texture, or a texture without mipmaps and borders, may easily fit in texture memory. The proxy targets allow the user to more accurately query whether the GL can accommodate a texture of a given configuration. If the texture cannot be accommodated, the texture state variables, which may be queried with :c:func:`glGetTexLevelParameter`, are set to 0. If the texture can be accommodated, the texture state values will be set as they would be set for a non-proxy target.
+
+*pname* specifies the texture parameter whose value or values will be returned.
+
+The accepted parameter names are as follows:
+
+
+   
+   ``GL_TEXTURE_WIDTH``
+      *params* returns a single value, the width of the texture image. This value includes the border of the texture image. The initial value is 0.
+   
+   ``GL_TEXTURE_HEIGHT``
+      *params* returns a single value, the height of the texture image. This value includes the border of the texture image. The initial value is 0.
+   
+   ``GL_TEXTURE_DEPTH``
+      *params* returns a single value, the depth of the texture image. This value includes the border of the texture image. The initial value is 0.
+   
+   ``GL_TEXTURE_INTERNAL_FORMAT``
+      *params* returns a single value, the internal format of the texture image.
+   
+   ``GL_TEXTURE_RED_TYPE``,
+      [empty]
+   
+   ``GL_TEXTURE_GREEN_TYPE``,
+      [empty]
+   
+   ``GL_TEXTURE_BLUE_TYPE``,
+      [empty]
+   
+   ``GL_TEXTURE_ALPHA_TYPE``,
+      [empty]
+   
+   ``GL_TEXTURE_DEPTH_TYPE``
+      The data type used to store the component. The types ``GL_NONE``, ``GL_SIGNED_NORMALIZED``, ``GL_UNSIGNED_NORMALIZED``, ``GL_FLOAT``, ``GL_INT``, and ``GL_UNSIGNED_INT`` may be returned to indicate signed normalized fixed-point, unsigned normalized fixed-point, floating-point, integer unnormalized, and unsigned integer unnormalized components, respectively.
+   
+   ``GL_TEXTURE_RED_SIZE``,
+      [empty]
+   
+   ``GL_TEXTURE_GREEN_SIZE``,
+      [empty]
+   
+   ``GL_TEXTURE_BLUE_SIZE``,
+      [empty]
+   
+   ``GL_TEXTURE_ALPHA_SIZE``,
+      [empty]
+   
+   ``GL_TEXTURE_DEPTH_SIZE``
+      The internal storage resolution of an individual component. The resolution chosen by the GL will be a close match for the resolution requested by the user with the component argument of :c:func:`glTexImage1D`, :c:func:`glTexImage2D`, :c:func:`glTexImage3D`, :c:func:`glCopyTexImage1D`, and :c:func:`glCopyTexImage2D`. The initial value is 0.
+   
+   ``GL_TEXTURE_COMPRESSED``
+      *params* returns a single boolean value indicating if the texture image is stored in a compressed internal format. The initiali value is ``GL_FALSE``.
+   
+   ``GL_TEXTURE_COMPRESSED_IMAGE_SIZE``
+      *params* returns a single integer value, the number of unsigned bytes of the compressed texture image that would be returned from :c:func:`glGetCompressedTexImage`.
+   
+
+**Errors:**
+
+   * ``GL_INVALID_ENUM`` is generated if *target* or *pname* is not an accepted value.
+   * ``GL_INVALID_VALUE`` is generated if *level* is less than 0.
+   * ``GL_INVALID_VALUE`` may be generated if *level* is greater than |EQUATION_3_| *`max`* , where *`max`* is the returned value of ``GL_MAX_TEXTURE_SIZE``.
+   * ``GL_INVALID_VALUE`` is generated if *target* is ``GL_TEXTURE_BUFFER`` and *level* is not zero.
+   * ``GL_INVALID_OPERATION`` is generated if ``GL_TEXTURE_COMPRESSED_IMAGE_SIZE`` is queried on texture images with an uncompressed internal format or on proxy targets.
+
+
+
+.. note::
+
+   * If an error is generated, no change is made to the contents of *params* .
+   * :c:func:`glGetTexLevelParameter` returns the texture level parameters for the active texture unit.
+
+
+
+.. role:: mml(raw)
+   :format: html
+
+
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">log</mi> <mn>2</mn> </msub> </math>` 
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

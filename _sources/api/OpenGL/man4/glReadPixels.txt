@@ -1,0 +1,440 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:30
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glReadPixels.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glReadPixels`
+-----------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Read a block of pixels from the frame buffer
+
+.. c:function:: glReadPixels
+
+
+         :param x:
+         :param y:
+
+                  Specify the window coordinates of the first pixel
+                  that is read from the frame buffer.
+                  This location is the lower left corner of a rectangular block of pixels.
+
+         :param width:
+         :param height:
+
+                  Specify the dimensions of the pixel rectangle.
+                  *width* and *height* of one correspond to a single pixel.
+
+         :param format:
+
+                  Specifies the format of the pixel data.
+                  The following symbolic values are accepted:
+                  ``GL_STENCIL_INDEX``\ ,
+                  ``GL_DEPTH_COMPONENT``\ ,
+                  ``GL_DEPTH_STENCIL``\ ,
+                  ``GL_RED``\ ,
+                  ``GL_GREEN``\ ,
+                  ``GL_BLUE``\ ,
+                  ``GL_RGB``\ ,
+                  ``GL_BGR``\ ,
+                  ``GL_RGBA``\ , and
+                  ``GL_BGRA``\ .
+
+         :param type:
+
+                  Specifies the data type of the pixel data.
+                  Must be one of
+                  ``GL_UNSIGNED_BYTE``\ ,
+                  ``GL_BYTE``\ ,
+                  ``GL_UNSIGNED_SHORT``\ ,
+                  ``GL_SHORT``\ ,
+                  ``GL_UNSIGNED_INT``\ ,
+                  ``GL_INT``\ ,
+                  ``GL_HALF_FLOAT``\ ,
+                  ``GL_FLOAT``\ ,
+                  ``GL_UNSIGNED_BYTE_3_3_2``\ ,
+                  ``GL_UNSIGNED_BYTE_2_3_3_REV``\ ,
+                  ``GL_UNSIGNED_SHORT_5_6_5``\ ,
+                  ``GL_UNSIGNED_SHORT_5_6_5_REV``\ ,
+                  ``GL_UNSIGNED_SHORT_4_4_4_4``\ ,
+                  ``GL_UNSIGNED_SHORT_4_4_4_4_REV``\ ,
+                  ``GL_UNSIGNED_SHORT_5_5_5_1``\ ,
+                  ``GL_UNSIGNED_SHORT_1_5_5_5_REV``\ ,
+                  ``GL_UNSIGNED_INT_8_8_8_8``\ ,
+                  ``GL_UNSIGNED_INT_8_8_8_8_REV``\ ,
+                  ``GL_UNSIGNED_INT_10_10_10_2``\ ,
+                  ``GL_UNSIGNED_INT_2_10_10_10_REV``\ ,
+                  ``GL_UNSIGNED_INT_24_8``\ ,
+                  ``GL_UNSIGNED_INT_10F_11F_11F_REV``\ ,
+                  ``GL_UNSIGNED_INT_5_9_9_9_REV``\ , or
+                  ``GL_FLOAT_32_UNSIGNED_INT_24_8_REV``\ .
+
+         :param data:
+
+                  Returns the pixel data.
+
+.. rubric:: Specification
+
+.. c:function:: void glReadPixels(GLint  x, GLint  y, GLsizei  width, GLsizei  height, GLenum  format, GLenum  type, GLvoid *  data)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glPixelStore`\ ,
+            :c:func:`glReadBuffer`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glReadPixels` returns pixel data from the frame buffer,
+starting with the pixel whose lower left corner
+is at location (\ *x*\ , *y*\ ),
+into client memory starting at location *data*\ .
+Several parameters control the processing of the pixel data before
+it is placed into client memory.
+These parameters are set with :c:func:`glPixelStore`\ .
+This reference page describes the effects on :c:func:`glReadPixels` of most,
+but not all of the parameters specified by these three commands.
+
+
+If a non-zero named buffer object is bound to the ``GL_PIXEL_PACK_BUFFER`` target
+(see :c:func:`glBindBuffer`\ ) while a block of pixels is
+requested, *data* is treated as a byte offset into the buffer object's data store
+rather than a pointer to client memory.
+
+
+:c:func:`glReadPixels` returns values from each pixel with lower left corner at |EQUATION_1_| for |EQUATION_2_| and |EQUATION_3_|\ .
+This pixel is said to be the |EQUATION_4_| th
+pixel in the |EQUATION_5_| th
+row.
+Pixels are returned in row order from the lowest to the highest row,
+left to right in each row.
+
+
+*format* specifies the format for the returned pixel values;
+accepted values are:
+
+
+         ``GL_STENCIL_INDEX``
+
+
+               Stencil values are read from the stencil buffer.
+               Each index is converted to fixed point,
+               shifted left or right depending on the value and sign of ``GL_INDEX_SHIFT``\ ,
+               and added to ``GL_INDEX_OFFSET``\ .
+               If ``GL_MAP_STENCIL`` is ``GL_TRUE``\ ,
+               indices are replaced by their mappings in the table ``GL_PIXEL_MAP_S_TO_S``\ .
+
+
+         ``GL_DEPTH_COMPONENT``
+
+
+               Depth values are read from the depth buffer.
+               Each component is converted to floating point such that the minimum depth
+               value maps to 0 and the maximum value maps to 1.
+               Each component is then multiplied by ``GL_DEPTH_SCALE``\ ,
+               added to ``GL_DEPTH_BIAS``\ ,
+               and finally clamped to the range |EQUATION_6_|\ .
+
+
+         ``GL_DEPTH_STENCIL``
+
+
+               Values are taken from both the depth and stencil buffers. The *type* parameter
+               must be ``GL_UNSIGNED_INT_24_8`` or ``GL_FLOAT_32_UNSIGNED_INT_24_8_REV``\ .
+
+
+         ``GL_RED``
+
+
+         ``GL_GREEN``
+
+
+         ``GL_BLUE``
+
+
+         ``GL_RGB``
+
+
+         ``GL_BGR``
+
+
+         ``GL_RGBA``
+
+
+         ``GL_BGRA``
+
+
+Finally, the indices or components
+are converted to the proper format,
+as specified by *type*\ .
+If *format* is ``GL_STENCIL_INDEX``
+and *type* is not ``GL_FLOAT``\ ,
+each index is masked with the mask value given in the following table.
+If *type* is ``GL_FLOAT``\ , then each integer index is converted to
+single-precision floating-point format.
+
+
+If *format* is
+``GL_RED``\ ,
+``GL_GREEN``\ ,
+``GL_BLUE``\ ,
+``GL_RGB``\ ,
+``GL_BGR``\ ,
+``GL_RGBA``\ , or
+``GL_BGRA`` and *type* is not ``GL_FLOAT``\ ,
+each component is multiplied by the multiplier shown in the following table.
+If type is ``GL_FLOAT``\ , then each component is passed as is
+(or converted to the client's single-precision floating-point format if
+it is different from the one used by the GL).
+
+
++---------------------------------------+----------------------+--------------------------------+
+| *type*                                | :strong:`Index Mask` | :strong:`Component Conversion` |
++---------------------------------------+----------------------+--------------------------------+
+| ``GL_UNSIGNED_BYTE``                  | |EQUATION_7_|        | |EQUATION_8_|                  |
++---------------------------------------+----------------------+--------------------------------+
+| ``GL_BYTE``                           | |EQUATION_9_|        | |EQUATION_10_|                 |
++---------------------------------------+----------------------+--------------------------------+
+| ``GL_UNSIGNED_SHORT``                 | |EQUATION_11_|       | |EQUATION_12_|                 |
++---------------------------------------+----------------------+--------------------------------+
+| ``GL_SHORT``                          | |EQUATION_13_|       | |EQUATION_14_|                 |
++---------------------------------------+----------------------+--------------------------------+
+| ``GL_UNSIGNED_INT``                   | |EQUATION_15_|       | |EQUATION_16_|                 |
++---------------------------------------+----------------------+--------------------------------+
+| ``GL_INT``                            | |EQUATION_17_|       | |EQUATION_18_|                 |
++---------------------------------------+----------------------+--------------------------------+
+| ``GL_HALF_FLOAT``                     | none                 | |EQUATION_19_|                 |
++---------------------------------------+----------------------+--------------------------------+
+| ``GL_FLOAT``                          | none                 | |EQUATION_20_|                 |
++---------------------------------------+----------------------+--------------------------------+
+| ``GL_UNSIGNED_BYTE_3_3_2``            | |EQUATION_21_|       | |EQUATION_22_|                 |
++---------------------------------------+----------------------+--------------------------------+
+| ``GL_UNSIGNED_BYTE_2_3_3_REV``        | |EQUATION_23_|       | |EQUATION_24_|                 |
++---------------------------------------+----------------------+--------------------------------+
+| ``GL_UNSIGNED_SHORT_5_6_5``           | |EQUATION_25_|       | |EQUATION_26_|                 |
++---------------------------------------+----------------------+--------------------------------+
+| ``GL_UNSIGNED_SHORT_5_6_5_REV``       | |EQUATION_27_|       | |EQUATION_28_|                 |
++---------------------------------------+----------------------+--------------------------------+
+| ``GL_UNSIGNED_SHORT_4_4_4_4``         | |EQUATION_29_|       | |EQUATION_30_|                 |
++---------------------------------------+----------------------+--------------------------------+
+| ``GL_UNSIGNED_SHORT_4_4_4_4_REV``     | |EQUATION_31_|       | |EQUATION_32_|                 |
++---------------------------------------+----------------------+--------------------------------+
+| ``GL_UNSIGNED_SHORT_5_5_5_1``         | |EQUATION_33_|       | |EQUATION_34_|                 |
++---------------------------------------+----------------------+--------------------------------+
+| ``GL_UNSIGNED_SHORT_1_5_5_5_REV``     | |EQUATION_35_|       | |EQUATION_36_|                 |
++---------------------------------------+----------------------+--------------------------------+
+| ``GL_UNSIGNED_INT_8_8_8_8``           | |EQUATION_37_|       | |EQUATION_38_|                 |
++---------------------------------------+----------------------+--------------------------------+
+| ``GL_UNSIGNED_INT_8_8_8_8_REV``       | |EQUATION_39_|       | |EQUATION_40_|                 |
++---------------------------------------+----------------------+--------------------------------+
+| ``GL_UNSIGNED_INT_10_10_10_2``        | |EQUATION_41_|       | |EQUATION_42_|                 |
++---------------------------------------+----------------------+--------------------------------+
+| ``GL_UNSIGNED_INT_2_10_10_10_REV``    | |EQUATION_43_|       | |EQUATION_44_|                 |
++---------------------------------------+----------------------+--------------------------------+
+| ``GL_UNSIGNED_INT_24_8``              | |EQUATION_45_|       | |EQUATION_46_|                 |
++---------------------------------------+----------------------+--------------------------------+
+| ``GL_UNSIGNED_INT_10F_11F_11F_REV``   | --                   | Special                        |
++---------------------------------------+----------------------+--------------------------------+
+| ``GL_UNSIGNED_INT_5_9_9_9_REV``       | --                   | Special                        |
++---------------------------------------+----------------------+--------------------------------+
+| ``GL_FLOAT_32_UNSIGNED_INT_24_8_REV`` | none                 | |EQUATION_47_| (Depth Only)    |
++---------------------------------------+----------------------+--------------------------------+
+
+
+Return values are placed in memory as follows.
+If *format* is
+``GL_STENCIL_INDEX``\ ,
+``GL_DEPTH_COMPONENT``\ ,
+``GL_RED``\ ,
+``GL_GREEN``\ , or
+``GL_BLUE``\ ,
+a single value is returned and the data for the |EQUATION_48_| th
+pixel in the |EQUATION_49_| th
+row
+is placed in location |EQUATION_50_|\ .
+``GL_RGB`` and ``GL_BGR`` return three values,
+``GL_RGBA`` and ``GL_BGRA`` return four values for each pixel,
+with all values corresponding to a single pixel occupying contiguous space
+in *data*\ .
+Storage parameters set by :c:func:`glPixelStore`\ ,
+such as ``GL_PACK_LSB_FIRST`` and ``GL_PACK_SWAP_BYTES``\ ,
+affect the way that data is written into memory.
+See :c:func:`glPixelStore` for a description.
+
+
+.. note::
+
+
+   Values for pixels that lie outside the window
+   connected to the current GL context are undefined.
+
+
+   If an error is generated,
+   no change is made to the contents of *data*\ .
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_ENUM`` is generated if *format* or *type* is not an accepted value.
+* ``GL_INVALID_VALUE`` is generated if either *width* or *height* is negative.
+* ``GL_INVALID_OPERATION`` is generated if *format* is ``GL_STENCIL_INDEX`` and there is no stencil buffer.
+* ``GL_INVALID_OPERATION`` is generated if *format* is ``GL_DEPTH_COMPONENT`` and there is no depth buffer.
+* ``GL_INVALID_OPERATION`` is generated if *format* is ``GL_DEPTH_STENCIL`` and there is no depth buffer or if there is no stencil buffer.
+* ``GL_INVALID_ENUM`` is generated if *format* is ``GL_DEPTH_STENCIL`` and *type* is not ``GL_UNSIGNED_INT_24_8`` or ``GL_FLOAT_32_UNSIGNED_INT_24_8_REV``\ .
+* ``GL_INVALID_OPERATION`` is generated if *type* is one of ``GL_UNSIGNED_BYTE_3_3_2``\ , ``GL_UNSIGNED_BYTE_2_3_3_REV``\ , ``GL_UNSIGNED_SHORT_5_6_5``\ , or ``GL_UNSIGNED_SHORT_5_6_5_REV`` and *format* is not ``GL_RGB``\ .
+* ``GL_INVALID_OPERATION`` is generated if *type* is one of ``GL_UNSIGNED_SHORT_4_4_4_4``\ , ``GL_UNSIGNED_SHORT_4_4_4_4_REV``\ , ``GL_UNSIGNED_SHORT_5_5_5_1``\ , ``GL_UNSIGNED_SHORT_1_5_5_5_REV``\ , ``GL_UNSIGNED_INT_8_8_8_8``\ , ``GL_UNSIGNED_INT_8_8_8_8_REV``\ , ``GL_UNSIGNED_INT_10_10_10_2``\ , or ``GL_UNSIGNED_INT_2_10_10_10_REV`` and *format* is neither ``GL_RGBA`` nor ``GL_BGRA``\ .
+* ``GL_INVALID_OPERATION`` is generated if a non-zero buffer object name is bound to the ``GL_PIXEL_PACK_BUFFER`` target and the buffer object's data store is currently mapped.
+* ``GL_INVALID_OPERATION`` is generated if a non-zero buffer object name is bound to the ``GL_PIXEL_PACK_BUFFER`` target and the data would be packed to the buffer object such that the memory writes required would exceed the data store size.
+* ``GL_INVALID_OPERATION`` is generated if a non-zero buffer object name is bound to the ``GL_PIXEL_PACK_BUFFER`` target and *data* is not evenly divisible into the number of bytes needed to store in memory a datum indicated by *type*\ .
+* ``GL_INVALID_OPERATION`` is generated if ``GL_READ_FRAMEBUFFER_BINDING`` is non-zero, the read framebuffer is complete, and the value of ``GL_SAMPLE_BUFFERS`` for the read framebuffer is greater than zero.
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGet` with argument ``GL_INDEX_MODE``
+* :c:func:`glGet` with argument ``GL_PIXEL_PACK_BUFFER_BINDING``
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glReadPixels'>
+
+.. role:: mml(raw)
+   :format: html
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mrow><mi mathvariant="italic">x</mi><mo>+</mo><mi mathvariant="italic">i</mi></mrow><mrow><mi mathvariant="italic">y</mi><mo>+</mo><mi mathvariant="italic">j</mi></mrow></mfenced></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>0</mn><mo><=</mo><mi mathvariant="italic">i</mi><mo><</mo><mi mathvariant="italic">width</mi></mrow></math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>0</mn><mo><=</mo><mi mathvariant="italic">j</mi><mo><</mo><mi mathvariant="italic">height</mi></mrow></math>` 
+
+.. |EQUATION_4_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math>` 
+
+.. |EQUATION_5_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">j</mi></math>` 
+
+.. |EQUATION_6_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"><mn>0</mn><mn>1</mn></mfenced></math>` 
+
+.. |EQUATION_7_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mn>8</mn></msup><mo>-</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_8_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mfenced open="(" close=")"><mrow><msup><mn>2</mn><mn>8</mn></msup><mo>-</mo><mn>1</mn></mrow></mfenced><mo>&it;</mo><mi mathvariant="italic">c</mi></mrow></math>` 
+
+.. |EQUATION_9_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mn>7</mn></msup><mo>-</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_10_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfrac><mfenced open="" close=""><mrow><mfenced open="(" close=")"><mrow><msup><mn>2</mn><mn>8</mn></msup><mo>-</mo><mn>1</mn></mrow></mfenced><mo>&it;</mo><mi mathvariant="italic">c</mi><mo>-</mo><mn>1</mn></mrow></mfenced><mn>2</mn></mfrac></math>` 
+
+.. |EQUATION_11_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mn>16</mn></msup><mo>-</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_12_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mfenced open="(" close=")"><mrow><msup><mn>2</mn><mn>16</mn></msup><mo>-</mo><mn>1</mn></mrow></mfenced><mo>&it;</mo><mi mathvariant="italic">c</mi></mrow></math>` 
+
+.. |EQUATION_13_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mn>15</mn></msup><mo>-</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_14_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfrac><mfenced open="" close=""><mrow><mfenced open="(" close=")"><mrow><msup><mn>2</mn><mn>16</mn></msup><mo>-</mo><mn>1</mn></mrow></mfenced><mo>&it;</mo><mi mathvariant="italic">c</mi><mo>-</mo><mn>1</mn></mrow></mfenced><mn>2</mn></mfrac></math>` 
+
+.. |EQUATION_15_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mn>32</mn></msup><mo>-</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_16_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mfenced open="(" close=")"><mrow><msup><mn>2</mn><mn>32</mn></msup><mo>-</mo><mn>1</mn></mrow></mfenced><mo>&it;</mo><mi mathvariant="italic">c</mi></mrow></math>` 
+
+.. |EQUATION_17_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mn>31</mn></msup><mo>-</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_18_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfrac><mfenced open="" close=""><mrow><mfenced open="(" close=")"><mrow><msup><mn>2</mn><mn>32</mn></msup><mo>-</mo><mn>1</mn></mrow></mfenced><mo>&it;</mo><mi mathvariant="italic">c</mi><mo>-</mo><mn>1</mn></mrow></mfenced><mn>2</mn></mfrac></math>` 
+
+.. |EQUATION_19_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">c</mi></math>` 
+
+.. |EQUATION_20_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">c</mi></math>` 
+
+.. |EQUATION_21_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_22_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mfenced open="(" close=")"><mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></mfenced><mo>&it;</mo><mi mathvariant="italic">c</mi></mrow></math>` 
+
+.. |EQUATION_23_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_24_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mfenced open="(" close=")"><mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></mfenced><mo>&it;</mo><mi mathvariant="italic">c</mi></mrow></math>` 
+
+.. |EQUATION_25_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_26_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mfenced open="(" close=")"><mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></mfenced><mo>&it;</mo><mi mathvariant="italic">c</mi></mrow></math>` 
+
+.. |EQUATION_27_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_28_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mfenced open="(" close=")"><mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></mfenced><mo>&it;</mo><mi mathvariant="italic">c</mi></mrow></math>` 
+
+.. |EQUATION_29_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_30_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mfenced open="(" close=")"><mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></mfenced><mo>&it;</mo><mi mathvariant="italic">c</mi></mrow></math>` 
+
+.. |EQUATION_31_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_32_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mfenced open="(" close=")"><mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></mfenced><mo>&it;</mo><mi mathvariant="italic">c</mi></mrow></math>` 
+
+.. |EQUATION_33_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_34_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mfenced open="(" close=")"><mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></mfenced><mo>&it;</mo><mi mathvariant="italic">c</mi></mrow></math>` 
+
+.. |EQUATION_35_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_36_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mfenced open="(" close=")"><mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></mfenced><mo>&it;</mo><mi mathvariant="italic">c</mi></mrow></math>` 
+
+.. |EQUATION_37_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_38_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mfenced open="(" close=")"><mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></mfenced><mo>&it;</mo><mi mathvariant="italic">c</mi></mrow></math>` 
+
+.. |EQUATION_39_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_40_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mfenced open="(" close=")"><mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></mfenced><mo>&it;</mo><mi mathvariant="italic">c</mi></mrow></math>` 
+
+.. |EQUATION_41_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_42_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mfenced open="(" close=")"><mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></mfenced><mo>&it;</mo><mi mathvariant="italic">c</mi></mrow></math>` 
+
+.. |EQUATION_43_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_44_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mfenced open="(" close=")"><mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></mfenced><mo>&it;</mo><mi mathvariant="italic">c</mi></mrow></math>` 
+
+.. |EQUATION_45_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_46_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mfenced open="(" close=")"><mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></mfenced><mo>&it;</mo><mi mathvariant="italic">c</mi></mrow></math>` 
+
+.. |EQUATION_47_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">c</mi></math>` 
+
+.. |EQUATION_48_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math>` 
+
+.. |EQUATION_49_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">j</mi></math>` 
+
+.. |EQUATION_50_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mfenced open="(" close=")"><mi mathvariant="italic">j</mi></mfenced><mo>&it;</mo><mi mathvariant="italic">width</mi><mo>+</mo><mi mathvariant="italic">i</mi></mrow></math>` 
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

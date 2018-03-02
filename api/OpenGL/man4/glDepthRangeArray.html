@@ -1,0 +1,206 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glDepthRangeArray &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glDepthRangeIndexed" href="glDepthRangeIndexed.html" />
+    <link rel="prev" title="function glDepthRange" href="glDepthRange.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glDepthRangeIndexed.html" title="function glDepthRangeIndexed"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glDepthRange.html" title="function glDepthRange"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-gldepthrangearray">
+<h1>function <cite>glDepthRangeArray</cite><a class="headerlink" href="#function-gldepthrangearray" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Specify mapping of depth values from normalized device coordinates to window coordinates for a specified set of viewports</p>
+<dl class="function">
+<dt id="glDepthRangeArray">
+<tt class="descname">glDepthRangeArray</tt><big>(</big><big>)</big><a class="headerlink" href="#glDepthRangeArray" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>first</strong> &#8211; Specifies the index of the first viewport whose depth range to update.</li>
+<li><strong>count</strong> &#8211; Specifies the number of viewports whose depth range to update.</li>
+<li><strong>v</strong> &#8211; Specifies the address of an array containing the near and far values for the
+depth range of each modified viewport.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt id="glDepthRangeArrayv">
+void <tt class="descname">glDepthRangeArrayv</tt><big>(</big>GLuint <em>&nbsp;first</em>, GLsizei <em>&nbsp;count</em>, const GLdouble *<em>&nbsp;v</em><big>)</big><a class="headerlink" href="#glDepthRangeArrayv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glDepthFunc.html#glDepthFunc" title="glDepthFunc"><tt class="xref c c-func docutils literal"><span class="pre">glDepthFunc()</span></tt></a>,
+<a class="reference internal" href="glDepthRange.html#glDepthRange" title="glDepthRange"><tt class="xref c c-func docutils literal"><span class="pre">glDepthRange()</span></tt></a>,
+<a class="reference internal" href="glDepthRangeIndexed.html#glDepthRangeIndexed" title="glDepthRangeIndexed"><tt class="xref c c-func docutils literal"><span class="pre">glDepthRangeIndexed()</span></tt></a>,
+<a class="reference internal" href="glPolygonOffset.html#glPolygonOffset" title="glPolygonOffset"><tt class="xref c c-func docutils literal"><span class="pre">glPolygonOffset()</span></tt></a>,
+<a class="reference internal" href="glViewportArray.html#glViewportArray" title="glViewportArray"><tt class="xref c c-func docutils literal"><span class="pre">glViewportArray()</span></tt></a>,
+<a class="reference internal" href="glViewport.html#glViewport" title="glViewport"><tt class="xref c c-func docutils literal"><span class="pre">glViewport()</span></tt></a>,
+<a class="reference internal" href="removedTypes.html#removedTypes" title="removedTypes"><tt class="xref c c-func docutils literal"><span class="pre">removedTypes()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p>After clipping and division by <strong>w</strong>,
+depth coordinates range from <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mn>-1</mn></math></span> to 1,
+corresponding to the near and far clipping planes.
+Each viewport has an independent depth range specified as a linear mapping of the normalized
+depth coordinates in this range to window depth coordinates.
+Regardless of the actual depth buffer implementation,
+window coordinate depth values are treated as though they range
+from 0 through 1 (like color components).
+<a class="reference internal" href="#glDepthRangeArray" title="glDepthRangeArray"><tt class="xref c c-func docutils literal"><span class="pre">glDepthRangeArray()</span></tt></a> specifies a linear mapping of the normalized depth coordinates
+in this range to window depth coordinates for each viewport in the range [<em>first</em>,
+<em>first</em> + <em>count</em>).
+Thus,
+the values accepted by <a class="reference internal" href="#glDepthRangeArray" title="glDepthRangeArray"><tt class="xref c c-func docutils literal"><span class="pre">glDepthRangeArray()</span></tt></a> are both clamped to this range
+before they are accepted.</p>
+<p>The <em>first</em> parameter specifies the index of the first viewport whose depth
+range to modify and must be less than the value of <tt class="docutils literal"><span class="pre">GL_MAX_VIEWPORTS</span></tt>.
+<em>count</em> specifies the number of viewports whose depth range to modify.
+<em>first</em> + <em>count</em> must be less than or equal to
+the value of <tt class="docutils literal"><span class="pre">GL_MAX_VIEWPORTS</span></tt>. <em>v</em> specifies the address of an
+array of pairs of double precision floating point values representing the near and far values of the
+depth range for each viewport, in that order.</p>
+<p>The setting of (0,1) maps the near plane to 0 and
+the far plane to 1.
+With this mapping,
+the depth buffer range is fully utilized.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>It is not necessary that the near plane distance be less than the far plane distance.
+Reverse mappings such as
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">near</mi><mo>=</mo><mn>1</mn></mrow></math></span>,
+and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">far</mi><mo>=</mo><mn>0</mn></mrow></math></span> are acceptable.</p>
+<p class="last">The type of the <em>v</em> parameter was
+changed from GLclampd to GLdouble. This change is
+transparent to user code and is described in detail on the
+<a class="reference internal" href="removedTypes.html#removedTypes" title="removedTypes"><tt class="xref c c-func docutils literal"><span class="pre">removedTypes()</span></tt></a>
+page.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>first</em> is greater than or equal to the value of <tt class="docutils literal"><span class="pre">GL_MAX_VIEWPORTS</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>first</em> + <em>count</em> is greater than or equal to the value of <tt class="docutils literal"><span class="pre">GL_MAX_VIEWPORTS</span></tt>.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_DEPTH_RANGE</span></tt></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)2010 Khronos Group. Open Publication License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glDepthRange.html"
+                        title="previous chapter">function <cite>glDepthRange</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glDepthRangeIndexed.html"
+                        title="next chapter">function <cite>glDepthRangeIndexed</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glDepthRangeArray.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glDepthRangeIndexed.html" title="function glDepthRangeIndexed"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glDepthRange.html" title="function glDepthRange"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

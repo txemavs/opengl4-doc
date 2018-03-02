@@ -1,0 +1,42 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glFinish`
+-------------------
+
+.. source file man4/glFinish
+
+.. currentmodule:: OpenGL.GL
+
+Block until all GL execution is complete
+
+.. c:function:: glFinish
+.. c:function:: void glFinish(  void)
+   :noindex: 
+
+.. seealso::
+
+   
+   :c:func:`glFlush`
+   
+.. rubric:: Description
+
+
+:c:func:`glFinish` does not return until the effects of all previously called GL commands are complete. Such effects include all changes to GL state, all changes to connection state, and all changes to the frame buffer contents.
+
+
+
+
+.. note::
+
+   * :c:func:`glFinish` requires a round trip to the server.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

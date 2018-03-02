@@ -1,0 +1,59 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glGenSamplers`
+------------------------
+
+.. source file man4/glGenSamplers
+
+.. currentmodule:: OpenGL.GL
+
+Generate sampler object names
+
+.. c:function:: glGenSamplers
+.. c:function:: void glGenSamplers(GLsizei  n, GLuint * samplers)
+   :noindex: 
+
+
+   
+   :param n:
+      Specifies the number of sampler object names to generate.
+   
+   :param samplers:
+      Specifies an array in which the generated sampler object names are stored.
+   
+
+.. seealso::
+
+   
+   :c:func:`glBindSampler`, :c:func:`glIsSampler`, :c:func:`glDeleteSamplers`
+   
+.. rubric:: Description
+
+
+:c:func:`glGenSamplers` returns *n* sampler object names in *samplers* . There is no guarantee that the names form a contiguous set of integers; however, it is guaranteed that none of the returned names was in use immediately before the call to :c:func:`glGenSamplers`.
+
+Sampler object names returned by a call to :c:func:`glGenSamplers` are not returned by subsequent calls, unless they are first deleted with :c:func:`glDeleteSamplers`.
+
+The names returned in *samplers* are marked as used, for the purposes of :c:func:`glGenSamplers` only, but they acquire state and type only when they are first bound.
+
+
+**Errors:**
+
+   * ``GL_INVALID_VALUE`` is generated if *n* is negative.
+
+
+
+.. note::
+
+   * :c:func:`glGenSamplers` is available only if the GL version is 3.3 or higher.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

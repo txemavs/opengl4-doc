@@ -1,0 +1,576 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glPixelStore &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glPointParameter" href="glPointParameter.html" />
+    <link rel="prev" title="function glPauseTransformFeedback" href="glPauseTransformFeedback.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glPointParameter.html" title="function glPointParameter"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glPauseTransformFeedback.html" title="function glPauseTransformFeedback"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glpixelstore">
+<h1>function <cite>glPixelStore</cite><a class="headerlink" href="#function-glpixelstore" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Set pixel storage modes</p>
+<dl class="function">
+<dt id="glPixelStore">
+<tt class="descname">glPixelStore</tt><big>(</big><big>)</big><a class="headerlink" href="#glPixelStore" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>pname</strong> &#8211; Specifies the symbolic name of the parameter to be set.
+Six values affect the packing of pixel data into memory:
+<tt class="docutils literal"><span class="pre">GL_PACK_SWAP_BYTES</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_PACK_LSB_FIRST</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_PACK_ROW_LENGTH</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_PACK_IMAGE_HEIGHT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_PACK_SKIP_PIXELS</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_PACK_SKIP_ROWS</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_PACK_SKIP_IMAGES</span></tt>, and
+<tt class="docutils literal"><span class="pre">GL_PACK_ALIGNMENT</span></tt>.
+Six more affect the unpacking of pixel data <strong>from</strong> memory:
+<tt class="docutils literal"><span class="pre">GL_UNPACK_SWAP_BYTES</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNPACK_LSB_FIRST</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNPACK_ROW_LENGTH</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNPACK_IMAGE_HEIGHT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNPACK_SKIP_PIXELS</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNPACK_SKIP_ROWS</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNPACK_SKIP_IMAGES</span></tt>, and
+<tt class="docutils literal"><span class="pre">GL_UNPACK_ALIGNMENT</span></tt>.</li>
+<li><strong>param</strong> &#8211; Specifies the value that <em>pname</em> is set to.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt id="glPixelStoref">
+void <tt class="descname">glPixelStoref</tt><big>(</big>GLenum <em>&nbsp;pname</em>, GLfloat <em>&nbsp;param</em>, GLenum <em>&nbsp;pname</em>, GLint <em>&nbsp;param</em><big>)</big><a class="headerlink" href="#glPixelStoref" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glReadPixels.html#glReadPixels" title="glReadPixels"><tt class="xref c c-func docutils literal"><span class="pre">glReadPixels()</span></tt></a>,
+<a class="reference internal" href="glTexImage1D.html#glTexImage1D" title="glTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage1D()</span></tt></a>,
+<a class="reference internal" href="glTexImage2D.html#glTexImage2D" title="glTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage2D()</span></tt></a>,
+<a class="reference internal" href="glTexImage3D.html#glTexImage3D" title="glTexImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage3D()</span></tt></a>,
+<a class="reference internal" href="glTexSubImage1D.html#glTexSubImage1D" title="glTexSubImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage1D()</span></tt></a>,
+<a class="reference internal" href="glTexSubImage2D.html#glTexSubImage2D" title="glTexSubImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage2D()</span></tt></a>,
+<a class="reference internal" href="glTexSubImage3D.html#glTexSubImage3D" title="glTexSubImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage3D()</span></tt></a>,
+<a class="reference internal" href="glCompressedTexImage1D.html#glCompressedTexImage1D" title="glCompressedTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glCompressedTexImage1D()</span></tt></a>,
+<a class="reference internal" href="glCompressedTexImage2D.html#glCompressedTexImage2D" title="glCompressedTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glCompressedTexImage2D()</span></tt></a>,
+<a class="reference internal" href="glCompressedTexImage3D.html#glCompressedTexImage3D" title="glCompressedTexImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glCompressedTexImage3D()</span></tt></a>,
+<a class="reference internal" href="glCompressedTexSubImage1D.html#glCompressedTexSubImage1D" title="glCompressedTexSubImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glCompressedTexSubImage1D()</span></tt></a>,
+<a class="reference internal" href="glCompressedTexSubImage2D.html#glCompressedTexSubImage2D" title="glCompressedTexSubImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glCompressedTexSubImage2D()</span></tt></a>,
+<a class="reference internal" href="glCompressedTexSubImage1D.html#glCompressedTexSubImage1D" title="glCompressedTexSubImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glCompressedTexSubImage1D()</span></tt></a>.</p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glPixelStore" title="glPixelStore"><tt class="xref c c-func docutils literal"><span class="pre">glPixelStore()</span></tt></a> sets pixel storage modes that affect the operation of subsequent
+<a class="reference internal" href="glReadPixels.html#glReadPixels" title="glReadPixels"><tt class="xref c c-func docutils literal"><span class="pre">glReadPixels()</span></tt></a> as well as the unpacking of
+texture patterns (see <a class="reference internal" href="glTexImage1D.html#glTexImage1D" title="glTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage1D()</span></tt></a>,
+<a class="reference internal" href="glTexImage2D.html#glTexImage2D" title="glTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage2D()</span></tt></a>, <a class="reference internal" href="glTexImage3D.html#glTexImage3D" title="glTexImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage3D()</span></tt></a>, <a class="reference internal" href="glTexSubImage1D.html#glTexSubImage1D" title="glTexSubImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage1D()</span></tt></a>,
+<a class="reference internal" href="glTexSubImage2D.html#glTexSubImage2D" title="glTexSubImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage2D()</span></tt></a>, <a class="reference internal" href="glTexSubImage3D.html#glTexSubImage3D" title="glTexSubImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage3D()</span></tt></a>),
+<a class="reference internal" href="glCompressedTexImage1D.html#glCompressedTexImage1D" title="glCompressedTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glCompressedTexImage1D()</span></tt></a>, <a class="reference internal" href="glCompressedTexImage2D.html#glCompressedTexImage2D" title="glCompressedTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glCompressedTexImage2D()</span></tt></a>,
+<a class="reference internal" href="glCompressedTexImage3D.html#glCompressedTexImage3D" title="glCompressedTexImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glCompressedTexImage3D()</span></tt></a>, <a class="reference internal" href="glCompressedTexSubImage1D.html#glCompressedTexSubImage1D" title="glCompressedTexSubImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glCompressedTexSubImage1D()</span></tt></a>,
+<a class="reference internal" href="glCompressedTexSubImage2D.html#glCompressedTexSubImage2D" title="glCompressedTexSubImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glCompressedTexSubImage2D()</span></tt></a> or <a class="reference internal" href="glCompressedTexSubImage1D.html#glCompressedTexSubImage1D" title="glCompressedTexSubImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glCompressedTexSubImage1D()</span></tt></a>.</p>
+<p><em>pname</em> is a symbolic constant indicating the parameter to be set, and
+<em>param</em> is the new value.  Six of the twelve storage parameters affect
+how pixel data is returned to client memory.
+They are as follows:</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">GL_PACK_SWAP_BYTES</span></tt></p>
+<blockquote>
+<div>If true,
+byte ordering for multibyte color components,
+depth components,
+or stencil indices
+is reversed.
+That is,
+if a four-byte component consists of bytes
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">b</mi><mn>0</mn></msub></math></span>,
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">b</mi><mn>1</mn></msub></math></span>,
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">b</mi><mn>2</mn></msub></math></span>,
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">b</mi><mn>3</mn></msub></math></span>,
+it is stored in memory as <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">b</mi><mn>3</mn></msub></math></span>,
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">b</mi><mn>2</mn></msub></math></span>,
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">b</mi><mn>1</mn></msub></math></span>,
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">b</mi><mn>0</mn></msub></math></span> if <tt class="docutils literal"><span class="pre">GL_PACK_SWAP_BYTES</span></tt> is true.
+<tt class="docutils literal"><span class="pre">GL_PACK_SWAP_BYTES</span></tt> has no effect on the memory order of components
+within a pixel,
+only on the order of bytes within components or indices.
+For example,
+the three components of a <tt class="docutils literal"><span class="pre">GL_RGB</span></tt> format pixel are always stored with
+red first,
+green second,
+and blue third,
+regardless of the value of <tt class="docutils literal"><span class="pre">GL_PACK_SWAP_BYTES</span></tt>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_PACK_LSB_FIRST</span></tt></p>
+<blockquote>
+<div>If true,
+bits are ordered within a byte from least significant to most significant;
+otherwise,
+the first bit in each byte is the most significant one.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_PACK_ROW_LENGTH</span></tt></p>
+<blockquote>
+<div><p>If greater than 0,
+<tt class="docutils literal"><span class="pre">GL_PACK_ROW_LENGTH</span></tt> defines the number of pixels in a row.
+If the first pixel of a row is placed at location <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">p</mi></math></span> in memory,
+then the location of the first pixel of the next row is obtained by skipping</p>
+<p><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">k</mi><mo>=</mo><mfenced open="{" close=""><mrow><mtable><mtr><mtd><mrow><mi mathvariant="italic">n</mi><mo>&it;</mo><mi mathvariant="italic">l</mi></mrow></mtd></mtr><mtr><mtd><mrow><mfenced open="" close=""><mfrac><mi mathvariant="italic">a</mi><mi mathvariant="italic">s</mi></mfrac></mfenced><mo>&it;</mo><mfenced open="&LeftCeiling;" close="&RightCeiling;"><mfrac><mfenced open="" close=""><mrow><mi mathvariant="italic">s</mi><mo>&it;</mo><mi mathvariant="italic">n</mi><mo>&it;</mo><mi mathvariant="italic">l</mi></mrow></mfenced><mi mathvariant="italic">a</mi></mfrac></mfenced></mrow></mtd></mtr></mtable><mo>&it;</mo><mtable><mtr><mtd><mrow><mi mathvariant="italic">s</mi><mo>>=</mo><mi mathvariant="italic">a</mi></mrow></mtd></mtr><mtr><mtd><mrow><mi mathvariant="italic">s</mi><mo><</mo><mi mathvariant="italic">a</mi></mrow></mtd></mtr></mtable></mrow></mfenced></mrow></math></span></p>
+<p>components or indices,
+where
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math></span> is the number of components or indices in a pixel, <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">l</mi></math></span> is the number of pixels in a row
+(<tt class="docutils literal"><span class="pre">GL_PACK_ROW_LENGTH</span></tt> if it is greater than 0,
+the <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">width</mi></math></span> argument to the pixel routine otherwise), <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">a</mi></math></span> is the value of <tt class="docutils literal"><span class="pre">GL_PACK_ALIGNMENT</span></tt>, and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">s</mi></math></span> is the size, in bytes, of a single component
+(if <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">a</mi><mo><</mo><mi mathvariant="italic">s</mi></mrow></math></span>,
+then it is as if <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">a</mi><mo>=</mo><mi mathvariant="italic">s</mi></mrow></math></span>).
+In the case of 1-bit values,
+the location of the next row is obtained by skipping</p>
+<p><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">k</mi><mo>=</mo><mrow><mn>8</mn><mo>&it;</mo><mi mathvariant="italic">a</mi><mo>&it;</mo><mfenced open="&LeftCeiling;" close="&RightCeiling;"><mfrac><mfenced open="" close=""><mrow><mi mathvariant="italic">n</mi><mo>&it;</mo><mi mathvariant="italic">l</mi></mrow></mfenced><mfenced open="" close=""><mrow><mn>8</mn><mo>&it;</mo><mi mathvariant="italic">a</mi></mrow></mfenced></mfrac></mfenced></mrow></mrow></math></span></p>
+<p>components or indices.</p>
+<p>The word <strong>component</strong> in this description refers to the nonindex values
+red,
+green,
+blue,
+alpha,
+and depth.
+Storage format <tt class="docutils literal"><span class="pre">GL_RGB</span></tt>,
+for example,
+has three components per pixel:
+first red,
+then green,
+and finally blue.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_PACK_IMAGE_HEIGHT</span></tt></p>
+<blockquote>
+<div><p>If greater than 0,
+<tt class="docutils literal"><span class="pre">GL_PACK_IMAGE_HEIGHT</span></tt> defines the number of pixels in an image
+three-dimensional texture volume, where &#8220;image&#8221; is defined by all pixels
+sharing the same third dimension index.
+If the first pixel of a row is placed at location <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">p</mi></math></span> in memory,
+then the location of the first pixel of the next row is obtained by skipping</p>
+<p><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">k</mi><mo>=</mo><mfenced open="{" close=""><mrow><mtable><mtr><mtd><mrow><mi mathvariant="italic">n</mi><mo>&it;</mo><mi mathvariant="italic">l</mi><mo>&it;</mo><mi mathvariant="italic">h</mi></mrow></mtd></mtr><mtr><mtd><mrow><mfenced open="" close=""><mfrac><mi mathvariant="italic">a</mi><mi mathvariant="italic">s</mi></mfrac></mfenced><mo>&it;</mo><mfenced open="&LeftCeiling;" close="&RightCeiling;"><mfrac><mfenced open="" close=""><mrow><mi mathvariant="italic">s</mi><mo>&it;</mo><mi mathvariant="italic">n</mi><mo>&it;</mo><mi mathvariant="italic">l</mi><mo>&it;</mo><mi mathvariant="italic">h</mi></mrow></mfenced><mi mathvariant="italic">a</mi></mfrac></mfenced></mrow></mtd></mtr></mtable><mo>&it;</mo><mtable><mtr><mtd><mrow><mi mathvariant="italic">s</mi><mo>>=</mo><mi mathvariant="italic">a</mi></mrow></mtd></mtr><mtr><mtd><mrow><mi mathvariant="italic">s</mi><mo><</mo><mi mathvariant="italic">a</mi></mrow></mtd></mtr></mtable></mrow></mfenced></mrow></math></span></p>
+<p>components or indices, where
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math></span> is the number of components or indices
+in a pixel, <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">l</mi></math></span> is the number of pixels in a row
+(<tt class="docutils literal"><span class="pre">GL_PACK_ROW_LENGTH</span></tt> if it is greater than 0, the <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">width</mi></math></span> argument to <a class="reference internal" href="glTexImage3D.html#glTexImage3D" title="glTexImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage3D()</span></tt></a> otherwise), <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">h</mi></math></span> is the number of
+rows in a pixel image (<tt class="docutils literal"><span class="pre">GL_PACK_IMAGE_HEIGHT</span></tt> if it is greater than
+0, the <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">height</mi></math></span> argument to the <a class="reference internal" href="glTexImage3D.html#glTexImage3D" title="glTexImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage3D()</span></tt></a> routine otherwise), <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">a</mi></math></span> is the value of
+<tt class="docutils literal"><span class="pre">GL_PACK_ALIGNMENT</span></tt>, and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">s</mi></math></span> is the size, in bytes, of a single
+component (if <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">a</mi><mo><</mo><mi mathvariant="italic">s</mi></mrow></math></span>,
+then it is as if <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">a</mi><mo>=</mo><mi mathvariant="italic">s</mi></mrow></math></span>).</p>
+<p>The word <strong>component</strong> in this description refers to the nonindex values
+red,
+green,
+blue,
+alpha,
+and depth.
+Storage format <tt class="docutils literal"><span class="pre">GL_RGB</span></tt>,
+for example,
+has three components per pixel:
+first red,
+then green,
+and finally blue.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_PACK_SKIP_PIXELS</span></tt>, <tt class="docutils literal"><span class="pre">GL_PACK_SKIP_ROWS</span></tt>, and <tt class="docutils literal"><span class="pre">GL_PACK_SKIP_IMAGES</span></tt></p>
+<blockquote>
+<div>These values are provided as a convenience to the programmer;
+they provide no functionality that cannot be duplicated simply by
+incrementing the pointer passed to <a class="reference internal" href="glReadPixels.html#glReadPixels" title="glReadPixels"><tt class="xref c c-func docutils literal"><span class="pre">glReadPixels()</span></tt></a>.
+Setting <tt class="docutils literal"><span class="pre">GL_PACK_SKIP_PIXELS</span></tt> to <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math></span> is equivalent to incrementing
+the pointer by <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">i</mi><mo>&it;</mo><mi mathvariant="italic">n</mi></mrow></math></span> components or indices,
+where <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math></span> is the number of components or indices in each pixel.
+Setting <tt class="docutils literal"><span class="pre">GL_PACK_SKIP_ROWS</span></tt> to <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">j</mi></math></span> is equivalent to incrementing
+the pointer by <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">j</mi><mo>&it;</mo><mi mathvariant="italic">m</mi></mrow></math></span> components or indices,
+where <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">m</mi></math></span> is the number of components or indices per row,
+as just computed in the <tt class="docutils literal"><span class="pre">GL_PACK_ROW_LENGTH</span></tt> section.
+Setting <tt class="docutils literal"><span class="pre">GL_PACK_SKIP_IMAGES</span></tt> to <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">k</mi></math></span> is equivalent to incrementing
+the pointer by <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">k</mi><mo>&it;</mo><mi mathvariant="italic">p</mi></mrow></math></span>,
+where <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">p</mi></math></span> is the number of components or indices
+per image, as computed in the <tt class="docutils literal"><span class="pre">GL_PACK_IMAGE_HEIGHT</span></tt> section.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_PACK_ALIGNMENT</span></tt></p>
+<blockquote>
+<div>Specifies the alignment requirements for the start of each pixel row in memory.
+The allowable values are
+1 (byte-alignment),
+2 (rows aligned to even-numbered bytes),
+4 (word-alignment), and
+8 (rows start on double-word boundaries).</div></blockquote>
+</div></blockquote>
+<p>The other six of the twelve storage parameters affect how pixel data is
+read from client memory.
+These values are significant for
+<a class="reference internal" href="glTexImage1D.html#glTexImage1D" title="glTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage1D()</span></tt></a>,
+<a class="reference internal" href="glTexImage2D.html#glTexImage2D" title="glTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage2D()</span></tt></a>,
+<a class="reference internal" href="glTexImage3D.html#glTexImage3D" title="glTexImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage3D()</span></tt></a>,
+<a class="reference internal" href="glTexSubImage1D.html#glTexSubImage1D" title="glTexSubImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage1D()</span></tt></a>,
+<a class="reference internal" href="glTexSubImage2D.html#glTexSubImage2D" title="glTexSubImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage2D()</span></tt></a>, and
+<a class="reference internal" href="glTexSubImage3D.html#glTexSubImage3D" title="glTexSubImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage3D()</span></tt></a></p>
+<p>They are as follows:</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">GL_UNPACK_SWAP_BYTES</span></tt></p>
+<blockquote>
+<div>If true,
+byte ordering for multibyte color components,
+depth components,
+or stencil indices
+is reversed.
+That is,
+if a four-byte component consists of bytes
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">b</mi><mn>0</mn></msub></math></span>,
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">b</mi><mn>1</mn></msub></math></span>,
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">b</mi><mn>2</mn></msub></math></span>,
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">b</mi><mn>3</mn></msub></math></span>,
+it is taken from memory as <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">b</mi><mn>3</mn></msub></math></span>,
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">b</mi><mn>2</mn></msub></math></span>,
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">b</mi><mn>1</mn></msub></math></span>,
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">b</mi><mn>0</mn></msub></math></span> if <tt class="docutils literal"><span class="pre">GL_UNPACK_SWAP_BYTES</span></tt> is true.
+<tt class="docutils literal"><span class="pre">GL_UNPACK_SWAP_BYTES</span></tt> has no effect on the memory order of components
+within a pixel,
+only on the order of bytes within components or indices.
+For example,
+the three components of a <tt class="docutils literal"><span class="pre">GL_RGB</span></tt> format pixel are always stored with
+red first,
+green second,
+and blue third,
+regardless of the value of <tt class="docutils literal"><span class="pre">GL_UNPACK_SWAP_BYTES</span></tt>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_UNPACK_LSB_FIRST</span></tt></p>
+<blockquote>
+<div>If true,
+bits are ordered within a byte from least significant to most significant;
+otherwise,
+the first bit in each byte is the most significant one.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_UNPACK_ROW_LENGTH</span></tt></p>
+<blockquote>
+<div><p>If greater than 0,
+<tt class="docutils literal"><span class="pre">GL_UNPACK_ROW_LENGTH</span></tt> defines the number of pixels in a row.
+If the first pixel of a row is placed at location <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">p</mi></math></span> in memory,
+then the location of the first pixel of the next row is obtained by skipping</p>
+<p><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">k</mi><mo>=</mo><mfenced open="{" close=""><mrow><mtable><mtr><mtd><mrow><mi mathvariant="italic">n</mi><mo>&it;</mo><mi mathvariant="italic">l</mi></mrow></mtd></mtr><mtr><mtd><mrow><mfenced open="" close=""><mfrac><mi mathvariant="italic">a</mi><mi mathvariant="italic">s</mi></mfrac></mfenced><mo>&it;</mo><mfenced open="&LeftCeiling;" close="&RightCeiling;"><mfrac><mfenced open="" close=""><mrow><mi mathvariant="italic">s</mi><mo>&it;</mo><mi mathvariant="italic">n</mi><mo>&it;</mo><mi mathvariant="italic">l</mi></mrow></mfenced><mi mathvariant="italic">a</mi></mfrac></mfenced></mrow></mtd></mtr></mtable><mo>&it;</mo><mtable><mtr><mtd><mrow><mi mathvariant="italic">s</mi><mo>>=</mo><mi mathvariant="italic">a</mi></mrow></mtd></mtr><mtr><mtd><mrow><mi mathvariant="italic">s</mi><mo><</mo><mi mathvariant="italic">a</mi></mrow></mtd></mtr></mtable></mrow></mfenced></mrow></math></span></p>
+<p>components or indices,
+where
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math></span> is the number of components or indices in a pixel, <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">l</mi></math></span> is the number of pixels in a row
+(<tt class="docutils literal"><span class="pre">GL_UNPACK_ROW_LENGTH</span></tt> if it is greater than 0,
+the <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">width</mi></math></span> argument to the pixel routine otherwise), <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">a</mi></math></span> is the value of <tt class="docutils literal"><span class="pre">GL_UNPACK_ALIGNMENT</span></tt>, and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">s</mi></math></span> is the size, in bytes, of a single component
+(if <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">a</mi><mo><</mo><mi mathvariant="italic">s</mi></mrow></math></span>,
+then it is as if <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">a</mi><mo>=</mo><mi mathvariant="italic">s</mi></mrow></math></span>).
+In the case of 1-bit values,
+the location of the next row is obtained by skipping</p>
+<p><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">k</mi><mo>=</mo><mrow><mn>8</mn><mo>&it;</mo><mi mathvariant="italic">a</mi><mo>&it;</mo><mfenced open="&LeftCeiling;" close="&RightCeiling;"><mfrac><mfenced open="" close=""><mrow><mi mathvariant="italic">n</mi><mo>&it;</mo><mi mathvariant="italic">l</mi></mrow></mfenced><mfenced open="" close=""><mrow><mn>8</mn><mo>&it;</mo><mi mathvariant="italic">a</mi></mrow></mfenced></mfrac></mfenced></mrow></mrow></math></span></p>
+<p>components or indices.</p>
+<p>The word <strong>component</strong> in this description refers to the nonindex values
+red,
+green,
+blue,
+alpha,
+and depth.
+Storage format <tt class="docutils literal"><span class="pre">GL_RGB</span></tt>,
+for example,
+has three components per pixel:
+first red,
+then green,
+and finally blue.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_UNPACK_IMAGE_HEIGHT</span></tt></p>
+<blockquote>
+<div><p>If greater than 0,
+<tt class="docutils literal"><span class="pre">GL_UNPACK_IMAGE_HEIGHT</span></tt> defines the number of pixels in an image of
+a three-dimensional texture volume.  Where &#8220;image&#8221; is defined by all
+pixel sharing the same third dimension index.
+If the first pixel of a row is placed at location <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">p</mi></math></span> in memory,
+then the location of the first pixel of the next row is obtained by skipping</p>
+<p><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">k</mi><mo>=</mo><mfenced open="{" close=""><mrow><mtable><mtr><mtd><mrow><mi mathvariant="italic">n</mi><mo>&it;</mo><mi mathvariant="italic">l</mi><mo>&it;</mo><mi mathvariant="italic">h</mi></mrow></mtd></mtr><mtr><mtd><mrow><mfenced open="" close=""><mfrac><mi mathvariant="italic">a</mi><mi mathvariant="italic">s</mi></mfrac></mfenced><mo>&it;</mo><mfenced open="&LeftCeiling;" close="&RightCeiling;"><mfrac><mfenced open="" close=""><mrow><mi mathvariant="italic">s</mi><mo>&it;</mo><mi mathvariant="italic">n</mi><mo>&it;</mo><mi mathvariant="italic">l</mi><mo>&it;</mo><mi mathvariant="italic">h</mi></mrow></mfenced><mi mathvariant="italic">a</mi></mfrac></mfenced></mrow></mtd></mtr></mtable><mo>&it;</mo><mtable><mtr><mtd><mrow><mi mathvariant="italic">s</mi><mo>>=</mo><mi mathvariant="italic">a</mi></mrow></mtd></mtr><mtr><mtd><mrow><mi mathvariant="italic">s</mi><mo><</mo><mi mathvariant="italic">a</mi></mrow></mtd></mtr></mtable></mrow></mfenced></mrow></math></span></p>
+<p>components or indices,
+where
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math></span> is the number of components or indices in a pixel, <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">l</mi></math></span> is the number of pixels in a row
+(<tt class="docutils literal"><span class="pre">GL_UNPACK_ROW_LENGTH</span></tt> if it is greater than 0,
+the <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">width</mi></math></span> argument to <a class="reference internal" href="glTexImage3D.html#glTexImage3D" title="glTexImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage3D()</span></tt></a> otherwise), <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">h</mi></math></span> is the number of rows in an image (<tt class="docutils literal"><span class="pre">GL_UNPACK_IMAGE_HEIGHT</span></tt> if
+it is greater than 0, the <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">height</mi></math></span> argument to <a class="reference internal" href="glTexImage3D.html#glTexImage3D" title="glTexImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage3D()</span></tt></a> otherwise), <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">a</mi></math></span> is the value of <tt class="docutils literal"><span class="pre">GL_UNPACK_ALIGNMENT</span></tt>, and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">s</mi></math></span> is the size, in bytes, of a single component
+(if <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">a</mi><mo><</mo><mi mathvariant="italic">s</mi></mrow></math></span>,
+then it is as if <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">a</mi><mo>=</mo><mi mathvariant="italic">s</mi></mrow></math></span>).</p>
+<p>The word <strong>component</strong> in this description refers to the nonindex values
+red,
+green,
+blue,
+alpha,
+and depth.
+Storage format <tt class="docutils literal"><span class="pre">GL_RGB</span></tt>,
+for example,
+has three components per pixel:
+first red,
+then green,
+and finally blue.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_UNPACK_SKIP_PIXELS</span></tt> and <tt class="docutils literal"><span class="pre">GL_UNPACK_SKIP_ROWS</span></tt></p>
+<blockquote>
+<div>These values are provided as a convenience to the programmer;
+they provide no functionality that cannot be duplicated by
+incrementing the pointer passed to
+<a class="reference internal" href="glTexImage1D.html#glTexImage1D" title="glTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage1D()</span></tt></a>,
+<a class="reference internal" href="glTexImage2D.html#glTexImage2D" title="glTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage2D()</span></tt></a>,
+<a class="reference internal" href="glTexSubImage1D.html#glTexSubImage1D" title="glTexSubImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage1D()</span></tt></a> or
+<a class="reference internal" href="glTexSubImage2D.html#glTexSubImage2D" title="glTexSubImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage2D()</span></tt></a>.
+Setting <tt class="docutils literal"><span class="pre">GL_UNPACK_SKIP_PIXELS</span></tt> to <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math></span> is equivalent to incrementing
+the pointer by <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">i</mi><mo>&it;</mo><mi mathvariant="italic">n</mi></mrow></math></span> components or indices,
+where <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math></span> is the number of components or indices in each pixel.
+Setting <tt class="docutils literal"><span class="pre">GL_UNPACK_SKIP_ROWS</span></tt> to <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">j</mi></math></span> is equivalent to incrementing
+the pointer by <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">j</mi><mo>&it;</mo><mi mathvariant="italic">k</mi></mrow></math></span> components or indices,
+where <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">k</mi></math></span> is the number of components or indices per row,
+as just computed in the <tt class="docutils literal"><span class="pre">GL_UNPACK_ROW_LENGTH</span></tt> section.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_UNPACK_ALIGNMENT</span></tt></p>
+<blockquote>
+<div>Specifies the alignment requirements for the start of each pixel row in memory.
+The allowable values are
+1 (byte-alignment),
+2 (rows aligned to even-numbered bytes),
+4 (word-alignment), and
+8 (rows start on double-word boundaries).</div></blockquote>
+</div></blockquote>
+<p>The following table gives the type,
+initial value,
+and range of valid values for each storage parameter
+that can be set with <a class="reference internal" href="#glPixelStore" title="glPixelStore"><tt class="xref c c-func docutils literal"><span class="pre">glPixelStore()</span></tt></a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="17%" />
+<col width="27%" />
+<col width="25%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>*pname*</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Initial Value</strong></td>
+<td><strong>Valid Range</strong></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_PACK_SWAP_BYTES</span></tt></td>
+<td>boolean</td>
+<td>false</td>
+<td>true or false</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_PACK_LSB_FIRST</span></tt></td>
+<td>boolean</td>
+<td>false</td>
+<td>true or false</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_PACK_ROW_LENGTH</span></tt></td>
+<td>integer</td>
+<td>0</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close=")"><mn>0</mn><infinity/></mfenced></math></span></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_PACK_IMAGE_HEIGHT</span></tt></td>
+<td>integer</td>
+<td>0</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close=")"><mn>0</mn><infinity/></mfenced></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_PACK_SKIP_ROWS</span></tt></td>
+<td>integer</td>
+<td>0</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close=")"><mn>0</mn><infinity/></mfenced></math></span></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_PACK_SKIP_PIXELS</span></tt></td>
+<td>integer</td>
+<td>0</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close=")"><mn>0</mn><infinity/></mfenced></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_PACK_SKIP_IMAGES</span></tt></td>
+<td>integer</td>
+<td>0</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close=")"><mn>0</mn><infinity/></mfenced></math></span></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_PACK_ALIGNMENT</span></tt></td>
+<td>integer</td>
+<td>4</td>
+<td>1, 2, 4, or 8</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_UNPACK_SWAP_BYTES</span></tt></td>
+<td>boolean</td>
+<td>false</td>
+<td>true or false</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_UNPACK_LSB_FIRST</span></tt></td>
+<td>boolean</td>
+<td>false</td>
+<td>true or false</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_UNPACK_ROW_LENGTH</span></tt></td>
+<td>integer</td>
+<td>0</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close=")"><mn>0</mn><infinity/></mfenced></math></span></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_UNPACK_IMAGE_HEIGHT</span></tt></td>
+<td>integer</td>
+<td>0</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close=")"><mn>0</mn><infinity/></mfenced></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_UNPACK_SKIP_ROWS</span></tt></td>
+<td>integer</td>
+<td>0</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close=")"><mn>0</mn><infinity/></mfenced></math></span></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_UNPACK_SKIP_PIXELS</span></tt></td>
+<td>integer</td>
+<td>0</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close=")"><mn>0</mn><infinity/></mfenced></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_UNPACK_SKIP_IMAGES</span></tt></td>
+<td>integer</td>
+<td>0</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close=")"><mn>0</mn><infinity/></mfenced></math></span></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_UNPACK_ALIGNMENT</span></tt></td>
+<td>integer</td>
+<td>4</td>
+<td>1, 2, 4, or 8</td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference internal" href="#glPixelStoref" title="glPixelStoref"><tt class="xref c c-func docutils literal"><span class="pre">glPixelStoref()</span></tt></a> can be used to set any pixel store parameter.
+If the parameter type is boolean,
+then if <em>param</em> is 0,
+the parameter is false;
+otherwise it is set to true.
+If <em>pname</em> is a integer type parameter,
+<em>param</em> is rounded to the nearest integer.</p>
+<p>Likewise, <tt class="xref c c-func docutils literal"><span class="pre">glPixelStorei()</span></tt> can also be used to set any of the
+pixel store parameters.
+Boolean parameters are set to false if <em>param</em> is 0 and true otherwise.</p>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>pname</em> is not an accepted value.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if a negative row length, pixel skip, or row skip value is specified, or if alignment is specified as other than 1, 2, 4, or 8.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_PACK_SWAP_BYTES</span></tt></li>
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_PACK_LSB_FIRST</span></tt></li>
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_PACK_ROW_LENGTH</span></tt></li>
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_PACK_IMAGE_HEIGHT</span></tt></li>
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_PACK_SKIP_ROWS</span></tt></li>
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_PACK_SKIP_PIXELS</span></tt></li>
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_PACK_SKIP_IMAGES</span></tt></li>
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_PACK_ALIGNMENT</span></tt></li>
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_UNPACK_SWAP_BYTES</span></tt></li>
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_UNPACK_LSB_FIRST</span></tt></li>
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_UNPACK_ROW_LENGTH</span></tt></li>
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_UNPACK_IMAGE_HEIGHT</span></tt></li>
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_UNPACK_SKIP_ROWS</span></tt></li>
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_UNPACK_SKIP_PIXELS</span></tt></li>
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_UNPACK_SKIP_IMAGES</span></tt></li>
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_UNPACK_ALIGNMENT</span></tt></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. 2011 Khronos Group. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glPauseTransformFeedback.html"
+                        title="previous chapter">function <cite>glPauseTransformFeedback</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glPointParameter.html"
+                        title="next chapter">function <cite>glPointParameter</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glPixelStore.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glPointParameter.html" title="function glPointParameter"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glPauseTransformFeedback.html" title="function glPauseTransformFeedback"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

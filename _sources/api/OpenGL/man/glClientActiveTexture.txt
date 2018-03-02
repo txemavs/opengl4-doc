@@ -1,0 +1,110 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:26
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glClientActiveTexture.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glClientActiveTexture`
+--------------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Select active texture unit
+
+.. c:function:: glClientActiveTexture
+
+
+         :param texture:
+
+                  Specifies which texture unit to make active. The number
+                  of texture units is implementation dependent, but must be at least
+                  two. *texture* must be one of
+                  ``GL_TEXTURE`` |EQUATION_1_|\ ,
+                  where i ranges from 0 to the value of ``GL_MAX_TEXTURE_COORDS`` - 1, which is an
+                  implementation-dependent value.  The initial value is
+                  ``GL_TEXTURE0``\ .
+
+.. rubric:: Specification
+
+.. c:function:: void glClientActiveTexture(GLenum  texture)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glActiveTexture`\ ,
+            :c:func:`glDisableClientState`\ ,
+            :c:func:`glEnableClientState`\ ,
+            :c:func:`glMultiTexCoord`\ ,
+            :c:func:`glTexCoordPointer`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glClientActiveTexture` selects the vertex array client state parameters to be modified by
+:c:func:`glTexCoordPointer`\ , and enabled or disabled with
+:c:func:`glEnableClientState` or :c:func:`glDisableClientState`\ , respectively,
+when called with a parameter of ``GL_TEXTURE_COORD_ARRAY``\ .
+
+
+.. note::
+
+
+   :c:func:`glClientActiveTexture` is supported only if the GL version is 1.3 or greater, or
+   ``ARB_multitexture`` is included in the string returned by
+   :c:func:`glGetString` when called with the argument ``GL_EXTENSIONS``\ .
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_ENUM`` is generated if *texture* is not one of ``GL_TEXTURE`` |EQUATION_2_|\ , where i ranges from 0 to the value of ``GL_MAX_TEXTURE_COORDS`` - 1.
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGet` with argument ``GL_CLIENT_ACTIVE_TEXTURE`` or ``GL_MAX_TEXTURE_COORDS``
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glClientActiveTexture'>
+
+.. role:: mml(raw)
+   :format: html
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math>` 
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

@@ -1,0 +1,103 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:31
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glUniformSubroutines.xml'
+.. (c)2010 Khronos Group.
+.. See license details at http://opencontent.org/openpub/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glUniformSubroutines`
+-------------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Load active subroutine uniforms
+
+.. c:function:: glUniformSubroutines
+
+
+         :param shadertype:
+
+                  Specifies the shader stage from which to query for subroutine uniform index.
+                  *shadertype*
+                  must be one of ``GL_VERTEX_SHADER``\ , ``GL_TESS_CONTROL_SHADER``\ ,
+                  ``GL_TESS_EVALUATION_SHADER``\ , ``GL_GEOMETRY_SHADER`` or
+                  ``GL_FRAGMENT_SHADER``\ .
+
+         :param count:
+
+                  Specifies the number of uniform indices stored in *indices*\ .
+
+         :param indices:
+
+                  Specifies the address of an array holding the indices to load into the shader subroutine variables.
+
+.. rubric:: Specification
+
+.. c:function:: void glUniformSubroutinesuiv(GLenum  shadertype, GLsizei  count, const GLuint * indices)
+
+
+.. seealso::
+
+
+            :c:func:`glGetProgram`\ ,
+            :c:func:`glGetActiveSubroutineUniform`\ ,
+            :c:func:`glGetActiveSubroutineUniformName`\ ,
+            :c:func:`glGetProgramStage`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glUniformSubroutines` loads all active subroutine uniforms for shader stage
+*shadertype* of the current program with subroutine indices from *indices*\ ,
+storing *indices[i]* into the uniform at location *i*\ .
+*count* must be equal to the value of ``GL_ACTIVE_SUBROUTINE_UNIFORM_LOCATIONS``
+for the program currently in use at shader stage *shadertype*\ . Furthermore, all values in
+*indices* must be less than the value of ``GL_ACTIVE_SUBROUTINES``
+for the shader stage.
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_OPERATION`` is generated if no program object is current.
+* ``GL_INVALID_VALUE`` is generated if *count* is not equal to the value of ``GL_ACTIVE_SUBROUTINE_UNIFORM_LOCATIONS`` for the shader stage *shadertype* of the current program.
+* ``GL_INVALID_VALUE`` is generated if any value in *indices* is geater than or equal to the value of ``GL_ACTIVE_SUBROUTINES`` for the shader stage *shadertype* of the current program.
+* ``GL_INVALID_ENUM`` is generated if *shadertype* is not one of the accepted values.
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGetProgramStage` with argument ``GL_ACTIVE_SUBROUTINES``
+* :c:func:`glGetProgramStage` with argument ``GL_ACTIVE_SUBROUTINE_UNIFORM_LOCATIONS``
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glUniformSubroutines'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )2010 Khronos Group. Open Publication License.
+

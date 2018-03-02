@@ -1,0 +1,179 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glShaderBinary &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glShaderSource" href="glShaderSource.html" />
+    <link rel="prev" title="function glScissorIndexed" href="glScissorIndexed.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glShaderSource.html" title="function glShaderSource"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glScissorIndexed.html" title="function glScissorIndexed"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glshaderbinary">
+<h1>function <cite>glShaderBinary</cite><a class="headerlink" href="#function-glshaderbinary" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Load pre-compiled shader binaries</p>
+<dl class="function">
+<dt id="glShaderBinary">
+<tt class="descname">glShaderBinary</tt><big>(</big><big>)</big><a class="headerlink" href="#glShaderBinary" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>count</strong> &#8211; Specifies the number of shader object handles contained in <em>shaders</em>.</li>
+<li><strong>shaders</strong> &#8211; Specifies the address of an array of shader handles into which to load pre-compiled shader binaries.</li>
+<li><strong>binaryFormat</strong> &#8211; Specifies the format of the shader binaries contained in <em>binary</em>.</li>
+<li><strong>binary</strong> &#8211; Specifies the address of an array of bytes containing pre-compiled binary shader code.</li>
+<li><strong>length</strong> &#8211; Specifies the length of the array whose address is given in <em>binary</em>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glShaderBinary</tt><big>(</big>GLsizei <em>&nbsp;count</em>, const GLuint *<em>&nbsp;shaders</em>, GLenum <em>&nbsp;binaryFormat</em>, const void *<em>&nbsp;binary</em>, GLsizei <em>&nbsp;length</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glGetProgram.html#glGetProgram" title="glGetProgram"><tt class="xref c c-func docutils literal"><span class="pre">glGetProgram()</span></tt></a>,
+<a class="reference internal" href="glGetProgramBinary.html#glGetProgramBinary" title="glGetProgramBinary"><tt class="xref c c-func docutils literal"><span class="pre">glGetProgramBinary()</span></tt></a>,
+<a class="reference internal" href="glProgramBinary.html#glProgramBinary" title="glProgramBinary"><tt class="xref c c-func docutils literal"><span class="pre">glProgramBinary()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glShaderBinary" title="glShaderBinary"><tt class="xref c c-func docutils literal"><span class="pre">glShaderBinary()</span></tt></a> loads pre-compiled shader binary code into the <em>count</em>
+shader objects whose handles are given in <em>shaders</em>. <em>binary</em>
+points to <em>length</em> bytes of binary shader code stored in client memory.
+<em>binaryFormat</em> specifies the format of the pre-compiled code.</p>
+<p>The binary image contained in <em>binary</em> will be decoded according to the extension
+specification defining the specified <em>binaryFormat</em> token. OpenGL
+does not define any specific binary formats, but it does provide a mechanism to obtain token
+vaues for such formats provided by such extensions.</p>
+<p>Depending on the types of the shader objects in <em>shaders</em>, <a class="reference internal" href="#glShaderBinary" title="glShaderBinary"><tt class="xref c c-func docutils literal"><span class="pre">glShaderBinary()</span></tt></a>
+will individually load binary vertex or fragment shaders, or load an executable binary that contains an optimized
+pair of vertex and fragment shaders stored in the same binary.</p>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if more than one of the handles in <em>shaders</em> refers to the same shader object.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>binaryFormat</em> is not an accepted value.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if the data pointed to by <em>binary</em> does not match the format specified by <em>binaryFormat</em>.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with parameter <tt class="docutils literal"><span class="pre">GL_NUM_SHADER_BINARY_FORMATS</span></tt>.</li>
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with parameter <tt class="docutils literal"><span class="pre">GL_SHADER_BINARY_FORMATS</span></tt>.</li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)2010 Khronos Group. Open Publication License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glScissorIndexed.html"
+                        title="previous chapter">function <cite>glScissorIndexed</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glShaderSource.html"
+                        title="next chapter">function <cite>glShaderSource</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glShaderBinary.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glShaderSource.html" title="function glShaderSource"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glScissorIndexed.html" title="function glScissorIndexed"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

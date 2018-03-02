@@ -1,0 +1,138 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:29
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glGetTransformFeedbackVarying.xml'
+.. (c)2010 Khronos Group.
+.. See license details at http://opencontent.org/openpub/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glGetTransformFeedbackVarying`
+----------------------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Retrieve information about varying variables selected for transform feedback
+
+.. c:function:: glGetTransformFeedbackVarying
+
+
+         :param program:
+
+                  The name of the target program object.
+
+         :param index:
+
+                  The index of the varying variable whose information to retrieve.
+
+         :param bufSize:
+
+                  The maximum number of characters, including the null terminator, that may be written into *name*\ .
+
+         :param length:
+
+                  The address of a variable which will receive the number of characters written into *name*\ ,
+                  excluding the null-terminator. If *length* is ``NULL`` no length is returned.
+
+         :param size:
+
+                  The address of a variable that will receive the size of the varying.
+
+         :param type:
+
+                  The address of a variable that will recieve the type of the varying.
+
+         :param name:
+
+                  The address of a buffer into which will be written the name of the varying.
+
+.. rubric:: Specification
+
+.. c:function:: void glGetTransformFeedbackVarying(GLuint program, GLuint index, GLsizei bufSize, GLsizei * length, GLsizei size, GLenum * type, char * name)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glBeginTransformFeedback`\ ,
+            :c:func:`glEndTransformFeedback`\ ,
+            :c:func:`glTransformFeedbackVaryings`\ ,
+            :c:func:`glGetProgram`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+Information about the set of varying variables in a linked program that will be captured
+during transform feedback may be retrieved by calling :c:func:`glGetTransformFeedbackVarying`\ .
+:c:func:`glGetTransformFeedbackVarying` provides information about the varying
+variable selected by *index*\ . An *index* of 0 selects
+the first varying variable specified in the *varyings* array passed
+to :c:func:`glTransformFeedbackVaryings`\ , and
+an *index* of ``GL_TRANSFORM_FEEDBACK_VARYINGS-1`` selects
+the last such variable.
+
+
+The name of the selected varying is returned as a null-terminated string in
+*name*\ . The actual number of characters written into *name*\ ,
+excluding the null terminator, is returned in *length*\ . If *length*
+is NULL, no length is returned. The maximum number of characters that may be written into *name*\ ,
+including the null terminator, is specified by *bufSize*\ .
+
+
+The length of the longest varying name in program is given by ``GL_TRANSFORM_FEEDBACK_VARYING_MAX_LENGTH``\ ,
+which can be queried with :c:func:`glGetProgram`\ .
+
+
+For the selected varying variable, its type is returned into *type*\ . The size of
+the varying is returned into *size*\ . The value in *size* is
+in units of the type returned in *type*\ . The type returned can be any of the
+scalar, vector, or matrix attribute types returned by :c:func:`glGetActiveAttrib`\ .
+If an error occurred, the return parameters *length*\ , *size*\ ,
+*type* and *name* will be unmodified. This command will return as much
+information about the varying variables as possible. If no information is available, *length*
+will be set to zero and *name* will be an empty string. This situation could
+arise if :c:func:`glGetTransformFeedbackVarying` is called after a failed link.
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_VALUE`` is generated if *program* is not the name of a program object.
+* ``GL_INVALID_VALUE`` is generated if *index* is greater or equal to the value of ``GL_TRANSFORM_FEEDBACK_VARYINGS``\ .
+* ``GL_INVALID_OPERATION`` is generated *program* has not been linked.
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGetProgram` with argument ``GL_TRANSFORM_FEEDBACK_VARYING_MAX_LENGTH``\ .
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glGetTransformFeedbackVarying'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )2010 Khronos Group. Open Publication License.
+

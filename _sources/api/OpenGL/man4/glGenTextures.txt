@@ -1,0 +1,105 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:29
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glGenTextures.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glGenTextures`
+------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Generate texture names
+
+.. c:function:: glGenTextures
+
+
+         :param n:
+
+                  Specifies the number of texture names to be generated.
+
+         :param textures:
+
+                  Specifies an array in which the generated texture names are stored.
+
+.. rubric:: Specification
+
+.. c:function:: void glGenTextures(GLsizei  n, GLuint *  textures)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glBindTexture`\ ,
+            :c:func:`glCopyTexImage1D`\ ,
+            :c:func:`glCopyTexImage2D`\ ,
+            :c:func:`glDeleteTextures`\ ,
+            :c:func:`glGet`\ ,
+            :c:func:`glGetTexParameter`\ ,
+            :c:func:`glTexImage1D`\ ,
+            :c:func:`glTexImage2D`\ ,
+            :c:func:`glTexImage3D`\ ,
+            :c:func:`glTexParameter`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glGenTextures` returns *n* texture names in *textures*\ .
+There is no guarantee that the names form a contiguous set of integers;
+however, it is guaranteed that none of the returned names was in use
+immediately before the call to :c:func:`glGenTextures`\ .
+
+
+The generated textures have no dimensionality; they assume the dimensionality
+of the texture target to which they are first bound
+(see :c:func:`glBindTexture`\ ).
+
+
+Texture names returned by a call to :c:func:`glGenTextures` are not returned by
+subsequent calls, unless they are first deleted with
+:c:func:`glDeleteTextures`\ .
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_VALUE`` is generated if *n* is negative.
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glIsTexture`
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glGenTextures'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

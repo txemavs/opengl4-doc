@@ -1,0 +1,136 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:28
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/gluProject.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `gluProject`
+---------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Map object coordinates to window coordinates
+
+.. c:function:: gluProject
+
+
+         :param objX:
+         :param objY:
+         :param objZ:
+
+                  Specify the object coordinates.
+
+         :param model:
+
+                  Specifies the current modelview matrix (as from a :c:func:`glGetDoublev` call).
+
+         :param proj:
+
+                  Specifies the current projection matrix (as from a :c:func:`glGetDoublev` call).
+
+         :param view:
+
+                  Specifies the current viewport (as from a :c:func:`glGetIntegerv` call).
+
+         :param winX:
+         :param winY:
+         :param winZ:
+
+                  Return the computed window coordinates.
+
+.. rubric:: Specification
+
+.. c:function:: GLint gluProject(GLdouble  objX, GLdouble  objY, GLdouble  objZ, const GLdouble *  model, const GLdouble *  proj, const GLint *  view, GLdouble*  winX, GLdouble*  winY, GLdouble*  winZ)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`gluUnProject`\ ,
+            :c:func:`glGet`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`gluProject` transforms the specified object coordinates into window coordinates
+using *model*\ , *proj*\ , and *view*\ . The result is stored
+in *winX*\ , *winY*\ , and *winZ*\ . A return value of
+``GLU_TRUE`` indicates success, a return value of ``GLU_FALSE``
+indicates failure.
+
+
+To compute the coordinates,
+let
+|EQUATION_1_| represented as a matrix with 4 rows and 1 column.
+Then :c:func:`gluProject` computes |EQUATION_2_| as follows:
+
+
+|EQUATION_3_|
+
+
+where
+|EQUATION_4_| is the current projection matrix *proj* and |EQUATION_5_| is the current
+modelview matrix *model* (both represented as |EQUATION_6_| matrices in column-major order).
+
+
+The window coordinates are then computed as follows:
+
+
+|EQUATION_7_|
+
+         |EQUATION_8_|
+
+
+         |EQUATION_9_|
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'gluProject'>
+
+.. role:: mml(raw)
+   :format: html
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">v</mi><mo>=</mo><mfenced open="(" close=")"><mi mathvariant="italic">objX</mi><mi mathvariant="italic">objY</mi><mi mathvariant="italic">objZ</mi><mn>1.0</mn></mfenced></mrow></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msup><mi mathvariant="italic">v</mi><mo>&Prime;</mo></msup></math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mi mathvariant="italic">v</mi><mo>&Prime;</mo></msup><mo>=</mo><mrow><mi mathvariant="italic">P</mi><mo>&times;</mo><mi mathvariant="italic">M</mi><mo>&times;</mo><mi mathvariant="italic">v</mi></mrow></mrow></math>` 
+
+.. |EQUATION_4_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">P</mi></math>` 
+
+.. |EQUATION_5_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">M</mi></math>` 
+
+.. |EQUATION_6_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>4</mn><mo>&times;</mo><mn>4</mn></mrow></math>` 
+
+.. |EQUATION_7_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">winX</mi><mo>=</mo><mrow><mrow><mi mathvariant="italic">view</mi><mo>&af;</mo><mfenced open="(" close=")"><mn>0</mn></mfenced></mrow><mo>+</mo><mfrac><mrow><mrow><mi mathvariant="italic">view</mi><mo>&af;</mo><mfenced open="(" close=")"><mn>2</mn></mfenced></mrow><mo>&times;</mo><mfenced open="(" close=")"><mrow><mrow><msup><mi mathvariant="italic">v</mi><mo>&Prime;</mo></msup><mo>&af;</mo><mfenced open="(" close=")"><mn>0</mn></mfenced></mrow><mo>+</mo><mn>1</mn></mrow></mfenced></mrow><mn>2</mn></mfrac></mrow></mrow></math>` 
+
+.. |EQUATION_8_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">winY</mi><mo>=</mo><mrow><mrow><mi mathvariant="italic">view</mi><mo>&af;</mo><mfenced open="(" close=")"><mn>1</mn></mfenced></mrow><mo>+</mo><mfrac><mrow><mrow><mi mathvariant="italic">view</mi><mo>&af;</mo><mfenced open="(" close=")"><mn>3</mn></mfenced></mrow><mo>&times;</mo><mfenced open="(" close=")"><mrow><mrow><msup><mi mathvariant="italic">v</mi><mo>&Prime;</mo></msup><mo>&af;</mo><mfenced open="(" close=")"><mn>1</mn></mfenced></mrow><mo>+</mo><mn>1</mn></mrow></mfenced></mrow><mn>2</mn></mfrac></mrow></mrow></math>` 
+
+.. |EQUATION_9_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">winZ</mi><mo>=</mo><mfrac><mfenced open="(" close=")"><mrow><mrow><msup><mi mathvariant="italic">v</mi><mo>&Prime;</mo></msup><mo>&af;</mo><mfenced open="(" close=")"><mn>2</mn></mfenced></mrow><mo>+</mo><mn>1</mn></mrow></mfenced><mn>2</mn></mfrac></mrow></math>` 
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

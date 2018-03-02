@@ -1,0 +1,201 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glMultiDrawElementsBaseVertex &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glPatchParameter" href="glPatchParameter.html" />
+    <link rel="prev" title="function glMultiDrawElements" href="glMultiDrawElements.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glPatchParameter.html" title="function glPatchParameter"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glMultiDrawElements.html" title="function glMultiDrawElements"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glmultidrawelementsbasevertex">
+<h1>function <cite>glMultiDrawElementsBaseVertex</cite><a class="headerlink" href="#function-glmultidrawelementsbasevertex" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Render multiple sets of primitives by specifying indices of array data elements and an index to apply to each index</p>
+<dl class="function">
+<dt id="glMultiDrawElementsBaseVertex">
+<tt class="descname">glMultiDrawElementsBaseVertex</tt><big>(</big><big>)</big><a class="headerlink" href="#glMultiDrawElementsBaseVertex" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>mode</strong> &#8211; Specifies what kind of primitives to render.
+Symbolic constants
+<tt class="docutils literal"><span class="pre">GL_POINTS</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LINE_STRIP</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LINE_LOOP</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LINES</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LINE_STRIP_ADJACENCY</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LINES_ADJACENCY</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TRIANGLE_STRIP</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TRIANGLE_FAN</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TRIANGLES</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TRIANGLE_STRIP_ADJACENCY</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TRIANGLES_ADJACENCY</span></tt> and <tt class="docutils literal"><span class="pre">GL_PATCHES</span></tt>
+are accepted.</li>
+<li><strong>count</strong> &#8211; Points to an array of the elements counts.</li>
+<li><strong>type</strong> &#8211; Specifies the type of the values in <em>indices</em>. Must be one of
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_BYTE</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT</span></tt>, or
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT</span></tt>.</li>
+<li><strong>indices</strong> &#8211; Specifies a pointer to the location where the indices are stored.</li>
+<li><strong>primcount</strong> &#8211; Specifies the size of the <em>count</em> array.</li>
+<li><strong>basevertex</strong> &#8211; Specifies a pointer to the location where the base vertices are stored.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glMultiDrawElementsBaseVertex</tt><big>(</big>GLenum <em>&nbsp;mode</em>, const GLsizei *<em>&nbsp;count</em>, GLenum <em>&nbsp;type</em>, const GLvoid **<em>&nbsp;indices</em>, GLsizei <em>&nbsp;primcount</em>, GLint *<em>&nbsp;basevertex</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glMultiDrawElements.html#glMultiDrawElements" title="glMultiDrawElements"><tt class="xref c c-func docutils literal"><span class="pre">glMultiDrawElements()</span></tt></a>,
+<a class="reference internal" href="glDrawElementsBaseVertex.html#glDrawElementsBaseVertex" title="glDrawElementsBaseVertex"><tt class="xref c c-func docutils literal"><span class="pre">glDrawElementsBaseVertex()</span></tt></a>,
+<a class="reference internal" href="glDrawArrays.html#glDrawArrays" title="glDrawArrays"><tt class="xref c c-func docutils literal"><span class="pre">glDrawArrays()</span></tt></a>,
+<a class="reference internal" href="glVertexAttribPointer.html#glVertexAttribPointer" title="glVertexAttribPointer"><tt class="xref c c-func docutils literal"><span class="pre">glVertexAttribPointer()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glMultiDrawElementsBaseVertex" title="glMultiDrawElementsBaseVertex"><tt class="xref c c-func docutils literal"><span class="pre">glMultiDrawElementsBaseVertex()</span></tt></a> behaves identically to <a class="reference internal" href="glDrawElementsBaseVertex.html#glDrawElementsBaseVertex" title="glDrawElementsBaseVertex"><tt class="xref c c-func docutils literal"><span class="pre">glDrawElementsBaseVertex()</span></tt></a>,
+except that <em>primcount</em> separate lists of elements are specifried instead.</p>
+<p>It has the same effect as:</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">primcount</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">count</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">glDrawElementsBaseVertex</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span>
+                                 <span class="n">count</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+                                 <span class="n">type</span><span class="p">,</span>
+                                 <span class="n">indices</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+                                 <span class="n">basevertex</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><a class="reference internal" href="#glMultiDrawElementsBaseVertex" title="glMultiDrawElementsBaseVertex"><tt class="xref c c-func docutils literal"><span class="pre">glMultiDrawElementsBaseVertex()</span></tt></a> is available only if the GL version is 3.1 or greater.</p>
+<p class="last"><tt class="docutils literal"><span class="pre">GL_LINE_STRIP_ADJACENCY</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LINES_ADJACENCY</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TRIANGLE_STRIP_ADJACENCY</span></tt> and
+<tt class="docutils literal"><span class="pre">GL_TRIANGLES_ADJACENCY</span></tt>
+are available only if the GL version is 3.2 or greater.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>mode</em> is not an accepted value.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>primcount</em> is negative.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if a non-zero buffer object name is bound to an enabled array or the element array and the buffer object&#8217;s data store is currently mapped.</li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)2010 Khronos Group. Open Publication License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glMultiDrawElements.html"
+                        title="previous chapter">function <cite>glMultiDrawElements</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glPatchParameter.html"
+                        title="next chapter">function <cite>glPatchParameter</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glMultiDrawElementsBaseVertex.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glPatchParameter.html" title="function glPatchParameter"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glMultiDrawElements.html" title="function glMultiDrawElements"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

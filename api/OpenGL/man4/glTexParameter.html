@@ -1,0 +1,547 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glTexParameter &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glTexStorage1D" href="glTexStorage1D.html" />
+    <link rel="prev" title="function glTexImage3DMultisample" href="glTexImage3DMultisample.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glTexStorage1D.html" title="function glTexStorage1D"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glTexImage3DMultisample.html" title="function glTexImage3DMultisample"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-gltexparameter">
+<h1>function <cite>glTexParameter</cite><a class="headerlink" href="#function-gltexparameter" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Set texture parameters</p>
+<dl class="function">
+<dt id="glTexParameter">
+<tt class="descname">glTexParameter</tt><big>(</big><big>)</big><a class="headerlink" href="#glTexParameter" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>target</strong> &#8211; Specifies the target texture,
+which must be either <tt class="docutils literal"><span class="pre">GL_TEXTURE_1D</span></tt>, <tt class="docutils literal"><span class="pre">GL_TEXTURE_2D</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_3D</span></tt>, <tt class="docutils literal"><span class="pre">GL_TEXTURE_1D_ARRAY</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_2D_ARRAY</span></tt>, <tt class="docutils literal"><span class="pre">GL_TEXTURE_RECTANGLE</span></tt>,
+or <tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP</span></tt>.</li>
+<li><strong>pname</strong> &#8211; Specifies the symbolic name of a single-valued texture parameter.
+<em>pname</em> can be one of the following:
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_BASE_LEVEL</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_COMPARE_FUNC</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_COMPARE_MODE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_LOD_BIAS</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_MIN_FILTER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_MAG_FILTER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_MIN_LOD</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_MAX_LOD</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_MAX_LEVEL</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_SWIZZLE_R</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_SWIZZLE_G</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_SWIZZLE_B</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_SWIZZLE_A</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_WRAP_S</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_WRAP_T</span></tt>, or
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_WRAP_R</span></tt>.</li>
+<li><strong>param</strong> &#8211; Specifies the value of <em>pname</em>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt id="glTexParameterf">
+void <tt class="descname">glTexParameterf</tt><big>(</big>GLenum <em>&nbsp;target</em>, GLenum <em>&nbsp;pname</em>, GLfloat <em>&nbsp;param</em>, GLenum <em>&nbsp;target</em>, GLenum <em>&nbsp;pname</em>, GLint <em>&nbsp;param</em><big>)</big><a class="headerlink" href="#glTexParameterf" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="glTexParameterfv">
+void <tt class="descname">glTexParameterfv</tt><big>(</big>GLenum <em>&nbsp;target</em>, GLenum <em>&nbsp;pname</em>, const GLfloat * <em>&nbsp;params</em>, GLenum <em>&nbsp;target</em>, GLenum <em>&nbsp;pname</em>, const GLint * <em>&nbsp;params</em>, GLenum <em>&nbsp;target</em>, GLenum <em>&nbsp;pname</em>, const GLint * <em>&nbsp;params</em>, GLenum <em>&nbsp;target</em>, GLenum <em>&nbsp;pname</em>, const GLuint * <em>&nbsp;params</em><big>)</big><a class="headerlink" href="#glTexParameterfv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glActiveTexture.html#glActiveTexture" title="glActiveTexture"><tt class="xref c c-func docutils literal"><span class="pre">glActiveTexture()</span></tt></a>,
+<a class="reference internal" href="glBindTexture.html#glBindTexture" title="glBindTexture"><tt class="xref c c-func docutils literal"><span class="pre">glBindTexture()</span></tt></a>,
+<a class="reference internal" href="glCopyTexImage1D.html#glCopyTexImage1D" title="glCopyTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexImage1D()</span></tt></a>,
+<a class="reference internal" href="glCopyTexImage2D.html#glCopyTexImage2D" title="glCopyTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexImage2D()</span></tt></a>,
+<a class="reference internal" href="glCopyTexSubImage1D.html#glCopyTexSubImage1D" title="glCopyTexSubImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexSubImage1D()</span></tt></a>,
+<a class="reference internal" href="glCopyTexSubImage2D.html#glCopyTexSubImage2D" title="glCopyTexSubImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexSubImage2D()</span></tt></a>,
+<a class="reference internal" href="glCopyTexSubImage3D.html#glCopyTexSubImage3D" title="glCopyTexSubImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexSubImage3D()</span></tt></a>,
+<a class="reference internal" href="glPixelStore.html#glPixelStore" title="glPixelStore"><tt class="xref c c-func docutils literal"><span class="pre">glPixelStore()</span></tt></a>,
+<a class="reference internal" href="glSamplerParameter.html#glSamplerParameter" title="glSamplerParameter"><tt class="xref c c-func docutils literal"><span class="pre">glSamplerParameter()</span></tt></a>,
+<a class="reference internal" href="glTexImage1D.html#glTexImage1D" title="glTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage1D()</span></tt></a>,
+<a class="reference internal" href="glTexImage2D.html#glTexImage2D" title="glTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage2D()</span></tt></a>,
+<a class="reference internal" href="glTexImage3D.html#glTexImage3D" title="glTexImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage3D()</span></tt></a>,
+<a class="reference internal" href="glTexSubImage1D.html#glTexSubImage1D" title="glTexSubImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage1D()</span></tt></a>,
+<a class="reference internal" href="glTexSubImage2D.html#glTexSubImage2D" title="glTexSubImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage2D()</span></tt></a>,
+<a class="reference internal" href="glTexSubImage3D.html#glTexSubImage3D" title="glTexSubImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage3D()</span></tt></a></p>
+</div>
+<p class="rubric">Parameters</p>
+<blockquote>
+<div><p><em>target</em></p>
+<blockquote>
+<div>Specifies the target texture,
+which must be either <tt class="docutils literal"><span class="pre">GL_TEXTURE_1D</span></tt>, <tt class="docutils literal"><span class="pre">GL_TEXTURE_2D</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_3D</span></tt>, <tt class="docutils literal"><span class="pre">GL_TEXTURE_1D_ARRAY</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_2D_ARRAY</span></tt>, <tt class="docutils literal"><span class="pre">GL_TEXTURE_RECTANGLE</span></tt>,
+or <tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP</span></tt>.</div></blockquote>
+<p><em>pname</em></p>
+<blockquote>
+<div>Specifies the symbolic name of a texture parameter.
+<em>pname</em> can be one of the following:
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_BASE_LEVEL</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_BORDER_COLOR</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_COMPARE_FUNC</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_COMPARE_MODE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_LOD_BIAS</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_MIN_FILTER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_MAG_FILTER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_MIN_LOD</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_MAX_LOD</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_MAX_LEVEL</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_SWIZZLE_R</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_SWIZZLE_G</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_SWIZZLE_B</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_SWIZZLE_A</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_SWIZZLE_RGBA</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_WRAP_S</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_WRAP_T</span></tt>, or
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_WRAP_R</span></tt>.</div></blockquote>
+<p><em>params</em></p>
+<blockquote>
+<div>Specifies a pointer to an array where the value or values of <em>pname</em>
+are stored.</div></blockquote>
+</div></blockquote>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glTexParameter" title="glTexParameter"><tt class="xref c c-func docutils literal"><span class="pre">glTexParameter()</span></tt></a> assigns the value or values in <em>params</em> to the texture parameter
+specified as <em>pname</em>.
+<em>target</em> defines the target texture,
+either <tt class="docutils literal"><span class="pre">GL_TEXTURE_1D</span></tt>, <tt class="docutils literal"><span class="pre">GL_TEXTURE_2D</span></tt>, <tt class="docutils literal"><span class="pre">GL_TEXTURE_1D_ARRAY</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_2D_ARRAY</span></tt>, <tt class="docutils literal"><span class="pre">GL_TEXTURE_RECTANGLE</span></tt>, or <tt class="docutils literal"><span class="pre">GL_TEXTURE_3D</span></tt>.
+The following symbols are accepted in <em>pname</em> :</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">GL_TEXTURE_BASE_LEVEL</span></tt></p>
+<blockquote>
+<div>Specifies the index of the lowest defined mipmap level. This is an
+integer value. The initial value is 0.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_BORDER_COLOR</span></tt></p>
+<blockquote>
+<div><p>The data in <em>params</em> specifies four values that define the border values that
+should be used for border texels. If a texel is sampled from the border of the texture, the
+values of <tt class="docutils literal"><span class="pre">GL_TEXTURE_BORDER_COLOR</span></tt> are interpreted as an RGBA color to match the
+texture&#8217;s internal format and substituted for the non-existent texel data. If the texture contains depth
+components, the first component of <tt class="docutils literal"><span class="pre">GL_TEXTURE_BORDER_COLOR</span></tt> is interpreted as a depth value.
+The initial value is <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mfenced open="(" close=")"><mrow> 0.0, 0.0, 0.0, 0.0 </mrow></mfenced></mrow></math></span>.</p>
+<p>If the values for <tt class="docutils literal"><span class="pre">GL_TEXTURE_BORDER_COLOR</span></tt> are specified with <tt class="xref c c-func docutils literal"><span class="pre">glTexParameterIiv()</span></tt>
+or <tt class="xref c c-func docutils literal"><span class="pre">glTexParameterIuiv()</span></tt>, the values are stored unmodified with an internal data type of
+integer. If specified with <tt class="xref c c-func docutils literal"><span class="pre">glTexParameteriv()</span></tt>, they are converted to floating point with the following
+equation: <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi mathvariant="italic">f</mi><mo>=</mo><mfrac><mrow><msub><mn>2</mn><mi mathvariant="italic">c</mi></msub><mo>+</mo><mn>1</mn></mrow><mrow><msup><mn>2</mn><mi mathvariant="italic">b</mi></msup><mo>-</mo><mn>1</mn></mrow></mfrac></mrow></math></span>.
+If specified with <a class="reference internal" href="#glTexParameterfv" title="glTexParameterfv"><tt class="xref c c-func docutils literal"><span class="pre">glTexParameterfv()</span></tt></a>, they are stored unmodified as floating-point values.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_COMPARE_FUNC</span></tt></p>
+<blockquote>
+<div><p>Specifies the comparison operator used when <tt class="docutils literal"><span class="pre">GL_TEXTURE_COMPARE_MODE</span></tt> is
+set to <tt class="docutils literal"><span class="pre">GL_COMPARE_REF_TO_TEXTURE</span></tt>.  Permissible values are:</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="59%" />
+<col width="41%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Texture Comparison Function</strong></td>
+<td><strong>Computed result</strong></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_LEQUAL</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">result</mi><mo>=</mo><mfenced open="{" close=""><mrow><mtable><mtr><mtd><mn>1.0</mn></mtd></mtr><mtr><mtd><mn>0.0</mn></mtd></mtr></mtable><mo>&it;&nbsp;&nbsp;</mo><mtable><mtr><mtd><mrow><mi mathvariant="italic">r</mi><mo><=</mo><mfenced open="" close=""><msub><mi mathvariant="italic">D</mi><mi mathvariant="italic">t</mi></msub></mfenced></mrow></mtd></mtr><mtr><mtd><mrow><mi mathvariant="italic">r</mi><mo>></mo><mfenced open="" close=""><msub><mi mathvariant="italic">D</mi><mi mathvariant="italic">t</mi></msub></mfenced></mrow></mtd></mtr></mtable></mrow></mfenced></mrow></math></span></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_GEQUAL</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">result</mi><mo>=</mo><mfenced open="{" close=""><mrow><mtable><mtr><mtd><mn>1.0</mn></mtd></mtr><mtr><mtd><mn>0.0</mn></mtd></mtr></mtable><mo>&it;&nbsp;&nbsp;</mo><mtable><mtr><mtd><mrow><mi mathvariant="italic">r</mi><mo>>=</mo><mfenced open="" close=""><msub><mi mathvariant="italic">D</mi><mi mathvariant="italic">t</mi></msub></mfenced></mrow></mtd></mtr><mtr><mtd><mrow><mi mathvariant="italic">r</mi><mo><</mo><mfenced open="" close=""><msub><mi mathvariant="italic">D</mi><mi mathvariant="italic">t</mi></msub></mfenced></mrow></mtd></mtr></mtable></mrow></mfenced></mrow></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_LESS</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">result</mi><mo>=</mo><mfenced open="{" close=""><mrow><mtable><mtr><mtd><mn>1.0</mn></mtd></mtr><mtr><mtd><mn>0.0</mn></mtd></mtr></mtable><mo>&it;&nbsp;&nbsp;</mo><mtable><mtr><mtd><mrow><mi mathvariant="italic">r</mi><mo><</mo><mfenced open="" close=""><msub><mi mathvariant="italic">D</mi><mi mathvariant="italic">t</mi></msub></mfenced></mrow></mtd></mtr><mtr><mtd><mrow><mi mathvariant="italic">r</mi><mo>>=</mo><mfenced open="" close=""><msub><mi mathvariant="italic">D</mi><mi mathvariant="italic">t</mi></msub></mfenced></mrow></mtd></mtr></mtable></mrow></mfenced></mrow></math></span></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_GREATER</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">result</mi><mo>=</mo><mfenced open="{" close=""><mrow><mtable><mtr><mtd><mn>1.0</mn></mtd></mtr><mtr><mtd><mn>0.0</mn></mtd></mtr></mtable><mo>&it;&nbsp;&nbsp;</mo><mtable><mtr><mtd><mrow><mi mathvariant="italic">r</mi><mo>></mo><mfenced open="" close=""><msub><mi mathvariant="italic">D</mi><mi mathvariant="italic">t</mi></msub></mfenced></mrow></mtd></mtr><mtr><mtd><mrow><mi mathvariant="italic">r</mi><mo><=</mo><mfenced open="" close=""><msub><mi mathvariant="italic">D</mi><mi mathvariant="italic">t</mi></msub></mfenced></mrow></mtd></mtr></mtable></mrow></mfenced></mrow></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_EQUAL</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">result</mi><mo>=</mo><mfenced open="{" close=""><mrow><mtable><mtr><mtd><mn>1.0</mn></mtd></mtr><mtr><mtd><mn>0.0</mn></mtd></mtr></mtable><mo>&it;&nbsp;&nbsp;</mo><mtable><mtr><mtd><mrow><mi mathvariant="italic">r</mi><mo>=</mo><mfenced open="" close=""><msub><mi mathvariant="italic">D</mi><mi mathvariant="italic">t</mi></msub></mfenced></mrow></mtd></mtr><mtr><mtd><mrow><mi mathvariant="italic">r</mi><mo>&ne;</mo><mfenced open="" close=""><msub><mi mathvariant="italic">D</mi><mi mathvariant="italic">t</mi></msub></mfenced></mrow></mtd></mtr></mtable></mrow></mfenced></mrow></math></span></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_NOTEQUAL</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">result</mi><mo>=</mo><mfenced open="{" close=""><mrow><mtable><mtr><mtd><mn>1.0</mn></mtd></mtr><mtr><mtd><mn>0.0</mn></mtd></mtr></mtable><mo>&it;&nbsp;&nbsp;</mo><mtable><mtr><mtd><mrow><mi mathvariant="italic">r</mi><mo>&ne;</mo><mfenced open="" close=""><msub><mi mathvariant="italic">D</mi><mi mathvariant="italic">t</mi></msub></mfenced></mrow></mtd></mtr><mtr><mtd><mrow><mi mathvariant="italic">r</mi><mo>=</mo><mfenced open="" close=""><msub><mi mathvariant="italic">D</mi><mi mathvariant="italic">t</mi></msub></mfenced></mrow></mtd></mtr></mtable></mrow></mfenced></mrow></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_ALWAYS</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi mathvariant="italic">result</mi><mo>=</mo><mi>1.0</mi></mrow></math></span></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_NEVER</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi mathvariant="italic">result</mi><mo>=</mo><mi>0.0</mi></mrow></math></span></td>
+</tr>
+</tbody>
+</table>
+<p>where <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">r</mi></math></span> is the current interpolated texture coordinate, and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">D</mi><mi mathvariant="italic">t</mi></msub></math></span> is the depth texture value sampled from the currently bound depth texture. <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">result</mi></math></span> is assigned to the the red channel.</p>
+</div></blockquote>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_COMPARE_MODE</span></tt></p>
+<blockquote>
+<div><p>Specifies the texture comparison mode for currently bound depth textures.
+That is, a texture whose internal format is <tt class="docutils literal"><span class="pre">GL_DEPTH_COMPONENT_\*</span></tt>; see
+<a class="reference internal" href="glTexImage2D.html#glTexImage2D" title="glTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage2D()</span></tt></a>)
+Permissible values are:</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">GL_COMPARE_REF_TO_TEXTURE</span></tt></p>
+<blockquote>
+<div>Specifies that the interpolated and clamped
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">r</mi></math></span> texture coordinate should
+be compared to the value in the currently bound depth texture.  See the
+discussion of <tt class="docutils literal"><span class="pre">GL_TEXTURE_COMPARE_FUNC</span></tt> for details of how the comparison
+is evaluated.  The result of the comparison is assigned to the red channel.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_NONE</span></tt></p>
+<blockquote>
+<div>Specifies that the red channel should be assigned the
+appropriate value from the currently bound depth texture.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_LOD_BIAS</span></tt></p>
+<blockquote>
+<div><em>params</em> specifies a fixed bias value that is to be added to the level-of-detail
+parameter for the texture before texture sampling. The specified value is added to the shader-supplied
+bias value (if any) and subsequently clamped into the implementation-defined range <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mfenced open="[" close="]"><mfenced open="" close=""><mrow> - <msub><mi mathvariant="italic">bias</mi><mi mathvariant="italic">max</mi></msub></mrow></mfenced><mrow><mfenced open="" close=""><mrow><msub><mi mathvariant="italic">bias</mi><mi mathvariant="italic">max</mi></msub></mrow></mfenced></mrow></mfenced></math></span>,
+where <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msub><mi mathvariant="italic">bias</mi><mi mathvariant="italic">max</mi></msub></mrow></math></span> is the value of the implementation defined constant <tt class="docutils literal"><span class="pre">GL_MAX_TEXTURE_LOD_BIAS</span></tt>. The initial value is 0.0.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_MIN_FILTER</span></tt></p>
+<blockquote>
+<div><p>The texture minifying function is used whenever the level-of-detail function
+used when sampling from the texture determines that the texture should be minified.
+There are six defined minifying functions.
+Two of them use either the nearest texture elements or a weighted average of multiple texture elements
+to compute the texture value.
+The other four use mipmaps.</p>
+<p>A mipmap is an ordered set of arrays representing the same image
+at progressively lower resolutions.
+If the texture has dimensions
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mi mathvariant="italic">n</mi></msup><mo>&times;</mo><msup><mn>2</mn><mi mathvariant="italic">m</mi></msup></mrow></math></span>,
+there are <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><mi mathvariant="italic">max</mi><mo>&af;</mo><mfenced open="(" close=")"><mi mathvariant="italic">n</mi><mi mathvariant="italic">m</mi></mfenced></mrow><mo>+</mo><mn>1</mn></mrow></math></span> mipmaps.
+The first mipmap is the original texture,
+with dimensions <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mi mathvariant="italic">n</mi></msup><mo>&times;</mo><msup><mn>2</mn><mi mathvariant="italic">m</mi></msup></mrow></math></span>.
+Each subsequent mipmap has dimensions <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mfenced open="" close=""><mrow><mi mathvariant="italic">k</mi><mo>-</mo><mn>1</mn></mrow></mfenced></msup><mo>&times;</mo><msup><mn>2</mn><mfenced open="" close=""><mrow><mi mathvariant="italic">l</mi><mo>-</mo><mn>1</mn></mrow></mfenced></msup></mrow></math></span>,
+where <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mi mathvariant="italic">k</mi></msup><mo>&times;</mo><msup><mn>2</mn><mi mathvariant="italic">l</mi></msup></mrow></math></span> are the dimensions of the previous mipmap,
+until either <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">k</mi><mo>=</mo><mn>0</mn></mrow></math></span> or <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">l</mi><mo>=</mo><mn>0</mn></mrow></math></span>.
+At that point,
+subsequent mipmaps have dimension <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>1</mn><mo>&times;</mo><msup><mn>2</mn><mfenced open="" close=""><mrow><mi mathvariant="italic">l</mi><mo>-</mo><mn>1</mn></mrow></mfenced></msup></mrow></math></span> or <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mfenced open="" close=""><mrow><mi mathvariant="italic">k</mi><mo>-</mo><mn>1</mn></mrow></mfenced></msup><mo>&times;</mo><mn>1</mn></mrow></math></span> until the final mipmap,
+which has dimension <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>1</mn><mo>&times;</mo><mn>1</mn></mrow></math></span>.
+To define the mipmaps, call <a class="reference internal" href="glTexImage1D.html#glTexImage1D" title="glTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage1D()</span></tt></a>, <a class="reference internal" href="glTexImage2D.html#glTexImage2D" title="glTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage2D()</span></tt></a>,
+<a class="reference internal" href="glTexImage3D.html#glTexImage3D" title="glTexImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage3D()</span></tt></a>,
+<a class="reference internal" href="glCopyTexImage1D.html#glCopyTexImage1D" title="glCopyTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexImage1D()</span></tt></a>, or <a class="reference internal" href="glCopyTexImage2D.html#glCopyTexImage2D" title="glCopyTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexImage2D()</span></tt></a>
+with the <strong>level</strong> argument indicating the order of the mipmaps.
+Level 0 is the original texture;
+level <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">max</mi><mo>&af;</mo><mfenced open="(" close=")"><mi mathvariant="italic">n</mi><mi mathvariant="italic">m</mi></mfenced></mrow></math></span> is the final <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>1</mn><mo>&times;</mo><mn>1</mn></mrow></math></span> mipmap.</p>
+<p><em>params</em> supplies a function for minifying the texture as one of the
+following:</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">GL_NEAREST</span></tt></p>
+<blockquote>
+<div>Returns the value of the texture element that is nearest
+(in Manhattan distance)
+to the specified texture coordinates.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_LINEAR</span></tt></p>
+<blockquote>
+<div>Returns the weighted average of the four texture elements
+that are closest to the specified texture coordinates.
+These can include items wrapped or repeated from other parts of a texture,
+depending on the values of <tt class="docutils literal"><span class="pre">GL_TEXTURE_WRAP_S</span></tt> and <tt class="docutils literal"><span class="pre">GL_TEXTURE_WRAP_T</span></tt>,
+and on the exact mapping.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_NEAREST_MIPMAP_NEAREST</span></tt></p>
+<blockquote>
+<div>Chooses the mipmap that most closely matches the size of the pixel
+being textured and uses the <tt class="docutils literal"><span class="pre">GL_NEAREST</span></tt> criterion
+(the texture element closest to the specified texture coordinates)
+to produce a texture value.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_LINEAR_MIPMAP_NEAREST</span></tt></p>
+<blockquote>
+<div>Chooses the mipmap that most closely matches the size of the pixel
+being textured and uses the <tt class="docutils literal"><span class="pre">GL_LINEAR</span></tt> criterion
+(a weighted average of the four texture elements that are closest to the specified texture coordinates)
+to produce a texture value.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_NEAREST_MIPMAP_LINEAR</span></tt></p>
+<blockquote>
+<div>Chooses the two mipmaps that most closely match the size of the pixel
+being textured and uses the <tt class="docutils literal"><span class="pre">GL_NEAREST</span></tt> criterion
+(the texture element closest to the specified texture coordinates )
+to produce a texture value from each mipmap.
+The final texture value is a weighted average of those two values.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_LINEAR_MIPMAP_LINEAR</span></tt></p>
+<blockquote>
+<div>Chooses the two mipmaps that most closely match the size of the pixel
+being textured and uses the <tt class="docutils literal"><span class="pre">GL_LINEAR</span></tt> criterion
+(a weighted average of the texture elements that are closest to the specified texture coordinates)
+to produce a texture value from each mipmap.
+The final texture value is a weighted average of those two values.</div></blockquote>
+</div></blockquote>
+<p>As more texture elements are sampled in the minification process,
+fewer aliasing artifacts will be apparent.
+While the <tt class="docutils literal"><span class="pre">GL_NEAREST</span></tt> and <tt class="docutils literal"><span class="pre">GL_LINEAR</span></tt> minification functions can be
+faster than the other four,
+they sample only one or multiple texture elements to determine the texture value
+of the pixel being rendered and can produce moire patterns
+or ragged transitions.
+The initial value of <tt class="docutils literal"><span class="pre">GL_TEXTURE_MIN_FILTER</span></tt> is
+<tt class="docutils literal"><span class="pre">GL_NEAREST_MIPMAP_LINEAR</span></tt>.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_MAG_FILTER</span></tt></p>
+<blockquote>
+<div><p>The texture magnification function is used whenever the level-of-detail function
+used when sampling from the texture determines that the texture should be magified.
+It sets the texture magnification function to either <tt class="docutils literal"><span class="pre">GL_NEAREST</span></tt>
+or <tt class="docutils literal"><span class="pre">GL_LINEAR</span></tt> (see below). <tt class="docutils literal"><span class="pre">GL_NEAREST</span></tt> is generally faster
+than <tt class="docutils literal"><span class="pre">GL_LINEAR</span></tt>,
+but it can produce textured images with sharper edges
+because the transition between texture elements is not as smooth.
+The initial value of <tt class="docutils literal"><span class="pre">GL_TEXTURE_MAG_FILTER</span></tt> is <tt class="docutils literal"><span class="pre">GL_LINEAR</span></tt>.</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">GL_NEAREST</span></tt></p>
+<blockquote>
+<div>Returns the value of the texture element that is nearest
+(in Manhattan distance)
+to the specified texture coordinates.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_LINEAR</span></tt></p>
+<blockquote>
+<div>Returns the weighted average of the texture elements
+that are closest to the specified texture coordinates.
+These can include items wrapped or repeated from other parts of a texture,
+depending on the values of <tt class="docutils literal"><span class="pre">GL_TEXTURE_WRAP_S</span></tt> and <tt class="docutils literal"><span class="pre">GL_TEXTURE_WRAP_T</span></tt>,
+and on the exact mapping.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_MIN_LOD</span></tt></p>
+<blockquote>
+<div>Sets the minimum level-of-detail parameter.  This floating-point value
+limits the selection of highest resolution mipmap (lowest mipmap
+level). The initial value is -1000.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_MAX_LOD</span></tt></p>
+<blockquote>
+<div>Sets the maximum level-of-detail parameter.  This floating-point value
+limits the selection of the lowest resolution mipmap (highest mipmap
+level). The initial value is 1000.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_MAX_LEVEL</span></tt></p>
+<blockquote>
+<div>Sets the index of the highest defined mipmap level. This is an integer
+value. The initial value is 1000.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_SWIZZLE_R</span></tt></p>
+<blockquote>
+<div>Sets the swizzle that will be applied to the <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">r</mi></math></span> component of a texel before it is returned to the shader. Valid values for <em>param</em> are <tt class="docutils literal"><span class="pre">GL_RED</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_GREEN</span></tt>, <tt class="docutils literal"><span class="pre">GL_BLUE</span></tt>, <tt class="docutils literal"><span class="pre">GL_ALPHA</span></tt>, <tt class="docutils literal"><span class="pre">GL_ZERO</span></tt> and
+<tt class="docutils literal"><span class="pre">GL_ONE</span></tt>.
+If <tt class="docutils literal"><span class="pre">GL_TEXTURE_SWIZZLE_R</span></tt> is <tt class="docutils literal"><span class="pre">GL_RED</span></tt>, the value for <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">r</mi></math></span> will be taken from the first
+channel of the fetched texel.
+If <tt class="docutils literal"><span class="pre">GL_TEXTURE_SWIZZLE_R</span></tt> is <tt class="docutils literal"><span class="pre">GL_GREEN</span></tt>, the value for <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">r</mi></math></span> will be taken from the second
+channel of the fetched texel.
+If <tt class="docutils literal"><span class="pre">GL_TEXTURE_SWIZZLE_R</span></tt> is <tt class="docutils literal"><span class="pre">GL_BLUE</span></tt>, the value for <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">r</mi></math></span> will be taken from the third
+channel of the fetched texel.
+If <tt class="docutils literal"><span class="pre">GL_TEXTURE_SWIZZLE_R</span></tt> is <tt class="docutils literal"><span class="pre">GL_ALPHA</span></tt>, the value for <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">r</mi></math></span> will be taken from the fourth
+channel of the fetched texel.
+If <tt class="docutils literal"><span class="pre">GL_TEXTURE_SWIZZLE_R</span></tt> is <tt class="docutils literal"><span class="pre">GL_ZERO</span></tt>, the value for <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">r</mi></math></span> will be subtituted with <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mn>0.0</mn></math></span>.
+If <tt class="docutils literal"><span class="pre">GL_TEXTURE_SWIZZLE_R</span></tt> is <tt class="docutils literal"><span class="pre">GL_ONE</span></tt>, the value for <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">r</mi></math></span> will be subtituted with <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mn>1.0</mn></math></span>.
+The initial value is <tt class="docutils literal"><span class="pre">GL_RED</span></tt>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_SWIZZLE_G</span></tt></p>
+<blockquote>
+<div>Sets the swizzle that will be applied to the <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">g</mi></math></span> component of a texel before it is returned to the shader. Valid values for <em>param</em> and their effects are similar to
+those of <tt class="docutils literal"><span class="pre">GL_TEXTURE_SWIZZLE_R</span></tt>.
+The initial value is <tt class="docutils literal"><span class="pre">GL_GREEN</span></tt>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_SWIZZLE_B</span></tt></p>
+<blockquote>
+<div>Sets the swizzle that will be applied to the <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">b</mi></math></span> component of a texel before it is returned to the shader. Valid values for <em>param</em> and their effects are similar to
+those of <tt class="docutils literal"><span class="pre">GL_TEXTURE_SWIZZLE_R</span></tt>.
+The initial value is <tt class="docutils literal"><span class="pre">GL_BLUE</span></tt>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_SWIZZLE_A</span></tt></p>
+<blockquote>
+<div>Sets the swizzle that will be applied to the <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">a</mi></math></span> component of a texel before it is returned to the shader. Valid values for <em>param</em> and their effects are similar to
+those of <tt class="docutils literal"><span class="pre">GL_TEXTURE_SWIZZLE_R</span></tt>.
+The initial value is <tt class="docutils literal"><span class="pre">GL_ALPHA</span></tt>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_SWIZZLE_RGBA</span></tt></p>
+<blockquote>
+<div>Sets the swizzles that will be applied to the
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">r</mi></math></span>,
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">g</mi></math></span>,
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">b</mi></math></span>, and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">a</mi></math></span> components of a texel before they are returned to the shader. Valid values for <em>params</em> and their effects are similar to
+those of <tt class="docutils literal"><span class="pre">GL_TEXTURE_SWIZZLE_R</span></tt>, except that all channels are specified simultaneously.
+Setting the value of <tt class="docutils literal"><span class="pre">GL_TEXTURE_SWIZZLE_RGBA</span></tt> is equivalent (assuming no errors are generated) to
+setting the parameters of each of <tt class="docutils literal"><span class="pre">GL_TEXTURE_SWIZZLE_R</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_SWIZZLE_G</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_SWIZZLE_B</span></tt>, and
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_SWIZZLE_A</span></tt> successively.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_WRAP_S</span></tt></p>
+<blockquote>
+<div>Sets the wrap parameter for texture coordinate
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">s</mi></math></span> to either <tt class="docutils literal"><span class="pre">GL_CLAMP_TO_EDGE</span></tt>, <tt class="docutils literal"><span class="pre">GL_CLAMP_TO_BORDER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_MIRRORED_REPEAT</span></tt>, or
+<tt class="docutils literal"><span class="pre">GL_REPEAT</span></tt>. <tt class="docutils literal"><span class="pre">GL_CLAMP_TO_EDGE</span></tt> causes <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">s</mi></math></span> coordinates to be clamped to the
+range <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"><mfenced open="" close=""><mrow><mfrac><mn>1</mn><mn>2<mi mathvariant="italic">N</mi></mn></mfrac></mrow></mfenced><mrow><mn>1</mn><mo>-</mo><mfenced open="" close=""><mrow><mfrac><mn>1</mn><mn>2<mi mathvariant="italic">N</mi></mn></mfrac></mrow></mfenced></mrow></mfenced></math></span>,
+where <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">N</mi></math></span> is the size
+of the texture in the direction of clamping.
+<tt class="docutils literal"><span class="pre">GL_CLAMP_TO_BORDER</span></tt> evaluates <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">s</mi></math></span> coordinates in a similar manner to <tt class="docutils literal"><span class="pre">GL_CLAMP_TO_EDGE</span></tt>.
+However, in cases where clamping would have occurred in <tt class="docutils literal"><span class="pre">GL_CLAMP_TO_EDGE</span></tt> mode, the fetched texel data
+is substituted with the values specified by <tt class="docutils literal"><span class="pre">GL_TEXTURE_BORDER_COLOR</span></tt>.
+<tt class="docutils literal"><span class="pre">GL_REPEAT</span></tt> causes the
+integer part of the <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">s</mi></math></span> coordinate to be ignored; the GL uses only the
+fractional part, thereby creating a repeating pattern.
+<tt class="docutils literal"><span class="pre">GL_MIRRORED_REPEAT</span></tt> causes the <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">s</mi></math></span> coordinate to be set to the
+fractional part of the texture coordinate if the integer part of <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">s</mi></math></span> is
+even; if the integer part of <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">s</mi></math></span> is odd, then the <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">s</mi></math></span> texture coordinate is
+set to <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>1</mn><mo>-</mo><mrow><mi mathvariant="italic">frac</mi><mo>&af;</mo><mfenced open="(" close=")"><mi mathvariant="italic">s</mi></mfenced></mrow></mrow></math></span>,
+where <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">frac</mi><mo>&af;</mo><mfenced open="(" close=")"><mi mathvariant="italic">s</mi></mfenced></mrow></math></span> represents the fractional part of <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">s</mi></math></span>.
+Initially, <tt class="docutils literal"><span class="pre">GL_TEXTURE_WRAP_S</span></tt> is set to <tt class="docutils literal"><span class="pre">GL_REPEAT</span></tt>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_WRAP_T</span></tt></p>
+<blockquote>
+<div>Sets the wrap parameter for texture coordinate
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">t</mi></math></span> to either <tt class="docutils literal"><span class="pre">GL_CLAMP_TO_EDGE</span></tt>, <tt class="docutils literal"><span class="pre">GL_CLAMP_TO_BORDER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_MIRRORED_REPEAT</span></tt>, or
+<tt class="docutils literal"><span class="pre">GL_REPEAT</span></tt>.  See the discussion under <tt class="docutils literal"><span class="pre">GL_TEXTURE_WRAP_S</span></tt>.
+Initially, <tt class="docutils literal"><span class="pre">GL_TEXTURE_WRAP_T</span></tt> is set to <tt class="docutils literal"><span class="pre">GL_REPEAT</span></tt>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_WRAP_R</span></tt></p>
+<blockquote>
+<div>Sets the wrap parameter for texture coordinate
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">r</mi></math></span> to either <tt class="docutils literal"><span class="pre">GL_CLAMP_TO_EDGE</span></tt>, <tt class="docutils literal"><span class="pre">GL_CLAMP_TO_BORDER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_MIRRORED_REPEAT</span></tt>, or
+<tt class="docutils literal"><span class="pre">GL_REPEAT</span></tt>.  See the discussion under <tt class="docutils literal"><span class="pre">GL_TEXTURE_WRAP_S</span></tt>.
+Initially, <tt class="docutils literal"><span class="pre">GL_TEXTURE_WRAP_R</span></tt> is set to <tt class="docutils literal"><span class="pre">GL_REPEAT</span></tt>.</div></blockquote>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Suppose that a program attempts to sample from a texture and
+has set <tt class="docutils literal"><span class="pre">GL_TEXTURE_MIN_FILTER</span></tt> to one of the functions that requires a
+mipmap.  If either the dimensions of the texture images currently defined
+(with previous calls to <a class="reference internal" href="glTexImage1D.html#glTexImage1D" title="glTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage1D()</span></tt></a>, <a class="reference internal" href="glTexImage2D.html#glTexImage2D" title="glTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage2D()</span></tt></a>,
+<a class="reference internal" href="glTexImage3D.html#glTexImage3D" title="glTexImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage3D()</span></tt></a>, <a class="reference internal" href="glCopyTexImage1D.html#glCopyTexImage1D" title="glCopyTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexImage1D()</span></tt></a>, or <a class="reference internal" href="glCopyTexImage2D.html#glCopyTexImage2D" title="glCopyTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexImage2D()</span></tt></a>) do not
+follow the proper sequence for mipmaps (described above), or there are
+fewer texture images defined than are needed, or the set of texture images
+have differing numbers of texture components, then the texture is considered <strong>incomplete</strong>.</p>
+<p>Linear filtering accesses the four nearest texture elements only in 2D
+textures.  In 1D textures, linear filtering accesses the two nearest
+texture elements.  In 3D textures, linear filtering accesses the eight nearest
+texture elements.</p>
+<p class="last"><a class="reference internal" href="#glTexParameter" title="glTexParameter"><tt class="xref c c-func docutils literal"><span class="pre">glTexParameter()</span></tt></a> specifies the texture parameters for the active texture unit, specified
+by calling <a class="reference internal" href="glActiveTexture.html#glActiveTexture" title="glActiveTexture"><tt class="xref c c-func docutils literal"><span class="pre">glActiveTexture()</span></tt></a>.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>target</em> or <em>pname</em> is not one of the accepted defined values.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>params</em> should have a defined constant value (based on the value of <em>pname</em>) and does not.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glGetTexParameter.html#glGetTexParameter" title="glGetTexParameter"><tt class="xref c c-func docutils literal"><span class="pre">glGetTexParameter()</span></tt></a></li>
+<li><a class="reference internal" href="glGetTexLevelParameter.html#glGetTexLevelParameter" title="glGetTexLevelParameter"><tt class="xref c c-func docutils literal"><span class="pre">glGetTexLevelParameter()</span></tt></a></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glTexImage3DMultisample.html"
+                        title="previous chapter">function <cite>glTexImage3DMultisample</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glTexStorage1D.html"
+                        title="next chapter">function <cite>glTexStorage1D</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glTexParameter.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glTexStorage1D.html" title="function glTexStorage1D"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glTexImage3DMultisample.html" title="function glTexImage3DMultisample"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

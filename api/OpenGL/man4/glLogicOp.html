@@ -1,0 +1,266 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glLogicOp &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glMapBuffer" href="glMapBuffer.html" />
+    <link rel="prev" title="function glLinkProgram" href="glLinkProgram.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glMapBuffer.html" title="function glMapBuffer"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glLinkProgram.html" title="function glLinkProgram"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-gllogicop">
+<h1>function <cite>glLogicOp</cite><a class="headerlink" href="#function-gllogicop" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Specify a logical pixel operation for rendering</p>
+<dl class="function">
+<dt id="glLogicOp">
+<tt class="descname">glLogicOp</tt><big>(</big><big>)</big><a class="headerlink" href="#glLogicOp" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>opcode</strong> &#8211; Specifies a symbolic constant that selects a logical operation.
+The following symbols are accepted:
+<tt class="docutils literal"><span class="pre">GL_CLEAR</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_SET</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_COPY</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_COPY_INVERTED</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_NOOP</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_INVERT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_AND</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_NAND</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_OR</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_NOR</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_XOR</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_EQUIV</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_AND_REVERSE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_AND_INVERTED</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_OR_REVERSE</span></tt>, and
+<tt class="docutils literal"><span class="pre">GL_OR_INVERTED</span></tt>. The initial value is <tt class="docutils literal"><span class="pre">GL_COPY</span></tt>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glLogicOp</tt><big>(</big>GLenum <em>&nbsp;opcode</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glBlendFunc.html#glBlendFunc" title="glBlendFunc"><tt class="xref c c-func docutils literal"><span class="pre">glBlendFunc()</span></tt></a>,
+<a class="reference internal" href="glDrawBuffer.html#glDrawBuffer" title="glDrawBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glDrawBuffer()</span></tt></a>,
+<a class="reference internal" href="glEnable.html#glEnable" title="glEnable"><tt class="xref c c-func docutils literal"><span class="pre">glEnable()</span></tt></a>,
+<a class="reference internal" href="glStencilOp.html#glStencilOp" title="glStencilOp"><tt class="xref c c-func docutils literal"><span class="pre">glStencilOp()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glLogicOp" title="glLogicOp"><tt class="xref c c-func docutils literal"><span class="pre">glLogicOp()</span></tt></a> specifies a logical operation that,
+when enabled,
+is applied between the incoming RGBA color
+and the RGBA color at the corresponding location in the
+frame buffer.
+To enable or disable the logical operation, call
+<a class="reference internal" href="glEnable.html#glEnable" title="glEnable"><tt class="xref c c-func docutils literal"><span class="pre">glEnable()</span></tt></a> and <a class="reference internal" href="glEnable.html#glDisable" title="glDisable"><tt class="xref c c-func docutils literal"><span class="pre">glDisable()</span></tt></a>
+using the symbolic constant <tt class="docutils literal"><span class="pre">GL_COLOR_LOGIC_OP</span></tt>. The initial value is
+disabled.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="42%" />
+<col width="58%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Opcode</strong></td>
+<td><strong>Resulting Operation</strong></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_CLEAR</span></tt></td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_SET</span></tt></td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_COPY</span></tt></td>
+<td>s</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_COPY_INVERTED</span></tt></td>
+<td>~s</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_NOOP</span></tt></td>
+<td>d</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_INVERT</span></tt></td>
+<td>~d</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_AND</span></tt></td>
+<td>s &amp; d</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_NAND</span></tt></td>
+<td>~(s &amp; d)</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_OR</span></tt></td>
+<td>s | d</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_NOR</span></tt></td>
+<td>~(s | d)</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_XOR</span></tt></td>
+<td>s ^ d</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_EQUIV</span></tt></td>
+<td>~(s ^ d)</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_AND_REVERSE</span></tt></td>
+<td>s &amp; ~d</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_AND_INVERTED</span></tt></td>
+<td>~s &amp; d</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_OR_REVERSE</span></tt></td>
+<td>s | ~d</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_OR_INVERTED</span></tt></td>
+<td>~s | d</td>
+</tr>
+</tbody>
+</table>
+<p><em>opcode</em> is a symbolic constant chosen from the list above.
+In the explanation of the logical operations,
+<strong>s</strong> represents the incoming color and
+<strong>d</strong> represents the color in the frame buffer.
+Standard C-language operators are used.
+As these bitwise operators suggest,
+the logical operation is applied independently to each bit pair of the
+source and destination colors.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>When more than one RGBA color buffer is enabled for drawing,
+logical operations are performed separately for each enabled buffer,
+using for the destination value the contents of that buffer
+(see <a class="reference internal" href="glDrawBuffer.html#glDrawBuffer" title="glDrawBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glDrawBuffer()</span></tt></a>).</p>
+<p class="last">Logic operations have no effect on floating point draw buffers. However, if
+<tt class="docutils literal"><span class="pre">GL_COLOR_LOGIC_OP</span></tt> is enabled, blending is still disabled
+in this case.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>opcode</em> is not an accepted value.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_LOGIC_OP_MODE</span></tt>.</li>
+<li><a class="reference internal" href="glIsEnabled.html#glIsEnabled" title="glIsEnabled"><tt class="xref c c-func docutils literal"><span class="pre">glIsEnabled()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_COLOR_LOGIC_OP</span></tt>.</li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glLinkProgram.html"
+                        title="previous chapter">function <cite>glLinkProgram</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glMapBuffer.html"
+                        title="next chapter">function <cite>glMapBuffer</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glLogicOp.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glMapBuffer.html" title="function glMapBuffer"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glLinkProgram.html" title="function glLinkProgram"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

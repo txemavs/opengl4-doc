@@ -1,0 +1,60 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glGetBufferPointerv`
+------------------------------
+
+.. source file man4/glGetBufferPointerv
+
+.. currentmodule:: OpenGL.GL
+
+Return the pointer to a mapped buffer object's data store
+
+.. c:function:: glGetBufferPointerv
+.. c:function:: void glGetBufferPointerv(GLenum  target, GLenum  pname, GLvoid **  params)
+   :noindex: 
+
+
+   
+   :param target:
+      Specifies the target buffer object. The symbolic constant must be ``GL_ARRAY_BUFFER``, ``GL_COPY_READ_BUFFER``, ``GL_COPY_WRITE_BUFFER``, ``GL_ELEMENT_ARRAY_BUFFER``, ``GL_PIXEL_PACK_BUFFER``, ``GL_PIXEL_UNPACK_BUFFER``, ``GL_TEXTURE_BUFFER``, ``GL_TRANSFORM_FEEDBACK_BUFFER``, or ``GL_UNIFORM_BUFFER``.
+   
+   :param pname:
+      Specifies the pointer to be returned. The symbolic constant must be ``GL_BUFFER_MAP_POINTER``.
+   
+   :param params:
+      Returns the pointer value specified by *pname* .
+   
+
+.. seealso::
+
+   
+   :c:func:`glBindBuffer`, :c:func:`glMapBuffer`
+   
+.. rubric:: Description
+
+
+:c:func:`glGetBufferPointerv` returns pointer information. *pname* is a symbolic constant indicating the pointer to be returned, which must be ``GL_BUFFER_MAP_POINTER``, the pointer to which the buffer object's data store is mapped. If the data store is not currently mapped, ``NULL`` is returned. *params* is a pointer to a location in which to place the returned pointer value.
+
+
+**Errors:**
+
+   * ``GL_INVALID_ENUM`` is generated if *target* or *pname* is not an accepted value.
+   * ``GL_INVALID_OPERATION`` is generated if the reserved buffer object name 0 is bound to *target* .
+
+
+
+.. note::
+
+   * If an error is generated, no change is made to the contents of *params* .
+   * The initial value for the pointer is ``NULL``.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

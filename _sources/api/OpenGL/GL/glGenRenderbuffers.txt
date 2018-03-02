@@ -1,0 +1,52 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glGenRenderbuffers`
+-----------------------------
+
+.. source file man4/glGenRenderbuffers
+
+.. currentmodule:: OpenGL.GL
+
+Generate renderbuffer object names
+
+.. c:function:: glGenRenderbuffers
+.. c:function:: void glGenRenderbuffers(GLsizei  n, GLuint * renderbuffers)
+   :noindex: 
+
+
+   
+   :param n:
+      Specifies the number of renderbuffer object names to generate.
+   
+   :param renderbuffers:
+      Specifies an array in which the generated renderbuffer object names are stored.
+   
+
+.. seealso::
+
+   
+   :c:func:`glFramebufferRenderbuffer`, :c:func:`glDeleteRenderbuffers`
+   
+.. rubric:: Description
+
+
+:c:func:`glGenRenderbuffers` returns *n* renderbuffer object names in *renderbuffers* . There is no guarantee that the names form a contiguous set of integers; however, it is guaranteed that none of the returned names was in use immediately before the call to :c:func:`glGenRenderbuffers`.
+
+Renderbuffer object names returned by a call to :c:func:`glGenRenderbuffers` are not returned by subsequent calls, unless they are first deleted with :c:func:`glDeleteRenderbuffers`.
+
+The names returned in *renderbuffers* are marked as used, for the purposes of :c:func:`glGenRenderbuffers` only, but they acquire state and type only when they are first bound.
+
+
+**Errors:**
+
+   * ``GL_INVALID_VALUE`` is generated if *n* is negative.
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

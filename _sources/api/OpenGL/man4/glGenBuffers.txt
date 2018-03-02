@@ -1,0 +1,97 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:29
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glGenBuffers.xml'
+.. (c)2005 Addison-Wesley.
+.. See license details at http://opencontent.org/openpub/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glGenBuffers`
+-----------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Generate buffer object names
+
+.. c:function:: glGenBuffers
+
+
+         :param n:
+
+                  Specifies the number of buffer object names to be generated.
+
+         :param buffers:
+
+                  Specifies an array in which the generated buffer object names are stored.
+
+.. rubric:: Specification
+
+.. c:function:: void glGenBuffers(GLsizei  n, GLuint *  buffers)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glBindBuffer`\ ,
+            :c:func:`glDeleteBuffers`\ ,
+            :c:func:`glGet`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glGenBuffers` returns *n* buffer object names in *buffers*\ .
+There is no guarantee that the names form a contiguous set of integers;
+however, it is guaranteed that none of the returned names was in use
+immediately before the call to :c:func:`glGenBuffers`\ .
+
+
+Buffer object names returned by a call to :c:func:`glGenBuffers` are not returned by
+subsequent calls, unless they are first deleted with
+:c:func:`glDeleteBuffers`\ .
+
+
+No buffer objects are associated with the returned buffer object names until they are first bound by calling
+:c:func:`glBindBuffer`\ .
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_VALUE`` is generated if *n* is negative.
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glIsBuffer`
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glGenBuffers'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )2005 Addison-Wesley. Open Publication License.
+

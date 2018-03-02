@@ -1,0 +1,678 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:30
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glPixelStore.xml'
+.. (c)1991-2006 Silicon Graphics, Inc. 2011 Khronos Group.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glPixelStore`
+-----------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Set pixel storage modes
+
+.. c:function:: glPixelStore
+
+
+         :param pname:
+
+                  Specifies the symbolic name of the parameter to be set.
+                  Six values affect the packing of pixel data into memory:
+                  ``GL_PACK_SWAP_BYTES``\ ,
+                  ``GL_PACK_LSB_FIRST``\ ,
+                  ``GL_PACK_ROW_LENGTH``\ ,
+                  ``GL_PACK_IMAGE_HEIGHT``\ ,
+                  ``GL_PACK_SKIP_PIXELS``\ ,
+                  ``GL_PACK_SKIP_ROWS``\ ,
+                  ``GL_PACK_SKIP_IMAGES``\ , and
+                  ``GL_PACK_ALIGNMENT``\ .
+                  Six more affect the unpacking of pixel data :strong:`from` memory:
+                  ``GL_UNPACK_SWAP_BYTES``\ ,
+                  ``GL_UNPACK_LSB_FIRST``\ ,
+                  ``GL_UNPACK_ROW_LENGTH``\ ,
+                  ``GL_UNPACK_IMAGE_HEIGHT``\ ,
+                  ``GL_UNPACK_SKIP_PIXELS``\ ,
+                  ``GL_UNPACK_SKIP_ROWS``\ ,
+                  ``GL_UNPACK_SKIP_IMAGES``\ , and
+                  ``GL_UNPACK_ALIGNMENT``\ .
+
+         :param param:
+
+                  Specifies the value that *pname* is set to.
+
+.. rubric:: Specification
+
+.. c:function:: void glPixelStoref(GLenum  pname, GLfloat  param, GLenum  pname, GLint  param)
+
+
+.. seealso::
+
+
+            :c:func:`glReadPixels`\ ,
+            :c:func:`glTexImage1D`\ ,
+            :c:func:`glTexImage2D`\ ,
+            :c:func:`glTexImage3D`\ ,
+            :c:func:`glTexSubImage1D`\ ,
+            :c:func:`glTexSubImage2D`\ ,
+            :c:func:`glTexSubImage3D`\ ,
+            :c:func:`glCompressedTexImage1D`\ ,
+            :c:func:`glCompressedTexImage2D`\ ,
+            :c:func:`glCompressedTexImage3D`\ ,
+            :c:func:`glCompressedTexSubImage1D`\ ,
+            :c:func:`glCompressedTexSubImage2D`\ ,
+            :c:func:`glCompressedTexSubImage1D`\ .
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glPixelStore` sets pixel storage modes that affect the operation of subsequent
+:c:func:`glReadPixels` as well as the unpacking of
+texture patterns (see :c:func:`glTexImage1D`\ ,
+:c:func:`glTexImage2D`\ , :c:func:`glTexImage3D`\ , :c:func:`glTexSubImage1D`\ ,
+:c:func:`glTexSubImage2D`\ , :c:func:`glTexSubImage3D`\ ),
+:c:func:`glCompressedTexImage1D`\ , :c:func:`glCompressedTexImage2D`\ ,
+:c:func:`glCompressedTexImage3D`\ , :c:func:`glCompressedTexSubImage1D`\ ,
+:c:func:`glCompressedTexSubImage2D` or :c:func:`glCompressedTexSubImage1D`\ .
+
+
+*pname* is a symbolic constant indicating the parameter to be set, and
+*param* is the new value.  Six of the twelve storage parameters affect
+how pixel data is returned to client memory.
+They are as follows:
+
+
+         ``GL_PACK_SWAP_BYTES``
+
+
+               If true,
+               byte ordering for multibyte color components,
+               depth components,
+               or stencil indices
+               is reversed.
+               That is,
+               if a four-byte component consists of bytes
+               |EQUATION_1_|\ ,
+               |EQUATION_2_|\ ,
+               |EQUATION_3_|\ ,
+               |EQUATION_4_|\ ,
+               it is stored in memory as |EQUATION_5_|\ ,
+               |EQUATION_6_|\ ,
+               |EQUATION_7_|\ ,
+               |EQUATION_8_| if ``GL_PACK_SWAP_BYTES`` is true.
+               ``GL_PACK_SWAP_BYTES`` has no effect on the memory order of components
+               within a pixel,
+               only on the order of bytes within components or indices.
+               For example,
+               the three components of a ``GL_RGB`` format pixel are always stored with
+               red first,
+               green second,
+               and blue third,
+               regardless of the value of ``GL_PACK_SWAP_BYTES``\ .
+
+
+         ``GL_PACK_LSB_FIRST``
+
+
+               If true,
+               bits are ordered within a byte from least significant to most significant;
+               otherwise,
+               the first bit in each byte is the most significant one.
+
+
+         ``GL_PACK_ROW_LENGTH``
+
+
+               If greater than 0,
+               ``GL_PACK_ROW_LENGTH`` defines the number of pixels in a row.
+               If the first pixel of a row is placed at location |EQUATION_9_| in memory,
+               then the location of the first pixel of the next row is obtained by skipping
+
+
+               |EQUATION_10_|
+
+
+               components or indices,
+               where
+               |EQUATION_11_| is the number of components or indices in a pixel, |EQUATION_12_| is the number of pixels in a row
+               (\ ``GL_PACK_ROW_LENGTH`` if it is greater than 0,
+               the |EQUATION_13_| argument to the pixel routine otherwise), |EQUATION_14_| is the value of ``GL_PACK_ALIGNMENT``\ , and |EQUATION_15_| is the size, in bytes, of a single component
+               (if |EQUATION_16_|\ ,
+               then it is as if |EQUATION_17_|\ ).
+               In the case of 1-bit values,
+               the location of the next row is obtained by skipping
+
+
+               |EQUATION_18_|
+
+               components or indices.
+
+
+               The word :strong:`component` in this description refers to the nonindex values
+               red,
+               green,
+               blue,
+               alpha,
+               and depth.
+               Storage format ``GL_RGB``\ ,
+               for example,
+               has three components per pixel:
+               first red,
+               then green,
+               and finally blue.
+
+
+         ``GL_PACK_IMAGE_HEIGHT``
+
+
+               If greater than 0,
+               ``GL_PACK_IMAGE_HEIGHT`` defines the number of pixels in an image
+               three-dimensional texture volume, where "image" is defined by all pixels
+               sharing the same third dimension index.
+               If the first pixel of a row is placed at location |EQUATION_19_| in memory,
+               then the location of the first pixel of the next row is obtained by skipping
+
+
+               |EQUATION_20_|
+
+
+               components or indices, where
+               |EQUATION_21_| is the number of components or indices
+               in a pixel, |EQUATION_22_| is the number of pixels in a row
+               (\ ``GL_PACK_ROW_LENGTH`` if it is greater than 0, the |EQUATION_23_| argument to :c:func:`glTexImage3D` otherwise), |EQUATION_24_| is the number of
+               rows in a pixel image (\ ``GL_PACK_IMAGE_HEIGHT`` if it is greater than
+               0, the |EQUATION_25_| argument to the :c:func:`glTexImage3D` routine otherwise), |EQUATION_26_| is the value of
+               ``GL_PACK_ALIGNMENT``\ , and |EQUATION_27_| is the size, in bytes, of a single
+               component (if |EQUATION_28_|\ ,
+               then it is as if |EQUATION_29_|\ ).
+
+
+               The word :strong:`component` in this description refers to the nonindex values
+               red,
+               green,
+               blue,
+               alpha,
+               and depth.
+               Storage format ``GL_RGB``\ ,
+               for example,
+               has three components per pixel:
+               first red,
+               then green,
+               and finally blue.
+
+
+         ``GL_PACK_SKIP_PIXELS``\ , ``GL_PACK_SKIP_ROWS``\ , and ``GL_PACK_SKIP_IMAGES``
+
+
+               These values are provided as a convenience to the programmer;
+               they provide no functionality that cannot be duplicated simply by
+               incrementing the pointer passed to :c:func:`glReadPixels`\ .
+               Setting ``GL_PACK_SKIP_PIXELS`` to |EQUATION_30_| is equivalent to incrementing
+               the pointer by |EQUATION_31_| components or indices,
+               where |EQUATION_32_| is the number of components or indices in each pixel.
+               Setting ``GL_PACK_SKIP_ROWS`` to |EQUATION_33_| is equivalent to incrementing
+               the pointer by |EQUATION_34_| components or indices,
+               where |EQUATION_35_| is the number of components or indices per row,
+               as just computed in the ``GL_PACK_ROW_LENGTH`` section.
+               Setting ``GL_PACK_SKIP_IMAGES`` to |EQUATION_36_| is equivalent to incrementing
+               the pointer by |EQUATION_37_|\ ,
+               where |EQUATION_38_| is the number of components or indices
+               per image, as computed in the ``GL_PACK_IMAGE_HEIGHT`` section.
+
+
+         ``GL_PACK_ALIGNMENT``
+
+
+               Specifies the alignment requirements for the start of each pixel row in memory.
+               The allowable values are
+               1 (byte-alignment),
+               2 (rows aligned to even-numbered bytes),
+               4 (word-alignment), and
+               8 (rows start on double-word boundaries).
+
+
+The other six of the twelve storage parameters affect how pixel data is
+read from client memory.
+These values are significant for
+:c:func:`glTexImage1D`\ ,
+:c:func:`glTexImage2D`\ ,
+:c:func:`glTexImage3D`\ ,
+:c:func:`glTexSubImage1D`\ ,
+:c:func:`glTexSubImage2D`\ , and
+:c:func:`glTexSubImage3D`
+
+
+They are as follows:
+
+
+         ``GL_UNPACK_SWAP_BYTES``
+
+
+               If true,
+               byte ordering for multibyte color components,
+               depth components,
+               or stencil indices
+               is reversed.
+               That is,
+               if a four-byte component consists of bytes
+               |EQUATION_39_|\ ,
+               |EQUATION_40_|\ ,
+               |EQUATION_41_|\ ,
+               |EQUATION_42_|\ ,
+               it is taken from memory as |EQUATION_43_|\ ,
+               |EQUATION_44_|\ ,
+               |EQUATION_45_|\ ,
+               |EQUATION_46_| if ``GL_UNPACK_SWAP_BYTES`` is true.
+               ``GL_UNPACK_SWAP_BYTES`` has no effect on the memory order of components
+               within a pixel,
+               only on the order of bytes within components or indices.
+               For example,
+               the three components of a ``GL_RGB`` format pixel are always stored with
+               red first,
+               green second,
+               and blue third,
+               regardless of the value of ``GL_UNPACK_SWAP_BYTES``\ .
+
+
+         ``GL_UNPACK_LSB_FIRST``
+
+
+               If true,
+               bits are ordered within a byte from least significant to most significant;
+               otherwise,
+               the first bit in each byte is the most significant one.
+
+
+         ``GL_UNPACK_ROW_LENGTH``
+
+
+               If greater than 0,
+               ``GL_UNPACK_ROW_LENGTH`` defines the number of pixels in a row.
+               If the first pixel of a row is placed at location |EQUATION_47_| in memory,
+               then the location of the first pixel of the next row is obtained by skipping
+
+
+               |EQUATION_48_|
+
+
+               components or indices,
+               where
+               |EQUATION_49_| is the number of components or indices in a pixel, |EQUATION_50_| is the number of pixels in a row
+               (\ ``GL_UNPACK_ROW_LENGTH`` if it is greater than 0,
+               the |EQUATION_51_| argument to the pixel routine otherwise), |EQUATION_52_| is the value of ``GL_UNPACK_ALIGNMENT``\ , and |EQUATION_53_| is the size, in bytes, of a single component
+               (if |EQUATION_54_|\ ,
+               then it is as if |EQUATION_55_|\ ).
+               In the case of 1-bit values,
+               the location of the next row is obtained by skipping
+
+
+               |EQUATION_56_|
+
+               components or indices.
+
+
+               The word :strong:`component` in this description refers to the nonindex values
+               red,
+               green,
+               blue,
+               alpha,
+               and depth.
+               Storage format ``GL_RGB``\ ,
+               for example,
+               has three components per pixel:
+               first red,
+               then green,
+               and finally blue.
+
+
+         ``GL_UNPACK_IMAGE_HEIGHT``
+
+
+               If greater than 0,
+               ``GL_UNPACK_IMAGE_HEIGHT`` defines the number of pixels in an image of
+               a three-dimensional texture volume.  Where "image" is defined by all
+               pixel sharing the same third dimension index.
+               If the first pixel of a row is placed at location |EQUATION_57_| in memory,
+               then the location of the first pixel of the next row is obtained by skipping
+
+
+               |EQUATION_58_|
+
+
+               components or indices,
+               where
+               |EQUATION_59_| is the number of components or indices in a pixel, |EQUATION_60_| is the number of pixels in a row
+               (\ ``GL_UNPACK_ROW_LENGTH`` if it is greater than 0,
+               the |EQUATION_61_| argument to :c:func:`glTexImage3D` otherwise), |EQUATION_62_| is the number of rows in an image (\ ``GL_UNPACK_IMAGE_HEIGHT`` if
+               it is greater than 0, the |EQUATION_63_| argument to :c:func:`glTexImage3D` otherwise), |EQUATION_64_| is the value of ``GL_UNPACK_ALIGNMENT``\ , and |EQUATION_65_| is the size, in bytes, of a single component
+               (if |EQUATION_66_|\ ,
+               then it is as if |EQUATION_67_|\ ).
+
+
+               The word :strong:`component` in this description refers to the nonindex values
+               red,
+               green,
+               blue,
+               alpha,
+               and depth.
+               Storage format ``GL_RGB``\ ,
+               for example,
+               has three components per pixel:
+               first red,
+               then green,
+               and finally blue.
+
+
+         ``GL_UNPACK_SKIP_PIXELS`` and ``GL_UNPACK_SKIP_ROWS``
+
+
+               These values are provided as a convenience to the programmer;
+               they provide no functionality that cannot be duplicated by
+               incrementing the pointer passed to
+               :c:func:`glTexImage1D`\ ,
+               :c:func:`glTexImage2D`\ ,
+               :c:func:`glTexSubImage1D` or
+               :c:func:`glTexSubImage2D`\ .
+               Setting ``GL_UNPACK_SKIP_PIXELS`` to |EQUATION_68_| is equivalent to incrementing
+               the pointer by |EQUATION_69_| components or indices,
+               where |EQUATION_70_| is the number of components or indices in each pixel.
+               Setting ``GL_UNPACK_SKIP_ROWS`` to |EQUATION_71_| is equivalent to incrementing
+               the pointer by |EQUATION_72_| components or indices,
+               where |EQUATION_73_| is the number of components or indices per row,
+               as just computed in the ``GL_UNPACK_ROW_LENGTH`` section.
+
+
+         ``GL_UNPACK_ALIGNMENT``
+
+
+               Specifies the alignment requirements for the start of each pixel row in memory.
+               The allowable values are
+               1 (byte-alignment),
+               2 (rows aligned to even-numbered bytes),
+               4 (word-alignment), and
+               8 (rows start on double-word boundaries).
+
+
+The following table gives the type,
+initial value,
+and range of valid values for each storage parameter
+that can be set with :c:func:`glPixelStore`\ .
+
+
++----------------------------+----------------+-------------------------+-----------------------+
+| :strong:`*pname*`          | :strong:`Type` | :strong:`Initial Value` | :strong:`Valid Range` |
++----------------------------+----------------+-------------------------+-----------------------+
+| ``GL_PACK_SWAP_BYTES``     | boolean        | false                   | true or false         |
++----------------------------+----------------+-------------------------+-----------------------+
+| ``GL_PACK_LSB_FIRST``      | boolean        | false                   | true or false         |
++----------------------------+----------------+-------------------------+-----------------------+
+| ``GL_PACK_ROW_LENGTH``     | integer        | 0                       | |EQUATION_74_|        |
++----------------------------+----------------+-------------------------+-----------------------+
+| ``GL_PACK_IMAGE_HEIGHT``   | integer        | 0                       | |EQUATION_75_|        |
++----------------------------+----------------+-------------------------+-----------------------+
+| ``GL_PACK_SKIP_ROWS``      | integer        | 0                       | |EQUATION_76_|        |
++----------------------------+----------------+-------------------------+-----------------------+
+| ``GL_PACK_SKIP_PIXELS``    | integer        | 0                       | |EQUATION_77_|        |
++----------------------------+----------------+-------------------------+-----------------------+
+| ``GL_PACK_SKIP_IMAGES``    | integer        | 0                       | |EQUATION_78_|        |
++----------------------------+----------------+-------------------------+-----------------------+
+| ``GL_PACK_ALIGNMENT``      | integer        | 4                       | 1, 2, 4, or 8         |
++----------------------------+----------------+-------------------------+-----------------------+
+| ``GL_UNPACK_SWAP_BYTES``   | boolean        | false                   | true or false         |
++----------------------------+----------------+-------------------------+-----------------------+
+| ``GL_UNPACK_LSB_FIRST``    | boolean        | false                   | true or false         |
++----------------------------+----------------+-------------------------+-----------------------+
+| ``GL_UNPACK_ROW_LENGTH``   | integer        | 0                       | |EQUATION_79_|        |
++----------------------------+----------------+-------------------------+-----------------------+
+| ``GL_UNPACK_IMAGE_HEIGHT`` | integer        | 0                       | |EQUATION_80_|        |
++----------------------------+----------------+-------------------------+-----------------------+
+| ``GL_UNPACK_SKIP_ROWS``    | integer        | 0                       | |EQUATION_81_|        |
++----------------------------+----------------+-------------------------+-----------------------+
+| ``GL_UNPACK_SKIP_PIXELS``  | integer        | 0                       | |EQUATION_82_|        |
++----------------------------+----------------+-------------------------+-----------------------+
+| ``GL_UNPACK_SKIP_IMAGES``  | integer        | 0                       | |EQUATION_83_|        |
++----------------------------+----------------+-------------------------+-----------------------+
+| ``GL_UNPACK_ALIGNMENT``    | integer        | 4                       | 1, 2, 4, or 8         |
++----------------------------+----------------+-------------------------+-----------------------+
+
+
+:c:func:`glPixelStoref` can be used to set any pixel store parameter.
+If the parameter type is boolean,
+then if *param* is 0,
+the parameter is false;
+otherwise it is set to true.
+If *pname* is a integer type parameter,
+*param* is rounded to the nearest integer.
+
+
+Likewise, :c:func:`glPixelStorei` can also be used to set any of the
+pixel store parameters.
+Boolean parameters are set to false if *param* is 0 and true otherwise.
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_ENUM`` is generated if *pname* is not an accepted value.
+* ``GL_INVALID_VALUE`` is generated if a negative row length, pixel skip, or row skip value is specified, or if alignment is specified as other than 1, 2, 4, or 8.
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGet` with argument ``GL_PACK_SWAP_BYTES``
+* :c:func:`glGet` with argument ``GL_PACK_LSB_FIRST``
+* :c:func:`glGet` with argument ``GL_PACK_ROW_LENGTH``
+* :c:func:`glGet` with argument ``GL_PACK_IMAGE_HEIGHT``
+* :c:func:`glGet` with argument ``GL_PACK_SKIP_ROWS``
+* :c:func:`glGet` with argument ``GL_PACK_SKIP_PIXELS``
+* :c:func:`glGet` with argument ``GL_PACK_SKIP_IMAGES``
+* :c:func:`glGet` with argument ``GL_PACK_ALIGNMENT``
+* :c:func:`glGet` with argument ``GL_UNPACK_SWAP_BYTES``
+* :c:func:`glGet` with argument ``GL_UNPACK_LSB_FIRST``
+* :c:func:`glGet` with argument ``GL_UNPACK_ROW_LENGTH``
+* :c:func:`glGet` with argument ``GL_UNPACK_IMAGE_HEIGHT``
+* :c:func:`glGet` with argument ``GL_UNPACK_SKIP_ROWS``
+* :c:func:`glGet` with argument ``GL_UNPACK_SKIP_PIXELS``
+* :c:func:`glGet` with argument ``GL_UNPACK_SKIP_IMAGES``
+* :c:func:`glGet` with argument ``GL_UNPACK_ALIGNMENT``
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glPixelStore'>
+
+.. role:: mml(raw)
+   :format: html
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">b</mi><mn>0</mn></msub></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">b</mi><mn>1</mn></msub></math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">b</mi><mn>2</mn></msub></math>` 
+
+.. |EQUATION_4_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">b</mi><mn>3</mn></msub></math>` 
+
+.. |EQUATION_5_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">b</mi><mn>3</mn></msub></math>` 
+
+.. |EQUATION_6_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">b</mi><mn>2</mn></msub></math>` 
+
+.. |EQUATION_7_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">b</mi><mn>1</mn></msub></math>` 
+
+.. |EQUATION_8_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">b</mi><mn>0</mn></msub></math>` 
+
+.. |EQUATION_9_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">p</mi></math>` 
+
+.. |EQUATION_10_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">k</mi><mo>=</mo><mfenced open="{" close=""><mrow><mtable><mtr><mtd><mrow><mi mathvariant="italic">n</mi><mo>&it;</mo><mi mathvariant="italic">l</mi></mrow></mtd></mtr><mtr><mtd><mrow><mfenced open="" close=""><mfrac><mi mathvariant="italic">a</mi><mi mathvariant="italic">s</mi></mfrac></mfenced><mo>&it;</mo><mfenced open="&LeftCeiling;" close="&RightCeiling;"><mfrac><mfenced open="" close=""><mrow><mi mathvariant="italic">s</mi><mo>&it;</mo><mi mathvariant="italic">n</mi><mo>&it;</mo><mi mathvariant="italic">l</mi></mrow></mfenced><mi mathvariant="italic">a</mi></mfrac></mfenced></mrow></mtd></mtr></mtable><mo>&it;</mo><mtable><mtr><mtd><mrow><mi mathvariant="italic">s</mi><mo>>=</mo><mi mathvariant="italic">a</mi></mrow></mtd></mtr><mtr><mtd><mrow><mi mathvariant="italic">s</mi><mo><</mo><mi mathvariant="italic">a</mi></mrow></mtd></mtr></mtable></mrow></mfenced></mrow></math>` 
+
+.. |EQUATION_11_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math>` 
+
+.. |EQUATION_12_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">l</mi></math>` 
+
+.. |EQUATION_13_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">width</mi></math>` 
+
+.. |EQUATION_14_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">a</mi></math>` 
+
+.. |EQUATION_15_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">s</mi></math>` 
+
+.. |EQUATION_16_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">a</mi><mo><</mo><mi mathvariant="italic">s</mi></mrow></math>` 
+
+.. |EQUATION_17_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">a</mi><mo>=</mo><mi mathvariant="italic">s</mi></mrow></math>` 
+
+.. |EQUATION_18_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">k</mi><mo>=</mo><mrow><mn>8</mn><mo>&it;</mo><mi mathvariant="italic">a</mi><mo>&it;</mo><mfenced open="&LeftCeiling;" close="&RightCeiling;"><mfrac><mfenced open="" close=""><mrow><mi mathvariant="italic">n</mi><mo>&it;</mo><mi mathvariant="italic">l</mi></mrow></mfenced><mfenced open="" close=""><mrow><mn>8</mn><mo>&it;</mo><mi mathvariant="italic">a</mi></mrow></mfenced></mfrac></mfenced></mrow></mrow></math>` 
+
+.. |EQUATION_19_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">p</mi></math>` 
+
+.. |EQUATION_20_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">k</mi><mo>=</mo><mfenced open="{" close=""><mrow><mtable><mtr><mtd><mrow><mi mathvariant="italic">n</mi><mo>&it;</mo><mi mathvariant="italic">l</mi><mo>&it;</mo><mi mathvariant="italic">h</mi></mrow></mtd></mtr><mtr><mtd><mrow><mfenced open="" close=""><mfrac><mi mathvariant="italic">a</mi><mi mathvariant="italic">s</mi></mfrac></mfenced><mo>&it;</mo><mfenced open="&LeftCeiling;" close="&RightCeiling;"><mfrac><mfenced open="" close=""><mrow><mi mathvariant="italic">s</mi><mo>&it;</mo><mi mathvariant="italic">n</mi><mo>&it;</mo><mi mathvariant="italic">l</mi><mo>&it;</mo><mi mathvariant="italic">h</mi></mrow></mfenced><mi mathvariant="italic">a</mi></mfrac></mfenced></mrow></mtd></mtr></mtable><mo>&it;</mo><mtable><mtr><mtd><mrow><mi mathvariant="italic">s</mi><mo>>=</mo><mi mathvariant="italic">a</mi></mrow></mtd></mtr><mtr><mtd><mrow><mi mathvariant="italic">s</mi><mo><</mo><mi mathvariant="italic">a</mi></mrow></mtd></mtr></mtable></mrow></mfenced></mrow></math>` 
+
+.. |EQUATION_21_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math>` 
+
+.. |EQUATION_22_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">l</mi></math>` 
+
+.. |EQUATION_23_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">width</mi></math>` 
+
+.. |EQUATION_24_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">h</mi></math>` 
+
+.. |EQUATION_25_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">height</mi></math>` 
+
+.. |EQUATION_26_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">a</mi></math>` 
+
+.. |EQUATION_27_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">s</mi></math>` 
+
+.. |EQUATION_28_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">a</mi><mo><</mo><mi mathvariant="italic">s</mi></mrow></math>` 
+
+.. |EQUATION_29_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">a</mi><mo>=</mo><mi mathvariant="italic">s</mi></mrow></math>` 
+
+.. |EQUATION_30_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math>` 
+
+.. |EQUATION_31_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">i</mi><mo>&it;</mo><mi mathvariant="italic">n</mi></mrow></math>` 
+
+.. |EQUATION_32_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math>` 
+
+.. |EQUATION_33_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">j</mi></math>` 
+
+.. |EQUATION_34_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">j</mi><mo>&it;</mo><mi mathvariant="italic">m</mi></mrow></math>` 
+
+.. |EQUATION_35_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">m</mi></math>` 
+
+.. |EQUATION_36_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">k</mi></math>` 
+
+.. |EQUATION_37_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">k</mi><mo>&it;</mo><mi mathvariant="italic">p</mi></mrow></math>` 
+
+.. |EQUATION_38_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">p</mi></math>` 
+
+.. |EQUATION_39_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">b</mi><mn>0</mn></msub></math>` 
+
+.. |EQUATION_40_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">b</mi><mn>1</mn></msub></math>` 
+
+.. |EQUATION_41_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">b</mi><mn>2</mn></msub></math>` 
+
+.. |EQUATION_42_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">b</mi><mn>3</mn></msub></math>` 
+
+.. |EQUATION_43_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">b</mi><mn>3</mn></msub></math>` 
+
+.. |EQUATION_44_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">b</mi><mn>2</mn></msub></math>` 
+
+.. |EQUATION_45_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">b</mi><mn>1</mn></msub></math>` 
+
+.. |EQUATION_46_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">b</mi><mn>0</mn></msub></math>` 
+
+.. |EQUATION_47_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">p</mi></math>` 
+
+.. |EQUATION_48_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">k</mi><mo>=</mo><mfenced open="{" close=""><mrow><mtable><mtr><mtd><mrow><mi mathvariant="italic">n</mi><mo>&it;</mo><mi mathvariant="italic">l</mi></mrow></mtd></mtr><mtr><mtd><mrow><mfenced open="" close=""><mfrac><mi mathvariant="italic">a</mi><mi mathvariant="italic">s</mi></mfrac></mfenced><mo>&it;</mo><mfenced open="&LeftCeiling;" close="&RightCeiling;"><mfrac><mfenced open="" close=""><mrow><mi mathvariant="italic">s</mi><mo>&it;</mo><mi mathvariant="italic">n</mi><mo>&it;</mo><mi mathvariant="italic">l</mi></mrow></mfenced><mi mathvariant="italic">a</mi></mfrac></mfenced></mrow></mtd></mtr></mtable><mo>&it;</mo><mtable><mtr><mtd><mrow><mi mathvariant="italic">s</mi><mo>>=</mo><mi mathvariant="italic">a</mi></mrow></mtd></mtr><mtr><mtd><mrow><mi mathvariant="italic">s</mi><mo><</mo><mi mathvariant="italic">a</mi></mrow></mtd></mtr></mtable></mrow></mfenced></mrow></math>` 
+
+.. |EQUATION_49_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math>` 
+
+.. |EQUATION_50_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">l</mi></math>` 
+
+.. |EQUATION_51_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">width</mi></math>` 
+
+.. |EQUATION_52_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">a</mi></math>` 
+
+.. |EQUATION_53_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">s</mi></math>` 
+
+.. |EQUATION_54_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">a</mi><mo><</mo><mi mathvariant="italic">s</mi></mrow></math>` 
+
+.. |EQUATION_55_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">a</mi><mo>=</mo><mi mathvariant="italic">s</mi></mrow></math>` 
+
+.. |EQUATION_56_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">k</mi><mo>=</mo><mrow><mn>8</mn><mo>&it;</mo><mi mathvariant="italic">a</mi><mo>&it;</mo><mfenced open="&LeftCeiling;" close="&RightCeiling;"><mfrac><mfenced open="" close=""><mrow><mi mathvariant="italic">n</mi><mo>&it;</mo><mi mathvariant="italic">l</mi></mrow></mfenced><mfenced open="" close=""><mrow><mn>8</mn><mo>&it;</mo><mi mathvariant="italic">a</mi></mrow></mfenced></mfrac></mfenced></mrow></mrow></math>` 
+
+.. |EQUATION_57_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">p</mi></math>` 
+
+.. |EQUATION_58_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">k</mi><mo>=</mo><mfenced open="{" close=""><mrow><mtable><mtr><mtd><mrow><mi mathvariant="italic">n</mi><mo>&it;</mo><mi mathvariant="italic">l</mi><mo>&it;</mo><mi mathvariant="italic">h</mi></mrow></mtd></mtr><mtr><mtd><mrow><mfenced open="" close=""><mfrac><mi mathvariant="italic">a</mi><mi mathvariant="italic">s</mi></mfrac></mfenced><mo>&it;</mo><mfenced open="&LeftCeiling;" close="&RightCeiling;"><mfrac><mfenced open="" close=""><mrow><mi mathvariant="italic">s</mi><mo>&it;</mo><mi mathvariant="italic">n</mi><mo>&it;</mo><mi mathvariant="italic">l</mi><mo>&it;</mo><mi mathvariant="italic">h</mi></mrow></mfenced><mi mathvariant="italic">a</mi></mfrac></mfenced></mrow></mtd></mtr></mtable><mo>&it;</mo><mtable><mtr><mtd><mrow><mi mathvariant="italic">s</mi><mo>>=</mo><mi mathvariant="italic">a</mi></mrow></mtd></mtr><mtr><mtd><mrow><mi mathvariant="italic">s</mi><mo><</mo><mi mathvariant="italic">a</mi></mrow></mtd></mtr></mtable></mrow></mfenced></mrow></math>` 
+
+.. |EQUATION_59_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math>` 
+
+.. |EQUATION_60_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">l</mi></math>` 
+
+.. |EQUATION_61_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">width</mi></math>` 
+
+.. |EQUATION_62_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">h</mi></math>` 
+
+.. |EQUATION_63_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">height</mi></math>` 
+
+.. |EQUATION_64_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">a</mi></math>` 
+
+.. |EQUATION_65_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">s</mi></math>` 
+
+.. |EQUATION_66_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">a</mi><mo><</mo><mi mathvariant="italic">s</mi></mrow></math>` 
+
+.. |EQUATION_67_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">a</mi><mo>=</mo><mi mathvariant="italic">s</mi></mrow></math>` 
+
+.. |EQUATION_68_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math>` 
+
+.. |EQUATION_69_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">i</mi><mo>&it;</mo><mi mathvariant="italic">n</mi></mrow></math>` 
+
+.. |EQUATION_70_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math>` 
+
+.. |EQUATION_71_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">j</mi></math>` 
+
+.. |EQUATION_72_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">j</mi><mo>&it;</mo><mi mathvariant="italic">k</mi></mrow></math>` 
+
+.. |EQUATION_73_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">k</mi></math>` 
+
+.. |EQUATION_74_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close=")"><mn>0</mn><infinity/></mfenced></math>` 
+
+.. |EQUATION_75_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close=")"><mn>0</mn><infinity/></mfenced></math>` 
+
+.. |EQUATION_76_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close=")"><mn>0</mn><infinity/></mfenced></math>` 
+
+.. |EQUATION_77_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close=")"><mn>0</mn><infinity/></mfenced></math>` 
+
+.. |EQUATION_78_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close=")"><mn>0</mn><infinity/></mfenced></math>` 
+
+.. |EQUATION_79_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close=")"><mn>0</mn><infinity/></mfenced></math>` 
+
+.. |EQUATION_80_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close=")"><mn>0</mn><infinity/></mfenced></math>` 
+
+.. |EQUATION_81_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close=")"><mn>0</mn><infinity/></mfenced></math>` 
+
+.. |EQUATION_82_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close=")"><mn>0</mn><infinity/></mfenced></math>` 
+
+.. |EQUATION_83_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close=")"><mn>0</mn><infinity/></mfenced></math>` 
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. 2011 Khronos Group. SGI Free Software B License.
+

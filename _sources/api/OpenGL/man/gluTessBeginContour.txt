@@ -1,0 +1,78 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:28
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/gluTessBeginContour.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `gluTessBeginContour`
+------------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Delimit a contour description
+
+.. c:function:: gluTessBeginContour
+
+
+         :param tess:
+
+                  Specifies the tessellation object (created with :c:func:`gluNewTess`\ ).
+
+.. rubric:: Specification
+
+.. c:function:: void gluTessBeginContour(GLUtesselator*  tess)
+   :noindex: 
+
+.. c:function:: void gluTessEndContour(GLUtesselator*  tess)
+
+
+.. seealso::
+
+
+            :c:func:`gluNewTess`\ ,
+            :c:func:`gluTessBeginPolygon`\ ,
+            :c:func:`gluTessCallback`\ ,
+            :c:func:`gluTessEndPolygon`\ ,
+            :c:func:`gluTessNormal`\ ,
+            :c:func:`gluTessProperty`\ ,
+            :c:func:`gluTessVertex`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`gluTessBeginContour` and :c:func:`gluTessEndContour` delimit the definition of a
+polygon contour. Within each :c:func:`gluTessBeginContour` / :c:func:`gluTessEndContour`
+pair, there can be zero or more calls to :c:func:`gluTessVertex`\ . The vertices
+specify a closed contour (the last vertex of each contour is automatically linked
+to the first).  See the :c:func:`gluTessVertex` reference page for more details.
+:c:func:`gluTessBeginContour` can only be called between :c:func:`gluTessBeginPolygon` and :c:func:`gluTessEndPolygon`\ .
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'gluTessBeginContour'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

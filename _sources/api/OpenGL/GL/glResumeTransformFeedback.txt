@@ -1,0 +1,38 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glResumeTransformFeedback`
+------------------------------------
+
+.. source file man4/glResumeTransformFeedback
+
+.. currentmodule:: OpenGL.GL
+
+Resume transform feedback operations
+
+.. c:function:: glResumeTransformFeedback
+.. c:function:: void glResumeTransformFeedbac)
+
+.. seealso::
+
+   
+   :c:func:`glGenTransformFeedbacks`, :c:func:`glBindTransformFeedback`, :c:func:`glBeginTransformFeedback`, :c:func:`glPauseTransformFeedback`, :c:func:`glEndTransformFeedback`, :c:func:`glDeleteTransformFeedbacks`
+   
+.. rubric:: Description
+
+
+:c:func:`glResumeTransformFeedback` resumes transform feedback operations on the currently active transform feedback object. When transform feedback operations are paused, transform feedback is still considered active and changing most transform feedback state related to the object results in an error. However, a new transform feedback object may be bound while transform feedback is paused.
+
+
+**Errors:**
+
+   * ``GL_INVALID_OPERATION`` is generated if the currently bound transform feedback object is not active or is not paused.
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

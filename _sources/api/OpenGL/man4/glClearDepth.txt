@@ -1,0 +1,96 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:28
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glClearDepth.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glClearDepth`
+-----------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Specify the clear value for the depth buffer
+
+.. c:function:: glClearDepth
+
+
+         :param depth:
+
+                  Specifies the depth value used when the depth buffer is cleared. The
+                  initial value is 1.
+
+.. rubric:: Specification
+
+.. c:function:: void glClearDepth(GLdouble  depth, GLfloat  depth)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glClear`\ ,
+            :c:func:`removedTypes`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glClearDepth` specifies the depth value used by :c:func:`glClear` to clear the depth buffer.
+Values specified by :c:func:`glClearDepth` are clamped to the range |EQUATION_1_|\ .
+
+
+.. note::
+
+
+   The type of the *depth* parameter was
+   changed from GLclampf to GLfloat for
+   :c:func:`glClearDepthf` and from GLclampd to
+   GLdouble for :c:func:`glClearDepth`\ . This change
+   is transparent to user code and is described in detail on
+   the
+   :c:func:`removedTypes`
+   page.
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGet` with argument ``GL_DEPTH_CLEAR_VALUE``
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glClearDepth'>
+
+.. role:: mml(raw)
+   :format: html
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"><mn>0</mn><mn>1</mn></mfenced></math>` 
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

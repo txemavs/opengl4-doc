@@ -1,0 +1,77 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glViewport`
+---------------------
+
+.. source file man4/glViewport
+
+.. currentmodule:: OpenGL.GL
+
+Set the viewport
+
+.. c:function:: glViewport
+.. c:function:: void glViewport(GLint  x, GLint  y, GLsizei  width, GLsizei  height)
+   :noindex: 
+
+
+   
+   :param x:
+      Specify the lower left corner of the viewport rectangle, in pixels. The initial value is (0,0).
+   
+   :param width:
+      Specify the width and height of the viewport. When a GL context is first attached to a window, *width* and *height* are set to the dimensions of that window.
+   
+
+.. seealso::
+
+   
+   :c:func:`glDepthRange`
+   
+.. rubric:: Description
+
+
+:c:func:`glViewport` specifies the affine transformation of |EQUATION_1_| and |EQUATION_2_| from normalized device coordinates to window coordinates. Let |EQUATION_3_| be normalized device coordinates. Then the window coordinates |EQUATION_4_| are computed as follows:
+
+|EQUATION_5_|
+
+|EQUATION_6_|
+
+Viewport width and height are silently clamped to a range that depends on the implementation. To query this range, call :c:func:`glGet` with argument ``GL_MAX_VIEWPORT_DIMS``.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGet` with argument ``GL_VIEWPORT``
+   * :c:func:`glGet` with argument ``GL_MAX_VIEWPORT_DIMS``
+
+**Errors:**
+
+   * ``GL_INVALID_VALUE`` is generated if either *width* or *height* is negative.
+
+
+.. role:: mml(raw)
+   :format: html
+
+
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">x</mi></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">y</mi></math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"> <msub><mi mathvariant="italic">x</mi> <mi mathvariant="italic">nd</mi> </msub> <msub><mi mathvariant="italic">y</mi> <mi mathvariant="italic">nd</mi> </msub> </mfenced> </math>` 
+
+.. |EQUATION_4_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"> <msub><mi mathvariant="italic">x</mi> <mi mathvariant="italic">w</mi> </msub> <msub><mi mathvariant="italic">y</mi> <mi mathvariant="italic">w</mi> </msub> </mfenced> </math>` 
+
+.. |EQUATION_5_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <msub><mi mathvariant="italic">x</mi> <mi mathvariant="italic">w</mi> </msub> <mo>=</mo> <mrow> <mfenced open="(" close=")"> <mrow> <msub><mi mathvariant="italic">x</mi> <mi mathvariant="italic">nd</mi> </msub> <mo>+</mo> <mn>1</mn> </mrow> </mfenced> <mo>&it;</mo> <mfenced open="(" close=")"> <mfrac> <mi mathvariant="italic">width</mi> <mn>2</mn> </mfrac> </mfenced> <mo>+</mo> <mi mathvariant="italic">x</mi> </mrow> </mrow> </math>` 
+
+.. |EQUATION_6_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <msub><mi mathvariant="italic">y</mi> <mi mathvariant="italic">w</mi> </msub> <mo>=</mo> <mrow> <mfenced open="(" close=")"> <mrow> <msub><mi mathvariant="italic">y</mi> <mi mathvariant="italic">nd</mi> </msub> <mo>+</mo> <mn>1</mn> </mrow> </mfenced> <mo>&it;</mo> <mfenced open="(" close=")"> <mfrac> <mi mathvariant="italic">height</mi> <mn>2</mn> </mfrac> </mfenced> <mo>+</mo> <mi mathvariant="italic">y</mi> </mrow> </mrow> </math>` 
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

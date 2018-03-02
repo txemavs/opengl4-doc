@@ -1,0 +1,183 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glGetActiveSubroutineUniformName &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glGetActiveUniform" href="glGetActiveUniform.html" />
+    <link rel="prev" title="function glGetActiveSubroutineUniform" href="glGetActiveSubroutineUniform.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glGetActiveUniform.html" title="function glGetActiveUniform"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glGetActiveSubroutineUniform.html" title="function glGetActiveSubroutineUniform"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glgetactivesubroutineuniformname">
+<h1>function <cite>glGetActiveSubroutineUniformName</cite><a class="headerlink" href="#function-glgetactivesubroutineuniformname" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Query the name of an active shader subroutine uniform</p>
+<dl class="function">
+<dt id="glGetActiveSubroutineUniformName">
+<tt class="descname">glGetActiveSubroutineUniformName</tt><big>(</big><big>)</big><a class="headerlink" href="#glGetActiveSubroutineUniformName" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>program</strong> &#8211; Specifies the name of the program containing the subroutine.</li>
+<li><strong>shadertype</strong> &#8211; Specifies the shader stage from which to query for the subroutine parameter. <em>shadertype</em>
+must be one of <tt class="docutils literal"><span class="pre">GL_VERTEX_SHADER</span></tt>, <tt class="docutils literal"><span class="pre">GL_TESS_CONTROL_SHADER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TESS_EVALUATION_SHADER</span></tt>, <tt class="docutils literal"><span class="pre">GL_GEOMETRY_SHADER</span></tt> or
+<tt class="docutils literal"><span class="pre">GL_FRAGMENT_SHADER</span></tt>.</li>
+<li><strong>index</strong> &#8211; Specifies the index of the shader subroutine uniform.</li>
+<li><strong>bufsize</strong> &#8211; Specifies the size of the buffer whose address is given in <em>name</em>.</li>
+<li><strong>length</strong> &#8211; Specifies the address of a variable into which is written the number of characters copied into <em>name</em>.</li>
+<li><strong>name</strong> &#8211; Specifies the address of a buffer that will receive the name of the specified shader subroutine uniform.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glGetActiveSubroutineUniformName</tt><big>(</big>GLuint <em>&nbsp;program</em>, GLenum <em>&nbsp;shadertype</em>, GLuint <em>&nbsp;index</em>, GLsizei <em>&nbsp;bufsize</em>, GLsizei *<em>&nbsp;length</em>, GLchar *<em>&nbsp;name</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glGetSubroutineIndex.html#glGetSubroutineIndex" title="glGetSubroutineIndex"><tt class="xref c c-func docutils literal"><span class="pre">glGetSubroutineIndex()</span></tt></a>,
+<a class="reference internal" href="glGetActiveSubroutineUniform.html#glGetActiveSubroutineUniform" title="glGetActiveSubroutineUniform"><tt class="xref c c-func docutils literal"><span class="pre">glGetActiveSubroutineUniform()</span></tt></a>,
+<a class="reference internal" href="glGetProgramStage.html#glGetProgramStage" title="glGetProgramStage"><tt class="xref c c-func docutils literal"><span class="pre">glGetProgramStage()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glGetActiveSubroutineUniformName" title="glGetActiveSubroutineUniformName"><tt class="xref c c-func docutils literal"><span class="pre">glGetActiveSubroutineUniformName()</span></tt></a> retrieves the name of an active shader subroutine uniform.
+<em>program</em> contains the name of the program containing the uniform. <em>shadertype</em>
+specifies the stage for which which the uniform location, given by <em>index</em>, is valid. <em>index</em>
+must be between zero and the value of <tt class="docutils literal"><span class="pre">GL_ACTIVE_SUBROUTINE_UNIFORMS</span></tt> minus one for the
+shader stage.</p>
+<p>The uniform name is returned as a null-terminated string in <em>name</em>. The actual number of characters
+written into <em>name</em>, excluding the null terminator is returned in <em>length</em>.
+If <em>length</em> is <tt class="docutils literal"><span class="pre">NULL</span></tt>, no length is returned. The maximum number of characters
+that may be written into <em>name</em>, including the null terminator, is specified by <em>bufsize</em>.
+The length of the longest subroutine uniform name in <em>program</em> and <em>shadertype</em> is given
+by the value of <tt class="docutils literal"><span class="pre">GL_ACTIVE_SUBROUTINE_UNIFORM_MAX_LENGTH</span></tt>, which can be queried with
+<a class="reference internal" href="glGetProgramStage.html#glGetProgramStage" title="glGetProgramStage"><tt class="xref c c-func docutils literal"><span class="pre">glGetProgramStage()</span></tt></a>.</p>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>shadertype</em> or <em>pname</em> is not one of the accepted values.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>index</em> is greater than or equal to the value of <tt class="docutils literal"><span class="pre">GL_ACTIVE_SUBROUTINES</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>program</em> is not the name of an existing program object.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glGetProgramStage.html#glGetProgramStage" title="glGetProgramStage"><tt class="xref c c-func docutils literal"><span class="pre">glGetProgramStage()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_ACTIVE_SUBROUTINE_UNIFORMS</span></tt></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)2010 Khronos Group. Open Publication License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glGetActiveSubroutineUniform.html"
+                        title="previous chapter">function <cite>glGetActiveSubroutineUniform</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glGetActiveUniform.html"
+                        title="next chapter">function <cite>glGetActiveUniform</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glGetActiveSubroutineUniformName.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glGetActiveUniform.html" title="function glGetActiveUniform"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glGetActiveSubroutineUniform.html" title="function glGetActiveSubroutineUniform"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

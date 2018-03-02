@@ -1,0 +1,194 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glProgramBinary &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glProgramParameter" href="glProgramParameter.html" />
+    <link rel="prev" title="function glPrimitiveRestartIndex" href="glPrimitiveRestartIndex.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glProgramParameter.html" title="function glProgramParameter"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glPrimitiveRestartIndex.html" title="function glPrimitiveRestartIndex"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glprogrambinary">
+<h1>function <cite>glProgramBinary</cite><a class="headerlink" href="#function-glprogrambinary" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Load a program object with a program binary</p>
+<dl class="function">
+<dt id="glProgramBinary">
+<tt class="descname">glProgramBinary</tt><big>(</big><big>)</big><a class="headerlink" href="#glProgramBinary" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>program</strong> &#8211; Specifies the name of a program object into which to load a program binary.</li>
+<li><strong>binaryFormat</strong> &#8211; Specifies the format of the binary data in binary.</li>
+<li><strong>binary</strong> &#8211; Specifies the address an array containing the binary to be loaded into <em>program</em>.</li>
+<li><strong>length</strong> &#8211; Specifies the number of bytes contained in <em>binary</em>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glProgramBinary</tt><big>(</big>GLuint <em>&nbsp;program</em>, GLenum <em>&nbsp;binaryFormat</em>, const void *<em>&nbsp;binary</em>, GLsizei <em>&nbsp;length</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glGetProgram.html#glGetProgram" title="glGetProgram"><tt class="xref c c-func docutils literal"><span class="pre">glGetProgram()</span></tt></a>,
+<a class="reference internal" href="glGetProgramBinary.html#glGetProgramBinary" title="glGetProgramBinary"><tt class="xref c c-func docutils literal"><span class="pre">glGetProgramBinary()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glProgramBinary" title="glProgramBinary"><tt class="xref c c-func docutils literal"><span class="pre">glProgramBinary()</span></tt></a> loads a program object with a program binary previously
+returned from <a class="reference internal" href="glGetProgramBinary.html#glGetProgramBinary" title="glGetProgramBinary"><tt class="xref c c-func docutils literal"><span class="pre">glGetProgramBinary()</span></tt></a>.
+<em>binaryFormat</em> and <em>binary</em> must be those returned
+by a previous call to <a class="reference internal" href="glGetProgramBinary.html#glGetProgramBinary" title="glGetProgramBinary"><tt class="xref c c-func docutils literal"><span class="pre">glGetProgramBinary()</span></tt></a>,
+and <em>length</em> must be the length returned by
+<a class="reference internal" href="glGetProgramBinary.html#glGetProgramBinary" title="glGetProgramBinary"><tt class="xref c c-func docutils literal"><span class="pre">glGetProgramBinary()</span></tt></a>, or by
+<a class="reference internal" href="glGetProgram.html#glGetProgram" title="glGetProgram"><tt class="xref c c-func docutils literal"><span class="pre">glGetProgram()</span></tt></a> when called with
+<em>pname</em> set to <tt class="docutils literal"><span class="pre">GL_PROGRAM_BINARY_LENGTH</span></tt>.
+If these conditions are not met, loading the program binary will fail and <em>program</em> &#8216;s
+<tt class="docutils literal"><span class="pre">GL_LINK_STATUS</span></tt> will be set to <tt class="docutils literal"><span class="pre">GL_FALSE</span></tt>.</p>
+<p>A program object&#8217;s program binary is replaced by calls to
+<a class="reference internal" href="glLinkProgram.html#glLinkProgram" title="glLinkProgram"><tt class="xref c c-func docutils literal"><span class="pre">glLinkProgram()</span></tt></a> or
+<a class="reference internal" href="#glProgramBinary" title="glProgramBinary"><tt class="xref c c-func docutils literal"><span class="pre">glProgramBinary()</span></tt></a>. When linking success or failure is concerned, <a class="reference internal" href="#glProgramBinary" title="glProgramBinary"><tt class="xref c c-func docutils literal"><span class="pre">glProgramBinary()</span></tt></a>
+can be considered to perform an implicit linking operation.
+<a class="reference internal" href="glLinkProgram.html#glLinkProgram" title="glLinkProgram"><tt class="xref c c-func docutils literal"><span class="pre">glLinkProgram()</span></tt></a> and <a class="reference internal" href="#glProgramBinary" title="glProgramBinary"><tt class="xref c c-func docutils literal"><span class="pre">glProgramBinary()</span></tt></a>
+both set the program object&#8217;s <tt class="docutils literal"><span class="pre">GL_LINK_STATUS</span></tt> to <tt class="docutils literal"><span class="pre">GL_TRUE</span></tt>
+or <tt class="docutils literal"><span class="pre">GL_FALSE</span></tt>.</p>
+<p>A successful call to <a class="reference internal" href="#glProgramBinary" title="glProgramBinary"><tt class="xref c c-func docutils literal"><span class="pre">glProgramBinary()</span></tt></a> will reset all uniform variables to their
+initial values. The initial value is either the value of the variable&#8217;s initializer as specified in the
+original shader source, or zero if no initializer was present. Additionally, all vertex shader input
+and fragment shader output assignments that were in effect when the program was linked before saving are
+restored with <a class="reference internal" href="#glProgramBinary" title="glProgramBinary"><tt class="xref c c-func docutils literal"><span class="pre">glProgramBinary()</span></tt></a> is called.</p>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <em>program</em> is not the name of an existing program object.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>binaryFormat</em> is not a value recognized by the implementation.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">A program binary may fail to load if the implementation determines that there has been a
+change in hardware or software configuration from when the program binary was produced such
+as having been compiled with an incompatible or outdated version of the compiler.</p>
+</div>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glGetProgram.html#glGetProgram" title="glGetProgram"><tt class="xref c c-func docutils literal"><span class="pre">glGetProgram()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_PROGRAM_BINARY_LENGTH</span></tt></li>
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_NUM_PROGRAM_BINARY_FORMATS</span></tt></li>
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_PROGRAM_BINARY_FORMATS</span></tt></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)2010 Khronos Group. Open Publication License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glPrimitiveRestartIndex.html"
+                        title="previous chapter">function <cite>glPrimitiveRestartIndex</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glProgramParameter.html"
+                        title="next chapter">function <cite>glProgramParameter</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glProgramBinary.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glProgramParameter.html" title="function glProgramParameter"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glPrimitiveRestartIndex.html" title="function glPrimitiveRestartIndex"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

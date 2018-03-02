@@ -1,0 +1,230 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glRenderMode &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function glResetHistogram" href="glResetHistogram.html" />
+    <link rel="prev" title="function glRect" href="glRect.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glResetHistogram.html" title="function glResetHistogram"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glRect.html" title="function glRect"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glrendermode">
+<h1>function <cite>glRenderMode</cite><a class="headerlink" href="#function-glrendermode" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Set rasterization mode</p>
+<dl class="function">
+<dt id="glRenderMode">
+<tt class="descname">glRenderMode</tt><big>(</big><big>)</big><a class="headerlink" href="#glRenderMode" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>mode</strong> &#8211; Specifies the rasterization mode.
+Three values are accepted:
+<tt class="docutils literal"><span class="pre">GL_RENDER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_SELECT</span></tt>, and
+<tt class="docutils literal"><span class="pre">GL_FEEDBACK</span></tt>.
+The initial value is <tt class="docutils literal"><span class="pre">GL_RENDER</span></tt>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+GLint <tt class="descname">glRenderMode</tt><big>(</big>GLenum <em>&nbsp;mode</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glFeedbackBuffer.html#glFeedbackBuffer" title="glFeedbackBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glFeedbackBuffer()</span></tt></a>,
+<a class="reference internal" href="glInitNames.html#glInitNames" title="glInitNames"><tt class="xref c c-func docutils literal"><span class="pre">glInitNames()</span></tt></a>,
+<a class="reference internal" href="glLoadName.html#glLoadName" title="glLoadName"><tt class="xref c c-func docutils literal"><span class="pre">glLoadName()</span></tt></a>,
+<a class="reference internal" href="glPassThrough.html#glPassThrough" title="glPassThrough"><tt class="xref c c-func docutils literal"><span class="pre">glPassThrough()</span></tt></a>,
+<a class="reference internal" href="glPushName.html#glPushName" title="glPushName"><tt class="xref c c-func docutils literal"><span class="pre">glPushName()</span></tt></a>,
+<a class="reference internal" href="glSelectBuffer.html#glSelectBuffer" title="glSelectBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glSelectBuffer()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glRenderMode" title="glRenderMode"><tt class="xref c c-func docutils literal"><span class="pre">glRenderMode()</span></tt></a> sets the rasterization mode.
+It takes one argument,
+<em>mode</em>,
+which can assume one of three predefined values:</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">GL_RENDER</span></tt></p>
+<blockquote>
+<div>Render mode. Primitives are rasterized,
+producing pixel fragments,
+which are written into the frame buffer.
+This is the normal mode
+and also the default mode.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_SELECT</span></tt></p>
+<blockquote>
+<div>Selection mode.
+No pixel fragments are produced,
+and no change to the frame buffer contents is made.
+Instead,
+a record of the names of primitives that would have been drawn
+if the render mode had been <tt class="docutils literal"><span class="pre">GL_RENDER</span></tt> is returned in a select buffer,
+which must be created (see <a class="reference internal" href="glSelectBuffer.html#glSelectBuffer" title="glSelectBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glSelectBuffer()</span></tt></a>) before selection mode
+is entered.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_FEEDBACK</span></tt></p>
+<blockquote>
+<div>Feedback mode.
+No pixel fragments are produced,
+and no change to the frame buffer contents is made.
+Instead,
+the coordinates and attributes of vertices that would have been drawn
+if the render mode had been <tt class="docutils literal"><span class="pre">GL_RENDER</span></tt> is returned in a feedback buffer,
+which must be created (see <a class="reference internal" href="glFeedbackBuffer.html#glFeedbackBuffer" title="glFeedbackBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glFeedbackBuffer()</span></tt></a>) before feedback mode
+is entered.</div></blockquote>
+</div></blockquote>
+<p>The return value of <a class="reference internal" href="#glRenderMode" title="glRenderMode"><tt class="xref c c-func docutils literal"><span class="pre">glRenderMode()</span></tt></a> is determined by the render mode at the time
+<a class="reference internal" href="#glRenderMode" title="glRenderMode"><tt class="xref c c-func docutils literal"><span class="pre">glRenderMode()</span></tt></a> is called,
+rather than by <em>mode</em>.
+The values returned for the three render modes are as follows:</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">GL_RENDER</span></tt></p>
+<blockquote>
+<div><ol class="arabic simple" start="0">
+<li></li>
+</ol>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_SELECT</span></tt></p>
+<blockquote>
+<div>The number of hit records transferred to the select buffer.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_FEEDBACK</span></tt></p>
+<blockquote>
+<div>The number of values (not vertices) transferred to the feedback buffer.</div></blockquote>
+</div></blockquote>
+<p>See the <a class="reference internal" href="glSelectBuffer.html#glSelectBuffer" title="glSelectBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glSelectBuffer()</span></tt></a> and <a class="reference internal" href="glFeedbackBuffer.html#glFeedbackBuffer" title="glFeedbackBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glFeedbackBuffer()</span></tt></a> reference pages for
+more details concerning selection and feedback operation.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If an error is generated,
+<a class="reference internal" href="#glRenderMode" title="glRenderMode"><tt class="xref c c-func docutils literal"><span class="pre">glRenderMode()</span></tt></a> returns 0 regardless of the current render mode.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>mode</em> is not one of the three accepted values.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <a class="reference internal" href="glSelectBuffer.html#glSelectBuffer" title="glSelectBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glSelectBuffer()</span></tt></a> is called while the render mode is <tt class="docutils literal"><span class="pre">GL_SELECT</span></tt>, or if <a class="reference internal" href="#glRenderMode" title="glRenderMode"><tt class="xref c c-func docutils literal"><span class="pre">glRenderMode()</span></tt></a> is called with argument <tt class="docutils literal"><span class="pre">GL_SELECT</span></tt> before <a class="reference internal" href="glSelectBuffer.html#glSelectBuffer" title="glSelectBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glSelectBuffer()</span></tt></a> is called at least once.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <a class="reference internal" href="glFeedbackBuffer.html#glFeedbackBuffer" title="glFeedbackBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glFeedbackBuffer()</span></tt></a> is called while the render mode is <tt class="docutils literal"><span class="pre">GL_FEEDBACK</span></tt>, or if <a class="reference internal" href="#glRenderMode" title="glRenderMode"><tt class="xref c c-func docutils literal"><span class="pre">glRenderMode()</span></tt></a> is called with argument <tt class="docutils literal"><span class="pre">GL_FEEDBACK</span></tt> before <a class="reference internal" href="glFeedbackBuffer.html#glFeedbackBuffer" title="glFeedbackBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glFeedbackBuffer()</span></tt></a> is called at least once.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <a class="reference internal" href="#glRenderMode" title="glRenderMode"><tt class="xref c c-func docutils literal"><span class="pre">glRenderMode()</span></tt></a> is executed between the execution of <a class="reference internal" href="glBegin.html#glBegin" title="glBegin"><tt class="xref c c-func docutils literal"><span class="pre">glBegin()</span></tt></a> and the corresponding execution of <a class="reference internal" href="glBegin.html#glEnd" title="glEnd"><tt class="xref c c-func docutils literal"><span class="pre">glEnd()</span></tt></a>.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_RENDER_MODE</span></tt></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glRect.html"
+                        title="previous chapter">function <cite>glRect</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glResetHistogram.html"
+                        title="next chapter">function <cite>glResetHistogram</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/glRenderMode.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glResetHistogram.html" title="function glResetHistogram"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glRect.html" title="function glRect"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

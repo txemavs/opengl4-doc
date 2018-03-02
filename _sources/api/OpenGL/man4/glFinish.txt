@@ -1,0 +1,74 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:29
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glFinish.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glFinish`
+-------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Block until all GL execution is complete
+
+.. c:function:: glFinish
+
+
+.. rubric:: Specification
+
+.. c:function:: void glFinish(  void)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glFlush`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glFinish` does not return until the effects of all previously
+called GL commands are complete.
+Such effects include all changes to GL state,
+all changes to connection state,
+and all changes to the frame buffer contents.
+
+
+.. note::
+
+
+   :c:func:`glFinish` requires a round trip to the server.
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glFinish'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

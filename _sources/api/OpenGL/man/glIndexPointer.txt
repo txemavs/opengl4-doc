@@ -1,0 +1,183 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:27
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glIndexPointer.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glIndexPointer`
+-------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Define an array of color indexes
+
+.. c:function:: glIndexPointer
+
+
+         :param type:
+
+                  Specifies the data type of each color index in the array.
+                  Symbolic constants
+                  ``GL_UNSIGNED_BYTE``\ ,
+                  ``GL_SHORT``\ ,
+                  ``GL_INT``\ ,
+                  ``GL_FLOAT``\ ,
+                  and ``GL_DOUBLE``
+                  are accepted. The initial value is ``GL_FLOAT``\ .
+
+         :param stride:
+
+                  Specifies the byte offset between consecutive color indexes.
+                  If *stride* is 0, the color indexes are understood to
+                  be tightly packed in the array. The initial value is 0.
+
+         :param pointer:
+
+                  Specifies a pointer to the first index in the array.
+                  The initial value is 0.
+
+.. rubric:: Specification
+
+.. c:function:: void glIndexPointer(GLenum  type, GLsizei  stride, const GLvoid *  pointer)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glArrayElement`\ ,
+            :c:func:`glBindBuffer`\ ,
+            :c:func:`glColorPointer`\ ,
+            :c:func:`glDisableClientState`\ ,
+            :c:func:`glDrawArrays`\ ,
+            :c:func:`glDrawElements`\ ,
+            :c:func:`glDrawRangeElements`\ ,
+            :c:func:`glEdgeFlagPointer`\ ,
+            :c:func:`glEnableClientState`\ ,
+            :c:func:`glFogCoordPointer`\ ,
+            :c:func:`glIndex`\ ,
+            :c:func:`glInterleavedArrays`\ ,
+            :c:func:`glMultiDrawArrays`\ ,
+            :c:func:`glMultiDrawElements`\ ,
+            :c:func:`glNormalPointer`\ ,
+            :c:func:`glPopClientAttrib`\ ,
+            :c:func:`glPushClientAttrib`\ ,
+            :c:func:`glSecondaryColorPointer`\ ,
+            :c:func:`glTexCoordPointer`\ ,
+            :c:func:`glVertexAttribPointer`\ ,
+            :c:func:`glVertexPointer`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glIndexPointer` specifies the location and data format of an array of color indexes
+to use when rendering.
+*type* specifies the data type of
+each color index and *stride* specifies the byte stride from one
+color index to the next, allowing vertices and attributes
+to be packed into a single array or stored in separate arrays.
+
+
+If a non-zero named buffer object is bound to the ``GL_ARRAY_BUFFER`` target
+(see :c:func:`glBindBuffer`\ ) while a color index array is
+specified, *pointer* is treated as a byte offset into the buffer object's data store.
+Also, the buffer object binding (\ ``GL_ARRAY_BUFFER_BINDING``\ ) is saved as color index vertex array
+client-side state (\ ``GL_INDEX_ARRAY_BUFFER_BINDING``\ ).
+
+
+When a color index array is specified,
+*type*\ , *stride*\ , and *pointer* are saved as client-side
+state, in addition to the current vertex array buffer object binding.
+
+
+To enable and disable the color index array, call
+:c:func:`glEnableClientState` and :c:func:`glDisableClientState` with the argument
+``GL_INDEX_ARRAY``\ . If
+enabled, the color index array is used
+when :c:func:`glDrawArrays`\ , :c:func:`glMultiDrawArrays`\ , :c:func:`glDrawElements`\ ,
+:c:func:`glMultiDrawElements`\ , :c:func:`glDrawRangeElements`\ , or
+:c:func:`glArrayElement` is called.
+
+
+.. note::
+
+
+   :c:func:`glIndexPointer` is available only if the GL version is 1.1 or greater.
+
+
+   Color indexes are not supported for interleaved vertex array formats
+   (see :c:func:`glInterleavedArrays`\ ).
+
+
+   The color index array is initially disabled and isn't accessed when
+   :c:func:`glArrayElement`\ , :c:func:`glDrawElements`\ , :c:func:`glDrawRangeElements`\ ,
+   :c:func:`glDrawArrays`\ , :c:func:`glMultiDrawArrays`\ , or :c:func:`glMultiDrawElements`
+   is called.
+
+
+   Execution of :c:func:`glIndexPointer` is not allowed between
+   :c:func:`glBegin` and the corresponding :c:func:`glEnd`\ ,
+   but an error may or may not be generated. If an error is not generated,
+   the operation is undefined.
+
+
+   :c:func:`glIndexPointer` is typically implemented on the client side.
+
+
+   Color index array parameters are client-side state and are
+   therefore not saved or restored by :c:func:`glPushAttrib` and :c:func:`glPopAttrib`\ .
+   Use :c:func:`glPushClientAttrib` and
+   :c:func:`glPopClientAttrib` instead.
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_ENUM`` is generated if *type* is not an accepted value.
+* ``GL_INVALID_VALUE`` is generated if *stride* is negative.
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glIsEnabled` with argument ``GL_INDEX_ARRAY``
+* :c:func:`glGet` with argument ``GL_INDEX_ARRAY_TYPE``
+* :c:func:`glGet` with argument ``GL_INDEX_ARRAY_STRIDE``
+* :c:func:`glGet` with argument ``GL_INDEX_ARRAY_BUFFER_BINDING``
+* :c:func:`glGet` with argument ``GL_ARRAY_BUFFER_BINDING``
+* :c:func:`glGetPointerv` with argument ``GL_INDEX_ARRAY_POINTER``
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glIndexPointer'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

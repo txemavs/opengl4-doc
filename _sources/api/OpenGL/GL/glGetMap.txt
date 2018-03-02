@@ -1,0 +1,108 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glGetMap`
+-------------------
+
+.. source file man/glGetMap
+
+.. currentmodule:: OpenGL.GL
+
+Return evaluator parameters
+
+.. c:function:: glGetMap
+.. c:function:: void glGetMapdv(GLenum  target, GLenum  query, GLdouble *  v, GLenum  target, GLenum  query, GLfloat *  v, GLenum  target, GLenum  query, GLint *  v)
+
+
+   
+   :param target:
+      Specifies the symbolic name of a map. Accepted values are ``GL_MAP1_COLOR_4``, ``GL_MAP1_INDEX``, ``GL_MAP1_NORMAL``, ``GL_MAP1_TEXTURE_COORD_1``, ``GL_MAP1_TEXTURE_COORD_2``, ``GL_MAP1_TEXTURE_COORD_3``, ``GL_MAP1_TEXTURE_COORD_4``, ``GL_MAP1_VERTEX_3``, ``GL_MAP1_VERTEX_4``, ``GL_MAP2_COLOR_4``, ``GL_MAP2_INDEX``, ``GL_MAP2_NORMAL``, ``GL_MAP2_TEXTURE_COORD_1``, ``GL_MAP2_TEXTURE_COORD_2``, ``GL_MAP2_TEXTURE_COORD_3``, ``GL_MAP2_TEXTURE_COORD_4``, ``GL_MAP2_VERTEX_3``, and ``GL_MAP2_VERTEX_4``.
+   
+   :param query:
+      Specifies which parameter to return. Symbolic names ``GL_COEFF``, ``GL_ORDER``, and ``GL_DOMAIN`` are accepted.
+   
+   :param v:
+      Returns the requested data.
+   
+
+.. seealso::
+
+   
+   :c:func:`glEvalCoord`, :c:func:`glMap1`, :c:func:`glMap2`
+   
+.. rubric:: Description
+
+
+:c:func:`glMap1` and :c:func:`glMap2` define evaluators. :c:func:`glGetMap` returns evaluator parameters. *target* chooses a map, *query* selects a specific parameter, and *v* points to storage where the values will be returned.
+
+The acceptable values for the *target* parameter are described in the :c:func:`glMap1` and :c:func:`glMap2` reference pages.
+
+*query* can assume the following values:
+
+
+   
+   ``GL_COEFF``
+      *v* returns the control points for the evaluator function. One-dimensional evaluators return |EQUATION_1_| control points, and two-dimensional evaluators return |EQUATION_2_| control points. Each control point consists of one, two, three, or four integer, single-precision floating-point, or double-precision floating-point values, depending on the type of the evaluator. The GL returns two-dimensional control points in row-major order, incrementing the |EQUATION_3_| index quickly and the |EQUATION_4_| index after each row. Integer values, when requested, are computed by rounding the internal floating-point values to the nearest integer values.
+   
+   ``GL_ORDER``
+      *v* returns the order of the evaluator function. One-dimensional evaluators return a single value, |EQUATION_5_| . The initial value is 1. Two-dimensional evaluators return two values, |EQUATION_6_| and |EQUATION_7_| . The initial value is 1,1.
+   
+   ``GL_DOMAIN``
+      *v* returns the linear |EQUATION_8_| and |EQUATION_9_| mapping parameters. One-dimensional evaluators return two values, |EQUATION_10_| and |EQUATION_11_| , as specified by :c:func:`glMap1`. Two-dimensional evaluators return four values (|EQUATION_12_| , |EQUATION_13_| , |EQUATION_14_| , and |EQUATION_15_| ) as specified by :c:func:`glMap2`. Integer values, when requested, are computed by rounding the internal floating-point values to the nearest integer values.
+   
+
+**Errors:**
+
+   * ``GL_INVALID_ENUM`` is generated if either *target* or *query* is not an accepted value.
+   * ``GL_INVALID_OPERATION`` is generated if :c:func:`glGetMap` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`.
+
+
+
+.. note::
+
+   * If an error is generated, no change is made to the contents of *v* .
+
+
+
+.. role:: mml(raw)
+   :format: html
+
+
+
+.. |EQUATION_10_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">u1</mi></math>` 
+
+.. |EQUATION_11_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">u2</mi></math>` 
+
+.. |EQUATION_12_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">u1</mi></math>` 
+
+.. |EQUATION_13_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">u2</mi></math>` 
+
+.. |EQUATION_14_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">v1</mi></math>` 
+
+.. |EQUATION_15_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">v2</mi></math>` 
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">order</mi></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mi mathvariant="italic">uorder</mi> <mo>&times;</mo> <mi mathvariant="italic">vorder</mi> </mrow> </math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">uorder</mi></math>` 
+
+.. |EQUATION_4_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">vorder</mi></math>` 
+
+.. |EQUATION_5_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">order</mi></math>` 
+
+.. |EQUATION_6_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">uorder</mi></math>` 
+
+.. |EQUATION_7_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">vorder</mi></math>` 
+
+.. |EQUATION_8_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">u</mi></math>` 
+
+.. |EQUATION_9_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">v</mi></math>` 
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

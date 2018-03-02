@@ -1,0 +1,142 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:28
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/gluPickMatrix.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `gluPickMatrix`
+------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Define a picking region
+
+.. c:function:: gluPickMatrix
+
+
+         :param x:
+         :param y:
+
+                  Specify the center of a picking region in window coordinates.
+
+         :param delX:
+         :param delY:
+
+                  Specify the width and height, respectively, of the picking region in window
+                  coordinates.
+
+         :param viewport:
+
+                  Specifies the current viewport (as from a :c:func:`glGetIntegerv` call).
+
+.. rubric:: Specification
+
+.. c:function:: void gluPickMatrix(GLdouble  x, GLdouble  y, GLdouble  delX, GLdouble  delY, GLint *  viewport)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`gluPerspective`\ ,
+            :c:func:`glGet`\ ,
+            :c:func:`glLoadIdentity`\ ,
+            :c:func:`glMultMatrix`\ ,
+            :c:func:`glRenderMode`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`gluPickMatrix` creates a projection matrix that can be used to restrict drawing
+to a small region of the viewport.
+This is typically useful to
+determine what objects are being drawn near the cursor.
+Use :c:func:`gluPickMatrix` to
+restrict drawing to a small region around the cursor.
+Then,
+enter selection mode (with :c:func:`glRenderMode`\ ) and rerender the scene.
+All primitives that would have been drawn near
+the cursor are identified and stored in the selection buffer.
+
+
+The matrix created by :c:func:`gluPickMatrix` is multiplied by the current matrix just
+as if :c:func:`glMultMatrix` is called with the generated matrix.
+To effectively use the generated pick matrix for picking,
+first call :c:func:`glLoadIdentity` to load an identity matrix onto the
+perspective matrix stack.
+Then call :c:func:`gluPickMatrix`\ ,
+and, finally, call a command (such as :c:func:`gluPerspective`\ )
+to multiply the perspective matrix by the pick matrix.
+
+
+When using :c:func:`gluPickMatrix` to pick NURBS, be careful to turn off the NURBS
+property
+``GLU_AUTO_LOAD_MATRIX``\ .  If ``GLU_AUTO_LOAD_MATRIX`` is not
+turned off, then any NURBS surface rendered is subdivided differently with
+the pick matrix than the way it was subdivided without the pick matrix.
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Example
+
+..
+
+
+When rendering a scene as follows:
+
+.. code-block:: c
+
+
+   glMatrixMode(GL_PROJECTION);
+   glLoadIdentity();
+   gluPerspective(...);
+   glMatrixMode(GL_MODELVIEW);
+   /\* Draw the scene \*/
+
+..
+
+
+a portion of the viewport can be selected as a pick region like this:
+
+.. code-block:: c
+
+
+   glMatrixMode(GL_PROJECTION);
+   glLoadIdentity();
+   gluPickMatrix(x, y, width, height, viewport);
+   gluPerspective(...);
+   glMatrixMode(GL_MODELVIEW);
+   /\* Draw the scene \*/
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'gluPickMatrix'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

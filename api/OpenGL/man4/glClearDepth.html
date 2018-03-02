@@ -1,0 +1,170 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glClearDepth &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glClearStencil" href="glClearStencil.html" />
+    <link rel="prev" title="function glClearColor" href="glClearColor.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glClearStencil.html" title="function glClearStencil"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glClearColor.html" title="function glClearColor"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glcleardepth">
+<h1>function <cite>glClearDepth</cite><a class="headerlink" href="#function-glcleardepth" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Specify the clear value for the depth buffer</p>
+<dl class="function">
+<dt id="glClearDepth">
+<tt class="descname">glClearDepth</tt><big>(</big><big>)</big><a class="headerlink" href="#glClearDepth" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>depth</strong> &#8211; Specifies the depth value used when the depth buffer is cleared. The
+initial value is 1.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glClearDepth</tt><big>(</big>GLdouble <em>&nbsp;depth</em>, GLfloat <em>&nbsp;depth</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glClear.html#glClear" title="glClear"><tt class="xref c c-func docutils literal"><span class="pre">glClear()</span></tt></a>,
+<a class="reference internal" href="removedTypes.html#removedTypes" title="removedTypes"><tt class="xref c c-func docutils literal"><span class="pre">removedTypes()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glClearDepth" title="glClearDepth"><tt class="xref c c-func docutils literal"><span class="pre">glClearDepth()</span></tt></a> specifies the depth value used by <a class="reference internal" href="glClear.html#glClear" title="glClear"><tt class="xref c c-func docutils literal"><span class="pre">glClear()</span></tt></a> to clear the depth buffer.
+Values specified by <a class="reference internal" href="#glClearDepth" title="glClearDepth"><tt class="xref c c-func docutils literal"><span class="pre">glClearDepth()</span></tt></a> are clamped to the range <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"><mn>0</mn><mn>1</mn></mfenced></math></span>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The type of the <em>depth</em> parameter was
+changed from GLclampf to GLfloat for
+<tt class="xref c c-func docutils literal"><span class="pre">glClearDepthf()</span></tt> and from GLclampd to
+GLdouble for <a class="reference internal" href="#glClearDepth" title="glClearDepth"><tt class="xref c c-func docutils literal"><span class="pre">glClearDepth()</span></tt></a>. This change
+is transparent to user code and is described in detail on
+the
+<a class="reference internal" href="removedTypes.html#removedTypes" title="removedTypes"><tt class="xref c c-func docutils literal"><span class="pre">removedTypes()</span></tt></a>
+page.</p>
+</div>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_DEPTH_CLEAR_VALUE</span></tt></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glClearColor.html"
+                        title="previous chapter">function <cite>glClearColor</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glClearStencil.html"
+                        title="next chapter">function <cite>glClearStencil</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glClearDepth.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glClearStencil.html" title="function glClearStencil"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glClearColor.html" title="function glClearColor"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glBlendColor`
+-----------------------
+
+.. source file man4/glBlendColor
+
+.. currentmodule:: OpenGL.GL
+
+Set the blend color
+
+.. c:function:: glBlendColor
+.. c:function:: void glBlendColor(GLfloat  red, GLfloat  green, GLfloat  blue, GLfloat  alpha)
+   :noindex: 
+
+
+   
+   :param red:
+      specify the components of ``GL_BLEND_COLOR``
+   
+
+.. seealso::
+
+   
+   :c:func:`glBlendEquation`, :c:func:`glBlendFunc`, :c:func:`glGetString`, :c:func:`removedTypes`
+   
+.. rubric:: Description
+
+
+The ``GL_BLEND_COLOR`` may be used to calculate the source and destination blending factors. The color components are clamped to the range |EQUATION_1_| before being stored. See :c:func:`glBlendFunc` for a complete description of the blending operations. Initially the ``GL_BLEND_COLOR`` is set to (0, 0, 0, 0).
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGet` with an argument of ``GL_BLEND_COLOR``
+
+
+
+.. note::
+
+   * The type of the *red* , *green* , *blue* , and *alpha* parameters was changed from GLclampf to GLfloat. This change is transparent to user code and is described in detail on the :c:func:`removedTypes` page.
+
+
+
+.. role:: mml(raw)
+   :format: html
+
+
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"> <mn>0</mn> <mn>1</mn> </mfenced> </math>` 
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

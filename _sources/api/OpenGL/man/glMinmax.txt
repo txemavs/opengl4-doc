@@ -1,0 +1,167 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:27
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glMinmax.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glMinmax`
+-------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Define minmax table
+
+.. c:function:: glMinmax
+
+
+         :param target:
+
+                  The minmax table whose parameters are to be set.
+                  Must be
+                  ``GL_MINMAX``\ .
+
+         :param internalformat:
+
+                  The format of entries in the minmax table.
+                  Must be one of
+                  ``GL_ALPHA``\ ,
+                  ``GL_ALPHA4``\ ,
+                  ``GL_ALPHA8``\ ,
+                  ``GL_ALPHA12``\ ,
+                  ``GL_ALPHA16``\ ,
+                  ``GL_LUMINANCE``\ ,
+                  ``GL_LUMINANCE4``\ ,
+                  ``GL_LUMINANCE8``\ ,
+                  ``GL_LUMINANCE12``\ ,
+                  ``GL_LUMINANCE16``\ ,
+                  ``GL_LUMINANCE_ALPHA``\ ,
+                  ``GL_LUMINANCE4_ALPHA4``\ ,
+                  ``GL_LUMINANCE6_ALPHA2``\ ,
+                  ``GL_LUMINANCE8_ALPHA8``\ ,
+                  ``GL_LUMINANCE12_ALPHA4``\ ,
+                  ``GL_LUMINANCE12_ALPHA12``\ ,
+                  ``GL_LUMINANCE16_ALPHA16``\ ,
+                  ``GL_R3_G3_B2``\ ,
+                  ``GL_RGB``\ ,
+                  ``GL_RGB4``\ ,
+                  ``GL_RGB5``\ ,
+                  ``GL_RGB8``\ ,
+                  ``GL_RGB10``\ ,
+                  ``GL_RGB12``\ ,
+                  ``GL_RGB16``\ ,
+                  ``GL_RGBA``\ ,
+                  ``GL_RGBA2``\ ,
+                  ``GL_RGBA4``\ ,
+                  ``GL_RGB5_A1``\ ,
+                  ``GL_RGBA8``\ ,
+                  ``GL_RGB10_A2``\ ,
+                  ``GL_RGBA12``\ , or
+                  ``GL_RGBA16``\ .
+
+         :param sink:
+
+                  If ``GL_TRUE``\ , pixels will be consumed by the minmax
+                  process and no drawing or texture loading will take place.
+                  If ``GL_FALSE``\ , pixels will proceed to the final conversion process after
+                  minmax.
+
+.. rubric:: Specification
+
+.. c:function:: void glMinmax(GLenum  target, GLenum  internalformat, GLboolean  sink)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glGetMinmax`\ ,
+            :c:func:`glResetMinmax`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+When ``GL_MINMAX`` is enabled, the RGBA components of incoming pixels are
+compared to the minimum and maximum values for each component, which are
+stored in the two-element minmax table.
+(The first element stores the minima, and the second element stores
+the maxima.)
+If a pixel component is greater than the corresponding component
+in the maximum element, then the maximum element is updated with the
+pixel component value.
+If a pixel component is less than the corresponding component in
+the minimum element, then the minimum element is updated with the
+pixel component value.
+(In both cases, if the internal format of the minmax table includes
+luminance, then the R color component of incoming pixels is used
+for comparison.)
+The contents of the minmax table may be retrieved at a later time
+by calling :c:func:`glGetMinmax`\ .
+The minmax operation is enabled or disabled by calling :c:func:`glEnable` or
+:c:func:`glDisable`\ , respectively, with an argument of ``GL_MINMAX``\ .
+
+
+:c:func:`glMinmax` redefines the current minmax table to have entries of the format
+specified by *internalformat*\ .
+The maximum element is initialized with the smallest possible component
+values, and the minimum element is initialized with the largest possible
+component values.
+The values in the previous minmax table, if any, are lost.
+If *sink* is ``GL_TRUE``\ , then pixels are discarded after minmax;
+no further processing of the pixels takes place, and no drawing,
+texture loading, or pixel readback will result.
+
+
+.. note::
+
+
+   :c:func:`glMinmax` is present only if ``ARB_imaging`` is returned when :c:func:`glGetString`
+   is called with an argument of ``GL_EXTENSIONS``\ .
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_ENUM`` is generated if *target* is not one of the allowable values.
+* ``GL_INVALID_ENUM`` is generated if *internalformat* is not one of the allowable values.
+* ``GL_INVALID_OPERATION`` is generated if :c:func:`glMinmax` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`\ .
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGetMinmaxParameter`
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glMinmax'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

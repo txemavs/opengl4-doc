@@ -1,0 +1,46 @@
+.. nabla.opengl-sphinx project
+
+.. ---------------------------
+
+.. this dodument source file 'man/gl_TessCoord'is copyrighted by Khronos Group
+   See license details at http://opencontent.org/openpub/
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   
+
+function `gl_TessCoord`
+-----------------------
+
+.. currentmodule:: OpenGL.GLSL
+
+Contains the coordinate of the vertex within the current patch
+
+.. c:function:: gl_TessCoord
+
+
+.. rubric:: Specification
+
+.. c:function:: in vec3 gl_TessCoord)
+
+.. seealso::
+
+   
+   :c:func:`gl_TessLevelOuter`, :c:func:`gl_TessLevelInner`, :c:func:`gl_PatchVerticesIn`
+   
+.. rubric:: Description
+
+
+Available only in the tessellation cevaluation language, :c:func:`gl_TessCoord` specifies the three component (u, v, w) vector identifying the position of the vertex being processed by the shader relative to the primitive being tessellated.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2011 Khronos Group. Open Publication License.
+

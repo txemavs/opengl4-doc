@@ -1,0 +1,185 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:26
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glGetConvolutionFilter.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glGetConvolutionFilter`
+---------------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Get current 1D or 2D convolution filter kernel
+
+.. c:function:: glGetConvolutionFilter
+
+
+         :param target:
+
+                  The filter to be retrieved.
+                  Must be one of
+                  ``GL_CONVOLUTION_1D`` or
+                  ``GL_CONVOLUTION_2D``\ .
+
+         :param format:
+
+                  Format of the output image.
+                  Must be one of
+                  ``GL_RED``\ ,
+                  ``GL_GREEN``\ ,
+                  ``GL_BLUE``\ ,
+                  ``GL_ALPHA``\ ,
+                  ``GL_RGB``\ ,
+                  ``GL_BGR``\ ,
+                  ``GL_RGBA``\ ,
+                  ``GL_BGRA``\ ,
+                  ``GL_LUMINANCE``\ , or
+                  ``GL_LUMINANCE_ALPHA``\ .
+
+         :param type:
+
+                  Data type of components in the output image.
+                  Symbolic constants
+                  ``GL_UNSIGNED_BYTE``\ ,
+                  ``GL_BYTE``\ ,
+                  ``GL_BITMAP``\ ,
+                  ``GL_UNSIGNED_SHORT``\ ,
+                  ``GL_SHORT``\ ,
+                  ``GL_UNSIGNED_INT``\ ,
+                  ``GL_INT``\ ,
+                  ``GL_FLOAT``\ ,
+                  ``GL_UNSIGNED_BYTE_3_3_2``\ ,
+                  ``GL_UNSIGNED_BYTE_2_3_3_REV``\ ,
+                  ``GL_UNSIGNED_SHORT_5_6_5``\ ,
+                  ``GL_UNSIGNED_SHORT_5_6_5_REV``\ ,
+                  ``GL_UNSIGNED_SHORT_4_4_4_4``\ ,
+                  ``GL_UNSIGNED_SHORT_4_4_4_4_REV``\ ,
+                  ``GL_UNSIGNED_SHORT_5_5_5_1``\ ,
+                  ``GL_UNSIGNED_SHORT_1_5_5_5_REV``\ ,
+                  ``GL_UNSIGNED_INT_8_8_8_8``\ ,
+                  ``GL_UNSIGNED_INT_8_8_8_8_REV``\ ,
+                  ``GL_UNSIGNED_INT_10_10_10_2``\ , and
+                  ``GL_UNSIGNED_INT_2_10_10_10_REV``
+                  are accepted.
+
+         :param image:
+
+                  Pointer to storage for the output image.
+
+.. rubric:: Specification
+
+.. c:function:: void glGetConvolutionFilter(GLenum  target, GLenum  format, GLenum  type, GLvoid *  image)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glGetSeparableFilter`\ ,
+            :c:func:`glConvolutionParameter`\ ,
+            :c:func:`glConvolutionFilter1D`\ ,
+            :c:func:`glConvolutionFilter2D`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glGetConvolutionFilter` returns the current 1D or 2D convolution filter kernel as an image.
+The one- or two-dimensional image is placed in *image* according to the
+specifications in *format* and *type*\ .
+No pixel transfer operations are performed on this image, but the relevant
+pixel storage modes are applied.
+
+
+If a non-zero named buffer object is bound to the ``GL_PIXEL_PACK_BUFFER`` target
+(see :c:func:`glBindBuffer`\ ) while a convolution filter is
+requested, *image* is treated as a byte offset into the buffer object's data store.
+
+
+Color components that are present in *format* but not included in the
+internal format of the filter are returned as zero.
+The assignments of internal color components to the components of *format*
+are as follows.
+
+
++------------------------------+-------------------------------+
+| :strong:`Internal Component` | :strong:`Resulting Component` |
++------------------------------+-------------------------------+
+| Red                          | Red                           |
++------------------------------+-------------------------------+
+| Green                        | Green                         |
++------------------------------+-------------------------------+
+| Blue                         | Blue                          |
++------------------------------+-------------------------------+
+| Alpha                        | Alpha                         |
++------------------------------+-------------------------------+
+| Luminance                    | Red                           |
++------------------------------+-------------------------------+
+| Intensity                    | Red                           |
++------------------------------+-------------------------------+
+
+
+.. note::
+
+
+   :c:func:`glGetConvolutionFilter` is present only if ``ARB_imaging`` is returned when :c:func:`glGetString`
+   is called with an argument of ``GL_EXTENSIONS``\ .
+
+
+   The current separable 2D filter must be retrieved with
+   :c:func:`glGetSeparableFilter` rather than :c:func:`glGetConvolutionFilter`\ .
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_ENUM`` is generated if *target* is not one of the allowable values.
+* ``GL_INVALID_ENUM`` is generated if *format* is not one of the allowable values.
+* ``GL_INVALID_ENUM`` is generated if *type* is not one of the allowable values.
+* ``GL_INVALID_OPERATION`` is generated if *type* is one of ``GL_UNSIGNED_BYTE_3_3_2``\ , ``GL_UNSIGNED_BYTE_2_3_3_REV``\ , ``GL_UNSIGNED_SHORT_5_6_5``\ , or ``GL_UNSIGNED_SHORT_5_6_5_REV`` and *format* is not ``GL_RGB``\ .
+* ``GL_INVALID_OPERATION`` is generated if *type* is one of ``GL_UNSIGNED_SHORT_4_4_4_4``\ , ``GL_UNSIGNED_SHORT_4_4_4_4_REV``\ , ``GL_UNSIGNED_SHORT_5_5_5_1``\ , ``GL_UNSIGNED_SHORT_1_5_5_5_REV``\ , ``GL_UNSIGNED_INT_8_8_8_8``\ , ``GL_UNSIGNED_INT_8_8_8_8_REV``\ , ``GL_UNSIGNED_INT_10_10_10_2``\ , or ``GL_UNSIGNED_INT_2_10_10_10_REV`` and *format* is neither ``GL_RGBA`` nor ``GL_BGRA``\ .
+* ``GL_INVALID_OPERATION`` is generated if a non-zero buffer object name is bound to the ``GL_PIXEL_PACK_BUFFER`` target and the buffer object's data store is currently mapped.
+* ``GL_INVALID_OPERATION`` is generated if a non-zero buffer object name is bound to the ``GL_PIXEL_PACK_BUFFER`` target and the data would be packed to the buffer object such that the memory writes required would exceed the data store size.
+* ``GL_INVALID_OPERATION`` is generated if a non-zero buffer object name is bound to the ``GL_PIXEL_PACK_BUFFER`` target and *image* is not evenly divisible into the number of bytes needed to store in memory a datum indicated by *type*\ .
+* ``GL_INVALID_OPERATION`` is generated if :c:func:`glGetConvolutionFilter` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`\ .
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGetConvolutionParameter`
+* :c:func:`glGet` with argument ``GL_PIXEL_PACK_BUFFER_BINDING``
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glGetConvolutionFilter'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

@@ -1,0 +1,172 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function gluUnProject &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function gluUnProject4" href="gluUnProject4.html" />
+    <link rel="prev" title="function gluTessVertex" href="gluTessVertex.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="gluUnProject4.html" title="function gluUnProject4"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="gluTessVertex.html" title="function gluTessVertex"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-gluunproject">
+<h1>function <cite>gluUnProject</cite><a class="headerlink" href="#function-gluunproject" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Map window coordinates to object coordinates</p>
+<dl class="function">
+<dt id="gluUnProject">
+<tt class="descname">gluUnProject</tt><big>(</big><big>)</big><a class="headerlink" href="#gluUnProject" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>winX</strong> &#8211; </li>
+<li><strong>winY</strong> &#8211; </li>
+<li><strong>winZ</strong> &#8211; Specify the window coordinates to be mapped.</li>
+<li><strong>model</strong> &#8211; Specifies the modelview matrix (as from a <a class="reference internal" href="../man4/glGet.html#glGetDoublev" title="glGetDoublev"><tt class="xref c c-func docutils literal"><span class="pre">glGetDoublev()</span></tt></a> call).</li>
+<li><strong>proj</strong> &#8211; Specifies the projection matrix (as from a <a class="reference internal" href="../man4/glGet.html#glGetDoublev" title="glGetDoublev"><tt class="xref c c-func docutils literal"><span class="pre">glGetDoublev()</span></tt></a> call).</li>
+<li><strong>view</strong> &#8211; Specifies the viewport (as from a <a class="reference internal" href="../man4/glGet.html#glGetIntegerv" title="glGetIntegerv"><tt class="xref c c-func docutils literal"><span class="pre">glGetIntegerv()</span></tt></a> call).</li>
+<li><strong>objX</strong> &#8211; </li>
+<li><strong>objY</strong> &#8211; </li>
+<li><strong>objZ</strong> &#8211; Returns the computed object coordinates.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+GLint <tt class="descname">gluUnProject</tt><big>(</big>GLdouble <em>&nbsp;winX</em>, GLdouble <em>&nbsp;winY</em>, GLdouble <em>&nbsp;winZ</em>, const GLdouble * <em>&nbsp;model</em>, const GLdouble * <em>&nbsp;proj</em>, const GLint * <em>&nbsp;view</em>, GLdouble* <em>&nbsp;objX</em>, GLdouble* <em>&nbsp;objY</em>, GLdouble* <em>&nbsp;objZ</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="gluProject.html#gluProject" title="gluProject"><tt class="xref c c-func docutils literal"><span class="pre">gluProject()</span></tt></a>,
+<a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#gluUnProject" title="gluUnProject"><tt class="xref c c-func docutils literal"><span class="pre">gluUnProject()</span></tt></a> maps the specified window coordinates into object
+coordinates using <em>model</em>, <em>proj</em>, and <em>view</em>.
+The result is stored in <em>objX</em>, <em>objY</em>, and <em>objZ</em>. A return value of
+<tt class="docutils literal"><span class="pre">GLU_TRUE</span></tt> indicates success; a return value of <tt class="docutils literal"><span class="pre">GLU_FALSE</span></tt>
+indicates failure.</p>
+<p>To compute the coordinates
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mi mathvariant="italic">objX</mi><mi mathvariant="italic">objY</mi><mi mathvariant="italic">objZ</mi></mfenced></math></span>,
+<a class="reference internal" href="#gluUnProject" title="gluUnProject"><tt class="xref c c-func docutils literal"><span class="pre">gluUnProject()</span></tt></a> multiplies the normalized device coordinates by the inverse of
+<em>model</em> * <em>proj</em> as follows:</p>
+<p><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mfenced open="(" close=")"><mtable><mtr><mtd><mi mathvariant="italic">objX</mi></mtd></mtr><mtr><mtd><mi mathvariant="italic">objY</mi></mtd></mtr><mtr><mtd><mi mathvariant="italic">objZ</mi></mtd></mtr><mtr><mtd><mi mathvariant="italic">W</mi></mtd></mtr></mtable></mfenced><mo>=</mo><mrow><mrow><mi mathvariant="italic">INV</mi><mo>&af;</mo><mfenced open="(" close=")"><mrow><mi mathvariant="italic">P</mi><mo>&it;</mo><mi mathvariant="italic">M</mi></mrow></mfenced></mrow><mo>&it;</mo><mfenced open="(" close=")"><mtable><mtr><mtd><mrow><mfrac><mfenced open="" close=""><mrow><mn>2</mn><mo>&af;</mo><mfenced open="(" close=")"><mrow><mi mathvariant="italic">winX</mi><mo>-</mo><mrow><mi mathvariant="italic">view</mi><mo>&af;</mo><mfenced open="[" close="]"><mn>0</mn></mfenced></mrow></mrow></mfenced></mrow></mfenced><mfenced open="" close=""><mrow><mi mathvariant="italic">view</mi><mo>&af;</mo><mfenced open="[" close="]"><mn>2</mn></mfenced></mrow></mfenced></mfrac><mo>-</mo><mn>1</mn></mrow></mtd></mtr><mtr><mtd><mrow><mfrac><mfenced open="" close=""><mrow><mn>2</mn><mo>&af;</mo><mfenced open="(" close=")"><mrow><mi mathvariant="italic">winY</mi><mo>-</mo><mrow><mi mathvariant="italic">view</mi><mo>&af;</mo><mfenced open="[" close="]"><mn>1</mn></mfenced></mrow></mrow></mfenced></mrow></mfenced><mfenced open="" close=""><mrow><mi mathvariant="italic">view</mi><mo>&af;</mo><mfenced open="[" close="]"><mn>3</mn></mfenced></mrow></mfenced></mfrac><mo>-</mo><mn>1</mn></mrow></mtd></mtr><mtr><mtd><mrow><mrow><mn>2</mn><mo>&af;</mo><mfenced open="(" close=")"><mi mathvariant="italic">winZ</mi></mfenced></mrow><mo>-</mo><mn>1</mn></mrow></mtd></mtr><mtr><mtd><mn>1</mn></mtd></mtr></mtable></mfenced></mrow></mrow></math></span>
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">INV</mi></math></span> denotes matrix inversion.
+W is an unused variable, included for consistent matrix notation.</p>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="gluTessVertex.html"
+                        title="previous chapter">function <cite>gluTessVertex</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="gluUnProject4.html"
+                        title="next chapter">function <cite>gluUnProject4</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/gluUnProject.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="gluUnProject4.html" title="function gluUnProject4"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="gluTessVertex.html" title="function gluTessVertex"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

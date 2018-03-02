@@ -1,0 +1,46 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `gluQuadricTexture`
+----------------------------
+
+.. source file man/gluQuadricTexture
+
+.. currentmodule:: OpenGL.GLU
+
+Specify if texturing is desired for quadrics
+
+.. c:function:: gluQuadricTexture
+.. c:function:: void gluQuadricTexture(GLUquadric*  quad, GLboolean  texture)
+   :noindex: 
+
+
+   
+   :param quad:
+      Specifies the quadrics object (created with :c:func:`gluNewQuadric`).
+   
+   :param texture:
+      Specifies a flag indicating if texture coordinates should be generated.
+   
+
+.. seealso::
+
+   
+   :c:func:`gluNewQuadric`, :c:func:`gluQuadricDrawStyle`, :c:func:`gluQuadricNormals`, :c:func:`gluQuadricOrientation`
+   
+.. rubric:: Description
+
+
+:c:func:`gluQuadricTexture` specifies if texture coordinates should be generated for quadrics rendered with *quad* . If the value of *texture* is ``GLU_TRUE``, then texture coordinates are generated, and if *texture* is ``GLU_FALSE``, they are not. The initial value is ``GLU_FALSE``.
+
+The manner in which texture coordinates are generated depends upon the specific quadric rendered.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

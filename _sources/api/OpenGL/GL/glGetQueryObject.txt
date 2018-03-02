@@ -1,0 +1,72 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glGetQueryObject`
+---------------------------
+
+.. source file man4/glGetQueryObject
+
+.. currentmodule:: OpenGL.GL
+
+Return parameters of a query object
+
+.. c:function:: glGetQueryObject
+.. c:function:: void glGetQueryObjectiv(GLuint  id, GLenum  pname, GLint *  params, GLuint  id, GLenum  pname, GLuint *  params, GLuint  id, GLenum  pname, GLint64 *  params, GLuint  id, GLenum  pname, GLuint64 *  params)
+
+
+   
+   :param id:
+      Specifies the name of a query object.
+   
+   :param pname:
+      Specifies the symbolic name of a query object parameter. Accepted values are ``GL_QUERY_RESULT`` or ``GL_QUERY_RESULT_AVAILABLE``.
+   
+   :param params:
+      Returns the requested data.
+   
+
+.. seealso::
+
+   
+   :c:func:`glBeginQuery`, :c:func:`glEndQuery`, :c:func:`glGetQueryiv`, :c:func:`glIsQuery`, :c:func:`glQueryCounter`
+   
+.. rubric:: Description
+
+
+:c:func:`glGetQueryObject` returns in *params* a selected parameter of the query object specified by *id* .
+
+*pname* names a specific query object parameter. *pname* can be as follows:
+
+
+   
+   ``GL_QUERY_RESULT``
+      *params* returns the value of the query object's passed samples counter. The initial value is 0.
+   
+   ``GL_QUERY_RESULT_AVAILABLE``
+      *params* returns whether the passed samples counter is immediately available. If a delay would occur waiting for the query result, ``GL_FALSE`` is returned. Otherwise, ``GL_TRUE`` is returned, which also indicates that the results of all previous queries are available as well.
+   
+
+**Errors:**
+
+   * ``GL_INVALID_ENUM`` is generated if *pname* is not an accepted value.
+   * ``GL_INVALID_OPERATION`` is generated if *id* is not the name of a query object.
+   * ``GL_INVALID_OPERATION`` is generated if *id* is the name of a currently active query object.
+
+
+
+.. note::
+
+   * If an error is generated, no change is made to the contents of *params* .
+   * :c:func:`glGetQueryObject` implicitly flushes the GL pipeline so that any incomplete rendering delimited by the occlusion query completes in finite time.
+   * If multiple queries are issued using the same query object *id* before calling :c:func:`glGetQueryObject`, the results of the most recent query will be returned. In this case, when issuing a new query, the results of the previous query are discarded.
+   * :c:func:`glGetQueryObjecti64v` and :c:func:`glGetQueryObjectui64v` are available only if the GL version is 3.3 or greater.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

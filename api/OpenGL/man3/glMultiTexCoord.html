@@ -1,0 +1,214 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glMultiTexCoord &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.3 Reference" href="../../../index_man3.html" />
+    <link rel="next" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="prev" title="function glGetBufferParameteriv" href="glGetBufferParameteriv.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../index_man4.html" title="OpenGL v.4 Reference"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glGetBufferParameteriv.html" title="function glGetBufferParameteriv"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man3.html" accesskey="U">OpenGL v.3 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glmultitexcoord">
+<h1>function <cite>glMultiTexCoord</cite><a class="headerlink" href="#function-glmultitexcoord" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 3 Vol. 3G</p>
+</div>
+<p>Set the current texture coordinates</p>
+<dl class="function">
+<dt id="glMultiTexCoord">
+<tt class="descname">glMultiTexCoord</tt><big>(</big><big>)</big><a class="headerlink" href="#glMultiTexCoord" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>target</strong> &#8211; Specifies the texture unit whose coordinates should be modified. The number
+of texture units is implementation dependent, but must be at least
+two. Symbolic constant must be one of
+<tt class="docutils literal"><span class="pre">GL_TEXTURE</span></tt> <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math></span>,
+where i ranges from 0 to <tt class="docutils literal"><span class="pre">GL_MAX_TEXTURE_COORDS</span></tt> - 1,
+which is an implementation-dependent value.</li>
+<li><strong>s</strong> &#8211; </li>
+<li><strong>t</strong> &#8211; </li>
+<li><strong>r</strong> &#8211; </li>
+<li><strong>q</strong> &#8211; Specify <em>s</em>, <em>t</em>, <em>r</em>, and <em>q</em> texture coordinates for
+<em>target</em> texture unit. Not all parameters are present in all forms
+of the command.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt id="glMultiTexCoord1s">
+void <tt class="descname">glMultiTexCoord1s</tt><big>(</big>GLenum <em>&nbsp;target</em>, GLshort <em>&nbsp;s</em>, GLenum <em>&nbsp;target</em>, GLint <em>&nbsp;s</em>, GLenum <em>&nbsp;target</em>, GLfloat <em>&nbsp;s</em>, GLenum <em>&nbsp;target</em>, GLdouble <em>&nbsp;s</em>, GLenum <em>&nbsp;target</em>, GLshort <em>&nbsp;s</em>, GLshort <em>&nbsp;t</em>, GLenum <em>&nbsp;target</em>, GLint <em>&nbsp;s</em>, GLint <em>&nbsp;t</em>, GLenum <em>&nbsp;target</em>, GLfloat <em>&nbsp;s</em>, GLfloat <em>&nbsp;t</em>, GLenum <em>&nbsp;target</em>, GLdouble <em>&nbsp;s</em>, GLdouble <em>&nbsp;t</em>, GLenum <em>&nbsp;target</em>, GLshort <em>&nbsp;s</em>, GLshort <em>&nbsp;t</em>, GLshort <em>&nbsp;r</em>, GLenum <em>&nbsp;target</em>, GLint <em>&nbsp;s</em>, GLint <em>&nbsp;t</em>, GLint <em>&nbsp;r</em>, GLenum <em>&nbsp;target</em>, GLfloat <em>&nbsp;s</em>, GLfloat <em>&nbsp;t</em>, GLfloat <em>&nbsp;r</em>, GLenum <em>&nbsp;target</em>, GLdouble <em>&nbsp;s</em>, GLdouble <em>&nbsp;t</em>, GLdouble <em>&nbsp;r</em>, GLenum <em>&nbsp;target</em>, GLshort <em>&nbsp;s</em>, GLshort <em>&nbsp;t</em>, GLshort <em>&nbsp;r</em>, GLshort <em>&nbsp;q</em>, GLenum <em>&nbsp;target</em>, GLint <em>&nbsp;s</em>, GLint <em>&nbsp;t</em>, GLint <em>&nbsp;r</em>, GLint <em>&nbsp;q</em>, GLenum <em>&nbsp;target</em>, GLfloat <em>&nbsp;s</em>, GLfloat <em>&nbsp;t</em>, GLfloat <em>&nbsp;r</em>, GLfloat <em>&nbsp;q</em>, GLenum <em>&nbsp;target</em>, GLdouble <em>&nbsp;s</em>, GLdouble <em>&nbsp;t</em>, GLdouble <em>&nbsp;r</em>, GLdouble <em>&nbsp;q</em><big>)</big><a class="headerlink" href="#glMultiTexCoord1s" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="glMultiTexCoord1sv">
+void <tt class="descname">glMultiTexCoord1sv</tt><big>(</big>GLenum <em>&nbsp;target</em>, const GLshort * <em>&nbsp;v</em>, GLenum <em>&nbsp;target</em>, const GLint * <em>&nbsp;v</em>, GLenum <em>&nbsp;target</em>, const GLfloat * <em>&nbsp;v</em>, GLenum <em>&nbsp;target</em>, const GLdouble * <em>&nbsp;v</em>, GLenum <em>&nbsp;target</em>, const GLshort * <em>&nbsp;v</em>, GLenum <em>&nbsp;target</em>, const GLint * <em>&nbsp;v</em>, GLenum <em>&nbsp;target</em>, const GLfloat * <em>&nbsp;v</em>, GLenum <em>&nbsp;target</em>, const GLdouble * <em>&nbsp;v</em>, GLenum <em>&nbsp;target</em>, const GLshort * <em>&nbsp;v</em>, GLenum <em>&nbsp;target</em>, const GLint * <em>&nbsp;v</em>, GLenum <em>&nbsp;target</em>, const GLfloat * <em>&nbsp;v</em>, GLenum <em>&nbsp;target</em>, const GLdouble * <em>&nbsp;v</em>, GLenum <em>&nbsp;target</em>, const GLshort * <em>&nbsp;v</em>, GLenum <em>&nbsp;target</em>, const GLint * <em>&nbsp;v</em>, GLenum <em>&nbsp;target</em>, const GLfloat * <em>&nbsp;v</em>, GLenum <em>&nbsp;target</em>, const GLdouble * <em>&nbsp;v</em><big>)</big><a class="headerlink" href="#glMultiTexCoord1sv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="../man4/glActiveTexture.html#glActiveTexture" title="glActiveTexture"><tt class="xref c c-func docutils literal"><span class="pre">glActiveTexture()</span></tt></a>,
+<a class="reference internal" href="../man/glTexCoord.html#glTexCoord" title="glTexCoord"><tt class="xref c c-func docutils literal"><span class="pre">glTexCoord()</span></tt></a>,
+<a class="reference internal" href="../man/glVertex.html#glVertex" title="glVertex"><tt class="xref c c-func docutils literal"><span class="pre">glVertex()</span></tt></a></p>
+</div>
+<p class="rubric">Parameters</p>
+<blockquote>
+<div><p><em>target</em></p>
+<blockquote>
+<div>Specifies the texture unit whose coordinates should be modified. The number
+of texture units is implementation dependent, but must be at least
+two. Symbolic constant must be one of
+<tt class="docutils literal"><span class="pre">GL_TEXTURE</span></tt> <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math></span>,
+where i ranges from 0 to <tt class="docutils literal"><span class="pre">GL_MAX_TEXTURE_COORDS</span></tt> - 1,
+which is an implementation-dependent value.</div></blockquote>
+<p><em>v</em></p>
+<blockquote>
+<div>Specifies a pointer to an array of one, two, three, or four elements,
+which in turn specify the
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">s</mi></math></span>,
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">t</mi></math></span>,
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">r</mi></math></span>,
+and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">q</mi></math></span> texture coordinates.</div></blockquote>
+</div></blockquote>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glMultiTexCoord" title="glMultiTexCoord"><tt class="xref c c-func docutils literal"><span class="pre">glMultiTexCoord()</span></tt></a> specifies texture coordinates in one, two, three, or four
+dimensions.
+<tt class="xref c c-func docutils literal"><span class="pre">glMultiTexCoord1()</span></tt> sets the current texture
+coordinates to <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mi mathvariant="italic">s</mi><mn>0</mn><mn>0</mn><mn>1</mn></mfenced></math></span>;
+a call to <tt class="xref c c-func docutils literal"><span class="pre">glMultiTexCoord2()</span></tt>
+sets them to <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mi mathvariant="italic">s</mi><mi mathvariant="italic">t</mi><mn>0</mn><mn>1</mn></mfenced></math></span>.
+Similarly, <tt class="xref c c-func docutils literal"><span class="pre">glMultiTexCoord3()</span></tt> specifies the texture coordinates as <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mi mathvariant="italic">s</mi><mi mathvariant="italic">t</mi><mi mathvariant="italic">r</mi><mn>1</mn></mfenced></math></span>,
+and
+<tt class="xref c c-func docutils literal"><span class="pre">glMultiTexCoord4()</span></tt>
+defines all four components explicitly as <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mi mathvariant="italic">s</mi><mi mathvariant="italic">t</mi><mi mathvariant="italic">r</mi><mi mathvariant="italic">q</mi></mfenced></math></span>.</p>
+<p>The current texture coordinates are part of the data
+that is associated with each vertex and with the current
+raster position.
+Initially, the values for
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mi mathvariant="italic">s</mi><mi mathvariant="italic">t</mi><mi mathvariant="italic">r</mi><mi mathvariant="italic">q</mi></mfenced></math></span> are <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mn>0</mn><mn>0</mn><mn>0</mn><mn>1</mn></mfenced></math></span>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The current texture coordinates can be updated at any time.</p>
+<p class="last">It is always the case that <tt class="docutils literal"><span class="pre">GL_TEXTURE</span></tt>
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math></span> = <tt class="docutils literal"><span class="pre">GL_TEXTURE0</span></tt> + <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math></span>.</p>
+</div>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_CURRENT_TEXTURE_COORDS</span></tt> with appropriate texture unit selected.</li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_MAX_TEXTURE_COORDS</span></tt></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glGetBufferParameteriv.html"
+                        title="previous chapter">function <cite>glGetBufferParameteriv</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../../../index_man4.html"
+                        title="next chapter">OpenGL v.4 Reference</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man3/glMultiTexCoord.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../index_man4.html" title="OpenGL v.4 Reference"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glGetBufferParameteriv.html" title="function glGetBufferParameteriv"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man3.html" >OpenGL v.3 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

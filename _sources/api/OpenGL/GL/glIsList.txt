@@ -1,0 +1,47 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glIsList`
+-------------------
+
+.. source file man/glIsList
+
+.. currentmodule:: OpenGL.GL
+
+Determine if a name corresponds to a display list
+
+.. c:function:: glIsList
+.. c:function:: GLboolean glIsList(GLuint  list)
+   :noindex: 
+
+
+   
+   :param list:
+      Specifies a potential display list name.
+   
+
+.. seealso::
+
+   
+   :c:func:`glCallList`, :c:func:`glCallLists`, :c:func:`glDeleteLists`, :c:func:`glGenLists`, :c:func:`glNewList`
+   
+.. rubric:: Description
+
+
+:c:func:`glIsList` returns ``GL_TRUE`` if *list* is the name of a display list and returns ``GL_FALSE`` if it is not, or if an error occurs.
+
+A name returned by :c:func:`glGenLists`, but not yet associated with a display list by calling :c:func:`glNewList`, is not the name of a display list.
+
+
+**Errors:**
+
+   * ``GL_INVALID_OPERATION`` is generated if :c:func:`glIsList` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`.
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

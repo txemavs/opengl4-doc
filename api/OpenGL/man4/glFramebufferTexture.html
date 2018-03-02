@@ -1,0 +1,224 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glFramebufferTexture &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glFramebufferTextureLayer" href="glFramebufferTextureLayer.html" />
+    <link rel="prev" title="function glFramebufferRenderbuffer" href="glFramebufferRenderbuffer.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glFramebufferTextureLayer.html" title="function glFramebufferTextureLayer"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glFramebufferRenderbuffer.html" title="function glFramebufferRenderbuffer"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glframebuffertexture">
+<h1>function <cite>glFramebufferTexture</cite><a class="headerlink" href="#function-glframebuffertexture" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Attach a level of a texture object as a logical buffer to the currently bound framebuffer object</p>
+<dl class="function">
+<dt id="glFramebufferTexture">
+<tt class="descname">glFramebufferTexture</tt><big>(</big><big>)</big><a class="headerlink" href="#glFramebufferTexture" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>target</strong> &#8211; Specifies the framebuffer target. <em>target</em> must be <tt class="docutils literal"><span class="pre">GL_DRAW_FRAMEBUFFER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_READ_FRAMEBUFFER</span></tt>, or <tt class="docutils literal"><span class="pre">GL_FRAMEBUFFER</span></tt>. <tt class="docutils literal"><span class="pre">GL_FRAMEBUFFER</span></tt>
+is equivalent to <tt class="docutils literal"><span class="pre">GL_DRAW_FRAMEBUFFER</span></tt>.</li>
+<li><strong>attachment</strong> &#8211; Specifies the attachment point of the framebuffer. <em>attachment</em> must be
+<tt class="docutils literal"><span class="pre">GL_COLOR_ATTACHMENT</span> <span class="pre">i</span></tt>, <tt class="docutils literal"><span class="pre">GL_DEPTH_ATTACHMENT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_STENCIL_ATTACHMENT</span></tt> or <tt class="docutils literal"><span class="pre">GL_DEPTH_STENCIL_ATTACHMMENT</span></tt>.</li>
+<li><strong>textarget</strong> &#8211; For <tt class="xref c c-func docutils literal"><span class="pre">glFramebufferTexture1D()</span></tt>, <tt class="xref c c-func docutils literal"><span class="pre">glFramebufferTexture2D()</span></tt> and
+<tt class="xref c c-func docutils literal"><span class="pre">glFramebufferTexture3D()</span></tt>, specifies what type of texture is expected
+in the <em>texture</em> parameter, or for cube map textures, which face is to be attached.</li>
+<li><strong>texture</strong> &#8211; Specifies the texture object to attach to the framebuffer attachment point named by <em>attachment</em>.</li>
+<li><strong>level</strong> &#8211; Specifies the mipmap level of <em>texture</em> to attach.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glFramebufferTexture</tt><big>(</big>GLenum <em>&nbsp;target</em>, GLenum <em>&nbsp;attachment</em>, GLuint <em>&nbsp;texture</em>, GLint <em>&nbsp;level</em>, GLenum <em>&nbsp;target</em>, GLenum <em>&nbsp;attachment</em>, GLenum <em>&nbsp;textarget</em>, GLuint <em>&nbsp;texture</em>, GLint <em>&nbsp;level</em>, GLenum <em>&nbsp;target</em>, GLenum <em>&nbsp;attachment</em>, GLenum <em>&nbsp;textarget</em>, GLuint <em>&nbsp;texture</em>, GLint <em>&nbsp;level</em>, GLenum <em>&nbsp;target</em>, GLenum <em>&nbsp;attachment</em>, GLenum <em>&nbsp;textarget</em>, GLuint <em>&nbsp;texture</em>, GLint <em>&nbsp;level</em>, GLint <em>&nbsp;layer</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glGenFramebuffers.html#glGenFramebuffers" title="glGenFramebuffers"><tt class="xref c c-func docutils literal"><span class="pre">glGenFramebuffers()</span></tt></a>,
+<a class="reference internal" href="glBindFramebuffer.html#glBindFramebuffer" title="glBindFramebuffer"><tt class="xref c c-func docutils literal"><span class="pre">glBindFramebuffer()</span></tt></a>,
+<a class="reference internal" href="glGenRenderbuffers.html#glGenRenderbuffers" title="glGenRenderbuffers"><tt class="xref c c-func docutils literal"><span class="pre">glGenRenderbuffers()</span></tt></a>,
+<a class="reference internal" href="#glFramebufferTexture" title="glFramebufferTexture"><tt class="xref c c-func docutils literal"><span class="pre">glFramebufferTexture()</span></tt></a>,
+<tt class="xref c c-func docutils literal"><span class="pre">glFramebufferTexture1D()</span></tt>,
+<tt class="xref c c-func docutils literal"><span class="pre">glFramebufferTexture2D()</span></tt>,
+<tt class="xref c c-func docutils literal"><span class="pre">glFramebufferTexture3D()</span></tt></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glFramebufferTexture" title="glFramebufferTexture"><tt class="xref c c-func docutils literal"><span class="pre">glFramebufferTexture()</span></tt></a>, <tt class="xref c c-func docutils literal"><span class="pre">glFramebufferTexture1D()</span></tt>, <tt class="xref c c-func docutils literal"><span class="pre">glFramebufferTexture2D()</span></tt>,
+and <a class="reference internal" href="#glFramebufferTexture" title="glFramebufferTexture"><tt class="xref c c-func docutils literal"><span class="pre">glFramebufferTexture()</span></tt></a> attach a selected mipmap level or image of a texture object as one of the
+logical buffers of the framebuffer object currently bound to <em>target</em>. <em>target</em> must
+be <tt class="docutils literal"><span class="pre">GL_DRAW_FRAMEBUFFER</span></tt>, <tt class="docutils literal"><span class="pre">GL_READ_FRAMEBUFFER</span></tt>, or <tt class="docutils literal"><span class="pre">GL_FRAMEBUFFER</span></tt>.
+<tt class="docutils literal"><span class="pre">GL_FRAMEBUFFER</span></tt> is equivalent to <tt class="docutils literal"><span class="pre">GL_DRAW_FRAMEBUFFER</span></tt>.</p>
+<p><em>attachment</em> specifies the logical attachment of the framebuffer and must be
+<tt class="docutils literal"><span class="pre">GL_COLOR_ATTACHMENT</span> <span class="pre">i</span></tt>, <tt class="docutils literal"><span class="pre">GL_DEPTH_ATTACHMENT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_STENCIL_ATTACHMENT</span></tt> or <tt class="docutils literal"><span class="pre">GL_DEPTH_STENCIL_ATTACHMMENT</span></tt>.
+<strong>i</strong> in <tt class="docutils literal"><span class="pre">GL_COLOR_ATTACHMENT</span> <span class="pre">i</span></tt> may range from zero to
+the value of <tt class="docutils literal"><span class="pre">GL_MAX_COLOR_ATTACHMENTS</span></tt> - 1. Attaching a level of a texture to
+<tt class="docutils literal"><span class="pre">GL_DEPTH_STENCIL_ATTACHMENT</span></tt> is equivalent to attaching that level to both the
+<tt class="docutils literal"><span class="pre">GL_DEPTH_ATTACHMENT</span></tt> <strong>and</strong> the <tt class="docutils literal"><span class="pre">GL_STENCIL_ATTACHMENT</span></tt>
+attachment points simultaneously.</p>
+<p><em>textarget</em> specifies what type of texture is named by <em>texture</em>, and for
+cube map textures, specifies the face that is to be attached. If <em>texture</em> is not zero, it
+must be the name of an existing texture with type <em>textarget</em>, unless it is a cube map
+texture, in which case <em>textarget</em> must be <tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_POSITIVE_X</span></tt>
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_NEGATIVE_X</span></tt>, <tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_POSITIVE_Y</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_NEGATIVE_Y</span></tt>, <tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_POSITIVE_Z</span></tt>, or
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_NEGATIVE_Z</span></tt>.</p>
+<p>If <em>texture</em> is non-zero, the specified <em>level</em> of the texture object named
+<em>texture</em> is attached to the framebfufer attachment point named by <em>attachment</em>.
+For <tt class="xref c c-func docutils literal"><span class="pre">glFramebufferTexture1D()</span></tt>, <tt class="xref c c-func docutils literal"><span class="pre">glFramebufferTexture2D()</span></tt>, and
+<tt class="xref c c-func docutils literal"><span class="pre">glFramebufferTexture3D()</span></tt>, <em>texture</em> must be zero or the name of an existing
+texture with a target of <em>textarget</em>, or <em>texture</em> must be the name
+of an existing cube-map texture and <em>textarget</em> must be one of <tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_POSITIVE_X</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_POSITIVE_Y</span></tt>, <tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_POSITIVE_Z</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_NEGATIVE_X</span></tt>, <tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_NEGATIVE_Y</span></tt>, or
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_NEGATIVE_Z</span></tt>.</p>
+<p>If  <em>textarget</em> is <tt class="docutils literal"><span class="pre">GL_TEXTURE_RECTANGLE</span></tt>, <tt class="docutils literal"><span class="pre">GL_TEXTURE_2D_MULTISAMPLE</span></tt>,
+or <tt class="docutils literal"><span class="pre">GL_TEXTURE_2D_MULTISAMPLE_ARRAY</span></tt>, then <em>level</em> must be zero. If <em>textarget</em>
+is <tt class="docutils literal"><span class="pre">GL_TEXTURE_3D</span></tt>, then level must be greater than or equal to zero and less than or equal to log <sub>2</sub>
+of the value of <tt class="docutils literal"><span class="pre">GL_MAX_3D_TEXTURE_SIZE</span></tt>. If <em>textarget</em> is one of <tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_POSITIVE_X</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_POSITIVE_Y</span></tt>, <tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_POSITIVE_Z</span></tt>, <tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_NEGATIVE_X</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_NEGATIVE_Y</span></tt>, or <tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_NEGATIVE_Z</span></tt>, then <em>level</em> must be greater
+than or equal to zero and less than or equal to log <sub>2</sub> of the value of <tt class="docutils literal"><span class="pre">GL_MAX_CUBE_MAP_TEXTURE_SIZE</span></tt>. For all other
+values of <em>textarget</em>, <em>level</em> must be greater than or equal to zero and no larger than log <sub>2</sub>
+of the value of <tt class="docutils literal"><span class="pre">GL_MAX_TEXTURE_SIZE</span></tt>.</p>
+<p><em>layer</em> specifies the layer of a 2-dimensional image within a 3-dimensional texture.</p>
+<p>For <tt class="xref c c-func docutils literal"><span class="pre">glFramebufferTexture1D()</span></tt>, if <em>texture</em> is not zero, then <em>textarget</em> must
+be <tt class="docutils literal"><span class="pre">GL_TEXTURE_1D</span></tt>. For <tt class="xref c c-func docutils literal"><span class="pre">glFramebufferTexture2D()</span></tt>, if <em>texture</em> is not zero,
+<em>textarget</em> must be one of <tt class="docutils literal"><span class="pre">GL_TEXTURE_2D</span></tt>, <tt class="docutils literal"><span class="pre">GL_TEXTURE_RECTANGLE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_POSITIVE_X</span></tt>, <tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_POSITIVE_Y</span></tt>, <tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_POSITIVE_Z</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_NEGATIVE_X</span></tt>, <tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_NEGATIVE_Y</span></tt>, <tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_NEGATIVE_Z</span></tt>, or
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_2D_MULTISAMPLE</span></tt>. For <tt class="xref c c-func docutils literal"><span class="pre">glFramebufferTexture3D()</span></tt>, if <em>texture</em> is
+not zero, then <em>textarget</em> must be <tt class="docutils literal"><span class="pre">GL_TEXTURE_3D</span></tt>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><a class="reference internal" href="#glFramebufferTexture" title="glFramebufferTexture"><tt class="xref c c-func docutils literal"><span class="pre">glFramebufferTexture()</span></tt></a> is available only if the GL version is 3.2 or greater.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>target</em> is not one of the accepted tokens.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>renderbuffertarget</em> is not <tt class="docutils literal"><span class="pre">GL_RENDERBUFFER</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if zero is bound to <em>target</em>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <em>textarget</em> and <em>texture</em> are not compatible.</li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)2010 Khronos Group. Open Publication License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glFramebufferRenderbuffer.html"
+                        title="previous chapter">function <cite>glFramebufferRenderbuffer</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glFramebufferTextureLayer.html"
+                        title="next chapter">function <cite>glFramebufferTextureLayer</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glFramebufferTexture.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glFramebufferTextureLayer.html" title="function glFramebufferTextureLayer"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glFramebufferRenderbuffer.html" title="function glFramebufferRenderbuffer"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,225 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glSelectBuffer &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function glSeparableFilter2D" href="glSeparableFilter2D.html" />
+    <link rel="prev" title="function glSecondaryColorPointer" href="glSecondaryColorPointer.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glSeparableFilter2D.html" title="function glSeparableFilter2D"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glSecondaryColorPointer.html" title="function glSecondaryColorPointer"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glselectbuffer">
+<h1>function <cite>glSelectBuffer</cite><a class="headerlink" href="#function-glselectbuffer" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Establish a buffer for selection mode values</p>
+<dl class="function">
+<dt id="glSelectBuffer">
+<tt class="descname">glSelectBuffer</tt><big>(</big><big>)</big><a class="headerlink" href="#glSelectBuffer" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>size</strong> &#8211; Specifies the size of <em>buffer</em>.</li>
+<li><strong>buffer</strong> &#8211; Returns the selection data.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glSelectBuffer</tt><big>(</big>GLsizei <em>&nbsp;size</em>, GLuint * <em>&nbsp;buffer</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glFeedbackBuffer.html#glFeedbackBuffer" title="glFeedbackBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glFeedbackBuffer()</span></tt></a>,
+<a class="reference internal" href="glInitNames.html#glInitNames" title="glInitNames"><tt class="xref c c-func docutils literal"><span class="pre">glInitNames()</span></tt></a>,
+<a class="reference internal" href="glLoadName.html#glLoadName" title="glLoadName"><tt class="xref c c-func docutils literal"><span class="pre">glLoadName()</span></tt></a>,
+<a class="reference internal" href="glPushName.html#glPushName" title="glPushName"><tt class="xref c c-func docutils literal"><span class="pre">glPushName()</span></tt></a>,
+<a class="reference internal" href="glRenderMode.html#glRenderMode" title="glRenderMode"><tt class="xref c c-func docutils literal"><span class="pre">glRenderMode()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glSelectBuffer" title="glSelectBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glSelectBuffer()</span></tt></a> has two arguments:
+<em>buffer</em> is a pointer to an array of unsigned integers,
+and <em>size</em> indicates the size of the array.
+<em>buffer</em> returns values from the name stack
+(see <a class="reference internal" href="glInitNames.html#glInitNames" title="glInitNames"><tt class="xref c c-func docutils literal"><span class="pre">glInitNames()</span></tt></a>, <a class="reference internal" href="glLoadName.html#glLoadName" title="glLoadName"><tt class="xref c c-func docutils literal"><span class="pre">glLoadName()</span></tt></a>, <a class="reference internal" href="glPushName.html#glPushName" title="glPushName"><tt class="xref c c-func docutils literal"><span class="pre">glPushName()</span></tt></a>)
+when the rendering mode is <tt class="docutils literal"><span class="pre">GL_SELECT</span></tt> (see <a class="reference internal" href="glRenderMode.html#glRenderMode" title="glRenderMode"><tt class="xref c c-func docutils literal"><span class="pre">glRenderMode()</span></tt></a>).
+<a class="reference internal" href="#glSelectBuffer" title="glSelectBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glSelectBuffer()</span></tt></a> must be issued before selection mode is enabled,
+and it must not be issued while the rendering mode is <tt class="docutils literal"><span class="pre">GL_SELECT</span></tt>.</p>
+<p>A programmer can use selection to determine which primitives
+are drawn into some region of a window.
+The region is defined by the current modelview and perspective matrices.</p>
+<p>In selection mode, no pixel fragments are produced from rasterization.
+Instead,
+if a primitive or a raster position intersects the clipping
+volume defined by the viewing frustum
+and the user-defined clipping planes,
+this primitive causes a selection hit.
+(With polygons, no hit occurs if the polygon is culled.)
+When a change is made to the name stack,
+or when <a class="reference internal" href="glRenderMode.html#glRenderMode" title="glRenderMode"><tt class="xref c c-func docutils literal"><span class="pre">glRenderMode()</span></tt></a> is called,
+a hit record is copied to <em>buffer</em> if any hits have occurred since the
+last such event
+(name stack change or
+<a class="reference internal" href="glRenderMode.html#glRenderMode" title="glRenderMode"><tt class="xref c c-func docutils literal"><span class="pre">glRenderMode()</span></tt></a> call).
+The hit record consists of the number of names in the name stack at the
+time of the event, followed by the minimum and maximum depth values
+of all vertices that hit since the previous event,
+followed by the name stack contents,
+bottom name first.</p>
+<p>Depth values (which are in the range [0,1]) are multiplied by
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mn>32</mn></msup><mo>-</mo><mn>1</mn></mrow></math></span>,
+before being placed in the hit record.</p>
+<p>An internal index into <em>buffer</em> is reset to 0 whenever selection mode
+is entered.
+Each time a hit record is copied into <em>buffer</em>,
+the index is incremented to point to the cell just past the end
+of the block of names(emthat is, to the next available cell
+If the hit record is larger than the number of remaining locations in <em>buffer</em>,
+as much data as can fit is copied,
+and the overflow flag is set.
+If the name stack is empty when a hit record is copied,
+that record consists of 0 followed by the minimum and maximum depth values.</p>
+<p>To exit selection mode, call <a class="reference internal" href="glRenderMode.html#glRenderMode" title="glRenderMode"><tt class="xref c c-func docutils literal"><span class="pre">glRenderMode()</span></tt></a> with an argument
+other than <tt class="docutils literal"><span class="pre">GL_SELECT</span></tt>.
+Whenever <a class="reference internal" href="glRenderMode.html#glRenderMode" title="glRenderMode"><tt class="xref c c-func docutils literal"><span class="pre">glRenderMode()</span></tt></a> is called while the render mode is <tt class="docutils literal"><span class="pre">GL_SELECT</span></tt>,
+it returns the number of hit records copied to <em>buffer</em>,
+resets the overflow flag and the selection buffer pointer,
+and initializes the name stack to be empty.
+If the overflow bit was set when <a class="reference internal" href="glRenderMode.html#glRenderMode" title="glRenderMode"><tt class="xref c c-func docutils literal"><span class="pre">glRenderMode()</span></tt></a> was called,
+a negative hit record count is returned.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The contents of <em>buffer</em> is undefined until <a class="reference internal" href="glRenderMode.html#glRenderMode" title="glRenderMode"><tt class="xref c c-func docutils literal"><span class="pre">glRenderMode()</span></tt></a> is called
+with an argument other than <tt class="docutils literal"><span class="pre">GL_SELECT</span></tt>.</p>
+<p class="last"><a class="reference internal" href="glBegin.html#glBegin" title="glBegin"><tt class="xref c c-func docutils literal"><span class="pre">glBegin()</span></tt></a> / <a class="reference internal" href="glBegin.html#glEnd" title="glEnd"><tt class="xref c c-func docutils literal"><span class="pre">glEnd()</span></tt></a> primitives and calls to <a class="reference internal" href="glRasterPos.html#glRasterPos" title="glRasterPos"><tt class="xref c c-func docutils literal"><span class="pre">glRasterPos()</span></tt></a>
+can result in hits. <a class="reference internal" href="glWindowPos.html#glWindowPos" title="glWindowPos"><tt class="xref c c-func docutils literal"><span class="pre">glWindowPos()</span></tt></a> will always generate a selection hit.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>size</em> is negative.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <a class="reference internal" href="#glSelectBuffer" title="glSelectBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glSelectBuffer()</span></tt></a> is called while the render mode is <tt class="docutils literal"><span class="pre">GL_SELECT</span></tt>, or if <a class="reference internal" href="glRenderMode.html#glRenderMode" title="glRenderMode"><tt class="xref c c-func docutils literal"><span class="pre">glRenderMode()</span></tt></a> is called with argument <tt class="docutils literal"><span class="pre">GL_SELECT</span></tt> before <a class="reference internal" href="#glSelectBuffer" title="glSelectBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glSelectBuffer()</span></tt></a> is called at least once.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <a class="reference internal" href="#glSelectBuffer" title="glSelectBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glSelectBuffer()</span></tt></a> is executed between the execution of <a class="reference internal" href="glBegin.html#glBegin" title="glBegin"><tt class="xref c c-func docutils literal"><span class="pre">glBegin()</span></tt></a> and the corresponding execution of <a class="reference internal" href="glBegin.html#glEnd" title="glEnd"><tt class="xref c c-func docutils literal"><span class="pre">glEnd()</span></tt></a>.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_NAME_STACK_DEPTH</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_SELECTION_BUFFER_SIZE</span></tt></li>
+<li><a class="reference internal" href="glGetPointerv.html#glGetPointerv" title="glGetPointerv"><tt class="xref c c-func docutils literal"><span class="pre">glGetPointerv()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_SELECTION_BUFFER_POINTER</span></tt></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glSecondaryColorPointer.html"
+                        title="previous chapter">function <cite>glSecondaryColorPointer</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glSeparableFilter2D.html"
+                        title="next chapter">function <cite>glSeparableFilter2D</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/glSelectBuffer.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glSeparableFilter2D.html" title="function glSeparableFilter2D"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glSecondaryColorPointer.html" title="function glSecondaryColorPointer"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

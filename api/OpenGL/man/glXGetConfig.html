@@ -1,0 +1,281 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glXGetConfig &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function glXGetContextIDEXT" href="glXGetContextIDEXT.html" />
+    <link rel="prev" title="function glXGetClientString" href="glXGetClientString.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glXGetContextIDEXT.html" title="function glXGetContextIDEXT"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glXGetClientString.html" title="function glXGetClientString"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glxgetconfig">
+<h1>function <cite>glXGetConfig</cite><a class="headerlink" href="#function-glxgetconfig" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Return information about GLX visuals</p>
+<dl class="function">
+<dt id="glXGetConfig">
+<tt class="descname">glXGetConfig</tt><big>(</big><big>)</big><a class="headerlink" href="#glXGetConfig" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>dpy</strong> &#8211; Specifies the connection to the X server.</li>
+<li><strong>vis</strong> &#8211; Specifies the visual to be queried.
+It is a pointer to an <tt class="docutils literal"><span class="pre">XVisualInfo</span></tt> structure,
+not a visual ID or a pointer to a <tt class="docutils literal"><span class="pre">Visual</span></tt>.</li>
+<li><strong>attrib</strong> &#8211; Specifies the visual attribute to be returned.</li>
+<li><strong>value</strong> &#8211; Returns the requested value.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+int <tt class="descname">glXGetConfig</tt><big>(</big>Display * <em>&nbsp;dpy</em>, XVisualInfo * <em>&nbsp;vis</em>, int <em>&nbsp;attrib</em>, int * <em>&nbsp;value</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glXChooseVisual.html#glXChooseVisual" title="glXChooseVisual"><tt class="xref c c-func docutils literal"><span class="pre">glXChooseVisual()</span></tt></a>,
+<a class="reference internal" href="glXCreateContext.html#glXCreateContext" title="glXCreateContext"><tt class="xref c c-func docutils literal"><span class="pre">glXCreateContext()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glXGetConfig" title="glXGetConfig"><tt class="xref c c-func docutils literal"><span class="pre">glXGetConfig()</span></tt></a> sets <em>value</em> to the <em>attrib</em> value of windows or GLX pixmaps
+created with respect to <em>vis</em>.
+<a class="reference internal" href="#glXGetConfig" title="glXGetConfig"><tt class="xref c c-func docutils literal"><span class="pre">glXGetConfig()</span></tt></a> returns an error code if it fails for any reason.
+Otherwise, zero is returned.</p>
+<p><em>attrib</em> is one of the following:</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">GLX_USE_GL</span></tt></p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">True</span></tt> if OpenGL rendering is supported by this visual,
+<tt class="docutils literal"><span class="pre">False</span></tt> otherwise.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLX_BUFFER_SIZE</span></tt></p>
+<blockquote>
+<div>Number of bits per color buffer.
+For RGBA visuals, <tt class="docutils literal"><span class="pre">GLX_BUFFER_SIZE</span></tt> is the sum of
+<tt class="docutils literal"><span class="pre">GLX_RED_SIZE</span></tt>,
+<tt class="docutils literal"><span class="pre">GLX_GREEN_SIZE</span></tt>,
+<tt class="docutils literal"><span class="pre">GLX_BLUE_SIZE</span></tt>, and
+<tt class="docutils literal"><span class="pre">GLX_ALPHA_SIZE</span></tt>.
+For color index visuals, <tt class="docutils literal"><span class="pre">GLX_BUFFER_SIZE</span></tt> is the size of the
+color indexes.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLX_LEVEL</span></tt></p>
+<blockquote>
+<div>Frame buffer level of the visual.
+Level zero is the default frame buffer.
+Positive levels correspond to frame buffers that overlay the default buffer,
+and negative levels correspond to frame buffers that underlay the default
+buffer.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLX_RGBA</span></tt></p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">True</span></tt> if color buffers store red, green, blue, and alpha values.
+<tt class="docutils literal"><span class="pre">False</span></tt> if they store color indexes.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLX_DOUBLEBUFFER</span></tt></p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">True</span></tt> if color buffers exist in front/back pairs that can be swapped,
+<tt class="docutils literal"><span class="pre">False</span></tt> otherwise.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLX_STEREO</span></tt></p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">True</span></tt> if color buffers exist in left/right pairs,
+<tt class="docutils literal"><span class="pre">False</span></tt> otherwise.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLX_AUX_BUFFERS</span></tt></p>
+<blockquote>
+<div>Number of auxiliary color buffers that are available.
+Zero indicates that no auxiliary color buffers exist.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLX_RED_SIZE</span></tt></p>
+<blockquote>
+<div>Number of bits of red stored in each color buffer.
+Undefined if <tt class="docutils literal"><span class="pre">GLX_RGBA</span></tt> is <tt class="docutils literal"><span class="pre">False</span></tt>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLX_GREEN_SIZE</span></tt></p>
+<blockquote>
+<div>Number of bits of green stored in each color buffer.
+Undefined if <tt class="docutils literal"><span class="pre">GLX_RGBA</span></tt> is <tt class="docutils literal"><span class="pre">False</span></tt>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLX_BLUE_SIZE</span></tt></p>
+<blockquote>
+<div>Number of bits of blue stored in each color buffer.
+Undefined if <tt class="docutils literal"><span class="pre">GLX_RGBA</span></tt> is <tt class="docutils literal"><span class="pre">False</span></tt>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLX_ALPHA_SIZE</span></tt></p>
+<blockquote>
+<div>Number of bits of alpha stored in each color buffer.
+Undefined if <tt class="docutils literal"><span class="pre">GLX_RGBA</span></tt> is <tt class="docutils literal"><span class="pre">False</span></tt>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLX_DEPTH_SIZE</span></tt></p>
+<blockquote>
+<div>Number of bits in the depth buffer.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLX_STENCIL_SIZE</span></tt></p>
+<blockquote>
+<div>Number of bits in the stencil buffer.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLX_ACCUM_RED_SIZE</span></tt></p>
+<blockquote>
+<div>Number of bits of red stored in the accumulation buffer.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLX_ACCUM_GREEN_SIZE</span></tt></p>
+<blockquote>
+<div>Number of bits of green stored in the accumulation buffer.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLX_ACCUM_BLUE_SIZE</span></tt></p>
+<blockquote>
+<div>Number of bits of blue stored in the accumulation buffer.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLX_ACCUM_ALPHA_SIZE</span></tt></p>
+<blockquote>
+<div>Number of bits of alpha stored in the accumulation buffer.</div></blockquote>
+</div></blockquote>
+<p>The X protocol allows a single visual ID to be instantiated with
+different numbers of bits per pixel.
+Windows or GLX pixmaps that will be rendered with OpenGL, however,
+must be instantiated with a color buffer depth of <tt class="docutils literal"><span class="pre">GLX_BUFFER_SIZE</span></tt>.</p>
+<p>Although a GLX implementation can export many visuals that support GL
+rendering,
+it must support
+at least one RGBA visual. This visual must have at
+least one color buffer,
+a stencil buffer of at least 1 bit,
+a depth buffer of at least 12 bits,
+and an accumulation buffer.
+Alpha bitplanes are optional in this visual.
+However,
+its color buffer size must be as great as that of the
+deepest <tt class="docutils literal"><span class="pre">TrueColor</span></tt>, <tt class="docutils literal"><span class="pre">DirectColor</span></tt>,
+<tt class="docutils literal"><span class="pre">PseudoColor</span></tt>, or <tt class="docutils literal"><span class="pre">StaticColor</span></tt> visual supported on level zero,
+and it must itself be made available on level zero.</p>
+<p>In addition, if the X server exports a <tt class="docutils literal"><span class="pre">PseudoColor</span></tt>
+or <tt class="docutils literal"><span class="pre">StaticColor</span></tt> visual on framebuffer level 0, a color index
+visual is also required on that level.
+It must have
+at least one color buffer,
+a stencil buffer of at least 1 bit,
+and a depth buffer of at least 12 bits.
+This visual must
+have as many
+color bitplanes as the deepest
+<tt class="docutils literal"><span class="pre">PseudoColor</span></tt> or <tt class="docutils literal"><span class="pre">StaticColor</span></tt> visual supported on level 0.</p>
+<p>Applications are best written to select the visual that most closely
+meets their requirements.
+Creating windows or GLX pixmaps with unnecessary buffers can result in
+reduced rendering performance as well as poor resource allocation.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><tt class="docutils literal"><span class="pre">XVisualInfo</span></tt> is defined in <strong>Xutil.h.</strong>
+It is a structure that includes <strong>visual</strong>, <strong>visualID</strong>, <strong>screen</strong>, and
+<strong>depth</strong> elements.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GLX_NO_EXTENSION</span></tt> is returned if <em>dpy</em> does not support the GLX extension.</li>
+<li><tt class="docutils literal"><span class="pre">GLX_BAD_SCREEN</span></tt> is returned if the screen of <em>vis</em> does not correspond to a screen.</li>
+<li><tt class="docutils literal"><span class="pre">GLX_BAD_ATTRIBUTE</span></tt> is returned if <em>attrib</em> is not a valid GLX attribute.</li>
+<li><tt class="docutils literal"><span class="pre">GLX_BAD_VISUAL</span></tt> is returned if <em>vis</em> doesn&#8217;t support GLX and an attribute other than <tt class="docutils literal"><span class="pre">GLX_USE_GL</span></tt> is requested.</li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glXGetClientString.html"
+                        title="previous chapter">function <cite>glXGetClientString</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glXGetContextIDEXT.html"
+                        title="next chapter">function <cite>glXGetContextIDEXT</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/glXGetConfig.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glXGetContextIDEXT.html" title="function glXGetContextIDEXT"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glXGetClientString.html" title="function glXGetClientString"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

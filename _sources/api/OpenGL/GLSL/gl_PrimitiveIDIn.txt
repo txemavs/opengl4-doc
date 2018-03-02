@@ -1,0 +1,46 @@
+.. nabla.opengl-sphinx project
+
+.. ---------------------------
+
+.. this dodument source file 'man/gl_PrimitiveIDIn'is copyrighted by Khronos Group
+   See license details at http://opencontent.org/openpub/
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   
+
+function `gl_PrimitiveIDIn`
+---------------------------
+
+.. currentmodule:: OpenGL.GLSL
+
+Contains the index of the current primitive
+
+.. c:function:: gl_PrimitiveIDIn
+
+
+.. rubric:: Specification
+
+.. c:function:: in int gl_PrimitiveIDIn)
+
+.. seealso::
+
+   
+   :c:func:`gl_InstanceID`
+   
+.. rubric:: Description
+
+
+:c:func:`gl_PrimitiveIDIn` is a geometry language input variable that holds the number of primitives processed by the shader since the current set of rendering primitives was started. The first primitive processed by the drawing command is numbered zero and the primitive ID counter is incremented after every individual point, line or triangle primitive is processed. For triangles drawn in point or line mode, the primitive ID counter is incremented only once, even through multiple points or lines may actually be drawn. Restarting a primitive topology using the primitive restart index has no effect on the primitive ID counter.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2011 Khronos Group. Open Publication License.
+

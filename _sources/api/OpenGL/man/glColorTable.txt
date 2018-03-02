@@ -1,0 +1,380 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:26
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glColorTable.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glColorTable`
+-----------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Define a color lookup table
+
+.. c:function:: glColorTable
+
+
+         :param target:
+
+                  Must be one of
+                  ``GL_COLOR_TABLE``\ ,
+                  ``GL_POST_CONVOLUTION_COLOR_TABLE``\ ,
+                  ``GL_POST_COLOR_MATRIX_COLOR_TABLE``\ ,
+                  ``GL_PROXY_COLOR_TABLE``\ ,
+                  ``GL_PROXY_POST_CONVOLUTION_COLOR_TABLE``\ ,
+                  or
+                  ``GL_PROXY_POST_COLOR_MATRIX_COLOR_TABLE``\ .
+
+         :param internalformat:
+
+                  The internal format of the color table.
+                  The allowable values are
+                  ``GL_ALPHA``\ ,
+                  ``GL_ALPHA4``\ ,
+                  ``GL_ALPHA8``\ ,
+                  ``GL_ALPHA12``\ ,
+                  ``GL_ALPHA16``\ ,
+                  ``GL_LUMINANCE``\ ,
+                  ``GL_LUMINANCE4``\ ,
+                  ``GL_LUMINANCE8``\ ,
+                  ``GL_LUMINANCE12``\ ,
+                  ``GL_LUMINANCE16``\ ,
+                  ``GL_LUMINANCE_ALPHA``\ ,
+                  ``GL_LUMINANCE4_ALPHA4``\ ,
+                  ``GL_LUMINANCE6_ALPHA2``\ ,
+                  ``GL_LUMINANCE8_ALPHA8``\ ,
+                  ``GL_LUMINANCE12_ALPHA4``\ ,
+                  ``GL_LUMINANCE12_ALPHA12``\ ,
+                  ``GL_LUMINANCE16_ALPHA16``\ ,
+                  ``GL_INTENSITY``\ ,
+                  ``GL_INTENSITY4``\ ,
+                  ``GL_INTENSITY8``\ ,
+                  ``GL_INTENSITY12``\ ,
+                  ``GL_INTENSITY16``\ ,
+                  ``GL_R3_G3_B2``\ ,
+                  ``GL_RGB``\ ,
+                  ``GL_RGB4``\ ,
+                  ``GL_RGB5``\ ,
+                  ``GL_RGB8``\ ,
+                  ``GL_RGB10``\ ,
+                  ``GL_RGB12``\ ,
+                  ``GL_RGB16``\ ,
+                  ``GL_RGBA``\ ,
+                  ``GL_RGBA2``\ ,
+                  ``GL_RGBA4``\ ,
+                  ``GL_RGB5_A1``\ ,
+                  ``GL_RGBA8``\ ,
+                  ``GL_RGB10_A2``\ ,
+                  ``GL_RGBA12``\ , and
+                  ``GL_RGBA16``\ .
+
+         :param width:
+
+                  The number of entries in the color lookup table specified by *data*\ .
+
+         :param format:
+
+                  The format of the pixel data in *data*\ .
+                  The allowable values are
+                  ``GL_RED``\ ,
+                  ``GL_GREEN``\ ,
+                  ``GL_BLUE``\ ,
+                  ``GL_ALPHA``\ ,
+                  ``GL_LUMINANCE``\ ,
+                  ``GL_LUMINANCE_ALPHA``\ ,
+                  ``GL_RGB``\ ,
+                  ``GL_BGR``\ ,
+                  ``GL_RGBA``\ , and
+                  ``GL_BGRA``\ .
+
+         :param type:
+
+                  The type of the pixel data in *data*\ .
+                  The allowable values are
+                  ``GL_UNSIGNED_BYTE``\ ,
+                  ``GL_BYTE``\ ,
+                  ``GL_UNSIGNED_SHORT``\ ,
+                  ``GL_SHORT``\ ,
+                  ``GL_UNSIGNED_INT``\ ,
+                  ``GL_INT``\ ,
+                  ``GL_FLOAT``\ ,
+                  ``GL_UNSIGNED_BYTE_3_3_2``\ ,
+                  ``GL_UNSIGNED_BYTE_2_3_3_REV``\ ,
+                  ``GL_UNSIGNED_SHORT_5_6_5``\ ,
+                  ``GL_UNSIGNED_SHORT_5_6_5_REV``\ ,
+                  ``GL_UNSIGNED_SHORT_4_4_4_4``\ ,
+                  ``GL_UNSIGNED_SHORT_4_4_4_4_REV``\ ,
+                  ``GL_UNSIGNED_SHORT_5_5_5_1``\ ,
+                  ``GL_UNSIGNED_SHORT_1_5_5_5_REV``\ ,
+                  ``GL_UNSIGNED_INT_8_8_8_8``\ ,
+                  ``GL_UNSIGNED_INT_8_8_8_8_REV``\ ,
+                  ``GL_UNSIGNED_INT_10_10_10_2``\ , and
+                  ``GL_UNSIGNED_INT_2_10_10_10_REV``\ .
+
+         :param data:
+
+                  Pointer to a one-dimensional array of pixel data that is processed to
+                  build the color table.
+
+.. rubric:: Specification
+
+.. c:function:: void glColorTable(GLenum  target, GLenum  internalformat, GLsizei  width, GLenum  format, GLenum  type, const GLvoid *  data)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glColorSubTable`\ ,
+            :c:func:`glColorTableParameter`\ ,
+            :c:func:`glCopyColorTable`\ ,
+            :c:func:`glCopyColorSubTable`\ ,
+            :c:func:`glGetColorTable`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glColorTable` may be used in two ways:
+to test the actual size and color resolution of a lookup table
+given a particular set of parameters,
+or to load the contents of a color lookup
+table.
+Use the targets ``GL_PROXY_\*`` for the first case
+and the other targets for the second case.
+
+
+If a non-zero named buffer object is bound to the ``GL_PIXEL_UNPACK_BUFFER`` target
+(see :c:func:`glBindBuffer`\ ) while a color table is
+specified, *data* is treated as a byte offset into the buffer object's data store.
+
+
+If *target* is ``GL_COLOR_TABLE``\ ,
+``GL_POST_CONVOLUTION_COLOR_TABLE``\ ,
+or
+``GL_POST_COLOR_MATRIX_COLOR_TABLE``\ ,
+:c:func:`glColorTable` builds a color lookup table from an array of pixels.
+The pixel array specified by *width*\ , *format*\ , *type*\ , and *data*
+is extracted from memory and
+processed just as if :c:func:`glDrawPixels` were called, but processing
+stops after the final expansion to RGBA is completed.
+
+
+The four scale parameters and the four bias parameters that are defined
+for the table are then used to scale and bias the R, G, B, and A components
+of each pixel.
+(Use :c:func:`glColorTableParameter` to set these scale and bias
+parameters.)
+
+
+Next, the R, G, B, and A values are clamped to the range
+|EQUATION_1_|\ .
+Each pixel is then converted to the internal format specified by
+*internalformat*\ .
+This conversion simply maps the component values of the pixel (R, G, B,
+and A) to the values included in the internal format (red, green, blue,
+alpha, luminance, and intensity).  The mapping is as follows:
+
+
++---------------------------+---------------+-----------------+----------------+-----------------+---------------------+---------------------+
+| :strong:`Internal Format` | :strong:`Red` | :strong:`Green` | :strong:`Blue` | :strong:`Alpha` | :strong:`Luminance` | :strong:`Intensity` |
++---------------------------+---------------+-----------------+----------------+-----------------+---------------------+---------------------+
+| ``GL_ALPHA``              |               |                 |                | A               |                     |                     |
++---------------------------+---------------+-----------------+----------------+-----------------+---------------------+---------------------+
+| ``GL_LUMINANCE``          |               |                 |                |                 | R                   |                     |
++---------------------------+---------------+-----------------+----------------+-----------------+---------------------+---------------------+
+| ``GL_LUMINANCE_ALPHA``    |               |                 |                | A               | R                   |                     |
++---------------------------+---------------+-----------------+----------------+-----------------+---------------------+---------------------+
+| ``GL_INTENSITY``          |               |                 |                |                 |                     | R                   |
++---------------------------+---------------+-----------------+----------------+-----------------+---------------------+---------------------+
+| ``GL_RGB``                | R             | G               | B              |                 |                     |                     |
++---------------------------+---------------+-----------------+----------------+-----------------+---------------------+---------------------+
+| ``GL_RGBA``               | R             | G               | B              | A               |                     |                     |
++---------------------------+---------------+-----------------+----------------+-----------------+---------------------+---------------------+
+
+
+Finally, the red, green, blue, alpha, luminance, and/or intensity components of
+the resulting pixels are stored in the color table.
+They form a one-dimensional table with indices in the range
+|EQUATION_2_|\ .
+
+
+If *target* is ``GL_PROXY_\*``\ ,
+:c:func:`glColorTable` recomputes and stores the values of the proxy color table's state
+variables
+``GL_COLOR_TABLE_FORMAT``\ ,
+``GL_COLOR_TABLE_WIDTH``\ ,
+``GL_COLOR_TABLE_RED_SIZE``\ ,
+``GL_COLOR_TABLE_GREEN_SIZE``\ ,
+``GL_COLOR_TABLE_BLUE_SIZE``\ ,
+``GL_COLOR_TABLE_ALPHA_SIZE``\ ,
+``GL_COLOR_TABLE_LUMINANCE_SIZE``\ , and
+``GL_COLOR_TABLE_INTENSITY_SIZE``\ .
+There is no effect on the image or state of any actual color table.
+If the specified color table is too large to be supported, then all the
+proxy state variables listed above are set to zero.
+Otherwise, the color table could be supported by :c:func:`glColorTable`
+using the corresponding non-proxy target,
+and the proxy state variables are set as if that target were being defined.
+
+
+The proxy state variables can be retrieved by calling
+:c:func:`glGetColorTableParameter` with a target of
+``GL_PROXY_\*``\ .
+This allows the application to decide if a particular :c:func:`glColorTable`
+command would succeed, and to determine what the resulting color table
+attributes would be.
+
+
+If a color table is enabled, and its width is non-zero, then its
+contents are used to replace a subset of the components of each RGBA
+pixel group, based on the internal format of the table.
+
+
+Each pixel group has color components (R, G, B, A)
+that are in the range
+|EQUATION_3_|\ .
+The color components are rescaled to
+the size of the color lookup table to form an index.
+Then a subset of the components based on the internal format of the table are
+replaced by the table entry selected by that index.
+If the color components and contents of the table are represented as follows:
+
+
++--------------------------+--------------------------------------+
+| :strong:`Representation` | :strong:`Meaning`                    |
++--------------------------+--------------------------------------+
+| ``r``                    | Table index computed from ``R``      |
++--------------------------+--------------------------------------+
+| ``g``                    | Table index computed from ``G``      |
++--------------------------+--------------------------------------+
+| ``b``                    | Table index computed from ``B``      |
++--------------------------+--------------------------------------+
+| ``a``                    | Table index computed from ``A``      |
++--------------------------+--------------------------------------+
+| ``L[i]``                 | Luminance value at table index ``i`` |
++--------------------------+--------------------------------------+
+| ``I[i]``                 | Intensity value at table index ``i`` |
++--------------------------+--------------------------------------+
+| ``R[i]``                 | Red value at table index ``i``       |
++--------------------------+--------------------------------------+
+| ``G[i]``                 | Green value at table index ``i``     |
++--------------------------+--------------------------------------+
+| ``B[i]``                 | Blue value at table index ``i``      |
++--------------------------+--------------------------------------+
+| ``A[i]``                 | Alpha value at table index ``i``     |
++--------------------------+--------------------------------------+
+
+
+then the result of color table lookup is as follows:
+
+
++---------------------------------+-------------------------+-------------------------+-------------------------+-------------------------+
+| :strong:``                      | :strong:`Resulting Texture Components`                                                                |
++---------------------------------+-------------------------+-------------------------+-------------------------+-------------------------+
+| :strong:`Table Internal Format` | :strong:`R`             | :strong:`G`             | :strong:`B`             | :strong:`A`             |
++---------------------------------+-------------------------+-------------------------+-------------------------+-------------------------+
+| ``GL_ALPHA``                    | ``R``                   | ``G``                   | ``B``                   | ``A[a]``                |
++---------------------------------+-------------------------+-------------------------+-------------------------+-------------------------+
+| ``GL_LUMINANCE``                | ``L[r]``                | ``L[g]``                | ``L[b]``                | ``At``                  |
++---------------------------------+-------------------------+-------------------------+-------------------------+-------------------------+
+| ``GL_LUMINANCE_ALPHA``          | ``L[r]``                | ``L[g]``                | ``L[b]``                | ``A[a]``                |
++---------------------------------+-------------------------+-------------------------+-------------------------+-------------------------+
+| ``GL_INTENSITY``                | ``I[r]``                | ``I[g]``                | ``I[b]``                | ``I[a]``                |
++---------------------------------+-------------------------+-------------------------+-------------------------+-------------------------+
+| ``GL_RGB``                      | ``R[r]``                | ``G[g]``                | ``B[b]``                | ``A``                   |
++---------------------------------+-------------------------+-------------------------+-------------------------+-------------------------+
+| ``GL_RGBA``                     | ``R[r]``                | ``G[g]``                | ``B[b]``                | ``A[a]``                |
++---------------------------------+-------------------------+-------------------------+-------------------------+-------------------------+
+
+
+When ``GL_COLOR_TABLE`` is enabled, the colors resulting from
+the pixel map operation (if it is enabled) are mapped
+by the color lookup table before being passed to the convolution
+operation. The colors resulting from the convolution operation
+are modified by the post convolution color lookup table when
+``GL_POST_CONVOLUTION_COLOR_TABLE``
+is enabled. These modified colors are then sent to the color matrix operation.
+Finally, if ``GL_POST_COLOR_MATRIX_COLOR_TABLE``
+is enabled, the colors resulting from the color matrix operation
+are mapped by the post color matrix color lookup table before being
+used by the histogram operation.
+
+
+.. note::
+
+
+   :c:func:`glColorTable` is present only if ``ARB_imaging`` is returned when :c:func:`glGetString`
+   is called with an argument of ``GL_EXTENSIONS``\ .
+
+
+   If *target* is set to ``GL_COLOR_TABLE``\ ,
+   ``GL_POST_CONVOLUTION_COLOR_TABLE``\ ,
+   or ``GL_POST_COLOR_MATRIX_COLOR_TABLE``\ ,
+   then *width* must be a power of two or a ``GL_INVALID_VALUE``
+   error is generated.
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_ENUM`` is generated if *target* is not one of the allowable values.
+* ``GL_INVALID_ENUM`` is generated if *internalformat* is not one of the allowable values.
+* ``GL_INVALID_ENUM`` is generated if *format* is not one of the allowable values.
+* ``GL_INVALID_ENUM`` is generated if *type* is not one of the allowable values.
+* ``GL_INVALID_VALUE`` is generated if *width* is less than zero.
+* ``GL_TABLE_TOO_LARGE`` is generated if the requested color table is too large to be supported by the implementation, and *target* is not a ``GL_PROXY_\*`` target.
+* ``GL_INVALID_OPERATION`` is generated if a non-zero buffer object name is bound to the ``GL_PIXEL_UNPACK_BUFFER`` target and the buffer object's data store is currently mapped.
+* ``GL_INVALID_OPERATION`` is generated if a non-zero buffer object name is bound to the ``GL_PIXEL_UNPACK_BUFFER`` target and the data would be unpacked from the buffer object such that the memory reads required would exceed the data store size.
+* ``GL_INVALID_OPERATION`` is generated if a non-zero buffer object name is bound to the ``GL_PIXEL_UNPACK_BUFFER`` target and *data* is not evenly divisible into the number of bytes needed to store in memory a datum indicated by *type*\ .
+* ``GL_INVALID_OPERATION`` is generated if :c:func:`glColorTable` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`\ .
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGetColorTableParameter`
+* :c:func:`glGet` with argument ``GL_PIXEL_UNPACK_BUFFER_BINDING``
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glColorTable'>
+
+.. role:: mml(raw)
+   :format: html
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"><mn>0</mn><mn>1</mn></mfenced></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"><mn>0</mn><mrow><mi mathvariant="italic">width</mi><mo>-</mo><mn>1</mn></mrow></mfenced></math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"><mn>0.0</mn><mn>1.0</mn></mfenced></math>` 
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

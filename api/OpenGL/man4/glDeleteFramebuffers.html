@@ -1,0 +1,164 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glDeleteFramebuffers &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glDeleteProgram" href="glDeleteProgram.html" />
+    <link rel="prev" title="function glDeleteBuffers" href="glDeleteBuffers.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glDeleteProgram.html" title="function glDeleteProgram"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glDeleteBuffers.html" title="function glDeleteBuffers"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-gldeleteframebuffers">
+<h1>function <cite>glDeleteFramebuffers</cite><a class="headerlink" href="#function-gldeleteframebuffers" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Delete framebuffer objects</p>
+<dl class="function">
+<dt id="glDeleteFramebuffers">
+<tt class="descname">glDeleteFramebuffers</tt><big>(</big><big>)</big><a class="headerlink" href="#glDeleteFramebuffers" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>n</strong> &#8211; Specifies the number of framebuffer objects to be deleted.</li>
+<li><strong>framebuffers</strong> &#8211; A pointer to an array containing <em>n</em> framebuffer objects to be deleted.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glDeleteFramebuffers</tt><big>(</big>GLsizei <em>&nbsp;n</em>, GLuint *<em>&nbsp;framebuffers</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glGenFramebuffers.html#glGenFramebuffers" title="glGenFramebuffers"><tt class="xref c c-func docutils literal"><span class="pre">glGenFramebuffers()</span></tt></a>,
+<a class="reference internal" href="glBindFramebuffer.html#glBindFramebuffer" title="glBindFramebuffer"><tt class="xref c c-func docutils literal"><span class="pre">glBindFramebuffer()</span></tt></a>,
+<a class="reference internal" href="glCheckFramebufferStatus.html#glCheckFramebufferStatus" title="glCheckFramebufferStatus"><tt class="xref c c-func docutils literal"><span class="pre">glCheckFramebufferStatus()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glDeleteFramebuffers" title="glDeleteFramebuffers"><tt class="xref c c-func docutils literal"><span class="pre">glDeleteFramebuffers()</span></tt></a> deletes the <em>n</em> framebuffer objects whose names are stored in
+the array addressed by <em>framebuffers</em>. The name zero is reserved by the GL and is silently ignored, should it
+occur in <em>framebuffers</em>, as are other unused names. Once a framebuffer object is deleted, its name is again
+unused and it has no attachments. If a framebuffer that is currently bound to one or more of the targets <tt class="docutils literal"><span class="pre">GL_DRAW_FRAMEBUFFER</span></tt>
+or <tt class="docutils literal"><span class="pre">GL_READ_FRAMEBUFFER</span></tt> is deleted, it is as though <a class="reference internal" href="glBindFramebuffer.html#glBindFramebuffer" title="glBindFramebuffer"><tt class="xref c c-func docutils literal"><span class="pre">glBindFramebuffer()</span></tt></a>
+had been executed with the corresponding <em>target</em> and <em>framebuffer</em> zero.</p>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>n</em> is negative.</li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)2010 Khronos Group. Open Publication License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glDeleteBuffers.html"
+                        title="previous chapter">function <cite>glDeleteBuffers</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glDeleteProgram.html"
+                        title="next chapter">function <cite>glDeleteProgram</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glDeleteFramebuffers.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glDeleteProgram.html" title="function glDeleteProgram"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glDeleteBuffers.html" title="function glDeleteBuffers"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glIndexMask`
+----------------------
+
+.. source file man/glIndexMask
+
+.. currentmodule:: OpenGL.GL
+
+Control the writing of individual bits in the color index buffers
+
+.. c:function:: glIndexMask
+.. c:function:: void glIndexMask(GLuint  mask)
+   :noindex: 
+
+
+   
+   :param mask:
+      Specifies a bit mask to enable and disable the writing of individual bits in the color index buffers. Initially, the mask is all 1's.
+   
+
+.. seealso::
+
+   
+   :c:func:`glColorMask`, :c:func:`glDepthMask`, :c:func:`glDrawBuffer`, :c:func:`glIndex`, :c:func:`glIndexPointer`, :c:func:`glStencilMask`
+   
+.. rubric:: Description
+
+
+:c:func:`glIndexMask` controls the writing of individual bits in the color index buffers. The least significant |EQUATION_1_| bits of *mask* , where |EQUATION_2_| is the number of bits in a color index buffer, specify a mask. Where a 1 (one) appears in the mask, it's possible to write to the corresponding bit in the color index buffer (or buffers). Where a 0 (zero) appears, the corresponding bit is write-protected.
+
+This mask is used only in color index mode, and it affects only the buffers currently selected for writing (see :c:func:`glDrawBuffer`). Initially, all bits are enabled for writing.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGet` with argument ``GL_INDEX_WRITEMASK``
+
+**Errors:**
+
+   * ``GL_INVALID_OPERATION`` is generated if :c:func:`glIndexMask` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`.
+
+
+.. role:: mml(raw)
+   :format: html
+
+
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math>` 
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

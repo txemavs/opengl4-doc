@@ -1,0 +1,206 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glGetTexGen &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function glHistogram" href="glHistogram.html" />
+    <link rel="prev" title="function glGetTexEnv" href="glGetTexEnv.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glHistogram.html" title="function glHistogram"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glGetTexEnv.html" title="function glGetTexEnv"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glgettexgen">
+<h1>function <cite>glGetTexGen</cite><a class="headerlink" href="#function-glgettexgen" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Return texture coordinate generation parameters</p>
+<dl class="function">
+<dt id="glGetTexGen">
+<tt class="descname">glGetTexGen</tt><big>(</big><big>)</big><a class="headerlink" href="#glGetTexGen" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>coord</strong> &#8211; Specifies a texture coordinate.
+Must be
+<tt class="docutils literal"><span class="pre">GL_S</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_T</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_R</span></tt>, or
+<tt class="docutils literal"><span class="pre">GL_Q</span></tt>.</li>
+<li><strong>pname</strong> &#8211; Specifies the symbolic name of the value(s) to be returned.
+Must be either <tt class="docutils literal"><span class="pre">GL_TEXTURE_GEN_MODE</span></tt>
+or the name of one of the texture generation plane equations:
+<tt class="docutils literal"><span class="pre">GL_OBJECT_PLANE</span></tt> or <tt class="docutils literal"><span class="pre">GL_EYE_PLANE</span></tt>.</li>
+<li><strong>params</strong> &#8211; Returns the requested data.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt id="glGetTexGendv">
+void <tt class="descname">glGetTexGendv</tt><big>(</big>GLenum <em>&nbsp;coord</em>, GLenum <em>&nbsp;pname</em>, GLdouble * <em>&nbsp;params</em>, GLenum <em>&nbsp;coord</em>, GLenum <em>&nbsp;pname</em>, GLfloat * <em>&nbsp;params</em>, GLenum <em>&nbsp;coord</em>, GLenum <em>&nbsp;pname</em>, GLint * <em>&nbsp;params</em><big>)</big><a class="headerlink" href="#glGetTexGendv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="../man4/glActiveTexture.html#glActiveTexture" title="glActiveTexture"><tt class="xref c c-func docutils literal"><span class="pre">glActiveTexture()</span></tt></a>,
+<a class="reference internal" href="glTexGen.html#glTexGen" title="glTexGen"><tt class="xref c c-func docutils literal"><span class="pre">glTexGen()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glGetTexGen" title="glGetTexGen"><tt class="xref c c-func docutils literal"><span class="pre">glGetTexGen()</span></tt></a> returns in <em>params</em> selected parameters of a texture coordinate
+generation function that was specified using <a class="reference internal" href="glTexGen.html#glTexGen" title="glTexGen"><tt class="xref c c-func docutils literal"><span class="pre">glTexGen()</span></tt></a>.
+<em>coord</em> names one of the (<strong>s</strong>, <strong>t</strong>, <strong>r</strong>, <strong>q</strong>)
+texture coordinates,
+using the symbolic constant
+<tt class="docutils literal"><span class="pre">GL_S</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_T</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_R</span></tt>, or
+<tt class="docutils literal"><span class="pre">GL_Q</span></tt>.</p>
+<p><em>pname</em> specifies one of three symbolic names:</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">GL_TEXTURE_GEN_MODE</span></tt></p>
+<blockquote>
+<div><em>params</em> returns the single-valued texture generation function,
+a symbolic constant. The initial value is <tt class="docutils literal"><span class="pre">GL_EYE_LINEAR</span></tt>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_OBJECT_PLANE</span></tt></p>
+<blockquote>
+<div><em>params</em> returns the four plane equation coefficients that specify
+object linear-coordinate generation.
+Integer values, when requested,
+are mapped directly from the internal floating-point representation.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_EYE_PLANE</span></tt></p>
+<blockquote>
+<div><em>params</em> returns the four plane equation coefficients that specify
+eye linear-coordinate generation.
+Integer values,
+when requested,
+are mapped directly from the internal floating-point representation.
+The returned values are those maintained in eye coordinates.
+They are not equal to the values specified using <a class="reference internal" href="glTexGen.html#glTexGen" title="glTexGen"><tt class="xref c c-func docutils literal"><span class="pre">glTexGen()</span></tt></a>,
+unless the modelview matrix was identity when <a class="reference internal" href="glTexGen.html#glTexGen" title="glTexGen"><tt class="xref c c-func docutils literal"><span class="pre">glTexGen()</span></tt></a> was called.</div></blockquote>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>If an error is generated,
+no change is made to the contents of <em>params</em>.</p>
+<p class="last">For OpenGL versions 1.3 and greater, or when the <tt class="docutils literal"><span class="pre">ARB_multitexture</span></tt> extension is supported, <a class="reference internal" href="#glGetTexGen" title="glGetTexGen"><tt class="xref c c-func docutils literal"><span class="pre">glGetTexGen()</span></tt></a> returns
+the texture coordinate generation parameters for the active texture unit.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>coord</em> or <em>pname</em> is not an accepted value.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <a class="reference internal" href="#glGetTexGen" title="glGetTexGen"><tt class="xref c c-func docutils literal"><span class="pre">glGetTexGen()</span></tt></a> is executed between the execution of <a class="reference internal" href="glBegin.html#glBegin" title="glBegin"><tt class="xref c c-func docutils literal"><span class="pre">glBegin()</span></tt></a> and the corresponding execution of <a class="reference internal" href="glBegin.html#glEnd" title="glEnd"><tt class="xref c c-func docutils literal"><span class="pre">glEnd()</span></tt></a>.</li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glGetTexEnv.html"
+                        title="previous chapter">function <cite>glGetTexEnv</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glHistogram.html"
+                        title="next chapter">function <cite>glHistogram</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/glGetTexGen.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glHistogram.html" title="function glHistogram"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glGetTexEnv.html" title="function glGetTexEnv"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

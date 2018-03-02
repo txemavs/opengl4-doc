@@ -1,0 +1,54 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glDeleteSync`
+-----------------------
+
+.. source file man4/glDeleteSync
+
+.. currentmodule:: OpenGL.GL
+
+Delete a sync object
+
+.. c:function:: glDeleteSync
+.. c:function:: void glDeleteSync(GLsync  sync)
+   :noindex: 
+
+
+   
+   :param sync:
+      The sync object to be deleted.
+   
+
+.. seealso::
+
+   
+   :c:func:`glFenceSync`, :c:func:`glWaitSync`, :c:func:`glClientWaitSync`
+   
+.. rubric:: Description
+
+
+:c:func:`glDeleteSync` deletes the sync object specified by *sync* . If the fence command corresponding to the specified sync object has completed, or if no :c:func:`glWaitSync` or :c:func:`glClientWaitSync` commands are blocking on *sync* , the object is deleted immediately. Otherwise, *sync* is flagged for deletion and will be deleted when it is no longer associated with any fence command and is no longer blocking any :c:func:`glWaitSync` or :c:func:`glClientWaitSync` command. In either case, after :c:func:`glDeleteSync` returns, the name *sync* is invalid and can no longer be used to refer to the sync object.
+
+:c:func:`glDeleteSync` will silently ignore a *sync* value of zero.
+
+
+**Errors:**
+
+   * ``GL_INVALID_VALUE`` is generated if *sync* is neither zero or the name of a sync object.
+
+
+
+.. note::
+
+   * :c:func:`glSync` is only supported if the GL version is 3.2 or greater, or if the ``ARB_sync`` extension is supported.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

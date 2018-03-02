@@ -1,0 +1,699 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:26
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glDrawPixels.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glDrawPixels`
+-----------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Write a block of pixels to the frame buffer
+
+.. c:function:: glDrawPixels
+
+
+         :param width:
+         :param height:
+
+                  Specify the dimensions of the pixel rectangle to be written
+                  into the frame buffer.
+
+         :param format:
+
+                  Specifies the format of the pixel data.
+                  Symbolic constants
+                  ``GL_COLOR_INDEX``\ ,
+                  ``GL_STENCIL_INDEX``\ ,
+                  ``GL_DEPTH_COMPONENT``\ ,
+                  ``GL_RGB``\ ,
+                  ``GL_BGR``\ ,
+                  ``GL_RGBA``\ ,
+                  ``GL_BGRA``\ ,
+                  ``GL_RED``\ ,
+                  ``GL_GREEN``\ ,
+                  ``GL_BLUE``\ ,
+                  ``GL_ALPHA``\ ,
+                  ``GL_LUMINANCE``\ , and
+                  ``GL_LUMINANCE_ALPHA`` are accepted.
+
+         :param type:
+
+                  Specifies the data type for *data*\ .
+                  Symbolic constants
+                  ``GL_UNSIGNED_BYTE``\ ,
+                  ``GL_BYTE``\ ,
+                  ``GL_BITMAP``\ ,
+                  ``GL_UNSIGNED_SHORT``\ ,
+                  ``GL_SHORT``\ ,
+                  ``GL_UNSIGNED_INT``\ ,
+                  ``GL_INT``\ ,
+                  ``GL_FLOAT``\ ,
+                  ``GL_UNSIGNED_BYTE_3_3_2``\ ,
+                  ``GL_UNSIGNED_BYTE_2_3_3_REV``\ ,
+                  ``GL_UNSIGNED_SHORT_5_6_5``\ ,
+                  ``GL_UNSIGNED_SHORT_5_6_5_REV``\ ,
+                  ``GL_UNSIGNED_SHORT_4_4_4_4``\ ,
+                  ``GL_UNSIGNED_SHORT_4_4_4_4_REV``\ ,
+                  ``GL_UNSIGNED_SHORT_5_5_5_1``\ ,
+                  ``GL_UNSIGNED_SHORT_1_5_5_5_REV``\ ,
+                  ``GL_UNSIGNED_INT_8_8_8_8``\ ,
+                  ``GL_UNSIGNED_INT_8_8_8_8_REV``\ ,
+                  ``GL_UNSIGNED_INT_10_10_10_2``\ , and
+                  ``GL_UNSIGNED_INT_2_10_10_10_REV``
+                  are accepted.
+
+         :param data:
+
+                  Specifies a pointer to the pixel data.
+
+.. rubric:: Specification
+
+.. c:function:: void glDrawPixels(GLsizei  width, GLsizei  height, GLenum  format, GLenum  type, const GLvoid *  data)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glAlphaFunc`\ ,
+            :c:func:`glBlendFunc`\ ,
+            :c:func:`glCopyPixels`\ ,
+            :c:func:`glDepthFunc`\ ,
+            :c:func:`glLogicOp`\ ,
+            :c:func:`glPixelMap`\ ,
+            :c:func:`glPixelStore`\ ,
+            :c:func:`glPixelTransfer`\ ,
+            :c:func:`glPixelZoom`\ ,
+            :c:func:`glRasterPos`\ ,
+            :c:func:`glReadPixels`\ ,
+            :c:func:`glScissor`\ ,
+            :c:func:`glStencilFunc`\ ,
+            :c:func:`glWindowPos`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glDrawPixels` reads pixel data from memory and writes it into the frame buffer
+relative to the current raster position, provided that the raster
+position is valid.  Use
+:c:func:`glRasterPos` or :c:func:`glWindowPos` to set the current raster position; use
+:c:func:`glGet` with argument ``GL_CURRENT_RASTER_POSITION_VALID``
+to determine if the specified raster position is valid, and
+:c:func:`glGet` with argument ``GL_CURRENT_RASTER_POSITION``
+to query the raster position.
+
+
+Several parameters define the encoding of pixel data in memory
+and control the processing of the pixel data
+before it is placed in the frame buffer.
+These parameters are set with four commands:
+:c:func:`glPixelStore`\ ,
+:c:func:`glPixelTransfer`\ ,
+:c:func:`glPixelMap`\ , and :c:func:`glPixelZoom`\ .
+This reference page describes the effects on :c:func:`glDrawPixels` of many,
+but not all, of the parameters specified by these four commands.
+
+
+Data is read from *data* as a sequence of signed or unsigned bytes,
+signed or unsigned shorts, signed or unsigned integers, or
+single-precision floating-point values, depending on *type*\ .
+When *type* is one of ``GL_UNSIGNED_BYTE``\ , ``GL_BYTE``\ ,
+``GL_UNSIGNED_SHORT``\ , ``GL_SHORT``\ , ``GL_UNSIGNED_INT``\ ,
+``GL_INT``\ , or ``GL_FLOAT`` each of these bytes, shorts, integers, or
+floating-point values is interpreted as one color or depth component, or
+one index, depending on *format*\ .
+When *type* is one of ``GL_UNSIGNED_BYTE_3_3_2``\ ,
+``GL_UNSIGNED_SHORT_5_6_5``\ , ``GL_UNSIGNED_SHORT_4_4_4_4``\ ,
+``GL_UNSIGNED_SHORT_5_5_5_1``\ , ``GL_UNSIGNED_INT_8_8_8_8``\ , or
+``GL_UNSIGNED_INT_10_10_10_2``\ , each unsigned value is interpreted as
+containing all the components for a single pixel, with the color
+components arranged according to *format*\ .
+When *type* is one of ``GL_UNSIGNED_BYTE_2_3_3_REV``\ ,
+``GL_UNSIGNED_SHORT_5_6_5_REV``\ , ``GL_UNSIGNED_SHORT_4_4_4_4_REV``\ ,
+``GL_UNSIGNED_SHORT_1_5_5_5_REV``\ , ``GL_UNSIGNED_INT_8_8_8_8_REV``\ , or
+``GL_UNSIGNED_INT_2_10_10_10_REV``\ , each unsigned value is interpreted
+as containing all color components, specified by *format*\ , for a single
+pixel in a reversed order. Indices are always treated individually.
+Color components are treated as groups of one, two, three, or four
+values, again based on *format*\ . Both individual indices and groups of
+components are referred to as pixels.
+If *type* is ``GL_BITMAP``\ , the data must be unsigned bytes, and
+*format* must be either ``GL_COLOR_INDEX`` or ``GL_STENCIL_INDEX``\ .
+Each unsigned byte is treated as eight 1-bit pixels, with bit ordering
+determined by ``GL_UNPACK_LSB_FIRST`` (see :c:func:`glPixelStore`\ ).
+
+
+|EQUATION_1_| pixels are read from memory,
+starting at location *data*\ .
+By default, these pixels are taken from adjacent memory locations,
+except that after all *width* pixels are read,
+the read pointer is advanced to the next four-byte boundary.
+The four-byte row alignment is specified by :c:func:`glPixelStore` with
+argument ``GL_UNPACK_ALIGNMENT``\ ,
+and it can be set to one, two, four, or eight bytes.
+Other pixel store parameters specify different read pointer advancements,
+both before the first pixel is read
+and after all *width* pixels are read.
+See the :c:func:`glPixelStore` reference page for details on these options.
+
+
+If a non-zero named buffer object is bound to the ``GL_PIXEL_UNPACK_BUFFER`` target
+(see :c:func:`glBindBuffer`\ ) while a block of pixels is
+specified, *data* is treated as a byte offset into the buffer object's data store.
+
+
+The
+|EQUATION_2_| pixels that are read from memory are
+each operated on in the same way,
+based on the values of several parameters specified by :c:func:`glPixelTransfer`
+and :c:func:`glPixelMap`\ .
+The details of these operations,
+as well as the target buffer into which the pixels are drawn,
+are specific to the format of the pixels,
+as specified by *format*\ .
+*format* can assume one of 13 symbolic values:
+
+
+         ``GL_COLOR_INDEX``
+
+
+               Each pixel is a single value,
+               a color index.
+               It is converted to fixed-point format,
+               with an unspecified number of bits to the right of the binary point,
+               regardless of the memory data type.
+               Floating-point values convert to true fixed-point values.
+               Signed and unsigned integer data is converted with all fraction bits
+               set to 0.
+               Bitmap data convert to either 0 or 1.
+
+
+               Each fixed-point index is then shifted left by ``GL_INDEX_SHIFT`` bits
+               and added to ``GL_INDEX_OFFSET``\ .
+               If ``GL_INDEX_SHIFT`` is negative,
+               the shift is to the right.
+               In either case, zero bits fill otherwise unspecified bit locations in the
+               result.
+
+
+               If the GL is in RGBA mode,
+               the resulting index is converted to an RGBA pixel
+               with the help of the ``GL_PIXEL_MAP_I_TO_R``\ ,
+               ``GL_PIXEL_MAP_I_TO_G``\ ,
+               ``GL_PIXEL_MAP_I_TO_B``\ ,
+               and ``GL_PIXEL_MAP_I_TO_A`` tables.
+               If the GL is in color index mode,
+               and if ``GL_MAP_COLOR`` is true,
+               the index is replaced with the value that it references in lookup table
+               ``GL_PIXEL_MAP_I_TO_I``\ .
+               Whether the lookup replacement of the index is done or not,
+               the integer part of the index is then ANDed with |EQUATION_3_|\ ,
+               where |EQUATION_4_| is the number of bits in a color index buffer.
+
+
+               The GL then converts the resulting indices or RGBA colors to fragments
+               by attaching the current raster position :strong:`z` coordinate and
+               texture coordinates to each pixel,
+               then assigning |EQUATION_5_| and |EQUATION_6_| window coordinates to the |EQUATION_7_| th
+               fragment such that
+               |EQUATION_8_|
+
+                  |EQUATION_9_|
+
+
+               where
+               |EQUATION_10_| is the current raster position.
+               These pixel fragments are then treated just like the fragments generated by
+               rasterizing points, lines, or polygons.
+               Texture mapping,
+               fog,
+               and all the fragment operations are applied before the fragments are written
+               to the frame buffer.
+
+
+         ``GL_STENCIL_INDEX``
+
+
+               Each pixel is a single value,
+               a stencil index.
+               It is converted to fixed-point format,
+               with an unspecified number of bits to the right of the binary point,
+               regardless of the memory data type.
+               Floating-point values convert to true fixed-point values.
+               Signed and unsigned integer data is converted with all fraction bits
+               set to 0.
+               Bitmap data convert to either 0 or 1.
+
+
+               Each fixed-point index is then shifted left by ``GL_INDEX_SHIFT`` bits,
+               and added to ``GL_INDEX_OFFSET``\ .
+               If ``GL_INDEX_SHIFT`` is negative,
+               the shift is to the right.
+               In either case, zero bits fill otherwise unspecified bit locations in the
+               result.
+               If ``GL_MAP_STENCIL`` is true,
+               the index is replaced with the value that it references in lookup table
+               ``GL_PIXEL_MAP_S_TO_S``\ .
+               Whether the lookup replacement of the index is done or not,
+               the integer part of the index is then ANDed with |EQUATION_11_|\ ,
+               where |EQUATION_12_| is the number of bits in the stencil buffer.
+               The resulting stencil indices are then written to the stencil buffer
+               such that the |EQUATION_13_| th
+               index is written to location
+
+
+               |EQUATION_14_|
+
+                  |EQUATION_15_|
+
+
+               where
+               |EQUATION_16_| is the current raster position.
+               Only the pixel ownership test,
+               the scissor test,
+               and the stencil writemask affect these write operations.
+
+
+         ``GL_DEPTH_COMPONENT``
+
+
+               Each pixel is a single-depth component.
+               Floating-point data is converted directly to an internal floating-point
+               format with unspecified precision.
+               Signed integer data is mapped linearly to the internal floating-point
+               format such that the most positive representable integer value maps to 1.0,
+               and the most negative representable value maps to
+               |EQUATION_17_|\ .
+               Unsigned integer data is mapped similarly:
+               the largest integer value maps to 1.0,
+               and 0 maps to 0.0.
+               The resulting floating-point depth value is then multiplied
+               by ``GL_DEPTH_SCALE`` and added to ``GL_DEPTH_BIAS``\ .
+               The result is clamped to the range |EQUATION_18_|\ .
+
+
+               The GL then converts the resulting depth components to fragments
+               by attaching the current raster position color or color index and
+               texture coordinates to each pixel,
+               then assigning
+               |EQUATION_19_| and |EQUATION_20_| window coordinates to the |EQUATION_21_| th
+               fragment such that
+
+
+               |EQUATION_22_|
+
+                  |EQUATION_23_|
+
+
+               where
+               |EQUATION_24_| is the current raster position.
+               These pixel fragments are then treated just like the fragments generated by
+               rasterizing points, lines, or polygons.
+               Texture mapping,
+               fog,
+               and all the fragment operations are applied before the fragments are written
+               to the frame buffer.
+
+
+         ``GL_RGBA``
+
+
+         ``GL_BGRA``
+
+
+               Each pixel is a four-component group: For ``GL_RGBA``\ , the red
+               component is first, followed by green, followed by blue, followed by
+               alpha; for ``GL_BGRA`` the order is blue, green, red and then alpha.
+               Floating-point values are converted directly to an internal floating-point
+               format with unspecified precision.
+               Signed integer values are mapped linearly to the internal floating-point
+               format such that the most positive representable integer value maps to 1.0,
+               and the most negative representable value maps to |EQUATION_25_|\ .
+               (Note that
+               this mapping does not convert 0 precisely to 0.0.)
+               Unsigned integer data is mapped similarly:
+               The largest integer value maps to 1.0,
+               and 0 maps to 0.0.
+               The resulting floating-point color values are then multiplied
+               by ``GL_c_SCALE`` and added to ``GL_c_BIAS``\ ,
+               where :strong:`c` is RED, GREEN, BLUE, and ALPHA
+               for the respective color components.
+               The results are clamped to the range |EQUATION_26_|\ .
+
+
+               If ``GL_MAP_COLOR`` is true,
+               each color component is scaled by the size of lookup table
+               ``GL_PIXEL_MAP_c_TO_c``\ ,
+               then replaced by the value that it references in that table.
+               :strong:`c` is R, G, B, or A respectively.
+
+
+               The GL then converts the resulting RGBA colors to fragments
+               by attaching the current raster position :strong:`z` coordinate and
+               texture coordinates to each pixel,
+               then assigning |EQUATION_27_| and |EQUATION_28_| window coordinates to the |EQUATION_29_| th
+               fragment such that
+
+
+               |EQUATION_30_|
+
+                  |EQUATION_31_|
+
+
+               where
+               |EQUATION_32_| is the current raster position.
+               These pixel fragments are then treated just like the fragments generated by
+               rasterizing points, lines, or polygons.
+               Texture mapping,
+               fog,
+               and all the fragment operations are applied before the fragments are written
+               to the frame buffer.
+
+
+         ``GL_RED``
+
+
+               Each pixel is a single red component.
+               This component is converted to the internal floating-point format in
+               the same way the red component of an RGBA pixel is. It is
+               then converted to an RGBA pixel with green and blue set to 0,
+               and alpha set to 1.
+               After this conversion, the pixel is treated as if it had been read
+               as an RGBA pixel.
+
+
+         ``GL_GREEN``
+
+
+               Each pixel is a single green component.
+               This component is converted to the internal floating-point format in
+               the same way the green component of an RGBA pixel is.
+               It is then converted to an RGBA pixel with red and blue set to 0,
+               and alpha set to 1.
+               After this conversion, the pixel is treated as if it had been read
+               as an RGBA pixel.
+
+
+         ``GL_BLUE``
+
+
+               Each pixel is a single blue component.
+               This component is converted to the internal floating-point format in
+               the same way the blue component of an RGBA pixel is.
+               It is then converted to an RGBA pixel with red and green set to 0,
+               and alpha set to 1.
+               After this conversion, the pixel is treated as if it had been read
+               as an RGBA pixel.
+
+
+         ``GL_ALPHA``
+
+
+               Each pixel is a single alpha component.
+               This component is converted to the internal floating-point format in
+               the same way the alpha component of an RGBA pixel is.
+               It is then converted to an RGBA pixel with red, green, and blue set to 0.
+               After this conversion, the pixel is treated as if it had been read
+               as an RGBA pixel.
+
+
+         ``GL_RGB``
+
+
+         ``GL_BGR``
+
+
+               Each pixel is a three-component group:
+               red first, followed by green, followed by blue; for ``GL_BGR``\ , the
+               first component is blue, followed by green and then red.
+               Each component is converted to the internal floating-point format in
+               the same way the red, green, and blue components of an RGBA pixel are.
+               The color triple is converted to an RGBA pixel with alpha set to 1.
+               After this conversion, the pixel is treated as if it had been read
+               as an RGBA pixel.
+
+
+         ``GL_LUMINANCE``
+
+
+               Each pixel is a single luminance component.
+               This component is converted to the internal floating-point format in
+               the same way the red component of an RGBA pixel is.
+               It is then converted to an RGBA pixel with red, green, and blue set to the
+               converted luminance value,
+               and alpha set to 1.
+               After this conversion, the pixel is treated as if it had been read
+               as an RGBA pixel.
+
+
+         ``GL_LUMINANCE_ALPHA``
+
+
+               Each pixel is a two-component group:
+               luminance first, followed by alpha.
+               The two components are converted to the internal floating-point format in
+               the same way the red component of an RGBA pixel is.
+               They are then converted to an RGBA pixel with red, green, and blue set to the
+               converted luminance value,
+               and alpha set to the converted alpha value.
+               After this conversion, the pixel is treated as if it had been read
+               as an RGBA pixel.
+
+
+         The following table summarizes the meaning of the valid constants for the
+         :strong:`type` parameter:
+
+
+                  +------------------------------------+----------------------------------------------------------+
+                  | :strong:`Type`                     | :strong:`Corresponding Type`                             |
+                  +------------------------------------+----------------------------------------------------------+
+                  | ``GL_UNSIGNED_BYTE``               | unsigned 8-bit integer                                   |
+                  +------------------------------------+----------------------------------------------------------+
+                  | ``GL_BYTE``                        | signed 8-bit integer                                     |
+                  +------------------------------------+----------------------------------------------------------+
+                  | ``GL_BITMAP``                      | single bits in unsigned 8-bit integers                   |
+                  +------------------------------------+----------------------------------------------------------+
+                  | ``GL_UNSIGNED_SHORT``              | unsigned 16-bit integer                                  |
+                  +------------------------------------+----------------------------------------------------------+
+                  | ``GL_SHORT``                       | signed 16-bit integer                                    |
+                  +------------------------------------+----------------------------------------------------------+
+                  | ``GL_UNSIGNED_INT``                | unsigned 32-bit integer                                  |
+                  +------------------------------------+----------------------------------------------------------+
+                  | ``GL_INT``                         | 32-bit integer                                           |
+                  +------------------------------------+----------------------------------------------------------+
+                  | ``GL_FLOAT``                       | single-precision floating-point                          |
+                  +------------------------------------+----------------------------------------------------------+
+                  | ``GL_UNSIGNED_BYTE_3_3_2``         | unsigned 8-bit integer                                   |
+                  +------------------------------------+----------------------------------------------------------+
+                  | ``GL_UNSIGNED_BYTE_2_3_3_REV``     | unsigned 8-bit integer with reversed component ordering  |
+                  +------------------------------------+----------------------------------------------------------+
+                  | ``GL_UNSIGNED_SHORT_5_6_5``        | unsigned 16-bit integer                                  |
+                  +------------------------------------+----------------------------------------------------------+
+                  | ``GL_UNSIGNED_SHORT_5_6_5_REV``    | unsigned 16-bit integer with reversed component ordering |
+                  +------------------------------------+----------------------------------------------------------+
+                  | ``GL_UNSIGNED_SHORT_4_4_4_4``      | unsigned 16-bit integer                                  |
+                  +------------------------------------+----------------------------------------------------------+
+                  | ``GL_UNSIGNED_SHORT_4_4_4_4_REV``  | unsigned 16-bit integer with reversed component ordering |
+                  +------------------------------------+----------------------------------------------------------+
+                  | ``GL_UNSIGNED_SHORT_5_5_5_1``      | unsigned 16-bit integer                                  |
+                  +------------------------------------+----------------------------------------------------------+
+                  | ``GL_UNSIGNED_SHORT_1_5_5_5_REV``  | unsigned 16-bit integer with reversed component ordering |
+                  +------------------------------------+----------------------------------------------------------+
+                  | ``GL_UNSIGNED_INT_8_8_8_8``        | unsigned 32-bit integer                                  |
+                  +------------------------------------+----------------------------------------------------------+
+                  | ``GL_UNSIGNED_INT_8_8_8_8_REV``    | unsigned 32-bit integer with reversed component ordering |
+                  +------------------------------------+----------------------------------------------------------+
+                  | ``GL_UNSIGNED_INT_10_10_10_2``     | unsigned 32-bit integer                                  |
+                  +------------------------------------+----------------------------------------------------------+
+                  | ``GL_UNSIGNED_INT_2_10_10_10_REV`` | unsigned 32-bit integer with reversed component ordering |
+                  +------------------------------------+----------------------------------------------------------+
+
+
+The rasterization described so far assumes pixel zoom factors of 1.
+If
+:c:func:`glPixelZoom` is used to change the |EQUATION_33_| and |EQUATION_34_| pixel zoom factors,
+pixels are converted to fragments as follows.
+If |EQUATION_35_| is the current raster position,
+and a given pixel is in the |EQUATION_36_| th
+column and |EQUATION_37_| th
+row
+of the pixel rectangle,
+then fragments are generated for pixels whose centers are in the rectangle
+with corners at
+
+
+|EQUATION_38_|
+
+         |EQUATION_39_|
+
+
+where
+|EQUATION_40_| is the value of ``GL_ZOOM_X`` and |EQUATION_41_| is the value of ``GL_ZOOM_Y``\ .
+
+
+.. note::
+
+
+   ``GL_BGR`` and ``GL_BGRA`` are only valid for *format* if the GL
+   version is 1.2 or greater.
+
+
+   ``GL_UNSIGNED_BYTE_3_3_2``\ ,
+   ``GL_UNSIGNED_BYTE_2_3_3_REV``\ ,
+   ``GL_UNSIGNED_SHORT_5_6_5``\ ,
+   ``GL_UNSIGNED_SHORT_5_6_5_REV``\ ,
+   ``GL_UNSIGNED_SHORT_4_4_4_4``\ ,
+   ``GL_UNSIGNED_SHORT_4_4_4_4_REV``\ ,
+   ``GL_UNSIGNED_SHORT_5_5_5_1``\ ,
+   ``GL_UNSIGNED_SHORT_1_5_5_5_REV``\ ,
+   ``GL_UNSIGNED_INT_8_8_8_8``\ ,
+   ``GL_UNSIGNED_INT_8_8_8_8_REV``\ ,
+   ``GL_UNSIGNED_INT_10_10_10_2``\ , and
+   ``GL_UNSIGNED_INT_2_10_10_10_REV`` are only valid for *type* if the
+   GL version is 1.2 or greater.
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_ENUM`` is generated if *format* or *type* is not one of the accepted values.
+* ``GL_INVALID_ENUM`` is generated if *type* is ``GL_BITMAP`` and *format* is not either ``GL_COLOR_INDEX`` or ``GL_STENCIL_INDEX``\ .
+* ``GL_INVALID_VALUE`` is generated if either *width* or *height* is negative.
+* ``GL_INVALID_OPERATION`` is generated if *format* is ``GL_STENCIL_INDEX`` and there is no stencil buffer.
+* ``GL_INVALID_OPERATION`` is generated if *format* is ``GL_RED``\ , ``GL_GREEN``\ , ``GL_BLUE``\ , ``GL_ALPHA``\ , ``GL_RGB``\ , ``GL_RGBA``\ , ``GL_BGR``\ , ``GL_BGRA``\ , ``GL_LUMINANCE``\ , or ``GL_LUMINANCE_ALPHA``\ , and the GL is in color index mode.
+* ``GL_INVALID_OPERATION`` is generated if *format* is one of ``GL_UNSIGNED_BYTE_3_3_2``\ , ``GL_UNSIGNED_BYTE_2_3_3_REV``\ , ``GL_UNSIGNED_SHORT_5_6_5``\ , or ``GL_UNSIGNED_SHORT_5_6_5_REV`` and *format* is not ``GL_RGB``\ .
+* ``GL_INVALID_OPERATION`` is generated if *format* is one of ``GL_UNSIGNED_SHORT_4_4_4_4``\ , ``GL_UNSIGNED_SHORT_4_4_4_4_REV``\ , ``GL_UNSIGNED_SHORT_5_5_5_1``\ , ``GL_UNSIGNED_SHORT_1_5_5_5_REV``\ , ``GL_UNSIGNED_INT_8_8_8_8``\ , ``GL_UNSIGNED_INT_8_8_8_8_REV``\ , ``GL_UNSIGNED_INT_10_10_10_2``\ , or ``GL_UNSIGNED_INT_2_10_10_10_REV`` and *format* is neither ``GL_RGBA`` nor ``GL_BGRA``\ .
+* ``GL_INVALID_OPERATION`` is generated if a non-zero buffer object name is bound to the ``GL_PIXEL_UNPACK_BUFFER`` target and the buffer object's data store is currently mapped.
+* ``GL_INVALID_OPERATION`` is generated if a non-zero buffer object name is bound to the ``GL_PIXEL_UNPACK_BUFFER`` target and the data would be unpacked from the buffer object such that the memory reads required would exceed the data store size.
+* ``GL_INVALID_OPERATION`` is generated if a non-zero buffer object name is bound to the ``GL_PIXEL_UNPACK_BUFFER`` target and *data* is not evenly divisible into the number of bytes needed to store in memory a datum indicated by *type*\ .
+* ``GL_INVALID_OPERATION`` is generated if :c:func:`glDrawPixels` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`\ .
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGet` with argument ``GL_CURRENT_RASTER_POSITION``
+* :c:func:`glGet` with argument ``GL_CURRENT_RASTER_POSITION_VALID``
+* :c:func:`glGet` with argument ``GL_PIXEL_UNPACK_BUFFER_BINDING``
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glDrawPixels'>
+
+.. role:: mml(raw)
+   :format: html
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">width</mi><mo>&times;</mo><mi mathvariant="italic">height</mi></mrow></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">width</mi><mo>&times;</mo><mi mathvariant="italic">height</mi></mrow></math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mi mathvariant="italic">b</mi></msup><mo>-</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_4_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">b</mi></math>` 
+
+.. |EQUATION_5_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">x</mi></math>` 
+
+.. |EQUATION_6_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">y</mi></math>` 
+
+.. |EQUATION_7_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math>` 
+
+.. |EQUATION_8_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">n</mi></msub><mo>=</mo><mrow><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">r</mi></msub><mo>+</mo><mrow><mi mathvariant="italic">n</mi><mo>%</mo><mi mathvariant="italic">width</mi></mrow></mrow></mrow></math>` 
+
+.. |EQUATION_9_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">n</mi></msub><mo>=</mo><mrow><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">r</mi></msub><mo>+</mo><mfenced open="&LeftFloor;" close="&RightFloor;"><mfrac><mi mathvariant="italic">n</mi><mi mathvariant="italic">width</mi></mfrac></mfenced></mrow></mrow></math>` 
+
+.. |EQUATION_10_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">r</mi></msub><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">r</mi></msub></mfenced></math>` 
+
+.. |EQUATION_11_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mi mathvariant="italic">b</mi></msup><mo>-</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_12_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">b</mi></math>` 
+
+.. |EQUATION_13_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math>` 
+
+.. |EQUATION_14_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">n</mi></msub><mo>=</mo><mrow><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">r</mi></msub><mo>+</mo><mrow><mi mathvariant="italic">n</mi><mo>%</mo><mi mathvariant="italic">width</mi></mrow></mrow></mrow></math>` 
+
+.. |EQUATION_15_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">n</mi></msub><mo>=</mo><mrow><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">r</mi></msub><mo>+</mo><mfenced open="&LeftFloor;" close="&RightFloor;"><mfrac><mi mathvariant="italic">n</mi><mi mathvariant="italic">width</mi></mfrac></mfenced></mrow></mrow></math>` 
+
+.. |EQUATION_16_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">r</mi></msub><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">r</mi></msub></mfenced></math>` 
+
+.. |EQUATION_17_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mn>-1.0</mn></math>` 
+
+.. |EQUATION_18_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"><mn>0</mn><mn>1</mn></mfenced></math>` 
+
+.. |EQUATION_19_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">x</mi></math>` 
+
+.. |EQUATION_20_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">y</mi></math>` 
+
+.. |EQUATION_21_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math>` 
+
+.. |EQUATION_22_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">n</mi></msub><mo>=</mo><mrow><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">r</mi></msub><mo>+</mo><mrow><mi mathvariant="italic">n</mi><mo>%</mo><mi mathvariant="italic">width</mi></mrow></mrow></mrow></math>` 
+
+.. |EQUATION_23_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">n</mi></msub><mo>=</mo><mrow><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">r</mi></msub><mo>+</mo><mfenced open="&LeftFloor;" close="&RightFloor;"><mfrac><mi mathvariant="italic">n</mi><mi mathvariant="italic">width</mi></mfrac></mfenced></mrow></mrow></math>` 
+
+.. |EQUATION_24_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">r</mi></msub><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">r</mi></msub></mfenced></math>` 
+
+.. |EQUATION_25_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mn>-1.0</mn></math>` 
+
+.. |EQUATION_26_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"><mn>0</mn><mn>1</mn></mfenced></math>` 
+
+.. |EQUATION_27_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">x</mi></math>` 
+
+.. |EQUATION_28_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">y</mi></math>` 
+
+.. |EQUATION_29_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math>` 
+
+.. |EQUATION_30_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">n</mi></msub><mo>=</mo><mrow><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">r</mi></msub><mo>+</mo><mrow><mi mathvariant="italic">n</mi><mo>%</mo><mi mathvariant="italic">width</mi></mrow></mrow></mrow></math>` 
+
+.. |EQUATION_31_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">n</mi></msub><mo>=</mo><mrow><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">r</mi></msub><mo>+</mo><mfenced open="&LeftFloor;" close="&RightFloor;"><mfrac><mi mathvariant="italic">n</mi><mi mathvariant="italic">width</mi></mfrac></mfenced></mrow></mrow></math>` 
+
+.. |EQUATION_32_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">r</mi></msub><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">r</mi></msub></mfenced></math>` 
+
+.. |EQUATION_33_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">x</mi></math>` 
+
+.. |EQUATION_34_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">y</mi></math>` 
+
+.. |EQUATION_35_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">r</mi></msub><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">r</mi></msub></mfenced></math>` 
+
+.. |EQUATION_36_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math>` 
+
+.. |EQUATION_37_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">m</mi></math>` 
+
+.. |EQUATION_38_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mrow><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">r</mi></msub><mo>+</mo><mfenced open="" close=""><msub><mi mathvariant="italic">zoom</mi><mi mathvariant="italic">x</mi></msub></mfenced><mo>&it;</mo><mi mathvariant="italic">n</mi></mrow><mrow><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">r</mi></msub><mo>+</mo><mfenced open="" close=""><msub><mi mathvariant="italic">zoom</mi><mi mathvariant="italic">y</mi></msub></mfenced><mo>&it;</mo><mi mathvariant="italic">m</mi></mrow></mfenced></math>` 
+
+.. |EQUATION_39_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mrow><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">r</mi></msub><mo>+</mo><mrow><mfenced open="" close=""><msub><mi mathvariant="italic">zoom</mi><mi mathvariant="italic">x</mi></msub></mfenced><mo>&af;</mo><mfenced open="(" close=")"><mrow><mi mathvariant="italic">n</mi><mo>+</mo><mn>1</mn></mrow></mfenced></mrow></mrow><mrow><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">r</mi></msub><mo>+</mo><mrow><mfenced open="" close=""><msub><mi mathvariant="italic">zoom</mi><mi mathvariant="italic">y</mi></msub></mfenced><mo>&af;</mo><mfenced open="(" close=")"><mrow><mi mathvariant="italic">m</mi><mo>+</mo><mn>1</mn></mrow></mfenced></mrow></mrow></mfenced></math>` 
+
+.. |EQUATION_40_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">zoom</mi><mi mathvariant="italic">x</mi></msub></math>` 
+
+.. |EQUATION_41_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">zoom</mi><mi mathvariant="italic">y</mi></msub></math>` 
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

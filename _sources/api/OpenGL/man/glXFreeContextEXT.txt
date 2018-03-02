@@ -1,0 +1,89 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:28
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glXFreeContextEXT.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glXFreeContextEXT`
+----------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Free client-side memory for imported context
+
+.. c:function:: glXFreeContextEXT
+
+
+         :param dpy:
+
+                  Specifies the connection to the X server.
+
+         :param ctx:
+
+                  Specifies a GLX rendering context.
+
+.. rubric:: Specification
+
+.. c:function:: void glXFreeContextEXT(Display *  dpy, GLXContext  ctx)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glXCreateContext`\ ,
+            :c:func:`glXQueryVersion`\ ,
+            :c:func:`glXQueryExtensionsString`\ ,
+            :c:func:`glXImportContextEXT`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glXFreeContextEXT` frees the client-side part of a GLXContext that
+was created with :c:func:`glXImportContextEXT`\ . :c:func:`glXFreeContextEXT` does not
+free the server-side context information or the XID
+associated with the server-side context.
+
+
+:c:func:`glXFreeContextEXT` is part of the ``EXT_import_context`` extension,
+not part of the core GLX command set. If _glxextstring(EXT_import_context)
+is included in the string returned by :c:func:`glXQueryExtensionsString`\ ,
+when called with argument ``GLX_EXTENSIONS``\ ,
+extension ``EXT_vertex_array`` is supported.
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GLXBadContext`` is generated if *ctx* does not refer to a valid context.
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glXFreeContextEXT'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

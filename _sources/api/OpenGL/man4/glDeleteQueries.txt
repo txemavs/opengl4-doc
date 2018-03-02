@@ -1,0 +1,93 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:29
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glDeleteQueries.xml'
+.. (c)2005 Addison-Wesley.
+.. See license details at http://opencontent.org/openpub/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glDeleteQueries`
+--------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Delete named query objects
+
+.. c:function:: glDeleteQueries
+
+
+         :param n:
+
+                  Specifies the number of query objects to be deleted.
+
+         :param ids:
+
+                  Specifies an array of query objects to be deleted.
+
+.. rubric:: Specification
+
+.. c:function:: void glDeleteQueries(GLsizei  n, const GLuint *  ids)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glBeginQuery`\ ,
+            :c:func:`glEndQuery`\ ,
+            :c:func:`glGenQueries`\ ,
+            :c:func:`glGetQueryiv`\ ,
+            :c:func:`glGetQueryObject`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glDeleteQueries` deletes *n* query objects named by the elements of the array *ids*\ .
+After a query object is deleted, it has no contents,
+and its name is free for reuse (for example by :c:func:`glGenQueries`\ ).
+
+
+:c:func:`glDeleteQueries` silently ignores 0's and names that do not correspond to
+existing query objects.
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_VALUE`` is generated if *n* is negative.
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glIsQuery`
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glDeleteQueries'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )2005 Addison-Wesley. Open Publication License.
+

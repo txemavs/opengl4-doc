@@ -1,0 +1,187 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glCallList &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function glCallLists" href="glCallLists.html" />
+    <link rel="prev" title="function glBitmap" href="glBitmap.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glCallLists.html" title="function glCallLists"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glBitmap.html" title="function glBitmap"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glcalllist">
+<h1>function <cite>glCallList</cite><a class="headerlink" href="#function-glcalllist" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Execute a display list</p>
+<dl class="function">
+<dt id="glCallList">
+<tt class="descname">glCallList</tt><big>(</big><big>)</big><a class="headerlink" href="#glCallList" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>list</strong> &#8211; Specifies the integer name of the display list to be executed.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glCallList</tt><big>(</big>GLuint <em>&nbsp;list</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glCallLists.html#glCallLists" title="glCallLists"><tt class="xref c c-func docutils literal"><span class="pre">glCallLists()</span></tt></a>,
+<a class="reference internal" href="glDeleteLists.html#glDeleteLists" title="glDeleteLists"><tt class="xref c c-func docutils literal"><span class="pre">glDeleteLists()</span></tt></a>,
+<a class="reference internal" href="glGenLists.html#glGenLists" title="glGenLists"><tt class="xref c c-func docutils literal"><span class="pre">glGenLists()</span></tt></a>,
+<a class="reference internal" href="glNewList.html#glNewList" title="glNewList"><tt class="xref c c-func docutils literal"><span class="pre">glNewList()</span></tt></a>,
+<a class="reference internal" href="glPushAttrib.html#glPushAttrib" title="glPushAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glPushAttrib()</span></tt></a>,
+<a class="reference internal" href="glPushMatrix.html#glPushMatrix" title="glPushMatrix"><tt class="xref c c-func docutils literal"><span class="pre">glPushMatrix()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glCallList" title="glCallList"><tt class="xref c c-func docutils literal"><span class="pre">glCallList()</span></tt></a> causes the named display list to be executed.
+The commands saved in the display list are executed in order,
+just as if they were called without using a display list.
+If <em>list</em> has not been defined as a display list,
+<a class="reference internal" href="#glCallList" title="glCallList"><tt class="xref c c-func docutils literal"><span class="pre">glCallList()</span></tt></a> is ignored.</p>
+<p><a class="reference internal" href="#glCallList" title="glCallList"><tt class="xref c c-func docutils literal"><span class="pre">glCallList()</span></tt></a> can appear inside a display list.
+To avoid the possibility of infinite recursion resulting from display lists
+calling one another,
+a limit is placed on the nesting level of display
+lists during display-list execution.
+This limit is at least 64, and it depends on the implementation.</p>
+<p>GL state is not saved and restored across a call to <a class="reference internal" href="#glCallList" title="glCallList"><tt class="xref c c-func docutils literal"><span class="pre">glCallList()</span></tt></a>.
+Thus,
+changes made to GL state during the execution of a display list
+remain after execution of the display list is completed.
+Use <a class="reference internal" href="glPushAttrib.html#glPushAttrib" title="glPushAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glPushAttrib()</span></tt></a>,
+<a class="reference internal" href="glPushAttrib.html#glPopAttrib" title="glPopAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glPopAttrib()</span></tt></a>,
+<a class="reference internal" href="glPushMatrix.html#glPushMatrix" title="glPushMatrix"><tt class="xref c c-func docutils literal"><span class="pre">glPushMatrix()</span></tt></a>,
+and <a class="reference internal" href="glPushMatrix.html#glPopMatrix" title="glPopMatrix"><tt class="xref c c-func docutils literal"><span class="pre">glPopMatrix()</span></tt></a> to preserve GL state across <a class="reference internal" href="#glCallList" title="glCallList"><tt class="xref c c-func docutils literal"><span class="pre">glCallList()</span></tt></a> calls.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Display lists can be executed between a call to <a class="reference internal" href="glBegin.html#glBegin" title="glBegin"><tt class="xref c c-func docutils literal"><span class="pre">glBegin()</span></tt></a>
+and the corresponding call to <a class="reference internal" href="glBegin.html#glEnd" title="glEnd"><tt class="xref c c-func docutils literal"><span class="pre">glEnd()</span></tt></a>,
+as long as the display list includes only commands that are allowed
+in this interval.</p>
+</div>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_MAX_LIST_NESTING</span></tt></li>
+<li><a class="reference internal" href="glIsList.html#glIsList" title="glIsList"><tt class="xref c c-func docutils literal"><span class="pre">glIsList()</span></tt></a></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glBitmap.html"
+                        title="previous chapter">function <cite>glBitmap</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glCallLists.html"
+                        title="next chapter">function <cite>glCallLists</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/glCallList.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glCallLists.html" title="function glCallLists"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glBitmap.html" title="function glBitmap"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

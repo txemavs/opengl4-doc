@@ -1,0 +1,69 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glShaderBinary`
+-------------------------
+
+.. source file man4/glShaderBinary
+
+.. currentmodule:: OpenGL.GL
+
+Load pre-compiled shader binaries
+
+.. c:function:: glShaderBinary
+.. c:function:: void glShaderBinary(GLsizei  count, const GLuint * shaders, GLenum  binaryFormat, const void * binary, GLsizei  length)
+   :noindex: 
+
+
+   
+   :param count:
+      Specifies the number of shader object handles contained in *shaders* .
+   
+   :param shaders:
+      Specifies the address of an array of shader handles into which to load pre-compiled shader binaries.
+   
+   :param binaryFormat:
+      Specifies the format of the shader binaries contained in *binary* .
+   
+   :param binary:
+      Specifies the address of an array of bytes containing pre-compiled binary shader code.
+   
+   :param length:
+      Specifies the length of the array whose address is given in *binary* .
+   
+
+.. seealso::
+
+   
+   :c:func:`glGetProgram`, :c:func:`glGetProgramBinary`, :c:func:`glProgramBinary`
+   
+.. rubric:: Description
+
+
+:c:func:`glShaderBinary` loads pre-compiled shader binary code into the *count* shader objects whose handles are given in *shaders* . *binary* points to *length* bytes of binary shader code stored in client memory. *binaryFormat* specifies the format of the pre-compiled code.
+
+The binary image contained in *binary* will be decoded according to the extension specification defining the specified *binaryFormat* token. OpenGL does not define any specific binary formats, but it does provide a mechanism to obtain token vaues for such formats provided by such extensions.
+
+Depending on the types of the shader objects in *shaders* , :c:func:`glShaderBinary` will individually load binary vertex or fragment shaders, or load an executable binary that contains an optimized pair of vertex and fragment shaders stored in the same binary.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGet` with parameter ``GL_NUM_SHADER_BINARY_FORMATS``.
+   * :c:func:`glGet` with parameter ``GL_SHADER_BINARY_FORMATS``.
+
+**Errors:**
+
+   * ``GL_INVALID_OPERATION`` is generated if more than one of the handles in *shaders* refers to the same shader object.
+   * ``GL_INVALID_ENUM`` is generated if *binaryFormat* is not an accepted value.
+   * ``GL_INVALID_VALUE`` is generated if the data pointed to by *binary* does not match the format specified by *binaryFormat* .
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

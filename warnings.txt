@@ -1,0 +1,1 @@
+F:\OpenGL\rest\api\OpenGL\man4\glGetBufferParameter.txt:22: WARNING: duplicate C object description of glGetBufferParameteriv, other instance in F:\OpenGL\rest\api\OpenGL\man3\glGetBufferParameteriv.txt

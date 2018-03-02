@@ -1,0 +1,110 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:28
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/gluUnProject.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `gluUnProject`
+-----------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Map window coordinates to object coordinates
+
+.. c:function:: gluUnProject
+
+
+         :param winX:
+         :param winY:
+         :param winZ:
+
+                  Specify the window coordinates to be mapped.
+
+         :param model:
+
+                  Specifies the modelview matrix (as from a :c:func:`glGetDoublev` call).
+
+         :param proj:
+
+                  Specifies the projection matrix (as from a :c:func:`glGetDoublev` call).
+
+         :param view:
+
+                  Specifies the viewport (as from a :c:func:`glGetIntegerv` call).
+
+         :param objX:
+         :param objY:
+         :param objZ:
+
+                  Returns the computed object coordinates.
+
+.. rubric:: Specification
+
+.. c:function:: GLint gluUnProject(GLdouble  winX, GLdouble  winY, GLdouble  winZ, const GLdouble *  model, const GLdouble *  proj, const GLint *  view, GLdouble*  objX, GLdouble*  objY, GLdouble*  objZ)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`gluProject`\ ,
+            :c:func:`glGet`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`gluUnProject` maps the specified window coordinates into object
+coordinates using *model*\ , *proj*\ , and *view*\ .
+The result is stored in *objX*\ , *objY*\ , and *objZ*\ . A return value of
+``GLU_TRUE`` indicates success; a return value of ``GLU_FALSE``
+indicates failure.
+
+
+To compute the coordinates
+|EQUATION_1_|\ ,
+:c:func:`gluUnProject` multiplies the normalized device coordinates by the inverse of
+*model* \* *proj* as follows:
+
+
+|EQUATION_2_|
+|EQUATION_3_| denotes matrix inversion.
+W is an unused variable, included for consistent matrix notation.
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'gluUnProject'>
+
+.. role:: mml(raw)
+   :format: html
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mi mathvariant="italic">objX</mi><mi mathvariant="italic">objY</mi><mi mathvariant="italic">objZ</mi></mfenced></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mfenced open="(" close=")"><mtable><mtr><mtd><mi mathvariant="italic">objX</mi></mtd></mtr><mtr><mtd><mi mathvariant="italic">objY</mi></mtd></mtr><mtr><mtd><mi mathvariant="italic">objZ</mi></mtd></mtr><mtr><mtd><mi mathvariant="italic">W</mi></mtd></mtr></mtable></mfenced><mo>=</mo><mrow><mrow><mi mathvariant="italic">INV</mi><mo>&af;</mo><mfenced open="(" close=")"><mrow><mi mathvariant="italic">P</mi><mo>&it;</mo><mi mathvariant="italic">M</mi></mrow></mfenced></mrow><mo>&it;</mo><mfenced open="(" close=")"><mtable><mtr><mtd><mrow><mfrac><mfenced open="" close=""><mrow><mn>2</mn><mo>&af;</mo><mfenced open="(" close=")"><mrow><mi mathvariant="italic">winX</mi><mo>-</mo><mrow><mi mathvariant="italic">view</mi><mo>&af;</mo><mfenced open="[" close="]"><mn>0</mn></mfenced></mrow></mrow></mfenced></mrow></mfenced><mfenced open="" close=""><mrow><mi mathvariant="italic">view</mi><mo>&af;</mo><mfenced open="[" close="]"><mn>2</mn></mfenced></mrow></mfenced></mfrac><mo>-</mo><mn>1</mn></mrow></mtd></mtr><mtr><mtd><mrow><mfrac><mfenced open="" close=""><mrow><mn>2</mn><mo>&af;</mo><mfenced open="(" close=")"><mrow><mi mathvariant="italic">winY</mi><mo>-</mo><mrow><mi mathvariant="italic">view</mi><mo>&af;</mo><mfenced open="[" close="]"><mn>1</mn></mfenced></mrow></mrow></mfenced></mrow></mfenced><mfenced open="" close=""><mrow><mi mathvariant="italic">view</mi><mo>&af;</mo><mfenced open="[" close="]"><mn>3</mn></mfenced></mrow></mfenced></mfrac><mo>-</mo><mn>1</mn></mrow></mtd></mtr><mtr><mtd><mrow><mrow><mn>2</mn><mo>&af;</mo><mfenced open="(" close=")"><mi mathvariant="italic">winZ</mi></mfenced></mrow><mo>-</mo><mn>1</mn></mrow></mtd></mtr><mtr><mtd><mn>1</mn></mtd></mtr></mtable></mfenced></mrow></mrow></math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">INV</mi></math>` 
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

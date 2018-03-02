@@ -1,0 +1,196 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:26
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glBitmap.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glBitmap`
+-------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Draw a bitmap
+
+.. c:function:: glBitmap
+
+
+         :param width:
+         :param height:
+
+                  Specify the pixel width and height of the bitmap image.
+
+         :param xorig:
+         :param yorig:
+
+                  Specify the location of the origin in the bitmap image.
+                  The origin is measured from the lower left corner of the bitmap,
+                  with right and up being the positive axes.
+
+         :param xmove:
+         :param ymove:
+
+                  Specify the :strong:`x` and :strong:`y` offsets to be added to the current raster position
+                  after the bitmap is drawn.
+
+         :param bitmap:
+
+                  Specifies the address of the bitmap image.
+
+.. rubric:: Specification
+
+.. c:function:: void glBitmap(GLsizei  width, GLsizei  height, GLfloat  xorig, GLfloat  yorig, GLfloat  xmove, GLfloat  ymove, const GLubyte *  bitmap)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glBindBuffer`\ ,
+            :c:func:`glDrawPixels`\ ,
+            :c:func:`glPixelStore`\ ,
+            :c:func:`glPixelTransfer`\ ,
+            :c:func:`glRasterPos`\ ,
+            :c:func:`glWindowPos`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+A bitmap is a binary image.
+When drawn,
+the bitmap is positioned relative to the current raster position,
+and frame buffer pixels corresponding to 1's in the bitmap are
+written using the current raster color or index.
+Frame buffer pixels corresponding to 0's in the bitmap are not modified.
+
+
+:c:func:`glBitmap` takes seven arguments.
+The first pair specifies the width and height of the bitmap image.
+The second pair specifies the location of the bitmap origin relative
+to the lower left corner of the bitmap image.
+The third pair of arguments specifies :strong:`x` and :strong:`y` offsets to be added
+to the current raster position after the bitmap has been drawn.
+The final argument is a pointer to the bitmap image itself.
+
+
+If a non-zero named buffer object is bound to the ``GL_PIXEL_UNPACK_BUFFER`` target
+(see :c:func:`glBindBuffer`\ ) while a bitmap image is
+specified, *bitmap* is treated as a byte offset into the buffer object's data store.
+
+
+The bitmap image is interpreted like image data for the :c:func:`glDrawPixels`
+command,
+with *width* and *height* corresponding to the width and height arguments
+of that command,
+and with :strong:`type` set to ``GL_BITMAP``
+and :strong:`format` set to ``GL_COLOR_INDEX``\ .
+Modes specified using :c:func:`glPixelStore` affect the
+interpretation of bitmap image data;
+modes specified using :c:func:`glPixelTransfer` do not.
+
+
+If the current raster position is invalid, :c:func:`glBitmap` is ignored.
+Otherwise,
+the lower left corner of the bitmap image is positioned at the window coordinates
+
+
+|EQUATION_1_|
+
+|EQUATION_2_|
+
+where
+|EQUATION_3_| is the raster position
+and |EQUATION_4_| is the bitmap origin.
+Fragments are then generated for each pixel corresponding to a 1 (one)
+in the bitmap image.
+These fragments are generated using the current raster :strong:`z` coordinate,
+color or color index, and current raster texture coordinates.
+They are then treated just as if they had been generated
+by a point, line, or polygon,
+including texture mapping,
+fogging,
+and all per-fragment operations such as alpha and depth testing.
+
+
+After the bitmap has been drawn,
+the :strong:`x` and :strong:`y` coordinates of the current raster position are offset by
+*xmove* and *ymove*\ .
+No change is made to the :strong:`z` coordinate of the current raster position,
+or to the current raster color, texture coordinates, or index.
+
+
+.. note::
+
+
+   To set a valid raster position outside the viewport, first set a valid
+   raster position inside the viewport, then call :c:func:`glBitmap` with NULL
+   as the *bitmap* parameter and with *xmove* and *ymove* set to
+   the offsets of the new raster position. This technique is useful when
+   panning an image around the viewport.
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_VALUE`` is generated if *width* or *height* is negative.
+* ``GL_INVALID_OPERATION`` is generated if a non-zero buffer object name is bound to the ``GL_PIXEL_UNPACK_BUFFER`` target and the buffer object's data store is currently mapped.
+* ``GL_INVALID_OPERATION`` is generated if a non-zero buffer object name is bound to the ``GL_PIXEL_UNPACK_BUFFER`` target and the data would be unpacked from the buffer object such that the memory reads required would exceed the data store size.
+* ``GL_INVALID_OPERATION`` is generated if :c:func:`glBitmap` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`\ .
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGet` with argument ``GL_CURRENT_RASTER_POSITION``
+* :c:func:`glGet` with argument ``GL_CURRENT_RASTER_COLOR``
+* :c:func:`glGet` with argument ``GL_CURRENT_RASTER_SECONDARY_COLOR``
+* :c:func:`glGet` with argument ``GL_CURRENT_RASTER_DISTANCE``
+* :c:func:`glGet` with argument ``GL_CURRENT_RASTER_INDEX``
+* :c:func:`glGet` with argument ``GL_CURRENT_RASTER_TEXTURE_COORDS``
+* :c:func:`glGet` with argument ``GL_CURRENT_RASTER_POSITION_VALID``
+* :c:func:`glGet` with argument ``GL_PIXEL_UNPACK_BUFFER_BINDING``
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glBitmap'>
+
+.. role:: mml(raw)
+   :format: html
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">w</mi></msub><mo>=</mo><mfenced open="&LeftFloor;" close="&RightFloor;"><mrow><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">r</mi></msub><mo>-</mo><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">o</mi></msub></mrow></mfenced></mrow></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">w</mi></msub><mo>=</mo><mfenced open="&LeftFloor;" close="&RightFloor;"><mrow><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">r</mi></msub><mo>-</mo><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">o</mi></msub></mrow></mfenced></mrow></math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">r</mi></msub><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">r</mi></msub></mfenced></math>` 
+
+.. |EQUATION_4_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">o</mi></msub><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">o</mi></msub></mfenced></math>` 
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

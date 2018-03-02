@@ -1,0 +1,67 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glMatrixMode`
+-----------------------
+
+.. source file man/glMatrixMode
+
+.. currentmodule:: OpenGL.GL
+
+Specify which matrix is the current matrix
+
+.. c:function:: glMatrixMode
+.. c:function:: void glMatrixMode(GLenum  mode)
+   :noindex: 
+
+
+   
+   :param mode:
+      Specifies which matrix stack is the target for subsequent matrix operations. Three values are accepted: ``GL_MODELVIEW``, ``GL_PROJECTION``, and ``GL_TEXTURE``. The initial value is ``GL_MODELVIEW``. Additionally, if the ``ARB_imaging`` extension is supported, ``GL_COLOR`` is also accepted.
+   
+
+.. seealso::
+
+   
+   :c:func:`glLoadMatrix`, :c:func:`glLoadTransposeMatrix`, :c:func:`glMultMatrix`, :c:func:`glMultTransposeMatrix`, :c:func:`glPopMatrix`, :c:func:`glPushMatrix`
+   
+.. rubric:: Description
+
+
+:c:func:`glMatrixMode` sets the current matrix mode. *mode* can assume one of four values:
+
+
+   
+   ``GL_MODELVIEW``
+      Applies subsequent matrix operations to the modelview matrix stack.
+   
+   ``GL_PROJECTION``
+      Applies subsequent matrix operations to the projection matrix stack.
+   
+   ``GL_TEXTURE``
+      Applies subsequent matrix operations to the texture matrix stack.
+   
+   ``GL_COLOR``
+      Applies subsequent matrix operations to the color matrix stack.
+   
+To find out which matrix stack is currently the target of all matrix operations, call :c:func:`glGet` with argument ``GL_MATRIX_MODE``. The initial value is ``GL_MODELVIEW``.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGet` with argument ``GL_MATRIX_MODE``
+
+**Errors:**
+
+   * ``GL_INVALID_ENUM`` is generated if *mode* is not an accepted value.
+   * ``GL_INVALID_OPERATION`` is generated if :c:func:`glMatrixMode` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`.
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

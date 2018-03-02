@@ -1,0 +1,71 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glGetSync`
+--------------------
+
+.. source file man4/glGetSync
+
+.. currentmodule:: OpenGL.GL
+
+Query the properties of a sync object
+
+.. c:function:: glGetSync
+.. c:function:: void glGetSynciv(GLsync  sync, GLenum  pname, GLsizei  bufSize, GLsizei * length, GLint * values)
+
+
+   
+   :param sync:
+      Specifies the sync object whose properties to query.
+   
+   :param pname:
+      Specifies the parameter whose value to retrieve from the sync object specified in *sync* .
+   
+   :param bufSize:
+      Specifies the size of the buffer whose address is given in *values* .
+   
+   :param length:
+      Specifies the address of an variable to receive the number of integers placed in *values* .
+   
+   :param values:
+      Specifies the address of an array to receive the values of the queried parameter.
+   
+
+.. seealso::
+
+   
+   :c:func:`glFenceSync`, :c:func:`glWaitSync`, :c:func:`glClientWaitSync`
+   
+.. rubric:: Description
+
+
+:c:func:`glGetSynciv` retrieves properties of a sync object. *sync* specifies the name of the sync object whose properties to retrieve.
+
+On success, :c:func:`glGetSynciv` replaces up to *bufSize* integers in *values* with the corresponding property values of the object being queried. The actual number of integers replaced is returned in the variable whose address is specified in *length* . If *length* is ``NULL``, no length is returned.
+
+If *pname* is ``GL_OBJECT_TYPE``, a single value representing the specific type of the sync object is placed in *values* . The only type supported is ``GL_SYNC_FENCE``.
+
+If *pname* is ``GL_SYNC_STATUS``, a single value representing the status of the sync object (``GL_SIGNALED`` or ``GL_UNSIGNALED``) is placed in *values* .
+
+If *pname* is ``GL_SYNC_CONDITION``, a single value representing the condition of the sync object is placed in *values* . The only condition supported is ``GL_SYNC_GPU_COMMANDS_COMPLETE``.
+
+If *pname* is ``GL_SYNC_FLAGS``, a single value representing the flags with which the sync object was created is placed in *values* . No flags are currently supported [1]_ .
+
+If an error occurs, nothing will be written to *values* or *length* .
+
+
+**Errors:**
+
+   * ``GL_INVALID_VALUE`` is generated if *sync* is not the name of a sync object.
+   * ``GL_INVALID_ENUM`` is generated if *pname* is not one of the accepted tokens.
+
+
+.. [1] . *flags* is expected to be used in future extensions to the sync objects.
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

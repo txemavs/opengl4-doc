@@ -1,0 +1,208 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glTexEnv`
+-------------------
+
+.. source file man/glTexEnv
+
+.. currentmodule:: OpenGL.GL
+
+Set texture environment parameters
+
+.. c:function:: glTexEnv
+.. c:function:: void glTexEnvf(GLenum  target, GLenum  pname, GLfloat  param, GLenum  target, GLenum  pname, GLint  param)
+
+
+   
+   :param target:
+      Specifies a texture environment. May be ``GL_TEXTURE_ENV``, ``GL_TEXTURE_FILTER_CONTROL`` or ``GL_POINT_SPRITE``.
+   
+   :param pname:
+      Specifies the symbolic name of a single-valued texture environment parameter. May be either ``GL_TEXTURE_ENV_MODE``, ``GL_TEXTURE_LOD_BIAS``, ``GL_COMBINE_RGB``, ``GL_COMBINE_ALPHA``, ``GL_SRC0_RGB``, ``GL_SRC1_RGB``, ``GL_SRC2_RGB``, ``GL_SRC0_ALPHA``, ``GL_SRC1_ALPHA``, ``GL_SRC2_ALPHA``, ``GL_OPERAND0_RGB``, ``GL_OPERAND1_RGB``, ``GL_OPERAND2_RGB``, ``GL_OPERAND0_ALPHA``, ``GL_OPERAND1_ALPHA``, ``GL_OPERAND2_ALPHA``, ``GL_RGB_SCALE``, ``GL_ALPHA_SCALE``, or ``GL_COORD_REPLACE``.
+   
+   :param param:
+      Specifies a single symbolic constant, one of ``GL_ADD``, ``GL_ADD_SIGNED``, ``GL_INTERPOLATE``, ``GL_MODULATE``, ``GL_DECAL``, ``GL_BLEND``, ``GL_REPLACE``, ``GL_SUBTRACT``, ``GL_COMBINE``, ``GL_TEXTURE``, ``GL_CONSTANT``, ``GL_PRIMARY_COLOR``, ``GL_PREVIOUS``, ``GL_SRC_COLOR``, ``GL_ONE_MINUS_SRC_COLOR``, ``GL_SRC_ALPHA``, ``GL_ONE_MINUS_SRC_ALPHA``, a single boolean value for the point sprite texture coordinate replacement, a single floating-point value for the texture level-of-detail bias, or 1.0, 2.0, or 4.0 when specifying the ``GL_RGB_SCALE`` or ``GL_ALPHA_SCALE``.
+   
+.. c:function:: void glTexEnvfv(GLenum  target, GLenum  pname, const GLfloat *  params, GLenum  target, GLenum  pname, const GLint *  params)
+
+
+   
+   :param target:
+      Specifies a texture environment. May be either ``GL_TEXTURE_ENV``, or ``GL_TEXTURE_FILTER_CONTROL``.
+   
+   :param pname:
+      Specifies the symbolic name of a texture environment parameter. Accepted values are ``GL_TEXTURE_ENV_MODE``, ``GL_TEXTURE_ENV_COLOR``, or ``GL_TEXTURE_LOD_BIAS``.
+   
+   :param params:
+      Specifies a pointer to a parameter array that contains either a single symbolic constant, single floating-point number, or an RGBA color.
+   
+
+.. seealso::
+
+   
+   :c:func:`glActiveTexture`, :c:func:`glCopyPixels`, :c:func:`glCopyTexImage1D`, :c:func:`glCopyTexImage2D`, :c:func:`glCopyTexSubImage1D`, :c:func:`glCopyTexSubImage2D`, :c:func:`glCopyTexSubImage3D`, :c:func:`glTexImage1D`, :c:func:`glTexImage2D`, :c:func:`glTexImage3D`, :c:func:`glTexParameter`, :c:func:`glTexSubImage1D`, :c:func:`glTexSubImage2D`, :c:func:`glTexSubImage3D`
+   
+.. rubric:: Description
+
+
+A texture environment specifies how texture values are interpreted when a fragment is textured. When *target* is ``GL_TEXTURE_FILTER_CONTROL``, *pname* must be ``GL_TEXTURE_LOD_BIAS``. When *target* is ``GL_TEXTURE_ENV``, *pname* can be ``GL_TEXTURE_ENV_MODE``, ``GL_TEXTURE_ENV_COLOR``, ``GL_COMBINE_RGB``, ``GL_COMBINE_ALPHA``, ``GL_RGB_SCALE``, ``GL_ALPHA_SCALE``, ``GL_SRC0_RGB``, ``GL_SRC1_RGB``, ``GL_SRC2_RGB``, ``GL_SRC0_ALPHA``, ``GL_SRC1_ALPHA``, or ``GL_SRC2_ALPHA``.
+
+If *pname* is ``GL_TEXTURE_ENV_MODE``, then *params* is (or points to) the symbolic name of a texture function. Six texture functions may be specified: ``GL_ADD``, ``GL_MODULATE``, ``GL_DECAL``, ``GL_BLEND``, ``GL_REPLACE``, or ``GL_COMBINE``.
+
+The following table shows the correspondence of filtered texture values |EQUATION_1_| , |EQUATION_2_| , |EQUATION_3_| , |EQUATION_4_| , |EQUATION_5_| , |EQUATION_6_| to texture source components. |EQUATION_7_| and |EQUATION_8_| are used by the texture functions described below.
+
+
+
+A texture function acts on the fragment to be textured using the texture image value that applies to the fragment (see :c:func:`glTexParameter`) and produces an RGBA color for that fragment. The following table shows how the RGBA color is produced for each of the first five texture functions that can be chosen. |EQUATION_9_| is a triple of color values (RGB) and |EQUATION_10_| is the associated alpha value. RGBA values extracted from a texture image are in the range [0,1]. The subscript |EQUATION_11_| refers to the color computed from the previous texture stage (or the incoming fragment if processing texture stage 0), the subscript |EQUATION_12_| to the texture source color, the subscript |EQUATION_13_| to the texture environment color, and the subscript |EQUATION_14_| indicates a value produced by the texture function.
+
+
+
+If *pname* is ``GL_TEXTURE_ENV_MODE``, and *params* is ``GL_COMBINE``, the form of the texture function depends on the values of ``GL_COMBINE_RGB`` and ``GL_COMBINE_ALPHA``.
+
+The following describes how the texture sources, as specified by ``GL_SRC0_RGB``, ``GL_SRC1_RGB``, ``GL_SRC2_RGB``, ``GL_SRC0_ALPHA``, ``GL_SRC1_ALPHA``, and ``GL_SRC2_ALPHA``, are combined to produce a final texture color. In the following tables, ``GL_SRC0_c`` is represented by |EQUATION_15_| , ``GL_SRC1_c`` is represented by |EQUATION_16_| , and ``GL_SRC2_c`` is represented by |EQUATION_17_| .
+
+``GL_COMBINE_RGB`` accepts any of ``GL_REPLACE``, ``GL_MODULATE``, ``GL_ADD``, ``GL_ADD_SIGNED``, ``GL_INTERPOLATE``, ``GL_SUBTRACT``, ``GL_DOT3_RGB``, or ``GL_DOT3_RGBA``.
+
+
+
+The scalar results for ``GL_DOT3_RGB`` and ``GL_DOT3_RGBA`` are placed into each of the 3 (RGB) or 4 (RGBA) components on output.
+
+Likewise, ``GL_COMBINE_ALPHA`` accepts any of ``GL_REPLACE``, ``GL_MODULATE``, ``GL_ADD``, ``GL_ADD_SIGNED``, ``GL_INTERPOLATE``, or ``GL_SUBTRACT``. The following table describes how alpha values are combined:
+
+
+
+In the following tables, the value |EQUATION_18_| represents the color sampled from the currently bound texture, |EQUATION_19_| represents the constant texture-environment color, |EQUATION_20_| represents the primary color of the incoming fragment, and |EQUATION_21_| represents the color computed from the previous texture stage or |EQUATION_22_| if processing texture stage 0. Likewise, |EQUATION_23_| , |EQUATION_24_| , |EQUATION_25_| , and |EQUATION_26_| represent the respective alpha values.
+
+The following table describes the values assigned to |EQUATION_27_| , |EQUATION_28_| , and |EQUATION_29_| based upon the RGB sources and operands:
+
+
+
+For ``GL_TEXTUREn`` sources, |EQUATION_30_| and |EQUATION_31_| represent the color and alpha, respectively, produced from texture stage |EQUATION_32_| .
+
+The follow table describes the values assigned to |EQUATION_33_| , |EQUATION_34_| , and |EQUATION_35_| based upon the alpha sources and operands:
+
+
+
+The RGB and alpha results of the texture function are multipled by the values of ``GL_RGB_SCALE`` and ``GL_ALPHA_SCALE``, respectively, and clamped to the range |EQUATION_36_| .
+
+If *pname* is ``GL_TEXTURE_ENV_COLOR``, *params* is a pointer to an array that holds an RGBA color consisting of four values. Integer color components are interpreted linearly such that the most positive integer maps to 1.0, and the most negative integer maps to -1.0. The values are clamped to the range [0,1] when they are specified. |EQUATION_37_| takes these four values.
+
+If *pname* is ``GL_TEXTURE_LOD_BIAS``, the value specified is added to the texture level-of-detail parameter, that selects which mipmap, or mipmaps depending upon the selected ``GL_TEXTURE_MIN_FILTER``, will be sampled.
+
+``GL_TEXTURE_ENV_MODE`` defaults to ``GL_MODULATE`` and ``GL_TEXTURE_ENV_COLOR`` defaults to (0, 0, 0, 0).
+
+If *target* is ``GL_POINT_SPRITE`` and *pname* is ``GL_COORD_REPLACE``, the boolean value specified is used to either enable or disable point sprite texture coordinate replacement. The default value is ``GL_FALSE``.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGetTexEnv`
+
+**Errors:**
+
+   * ``GL_INVALID_ENUM`` is generated when *target* or *pname* is not one of the accepted defined values, or when *params* should have a defined constant value (based on the value of *pname* ) and does not.
+   * ``GL_INVALID_VALUE`` is generated if the *params* value for ``GL_RGB_SCALE`` or ``GL_ALPHA_SCALE`` are not one of 1.0, 2.0, or 4.0.
+   * ``GL_INVALID_OPERATION`` is generated if :c:func:`glTexEnv` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`.
+
+
+
+.. note::
+
+   * ``GL_REPLACE`` may only be used if the GL version is 1.1 or greater.
+   * ``GL_TEXTURE_FILTER_CONTROL`` and ``GL_TEXTURE_LOD_BIAS`` may only be used if the GL version is 1.4 or greater.
+   * ``GL_COMBINE`` mode and its associated constants may only be used if the GL version is 1.3 or greater.
+   * ``GL_TEXTUREn`` may only be used if the GL version is 1.4 or greater.
+   * Internal formats other than 1, 2, 3, or 4 may only be used if the GL version is 1.1 or greater.
+   * For OpenGL versions 1.3 and greater, or when the ``ARB_multitexture`` extension is supported, :c:func:`glTexEnv` controls the texture environment for the current active texture unit, selected by :c:func:`glActiveTexture`.
+   * ``GL_POINT_SPRITE`` and ``GL_COORD_REPLACE`` are available only if the GL version is 2.0 or greater.
+
+
+
+.. role:: mml(raw)
+   :format: html
+
+
+
+.. |EQUATION_10_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">A</mi></math>` 
+
+.. |EQUATION_11_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">p</mi></math>` 
+
+.. |EQUATION_12_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">s</mi></math>` 
+
+.. |EQUATION_13_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">c</mi></math>` 
+
+.. |EQUATION_14_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">v</mi></math>` 
+
+.. |EQUATION_15_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">Arg0</mi></math>` 
+
+.. |EQUATION_16_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">Arg1</mi></math>` 
+
+.. |EQUATION_17_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">Arg2</mi></math>` 
+
+.. |EQUATION_18_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">C</mi> <mi mathvariant="italic">s</mi> </msub> </math>` 
+
+.. |EQUATION_19_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">C</mi> <mi mathvariant="italic">c</mi> </msub> </math>` 
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">R</mi> <mi mathvariant="italic">t</mi></msub></math>` 
+
+.. |EQUATION_20_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">C</mi> <mi mathvariant="italic">f</mi> </msub> </math>` 
+
+.. |EQUATION_21_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">C</mi> <mi mathvariant="italic">p</mi> </msub> </math>` 
+
+.. |EQUATION_22_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">C</mi> <mi mathvariant="italic">f</mi> </msub> </math>` 
+
+.. |EQUATION_23_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">A</mi> <mi mathvariant="italic">s</mi> </msub> </math>` 
+
+.. |EQUATION_24_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">A</mi> <mi mathvariant="italic">c</mi> </msub> </math>` 
+
+.. |EQUATION_25_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">A</mi> <mi mathvariant="italic">f</mi> </msub> </math>` 
+
+.. |EQUATION_26_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">A</mi> <mi mathvariant="italic">p</mi> </msub> </math>` 
+
+.. |EQUATION_27_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">Arg0</mi></math>` 
+
+.. |EQUATION_28_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">Arg1</mi></math>` 
+
+.. |EQUATION_29_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">Arg2</mi></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">G</mi> <mi mathvariant="italic">t</mi></msub></math>` 
+
+.. |EQUATION_30_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">C</mi> <mi mathvariant="italic">s</mi> </msub> </math>` 
+
+.. |EQUATION_31_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">A</mi> <mi mathvariant="italic">s</mi> </msub> </math>` 
+
+.. |EQUATION_32_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math>` 
+
+.. |EQUATION_33_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">Arg0</mi></math>` 
+
+.. |EQUATION_34_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">Arg1</mi></math>` 
+
+.. |EQUATION_35_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">Arg2</mi></math>` 
+
+.. |EQUATION_36_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"> <mn>0</mn> <mn>1</mn> </mfenced> </math>` 
+
+.. |EQUATION_37_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">C</mi> <mi mathvariant="italic">c</mi> </msub> </math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">B</mi> <mi mathvariant="italic">t</mi></msub></math>` 
+
+.. |EQUATION_4_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">A</mi> <mi mathvariant="italic">t</mi></msub></math>` 
+
+.. |EQUATION_5_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">L</mi> <mi mathvariant="italic">t</mi></msub></math>` 
+
+.. |EQUATION_6_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">I</mi> <mi mathvariant="italic">t</mi></msub></math>` 
+
+.. |EQUATION_7_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">C</mi> <mi mathvariant="italic">s</mi></msub></math>` 
+
+.. |EQUATION_8_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">A</mi> <mi mathvariant="italic">s</mi></msub></math>` 
+
+.. |EQUATION_9_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">C</mi></math>` 
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

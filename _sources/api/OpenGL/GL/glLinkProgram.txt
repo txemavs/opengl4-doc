@@ -1,0 +1,126 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glLinkProgram`
+------------------------
+
+.. source file man4/glLinkProgram
+
+.. currentmodule:: OpenGL.GL
+
+Links a program object
+
+.. c:function:: glLinkProgram
+.. c:function:: void glLinkProgram(GLuint  program)
+   :noindex: 
+
+
+   
+   :param program:
+      Specifies the handle of the program object to be linked.
+   
+
+.. seealso::
+
+   
+   :c:func:`glAttachShader`, :c:func:`glBindAttribLocation`, :c:func:`glCompileShader`, :c:func:`glCreateProgram`, :c:func:`glDeleteProgram`, :c:func:`glDetachShader`, :c:func:`glUniform`, :c:func:`glUseProgram`, :c:func:`glValidateProgram`
+   
+.. rubric:: Description
+
+
+:c:func:`glLinkProgram` links the program object specified by *program* . If any shader objects of type ``GL_VERTEX_SHADER`` are attached to *program* , they will be used to create an executable that will run on the programmable vertex processor. If any shader objects of type ``GL_GEOMETRY_SHADER`` are attached to *program* , they will be used to create an executable that will run on the programmable geometry processor. If any shader objects of type ``GL_FRAGMENT_SHADER`` are attached to *program* , they will be used to create an executable that will run on the programmable fragment processor.
+
+The status of the link operation will be stored as part of the program object's state. This value will be set to ``GL_TRUE`` if the program object was linked without errors and is ready for use, and ``GL_FALSE`` otherwise. It can be queried by calling :c:func:`glGetProgram` with arguments *program* and ``GL_LINK_STATUS``.
+
+As a result of a successful link operation, all active user-defined uniform variables belonging to *program* will be initialized to 0, and each of the program object's active uniform variables will be assigned a location that can be queried by calling :c:func:`glGetUniformLocation`. Also, any active user-defined attribute variables that have not been bound to a generic vertex attribute index will be bound to one at this time.
+
+Linking of a program object can fail for a number of reasons as specified in the *`OpenGL Shading Language Specification`* . The following lists some of the conditions that will cause a link error.
+
+The number of active attribute variables supported by the implementation has been exceeded.
+
+The storage limit for uniform variables has been exceeded.
+
+The number of active uniform variables supported by the implementation has been exceeded.
+
+The :c:func:`main` function is missing for the vertex, geometry or fragment shader.
+
+A varying variable actually used in the fragment shader is not declared in the same way (or is not declared at all) in the vertex shader, or geometry shader shader if present.
+
+A reference to a function or variable name is unresolved.
+
+A shared global is declared with two different types or two different initial values.
+
+One or more of the attached shader objects has not been successfully compiled.
+
+Binding a generic attribute matrix caused some rows of the matrix to fall outside the allowed maximum of ``GL_MAX_VERTEX_ATTRIBS``.
+
+Not enough contiguous vertex attribute slots could be found to bind attribute matrices.
+
+The program object contains objects to form a fragment shader but does not contain objects to form a vertex shader.
+
+The program object contains objects to form a geometry shader but does not contain objects to form a vertex shader.
+
+The program object contains objects to form a geometry shader and the input primitive type, output primitive type, or maximum output vertex count is not specified in any compiled geometry shader object.
+
+The program object contains objects to form a geometry shader and the input primitive type, output primitive type, or maximum output vertex count is specified differently in multiple geometry shader objects.
+
+The number of active outputs in the fragment shader is greater than the value of ``GL_MAX_DRAW_BUFFERS``.
+
+The program has an active output assigned to a location greater than or equal to the value of ``GL_MAX_DUAL_SOURCE_DRAW_BUFFERS`` and has an active output assigned an index greater than or equal to one.
+
+More than one varying out variable is bound to the same number and index.
+
+The explicit binding assigments do not leave enough space for the linker to automatically assign a location for a varying out array, which requires multiple contiguous locations.
+
+The *count* specified by :c:func:`glTransformFeedbackVaryings` is non-zero, but the program object has no vertex or geometry shader.
+
+Any variable name specified to :c:func:`glTransformFeedbackVaryings` in the *varyings* array is not declared as an output in the vertex shader (or the geometry shader, if active).
+
+Any two entries in the *varyings* array given :c:func:`glTransformFeedbackVaryings` specify the same varying variable.
+
+The total number of components to capture in any transform feedback varying variable is greater than the constant ``GL_MAX_TRANSFORM_FEEDBACK_SEPARATE_COMPONENTS`` and the buffer mode is ``SEPARATE_ATTRIBS``.
+
+When a program object has been successfully linked, the program object can be made part of current state by calling :c:func:`glUseProgram`. Whether or not the link operation was successful, the program object's information log will be overwritten. The information log can be retrieved by calling :c:func:`glGetProgramInfoLog`.
+
+:c:func:`glLinkProgram` will also install the generated executables as part of the current rendering state if the link operation was successful and the specified program object is already currently in use as a result of a previous call to :c:func:`glUseProgram`. If the program object currently in use is relinked unsuccessfully, its link status will be set to ``GL_FALSE`` , but the executables and associated state will remain part of the current state until a subsequent call to :c:func:`glUseProgram` removes it from use. After it is removed from use, it cannot be made part of current state until it has been successfully relinked.
+
+If *program* contains shader objects of type ``GL_VERTEX_SHADER``, and optionally of type ``GL_GEOMETRY_SHADER``, but does not contain shader objects of type ``GL_FRAGMENT_SHADER``, the vertex shader executable will be installed on the programmable vertex processor, the geometry shader executable, if present, will be installed on the programmable geometry processor, but no executable will be installed on the fragment processor. The results of rasterizing primitives with such a program will be undefined.
+
+The program object's information log is updated and the program is generated at the time of the link operation. After the link operation, applications are free to modify attached shader objects, compile attached shader objects, detach shader objects, delete shader objects, and attach additional shader objects. None of these operations affects the information log or the program that is part of the program object.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGet` with the argument ``GL_CURRENT_PROGRAM``
+   * :c:func:`glGetActiveAttrib` with argument *program* and the index of an active attribute variable
+   * :c:func:`glGetActiveUniform` with argument *program* and the index of an active uniform variable **
+   * :c:func:`glGetAttachedShaders` with argument *program*
+   * :c:func:`glGetAttribLocation` with argument *program* and an attribute variable name
+   * :c:func:`glGetProgram` with arguments *program* and ``GL_LINK_STATUS``
+   * :c:func:`glGetProgramInfoLog` with argument *program*
+   * :c:func:`glGetUniform` with argument *program* and a uniform variable location
+   * :c:func:`glGetUniformLocation` with argument *program* and a uniform variable name
+   * :c:func:`glIsProgram`
+
+**Errors:**
+
+   * ``GL_INVALID_VALUE`` is generated if *program* is not a value generated by OpenGL.
+   * ``GL_INVALID_OPERATION`` is generated if *program* is not a program object.
+   * ``GL_INVALID_OPERATION`` is generated if *program* is the currently active program object and transform feedback mode is active.
+
+
+
+.. note::
+
+   * If the link operation is unsuccessful, any information about a previous link operation on *program* is lost (i.e., a failed link does not restore the old state of *program* ). Certain information can still be retrieved from *program* even after an unsuccessful link operation. See for instance :c:func:`glGetActiveAttrib` and :c:func:`glGetActiveUniform`.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

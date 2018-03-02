@@ -1,0 +1,49 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glBindFramebuffer`
+----------------------------
+
+.. source file man4/glBindFramebuffer
+
+.. currentmodule:: OpenGL.GL
+
+Bind a framebuffer to a framebuffer target
+
+.. c:function:: glBindFramebuffer
+.. c:function:: void glBindFramebuffer(GLenum  target, GLuint  framebuffer)
+   :noindex: 
+
+
+   
+   :param target:
+      Specifies the framebuffer target of the binding operation.
+   
+   :param framebuffer:
+      Specifies the name of the framebuffer object to bind.
+   
+
+.. seealso::
+
+   
+   :c:func:`glGenFramebuffers`, :c:func:`glDeleteFramebuffers`, :c:func:`glFramebufferRenderbuffer`, :c:func:`glFramebufferTexture`, :c:func:`glFramebufferTexture1D`, :c:func:`glFramebufferTexture2D`, :c:func:`glFramebufferTexture3D`, :c:func:`glFramebufferTextureFace`, :c:func:`glFramebufferTextureLayer`, :c:func:`glIsFramebuffer`
+   
+.. rubric:: Description
+
+
+:c:func:`glBindFramebuffer` binds the framebuffer object with name *framebuffer* to the framebuffer target specified by *target* . *target* must be either ``GL_DRAW_FRAMEBUFFER``, ``GL_READ_FRAMEBUFFER`` or ``GL_FRAMEBUFFER``. If a framebuffer object is bound to ``GL_DRAW_FRAMEBUFFER`` or ``GL_READ_FRAMEBUFFER``, it becomes the target for rendering or readback operations, respectively, until it is deleted or another framebuffer is bound to the corresponding bind point. Calling :c:func:`glBindFramebuffer` with *target* set to ``GL_FRAMEBUFFER`` binds *framebuffer* to both the read and draw framebuffer targets. *framebuffer* is the name of a framebuffer object previously returned from a call to :c:func:`glGenFramebuffers`, or zero to break the existing binding of a framebuffer object to *target* .
+
+
+**Errors:**
+
+   * ``GL_INVALID_ENUM`` is generated if *target* is not ``GL_DRAW_FRAMEBUFFER``, ``GL_READ_FRAMEBUFFER`` or ``GL_FRAMEBUFFER``.
+   * ``GL_INVALID_OPERATION`` is generated if *framebuffer* is not zero or the name of a framebuffer previously returned from a call to :c:func:`glGenFramebuffers`.
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

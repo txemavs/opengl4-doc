@@ -1,0 +1,77 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glTexCoord`
+---------------------
+
+.. source file man/glTexCoord
+
+.. currentmodule:: OpenGL.GL
+
+Set the current texture coordinates
+
+.. c:function:: glTexCoord
+.. c:function:: void glTexCoord1s(GLshort  s, GLint  s, GLfloat  s, GLdouble  s, GLshort  s, GLshort  t, GLint  s, GLint  t, GLfloat  s, GLfloat  t, GLdouble  s, GLdouble  t, GLshort  s, GLshort  t, GLshort  r, GLint  s, GLint  t, GLint  r, GLfloat  s, GLfloat  t, GLfloat  r, GLdouble  s, GLdouble  t, GLdouble  r, GLshort  s, GLshort  t, GLshort  r, GLshort  q, GLint  s, GLint  t, GLint  r, GLint  q, GLfloat  s, GLfloat  t, GLfloat  r, GLfloat  q, GLdouble  s, GLdouble  t, GLdouble  r, GLdouble  q)
+
+
+   
+   :param s:
+      Specify *`s`* , *`t`* , *`r`* , and *`q`* texture coordinates. Not all parameters are present in all forms of the command.
+   
+.. c:function:: void glTexCoord1sv(const GLshort *  v, const GLint *  v, const GLfloat *  v, const GLdouble *  v, const GLshort *  v, const GLint *  v, const GLfloat *  v, const GLdouble *  v, const GLshort *  v, const GLint *  v, const GLfloat *  v, const GLdouble *  v, const GLshort *  v, const GLint *  v, const GLfloat *  v, const GLdouble *  v)
+
+
+   
+   :param v:
+      Specifies a pointer to an array of one, two, three, or four elements, which in turn specify the *`s`* , *`t`* , *`r`* , and *`q`* texture coordinates.
+   
+
+.. seealso::
+
+   
+   :c:func:`glMultiTexCoord`, :c:func:`glTexCoordPointer`, :c:func:`glVertex`
+   
+.. rubric:: Description
+
+
+:c:func:`glTexCoord` specifies texture coordinates in one, two, three, or four dimensions. :c:func:`glTexCoord1` sets the current texture coordinates to |EQUATION_1_| ; a call to :c:func:`glTexCoord2` sets them to |EQUATION_2_| . Similarly, :c:func:`glTexCoord3` specifies the texture coordinates as |EQUATION_3_| , and :c:func:`glTexCoord4` defines all four components explicitly as |EQUATION_4_| .
+
+The current texture coordinates are part of the data that is associated with each vertex and with the current raster position. Initially, the values for *`s`* , *`t`* , *`r`* , and *`q`* are (0, 0, 0, 1).
+
+
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGet` with argument ``GL_CURRENT_TEXTURE_COORDS``
+
+
+
+.. note::
+
+   * The current texture coordinates can be updated at any time. In particular, :c:func:`glTexCoord` can be called between a call to :c:func:`glBegin` and the corresponding call to :c:func:`glEnd`.
+   * When the ``ARB_imaging`` extension is supported, :c:func:`glTexCoord` always updates texture unit ``GL_TEXTURE0``.
+
+
+
+.. role:: mml(raw)
+   :format: html
+
+
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"> <mi mathvariant="italic">s</mi> <mn>0</mn> <mn>0</mn> <mn>1</mn> </mfenced> </math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"> <mi mathvariant="italic">s</mi> <mi mathvariant="italic">t</mi> <mn>0</mn> <mn>1</mn> </mfenced> </math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"> <mi mathvariant="italic">s</mi> <mi mathvariant="italic">t</mi> <mi mathvariant="italic">r</mi> <mn>1</mn> </mfenced> </math>` 
+
+.. |EQUATION_4_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"> <mi mathvariant="italic">s</mi> <mi mathvariant="italic">t</mi> <mi mathvariant="italic">r</mi> <mi mathvariant="italic">q</mi> </mfenced> </math>` 
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

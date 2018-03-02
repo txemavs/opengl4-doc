@@ -1,0 +1,130 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:30
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glMapBufferRange.xml'
+.. (c)2010-2011 Khronos Group.
+.. See license details at http://opencontent.org/openpub/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glMapBufferRange`
+---------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Map a section of a buffer object's data store
+
+.. c:function:: glMapBufferRange
+
+
+         :param target:
+
+                  Specifies a binding to which the target buffer is bound.
+
+         :param offset:
+
+                  Specifies a the starting offset within the buffer of the range to be mapped.
+
+         :param length:
+
+                  Specifies a length of the range to be mapped.
+
+         :param access:
+
+                  Specifies a combination of access flags indicating the desired access to the range.
+
+.. rubric:: Specification
+
+.. c:function:: void *glMapBufferRange(GLenum  target, GLintptr  offset, GLsizeiptr  length, GLbitfield  access)
+
+
+.. seealso::
+
+
+            :c:func:`glMapBuffer`\ ,
+            :c:func:`glFlushMappedBufferRange`\ ,
+            :c:func:`glBindBuffer`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glMapBufferRange` maps all or part of the data store of a buffer object into the client's address
+space. *target* specifies the target to which the buffer is bound and must be one of ``GL_ARRAY_BUFFER``\ ,
+``GL_ATOMIC_COUNTER_BUFFER``\ ,
+``GL_COPY_READ_BUFFER``\ , ``GL_COPY_WRITE_BUFFER``\ , ``GL_ELEMENT_ARRAY_BUFFER``\ ,
+``GL_PIXEL_PACK_BUFFER``\ , ``GL_PIXEL_UNPACK_BUFFER``\ , ``GL_TEXTURE_BUFFER``\ ,
+``GL_TRANSFORM_FEEDBACK_BUFFER``\ , or ``GL_UNIFORM_BUFFER``\ . *offset* and
+*length* indicate the range of data in the buffer object htat is to be mapped, in terms of basic machine units.
+*access* is a bitfield containing flags which describe the requested mapping. These flags are described below.
+
+
+If no error occurs, a pointer to the beginning of the mapped range is returned once all pending operations on that buffer have
+completed, and may be used to modify and/or query the corresponding range of the buffer, according to the following flag bits set
+in *access* :
+
+         *  ``GL_MAP_READ_BIT`` indicates that the returned pointer may be used to read buffer object data. No GL error is generated if the pointer is used to query a mapping which excludes this flag, but the result is undefined and system errors (possibly including program termination) may occur.
+         *  ``GL_MAP_WRITE_BIT`` indicates that the returned pointer may be used to modify buffer object data. No GL error is generated if the pointer is used to modify a mapping which excludes this flag, but the result is undefined and system errors (possibly including program termination) may occur.
+
+
+Furthermore, the following :strong:`optional` flag bits in *access* may be used to modify the mapping:
+
+         *  ``GL_MAP_INVALIDATE_RANGE_BIT`` indicates that the previous contents of the specified range may be discarded. Data within this range are undefined with the exception of subsequently written data. No GL error is generated if sub- sequent GL operations access unwritten data, but the result is undefined and system errors (possibly including program termination) may occur. This flag may not be used in combination with ``GL_MAP_READ_BIT``\ .
+         *  ``GL_MAP_INVALIDATE_BUFFER_BIT`` indicates that the previous contents of the entire buffer may be discarded. Data within the entire buffer are undefined with the exception of subsequently written data. No GL error is generated if subsequent GL operations access unwritten data, but the result is undefined and system errors (possibly including program termination) may occur. This flag may not be used in combination with ``GL_MAP_READ_BIT``\ .
+         *  ``GL_MAP_FLUSH_EXPLICIT_BIT`` indicates that one or more discrete subranges of the mapping may be modified. When this flag is set, modifications to each subrange must be explicitly flushed by calling :c:func:`glFlushMappedBufferRange`\ . No GL error is set if a subrange of the mapping is modified and not flushed, but data within the corresponding subrange of the buffer are undefined. This flag may only be used in conjunction with ``GL_MAP_WRITE_BIT``\ . When this option is selected, flushing is strictly limited to regions that are explicitly indicated with calls to :c:func:`glFlushMappedBufferRange` prior to unmap; if this option is not selected :c:func:`glUnmapBuffer` will automatically flush the entire mapped range when called.
+         *  ``GL_MAP_UNSYNCHRONIZED_BIT`` indicates that the GL should not attempt to synchronize pending operations on the buffer prior to returning from :c:func:`glMapBufferRange`\ . No GL error is generated if pending operations which source or modify the buffer overlap the mapped region, but the result of such previous and any subsequent operations is undefined.
+
+
+If an error occurs, :c:func:`glMapBufferRange` returns a ``NULL`` pointer.
+If no error occurs, the returned pointer will reflect an alignment of at least ``GL_MIN_MAP_BUFFER_ALIGNMENT``
+basic machine units. The value of ``GL_MIN_MAP_BUFFER_ALIGNMENT`` can be retrieved by calling
+:c:func:`glGet` with *pname* set to
+``GL_MIN_MAP_BUFFER_ALIGNMENT`` and must be a power of two that is at least 64. Subtracting *offset*
+from this returned pointed will always produce a multiple of ``GL_MIN_MAP_BUFFER_ALINMENT``\ .
+
+
+.. note::
+
+
+   Alignment of the returned pointer is guaranteed only if the version
+   of the GL version is 4.2 or greater. Also, the ``GL_ATOMIC_COUNTER_BUFFER``
+   target is accepted only if the GL version is 4.2 or greater.
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_VALUE`` is generated if either of *offset* or *length* is negative, or if *offset* + *length* is greater than the value of ``GL_BUFFER_SIZE``\ .
+* ``GL_INVALID_VALUE`` is generated if *access* has any bits set other than those defined above.
+* ``GL_INVALID_OPERATION`` is generated for any of the following conditions: * The buffer is already in a mapped state. * Neither ``GL_MAP_READ_BIT`` or ``GL_MAP_WRITE_BIT`` is set. * ``GL_MAP_READ_BIT`` is set and any of ``GL_MAP_INVALIDATE_RANGE_BIT``\ , ``GL_MAP_INVALIDATE_BUFFER_BIT``\ , or ``GL_MAP_UNSYNCHRONIZED_BIT`` is set. * ``GL_MAP_FLUSH_EXPLICIT_BIT`` is set and ``GL_MAP_WRITE_BIT`` is not set.
+* ``GL_OUT_OF_MEMORY`` is generated if :c:func:`glMapBufferRange` fails because memory for the mapping could not be obtained.
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glMapBufferRange'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )2010-2011 Khronos Group. Open Publication License.
+

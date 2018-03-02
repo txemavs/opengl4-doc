@@ -1,0 +1,332 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glBegin &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function glBitmap" href="glBitmap.html" />
+    <link rel="prev" title="function glArrayElement" href="glArrayElement.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glBitmap.html" title="function glBitmap"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glArrayElement.html" title="function glArrayElement"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glbegin">
+<h1>function <cite>glBegin</cite><a class="headerlink" href="#function-glbegin" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Delimit the vertices of a primitive or a group of like primitives</p>
+<dl class="function">
+<dt id="glBegin">
+<tt class="descname">glBegin</tt><big>(</big><big>)</big><a class="headerlink" href="#glBegin" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>mode</strong> &#8211; Specifies the primitive or primitives that will be created from vertices
+presented between <a class="reference internal" href="#glBegin" title="glBegin"><tt class="xref c c-func docutils literal"><span class="pre">glBegin()</span></tt></a> and the subsequent <a class="reference internal" href="#glEnd" title="glEnd"><tt class="xref c c-func docutils literal"><span class="pre">glEnd()</span></tt></a>.
+Ten symbolic constants are accepted:
+<tt class="docutils literal"><span class="pre">GL_POINTS</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LINES</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LINE_STRIP</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LINE_LOOP</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TRIANGLES</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TRIANGLE_STRIP</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TRIANGLE_FAN</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_QUADS</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_QUAD_STRIP</span></tt>, and
+<tt class="docutils literal"><span class="pre">GL_POLYGON</span></tt>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glBegin</tt><big>(</big>GLenum <em>&nbsp;mode</em><big>)</big></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="glEnd">
+void <tt class="descname">glEnd</tt><big>(</big>void<big>)</big><a class="headerlink" href="#glEnd" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glArrayElement.html#glArrayElement" title="glArrayElement"><tt class="xref c c-func docutils literal"><span class="pre">glArrayElement()</span></tt></a>,
+<a class="reference internal" href="glCallList.html#glCallList" title="glCallList"><tt class="xref c c-func docutils literal"><span class="pre">glCallList()</span></tt></a>,
+<a class="reference internal" href="glCallLists.html#glCallLists" title="glCallLists"><tt class="xref c c-func docutils literal"><span class="pre">glCallLists()</span></tt></a>,
+<a class="reference internal" href="glColor.html#glColor" title="glColor"><tt class="xref c c-func docutils literal"><span class="pre">glColor()</span></tt></a>,
+<a class="reference internal" href="glEdgeFlag.html#glEdgeFlag" title="glEdgeFlag"><tt class="xref c c-func docutils literal"><span class="pre">glEdgeFlag()</span></tt></a>,
+<a class="reference internal" href="glEvalCoord.html#glEvalCoord" title="glEvalCoord"><tt class="xref c c-func docutils literal"><span class="pre">glEvalCoord()</span></tt></a>,
+<a class="reference internal" href="glEvalPoint.html#glEvalPoint" title="glEvalPoint"><tt class="xref c c-func docutils literal"><span class="pre">glEvalPoint()</span></tt></a>,
+<a class="reference internal" href="glFogCoord.html#glFogCoord" title="glFogCoord"><tt class="xref c c-func docutils literal"><span class="pre">glFogCoord()</span></tt></a>,
+<a class="reference internal" href="glIndex.html#glIndex" title="glIndex"><tt class="xref c c-func docutils literal"><span class="pre">glIndex()</span></tt></a>,
+<a class="reference internal" href="glMaterial.html#glMaterial" title="glMaterial"><tt class="xref c c-func docutils literal"><span class="pre">glMaterial()</span></tt></a>,
+<a class="reference internal" href="../man3/glMultiTexCoord.html#glMultiTexCoord" title="glMultiTexCoord"><tt class="xref c c-func docutils literal"><span class="pre">glMultiTexCoord()</span></tt></a>,
+<a class="reference internal" href="glNormal.html#glNormal" title="glNormal"><tt class="xref c c-func docutils literal"><span class="pre">glNormal()</span></tt></a>,
+<a class="reference internal" href="glSecondaryColor.html#glSecondaryColor" title="glSecondaryColor"><tt class="xref c c-func docutils literal"><span class="pre">glSecondaryColor()</span></tt></a>,
+<a class="reference internal" href="glTexCoord.html#glTexCoord" title="glTexCoord"><tt class="xref c c-func docutils literal"><span class="pre">glTexCoord()</span></tt></a>,
+<a class="reference internal" href="glVertex.html#glVertex" title="glVertex"><tt class="xref c c-func docutils literal"><span class="pre">glVertex()</span></tt></a>,
+<a class="reference internal" href="../man4/glVertexAttrib.html#glVertexAttrib" title="glVertexAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glVertexAttrib()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glBegin" title="glBegin"><tt class="xref c c-func docutils literal"><span class="pre">glBegin()</span></tt></a> and <a class="reference internal" href="#glEnd" title="glEnd"><tt class="xref c c-func docutils literal"><span class="pre">glEnd()</span></tt></a> delimit the vertices that define a primitive or
+a group of like primitives.
+<a class="reference internal" href="#glBegin" title="glBegin"><tt class="xref c c-func docutils literal"><span class="pre">glBegin()</span></tt></a> accepts a single argument that specifies in which of ten ways the
+vertices are interpreted.
+Taking <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math></span> as an integer count starting at one,
+and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">N</mi></math></span> as the total number of vertices specified,
+the interpretations are as follows:</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">GL_POINTS</span></tt></p>
+<blockquote>
+<div>Treats each vertex as a single point.
+Vertex
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math></span> defines point <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math></span>.
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">N</mi></math></span> points are drawn.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_LINES</span></tt></p>
+<blockquote>
+<div>Treats each pair of vertices as an independent line segment.
+Vertices
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>2</mn><mo>&it;</mo><mi mathvariant="italic">n</mi><mo>-</mo><mn>1</mn></mrow></math></span> and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>2</mn><mo>&it;</mo><mi mathvariant="italic">n</mi></mrow></math></span> define line <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math></span>.
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfrac><mi mathvariant="italic">N</mi><mn>2</mn></mfrac></math></span> lines are drawn.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_LINE_STRIP</span></tt></p>
+<blockquote>
+<div>Draws a connected group of line segments from the first vertex
+to the last.
+Vertices
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math></span> and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">n</mi><mo>+</mo><mn>1</mn></mrow></math></span> define line <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math></span>.
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">N</mi><mo>-</mo><mn>1</mn></mrow></math></span> lines are drawn.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_LINE_LOOP</span></tt></p>
+<blockquote>
+<div>Draws a connected group of line segments from the first vertex
+to the last,
+then back to the first.
+Vertices
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math></span> and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">n</mi><mo>+</mo><mn>1</mn></mrow></math></span> define line <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math></span>.
+The last line, however, is defined by vertices <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">N</mi></math></span> and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mn>1</mn></math></span>.
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">N</mi></math></span> lines are drawn.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TRIANGLES</span></tt></p>
+<blockquote>
+<div>Treats each triplet of vertices as an independent triangle.
+Vertices
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>3</mn><mo>&it;</mo><mi mathvariant="italic">n</mi><mo>-</mo><mn>2</mn></mrow></math></span>,
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>3</mn><mo>&it;</mo><mi mathvariant="italic">n</mi><mo>-</mo><mn>1</mn></mrow></math></span>,
+and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>3</mn><mo>&it;</mo><mi mathvariant="italic">n</mi></mrow></math></span> define triangle <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math></span>.
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfrac><mi mathvariant="italic">N</mi><mn>3</mn></mfrac></math></span> triangles are drawn.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TRIANGLE_STRIP</span></tt></p>
+<blockquote>
+<div>Draws a connected group of triangles.  One triangle is defined for each
+vertex presented after the first two vertices.  For odd
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math></span>,
+vertices <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math></span>,
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">n</mi><mo>+</mo><mn>1</mn></mrow></math></span>,
+and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">n</mi><mo>+</mo><mn>2</mn></mrow></math></span> define triangle <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math></span>.
+For even <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math></span>,
+vertices <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">n</mi><mo>+</mo><mn>1</mn></mrow></math></span>,
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math></span>,
+and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">n</mi><mo>+</mo><mn>2</mn></mrow></math></span> define triangle <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math></span>.
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">N</mi><mo>-</mo><mn>2</mn></mrow></math></span> triangles are
+drawn.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TRIANGLE_FAN</span></tt></p>
+<blockquote>
+<div>Draws a connected group of triangles.
+One triangle is defined for each vertex presented after the first two vertices.
+Vertices
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mn>1</mn></math></span>,
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">n</mi><mo>+</mo><mn>1</mn></mrow></math></span>,
+and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">n</mi><mo>+</mo><mn>2</mn></mrow></math></span> define triangle <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math></span>.
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">N</mi><mo>-</mo><mn>2</mn></mrow></math></span> triangles are drawn.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_QUADS</span></tt></p>
+<blockquote>
+<div>Treats each group of four vertices as an independent quadrilateral.
+Vertices
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>4</mn><mo>&it;</mo><mi mathvariant="italic">n</mi><mo>-</mo><mn>3</mn></mrow></math></span>,
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>4</mn><mo>&it;</mo><mi mathvariant="italic">n</mi><mo>-</mo><mn>2</mn></mrow></math></span>,
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>4</mn><mo>&it;</mo><mi mathvariant="italic">n</mi><mo>-</mo><mn>1</mn></mrow></math></span>,
+and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>4</mn><mo>&it;</mo><mi mathvariant="italic">n</mi></mrow></math></span> define quadrilateral <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math></span>.
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfrac><mi mathvariant="italic">N</mi><mn>4</mn></mfrac></math></span> quadrilaterals are drawn.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_QUAD_STRIP</span></tt></p>
+<blockquote>
+<div>Draws a connected group of quadrilaterals.
+One quadrilateral is defined for each pair of vertices presented
+after the first pair.
+Vertices
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>2</mn><mo>&it;</mo><mi mathvariant="italic">n</mi><mo>-</mo><mn>1</mn></mrow></math></span>,
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>2</mn><mo>&it;</mo><mi mathvariant="italic">n</mi></mrow></math></span>,
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>2</mn><mo>&it;</mo><mi mathvariant="italic">n</mi><mo>+</mo><mn>2</mn></mrow></math></span>,
+and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>2</mn><mo>&it;</mo><mi mathvariant="italic">n</mi><mo>+</mo><mn>1</mn></mrow></math></span> define quadrilateral <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math></span>.
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mfrac><mi mathvariant="italic">N</mi><mn>2</mn></mfrac><mo>-</mo><mn>1</mn></mrow></math></span> quadrilaterals are drawn.
+Note that the order in which vertices are used to construct a quadrilateral
+from strip data is different from that used with independent data.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_POLYGON</span></tt></p>
+<blockquote>
+<div>Draws a single,
+convex polygon.
+Vertices
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mn>1</mn></math></span> through <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">N</mi></math></span> define this polygon.</div></blockquote>
+</div></blockquote>
+<p>Only a subset of GL commands can be used between <a class="reference internal" href="#glBegin" title="glBegin"><tt class="xref c c-func docutils literal"><span class="pre">glBegin()</span></tt></a> and <a class="reference internal" href="#glEnd" title="glEnd"><tt class="xref c c-func docutils literal"><span class="pre">glEnd()</span></tt></a>.
+The commands are
+<a class="reference internal" href="glVertex.html#glVertex" title="glVertex"><tt class="xref c c-func docutils literal"><span class="pre">glVertex()</span></tt></a>,
+<a class="reference internal" href="glColor.html#glColor" title="glColor"><tt class="xref c c-func docutils literal"><span class="pre">glColor()</span></tt></a>,
+<a class="reference internal" href="glSecondaryColor.html#glSecondaryColor" title="glSecondaryColor"><tt class="xref c c-func docutils literal"><span class="pre">glSecondaryColor()</span></tt></a>,
+<a class="reference internal" href="glIndex.html#glIndex" title="glIndex"><tt class="xref c c-func docutils literal"><span class="pre">glIndex()</span></tt></a>,
+<a class="reference internal" href="glNormal.html#glNormal" title="glNormal"><tt class="xref c c-func docutils literal"><span class="pre">glNormal()</span></tt></a>,
+<a class="reference internal" href="glFogCoord.html#glFogCoord" title="glFogCoord"><tt class="xref c c-func docutils literal"><span class="pre">glFogCoord()</span></tt></a>,
+<a class="reference internal" href="glTexCoord.html#glTexCoord" title="glTexCoord"><tt class="xref c c-func docutils literal"><span class="pre">glTexCoord()</span></tt></a>,
+<a class="reference internal" href="../man3/glMultiTexCoord.html#glMultiTexCoord" title="glMultiTexCoord"><tt class="xref c c-func docutils literal"><span class="pre">glMultiTexCoord()</span></tt></a>,
+<a class="reference internal" href="../man4/glVertexAttrib.html#glVertexAttrib" title="glVertexAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glVertexAttrib()</span></tt></a>,
+<a class="reference internal" href="glEvalCoord.html#glEvalCoord" title="glEvalCoord"><tt class="xref c c-func docutils literal"><span class="pre">glEvalCoord()</span></tt></a>,
+<a class="reference internal" href="glEvalPoint.html#glEvalPoint" title="glEvalPoint"><tt class="xref c c-func docutils literal"><span class="pre">glEvalPoint()</span></tt></a>,
+<a class="reference internal" href="glArrayElement.html#glArrayElement" title="glArrayElement"><tt class="xref c c-func docutils literal"><span class="pre">glArrayElement()</span></tt></a>,
+<a class="reference internal" href="glMaterial.html#glMaterial" title="glMaterial"><tt class="xref c c-func docutils literal"><span class="pre">glMaterial()</span></tt></a>, and
+<a class="reference internal" href="glEdgeFlag.html#glEdgeFlag" title="glEdgeFlag"><tt class="xref c c-func docutils literal"><span class="pre">glEdgeFlag()</span></tt></a>.
+Also,
+it is acceptable to use
+<a class="reference internal" href="glCallList.html#glCallList" title="glCallList"><tt class="xref c c-func docutils literal"><span class="pre">glCallList()</span></tt></a> or
+<a class="reference internal" href="glCallLists.html#glCallLists" title="glCallLists"><tt class="xref c c-func docutils literal"><span class="pre">glCallLists()</span></tt></a> to execute
+display lists that include only the preceding commands.
+If any other GL command is executed between <a class="reference internal" href="#glBegin" title="glBegin"><tt class="xref c c-func docutils literal"><span class="pre">glBegin()</span></tt></a> and <a class="reference internal" href="#glEnd" title="glEnd"><tt class="xref c c-func docutils literal"><span class="pre">glEnd()</span></tt></a>,
+the error flag is set and the command is ignored.</p>
+<p>Regardless of the value chosen for <em>mode</em>,
+there is no limit to the number of vertices that can be defined
+between <a class="reference internal" href="#glBegin" title="glBegin"><tt class="xref c c-func docutils literal"><span class="pre">glBegin()</span></tt></a> and <a class="reference internal" href="#glEnd" title="glEnd"><tt class="xref c c-func docutils literal"><span class="pre">glEnd()</span></tt></a>.
+Lines,
+triangles,
+quadrilaterals,
+and polygons that are incompletely specified are not drawn.
+Incomplete specification results when either too few vertices are
+provided to specify even a single primitive or when an incorrect multiple
+of vertices is specified. The incomplete primitive is ignored; the rest are drawn.</p>
+<p>The minimum specification of vertices
+for each primitive is as follows:
+1 for a point,
+2 for a line,
+3 for a triangle,
+4 for a quadrilateral,
+and 3 for a polygon.
+Modes that require a certain multiple of vertices are
+<tt class="docutils literal"><span class="pre">GL_LINES</span></tt> (2),
+<tt class="docutils literal"><span class="pre">GL_TRIANGLES</span></tt> (3),
+<tt class="docutils literal"><span class="pre">GL_QUADS</span></tt> (4),
+and <tt class="docutils literal"><span class="pre">GL_QUAD_STRIP</span></tt> (2).</p>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>mode</em> is set to an unaccepted value.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <a class="reference internal" href="#glBegin" title="glBegin"><tt class="xref c c-func docutils literal"><span class="pre">glBegin()</span></tt></a> is executed between a <a class="reference internal" href="#glBegin" title="glBegin"><tt class="xref c c-func docutils literal"><span class="pre">glBegin()</span></tt></a> and the corresponding execution of <a class="reference internal" href="#glEnd" title="glEnd"><tt class="xref c c-func docutils literal"><span class="pre">glEnd()</span></tt></a>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <a class="reference internal" href="#glEnd" title="glEnd"><tt class="xref c c-func docutils literal"><span class="pre">glEnd()</span></tt></a> is executed without being preceded by a <a class="reference internal" href="#glBegin" title="glBegin"><tt class="xref c c-func docutils literal"><span class="pre">glBegin()</span></tt></a>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if a command other than <a class="reference internal" href="glVertex.html#glVertex" title="glVertex"><tt class="xref c c-func docutils literal"><span class="pre">glVertex()</span></tt></a>, <a class="reference internal" href="glColor.html#glColor" title="glColor"><tt class="xref c c-func docutils literal"><span class="pre">glColor()</span></tt></a>, <a class="reference internal" href="glSecondaryColor.html#glSecondaryColor" title="glSecondaryColor"><tt class="xref c c-func docutils literal"><span class="pre">glSecondaryColor()</span></tt></a>, <a class="reference internal" href="glIndex.html#glIndex" title="glIndex"><tt class="xref c c-func docutils literal"><span class="pre">glIndex()</span></tt></a>, <a class="reference internal" href="glNormal.html#glNormal" title="glNormal"><tt class="xref c c-func docutils literal"><span class="pre">glNormal()</span></tt></a>, <a class="reference internal" href="glFogCoord.html#glFogCoord" title="glFogCoord"><tt class="xref c c-func docutils literal"><span class="pre">glFogCoord()</span></tt></a>, <a class="reference internal" href="glTexCoord.html#glTexCoord" title="glTexCoord"><tt class="xref c c-func docutils literal"><span class="pre">glTexCoord()</span></tt></a>, <a class="reference internal" href="../man3/glMultiTexCoord.html#glMultiTexCoord" title="glMultiTexCoord"><tt class="xref c c-func docutils literal"><span class="pre">glMultiTexCoord()</span></tt></a>, <a class="reference internal" href="../man4/glVertexAttrib.html#glVertexAttrib" title="glVertexAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glVertexAttrib()</span></tt></a>, <a class="reference internal" href="glEvalCoord.html#glEvalCoord" title="glEvalCoord"><tt class="xref c c-func docutils literal"><span class="pre">glEvalCoord()</span></tt></a>, <a class="reference internal" href="glEvalPoint.html#glEvalPoint" title="glEvalPoint"><tt class="xref c c-func docutils literal"><span class="pre">glEvalPoint()</span></tt></a>, <a class="reference internal" href="glArrayElement.html#glArrayElement" title="glArrayElement"><tt class="xref c c-func docutils literal"><span class="pre">glArrayElement()</span></tt></a>, <a class="reference internal" href="glMaterial.html#glMaterial" title="glMaterial"><tt class="xref c c-func docutils literal"><span class="pre">glMaterial()</span></tt></a>, <a class="reference internal" href="glEdgeFlag.html#glEdgeFlag" title="glEdgeFlag"><tt class="xref c c-func docutils literal"><span class="pre">glEdgeFlag()</span></tt></a>, <a class="reference internal" href="glCallList.html#glCallList" title="glCallList"><tt class="xref c c-func docutils literal"><span class="pre">glCallList()</span></tt></a>, or <a class="reference internal" href="glCallLists.html#glCallLists" title="glCallLists"><tt class="xref c c-func docutils literal"><span class="pre">glCallLists()</span></tt></a> is executed between the execution of <a class="reference internal" href="#glBegin" title="glBegin"><tt class="xref c c-func docutils literal"><span class="pre">glBegin()</span></tt></a> and the corresponding execution <a class="reference internal" href="#glEnd" title="glEnd"><tt class="xref c c-func docutils literal"><span class="pre">glEnd()</span></tt></a>.</li>
+<li>Execution of <a class="reference internal" href="glEnableClientState.html#glEnableClientState" title="glEnableClientState"><tt class="xref c c-func docutils literal"><span class="pre">glEnableClientState()</span></tt></a>, <a class="reference internal" href="glEnableClientState.html#glDisableClientState" title="glDisableClientState"><tt class="xref c c-func docutils literal"><span class="pre">glDisableClientState()</span></tt></a>, <a class="reference internal" href="glEdgeFlagPointer.html#glEdgeFlagPointer" title="glEdgeFlagPointer"><tt class="xref c c-func docutils literal"><span class="pre">glEdgeFlagPointer()</span></tt></a>, <a class="reference internal" href="glFogCoordPointer.html#glFogCoordPointer" title="glFogCoordPointer"><tt class="xref c c-func docutils literal"><span class="pre">glFogCoordPointer()</span></tt></a>, <a class="reference internal" href="glTexCoordPointer.html#glTexCoordPointer" title="glTexCoordPointer"><tt class="xref c c-func docutils literal"><span class="pre">glTexCoordPointer()</span></tt></a>, <a class="reference internal" href="glColorPointer.html#glColorPointer" title="glColorPointer"><tt class="xref c c-func docutils literal"><span class="pre">glColorPointer()</span></tt></a>, <a class="reference internal" href="glSecondaryColorPointer.html#glSecondaryColorPointer" title="glSecondaryColorPointer"><tt class="xref c c-func docutils literal"><span class="pre">glSecondaryColorPointer()</span></tt></a>, <a class="reference internal" href="glIndexPointer.html#glIndexPointer" title="glIndexPointer"><tt class="xref c c-func docutils literal"><span class="pre">glIndexPointer()</span></tt></a>, <a class="reference internal" href="glNormalPointer.html#glNormalPointer" title="glNormalPointer"><tt class="xref c c-func docutils literal"><span class="pre">glNormalPointer()</span></tt></a>, <a class="reference internal" href="glVertexPointer.html#glVertexPointer" title="glVertexPointer"><tt class="xref c c-func docutils literal"><span class="pre">glVertexPointer()</span></tt></a>, <a class="reference internal" href="../man4/glVertexAttribPointer.html#glVertexAttribPointer" title="glVertexAttribPointer"><tt class="xref c c-func docutils literal"><span class="pre">glVertexAttribPointer()</span></tt></a>, <a class="reference internal" href="glInterleavedArrays.html#glInterleavedArrays" title="glInterleavedArrays"><tt class="xref c c-func docutils literal"><span class="pre">glInterleavedArrays()</span></tt></a>, or <a class="reference internal" href="../man4/glPixelStore.html#glPixelStore" title="glPixelStore"><tt class="xref c c-func docutils literal"><span class="pre">glPixelStore()</span></tt></a> is not allowed after a call to <a class="reference internal" href="#glBegin" title="glBegin"><tt class="xref c c-func docutils literal"><span class="pre">glBegin()</span></tt></a> and before the corresponding call to <a class="reference internal" href="#glEnd" title="glEnd"><tt class="xref c c-func docutils literal"><span class="pre">glEnd()</span></tt></a>, but an error may or may not be generated.</li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glArrayElement.html"
+                        title="previous chapter">function <cite>glArrayElement</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glBitmap.html"
+                        title="next chapter">function <cite>glBitmap</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/glBegin.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glBitmap.html" title="function glBitmap"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glArrayElement.html" title="function glArrayElement"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

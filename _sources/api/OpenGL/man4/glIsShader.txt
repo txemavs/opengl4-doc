@@ -1,0 +1,99 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:30
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glIsShader.xml'
+.. (c)2003-2005 3Dlabs Inc. Ltd.
+.. See license details at http://opencontent.org/openpub/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glIsShader`
+---------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Determines if a name corresponds to a shader object
+
+.. c:function:: glIsShader
+
+
+      :param shader:
+
+            Specifies a potential shader object.
+
+.. rubric:: Specification
+
+.. c:function:: GLboolean glIsShader(GLuint  shader)
+   :noindex: 
+
+
+.. seealso::
+
+   :c:func:`glAttachShader`\ ,
+   :c:func:`glCompileShader`\ ,
+   :c:func:`glCreateShader`\ ,
+   :c:func:`glDeleteShader`\ ,
+   :c:func:`glDetachShader`\ ,
+   :c:func:`glLinkProgram`\ ,
+   :c:func:`glShaderSource`
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glIsShader` returns
+``GL_TRUE`` if *shader* is
+the name of a shader object previously created with
+:c:func:`glCreateShader`
+and not yet deleted with :c:func:`glDeleteShader`\ .
+If *shader* is
+zero or a non-zero value that is not the name of a shader
+object, or if an error occurs, :c:func:`glIsShader` returns
+``GL_FALSE``\ .
+
+
+.. note::
+
+   No error is generated if *shader* is
+   not a valid shader object name.
+
+   A shader object marked for deletion with :c:func:`glDeleteShader`
+   but still attached to a program object is still considered
+   a shader object and :c:func:`glIsShader` will return ``GL_TRUE``\ .
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGetAttachedShaders` with a valid program object
+* :c:func:`glGetShader` with arguments *shader* and a parameter to be queried
+* :c:func:`glGetShaderInfoLog` with argument *object*
+* :c:func:`glGetShaderSource` with argument *object*
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glIsShader'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )2003-2005 3Dlabs Inc. Ltd. Open Publication License.
+

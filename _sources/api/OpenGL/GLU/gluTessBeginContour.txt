@@ -1,0 +1,42 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `gluTessBeginContour`
+------------------------------
+
+.. source file man/gluTessBeginContour
+
+.. currentmodule:: OpenGL.GLU
+
+Delimit a contour description
+
+.. c:function:: gluTessBeginContour
+.. c:function:: void gluTessBeginContour(GLUtesselator*  tess)
+   :noindex: 
+
+
+   
+   :param tess:
+      Specifies the tessellation object (created with :c:func:`gluNewTess`).
+   
+.. c:function:: void gluTessEndContour(GLUtesselator*  tess)
+
+.. seealso::
+
+   
+   :c:func:`gluNewTess`, :c:func:`gluTessBeginPolygon`, :c:func:`gluTessCallback`, :c:func:`gluTessEndPolygon`, :c:func:`gluTessNormal`, :c:func:`gluTessProperty`, :c:func:`gluTessVertex`
+   
+.. rubric:: Description
+
+
+:c:func:`gluTessBeginContour` and :c:func:`gluTessEndContour` delimit the definition of a polygon contour. Within each :c:func:`gluTessBeginContour`/:c:func:`gluTessEndContour` pair, there can be zero or more calls to :c:func:`gluTessVertex`. The vertices specify a closed contour (the last vertex of each contour is automatically linked to the first). See the :c:func:`gluTessVertex` reference page for more details. :c:func:`gluTessBeginContour` can only be called between :c:func:`gluTessBeginPolygon` and :c:func:`gluTessEndPolygon`.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

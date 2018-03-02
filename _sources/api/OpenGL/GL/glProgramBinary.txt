@@ -1,0 +1,73 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glProgramBinary`
+--------------------------
+
+.. source file man4/glProgramBinary
+
+.. currentmodule:: OpenGL.GL
+
+Load a program object with a program binary
+
+.. c:function:: glProgramBinary
+.. c:function:: void glProgramBinary(GLuint  program, GLenum  binaryFormat, const void * binary, GLsizei  length)
+   :noindex: 
+
+
+   
+   :param program:
+      Specifies the name of a program object into which to load a program binary.
+   
+   :param binaryFormat:
+      Specifies the format of the binary data in binary.
+   
+   :param binary:
+      Specifies the address an array containing the binary to be loaded into *program* .
+   
+   :param length:
+      Specifies the number of bytes contained in *binary* .
+   
+
+.. seealso::
+
+   
+   :c:func:`glGetProgram`, :c:func:`glGetProgramBinary`
+   
+.. rubric:: Description
+
+
+:c:func:`glProgramBinary` loads a program object with a program binary previously returned from :c:func:`glGetProgramBinary`. *binaryFormat* and *binary* must be those returned by a previous call to :c:func:`glGetProgramBinary`, and *length* must be the length returned by :c:func:`glGetProgramBinary`, or by :c:func:`glGetProgram` when called with *pname* set to ``GL_PROGRAM_BINARY_LENGTH``. If these conditions are not met, loading the program binary will fail and *program* 's ``GL_LINK_STATUS`` will be set to ``GL_FALSE``.
+
+A program object's program binary is replaced by calls to :c:func:`glLinkProgram` or :c:func:`glProgramBinary`. When linking success or failure is concerned, :c:func:`glProgramBinary` can be considered to perform an implicit linking operation. :c:func:`glLinkProgram` and :c:func:`glProgramBinary` both set the program object's ``GL_LINK_STATUS`` to ``GL_TRUE`` or ``GL_FALSE``.
+
+A successful call to :c:func:`glProgramBinary` will reset all uniform variables to their initial values. The initial value is either the value of the variable's initializer as specified in the original shader source, or zero if no initializer was present. Additionally, all vertex shader input and fragment shader output assignments that were in effect when the program was linked before saving are restored with :c:func:`glProgramBinary` is called.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGetProgram` with argument ``GL_PROGRAM_BINARY_LENGTH``
+   * :c:func:`glGet` with argument ``GL_NUM_PROGRAM_BINARY_FORMATS``
+   * :c:func:`glGet` with argument ``GL_PROGRAM_BINARY_FORMATS``
+
+**Errors:**
+
+   * ``GL_INVALID_OPERATION`` is generated if *program* is not the name of an existing program object.
+   * ``GL_INVALID_ENUM`` is generated if *binaryFormat* is not a value recognized by the implementation.
+
+
+
+.. note::
+
+   * A program binary may fail to load if the implementation determines that there has been a change in hardware or software configuration from when the program binary was produced such as having been compiled with an incompatible or outdated version of the compiler.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

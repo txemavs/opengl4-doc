@@ -1,0 +1,46 @@
+.. nabla.opengl-sphinx project
+
+.. ---------------------------
+
+.. this dodument source file 'man/gl_InstanceID'is copyrighted by Khronos Group
+   See license details at http://opencontent.org/openpub/
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   
+
+function `gl_InstanceID`
+------------------------
+
+.. currentmodule:: OpenGL.GLSL
+
+Contains the index of the current primitive in an instanced draw command
+
+.. c:function:: gl_InstanceID
+
+
+.. rubric:: Specification
+
+.. c:function:: in int gl_InstanceID)
+
+.. seealso::
+
+   
+   :c:func:`gl_VertexID`
+   
+.. rubric:: Description
+
+
+:c:func:`gl_InstanceID` is a vertex language input variable that holds the integer index of the current primitive in an instanced draw command such as :c:func:`glDrawArraysInstanced`. If the current primitive does not originate from an instanced draw command, the value of :c:func:`gl_InstanceID` is zero.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2011 Khronos Group. Open Publication License.
+

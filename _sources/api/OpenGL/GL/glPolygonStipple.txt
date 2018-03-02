@@ -1,0 +1,79 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glPolygonStipple`
+---------------------------
+
+.. source file man/glPolygonStipple
+
+.. currentmodule:: OpenGL.GL
+
+Set the polygon stippling pattern
+
+.. c:function:: glPolygonStipple
+.. c:function:: void glPolygonStipple(const GLubyte *  pattern)
+   :noindex: 
+
+
+   
+   :param pattern:
+      Specifies a pointer to a |EQUATION_1_| stipple pattern that will be unpacked from memory in the same way that :c:func:`glDrawPixels` unpacks pixels.
+   
+
+.. seealso::
+
+   
+   :c:func:`glDrawPixels`, :c:func:`glLineStipple`, :c:func:`glPixelStore`, :c:func:`glPixelTransfer`
+   
+.. rubric:: Description
+
+
+Polygon stippling, like line stippling (see :c:func:`glLineStipple`), masks out certain fragments produced by rasterization, creating a pattern. Stippling is independent of polygon antialiasing.
+
+*pattern* is a pointer to a |EQUATION_2_| stipple pattern that is stored in memory just like the pixel data supplied to a :c:func:`glDrawPixels` call with *``* height and *`width`* both equal to 32, a pixel format of ``GL_COLOR_INDEX``, and data type of ``GL_BITMAP``. That is, the stipple pattern is represented as a |EQUATION_3_| array of 1-bit color indices packed in unsigned bytes. :c:func:`glPixelStore` parameters like ``GL_UNPACK_SWAP_BYTES`` and ``GL_UNPACK_LSB_FIRST`` affect the assembling of the bits into a stipple pattern. Pixel transfer operations (shift, offset, pixel map) are not applied to the stipple image, however.
+
+If a non-zero named buffer object is bound to the ``GL_PIXEL_UNPACK_BUFFER`` target (see :c:func:`glBindBuffer`) while a stipple pattern is specified, *pattern* is treated as a byte offset into the buffer object's data store.
+
+To enable and disable polygon stippling, call :c:func:`glEnable` and :c:func:`glDisable` with argument ``GL_POLYGON_STIPPLE``. Polygon stippling is initially disabled. If it's enabled, a rasterized polygon fragment with window coordinates |EQUATION_4_| and |EQUATION_5_| is sent to the next stage of the GL if and only if the (|EQUATION_6_| )th bit in the (|EQUATION_7_| )th row of the stipple pattern is 1 (one). When polygon stippling is disabled, it is as if the stipple pattern consists of all 1's.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGetPolygonStipple`
+   * :c:func:`glIsEnabled` with argument ``GL_POLYGON_STIPPLE``
+   * :c:func:`glGet` with argument ``GL_PIXEL_UNPACK_BUFFER_BINDING``
+
+**Errors:**
+
+   * ``GL_INVALID_OPERATION`` is generated if a non-zero buffer object name is bound to the ``GL_PIXEL_UNPACK_BUFFER`` target and the buffer object's data store is currently mapped.
+   * ``GL_INVALID_OPERATION`` is generated if a non-zero buffer object name is bound to the ``GL_PIXEL_UNPACK_BUFFER`` target and the data would be unpacked from the buffer object such that the memory reads required would exceed the data store size.
+   * ``GL_INVALID_OPERATION`` is generated if :c:func:`glPolygonStipple` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`.
+
+
+.. role:: mml(raw)
+   :format: html
+
+
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mn>32</mn> <mo>&times;</mo> <mn>32</mn> </mrow> </math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mn>32</mn> <mo>&times;</mo> <mn>32</mn> </mrow> </math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mn>32</mn> <mo>&times;</mo> <mn>32</mn> </mrow> </math>` 
+
+.. |EQUATION_4_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">x</mi> <mi mathvariant="italic">w</mi> </msub> </math>` 
+
+.. |EQUATION_5_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">y</mi> <mi mathvariant="italic">w</mi> </msub> </math>` 
+
+.. |EQUATION_6_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <msub><mi mathvariant="italic">x</mi> <mi mathvariant="italic">w</mi> </msub> <mo>%</mo> <mn>32</mn> </mrow> </math>` 
+
+.. |EQUATION_7_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <msub><mi mathvariant="italic">y</mi> <mi mathvariant="italic">w</mi> </msub> <mo>%</mo> <mn>32</mn> </mrow> </math>` 
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

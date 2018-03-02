@@ -1,0 +1,118 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:29
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glCreateShaderProgram.xml'
+.. (c)2010 Khronos Group.
+.. See license details at http://opencontent.org/openpub/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glCreateShaderProgram`
+--------------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Create a stand-alone program from an array of null-terminated source code strings
+
+.. c:function:: glCreateShaderProgram
+
+
+         :param type:
+
+               Specifies the type of shader to create.
+
+         :param count:
+
+               Specifies the number of source code strings in the array *strings*\ .
+
+         :param strings:
+
+               Specifies the address of an array of pointers to source code strings from which to create the program object.
+
+.. rubric:: Specification
+
+.. c:function:: GLuint glCreateShaderProgramv(GLenum  type, GLsizei  count, const char ** strings)
+
+
+.. seealso::
+
+
+            :c:func:`glCreateShader`\ ,
+            :c:func:`glCreateProgram`\ ,
+            :c:func:`glCompileShader`\ ,
+            :c:func:`glLinkProgram`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glCreateShaderProgram` creates a program object containing compiled and linked
+shaders for a single stage specified by *type*\ . *strings*
+refers to an array of *count* strings from which to create the shader executables.
+
+
+:c:func:`glCreateShaderProgram` is equivalent (assuming no errors are generated) to:
+
+
+.. code-block:: c
+
+       const GLuint shader = glCreateShader(type);
+       if (shader) {
+           glShaderSource(shader, count, strings, NULL);
+           glCompileShader(shader);
+           const GLuint program = glCreateProgram();
+           if (program) {
+               GLint compiled = GL_FALSE;
+               glGetShaderiv(shader, GL_COMPILE_STATUS, &compiled);
+               glProgramParameteri(program, GL_PROGRAM_SEPARABLE, GL_TRUE);
+               if (compiled) {
+                   glAttachShader(program, shader);
+                   glLinkProgram(program);
+                   glDetachShader(program, shader);
+               }
+               /\* append-shader-info-log-to-program-info-log \*/
+           }
+           glDeleteShader(shader);
+           return program;
+       } else {
+           return 0;
+       }
+..
+
+
+The program object created by :c:func:`glCreateShaderProgram` has its ``GL_PROGRAM_SEPARABLE``
+status set to ``GL_TRUE``\ .
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_OPERATION`` is generated if *pipeline* is not a name previously returned from a call to :c:func:`glGenProgramPipelines` or if such a name has been deleted by a call to :c:func:`glDeleteProgramPipelines`\ .
+* ``GL_INVALID_OPERATION`` is generated if *program* refers to a program object that has not been successfully linked.
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glCreateShaderProgram'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )2010 Khronos Group. Open Publication License.
+

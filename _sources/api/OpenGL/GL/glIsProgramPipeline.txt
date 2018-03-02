@@ -1,0 +1,41 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glIsProgramPipeline`
+------------------------------
+
+.. source file man4/glIsProgramPipeline
+
+.. currentmodule:: OpenGL.GL
+
+Determine if a name corresponds to a program pipeline object
+
+.. c:function:: glIsProgramPipeline
+.. c:function:: GLboolean glIsProgramPipeline(GLuint  pipeline)
+   :noindex: 
+
+
+   
+   :param pipeline:
+      Specifies a value that may be the name of a program pipeline object.
+   
+
+.. seealso::
+
+   
+   :c:func:`glGenProgramPipelines`, :c:func:`glBindProgramPipeline`, :c:func:`glDeleteProgramPipeline`
+   
+.. rubric:: Description
+
+
+:c:func:`glIsProgramPipeline` returns ``GL_TRUE`` if *pipeline* is currently the name of a program pipeline object. If *pipeline* is zero, or if ``pipeline`` is not the name of a program pipeline object, or if an error occurs, :c:func:`glIsProgramPipeline` returns ``GL_FALSE``. If *pipeline* is a name returned by :c:func:`glGenProgramPipelines`, but that has not yet been bound through a call to :c:func:`glBindProgramPipeline`, then the name is not a program pipeline object and :c:func:`glIsProgramPipeline` returns ``GL_FALSE``.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

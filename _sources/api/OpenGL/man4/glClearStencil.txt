@@ -1,0 +1,89 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:28
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glClearStencil.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glClearStencil`
+-------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Specify the clear value for the stencil buffer
+
+.. c:function:: glClearStencil
+
+
+         :param s:
+
+                  Specifies the index used when the stencil buffer is cleared.
+                  The initial value is 0.
+
+.. rubric:: Specification
+
+.. c:function:: void glClearStencil(GLint  s)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glClear`\ ,
+            :c:func:`glStencilFunc`\ ,
+            :c:func:`glStencilFuncSeparate`\ ,
+            :c:func:`glStencilMask`\ ,
+            :c:func:`glStencilMaskSeparate`\ ,
+            :c:func:`glStencilOp`\ ,
+            :c:func:`glStencilOpSeparate`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glClearStencil` specifies the index used by :c:func:`glClear` to clear the stencil buffer.
+*s* is masked with |EQUATION_1_|\ ,
+where |EQUATION_2_| is the number of bits in the stencil buffer.
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGet` with argument ``GL_STENCIL_CLEAR_VALUE``
+* :c:func:`glGet` with argument ``GL_STENCIL_BITS``
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glClearStencil'>
+
+.. role:: mml(raw)
+   :format: html
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mi mathvariant="italic">m</mi></msup><mo>-</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">m</mi></math>` 
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

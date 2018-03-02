@@ -1,0 +1,127 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:27
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/gluBeginPolygon.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `gluBeginPolygon`
+--------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Delimit a polygon description
+
+.. c:function:: gluBeginPolygon
+
+
+         :param tess:
+
+                  Specifies the tessellation object (created with :c:func:`gluNewTess`\ ).
+
+.. rubric:: Specification
+
+.. c:function:: void gluBeginPolygon(GLUtesselator*  tess)
+   :noindex: 
+
+.. c:function:: void gluEndPolygon(GLUtesselator*  tess)
+
+
+.. seealso::
+
+
+            :c:func:`gluNewTess`\ ,
+            :c:func:`gluNextContour`\ ,
+            :c:func:`gluTessBeginContour`\ ,
+            :c:func:`gluTessBeginPolygon`\ ,
+            :c:func:`gluTessCallback`\ ,
+            :c:func:`gluTessVertex`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`gluBeginPolygon` and :c:func:`gluEndPolygon` delimit the definition of a
+nonconvex polygon.
+To define such a polygon, first call :c:func:`gluBeginPolygon`\ .
+Then define the contours of the polygon
+by calling
+:c:func:`gluTessVertex` for each vertex
+and :c:func:`gluNextContour` to start each new contour.
+Finally, call :c:func:`gluEndPolygon`
+to signal the end of the definition.
+See the :c:func:`gluTessVertex` and
+:c:func:`gluNextContour` reference pages for more details.
+
+
+Once :c:func:`gluEndPolygon` is called, the polygon is tessellated, and the
+resulting triangles are described through callbacks.
+See :c:func:`gluTessCallback` for descriptions of the callback functions.
+
+
+.. note::
+
+
+   This command is obsolete and is provided for backward compatibility
+   only. Calls to :c:func:`gluBeginPolygon` are mapped to
+   :c:func:`gluTessBeginPolygon`
+   followed by
+   :c:func:`gluTessBeginContour`\ . Calls to :c:func:`gluEndPolygon` are mapped
+   to :c:func:`gluTessEndContour` followed by :c:func:`gluTessEndPolygon`\ .
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Example
+
+..
+
+
+A quadrilateral with a triangular hole in it can be described like this:
+
+.. code-block:: c
+
+
+   gluBeginPolygon(tobj);
+      gluTessVertex(tobj, v1, v1);
+      gluTessVertex(tobj, v2, v2);
+      gluTessVertex(tobj, v3, v3);
+      gluTessVertex(tobj, v4, v4);
+   gluNextContour(tobj, GLU_INTERIOR);
+      gluTessVertex(tobj, v5, v5);
+      gluTessVertex(tobj, v6, v6);
+      gluTessVertex(tobj, v7, v7);
+   gluEndPolygon(tobj);
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'gluBeginPolygon'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

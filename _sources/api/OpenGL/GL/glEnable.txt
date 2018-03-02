@@ -1,0 +1,174 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glEnable`
+-------------------
+
+.. source file man4/glEnable
+
+.. currentmodule:: OpenGL.GL
+
+Enable or disable server-side GL capabilities
+
+.. c:function:: glEnable
+.. c:function:: void glEnable(GLenum  cap)
+   :noindex: 
+
+
+   
+   :param cap:
+      Specifies a symbolic constant indicating a GL capability.
+   
+.. c:function:: void glDisable(GLenum  cap)
+
+
+   
+   :param cap:
+      Specifies a symbolic constant indicating a GL capability.
+   
+.. c:function:: void glEnablei(GLenum  cap, GLuint  index)
+
+
+   
+   :param cap:
+      Specifies a symbolic constant indicating a GL capability.
+   
+   :param index:
+      Specifies the index of the switch to enable.
+   
+.. c:function:: void glDisablei(GLenum  cap, GLuint  index)
+
+
+   
+   :param cap:
+      Specifies a symbolic constant indicating a GL capability.
+   
+   :param index:
+      Specifies the index of the switch to disable.
+   
+
+.. seealso::
+
+   
+   :c:func:`glActiveTexture`, :c:func:`glBlendFunc`, :c:func:`glCullFace`, :c:func:`glDepthFunc`, :c:func:`glDepthRange`, :c:func:`glGet`, :c:func:`glIsEnabled`, :c:func:`glLineWidth`, :c:func:`glLogicOp`, :c:func:`glPointSize`, :c:func:`glPolygonMode`, :c:func:`glPolygonOffset`, :c:func:`glSampleCoverage`, :c:func:`glScissor`, :c:func:`glStencilFunc`, :c:func:`glStencilOp`, :c:func:`glTexImage1D`, :c:func:`glTexImage2D`, :c:func:`glTexImage3D`
+   
+.. rubric:: Description
+
+
+:c:func:`glEnable` and :c:func:`glDisable` enable and disable various capabilities. Use :c:func:`glIsEnabled` or :c:func:`glGet` to determine the current setting of any capability. The initial value for each capability with the exception of ``GL_DITHER`` and ``GL_MULTISAMPLE`` is ``GL_FALSE``. The initial value for ``GL_DITHER`` and ``GL_MULTISAMPLE`` is ``GL_TRUE``.
+
+Both :c:func:`glEnable` and :c:func:`glDisable` take a single argument, *cap* , which can assume one of the following values:
+
+Some of the GL's capabilities are indexed. :c:func:`glEnablei` and :c:func:`glDisablei` enable and disable indexed capabilities.
+
+
+   
+   ``GL_BLEND``
+      If enabled, blend the computed fragment color values with the values in the color buffers. See :c:func:`glBlendFunc`.
+   
+   ``GL_CLIP_DISTANCE`` *`i`*
+      If enabled, clip geometry against user-defined half space *`i`* .
+   
+   ``GL_COLOR_LOGIC_OP``
+      If enabled, apply the currently selected logical operation to the computed fragment color and color buffer values. See :c:func:`glLogicOp`.
+   
+   ``GL_CULL_FACE``
+      If enabled, cull polygons based on their winding in window coordinates. See :c:func:`glCullFace`.
+   
+   ``GL_DEPTH_CLAMP``
+      If enabled, the |EQUATION_1_| plane equation is ignored by view volume clipping (effectively, there is no near or far plane clipping). See :c:func:`glDepthRange`.
+   
+   ``GL_DEPTH_TEST``
+      If enabled, do depth comparisons and update the depth buffer. Note that even if the depth buffer exists and the depth mask is non-zero, the depth buffer is not updated if the depth test is disabled. See :c:func:`glDepthFunc` and :c:func:`glDepthRange`.
+   
+   ``GL_DITHER``
+      If enabled, dither color components or indices before they are written to the color buffer.
+   
+   ``GL_FRAMEBUFFER_SRGB``
+      If enabled and the value of ``GL_FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING`` for the framebuffer attachment corresponding to the destination buffer is ``GL_SRGB``, the R, G, and B destination color values (after conversion from fixed-point to floating-point) are considered to be encoded for the sRGB color space and hence are linearized prior to their use in blending.
+   
+   ``GL_LINE_SMOOTH``
+      If enabled, draw lines with correct filtering. Otherwise, draw aliased lines. See :c:func:`glLineWidth`.
+   
+   ``GL_MULTISAMPLE``
+      If enabled, use multiple fragment samples in computing the final color of a pixel. See :c:func:`glSampleCoverage`.
+   
+   ``GL_POLYGON_OFFSET_FILL``
+      If enabled, and if the polygon is rendered in ``GL_FILL`` mode, an offset is added to depth values of a polygon's fragments before the depth comparison is performed. See :c:func:`glPolygonOffset`.
+   
+   ``GL_POLYGON_OFFSET_LINE``
+      If enabled, and if the polygon is rendered in ``GL_LINE`` mode, an offset is added to depth values of a polygon's fragments before the depth comparison is performed. See :c:func:`glPolygonOffset`.
+   
+   ``GL_POLYGON_OFFSET_POINT``
+      If enabled, an offset is added to depth values of a polygon's fragments before the depth comparison is performed, if the polygon is rendered in ``GL_POINT`` mode. See :c:func:`glPolygonOffset`.
+   
+   ``GL_POLYGON_SMOOTH``
+      If enabled, draw polygons with proper filtering. Otherwise, draw aliased polygons. For correct antialiased polygons, an alpha buffer is needed and the polygons must be sorted front to back.
+   
+   ``GL_PRIMITIVE_RESTART``
+      Enables primitive restarting. If enabled, any one of the draw commands which transfers a set of generic attribute array elements to the GL will restart the primitive when the index of the vertex is equal to the primitive restart index. See :c:func:`glPrimitiveRestartIndex`.
+   
+   ``GL_SAMPLE_ALPHA_TO_COVERAGE``
+      If enabled, compute a temporary coverage value where each bit is determined by the alpha value at the corresponding sample location. The temporary coverage value is then ANDed with the fragment coverage value.
+   
+   ``GL_SAMPLE_ALPHA_TO_ONE``
+      If enabled, each sample alpha value is replaced by the maximum representable alpha value.
+   
+   ``GL_SAMPLE_COVERAGE``
+      If enabled, the fragment's coverage is ANDed with the temporary coverage value. If ``GL_SAMPLE_COVERAGE_INVERT`` is set to ``GL_TRUE``, invert the coverage value. See :c:func:`glSampleCoverage`.
+   
+   ``GL_SAMPLE_SHADING``
+      If enabled, the active fragment shader is run once for each covered sample, or at fraction of this rate as determined by the current value of ``GL_MIN_SAMPLE_SHADING_VALUE``. See :c:func:`glMinSampleShading`.
+   
+   ``GL_SAMPLE_MASK``
+      If enabled, the sample coverage mask generated for a fragment during rasterization will be ANDed with the value of ``GL_SAMPLE_MASK_VALUE`` before shading occurs. See :c:func:`glSampleMaski`.
+   
+   ``GL_SCISSOR_TEST``
+      If enabled, discard fragments that are outside the scissor rectangle. See :c:func:`glScissor`.
+   
+   ``GL_STENCIL_TEST``
+      If enabled, do stencil testing and update the stencil buffer. See :c:func:`glStencilFunc` and :c:func:`glStencilOp`.
+   
+   ``GL_TEXTURE_CUBE_MAP_SEAMLESS``
+      If enabled, cubemap textures are sampled such that when linearly sampling from the border between two adjacent faces, texels from both faces are used to generate the final sample value. When disabled, texels from only a single face are used to construct the final sample value.
+   
+   ``GL_PROGRAM_POINT_SIZE``
+      If enabled and a vertex or geometry shader is active, then the derived point size is taken from the (potentially clipped) shader builtin ``gl_PointSize`` and clamped to the implementation-dependent point size range.
+   
+
+**Associated gets:**
+
+
+   * :c:func:`glIsEnabled`
+   * :c:func:`glGet`
+
+**Errors:**
+
+   * ``GL_INVALID_ENUM`` is generated if *cap* is not one of the values listed previously.
+   * ``GL_INVALID_VALUE`` is generated by :c:func:`glEnablei` and :c:func:`glDisablei` if *index* is greater than or equal to the number of indexed capabilities for *cap* .
+
+
+
+.. note::
+
+   * ``GL_PRIMITIVE_RESTART`` is available only if the GL version is 3.1 or greater.
+   * ``GL_TEXTURE_CUBE_MAP_SEAMLESS`` is available only if the GL version is 3.2 or greater.
+   * Any token accepted by :c:func:`glEnable` or :c:func:`glDisable` is also accepted by :c:func:`glEnablei` and :c:func:`glDisablei`, but if the capability is not indexed, the maximum value that *index* may take is zero.
+   * In general, passing an indexed capability to :c:func:`glEnable` or :c:func:`glDisable` will enable or disable that capability for all indices, resepectively.
+
+
+
+.. role:: mml(raw)
+   :format: html
+
+
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mo>-</mo><msub><mi>w</mi><mi>c</mi></msub><mo>&le;</mo><msub><mi>z</mi><mi>c</mi></msub><mo>&le;</mo><msub><mi>w</mi><mi>c</mi></msub> </math>` 
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

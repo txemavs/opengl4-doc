@@ -1,0 +1,118 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glStencilFunc`
+------------------------
+
+.. source file man4/glStencilFunc
+
+.. currentmodule:: OpenGL.GL
+
+Set front and back function and reference value for stencil testing
+
+.. c:function:: glStencilFunc
+.. c:function:: void glStencilFunc(GLenum  func, GLint  ref, GLuint  mask)
+   :noindex: 
+
+
+   
+   :param func:
+      Specifies the test function. Eight symbolic constants are valid: ``GL_NEVER``, ``GL_LESS``, ``GL_LEQUAL``, ``GL_GREATER``, ``GL_GEQUAL``, ``GL_EQUAL``, ``GL_NOTEQUAL``, and ``GL_ALWAYS``. The initial value is ``GL_ALWAYS``.
+   
+   :param ref:
+      Specifies the reference value for the stencil test. *ref* is clamped to the range |EQUATION_1_| , where |EQUATION_2_| is the number of bitplanes in the stencil buffer. The initial value is 0.
+   
+   :param mask:
+      Specifies a mask that is ANDed with both the reference value and the stored stencil value when the test is done. The initial value is all 1's.
+   
+
+.. seealso::
+
+   
+   :c:func:`glBlendFunc`, :c:func:`glDepthFunc`, :c:func:`glEnable`, :c:func:`glLogicOp`, :c:func:`glStencilFuncSeparate`, :c:func:`glStencilMask`, :c:func:`glStencilMaskSeparate`, :c:func:`glStencilOp`, :c:func:`glStencilOpSeparate`
+   
+.. rubric:: Description
+
+
+Stenciling, like depth-buffering, enables and disables drawing on a per-pixel basis. Stencil planes are first drawn into using GL drawing primitives, then geometry and images are rendered using the stencil planes to mask out portions of the screen. Stenciling is typically used in multipass rendering algorithms to achieve special effects, such as decals, outlining, and constructive solid geometry rendering.
+
+The stencil test conditionally eliminates a pixel based on the outcome of a comparison between the reference value and the value in the stencil buffer. To enable and disable the test, call :c:func:`glEnable` and :c:func:`glDisable` with argument ``GL_STENCIL_TEST``. To specify actions based on the outcome of the stencil test, call :c:func:`glStencilOp` or :c:func:`glStencilOpSeparate`.
+
+There can be two separate sets of *func* , *ref* , and *mask* parameters; one affects back-facing polygons, and the other affects front-facing polygons as well as other non-polygon primitives. :c:func:`glStencilFunc` sets both front and back stencil state to the same values. Use :c:func:`glStencilFuncSeparate` to set front and back stencil state to different values.
+
+*func* is a symbolic constant that determines the stencil comparison function. It accepts one of eight values, shown in the following list. *ref* is an integer reference value that is used in the stencil comparison. It is clamped to the range |EQUATION_3_| , where |EQUATION_4_| is the number of bitplanes in the stencil buffer. *mask* is bitwise ANDed with both the reference value and the stored stencil value, with the ANDed values participating in the comparison.
+
+If *`stencil`* represents the value stored in the corresponding stencil buffer location, the following list shows the effect of each comparison function that can be specified by *func* . Only if the comparison succeeds is the pixel passed through to the next stage in the rasterization process (see :c:func:`glStencilOp`). All tests treat *`stencil`* values as unsigned integers in the range |EQUATION_5_| , where |EQUATION_6_| is the number of bitplanes in the stencil buffer.
+
+The following values are accepted by *func* :
+
+
+   
+   ``GL_NEVER``
+      Always fails.
+   
+   ``GL_LESS``
+      Passes if ( *ref* &amp;amp; *mask* ) &amp;lt; ( *`stencil`* &amp;amp; *mask* ).
+   
+   ``GL_LEQUAL``
+      Passes if ( *ref* &amp;amp; *mask* ) &amp;lt;= ( *`stencil`* &amp;amp; *mask* ).
+   
+   ``GL_GREATER``
+      Passes if ( *ref* &amp;amp; *mask* ) &amp;gt; ( *`stencil`* &amp;amp; *mask* ).
+   
+   ``GL_GEQUAL``
+      Passes if ( *ref* &amp;amp; *mask* ) &amp;gt;= ( *`stencil`* &amp;amp; *mask* ).
+   
+   ``GL_EQUAL``
+      Passes if ( *ref* &amp;amp; *mask* ) = ( *`stencil`* &amp;amp; *mask* ).
+   
+   ``GL_NOTEQUAL``
+      Passes if ( *ref* &amp;amp; *mask* ) != ( *`stencil`* &amp;amp; *mask* ).
+   
+   ``GL_ALWAYS``
+      Always passes.
+   
+
+**Associated gets:**
+
+
+   * :c:func:`glGet` with argument ``GL_STENCIL_FUNC``, ``GL_STENCIL_VALUE_MASK``, ``GL_STENCIL_REF``, ``GL_STENCIL_BACK_FUNC``, ``GL_STENCIL_BACK_VALUE_MASK``, ``GL_STENCIL_BACK_REF``, or ``GL_STENCIL_BITS``
+   * :c:func:`glIsEnabled` with argument ``GL_STENCIL_TEST``
+
+**Errors:**
+
+   * ``GL_INVALID_ENUM`` is generated if *func* is not one of the eight accepted values.
+
+
+
+.. note::
+
+   * Initially, the stencil test is disabled. If there is no stencil buffer, no stencil modification can occur and it is as if the stencil test always passes.
+   * :c:func:`glStencilFunc` is the same as calling :c:func:`glStencilFuncSeparate` with *face* set to ``GL_FRONT_AND_BACK``.
+
+
+
+.. role:: mml(raw)
+   :format: html
+
+
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"> <mn>0</mn> <mrow> <msup><mn>2</mn> <mi mathvariant="italic">n</mi> </msup> <mo>-</mo> <mn>1</mn> </mrow> </mfenced> </math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"> <mn>0</mn> <mrow> <msup><mn>2</mn> <mi mathvariant="italic">n</mi> </msup> <mo>-</mo> <mn>1</mn> </mrow> </mfenced> </math>` 
+
+.. |EQUATION_4_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math>` 
+
+.. |EQUATION_5_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"> <mn>0</mn> <mrow> <msup><mn>2</mn> <mi mathvariant="italic">n</mi> </msup> <mo>-</mo> <mn>1</mn> </mrow> </mfenced> </math>` 
+
+.. |EQUATION_6_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math>` 
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

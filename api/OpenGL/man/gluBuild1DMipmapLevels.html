@@ -1,0 +1,311 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function gluBuild1DMipmapLevels &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function gluBuild1DMipmaps" href="gluBuild1DMipmaps.html" />
+    <link rel="prev" title="function gluBeginTrim" href="gluBeginTrim.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="gluBuild1DMipmaps.html" title="function gluBuild1DMipmaps"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="gluBeginTrim.html" title="function gluBeginTrim"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glubuild1dmipmaplevels">
+<h1>function <cite>gluBuild1DMipmapLevels</cite><a class="headerlink" href="#function-glubuild1dmipmaplevels" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Builds a subset of one-dimensional mipmap levels</p>
+<dl class="function">
+<dt id="gluBuild1DMipmapLevels">
+<tt class="descname">gluBuild1DMipmapLevels</tt><big>(</big><big>)</big><a class="headerlink" href="#gluBuild1DMipmapLevels" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>target</strong> &#8211; Specifies the target texture.  Must be <tt class="docutils literal"><span class="pre">GLU_TEXTURE_1D</span></tt>.</li>
+<li><strong>internalFormat</strong> &#8211; Requests the internal storage format of the texture image.  The most
+current version of the SGI implementation of GLU does not check this
+value for validity before passing it on to the underlying OpenGL
+implementation.  A value that is not accepted by the OpenGL
+implementation will lead to an OpenGL error.  The benefit of not
+checking this value at the GLU level is that OpenGL extensions can add
+new internal texture formats without requiring a revision of the GLU
+implementation.  Older implementations of GLU check this value and
+raise a GLU error if it is not 1, 2, 3, or 4 or one of the following
+symbolic constants:
+<tt class="docutils literal"><span class="pre">GLU_ALPHA</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_ALPHA4</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_ALPHA8</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_ALPHA12</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_ALPHA16</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_LUMINANCE</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_LUMINANCE4</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_LUMINANCE8</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_LUMINANCE12</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_LUMINANCE16</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_LUMINANCE_ALPHA</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_LUMINANCE4_ALPHA4</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_LUMINANCE6_ALPHA2</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_LUMINANCE8_ALPHA8</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_LUMINANCE12_ALPHA4</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_LUMINANCE12_ALPHA12</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_LUMINANCE16_ALPHA16</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_INTENSITY</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_INTENSITY4</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_INTENSITY8</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_INTENSITY12</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_INTENSITY16</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_RGB</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_R3_G3_B2</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_RGB4</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_RGB5</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_RGB8</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_RGB10</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_RGB12</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_RGB16</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_RGBA</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_RGBA2</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_RGBA4</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_RGB5_A1</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_RGBA8</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_RGB10_A2</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_RGBA12</span></tt>, or
+<tt class="docutils literal"><span class="pre">GLU_RGBA16</span></tt>.</li>
+<li><strong>width</strong> &#8211; Specifies the width in pixels of the texture image.
+This should be a power of 2.</li>
+<li><strong>format</strong> &#8211; Specifies the format of the pixel data.
+Must be one of:
+<tt class="docutils literal"><span class="pre">GLU_COLOR_INDEX</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_DEPTH_COMPONENT</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_RED</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_GREEN</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_BLUE</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_ALPHA</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_RGB</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_RGBA</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_BGR</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_BGRA</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_LUMINANCE</span></tt>, or
+<tt class="docutils literal"><span class="pre">GLU_LUMINANCE_ALPHA</span></tt>.</li>
+<li><strong>type</strong> &#8211; Specifies the data type for <em>data</em>.
+Must be one of: <tt class="docutils literal"><span class="pre">GLU_UNSIGNED_BYTE</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_BYTE</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_BITMAP</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_SHORT</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_SHORT</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_INT</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_INT</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_FLOAT</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_BYTE_3_3_2</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_BYTE_2_3_3_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_SHORT_5_6_5</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_SHORT_5_6_5_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_SHORT_4_4_4_4</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_SHORT_4_4_4_4_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_SHORT_5_5_5_1</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_SHORT_1_5_5_5_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_INT_8_8_8_8</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_INT_8_8_8_8_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_INT_10_10_10_2</span></tt>, or
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_INT_2_10_10_10_REV</span></tt>.</li>
+<li><strong>level</strong> &#8211; Specifies the mipmap level of the image data.</li>
+<li><strong>base</strong> &#8211; Specifies the minimum mipmap level to pass to <a class="reference internal" href="../man4/glTexImage1D.html#glTexImage1D" title="glTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage1D()</span></tt></a>.</li>
+<li><strong>max</strong> &#8211; Specifies the maximum mipmap level to pass to <a class="reference internal" href="../man4/glTexImage1D.html#glTexImage1D" title="glTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage1D()</span></tt></a>.</li>
+<li><strong>data</strong> &#8211; Specifies a pointer to the image data in memory.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+GLint <tt class="descname">gluBuild1DMipmapLevels</tt><big>(</big>GLenum <em>&nbsp;target</em>, GLint <em>&nbsp;internalFormat</em>, GLsizei <em>&nbsp;width</em>, GLenum <em>&nbsp;format</em>, GLenum <em>&nbsp;type</em>, GLint <em>&nbsp;level</em>, GLint <em>&nbsp;base</em>, GLint <em>&nbsp;max</em>, const void * <em>&nbsp;data</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="gluBuild1DMipmaps.html#gluBuild1DMipmaps" title="gluBuild1DMipmaps"><tt class="xref c c-func docutils literal"><span class="pre">gluBuild1DMipmaps()</span></tt></a>,
+<a class="reference internal" href="gluBuild2DMipmapLevels.html#gluBuild2DMipmapLevels" title="gluBuild2DMipmapLevels"><tt class="xref c c-func docutils literal"><span class="pre">gluBuild2DMipmapLevels()</span></tt></a>,
+<a class="reference internal" href="gluBuild2DMipmaps.html#gluBuild2DMipmaps" title="gluBuild2DMipmaps"><tt class="xref c c-func docutils literal"><span class="pre">gluBuild2DMipmaps()</span></tt></a>,
+<a class="reference internal" href="gluBuild3DMipmapLevels.html#gluBuild3DMipmapLevels" title="gluBuild3DMipmapLevels"><tt class="xref c c-func docutils literal"><span class="pre">gluBuild3DMipmapLevels()</span></tt></a>,
+<a class="reference internal" href="gluBuild3DMipmaps.html#gluBuild3DMipmaps" title="gluBuild3DMipmaps"><tt class="xref c c-func docutils literal"><span class="pre">gluBuild3DMipmaps()</span></tt></a>,
+<a class="reference internal" href="gluErrorString.html#gluErrorString" title="gluErrorString"><tt class="xref c c-func docutils literal"><span class="pre">gluErrorString()</span></tt></a>,
+<a class="reference internal" href="glDrawPixels.html#glDrawPixels" title="glDrawPixels"><tt class="xref c c-func docutils literal"><span class="pre">glDrawPixels()</span></tt></a>,
+<a class="reference internal" href="../man4/glGetTexImage.html#glGetTexImage" title="glGetTexImage"><tt class="xref c c-func docutils literal"><span class="pre">glGetTexImage()</span></tt></a>,
+<a class="reference internal" href="../man4/glGetTexLevelParameter.html#glGetTexLevelParameter" title="glGetTexLevelParameter"><tt class="xref c c-func docutils literal"><span class="pre">glGetTexLevelParameter()</span></tt></a>,
+<a class="reference internal" href="../man4/glTexImage1D.html#glTexImage1D" title="glTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage1D()</span></tt></a>,
+<a class="reference internal" href="../man4/glTexImage2D.html#glTexImage2D" title="glTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage2D()</span></tt></a>,
+<a class="reference internal" href="../man4/glTexImage3D.html#glTexImage3D" title="glTexImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage3D()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#gluBuild1DMipmapLevels" title="gluBuild1DMipmapLevels"><tt class="xref c c-func docutils literal"><span class="pre">gluBuild1DMipmapLevels()</span></tt></a> builds a subset of prefiltered one-dimensional texture maps of decreasing
+resolutions called a mipmap. This is used for the antialiasing of
+texture mapped primitives.</p>
+<p>A return value of zero indicates success, otherwise a GLU error code is
+returned (see <a class="reference internal" href="gluErrorString.html#gluErrorString" title="gluErrorString"><tt class="xref c c-func docutils literal"><span class="pre">gluErrorString()</span></tt></a>).</p>
+<p>A series of mipmap levels from <em>base</em> to <em>max</em> is built by decimating
+<em>data</em> in half
+until size <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>1</mn><mo>&times;</mo><mn>1</mn></mrow></math></span> is reached. At each level, each texel in the
+halved mipmap level is an average of the corresponding two texels in the larger
+mipmap level.
+<a class="reference internal" href="../man4/glTexImage1D.html#glTexImage1D" title="glTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage1D()</span></tt></a> is called to load these mipmap levels from <em>base</em>
+to <em>max</em>. If <em>max</em> is larger than the highest mipmap level for the
+texture of the specified size, then a GLU error code is returned (see
+<a class="reference internal" href="gluErrorString.html#gluErrorString" title="gluErrorString"><tt class="xref c c-func docutils literal"><span class="pre">gluErrorString()</span></tt></a>) and nothing is loaded.</p>
+<p>For example, if <em>level</em> is 2 and <em>width</em> is 16, the
+following levels are possible: <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>16</mn><mo>&times;</mo><mn>1</mn></mrow></math></span>, <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>8</mn><mo>&times;</mo><mn>1</mn></mrow></math></span>, <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>4</mn><mo>&times;</mo><mn>1</mn></mrow></math></span>,
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>2</mn><mo>&times;</mo><mn>1</mn></mrow></math></span>, <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>1</mn><mo>&times;</mo><mn>1</mn></mrow></math></span>.
+These correspond
+to levels 2 through 6 respectively.
+If <em>base</em> is 3 and <em>max</em> is 5, then only mipmap levels <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>8</mn><mo>&times;</mo><mn>1</mn></mrow></math></span>,
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>4</mn><mo>&times;</mo><mn>1</mn></mrow></math></span> and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>2</mn><mo>&times;</mo><mn>1</mn></mrow></math></span> are
+loaded. However, if <em>max</em> is 7, then an error is returned and nothing is
+loaded since <em>max</em> is larger than the highest mipmap level which is, in
+this case, 6.</p>
+<p>The highest mipmap level can be derived from the formula
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">log</mi><mn>2</mn></msub><mo>&af;</mo><mfenced open="(" close=")"><mrow><mi mathvariant="italic">width</mi><mo>&times;</mo><msup><mn>2</mn><mi mathvariant="italic">level</mi></msup></mrow></mfenced></mrow></math></span>.</p>
+<p>See the <a class="reference internal" href="../man4/glTexImage1D.html#glTexImage1D" title="glTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage1D()</span></tt></a> reference page for a description of the
+acceptable values for <em>type</em> parameter. See the <a class="reference internal" href="glDrawPixels.html#glDrawPixels" title="glDrawPixels"><tt class="xref c c-func docutils literal"><span class="pre">glDrawPixels()</span></tt></a>
+reference page for a description of the acceptable values
+for <em>level</em> parameter.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><a class="reference internal" href="#gluBuild1DMipmapLevels" title="gluBuild1DMipmapLevels"><tt class="xref c c-func docutils literal"><span class="pre">gluBuild1DMipmapLevels()</span></tt></a> is only available if the GLU version is 1.3 or greater.</p>
+<p class="last">Formats <tt class="docutils literal"><span class="pre">GLU_BGR</span></tt>, and <tt class="docutils literal"><span class="pre">GLU_BGRA</span></tt>, and types
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_BYTE_3_3_2</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_BYTE_2_3_3_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_SHORT_5_6_5</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_SHORT_5_6_5_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_SHORT_4_4_4_4</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_SHORT_4_4_4_4_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_SHORT_5_5_5_1</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_SHORT_1_5_5_5_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_INT_8_8_8_8</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_INT_8_8_8_8_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_INT_10_10_10_2</span></tt>, and
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_INT_2_10_10_10_REV</span></tt> are only available if the GL version
+is 1.2 or greater.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GLU_INVALID_VALUE</span></tt> is returned if <em>level</em> &gt; <em>base</em>, <em>base</em> &lt; 0, <em>max</em> &lt; <em>base</em> or <em>max</em> is &gt; the highest mipmap level for <em>data</em>.</li>
+<li><tt class="docutils literal"><span class="pre">GLU_INVALID_VALUE</span></tt> is returned if <em>width</em> is &lt; 1.</li>
+<li><tt class="docutils literal"><span class="pre">GLU_INVALID_ENUM</span></tt> is returned if <em>internalFormat</em>, <em>format</em>, or <em>type</em> are not legal.</li>
+<li><tt class="docutils literal"><span class="pre">GLU_INVALID_OPERATION</span></tt> is returned if <em>type</em> is <tt class="docutils literal"><span class="pre">GLU_UNSIGNED_BYTE_3_3_2</span></tt> or <tt class="docutils literal"><span class="pre">GLU_UNSIGNED_BYTE_2_3_3_REV</span></tt> and <em>format</em> is not <tt class="docutils literal"><span class="pre">GLU_RGB</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GLU_INVALID_OPERATION</span></tt> is returned if <em>type</em> is <tt class="docutils literal"><span class="pre">GLU_UNSIGNED_SHORT_5_6_5</span></tt> or <tt class="docutils literal"><span class="pre">GLU_UNSIGNED_SHORT_5_6_5_REV</span></tt> and <em>format</em> is not <tt class="docutils literal"><span class="pre">GLU_RGB</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GLU_INVALID_OPERATION</span></tt> is returned if <em>type</em> is <tt class="docutils literal"><span class="pre">GLU_UNSIGNED_SHORT_4_4_4_4</span></tt> or <tt class="docutils literal"><span class="pre">GLU_UNSIGNED_SHORT_4_4_4_4_REV</span></tt> and <em>format</em> is neither <tt class="docutils literal"><span class="pre">GLU_RGBA</span></tt> nor <tt class="docutils literal"><span class="pre">GLU_BGRA</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GLU_INVALID_OPERATION</span></tt> is returned if <em>type</em> is <tt class="docutils literal"><span class="pre">GLU_UNSIGNED_SHORT_5_5_5_1</span></tt> or <tt class="docutils literal"><span class="pre">GLU_UNSIGNED_SHORT_1_5_5_5_REV</span></tt> and <em>format</em> is neither <tt class="docutils literal"><span class="pre">GLU_RGBA</span></tt> nor <tt class="docutils literal"><span class="pre">GLU_BGRA</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GLU_INVALID_OPERATION</span></tt> is returned if <em>type</em> is <tt class="docutils literal"><span class="pre">GLU_UNSIGNED_INT_8_8_8_8</span></tt> or <tt class="docutils literal"><span class="pre">GLU_UNSIGNED_INT_8_8_8_8_REV</span></tt> and <em>format</em> is neither <tt class="docutils literal"><span class="pre">GLU_RGBA</span></tt> nor <tt class="docutils literal"><span class="pre">GLU_BGRA</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GLU_INVALID_OPERATION</span></tt> is returned if <em>type</em> is <tt class="docutils literal"><span class="pre">GLU_UNSIGNED_INT_10_10_10_2</span></tt> or <tt class="docutils literal"><span class="pre">GLU_UNSIGNED_INT_2_10_10_10_REV</span></tt> and <em>format</em> is neither <tt class="docutils literal"><span class="pre">GLU_RGBA</span></tt> nor <tt class="docutils literal"><span class="pre">GLU_BGRA</span></tt>.</li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="gluBeginTrim.html"
+                        title="previous chapter">function <cite>gluBeginTrim</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="gluBuild1DMipmaps.html"
+                        title="next chapter">function <cite>gluBuild1DMipmaps</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/gluBuild1DMipmapLevels.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="gluBuild1DMipmaps.html" title="function gluBuild1DMipmaps"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="gluBeginTrim.html" title="function gluBeginTrim"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

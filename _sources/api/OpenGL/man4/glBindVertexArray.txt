@@ -1,0 +1,81 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:28
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glBindVertexArray.xml'
+.. (c)2010 Khronos Group.
+.. See license details at http://opencontent.org/openpub/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glBindVertexArray`
+----------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Bind a vertex array object
+
+.. c:function:: glBindVertexArray
+
+
+         :param array:
+
+                  Specifies the name of the vertex array to bind.
+
+.. rubric:: Specification
+
+.. c:function:: void glBindVertexArray(GLuint  array)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glGenVertexArrays`\ ,
+            :c:func:`glDeleteVertexArrays`
+            :c:func:`glVertexAttribPointer`
+            :c:func:`glEnableVertexAttribArray`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glBindVertexArray` binds the vertex array object with name *array*\ . *array*
+is the name of a vertex array object previously returned from a call to :c:func:`glGenVertexArrays`\ ,
+or zero to break the existing vertex array object binding.
+
+
+If no vertex array object with name *array* exists, one is created when *array* is first bound. If the bind
+is successful no change is made to the state of the vertex array object, and any previous vertex array object binding is broken.
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_OPERATION`` is generated if *array* is not zero or the name of a vertex array object previously returned from a call to :c:func:`glGenVertexArrays`\ .
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glBindVertexArray'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )2010 Khronos Group. Open Publication License.
+

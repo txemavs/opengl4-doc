@@ -1,0 +1,91 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glBeginQueryIndexed`
+------------------------------
+
+.. source file man4/glBeginQueryIndexed
+
+.. currentmodule:: OpenGL.GL
+
+Delimit the boundaries of a query object on an indexed target
+
+.. c:function:: glBeginQueryIndexed
+.. c:function:: void glBeginQueryIndexed(GLenum  target, GLuint  index, GLuint  id)
+   :noindex: 
+
+
+   
+   :param target:
+      Specifies the target type of query object established between :c:func:`glBeginQueryIndexed` and the subsequent :c:func:`glEndQueryIndexed`. The symbolic constant must be one of ``GL_SAMPLES_PASSED``, ``GL_ANY_SAMPLES_PASSED``, ``GL_PRIMITIVES_GENERATED``, ``GL_TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN``, or ``GL_TIME_ELAPSED``.
+   
+   :param index:
+      Specifies the index of the query target upon which to begin the query.
+   
+   :param id:
+      Specifies the name of a query object.
+   
+.. c:function:: void glEndQueryIndexed(GLenum  target, GLuint  index)
+
+
+   
+   :param target:
+      Specifies the target type of query object to be concluded. The symbolic constant must be one of ``GL_SAMPLES_PASSED``, ``GL_ANY_SAMPLES_PASSED``, ``GL_PRIMITIVES_GENERATED``, ``GL_TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN``, or ``GL_TIME_ELAPSED``.
+   
+   :param index:
+      Specifies the index of the query target upon which to end the query.
+   
+
+.. seealso::
+
+   
+   :c:func:`glDeleteQueries`, :c:func:`glBeginQuery`, :c:func:`glEndQuery`, :c:func:`glGenQueries`, :c:func:`glGetQueryiv`, :c:func:`glGetQueryObject`, :c:func:`glIsQuery`
+   
+.. rubric:: Description
+
+
+:c:func:`glBeginQueryIndexed` and :c:func:`glEndQueryIndexed` delimit the boundaries of a query object. *query* must be a name previously returned from a call to :c:func:`glGenQueries`. If a query object with name *id* does not yet exist it is created with the type determined by *target* . *target* must be one of ``GL_SAMPLES_PASSED``, ``GL_ANY_SAMPLES_PASSED``, ``GL_PRIMITIVES_GENERATED``, ``GL_TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN``, or ``GL_TIME_ELAPSED``. The behavior of the query object depends on its type and is as follows.
+
+*index* specifies the index of the query target and must be between a *target* -specific maximum.
+
+If *target* is ``GL_SAMPLES_PASSED``, *id* must be an unused name, or the name of an existing occlusion query object. When :c:func:`glBeginQueryIndexed` is executed, the query object's samples-passed counter is reset to 0. Subsequent rendering will increment the counter for every sample that passes the depth test. If the value of ``GL_SAMPLE_BUFFERS`` is 0, then the samples-passed count is incremented by 1 for each fragment. If the value of ``GL_SAMPLE_BUFFERS`` is 1, then the samples-passed count is incremented by the number of samples whose coverage bit is set. However, implementations, at their discression may instead increase the samples-passed count by the value of ``GL_SAMPLES`` if any sample in the fragment is covered. When :c:func:`glEndQueryIndexed` is executed, the samples-passed counter is assigned to the query object's result value. This value can be queried by calling :c:func:`glGetQueryObject` with *pname* ``GL_QUERY_RESULT``. When *target* is ``GL_SAMPLES_PASSED``, *index* must be zero.
+
+If *target* is ``GL_ANY_SAMPLES_PASSED``, *id* must be an unused name, or the name of an existing boolean occlusion query object. When :c:func:`glBeginQueryIndexed` is executed, the query object's samples-passed flag is reset to ``GL_FALSE``. Subsequent rendering causes the flag to be set to ``GL_TRUE`` if any sample passes the depth test. When :c:func:`glEndQueryIndexed` is executed, the samples-passed flag is assigned to the query object's result value. This value can be queried by calling :c:func:`glGetQueryObject` with *pname* ``GL_QUERY_RESULT``. When *target* is ``GL_ANY_SAMPLES_PASSED``, *index* must be zero.
+
+If *target* is ``GL_PRIMITIVES_GENERATED``, *id* must be an unused name, or the name of an existing primitive query object previously bound to the ``GL_PRIMITIVES_GENERATED`` query binding. When :c:func:`glBeginQueryIndexed` is executed, the query object's primitives-generated counter is reset to 0. Subsequent rendering will increment the counter once for every vertex that is emitted from the geometry shader to the stream given by *index* , or from the vertex shader if *index* is zero and no geometry shader is present. When :c:func:`glEndQueryIndexed` is executed, the primitives-generated counter for stream *index* is assigned to the query object's result value. This value can be queried by calling :c:func:`glGetQueryObject` with *pname* ``GL_QUERY_RESULT``. When *target* is ``GL_PRIMITIVES_GENERATED``, *index* must be less than the value of ``GL_MAX_VERTEX_STREAMS``.
+
+If *target* is ``GL_TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN``, *id* must be an unused name, or the name of an existing primitive query object previously bound to the ``GL_TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN`` query binding. When :c:func:`glBeginQueryIndexed` is executed, the query object's primitives-written counter for the stream specified by *index* is reset to 0. Subsequent rendering will increment the counter once for every vertex that is written into the bound transform feedback buffer(s) for stream *index* . If transform feedback mode is not activated between the call to :c:func:`glBeginQueryIndexed` and :c:func:`glEndQueryIndexed`, the counter will not be incremented. When :c:func:`glEndQueryIndexed` is executed, the primitives-written counter for stream *index* is assigned to the query object's result value. This value can be queried by calling :c:func:`glGetQueryObject` with *pname* ``GL_QUERY_RESULT``. When *target* is ``GL_TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN``, *index* must be less than the value of ``GL_MAX_VERTEX_STREAMS``.
+
+If *target* is ``GL_TIME_ELAPSED``, *id* must be an unused name, or the name of an existing timer query object previously bound to the ``GL_TIME_ELAPSED`` query binding. When :c:func:`glBeginQueryIndexed` is executed, the query object's time counter is reset to 0. When :c:func:`glEndQueryIndexed` is executed, the elapsed server time that has passed since the call to :c:func:`glBeginQueryIndexed` is written into the query object's time counter. This value can be queried by calling :c:func:`glGetQueryObject` with *pname* ``GL_QUERY_RESULT``. When *target* is ``GL_TIME_ELAPSED``, *index* must be zero.
+
+Querying the ``GL_QUERY_RESULT`` implicitly flushes the GL pipeline until the rendering delimited by the query object has completed and the result is available. ``GL_QUERY_RESULT_AVAILABLE`` can be queried to determine if the result is immediately available or if the rendering is not yet complete.
+
+
+**Errors:**
+
+   * ``GL_INVALID_ENUM`` is generated if *target* is not one of the accepted tokens.
+   * ``GL_INVALID_VALUE`` is generated if *index* is greater than the query target-specific maximum.
+   * ``GL_INVALID_OPERATION`` is generated if :c:func:`glBeginQueryIndexed` is executed while a query object of the same *target* is already active.
+   * ``GL_INVALID_OPERATION`` is generated if :c:func:`glEndQueryIndexed` is executed when a query object of the same *target* is not active.
+   * ``GL_INVALID_OPERATION`` is generated if *id* is 0.
+   * ``GL_INVALID_OPERATION`` is generated if *id* is the name of an already active query object.
+   * ``GL_INVALID_OPERATION`` is generated if *id* refers to an existing query object whose type does not does not match *target* .
+
+
+
+.. note::
+
+   * If the query target's count exceeds the maximum value representable in the number of available bits, as reported by :c:func:`glGetQueryiv` with *target* set to the appropriate query target and *pname* ``GL_QUERY_COUNTER_BITS``, the count becomes undefined.
+   * An implementation may support 0 bits in its counter, in which case query results are always undefined and essentially useless.
+   * When ``GL_SAMPLE_BUFFERS`` is 0, the samples-passed counter of an occlusion query will increment once for each fragment that passes the depth test. When ``GL_SAMPLE_BUFFERS`` is 1, an implementation may either increment the samples-passed counter individually for each sample of a fragment that passes the depth test, or it may choose to increment the counter for all samples of a fragment if any one of them passes the depth test.
+   * Calling :c:func:`glBeginQuery` or :c:func:`glEndQuery` is equivalent to calling :c:func:`glBeginQueryIndexed` or :c:func:`glEndQueryIndexed` with *index* set to zero, respectively.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

@@ -1,0 +1,226 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glInterleavedArrays &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function glIsList" href="glIsList.html" />
+    <link rel="prev" title="function glInitNames" href="glInitNames.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glIsList.html" title="function glIsList"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glInitNames.html" title="function glInitNames"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glinterleavedarrays">
+<h1>function <cite>glInterleavedArrays</cite><a class="headerlink" href="#function-glinterleavedarrays" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Simultaneously specify and enable several interleaved arrays</p>
+<dl class="function">
+<dt id="glInterleavedArrays">
+<tt class="descname">glInterleavedArrays</tt><big>(</big><big>)</big><a class="headerlink" href="#glInterleavedArrays" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>format</strong> &#8211; Specifies the type of array to enable. Symbolic constants
+<tt class="docutils literal"><span class="pre">GL_V2F</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_V3F</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_C4UB_V2F</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_C4UB_V3F</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_C3F_V3F</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_N3F_V3F</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_C4F_N3F_V3F</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_T2F_V3F</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_T4F_V4F</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_T2F_C4UB_V3F</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_T2F_C3F_V3F</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_T2F_N3F_V3F</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_T2F_C4F_N3F_V3F</span></tt>,
+and
+<tt class="docutils literal"><span class="pre">GL_T4F_C4F_N3F_V4F</span></tt>
+are accepted.</li>
+<li><strong>stride</strong> &#8211; Specifies the offset in bytes between each aggregate array element.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glInterleavedArrays</tt><big>(</big>GLenum <em>&nbsp;format</em>, GLsizei <em>&nbsp;stride</em>, const GLvoid * <em>&nbsp;pointer</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glArrayElement.html#glArrayElement" title="glArrayElement"><tt class="xref c c-func docutils literal"><span class="pre">glArrayElement()</span></tt></a>,
+<a class="reference internal" href="glClientActiveTexture.html#glClientActiveTexture" title="glClientActiveTexture"><tt class="xref c c-func docutils literal"><span class="pre">glClientActiveTexture()</span></tt></a>,
+<a class="reference internal" href="glColorPointer.html#glColorPointer" title="glColorPointer"><tt class="xref c c-func docutils literal"><span class="pre">glColorPointer()</span></tt></a>,
+<a class="reference internal" href="../man4/glDrawArrays.html#glDrawArrays" title="glDrawArrays"><tt class="xref c c-func docutils literal"><span class="pre">glDrawArrays()</span></tt></a>,
+<a class="reference internal" href="../man4/glDrawElements.html#glDrawElements" title="glDrawElements"><tt class="xref c c-func docutils literal"><span class="pre">glDrawElements()</span></tt></a>,
+<a class="reference internal" href="glEdgeFlagPointer.html#glEdgeFlagPointer" title="glEdgeFlagPointer"><tt class="xref c c-func docutils literal"><span class="pre">glEdgeFlagPointer()</span></tt></a>,
+<a class="reference internal" href="glEnableClientState.html#glEnableClientState" title="glEnableClientState"><tt class="xref c c-func docutils literal"><span class="pre">glEnableClientState()</span></tt></a>,
+<a class="reference internal" href="glGetPointerv.html#glGetPointerv" title="glGetPointerv"><tt class="xref c c-func docutils literal"><span class="pre">glGetPointerv()</span></tt></a>,
+<a class="reference internal" href="glIndexPointer.html#glIndexPointer" title="glIndexPointer"><tt class="xref c c-func docutils literal"><span class="pre">glIndexPointer()</span></tt></a>,
+<a class="reference internal" href="glNormalPointer.html#glNormalPointer" title="glNormalPointer"><tt class="xref c c-func docutils literal"><span class="pre">glNormalPointer()</span></tt></a>,
+<a class="reference internal" href="glSecondaryColorPointer.html#glSecondaryColorPointer" title="glSecondaryColorPointer"><tt class="xref c c-func docutils literal"><span class="pre">glSecondaryColorPointer()</span></tt></a>,
+<a class="reference internal" href="glTexCoordPointer.html#glTexCoordPointer" title="glTexCoordPointer"><tt class="xref c c-func docutils literal"><span class="pre">glTexCoordPointer()</span></tt></a>,
+<a class="reference internal" href="glVertexPointer.html#glVertexPointer" title="glVertexPointer"><tt class="xref c c-func docutils literal"><span class="pre">glVertexPointer()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glInterleavedArrays" title="glInterleavedArrays"><tt class="xref c c-func docutils literal"><span class="pre">glInterleavedArrays()</span></tt></a> lets you specify and enable individual color,
+normal,
+texture and vertex
+arrays whose elements are part of a larger aggregate array element.
+For some implementations, this is more efficient than specifying the arrays
+separately.</p>
+<p>If <em>stride</em> is 0, the aggregate elements are stored consecutively.
+Otherwise, <em>stride</em> bytes occur between the beginning of one
+aggregate array element and the beginning of the next aggregate array
+element.</p>
+<p><em>format</em> serves as a &#8220;key&#8221;
+describing the extraction of individual arrays from the aggregate array.
+If <em>format</em> contains a T, then texture coordinates are
+extracted from the interleaved array.  If C is present, color values
+are extracted. If N is present, normal coordinates are extracted.
+Vertex coordinates are always extracted.</p>
+<p>The digits 2, 3, and 4 denote how many values are extracted.
+F indicates that values are extracted as floating-point values.
+Colors may also be extracted as 4 unsigned bytes if 4UB follows the
+C.  If a color is extracted as 4 unsigned bytes, the vertex
+array element which follows is located at the first possible
+floating-point aligned address.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><a class="reference internal" href="#glInterleavedArrays" title="glInterleavedArrays"><tt class="xref c c-func docutils literal"><span class="pre">glInterleavedArrays()</span></tt></a> is available only if the GL version is 1.1 or greater.</p>
+<p>If <a class="reference internal" href="#glInterleavedArrays" title="glInterleavedArrays"><tt class="xref c c-func docutils literal"><span class="pre">glInterleavedArrays()</span></tt></a> is called while compiling a display list, it is not
+compiled into the list, and it is executed immediately.</p>
+<p>Execution of <a class="reference internal" href="#glInterleavedArrays" title="glInterleavedArrays"><tt class="xref c c-func docutils literal"><span class="pre">glInterleavedArrays()</span></tt></a> is not allowed between the execution of
+<a class="reference internal" href="glBegin.html#glBegin" title="glBegin"><tt class="xref c c-func docutils literal"><span class="pre">glBegin()</span></tt></a> and the corresponding execution of <a class="reference internal" href="glBegin.html#glEnd" title="glEnd"><tt class="xref c c-func docutils literal"><span class="pre">glEnd()</span></tt></a>,
+but an error may or may not be generated. If no error is generated,
+the operation is undefined.</p>
+<p><a class="reference internal" href="#glInterleavedArrays" title="glInterleavedArrays"><tt class="xref c c-func docutils literal"><span class="pre">glInterleavedArrays()</span></tt></a> is typically implemented on the client side.</p>
+<p>Vertex array parameters are client-side state and are therefore not
+saved or restored by <a class="reference internal" href="glPushAttrib.html#glPushAttrib" title="glPushAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glPushAttrib()</span></tt></a> and <a class="reference internal" href="glPushAttrib.html#glPopAttrib" title="glPopAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glPopAttrib()</span></tt></a>.
+Use <a class="reference internal" href="glPushClientAttrib.html#glPushClientAttrib" title="glPushClientAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glPushClientAttrib()</span></tt></a> and <a class="reference internal" href="glPushClientAttrib.html#glPopClientAttrib" title="glPopClientAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glPopClientAttrib()</span></tt></a> instead.</p>
+<p>For OpenGL versions 1.3 and greater, or when the <tt class="docutils literal"><span class="pre">ARB_multitexture</span></tt> extension is supported, <a class="reference internal" href="#glInterleavedArrays" title="glInterleavedArrays"><tt class="xref c c-func docutils literal"><span class="pre">glInterleavedArrays()</span></tt></a>
+only updates the texture coordinate array for the client active texture
+unit. The texture coordinate state for other client texture units is not
+updated, regardless of whether the client texture unit is enabled or not.</p>
+<p class="last">Secondary color values are not supported in interleaved vertex array formats.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>format</em> is not an accepted value.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>stride</em> is negative.</li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glInitNames.html"
+                        title="previous chapter">function <cite>glInitNames</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glIsList.html"
+                        title="next chapter">function <cite>glIsList</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/glInterleavedArrays.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glIsList.html" title="function glIsList"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glInitNames.html" title="function glInitNames"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

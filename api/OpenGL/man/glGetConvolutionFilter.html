@@ -1,0 +1,258 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glGetConvolutionFilter &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function glGetConvolutionParameter" href="glGetConvolutionParameter.html" />
+    <link rel="prev" title="function glGetColorTableParameter" href="glGetColorTableParameter.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glGetConvolutionParameter.html" title="function glGetConvolutionParameter"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glGetColorTableParameter.html" title="function glGetColorTableParameter"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glgetconvolutionfilter">
+<h1>function <cite>glGetConvolutionFilter</cite><a class="headerlink" href="#function-glgetconvolutionfilter" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Get current 1D or 2D convolution filter kernel</p>
+<dl class="function">
+<dt id="glGetConvolutionFilter">
+<tt class="descname">glGetConvolutionFilter</tt><big>(</big><big>)</big><a class="headerlink" href="#glGetConvolutionFilter" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>target</strong> &#8211; The filter to be retrieved.
+Must be one of
+<tt class="docutils literal"><span class="pre">GL_CONVOLUTION_1D</span></tt> or
+<tt class="docutils literal"><span class="pre">GL_CONVOLUTION_2D</span></tt>.</li>
+<li><strong>format</strong> &#8211; Format of the output image.
+Must be one of
+<tt class="docutils literal"><span class="pre">GL_RED</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_GREEN</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_BLUE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_ALPHA</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGB</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_BGR</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGBA</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_BGRA</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LUMINANCE</span></tt>, or
+<tt class="docutils literal"><span class="pre">GL_LUMINANCE_ALPHA</span></tt>.</li>
+<li><strong>type</strong> &#8211; Data type of components in the output image.
+Symbolic constants
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_BYTE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_BYTE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_BITMAP</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_SHORT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_INT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_FLOAT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_BYTE_3_3_2</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_BYTE_2_3_3_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_5_6_5</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_5_6_5_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_4_4_4_4</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_4_4_4_4_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_5_5_5_1</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_1_5_5_5_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_8_8_8_8</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_8_8_8_8_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_10_10_10_2</span></tt>, and
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_2_10_10_10_REV</span></tt>
+are accepted.</li>
+<li><strong>image</strong> &#8211; Pointer to storage for the output image.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glGetConvolutionFilter</tt><big>(</big>GLenum <em>&nbsp;target</em>, GLenum <em>&nbsp;format</em>, GLenum <em>&nbsp;type</em>, GLvoid * <em>&nbsp;image</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glGetSeparableFilter.html#glGetSeparableFilter" title="glGetSeparableFilter"><tt class="xref c c-func docutils literal"><span class="pre">glGetSeparableFilter()</span></tt></a>,
+<a class="reference internal" href="glConvolutionParameter.html#glConvolutionParameter" title="glConvolutionParameter"><tt class="xref c c-func docutils literal"><span class="pre">glConvolutionParameter()</span></tt></a>,
+<a class="reference internal" href="glConvolutionFilter1D.html#glConvolutionFilter1D" title="glConvolutionFilter1D"><tt class="xref c c-func docutils literal"><span class="pre">glConvolutionFilter1D()</span></tt></a>,
+<a class="reference internal" href="glConvolutionFilter2D.html#glConvolutionFilter2D" title="glConvolutionFilter2D"><tt class="xref c c-func docutils literal"><span class="pre">glConvolutionFilter2D()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glGetConvolutionFilter" title="glGetConvolutionFilter"><tt class="xref c c-func docutils literal"><span class="pre">glGetConvolutionFilter()</span></tt></a> returns the current 1D or 2D convolution filter kernel as an image.
+The one- or two-dimensional image is placed in <em>image</em> according to the
+specifications in <em>format</em> and <em>type</em>.
+No pixel transfer operations are performed on this image, but the relevant
+pixel storage modes are applied.</p>
+<p>If a non-zero named buffer object is bound to the <tt class="docutils literal"><span class="pre">GL_PIXEL_PACK_BUFFER</span></tt> target
+(see <a class="reference internal" href="../man4/glBindBuffer.html#glBindBuffer" title="glBindBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glBindBuffer()</span></tt></a>) while a convolution filter is
+requested, <em>image</em> is treated as a byte offset into the buffer object&#8217;s data store.</p>
+<p>Color components that are present in <em>format</em> but not included in the
+internal format of the filter are returned as zero.
+The assignments of internal color components to the components of <em>format</em>
+are as follows.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="49%" />
+<col width="51%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Internal Component</strong></td>
+<td><strong>Resulting Component</strong></td>
+</tr>
+<tr class="row-even"><td>Red</td>
+<td>Red</td>
+</tr>
+<tr class="row-odd"><td>Green</td>
+<td>Green</td>
+</tr>
+<tr class="row-even"><td>Blue</td>
+<td>Blue</td>
+</tr>
+<tr class="row-odd"><td>Alpha</td>
+<td>Alpha</td>
+</tr>
+<tr class="row-even"><td>Luminance</td>
+<td>Red</td>
+</tr>
+<tr class="row-odd"><td>Intensity</td>
+<td>Red</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><a class="reference internal" href="#glGetConvolutionFilter" title="glGetConvolutionFilter"><tt class="xref c c-func docutils literal"><span class="pre">glGetConvolutionFilter()</span></tt></a> is present only if <tt class="docutils literal"><span class="pre">ARB_imaging</span></tt> is returned when <a class="reference internal" href="../man4/glGetString.html#glGetString" title="glGetString"><tt class="xref c c-func docutils literal"><span class="pre">glGetString()</span></tt></a>
+is called with an argument of <tt class="docutils literal"><span class="pre">GL_EXTENSIONS</span></tt>.</p>
+<p class="last">The current separable 2D filter must be retrieved with
+<a class="reference internal" href="glGetSeparableFilter.html#glGetSeparableFilter" title="glGetSeparableFilter"><tt class="xref c c-func docutils literal"><span class="pre">glGetSeparableFilter()</span></tt></a> rather than <a class="reference internal" href="#glGetConvolutionFilter" title="glGetConvolutionFilter"><tt class="xref c c-func docutils literal"><span class="pre">glGetConvolutionFilter()</span></tt></a>.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>target</em> is not one of the allowable values.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>format</em> is not one of the allowable values.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>type</em> is not one of the allowable values.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <em>type</em> is one of <tt class="docutils literal"><span class="pre">GL_UNSIGNED_BYTE_3_3_2</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_BYTE_2_3_3_REV</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_5_6_5</span></tt>, or <tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_5_6_5_REV</span></tt> and <em>format</em> is not <tt class="docutils literal"><span class="pre">GL_RGB</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <em>type</em> is one of <tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_4_4_4_4</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_4_4_4_4_REV</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_5_5_5_1</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_1_5_5_5_REV</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_8_8_8_8</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_8_8_8_8_REV</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_10_10_10_2</span></tt>, or <tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_2_10_10_10_REV</span></tt> and <em>format</em> is neither <tt class="docutils literal"><span class="pre">GL_RGBA</span></tt> nor <tt class="docutils literal"><span class="pre">GL_BGRA</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if a non-zero buffer object name is bound to the <tt class="docutils literal"><span class="pre">GL_PIXEL_PACK_BUFFER</span></tt> target and the buffer object&#8217;s data store is currently mapped.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if a non-zero buffer object name is bound to the <tt class="docutils literal"><span class="pre">GL_PIXEL_PACK_BUFFER</span></tt> target and the data would be packed to the buffer object such that the memory writes required would exceed the data store size.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if a non-zero buffer object name is bound to the <tt class="docutils literal"><span class="pre">GL_PIXEL_PACK_BUFFER</span></tt> target and <em>image</em> is not evenly divisible into the number of bytes needed to store in memory a datum indicated by <em>type</em>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <a class="reference internal" href="#glGetConvolutionFilter" title="glGetConvolutionFilter"><tt class="xref c c-func docutils literal"><span class="pre">glGetConvolutionFilter()</span></tt></a> is executed between the execution of <a class="reference internal" href="glBegin.html#glBegin" title="glBegin"><tt class="xref c c-func docutils literal"><span class="pre">glBegin()</span></tt></a> and the corresponding execution of <a class="reference internal" href="glBegin.html#glEnd" title="glEnd"><tt class="xref c c-func docutils literal"><span class="pre">glEnd()</span></tt></a>.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glGetConvolutionParameter.html#glGetConvolutionParameter" title="glGetConvolutionParameter"><tt class="xref c c-func docutils literal"><span class="pre">glGetConvolutionParameter()</span></tt></a></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_PIXEL_PACK_BUFFER_BINDING</span></tt></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glGetColorTableParameter.html"
+                        title="previous chapter">function <cite>glGetColorTableParameter</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glGetConvolutionParameter.html"
+                        title="next chapter">function <cite>glGetConvolutionParameter</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/glGetConvolutionFilter.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glGetConvolutionParameter.html" title="function glGetConvolutionParameter"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glGetColorTableParameter.html" title="function glGetColorTableParameter"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

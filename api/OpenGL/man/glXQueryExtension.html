@@ -1,0 +1,163 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glXQueryExtension &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function glXQueryExtensionsString" href="glXQueryExtensionsString.html" />
+    <link rel="prev" title="function glXQueryDrawable" href="glXQueryDrawable.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glXQueryExtensionsString.html" title="function glXQueryExtensionsString"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glXQueryDrawable.html" title="function glXQueryDrawable"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glxqueryextension">
+<h1>function <cite>glXQueryExtension</cite><a class="headerlink" href="#function-glxqueryextension" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Indicate whether the GLX extension is supported</p>
+<dl class="function">
+<dt id="glXQueryExtension">
+<tt class="descname">glXQueryExtension</tt><big>(</big><big>)</big><a class="headerlink" href="#glXQueryExtension" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>dpy</strong> &#8211; Specifies the connection to the X server.</li>
+<li><strong>errorBase</strong> &#8211; Returns the base error code of the GLX server extension.</li>
+<li><strong>eventBase</strong> &#8211; Returns the base event code of the GLX server extension.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+Bool <tt class="descname">glXQueryExtension</tt><big>(</big>Display * <em>&nbsp;dpy</em>, int * <em>&nbsp;errorBase</em>, int * <em>&nbsp;eventBase</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glXQueryVersion.html#glXQueryVersion" title="glXQueryVersion"><tt class="xref c c-func docutils literal"><span class="pre">glXQueryVersion()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glXQueryExtension" title="glXQueryExtension"><tt class="xref c c-func docutils literal"><span class="pre">glXQueryExtension()</span></tt></a> returns <tt class="docutils literal"><span class="pre">True</span></tt> if the X server of
+connection <em>dpy</em> supports the GLX extension,
+<tt class="docutils literal"><span class="pre">False</span></tt> otherwise.
+If <tt class="docutils literal"><span class="pre">True</span></tt> is returned,
+then <em>errorBase</em> and <em>eventBase</em> return the error base and event base of
+the GLX extension.  These values should be added to the constant
+error and event values to determine the actual event or error values.
+Otherwise, <em>errorBase</em> and <em>eventBase</em> are unchanged.</p>
+<p><em>errorBase</em> and <em>eventBase</em> do not return values if they are specified
+as <tt class="docutils literal"><span class="pre">NULL</span></tt>.</p>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glXQueryDrawable.html"
+                        title="previous chapter">function <cite>glXQueryDrawable</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glXQueryExtensionsString.html"
+                        title="next chapter">function <cite>glXQueryExtensionsString</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/glXQueryExtension.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glXQueryExtensionsString.html" title="function glXQueryExtensionsString"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glXQueryDrawable.html" title="function glXQueryDrawable"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

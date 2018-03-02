@@ -1,0 +1,1892 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:29
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glGet.xml'
+.. (c)1991-2006 Silicon Graphics, Inc. 2010-2011 Khronos Group.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glGet`
+----------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Return the value or values of a selected parameter
+
+.. c:function:: glGet
+
+
+         :param pname:
+
+                  Specifies the parameter value to be returned.
+                  The symbolic constants in the list below are accepted.
+
+         :param params:
+
+                  Returns the value or values of the specified parameter.
+
+.. rubric:: Specification
+
+.. c:function:: void glGetBooleanv(GLenum  pname, GLboolean *  params)
+.. c:function:: void glGetDoublev(GLenum  pname, GLdouble *  params)
+.. c:function:: void glGetFloatv(GLenum  pname, GLfloat *  params)
+.. c:function:: void glGetIntegerv(GLenum  pname, GLint *  params)
+.. c:function:: void glGetInteger64v(GLenum  pname, GLint64 *  params)
+.. c:function:: void glGetBooleani_v(GLenum  pname, GLuint  index, GLboolean *  data)
+.. c:function:: void glGetIntegeri_v(GLenum  pname, GLuint  index, GLint *  data)
+.. c:function:: void glGetInteger64i_v(GLenum  pname, GLuint  index, GLint64 *  data)
+
+
+.. seealso::
+
+
+            :c:func:`glGetActiveUniform`\ ,
+            :c:func:`glGetAttachedShaders`\ ,
+            :c:func:`glGetAttribLocation`\ ,
+            :c:func:`glGetBufferParameter`\ ,
+            :c:func:`glGetBufferPointerv`\ ,
+            :c:func:`glGetBufferSubData`\ ,
+            :c:func:`glGetCompressedTexImage`\ ,
+            :c:func:`glGetError`\ ,
+            :c:func:`glGetProgram`\ ,
+            :c:func:`glGetProgramInfoLog`\ ,
+            :c:func:`glGetQueryiv`\ ,
+            :c:func:`glGetQueryObject`\ ,
+            :c:func:`glGetShader`\ ,
+            :c:func:`glGetShaderInfoLog`\ ,
+            :c:func:`glGetShaderSource`\ ,
+            :c:func:`glGetString`\ ,
+            :c:func:`glGetTexImage`\ ,
+            :c:func:`glGetTexLevelParameter`\ ,
+            :c:func:`glGetTexParameter`\ ,
+            :c:func:`glGetUniform`\ ,
+            :c:func:`glGetUniformLocation`\ ,
+            :c:func:`glGetVertexAttrib`\ ,
+            :c:func:`glGetVertexAttribPointerv`\ ,
+            :c:func:`glIsEnabled`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Parameters
+
+..
+
+
+      *pname*
+
+
+            Specifies the parameter value to be returned.
+            The symbolic constants in the list below are accepted.
+
+
+      *index*
+
+
+            Specifies the index of the particular element being queried.
+
+
+      *data*
+
+
+            Returns the value or values of the specified parameter.
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+These four commands return values for simple state variables in GL.
+*pname* is a symbolic constant indicating the state variable to be returned,
+and *params* is a pointer to an array of the indicated type in
+which to place the returned data.
+
+
+Type conversion is performed if *params* has a different type than
+the state variable value being requested.
+If :c:func:`glGetBooleanv` is called,
+a floating-point (or integer) value is converted to ``GL_FALSE`` if
+and only if it is 0.0 (or 0).
+Otherwise,
+it is converted to ``GL_TRUE``\ .
+If :c:func:`glGetIntegerv` is called, boolean values are returned as
+``GL_TRUE`` or ``GL_FALSE``\ , and most floating-point values are
+rounded to the nearest integer value. Floating-point colors and
+normals, however, are returned with a linear mapping that maps 1.0 to
+the most positive representable integer value
+and |EQUATION_1_| to the most negative representable integer value.
+If :c:func:`glGetFloatv` or :c:func:`glGetDoublev` is called,
+boolean values are returned as ``GL_TRUE`` or ``GL_FALSE``\ ,
+and integer values are converted to floating-point values.
+
+
+The following symbolic constants are accepted by *pname* :
+
+
+         ``GL_ACTIVE_TEXTURE``
+
+
+               *params* returns a single value indicating the active multitexture unit.
+               The initial value is ``GL_TEXTURE0``\ .
+               See :c:func:`glActiveTexture`\ .
+
+
+         ``GL_ALIASED_LINE_WIDTH_RANGE``
+
+
+               *params* returns a pair of values indicating the range of
+               widths supported for aliased lines. See :c:func:`glLineWidth`\ .
+
+
+         ``GL_ARRAY_BUFFER_BINDING``
+
+
+               *params* returns a single value, the name of the buffer object
+               currently bound to the target ``GL_ARRAY_BUFFER``\ . If no buffer object
+               is bound to this target, 0 is returned.  The initial value is 0.
+               See :c:func:`glBindBuffer`\ .
+
+
+         ``GL_BLEND``
+
+
+               *params* returns a single boolean value indicating whether blending is
+               enabled. The initial value is ``GL_FALSE``\ .
+               See :c:func:`glBlendFunc`\ .
+
+
+         ``GL_BLEND_COLOR``
+
+
+               *params* returns four values,
+               the red, green, blue, and alpha values which are the components of
+               the blend color.
+               See :c:func:`glBlendColor`\ .
+
+
+         ``GL_BLEND_DST_ALPHA``
+
+
+               *params* returns one value,
+               the symbolic constant identifying the alpha destination blend
+               function. The initial value is ``GL_ZERO``\ .
+               See :c:func:`glBlendFunc` and :c:func:`glBlendFuncSeparate`\ .
+
+
+         ``GL_BLEND_DST_RGB``
+
+
+               *params* returns one value,
+               the symbolic constant identifying the RGB destination blend
+               function. The initial value is ``GL_ZERO``\ .
+               See :c:func:`glBlendFunc` and :c:func:`glBlendFuncSeparate`\ .
+
+
+         ``GL_BLEND_EQUATION_RGB``
+
+
+               *params* returns one value, a symbolic constant indicating whether
+               the RGB blend equation is ``GL_FUNC_ADD``\ , ``GL_FUNC_SUBTRACT``\ ,
+               ``GL_FUNC_REVERSE_SUBTRACT``\ , ``GL_MIN`` or ``GL_MAX``\ .
+               See :c:func:`glBlendEquationSeparate`\ .
+
+
+         ``GL_BLEND_EQUATION_ALPHA``
+
+
+               *params* returns one value, a symbolic constant indicating whether
+               the Alpha blend equation is ``GL_FUNC_ADD``\ , ``GL_FUNC_SUBTRACT``\ ,
+               ``GL_FUNC_REVERSE_SUBTRACT``\ , ``GL_MIN`` or ``GL_MAX``\ .
+               See :c:func:`glBlendEquationSeparate`\ .
+
+
+         ``GL_BLEND_SRC_ALPHA``
+
+
+               *params* returns one value,
+               the symbolic constant identifying the alpha source blend function. The initial
+               value is ``GL_ONE``\ .
+               See :c:func:`glBlendFunc` and :c:func:`glBlendFuncSeparate`\ .
+
+
+         ``GL_BLEND_SRC_RGB``
+
+
+               *params* returns one value,
+               the symbolic constant identifying the RGB source blend function. The initial
+               value is ``GL_ONE``\ .
+               See :c:func:`glBlendFunc` and :c:func:`glBlendFuncSeparate`\ .
+
+
+         ``GL_COLOR_CLEAR_VALUE``
+
+
+               *params* returns four values:
+               the red, green, blue, and alpha values used to clear the color buffers.
+               Integer values,
+               if requested,
+               are linearly mapped from the internal floating-point representation such
+               that 1.0 returns the most positive representable integer value,
+               and |EQUATION_2_| returns the most negative representable integer
+               value. The initial value is (0, 0, 0, 0).
+               See :c:func:`glClearColor`\ .
+
+
+         ``GL_COLOR_LOGIC_OP``
+
+
+               *params* returns a single boolean value indicating whether a fragment's
+               RGBA color values are merged into the framebuffer using a logical
+               operation. The initial value is ``GL_FALSE``\ .
+               See :c:func:`glLogicOp`\ .
+
+
+         ``GL_COLOR_WRITEMASK``
+
+
+               *params* returns four boolean values:
+               the red, green, blue, and alpha write enables for the color
+               buffers. The initial value is (\ ``GL_TRUE``\ , ``GL_TRUE``\ ,
+               ``GL_TRUE``\ , ``GL_TRUE``\ ).
+               See :c:func:`glColorMask`\ .
+
+
+         ``GL_COMPRESSED_TEXTURE_FORMATS``
+
+
+               *params* returns a list of symbolic
+               constants of length ``GL_NUM_COMPRESSED_TEXTURE_FORMATS``
+               indicating which compressed texture formats are available.
+               See :c:func:`glCompressedTexImage2D`\ .
+
+
+         ``GL_CONTEXT_FLAGS``
+
+
+               *params* returns one value,
+               the flags with which the context was created (such as debugging functionality).
+
+
+         ``GL_CULL_FACE``
+
+
+               *params* returns a single boolean value indicating whether polygon culling
+               is enabled. The initial value is ``GL_FALSE``\ .
+               See :c:func:`glCullFace`\ .
+
+
+         ``GL_CURRENT_PROGRAM``
+
+
+               *params* returns one value,
+               the name of the program object that is currently active, or 0 if no program object is active.
+               See :c:func:`glUseProgram`\ .
+
+
+         ``GL_DEPTH_CLEAR_VALUE``
+
+
+               *params* returns one value,
+               the value that is used to clear the depth buffer.
+               Integer values,
+               if requested,
+               are linearly mapped from the internal floating-point representation such
+               that 1.0 returns the most positive representable integer value,
+               and |EQUATION_3_| returns the most negative representable integer
+               value. The initial value is 1.
+               See :c:func:`glClearDepth`\ .
+
+
+         ``GL_DEPTH_FUNC``
+
+
+               *params* returns one value,
+               the symbolic constant that indicates the depth comparison
+               function. The initial value is ``GL_LESS``\ .
+               See :c:func:`glDepthFunc`\ .
+
+
+         ``GL_DEPTH_RANGE``
+
+
+               *params* returns two values:
+               the near and far mapping limits for the depth buffer.
+               Integer values,
+               if requested,
+               are linearly mapped from the internal floating-point representation such
+               that 1.0 returns the most positive representable integer value,
+               and |EQUATION_4_| returns the most negative representable integer
+               value. The initial value is (0, 1).
+               See :c:func:`glDepthRange`\ .
+
+
+         ``GL_DEPTH_TEST``
+
+
+               *params* returns a single boolean value indicating whether depth testing
+               of fragments is enabled. The initial value is ``GL_FALSE``\ .
+               See :c:func:`glDepthFunc` and :c:func:`glDepthRange`\ .
+
+
+         ``GL_DEPTH_WRITEMASK``
+
+
+               *params* returns a single boolean value indicating if the depth buffer
+               is enabled for writing. The initial value is ``GL_TRUE``\ .
+               See :c:func:`glDepthMask`\ .
+
+
+         ``GL_DITHER``
+
+
+               *params* returns a single boolean value indicating whether dithering of
+               fragment colors and indices is enabled. The initial value is ``GL_TRUE``\ .
+
+
+         ``GL_DOUBLEBUFFER``
+
+
+               *params* returns a single boolean value indicating whether double buffering
+               is supported.
+
+
+         ``GL_DRAW_BUFFER``
+
+
+               *params* returns one value,
+               a symbolic constant indicating which buffers are being drawn to.
+               See :c:func:`glDrawBuffer`\ . The initial value is ``GL_BACK`` if there
+               are back buffers, otherwise it is ``GL_FRONT``\ .
+
+
+         ``GL_DRAW_BUFFER`` :strong:`i`
+
+
+               *params* returns one value,
+               a symbolic constant indicating which buffers are being drawn to by the corresponding output color.
+               See :c:func:`glDrawBuffers`\ .
+               The initial value of ``GL_DRAW_BUFFER0`` is ``GL_BACK`` if there
+               are back buffers, otherwise it is ``GL_FRONT``\ .  The
+               initial values of draw buffers for all other output colors is ``GL_NONE``\ .
+
+
+         ``GL_DRAW_FRAMEBUFFER_BINDING``
+
+
+               *params* returns one value,
+               the name of the framebuffer object currently bound to the ``GL_DRAW_FRAMEBUFFER`` target.
+               If the default framebuffer is bound, this value will be zero. The initial value is zero.
+               See :c:func:`glBindFramebuffer`\ .
+
+
+         ``GL_READ_FRAMEBUFFER_BINDING``
+
+
+               *params* returns one value,
+               the name of the framebuffer object currently bound to the ``GL_READ_FRAMEBUFFER`` target.
+               If the default framebuffer is bound, this value will be zero. The initial value is zero.
+               See :c:func:`glBindFramebuffer`\ .
+
+
+         ``GL_ELEMENT_ARRAY_BUFFER_BINDING``
+
+
+               *params* returns a single value, the name of the buffer object
+               currently bound to the target ``GL_ELEMENT_ARRAY_BUFFER``\ . If no buffer object
+               is bound to this target, 0 is returned.  The initial value is 0.
+               See :c:func:`glBindBuffer`\ .
+
+
+         ``GL_FRAGMENT_SHADER_DERIVATIVE_HINT``
+
+
+               *params* returns one value,
+               a symbolic constant indicating the mode of the derivative accuracy hint
+               for fragment shaders. The initial value
+               is ``GL_DONT_CARE``\ .
+               See :c:func:`glHint`\ .
+
+
+         ``GL_IMPLEMENTATION_COLOR_READ_FORMAT``
+
+
+               *params* returns a single GLenum value indicating
+               the implementation's preferred pixel data format.
+               See :c:func:`glReadPixels`\ .
+
+
+         ``GL_IMPLEMENTATION_COLOR_READ_TYPE``
+
+
+               *params* returns a single GLenum value indicating
+               the implementation's preferred pixel data type.
+               See :c:func:`glReadPixels`\ .
+
+
+         ``GL_LINE_SMOOTH``
+
+
+               *params* returns a single boolean value indicating whether antialiasing of
+               lines is enabled. The initial value is ``GL_FALSE``\ .
+               See :c:func:`glLineWidth`\ .
+
+
+         ``GL_LINE_SMOOTH_HINT``
+
+
+               *params* returns one value,
+               a symbolic constant indicating the mode of the line antialiasing
+               hint. The initial value is ``GL_DONT_CARE``\ .
+               See :c:func:`glHint`\ .
+
+
+         ``GL_LINE_WIDTH``
+
+
+               *params* returns one value,
+               the line width as specified with :c:func:`glLineWidth`\ . The initial value is
+               1.
+
+
+         ``GL_LAYER_PROVOKING_VERTEX``
+
+
+               *params* returns one value,
+               the implementation dependent specifc vertex of a primitive that is used to select the rendering layer.
+               If the value returned is equivalent to ``GL_PROVOKING_VERTEX``\ , then the vertex
+               selection follows the convention specified by
+               :c:func:`glProvokingVertex`\ .
+               If the value returned is equivalent to ``GL_FIRST_VERTEX_CONVENTION``\ , then the
+               selection is always taken from the first vertex in the primitive.
+               If the value returned is equivalent to ``GL_LAST_VERTEX_CONVENTION``\ , then the
+               selection is always taken from the last vertex in the primitive.
+               If the value returned is equivalent to ``GL_UNDEFINED_VERTEX``\ , then the
+               selection is not guaranteed to be taken from any specific vertex in the primitive.
+
+
+         ``GL_LINE_WIDTH_GRANULARITY``
+
+
+               *params* returns one value,
+               the width difference between adjacent supported widths for antialiased lines.
+               See :c:func:`glLineWidth`\ .
+
+
+         ``GL_LINE_WIDTH_RANGE``
+
+
+               *params* returns two values:
+               the smallest and largest supported widths for antialiased
+               lines.
+               See :c:func:`glLineWidth`\ .
+
+
+         ``GL_LOGIC_OP_MODE``
+
+
+               *params* returns one value,
+               a symbolic constant indicating the selected logic operation
+               mode. The initial value is ``GL_COPY``\ .
+               See :c:func:`glLogicOp`\ .
+
+
+         ``GL_MAJOR_VERSION``
+
+
+               *params* returns one value,
+               the major version number of the OpenGL API supported by the current context.
+
+
+         ``GL_MAX_3D_TEXTURE_SIZE``
+
+
+               *params* returns one value,
+               a rough estimate of the largest 3D texture that the GL can handle.
+               The value must be at least 64.
+               Use ``GL_PROXY_TEXTURE_3D`` to determine if a texture is too large.
+               See :c:func:`glTexImage3D`\ .
+
+
+         ``GL_MAX_ARRAY_TEXTURE_LAYERS``
+
+
+               *params* returns one value.
+               The value indicates the maximum number of layers allowed in an array texture, and must be at least 256.
+               See :c:func:`glTexImage2D`\ .
+
+
+         ``GL_MAX_CLIP_DISTANCES``
+
+
+               *params* returns one value,
+               the maximum number of application-defined clipping distances. The value must be at least 8.
+
+
+         ``GL_MAX_COLOR_TEXTURE_SAMPLES``
+
+
+               *params* returns one value,
+               the maximum number of samples in a color multisample texture.
+
+
+         ``GL_MAX_COMBINED_ATOMIC_COUNTERS``
+
+
+               *params* returns a single value, the maximum number of atomic counters available to all active shaders.
+
+
+         ``GL_MAX_COMBINED_FRAGMENT_UNIFORM_COMPONENTS``
+
+
+               *params* returns one value,
+               the number of words for fragment shader uniform variables in all uniform
+               blocks (including default). The value must be at least 1.
+               See :c:func:`glUniform`\ .
+
+
+         ``GL_MAX_COMBINED_GEOMETRY_UNIFORM_COMPONENTS``
+
+
+               *params* returns one value,
+               the number of words for geometry shader uniform variables in all uniform
+               blocks (including default). The value must be at least 1.
+               See :c:func:`glUniform`\ .
+
+
+         ``GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS``
+
+
+               *params* returns one value, the maximum supported texture image units that
+               can be used to access texture maps from the vertex shader and the fragment processor combined.
+               If both the vertex shader and the fragment processing stage access the same texture image
+               unit, then that counts as using two texture image units against this limit.
+               The value must be at least 48.
+               See :c:func:`glActiveTexture`\ .
+
+
+         ``GL_MAX_COMBINED_UNIFORM_BLOCKS``
+
+
+               *params* returns one value,
+               the maximum number of uniform blocks per program.  The value must be at least 36.
+               See :c:func:`glUniformBlockBinding`\ .
+
+
+         ``GL_MAX_COMBINED_VERTEX_UNIFORM_COMPONENTS``
+
+
+               *params* returns one value,
+               the number of words for vertex shader uniform variables in all uniform
+               blocks (including default). The value must be at least 1.
+               See :c:func:`glUniform`\ .
+
+
+         ``GL_MAX_CUBE_MAP_TEXTURE_SIZE``
+
+
+               *params* returns one value.
+               The value gives a rough estimate of the largest cube-map texture that
+               the GL can handle. The value must be at least 1024.
+               Use ``GL_PROXY_TEXTURE_CUBE_MAP``
+               to determine if a texture is too large.
+               See :c:func:`glTexImage2D`\ .
+
+
+         ``GL_MAX_DEPTH_TEXTURE_SAMPLES``
+
+
+               *params* returns one value,
+               the maximum number of samples in a multisample depth or depth-stencil texture.
+
+
+         ``GL_MAX_DRAW_BUFFERS``
+
+
+               *params* returns one value, the maximum number
+               of simultaneous outputs that may be written in a fragment shader.
+               The value must be at least 8.
+               See :c:func:`glDrawBuffers`\ .
+
+
+         ``GL_MAX_DUALSOURCE_DRAW_BUFFERS``
+
+
+               *params* returns one value, the maximum number
+               of active draw buffers when using dual-source  blending. The value must be at least 1.
+               See :c:func:`glBlendFunc` and
+               :c:func:`glBlendFuncSeparate`\ .
+
+
+         ``GL_MAX_ELEMENTS_INDICES``
+
+
+               *params* returns one value,
+               the recommended maximum number of vertex array indices.
+               See :c:func:`glDrawRangeElements`\ .
+
+
+         ``GL_MAX_ELEMENTS_VERTICES``
+
+
+               *params* returns one value,
+               the recommended maximum number of vertex array vertices.
+               See :c:func:`glDrawRangeElements`\ .
+
+
+         ``GL_MAX_FRAGMENT_ATOMIC_COUNTERS``
+
+
+               *params* returns a single value, the maximum number of atomic counters available to fragment shaders.
+
+
+         ``GL_MAX_FRAGMENT_INPUT_COMPONENTS``
+
+
+               *params* returns one value,
+               the maximum number of components of the inputs read by the fragment shader, which must be at least 128.
+
+
+         ``GL_MAX_FRAGMENT_UNIFORM_COMPONENTS``
+
+
+               *params* returns one value,
+               the maximum number of individual floating-point, integer, or boolean values that can be held
+               in uniform variable storage for a fragment shader. The value must be at least 1024.
+               See :c:func:`glUniform`\ .
+
+
+         ``GL_MAX_FRAGMENT_UNIFORM_VECTORS``
+
+
+               *params* returns one value,
+               the maximum number of individual 4-vectors of floating-point, integer, or boolean values
+               that can be held
+               in uniform variable storage for a fragment shader. The value is equal to the value of
+               ``GL_MAX_FRAGMENT_UNIFORM_COMPONENTS`` divided by 4 and must be at least 256.
+               See :c:func:`glUniform`\ .
+
+
+         ``GL_MAX_FRAGMENT_UNIFORM_BLOCKS``
+
+
+               *params* returns one value,
+               the maximum number of uniform blocks per fragment shader.  The value must be at least 12.
+               See :c:func:`glUniformBlockBinding`\ .
+
+
+         ``GL_MAX_GEOMETRY_ATOMIC_COUNTERS``
+
+
+               *params* returns a single value, the maximum number of atomic counters available to geometry shaders.
+
+
+         ``GL_MAX_GEOMETRY_INPUT_COMPONENTS``
+
+
+               *params* returns one value,
+               the maximum number of components of inputs read by a geometry shader, which must be at least 64.
+
+
+         ``GL_MAX_GEOMETRY_OUTPUT_COMPONENTS``
+
+
+               *params* returns one value,
+               the maximum number of components of outputs written by a geometry shader, which must be at least 128.
+
+
+         ``GL_MAX_GEOMETRY_TEXTURE_IMAGE_UNITS``
+
+
+               *params* returns one value, the maximum supported texture image units that
+               can be used to access texture maps from the geometry shader. The value must be at least 16.
+               See :c:func:`glActiveTexture`\ .
+
+
+         ``GL_MAX_GEOMETRY_UNIFORM_BLOCKS``
+
+
+               *params* returns one value,
+               the maximum number of uniform blocks per geometry shader.  The value must be at least 12.
+               See :c:func:`glUniformBlockBinding`\ .
+
+
+         ``GL_MAX_GEOMETRY_UNIFORM_COMPONENTS``
+
+
+               *params* returns one value,
+               the maximum number of individual floating-point, integer, or boolean values that can be held
+               in uniform variable storage for a geometry shader. The value must be at least 1024.
+               See :c:func:`glUniform`\ .
+
+
+         ``GL_MAX_INTEGER_SAMPLES``
+
+
+               *params* returns one value,
+               the maximum number of samples supported in integer format multisample buffers.
+
+
+         ``GL_MIN_MAP_BUFFER_ALIGNMENT``
+
+
+               *params* returns one value,
+               the minimum alignment in basic machine units of pointers returned from :c:func:`glMapBuffer`
+               and :c:func:`glMapBufferRange`\ . This value must be a power of two and must
+               be at least 64.
+
+
+         ``GL_MAX_PROGRAM_TEXEL_OFFSET``
+
+
+               *params* returns one value,
+               the maximum texel offset allowed in a texture lookup, which must be at least 7.
+
+
+         ``GL_MIN_PROGRAM_TEXEL_OFFSET``
+
+
+               *params* returns one value,
+               the minimum texel offset allowed in a texture lookup, which must be at most -8.
+
+
+         ``GL_MAX_RECTANGLE_TEXTURE_SIZE``
+
+
+               *params* returns one value.
+               The value gives a rough estimate of the largest rectangular texture that
+               the GL can handle. The value must be at least 1024.
+               Use ``GL_PROXY_RECTANGLE_TEXTURE``
+               to determine if a texture is too large.
+               See :c:func:`glTexImage2D`\ .
+
+
+         ``GL_MAX_RENDERBUFFER_SIZE``
+
+
+               *params* returns one value.
+               The value indicates the maximum supported size for renderbuffers.
+               See :c:func:`glFramebufferRenderbuffer`\ .
+
+
+         ``GL_MAX_SAMPLE_MASK_WORDS``
+
+
+               *params* returns one value,
+               the maximum number of sample mask words.
+
+
+         ``GL_MAX_SERVER_WAIT_TIMEOUT``
+
+
+               *params* returns one value,
+               the maximum :c:func:`glWaitSync` timeout interval.
+
+
+         ``GL_MAX_TESS_CONTROL_ATOMIC_COUNTERS``
+
+
+               *params* returns a single value, the maximum number of atomic counters available to tessellation control shaders.
+
+
+         ``GL_MAX_TESS_EVALUATION_ATOMIC_COUNTERS``
+
+
+               *params* returns a single value, the maximum number of atomic counters available to tessellation evaluation shaders.
+
+
+         ``GL_MAX_TEXTURE_BUFFER_SIZE``
+
+
+               *params* returns one value.
+               The value gives the maximum number of texels allowed in the texel array of a texture buffer object.
+               Value must be at least 65536.
+
+
+         ``GL_MAX_TEXTURE_IMAGE_UNITS``
+
+
+               *params* returns one value, the maximum supported texture image units that
+               can be used to access texture maps from the fragment shader.
+               The value must be at least 16.
+               See :c:func:`glActiveTexture`\ .
+
+
+         ``GL_MAX_TEXTURE_LOD_BIAS``
+
+
+               *params* returns one value,
+               the maximum, absolute value of the texture level-of-detail bias.  The
+               value must be at least 2.0.
+
+
+         ``GL_MAX_TEXTURE_SIZE``
+
+
+               *params* returns one value.
+               The value gives a rough estimate of the largest texture that
+               the GL can handle. The value must be at least 1024.
+               Use a proxy texture target such as ``GL_PROXY_TEXTURE_1D`` or ``GL_PROXY_TEXTURE_2D``
+               to determine if a texture is too large.
+               See :c:func:`glTexImage1D` and :c:func:`glTexImage2D`\ .
+
+
+         ``GL_MAX_UNIFORM_BUFFER_BINDINGS``
+
+
+               *params* returns one value,
+               the maximum number of uniform buffer binding points on the context, which must be at least 36.
+
+
+         ``GL_MAX_UNIFORM_BLOCK_SIZE``
+
+
+               *params* returns one value,
+               the maximum size in basic machine units of a uniform block, which must be at least 16384.
+
+
+         ``GL_MAX_VARYING_COMPONENTS``
+
+
+               *params* returns one value,
+               the number components for varying variables, which must be at least 60.
+
+
+         ``GL_MAX_VARYING_VECTORS``
+
+
+               *params* returns one value,
+               the number 4-vectors for varying variables, which is equal to the value of
+               ``GL_MAX_VARYING_COMPONENTS`` and must be at least 15.
+
+
+         ``GL_MAX_VARYING_FLOATS``
+
+
+               *params* returns one value,
+               the maximum number of interpolators available for processing varying variables used by
+               vertex and fragment shaders. This value represents the number of individual floating-point
+               values that can be interpolated; varying variables declared as vectors, matrices, and arrays
+               will all consume multiple interpolators. The value must be at least 32.
+
+
+         ``GL_MAX_VERTEX_ATOMIC_COUNTERS``
+
+
+               *params* returns a single value, the maximum number of atomic counters available to vertex shaders.
+
+
+         ``GL_MAX_VERTEX_ATTRIBS``
+
+
+               *params* returns one value,
+               the maximum number of 4-component generic vertex attributes accessible to a vertex shader.
+               The value must be at least 16.
+               See :c:func:`glVertexAttrib`\ .
+
+
+         ``GL_MAX_VERTEX_TEXTURE_IMAGE_UNITS``
+
+
+               *params* returns one value, the maximum supported texture image units that
+               can be used to access texture maps from the vertex shader. The value may be at least 16.
+               See :c:func:`glActiveTexture`\ .
+
+
+         ``GL_MAX_VERTEX_UNIFORM_COMPONENTS``
+
+
+               *params* returns one value,
+               the maximum number of individual floating-point, integer, or boolean values that can be held
+               in uniform variable storage for a vertex shader. The value must be at least 1024.
+               See :c:func:`glUniform`\ .
+
+
+         ``GL_MAX_VERTEX_UNIFORM_VECTORS``
+
+
+               *params* returns one value,
+               the maximum number of 4-vectors that may be held in uniform variable storage for the vertex
+               shader. The value of ``GL_MAX_VERTEX_UNIFORM_VECTORS`` is equal to the
+               value of ``GL_MAX_VERTEX_UNIFORM_COMPONENTS`` and must be at least
+               256.
+
+
+         ``GL_MAX_VERTEX_OUTPUT_COMPONENTS``
+
+
+               *params* returns one value,
+               the maximum number of components of output written by a vertex shader, which must be at least 64.
+
+
+         ``GL_MAX_VERTEX_UNIFORM_BLOCKS``
+
+
+               *params* returns one value,
+               the maximum number of uniform blocks per vertex shader.  The value must be at least 12.
+               See :c:func:`glUniformBlockBinding`\ .
+
+
+         ``GL_MAX_VIEWPORT_DIMS``
+
+
+               *params* returns two values:
+               the maximum supported width and height of the viewport.
+               These must be at least as large as the visible dimensions of the display
+               being rendered to.
+               See :c:func:`glViewport`\ .
+
+
+         ``GL_MAX_VIEWPORTS``
+
+
+               *params* returns one value, the maximum number
+               of simultaneous viewports that are supported.
+               The value must be at least 16.
+               See :c:func:`glViewportIndexed`\ .
+
+
+         ``GL_MINOR_VERSION``
+
+
+               *params* returns one value,
+               the minor version number of the OpenGL API supported by the current context.
+
+
+         ``GL_NUM_COMPRESSED_TEXTURE_FORMATS``
+
+
+               *params* returns a single integer value indicating the number of available
+               compressed texture formats.  The minimum value is 4.
+               See :c:func:`glCompressedTexImage2D`\ .
+
+
+         ``GL_NUM_EXTENSIONS``
+
+
+               *params* returns one value,
+               the number of extensions supported by the GL implementation for the current context.
+               See :c:func:`glGetString`\ .
+
+
+         ``GL_NUM_PROGRAM_BINARY_FORMATS``
+
+
+               *params* returns one value,
+               the number of program binary formats supported by the implementation.
+
+
+         ``GL_NUM_SHADER_BINARY_FORMATS``
+
+
+               *params* returns one value,
+               the number of binary shader formats supported by the implementation. If this value is
+               greater than zero, then the implementation supports loading binary shaders. If it is
+               zero, then the loading of binary shaders by the implementation is not supported.
+
+
+         ``GL_PACK_ALIGNMENT``
+
+
+               *params* returns one value,
+               the byte alignment used for writing pixel data to memory. The initial
+               value is 4.
+               See :c:func:`glPixelStore`\ .
+
+
+         ``GL_PACK_IMAGE_HEIGHT``
+
+
+               *params* returns one value,
+               the image height used for writing pixel data to memory.  The initial
+               value is 0.
+               See :c:func:`glPixelStore`\ .
+
+
+         ``GL_PACK_LSB_FIRST``
+
+
+               *params* returns a single boolean value indicating whether single-bit
+               pixels being written to memory are written first to the least significant
+               bit of each unsigned byte. The initial value is ``GL_FALSE``\ .
+               See :c:func:`glPixelStore`\ .
+
+
+         ``GL_PACK_ROW_LENGTH``
+
+
+               *params* returns one value,
+               the row length used for writing pixel data to memory. The initial value is
+               0.
+               See :c:func:`glPixelStore`\ .
+
+
+         ``GL_PACK_SKIP_IMAGES``
+
+
+               *params* returns one value,
+               the number of pixel images skipped before the first pixel is written
+               into memory. The initial value is 0.
+               See :c:func:`glPixelStore`\ .
+
+
+         ``GL_PACK_SKIP_PIXELS``
+
+
+               *params* returns one value,
+               the number of pixel locations skipped before the first pixel is written
+               into memory. The initial value is 0.
+               See :c:func:`glPixelStore`\ .
+
+
+         ``GL_PACK_SKIP_ROWS``
+
+
+               *params* returns one value,
+               the number of rows of pixel locations skipped before the first pixel is written
+               into memory. The initial value is 0.
+               See :c:func:`glPixelStore`\ .
+
+
+         ``GL_PACK_SWAP_BYTES``
+
+
+               *params* returns a single boolean value indicating whether the bytes of
+               two-byte and four-byte pixel indices and components are swapped before being
+               written to memory. The initial value is ``GL_FALSE``\ .
+               See :c:func:`glPixelStore`\ .
+
+
+         ``GL_PIXEL_PACK_BUFFER_BINDING``
+
+
+               *params* returns a single value, the name of the buffer object
+               currently bound to the target ``GL_PIXEL_PACK_BUFFER``\ . If no buffer object
+               is bound to this target, 0 is returned.  The initial value is 0.
+               See :c:func:`glBindBuffer`\ .
+
+
+         ``GL_PIXEL_UNPACK_BUFFER_BINDING``
+
+
+               *params* returns a single value, the name of the buffer object
+               currently bound to the target ``GL_PIXEL_UNPACK_BUFFER``\ . If no buffer object
+               is bound to this target, 0 is returned.  The initial value is 0.
+               See :c:func:`glBindBuffer`\ .
+
+
+         ``GL_POINT_FADE_THRESHOLD_SIZE``
+
+
+               *params* returns one value,
+               the point size threshold for determining the point size.
+               See :c:func:`glPointParameter`\ .
+
+
+         ``GL_PRIMITIVE_RESTART_INDEX``
+
+
+               *params* returns one value,
+               the current primitive restart index. The initial value is 0.
+               See :c:func:`glPrimitiveRestartIndex`\ .
+
+
+         ``GL_PROGRAM_BINARY_FORMATS``
+
+
+               *params* an array of ``GL_NUM_PROGRAM_BINARY_FORMATS`` values,
+               indicating the proram binary formats supported by the implementation.
+
+
+         ``GL_PROGRAM_PIPELINE_BINDING``
+
+
+               *params* a single value, the name of the currently bound program pipeline
+               object, or zero if no program pipeline object is bound.
+               See :c:func:`glBindProgramPipeline`\ .
+
+
+         ``GL_PROVOKING_VERTEX``
+
+
+               *params* returns one value,
+               the currently selected provoking vertex convention. The initial value is ``GL_LAST_VERTEX_CONVENTION``\ .
+               See :c:func:`glProvokingVertex`\ .
+
+
+         ``GL_POINT_SIZE``
+
+
+               *params* returns one value,
+               the point size as specified by :c:func:`glPointSize`\ .
+               The initial value is 1.
+
+
+         ``GL_POINT_SIZE_GRANULARITY``
+
+
+               *params* returns one value,
+               the size difference between adjacent supported sizes for antialiased points.
+               See :c:func:`glPointSize`\ .
+
+
+         ``GL_POINT_SIZE_RANGE``
+
+
+               *params* returns two values:
+               the smallest and largest supported sizes for antialiased
+               points. The smallest size must be at most 1, and the largest size must
+               be at least 1.
+               See :c:func:`glPointSize`\ .
+
+
+         ``GL_POLYGON_OFFSET_FACTOR``
+
+
+               *params* returns one value,
+               the scaling factor used to determine the variable offset that is added
+               to the depth value of each fragment generated when a polygon is
+               rasterized. The initial value is 0.
+               See :c:func:`glPolygonOffset`\ .
+
+
+         ``GL_POLYGON_OFFSET_UNITS``
+
+
+               *params* returns one value.
+               This value is multiplied by an implementation-specific value and then
+               added to the depth value of each fragment
+               generated when a polygon is rasterized. The initial value is 0.
+               See :c:func:`glPolygonOffset`\ .
+
+
+         ``GL_POLYGON_OFFSET_FILL``
+
+
+               *params* returns a single boolean value indicating whether polygon offset
+               is enabled for polygons in fill mode. The initial value is ``GL_FALSE``\ .
+               See :c:func:`glPolygonOffset`\ .
+
+
+         ``GL_POLYGON_OFFSET_LINE``
+
+
+               *params* returns a single boolean value indicating whether polygon offset
+               is enabled for polygons in line mode. The initial value is ``GL_FALSE``\ .
+               See :c:func:`glPolygonOffset`\ .
+
+
+         ``GL_POLYGON_OFFSET_POINT``
+
+
+               *params* returns a single boolean value indicating whether polygon offset
+               is enabled for polygons in point mode. The initial value is ``GL_FALSE``\ .
+               See :c:func:`glPolygonOffset`\ .
+
+
+         ``GL_POLYGON_SMOOTH``
+
+
+               *params* returns a single boolean value indicating whether antialiasing of
+               polygons is enabled. The initial value is ``GL_FALSE``\ .
+               See :c:func:`glPolygonMode`\ .
+
+
+         ``GL_POLYGON_SMOOTH_HINT``
+
+
+               *params* returns one value,
+               a symbolic constant indicating the mode of the polygon antialiasing
+               hint. The initial value is ``GL_DONT_CARE``\ .
+               See :c:func:`glHint`\ .
+
+
+         ``GL_READ_BUFFER``
+
+
+               *params* returns one value,
+               a symbolic constant indicating which color buffer is selected for
+               reading. The initial value is ``GL_BACK`` if there is a back buffer,
+               otherwise it is ``GL_FRONT``\ .
+               See
+               :c:func:`glReadPixels`\ .
+
+
+         ``GL_RENDERBUFFER_BINDING``
+
+
+               *params* returns a single value, the name of the renderbuffer object
+               currently bound to the target ``GL_RENDERBUFFER``\ . If no renderbuffer object
+               is bound to this target, 0 is returned.  The initial value is 0.
+               See :c:func:`glBindRenderbuffer`\ .
+
+
+         ``GL_SAMPLE_BUFFERS``
+
+
+               *params* returns a single integer value indicating the number of sample buffers
+               associated with the framebuffer.
+               See :c:func:`glSampleCoverage`\ .
+
+
+         ``GL_SAMPLE_COVERAGE_VALUE``
+
+
+               *params* returns a single positive floating-point value indicating the
+               current sample coverage value.
+               See :c:func:`glSampleCoverage`\ .
+
+
+         ``GL_SAMPLE_COVERAGE_INVERT``
+
+
+               *params* returns a single boolean value indicating if the temporary
+               coverage value should be inverted.
+               See :c:func:`glSampleCoverage`\ .
+
+
+         ``GL_SAMPLER_BINDING``
+
+
+               *params* returns a single value, the name of the sampler object
+               currently bound to the active texture unit.  The initial value is 0.
+               See :c:func:`glBindSampler`\ .
+
+
+         ``GL_SAMPLES``
+
+
+               *params* returns a single integer value indicating the coverage mask size.
+               See :c:func:`glSampleCoverage`\ .
+
+
+         ``GL_SCISSOR_BOX``
+
+
+               *params* returns four values:
+               the |EQUATION_5_| and |EQUATION_6_| window coordinates of the scissor box,
+               followed by its width and height.
+               Initially the |EQUATION_7_| and |EQUATION_8_| window coordinates are both 0 and the
+               width and height are set to the size of the window.
+               See :c:func:`glScissor`\ .
+
+
+         ``GL_SCISSOR_TEST``
+
+
+               *params* returns a single boolean value indicating whether scissoring is
+               enabled. The initial value is ``GL_FALSE``\ .
+               See :c:func:`glScissor`\ .
+
+
+         ``GL_SHADER_COMPILER``
+
+
+               *params* returns a single boolean value indicating whether an online shader
+               compiler is present in the implementation. All desktop OpenGL implementations must support
+               online shader compilations, and therefore the value of ``GL_SHADER_COMPILER``
+               will always be ``GL_TRUE``\ .
+
+
+         ``GL_SMOOTH_LINE_WIDTH_RANGE``
+
+
+               *params* returns a pair of values indicating the range of
+               widths supported for smooth (antialiased) lines. See :c:func:`glLineWidth`\ .
+
+
+         ``GL_SMOOTH_LINE_WIDTH_GRANULARITY``
+
+
+               *params* returns a single value indicating the level of
+               quantization applied to smooth line width parameters.
+
+
+         ``GL_STENCIL_BACK_FAIL``
+
+
+               *params* returns one value,
+               a symbolic constant indicating what action is taken for back-facing polygons when the stencil
+               test fails. The initial value is ``GL_KEEP``\ .
+               See :c:func:`glStencilOpSeparate`\ .
+
+
+         ``GL_STENCIL_BACK_FUNC``
+
+
+               *params* returns one value,
+               a symbolic constant indicating what function is used for back-facing polygons to compare the
+               stencil reference value with the stencil buffer value. The initial value
+               is ``GL_ALWAYS``\ .
+               See :c:func:`glStencilFuncSeparate`\ .
+
+
+         ``GL_STENCIL_BACK_PASS_DEPTH_FAIL``
+
+
+               *params* returns one value,
+               a symbolic constant indicating what action is taken for back-facing polygons when the stencil
+               test passes,
+               but the depth test fails. The initial value is ``GL_KEEP``\ .
+               See :c:func:`glStencilOpSeparate`\ .
+
+
+         ``GL_STENCIL_BACK_PASS_DEPTH_PASS``
+
+
+               *params* returns one value,
+               a symbolic constant indicating what action is taken for back-facing polygons when the stencil
+               test passes and the depth test passes. The initial value is ``GL_KEEP``\ .
+               See :c:func:`glStencilOpSeparate`\ .
+
+
+         ``GL_STENCIL_BACK_REF``
+
+
+               *params* returns one value,
+               the reference value that is compared with the contents of the stencil
+               buffer for back-facing polygons. The initial value is 0.
+               See :c:func:`glStencilFuncSeparate`\ .
+
+
+         ``GL_STENCIL_BACK_VALUE_MASK``
+
+
+               *params* returns one value,
+               the mask that is used for back-facing polygons to mask both the stencil reference value and the
+               stencil buffer value before they are compared. The initial value is all 1's.
+               See :c:func:`glStencilFuncSeparate`\ .
+
+
+         ``GL_STENCIL_BACK_WRITEMASK``
+
+
+               *params* returns one value,
+               the mask that controls writing of the stencil bitplanes for back-facing polygons. The initial value
+               is all 1's.
+               See :c:func:`glStencilMaskSeparate`\ .
+
+
+         ``GL_STENCIL_CLEAR_VALUE``
+
+
+               *params* returns one value,
+               the index to which the stencil bitplanes are cleared. The initial value is
+               0.
+               See :c:func:`glClearStencil`\ .
+
+
+         ``GL_STENCIL_FAIL``
+
+
+               *params* returns one value,
+               a symbolic constant indicating what action is taken when the stencil
+               test fails. The initial value is ``GL_KEEP``\ .
+               See :c:func:`glStencilOp`\ .
+               This stencil state only affects non-polygons
+               and front-facing polygons.  Back-facing polygons use separate stencil state.
+               See :c:func:`glStencilOpSeparate`\ .
+
+
+         ``GL_STENCIL_FUNC``
+
+
+               *params* returns one value,
+               a symbolic constant indicating what function is used to compare the
+               stencil reference value with the stencil buffer value. The initial value
+               is ``GL_ALWAYS``\ .
+               See :c:func:`glStencilFunc`\ .
+               This stencil state only affects non-polygons
+               and front-facing polygons.  Back-facing polygons use separate stencil state.
+               See :c:func:`glStencilFuncSeparate`\ .
+
+
+         ``GL_STENCIL_PASS_DEPTH_FAIL``
+
+
+               *params* returns one value,
+               a symbolic constant indicating what action is taken when the stencil
+               test passes,
+               but the depth test fails. The initial value is ``GL_KEEP``\ .
+               See :c:func:`glStencilOp`\ .
+               This stencil state only affects non-polygons
+               and front-facing polygons.  Back-facing polygons use separate stencil state.
+               See :c:func:`glStencilOpSeparate`\ .
+
+
+         ``GL_STENCIL_PASS_DEPTH_PASS``
+
+
+               *params* returns one value,
+               a symbolic constant indicating what action is taken when the stencil
+               test passes and the depth test passes. The initial value is ``GL_KEEP``\ .
+               See :c:func:`glStencilOp`\ .
+               This stencil state only affects non-polygons
+               and front-facing polygons.  Back-facing polygons use separate stencil state.
+               See :c:func:`glStencilOpSeparate`\ .
+
+
+         ``GL_STENCIL_REF``
+
+
+               *params* returns one value,
+               the reference value that is compared with the contents of the stencil
+               buffer. The initial value is 0.
+               See :c:func:`glStencilFunc`\ .
+               This stencil state only affects non-polygons
+               and front-facing polygons.  Back-facing polygons use separate stencil state.
+               See :c:func:`glStencilFuncSeparate`\ .
+
+
+         ``GL_STENCIL_TEST``
+
+
+               *params* returns a single boolean value indicating whether stencil testing
+               of fragments is enabled. The initial value is ``GL_FALSE``\ .
+               See :c:func:`glStencilFunc` and :c:func:`glStencilOp`\ .
+
+
+         ``GL_STENCIL_VALUE_MASK``
+
+
+               *params* returns one value,
+               the mask that is used to mask both the stencil reference value and the
+               stencil buffer value before they are compared. The initial value is all 1's.
+               See :c:func:`glStencilFunc`\ .
+               This stencil state only affects non-polygons
+               and front-facing polygons.  Back-facing polygons use separate stencil state.
+               See :c:func:`glStencilFuncSeparate`\ .
+
+
+         ``GL_STENCIL_WRITEMASK``
+
+
+               *params* returns one value,
+               the mask that controls writing of the stencil bitplanes. The initial value
+               is all 1's.
+               See :c:func:`glStencilMask`\ .
+               This stencil state only affects non-polygons
+               and front-facing polygons.  Back-facing polygons use separate stencil state.
+               See :c:func:`glStencilMaskSeparate`\ .
+
+
+         ``GL_STEREO``
+
+
+               *params* returns a single boolean value indicating whether stereo buffers
+               (left and right) are supported.
+
+
+         ``GL_SUBPIXEL_BITS``
+
+
+               *params* returns one value,
+               an estimate of the number of bits of subpixel resolution that are used to
+               position rasterized geometry in window coordinates. The value must be at least 4.
+
+
+         ``GL_TEXTURE_BINDING_1D``
+
+
+               *params* returns a single value, the name of the texture
+               currently bound to the target ``GL_TEXTURE_1D``\ . The initial value is 0.
+               See :c:func:`glBindTexture`\ .
+
+
+         ``GL_TEXTURE_BINDING_1D_ARRAY``
+
+
+               *params* returns a single value, the name of the texture
+               currently bound to the target ``GL_TEXTURE_1D_ARRAY``\ . The initial value is 0.
+               See :c:func:`glBindTexture`\ .
+
+
+         ``GL_TEXTURE_BINDING_2D``
+
+
+               *params* returns a single value, the name of the texture
+               currently bound to the target ``GL_TEXTURE_2D``\ . The initial value is 0.
+               See :c:func:`glBindTexture`\ .
+
+
+         ``GL_TEXTURE_BINDING_2D_ARRAY``
+
+
+               *params* returns a single value, the name of the texture
+               currently bound to the target ``GL_TEXTURE_2D_ARRAY``\ . The initial value is 0.
+               See :c:func:`glBindTexture`\ .
+
+
+         ``GL_TEXTURE_BINDING_2D_MULTISAMPLE``
+
+
+               *params* returns a single value, the name of the texture
+               currently bound to the target ``GL_TEXTURE_2D_MULTISAMPLE``\ . The initial value is 0.
+               See :c:func:`glBindTexture`\ .
+
+
+         ``GL_TEXTURE_BINDING_2D_MULTISAMPLE_ARRAY``
+
+
+               *params* returns a single value, the name of the texture
+               currently bound to the target ``GL_TEXTURE_2D_MULTISAMPLE_ARRAY``\ . The initial value is 0.
+               See :c:func:`glBindTexture`\ .
+
+
+         ``GL_TEXTURE_BINDING_3D``
+
+
+               *params* returns a single value, the name of the texture
+               currently bound to the target ``GL_TEXTURE_3D``\ . The initial value is 0.
+               See :c:func:`glBindTexture`\ .
+
+
+         ``GL_TEXTURE_BINDING_BUFFER``
+
+
+               *params* returns a single value, the name of the texture
+               currently bound to the target ``GL_TEXTURE_BUFFER``\ . The initial value is 0.
+               See :c:func:`glBindTexture`\ .
+
+
+         ``GL_TEXTURE_BINDING_CUBE_MAP``
+
+
+               *params* returns a single value, the name of the texture
+               currently bound to the target ``GL_TEXTURE_CUBE_MAP``\ . The initial value is 0.
+               See :c:func:`glBindTexture`\ .
+
+
+         ``GL_TEXTURE_BINDING_RECTANGLE``
+
+
+               *params* returns a single value, the name of the texture
+               currently bound to the target ``GL_TEXTURE_RECTANGLE``\ . The initial value is 0.
+               See :c:func:`glBindTexture`\ .
+
+
+         ``GL_TEXTURE_COMPRESSION_HINT``
+
+
+               *params* returns a single value indicating the mode of the texture
+               compression hint.  The initial value is ``GL_DONT_CARE``\ .
+
+
+         ``GL_TEXTURE_BUFFER_BINDING``
+
+
+               *params* returns a single value, the name of the texture buffer object
+               currently bound.  The initial value is 0.
+               See :c:func:`glBindBuffer`\ .
+
+
+         ``GL_TIMESTAMP``
+
+
+               *params* returns a single value, the 64-bit value of the current
+               GL time.
+               See :c:func:`glQueryCounter`\ .
+
+
+         ``GL_TRANSFORM_FEEDBACK_BUFFER_BINDING``
+
+
+               When used with non-indexed variants of :c:func:`glGet` (such as :c:func:`glGetIntegerv`\ ),
+               *params* returns a single value, the name of the buffer object
+               currently bound to the target ``GL_TRANSFORM_FEEDBACK_BUFFER``\ . If no buffer object
+               is bound to this target, 0 is returned.
+               When used with indexed variants of :c:func:`glGet` (such as :c:func:`glGetIntegeri_v`\ ),
+               *params* returns a single value, the name of the buffer object
+               bound to the indexed transform feedback attribute stream. The initial value is 0 for all targets.
+               See :c:func:`glBindBuffer`\ , :c:func:`glBindBufferBase`\ , and
+               :c:func:`glBindBufferRange`\ .
+
+
+         ``GL_TRANSFORM_FEEDBACK_BUFFER_START``
+
+
+               When used with indexed variants of :c:func:`glGet` (such as :c:func:`glGetInteger64i_v`\ ),
+               *params* returns a single value, the start offset of the binding range for each
+               transform feedback attribute stream. The initial value is 0 for all streams.
+               See :c:func:`glBindBufferRange`\ .
+
+
+         ``GL_TRANSFORM_FEEDBACK_BUFFER_SIZE``
+
+
+               When used with indexed variants of :c:func:`glGet` (such as :c:func:`glGetInteger64i_v`\ ),
+               *params* returns a single value, the size of the binding range for each
+               transform feedback attribute stream. The initial value is 0 for all streams.
+               See :c:func:`glBindBufferRange`\ .
+
+
+         ``GL_UNIFORM_BUFFER_BINDING``
+
+
+               When used with non-indexed variants of :c:func:`glGet` (such as :c:func:`glGetIntegerv`\ ),
+               *params* returns a single value, the name of the buffer object
+               currently bound to the target ``GL_UNIFORM_BUFFER``\ . If no buffer object
+               is bound to this target, 0 is returned.
+               When used with indexed variants of :c:func:`glGet` (such as :c:func:`glGetIntegeri_v`\ ),
+               *params* returns a single value, the name of the buffer object
+               bound to the indexed uniform buffer binding point. The initial value is 0 for all targets.
+               See :c:func:`glBindBuffer`\ , :c:func:`glBindBufferBase`\ , and
+               :c:func:`glBindBufferRange`\ .
+
+
+         ``GL_UNIFORM_BUFFER_OFFSET_ALIGNMENT``
+
+
+               *params* returns a single value, the minimum required alignment
+               for uniform buffer sizes and offset.  The initial value is 1.
+               See :c:func:`glUniformBlockBinding`\ .
+
+
+         ``GL_UNIFORM_BUFFER_SIZE``
+
+
+               When used with indexed variants of :c:func:`glGet` (such as :c:func:`glGetInteger64i_v`\ ),
+               *params* returns a single value, the size of the binding range for each
+               indexed uniform buffer binding. The initial value is 0 for all bindings.
+               See :c:func:`glBindBufferRange`\ .
+
+
+         ``GL_UNIFORM_BUFFER_START``
+
+
+               When used with indexed variants of :c:func:`glGet` (such as :c:func:`glGetInteger64i_v`\ ),
+               *params* returns a single value, the start offset of the binding range for each
+               indexed uniform buffer binding. The initial value is 0 for all bindings.
+               See :c:func:`glBindBufferRange`\ .
+
+
+         ``GL_UNPACK_ALIGNMENT``
+
+
+               *params* returns one value,
+               the byte alignment used for reading pixel data from memory. The initial
+               value is 4.
+               See :c:func:`glPixelStore`\ .
+
+
+         ``GL_UNPACK_IMAGE_HEIGHT``
+
+
+               *params* returns one value,
+               the image height used for reading pixel data from memory.  The initial
+               is 0.
+               See :c:func:`glPixelStore`\ .
+
+
+         ``GL_UNPACK_LSB_FIRST``
+
+
+               *params* returns a single boolean value indicating whether single-bit
+               pixels being read from memory are read first from the least significant
+               bit of each unsigned byte. The initial value is ``GL_FALSE``\ .
+               See :c:func:`glPixelStore`\ .
+
+
+         ``GL_UNPACK_ROW_LENGTH``
+
+
+               *params* returns one value,
+               the row length used for reading pixel data from memory. The initial value
+               is 0.
+               See :c:func:`glPixelStore`\ .
+
+
+         ``GL_UNPACK_SKIP_IMAGES``
+
+
+               *params* returns one value,
+               the number of pixel images skipped before the first pixel is read
+               from memory. The initial value is 0.
+               See :c:func:`glPixelStore`\ .
+
+
+         ``GL_UNPACK_SKIP_PIXELS``
+
+
+               *params* returns one value,
+               the number of pixel locations skipped before the first pixel is read
+               from memory. The initial value is 0.
+               See :c:func:`glPixelStore`\ .
+
+
+         ``GL_UNPACK_SKIP_ROWS``
+
+
+               *params* returns one value,
+               the number of rows of pixel locations skipped before the first pixel is read
+               from memory. The initial value is 0.
+               See :c:func:`glPixelStore`\ .
+
+
+         ``GL_UNPACK_SWAP_BYTES``
+
+
+               *params* returns a single boolean value indicating whether the bytes of
+               two-byte and four-byte pixel indices and components are swapped after being
+               read from memory. The initial value is ``GL_FALSE``\ .
+               See :c:func:`glPixelStore`\ .
+
+
+         ``GL_VERTEX_PROGRAM_POINT_SIZE``
+
+
+               *params* returns a single boolean value indicating whether vertex
+               program point size mode is enabled. If enabled, and a vertex shader is active, then the
+               point size is taken from the shader built-in ``gl_PointSize``\ . If disabled,
+               and a vertex shader is active, then the point size is taken from the point state as specified
+               by :c:func:`glPointSize`\ .
+               The initial value is ``GL_FALSE``\ .
+
+
+         ``GL_VIEWPORT``
+
+
+               When used with non-indexed variants of :c:func:`glGet` (such as :c:func:`glGetIntegerv`\ ),
+               *params* returns four values:
+               the |EQUATION_9_| and |EQUATION_10_| window coordinates of the viewport, followed by its width and height.
+               Initially the |EQUATION_11_| and |EQUATION_12_| window coordinates are both set to 0,
+               and the width and height are set to the width and height of the window into
+               which the GL will do its rendering.
+               See :c:func:`glViewport`\ .
+
+               When used with indexed variants of :c:func:`glGet` (such as :c:func:`glGetIntegeri_v`\ ),
+               *params* returns four values:
+               the |EQUATION_13_| and |EQUATION_14_| window coordinates of the indexed viewport, followed by its width and height.
+               Initially the |EQUATION_15_| and |EQUATION_16_| window coordinates are both set to 0,
+               and the width and height are set to the width and height of the window into
+               which the GL will do its rendering.
+               See :c:func:`glViewportIndexedf`\ .
+
+
+         ``GL_VIEWPORT_BOUNDS_RANGE``
+
+
+               *params* returns two values, the minimum and maximum viewport bounds range.
+               The minimum range should be at least [-32768, 32767].
+
+
+         ``GL_VIEWPORT_INDEX_PROVOKING_VERTEX``
+
+
+               *params* returns one value,
+               the implementation dependent specifc vertex of a primitive that is used to select the viewport index.
+               If the value returned is equivalent to ``GL_PROVOKING_VERTEX``\ , then the vertex
+               selection follows the convention specified by
+               :c:func:`glProvokingVertex`\ .
+               If the value returned is equivalent to ``GL_FIRST_VERTEX_CONVENTION``\ , then the
+               selection is always taken from the first vertex in the primitive.
+               If the value returned is equivalent to ``GL_LAST_VERTEX_CONVENTION``\ , then the
+               selection is always taken from the last vertex in the primitive.
+               If the value returned is equivalent to ``GL_UNDEFINED_VERTEX``\ , then the
+               selection is not guaranteed to be taken from any specific vertex in the primitive.
+
+
+         ``GL_VIEWPORT_SUBPIXEL_BITS``
+
+
+               *params* returns a single value, the number of bits of sub-pixel precision which the GL
+               uses to interpret the floating point viewport bounds. The minimum value is 0.
+
+
+Many of the boolean parameters can also be queried more easily using
+:c:func:`glIsEnabled`\ .
+
+
+.. note::
+
+
+   The following parameters return the associated value for the active texture unit:
+   ``GL_TEXTURE_1D``\ , ``GL_TEXTURE_BINDING_1D``\ ,
+   ``GL_TEXTURE_2D``\ , ``GL_TEXTURE_BINDING_2D``\ ,
+   ``GL_TEXTURE_3D`` and ``GL_TEXTURE_BINDING_3D``\ .
+
+
+   ``GL_MAX_VIEWPORTS``\ , ``GL_VIEWPORT_SUBPIXEL_BITS``\ ,
+   ``GL_VIEWPORT_BOUNDS_RANGE``\ , ``GL_LAYER_PROVOKING_VERTEX``\ ,
+   and ``GL_VIEWPORT_INDEX_PROVOKING_VERTEX``
+   are available only if the GL version is 4.1 or greater.
+
+
+   ``GL_MAX_VERTEX_ATOMIC_COUNTERS``\ ,
+   ``GL_MAX_TESS_CONTROL_ATOMIC_COUNTERS``\ ,
+   ``GL_MAX_TESS_EVALUATION_ATOMIC_COUNTERS``\ ,
+   ``GL_MAX_GEOMETRY_ATOMIC_COUNTERS``\ ,
+   ``GL_MAX_FRAMGENT_ATOMIC_COUNTERS``\ , and
+   ``GL_MIN_MAP_BUFFER_ALIGNMENT`` are accepted by *pname*
+   of the GL version is 4.2 or greater.
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_ENUM`` is generated if *pname* is not an accepted value.
+* ``GL_INVALID_VALUE`` is generated on any of :c:func:`glGetBooleani_v`\ , :c:func:`glGetIntegeri_v`\ , or :c:func:`glGetInteger64i_v` if *index* is outside of the valid range for the indexed state *target*\ .
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glGet'>
+
+.. role:: mml(raw)
+   :format: html
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mn>-1.0</mn></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mn>-1.0</mn></math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mn>-1.0</mn></math>` 
+
+.. |EQUATION_4_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mn>-1.0</mn></math>` 
+
+.. |EQUATION_5_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">x</mi></math>` 
+
+.. |EQUATION_6_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">y</mi></math>` 
+
+.. |EQUATION_7_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">x</mi></math>` 
+
+.. |EQUATION_8_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">y</mi></math>` 
+
+.. |EQUATION_9_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">x</mi></math>` 
+
+.. |EQUATION_10_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">y</mi></math>` 
+
+.. |EQUATION_11_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">x</mi></math>` 
+
+.. |EQUATION_12_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">y</mi></math>` 
+
+.. |EQUATION_13_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">x</mi></math>` 
+
+.. |EQUATION_14_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">y</mi></math>` 
+
+.. |EQUATION_15_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">x</mi></math>` 
+
+.. |EQUATION_16_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">y</mi></math>` 
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. (\ c\ )2010-2011 Khronos Group. SGI Free Software B License.
+

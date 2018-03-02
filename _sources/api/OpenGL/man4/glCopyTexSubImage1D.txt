@@ -1,0 +1,173 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:29
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glCopyTexSubImage1D.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glCopyTexSubImage1D`
+------------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Copy a one-dimensional texture subimage
+
+.. c:function:: glCopyTexSubImage1D
+
+
+         :param target:
+
+                  Specifies the target texture.
+                  Must be ``GL_TEXTURE_1D``\ .
+
+         :param level:
+
+                  Specifies the level-of-detail number.
+                  Level 0 is the base image level.
+                  Level :strong:`n` is the :strong:`n` th mipmap reduction image.
+
+         :param xoffset:
+
+                  Specifies the texel offset within the texture array.
+
+         :param x:
+         :param y:
+
+                  Specify the window coordinates of the left corner
+                  of the row of pixels to be copied.
+
+         :param width:
+
+                  Specifies the width of the texture subimage.
+
+.. rubric:: Specification
+
+.. c:function:: void glCopyTexSubImage1D(GLenum  target, GLint  level, GLint  xoffset, GLint  x, GLint  y, GLsizei  width)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glCopyTexImage1D`\ ,
+            :c:func:`glCopyTexImage2D`\ ,
+            :c:func:`glCopyTexSubImage2D`\ ,
+            :c:func:`glCopyTexSubImage3D`\ ,
+            :c:func:`glPixelStore`\ ,
+            :c:func:`glReadBuffer`\ ,
+            :c:func:`glTexImage1D`\ ,
+            :c:func:`glTexImage2D`\ ,
+            :c:func:`glTexImage3D`\ ,
+            :c:func:`glTexParameter`\ ,
+            :c:func:`glTexSubImage1D`\ ,
+            :c:func:`glTexSubImage2D`\ ,
+            :c:func:`glTexSubImage3D`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glCopyTexSubImage1D` replaces a portion of a one-dimensional
+texture image with pixels from the current ``GL_READ_BUFFER`` (rather
+than from main memory, as is the case for :c:func:`glTexSubImage1D`\ ).
+
+
+The screen-aligned pixel row with left corner at (\ *x*\ ,\ *y*\ ), and with
+length *width* replaces the portion of the
+texture array with x indices *xoffset* through |EQUATION_1_|\ ,
+inclusive. The destination in the texture array may not
+include any texels outside the texture array as it was
+originally specified.
+
+
+The pixels in the row are processed exactly as if
+:c:func:`glReadPixels` had been called, but the process stops just before
+final conversion.
+At this point, all pixel component values are clamped to the range |EQUATION_2_| and then converted to the texture's internal format for storage in the texel
+array.
+
+
+It is not an error to specify a subtexture with zero width, but
+such a specification has no effect.
+If any of the pixels within the specified row of the current
+``GL_READ_BUFFER`` are outside the read window associated with the current
+rendering context, then the values obtained for those pixels are undefined.
+
+
+No change is made to the :strong:`internalformat`\ , :strong:`width`\ ,
+or :strong:`border` parameters of the specified texture
+array or to texel values outside the specified subregion.
+
+
+.. note::
+
+
+   The :c:func:`glPixelStore` mode affects texture images.
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_ENUM`` is generated if / *target* is not ``GL_TEXTURE_1D``\ .
+* ``GL_INVALID_OPERATION`` is generated if the texture array has not been defined by a previous :c:func:`glTexImage1D` or :c:func:`glCopyTexImage1D` operation.
+* ``GL_INVALID_VALUE`` is generated if *level* is less than 0.
+* ``GL_INVALID_VALUE`` may be generated if |EQUATION_3_|\ , where :strong:`max` is the returned value of ``GL_MAX_TEXTURE_SIZE``\ .
+* ``GL_INVALID_VALUE`` is generated if |EQUATION_4_|\ , or |EQUATION_5_|\ , where |EQUATION_6_| is the ``GL_TEXTURE_WIDTH`` and |EQUATION_7_| is the ``GL_TEXTURE_BORDER`` of the texture image being modified. Note that |EQUATION_8_| includes twice the border width.
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGetTexImage`
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glCopyTexSubImage1D'>
+
+.. role:: mml(raw)
+   :format: html
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">xoffset</mi><mo>+</mo><mi mathvariant="italic">width</mi><mo>-</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"><mn>0</mn><mn>1</mn></mfenced></math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">level</mi><mo>></mo><mrow><msub><mi mathvariant="italic">log</mi><mn>2</mn></msub><mo>&af;</mo><mfenced open="(" close=")"><mi mathvariant="italic">max</mi></mfenced></mrow></mrow></math>` 
+
+.. |EQUATION_4_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">xoffset</mi><mo><</mo><mrow><mo>-</mo><mi mathvariant="italic">b</mi></mrow></mrow></math>` 
+
+.. |EQUATION_5_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mfenced open="(" close=")"><mrow><mi mathvariant="italic">xoffset</mi><mo>+</mo><mi mathvariant="italic">width</mi></mrow></mfenced><mo>></mo><mfenced open="(" close=")"><mrow><mi mathvariant="italic">w</mi><mo>-</mo><mi mathvariant="italic">b</mi></mrow></mfenced></mrow></math>` 
+
+.. |EQUATION_6_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">w</mi></math>` 
+
+.. |EQUATION_7_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">b</mi></math>` 
+
+.. |EQUATION_8_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">w</mi></math>` 
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

@@ -1,0 +1,56 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glUseProgramStages`
+-----------------------------
+
+.. source file man4/glUseProgramStages
+
+.. currentmodule:: OpenGL.GL
+
+Bind stages of a program object to a program pipeline
+
+.. c:function:: glUseProgramStages
+.. c:function:: void glUseProgramStages(GLuint  pipeline, GLbitfield  stages, GLuint  program)
+   :noindex: 
+
+
+   
+   :param pipeline:
+      Specifies the program pipeline object to which to bind stages from *program* .
+   
+   :param stages:
+      Specifies a set of program stages to bind to the program pipeline object.
+   
+   :param program:
+      Specifies the program object containing the shader executables to use in *pipeline* .
+   
+
+.. seealso::
+
+   
+   :c:func:`glGenProgramPipelines`, :c:func:`glDeleteProgramPipelines`, :c:func:`glIsProgramPipeline`
+   
+.. rubric:: Description
+
+
+:c:func:`glUseProgramStages` binds executables from a program object associated with a specified set of shader stages to the program pipeline object given by *pipeline* . *pipeline* specifies the program pipeline object to which to bind the executables. *stages* contains a logical combination of bits indicating the shader stages to use within *program* with the program pipeline object *pipeline* . *stages* must be a logical combination of ``GL_VERTEX_SHADER_BIT``, ``GL_TESS_CONTROL_SHADER_BIT``, ``GL_TESS_EVALUATION_SHADER_BIT``, ``GL_GEOMETRY_SHADER_BIT``, and ``GL_FRAGMENT_SHADER_BIT``. Additionally, the special value ``GL_ALL_SHADER_BITS`` may be specified to indicate that all executables contained in *program* should be installed in *pipeline* .
+
+If *program* refers to a program object with a valid shader attached for an indicated shader stage, :c:func:`glUseProgramStages` installs the executable code for that stage in the indicated program pipeline object *pipeline* . If *program* is zero, or refers to a program object with no valid shader executable for a given stage, it is as if the pipeline object has no programmable stage configured for the indicated shader stages. If *stages* contains bits other than those listed above, and is not equal to ``GL_ALL_SHADER_BITS``, an error is generated.
+
+
+**Errors:**
+
+   * ``GL_INVALID_VALUE`` is generated if *shaders* contains set bits that are not recognized, and is not the reserved value ``GL_ALL_SHADER_BITS``.
+   * ``GL_INVALID_OPERATION`` is generated if *program* refers to a program object that was not linked with its ``GL_PROGRAM_SEPARABLE`` status set.
+   * ``GL_INVALID_OPERATION`` is generated if *program* refers to a program object that has not been successfully linked.
+   * ``GL_INVALID_OPERATION`` is generated if *pipeline* is not a name previously returned from a call to :c:func:`glGenProgramPipelines` or if such a name has been deleted by a call to :c:func:`glDeleteProgramPipelines`.
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

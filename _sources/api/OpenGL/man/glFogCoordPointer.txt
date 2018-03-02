@@ -1,0 +1,179 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:26
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glFogCoordPointer.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glFogCoordPointer`
+----------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Define an array of fog coordinates
+
+.. c:function:: glFogCoordPointer
+
+
+         :param type:
+
+                  Specifies the data type of each fog coordinate.
+                  Symbolic constants
+                  ``GL_FLOAT``\ ,
+                  or ``GL_DOUBLE``
+                  are accepted. The initial value is ``GL_FLOAT``\ .
+
+         :param stride:
+
+                  Specifies the byte offset between consecutive fog coordinates.
+                  If *stride* is 0, the array elements are understood
+                  to be tightly packed. The initial value is 0.
+
+         :param pointer:
+
+                  Specifies a pointer to the first coordinate of the first fog coordinate in the
+                  array. The initial value is 0.
+
+.. rubric:: Specification
+
+.. c:function:: void glFogCoordPointer(GLenum  type, GLsizei  stride, GLvoid *  pointer)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glArrayElement`\ ,
+            :c:func:`glBindBuffer`\ ,
+            :c:func:`glColorPointer`\ ,
+            :c:func:`glDisableClientState`\ ,
+            :c:func:`glDrawArrays`\ ,
+            :c:func:`glDrawElements`\ ,
+            :c:func:`glDrawRangeElements`\ ,
+            :c:func:`glEdgeFlagPointer`\ ,
+            :c:func:`glEnableClientState`\ ,
+            :c:func:`glFogCoord`\ ,
+            :c:func:`glIndexPointer`\ ,
+            :c:func:`glInterleavedArrays`\ ,
+            :c:func:`glMultiDrawArrays`\ ,
+            :c:func:`glMultiDrawElements`\ ,
+            :c:func:`glNormalPointer`\ ,
+            :c:func:`glPopClientAttrib`\ ,
+            :c:func:`glPushClientAttrib`\ ,
+            :c:func:`glSecondaryColorPointer`\ ,
+            :c:func:`glTexCoordPointer`\ ,
+            :c:func:`glVertexAttribPointer`\ ,
+            :c:func:`glVertexPointer`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glFogCoordPointer` specifies the location and data format of an array of fog coordinates
+to use when rendering. *type* specifies the data type of each fog
+coordinate, and *stride* specifies the byte stride from one fog coordinate to
+the next, allowing vertices and attributes to be packed into a single array
+or stored in separate arrays.
+
+
+If a non-zero named buffer object is bound to the ``GL_ARRAY_BUFFER`` target
+(see :c:func:`glBindBuffer`\ ) while a fog coordinate array is
+specified, *pointer* is treated as a byte offset into the buffer object's data store.
+Also, the buffer object binding (\ ``GL_ARRAY_BUFFER_BINDING``\ ) is saved as fog coordinate vertex array
+client-side state (\ ``GL_FOG_COORD_ARRAY_BUFFER_BINDING``\ ).
+
+
+When a fog coordinate array is specified,
+*type*\ , *stride*\ , and *pointer* are saved as client-side
+state, in addition to the current vertex array buffer object binding.
+
+
+To enable and disable the fog coordinate array, call
+:c:func:`glEnableClientState` and :c:func:`glDisableClientState` with the argument
+``GL_FOG_COORD_ARRAY``\ . If
+enabled, the fog coordinate array is used
+when :c:func:`glDrawArrays`\ , :c:func:`glMultiDrawArrays`\ , :c:func:`glDrawElements`\ ,
+:c:func:`glMultiDrawElements`\ , :c:func:`glDrawRangeElements`\ , or
+:c:func:`glArrayElement` is called.
+
+
+.. note::
+
+
+   :c:func:`glFogCoordPointer` is available only if the GL version is 1.4 or greater.
+
+
+   Fog coordinates are not supported for interleaved vertex array formats
+   (see :c:func:`glInterleavedArrays`\ ).
+
+
+   The fog coordinate array is initially disabled and isn't accessed when
+   :c:func:`glArrayElement`\ , :c:func:`glDrawElements`\ , :c:func:`glDrawRangeElements`\ ,
+   :c:func:`glDrawArrays`\ , :c:func:`glMultiDrawArrays`\ , or :c:func:`glMultiDrawElements`
+   is called.
+
+
+   Execution of :c:func:`glFogCoordPointer` is not allowed between the execution of
+   :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`\ ,
+   but an error may or may not be generated. If no error is generated,
+   the operation is undefined.
+
+
+   :c:func:`glFogCoordPointer` is typically implemented on the client side with no protocol.
+
+
+   Fog coordinate array parameters are client-side state and are
+   therefore not saved or restored by :c:func:`glPushAttrib` and :c:func:`glPopAttrib`\ .
+   Use :c:func:`glPushClientAttrib` and
+   :c:func:`glPopClientAttrib` instead.
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_ENUM`` is generated if *type* is not either ``GL_FLOAT`` or ``GL_DOUBLE``\ .
+* ``GL_INVALID_VALUE`` is generated if *stride* is negative.
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glIsEnabled` with argument ``GL_FOG_COORD_ARRAY``
+* :c:func:`glGet` with argument ``GL_FOG_COORD_ARRAY_STRIDE``
+* :c:func:`glGet` with argument ``GL_FOG_COORD_ARRAY_TYPE``
+* :c:func:`glGet` with argument ``GL_FOG_COORD_ARRAY_BUFFER_BINDING``
+* :c:func:`glGet` with argument ``GL_ARRAY_BUFFER_BINDING``
+* :c:func:`glGetPointerv` with argument ``GL_FOG_COORD_ARRAY_POINTER``
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glFogCoordPointer'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

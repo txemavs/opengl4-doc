@@ -1,0 +1,126 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:26
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glCopyColorSubTable.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glCopyColorSubTable`
+------------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Respecify a portion of a color table
+
+.. c:function:: glCopyColorSubTable
+
+
+         :param target:
+
+                  Must be one of
+                  ``GL_COLOR_TABLE``\ ,
+                  ``GL_POST_CONVOLUTION_COLOR_TABLE``\ , or
+                  ``GL_POST_COLOR_MATRIX_COLOR_TABLE``\ .
+
+         :param start:
+
+                  The starting index of the portion of the color table to be replaced.
+
+         :param x:
+         :param y:
+
+                  The window coordinates of the left corner of the row of pixels to be
+                  copied.
+
+         :param width:
+
+                  The number of table entries to replace.
+
+.. rubric:: Specification
+
+.. c:function:: void glCopyColorSubTable(GLenum  target, GLsizei  start, GLint  x, GLint  y, GLsizei  width)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glColorSubTable`\ ,
+            :c:func:`glColorTableParameter`\ ,
+            :c:func:`glCopyColorTable`\ ,
+            :c:func:`glCopyColorSubTable`\ ,
+            :c:func:`glGetColorTable`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glCopyColorSubTable` is used to respecify a contiguous portion of a color table previously
+defined using :c:func:`glColorTable`\ .  The pixels copied from the framebuffer
+replace the portion of the existing table from indices *start* to |EQUATION_1_|\ ,
+inclusive.  This region may not include any
+entries outside the range of the color table, as was originally specified.
+It is not an error to specify a subtexture with width of 0, but such a
+specification has no effect.
+
+
+.. note::
+
+
+   :c:func:`glCopyColorSubTable` is present only if ``ARB_imaging`` is returned when :c:func:`glGetString`
+   is called with an argument of ``GL_EXTENSIONS``\ .
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_VALUE`` is generated if *target* is not a previously defined color table.
+* ``GL_INVALID_VALUE`` is generated if *target* is not one of the allowable values.
+* ``GL_INVALID_VALUE`` is generated if |EQUATION_2_|\ .
+* ``GL_INVALID_OPERATION`` is generated if :c:func:`glCopyColorSubTable` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`\ .
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGetColorTable`\ , :c:func:`glGetColorTableParameter`
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glCopyColorSubTable'>
+
+.. role:: mml(raw)
+   :format: html
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">start</mi><mo>+</mo><mi mathvariant="italic">x</mi><mo>-</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><mi mathvariant="italic">start</mi><mo>+</mo><mi mathvariant="italic">x</mi></mrow><mo>></mo><mi mathvariant="italic">width</mi></mrow></math>` 
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

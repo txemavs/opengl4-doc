@@ -1,0 +1,228 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glBufferData &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glBufferSubData" href="glBufferSubData.html" />
+    <link rel="prev" title="function glBlitFramebuffer" href="glBlitFramebuffer.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glBufferSubData.html" title="function glBufferSubData"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glBlitFramebuffer.html" title="function glBlitFramebuffer"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glbufferdata">
+<h1>function <cite>glBufferData</cite><a class="headerlink" href="#function-glbufferdata" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Creates and initializes a buffer object&#8217;s data store</p>
+<dl class="function">
+<dt id="glBufferData">
+<tt class="descname">glBufferData</tt><big>(</big><big>)</big><a class="headerlink" href="#glBufferData" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>target</strong> &#8211; Specifies the target buffer object.
+The symbolic constant must be <tt class="docutils literal"><span class="pre">GL_ARRAY_BUFFER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_COPY_READ_BUFFER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_COPY_WRITE_BUFFER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_ELEMENT_ARRAY_BUFFER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_PIXEL_PACK_BUFFER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_PIXEL_UNPACK_BUFFER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_BUFFER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TRANSFORM_FEEDBACK_BUFFER</span></tt>, or
+<tt class="docutils literal"><span class="pre">GL_UNIFORM_BUFFER</span></tt>.</li>
+<li><strong>size</strong> &#8211; Specifies the size in bytes of the buffer object&#8217;s new data store.</li>
+<li><strong>data</strong> &#8211; Specifies a pointer to data that will be copied into the data store for initialization,
+or <tt class="docutils literal"><span class="pre">NULL</span></tt> if no data is to be copied.</li>
+<li><strong>usage</strong> &#8211; Specifies the expected usage pattern of the data store. The symbolic constant must be
+<tt class="docutils literal"><span class="pre">GL_STREAM_DRAW</span></tt>, <tt class="docutils literal"><span class="pre">GL_STREAM_READ</span></tt>, <tt class="docutils literal"><span class="pre">GL_STREAM_COPY</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_STATIC_DRAW</span></tt>, <tt class="docutils literal"><span class="pre">GL_STATIC_READ</span></tt>, <tt class="docutils literal"><span class="pre">GL_STATIC_COPY</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_DYNAMIC_DRAW</span></tt>, <tt class="docutils literal"><span class="pre">GL_DYNAMIC_READ</span></tt>, or <tt class="docutils literal"><span class="pre">GL_DYNAMIC_COPY</span></tt>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glBufferData</tt><big>(</big>GLenum <em>&nbsp;target</em>, GLsizeiptr <em>&nbsp;size</em>, const GLvoid * <em>&nbsp;data</em>, GLenum <em>&nbsp;usage</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glBindBuffer.html#glBindBuffer" title="glBindBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glBindBuffer()</span></tt></a>,
+<a class="reference internal" href="glBufferSubData.html#glBufferSubData" title="glBufferSubData"><tt class="xref c c-func docutils literal"><span class="pre">glBufferSubData()</span></tt></a>,
+<a class="reference internal" href="glMapBuffer.html#glMapBuffer" title="glMapBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glMapBuffer()</span></tt></a>,
+<a class="reference internal" href="glMapBuffer.html#glUnmapBuffer" title="glUnmapBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glUnmapBuffer()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glBufferData" title="glBufferData"><tt class="xref c c-func docutils literal"><span class="pre">glBufferData()</span></tt></a> creates a new data store for the buffer object currently bound to
+<em>target</em>. Any pre-existing data store is deleted. The new data store is created with the
+specified <em>size</em> in bytes and <em>usage</em>. If <em>data</em>
+is not <tt class="docutils literal"><span class="pre">NULL</span></tt>, the data store is initialized with data from this pointer. In its initial
+state, the new data store is not mapped, it has a <tt class="docutils literal"><span class="pre">NULL</span></tt> mapped pointer, and its mapped access
+is <tt class="docutils literal"><span class="pre">GL_READ_WRITE</span></tt>.</p>
+<p><em>usage</em> is a hint to the GL implementation as to how a buffer object&#8217;s data store will be
+accessed. This enables the GL implementation to make more intelligent decisions that may significantly
+impact buffer object performance. It does not, however, constrain the actual usage of the data store.
+<em>usage</em> can be broken down into two parts: first, the frequency of access (modification
+and usage), and second, the nature of that access. The frequency of access may be one of these:</p>
+<blockquote>
+<div><p>STREAM</p>
+<blockquote>
+<div>The data store contents will be modified once and used at most a few times.</div></blockquote>
+<p>STATIC</p>
+<blockquote>
+<div>The data store contents will be modified once and used many times.</div></blockquote>
+<p>DYNAMIC</p>
+<blockquote>
+<div>The data store contents will be modified repeatedly and used many times.</div></blockquote>
+</div></blockquote>
+<p>The nature of access may be one of these:</p>
+<blockquote>
+<div><p>DRAW</p>
+<blockquote>
+<div>The data store contents are modified by the application, and used as the source for GL drawing and
+image specification commands.</div></blockquote>
+<p>READ</p>
+<blockquote>
+<div>The data store contents are modified by reading data from the GL, and used to return that data
+when queried by the application.</div></blockquote>
+<p>COPY</p>
+<blockquote>
+<div>The data store contents are modified by reading data from the GL, and used as the source for GL
+drawing and image specification commands.</div></blockquote>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>If <em>data</em> is <tt class="docutils literal"><span class="pre">NULL</span></tt>, a data store of the specified size is still created,
+but its contents remain uninitialized and thus undefined.</p>
+<p class="last">Clients must align data elements consistent with the requirements of the client
+platform, with an additional base-level requirement that an offset within a buffer to
+a datum comprising <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">N</mi> bytes be a multiple of <mi mathvariant="italic">N</mi></math></span>.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>target</em> is not one of the accepted buffer targets.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>usage</em> is not <tt class="docutils literal"><span class="pre">GL_STREAM_DRAW</span></tt>, <tt class="docutils literal"><span class="pre">GL_STREAM_READ</span></tt>, <tt class="docutils literal"><span class="pre">GL_STREAM_COPY</span></tt>, <tt class="docutils literal"><span class="pre">GL_STATIC_DRAW</span></tt>, <tt class="docutils literal"><span class="pre">GL_STATIC_READ</span></tt>, <tt class="docutils literal"><span class="pre">GL_STATIC_COPY</span></tt>, <tt class="docutils literal"><span class="pre">GL_DYNAMIC_DRAW</span></tt>, <tt class="docutils literal"><span class="pre">GL_DYNAMIC_READ</span></tt>, or <tt class="docutils literal"><span class="pre">GL_DYNAMIC_COPY</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>size</em> is negative.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if the reserved buffer object name 0 is bound to <em>target</em>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_OUT_OF_MEMORY</span></tt> is generated if the GL is unable to create a data store with the specified <em>size</em>.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glGetBufferSubData.html#glGetBufferSubData" title="glGetBufferSubData"><tt class="xref c c-func docutils literal"><span class="pre">glGetBufferSubData()</span></tt></a></li>
+<li><tt class="xref c c-func docutils literal"><span class="pre">glGetBufferParameter()</span></tt> with argument <tt class="docutils literal"><span class="pre">GL_BUFFER_SIZE</span></tt> or <tt class="docutils literal"><span class="pre">GL_BUFFER_USAGE</span></tt></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)2005 Addison-Wesley. Open Publication License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glBlitFramebuffer.html"
+                        title="previous chapter">function <cite>glBlitFramebuffer</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glBufferSubData.html"
+                        title="next chapter">function <cite>glBufferSubData</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glBufferData.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glBufferSubData.html" title="function glBufferSubData"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glBlitFramebuffer.html" title="function glBlitFramebuffer"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

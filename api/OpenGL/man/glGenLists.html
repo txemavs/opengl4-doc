@@ -1,0 +1,174 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glGenLists &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function glGetClipPlane" href="glGetClipPlane.html" />
+    <link rel="prev" title="function glFrustum" href="glFrustum.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glGetClipPlane.html" title="function glGetClipPlane"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glFrustum.html" title="function glFrustum"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glgenlists">
+<h1>function <cite>glGenLists</cite><a class="headerlink" href="#function-glgenlists" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Generate a contiguous set of empty display lists</p>
+<dl class="function">
+<dt id="glGenLists">
+<tt class="descname">glGenLists</tt><big>(</big><big>)</big><a class="headerlink" href="#glGenLists" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>range</strong> &#8211; Specifies the number of contiguous empty display lists
+to be generated.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+GLuint <tt class="descname">glGenLists</tt><big>(</big>GLsizei <em>&nbsp;range</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glCallList.html#glCallList" title="glCallList"><tt class="xref c c-func docutils literal"><span class="pre">glCallList()</span></tt></a>,
+<a class="reference internal" href="glCallLists.html#glCallLists" title="glCallLists"><tt class="xref c c-func docutils literal"><span class="pre">glCallLists()</span></tt></a>,
+<a class="reference internal" href="glDeleteLists.html#glDeleteLists" title="glDeleteLists"><tt class="xref c c-func docutils literal"><span class="pre">glDeleteLists()</span></tt></a>,
+<a class="reference internal" href="glNewList.html#glNewList" title="glNewList"><tt class="xref c c-func docutils literal"><span class="pre">glNewList()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glGenLists" title="glGenLists"><tt class="xref c c-func docutils literal"><span class="pre">glGenLists()</span></tt></a> has one argument, <em>range</em>.
+It returns an integer <strong>n</strong> such that <em>range</em> contiguous
+empty display lists,
+named <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math></span>, <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">n</mi><mo>+</mo><mn>1</mn></mrow></math></span>, <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mi mathvariant="italic">...</mi></math></span>, <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">n</mi><mo>+</mo><mi mathvariant="italic">range</mi><mo>-</mo><mn>1</mn></mrow></math></span>,
+are created.
+If <em>range</em> is 0,
+if there is no group of <em>range</em> contiguous names available,
+or if any error is generated,
+no display lists are generated,
+and 0 is returned.</p>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>range</em> is negative.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <a class="reference internal" href="#glGenLists" title="glGenLists"><tt class="xref c c-func docutils literal"><span class="pre">glGenLists()</span></tt></a> is executed between the execution of <a class="reference internal" href="glBegin.html#glBegin" title="glBegin"><tt class="xref c c-func docutils literal"><span class="pre">glBegin()</span></tt></a> and the corresponding execution of <a class="reference internal" href="glBegin.html#glEnd" title="glEnd"><tt class="xref c c-func docutils literal"><span class="pre">glEnd()</span></tt></a>.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glIsList.html#glIsList" title="glIsList"><tt class="xref c c-func docutils literal"><span class="pre">glIsList()</span></tt></a></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glFrustum.html"
+                        title="previous chapter">function <cite>glFrustum</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glGetClipPlane.html"
+                        title="next chapter">function <cite>glGetClipPlane</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/glGenLists.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glGetClipPlane.html" title="function glGetClipPlane"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glFrustum.html" title="function glFrustum"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

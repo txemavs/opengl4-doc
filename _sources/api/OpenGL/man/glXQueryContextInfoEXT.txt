@@ -1,0 +1,123 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:28
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glXQueryContextInfoEXT.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glXQueryContextInfoEXT`
+---------------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Query context information
+
+.. c:function:: glXQueryContextInfoEXT
+
+
+         :param dpy:
+
+                  Specifies the connection to the X server.
+
+         :param ctx:
+
+                  Specifies a GLX rendering context.
+
+         :param attribute:
+
+                  Specifies that a context parameter should be retrieved.  Must be one of
+                  ``GLX_SHARED_CONTEXT_EXT``\ , ``GLX_VISUAL_ID_EXT``\ , or ``GLX_SCREEN_EXT``\ .
+
+         :param value:
+
+                  Contains the return value for *attribute*\ .
+
+.. rubric:: Specification
+
+.. c:function:: int glXQueryContextInfoEXT(Display *  dpy, GLXContext  ctx, int  attribute, int *  value)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glXCreateContext`\ ,
+            :c:func:`glXQueryVersion`\ ,
+            :c:func:`glXQueryExtensionsString`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glXQueryContextInfoEXT` sets *value* to the value of *attribute* with respect to *ctx*\ .
+:c:func:`glXQueryContextInfoEXT` returns an error code if it fails for any reason. Otherwise,
+``Success`` is returned.
+
+
+*attribute* may be one of the following:
+
+
+         ``GLX_SHARED_CONTEXT_EXT``
+
+
+               Returns the XID of the share list context associated with *ctx* at its
+               creation.
+
+
+         ``GLX_VISUAL_ID_EXT``
+
+
+               Returns the XID of the GLX Visual associated with *ctx*\ .
+
+
+         ``GLX_SCREEN_EXT``
+
+
+               Returns the screen number associated with *ctx*\ .
+
+
+This call may cause a round-trip to the server.
+
+
+:c:func:`glXQueryContextInfoEXT` is part of the ``EXT_import_context`` extension,
+not part of the core GLX command set. If _glxextstring(EXT_import_context)
+is included in the string returned by :c:func:`glXQueryExtensionsString`\ ,
+when called with argument ``GLX_EXTENSIONS``\ ,
+extension ``EXT_import_context`` is supported.
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GLXBadContext`` is generated if *ctx* does not refer to a valid context.
+* ``GLX_BAD_ATTRIBUTE`` is returned if *attribute* is not a valid GLX context attribute.
+* fred ``GLX_BAD_CONTEXT`` is returned if *attribute* is not a valid context.
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glXQueryContextInfoEXT'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

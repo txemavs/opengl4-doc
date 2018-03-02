@@ -1,0 +1,217 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glGetHistogramParameter &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function glGetLight" href="glGetLight.html" />
+    <link rel="prev" title="function glGetHistogram" href="glGetHistogram.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glGetLight.html" title="function glGetLight"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glGetHistogram.html" title="function glGetHistogram"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glgethistogramparameter">
+<h1>function <cite>glGetHistogramParameter</cite><a class="headerlink" href="#function-glgethistogramparameter" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Get histogram parameters</p>
+<dl class="function">
+<dt id="glGetHistogramParameter">
+<tt class="descname">glGetHistogramParameter</tt><big>(</big><big>)</big><a class="headerlink" href="#glGetHistogramParameter" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>target</strong> &#8211; Must be one of
+<tt class="docutils literal"><span class="pre">GL_HISTOGRAM</span></tt> or
+<tt class="docutils literal"><span class="pre">GL_PROXY_HISTOGRAM</span></tt>.</li>
+<li><strong>pname</strong> &#8211; The name of the parameter to be retrieved.
+Must be one of
+<tt class="docutils literal"><span class="pre">GL_HISTOGRAM_WIDTH</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_HISTOGRAM_FORMAT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_HISTOGRAM_RED_SIZE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_HISTOGRAM_GREEN_SIZE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_HISTOGRAM_BLUE_SIZE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_HISTOGRAM_ALPHA_SIZE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_HISTOGRAM_LUMINANCE_SIZE</span></tt>, or
+<tt class="docutils literal"><span class="pre">GL_HISTOGRAM_SINK</span></tt>.</li>
+<li><strong>params</strong> &#8211; Pointer to storage for the returned values.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt id="glGetHistogramParameterfv">
+void <tt class="descname">glGetHistogramParameterfv</tt><big>(</big>GLenum <em>&nbsp;target</em>, GLenum <em>&nbsp;pname</em>, GLfloat * <em>&nbsp;params</em>, GLenum <em>&nbsp;target</em>, GLenum <em>&nbsp;pname</em>, GLint * <em>&nbsp;params</em><big>)</big><a class="headerlink" href="#glGetHistogramParameterfv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glGetHistogram.html#glGetHistogram" title="glGetHistogram"><tt class="xref c c-func docutils literal"><span class="pre">glGetHistogram()</span></tt></a>,
+<a class="reference internal" href="glHistogram.html#glHistogram" title="glHistogram"><tt class="xref c c-func docutils literal"><span class="pre">glHistogram()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glGetHistogramParameter" title="glGetHistogramParameter"><tt class="xref c c-func docutils literal"><span class="pre">glGetHistogramParameter()</span></tt></a> is used to query parameter values for the current histogram or for
+a proxy.  The histogram state information may be queried by calling
+<a class="reference internal" href="#glGetHistogramParameter" title="glGetHistogramParameter"><tt class="xref c c-func docutils literal"><span class="pre">glGetHistogramParameter()</span></tt></a> with a <em>target</em> of <tt class="docutils literal"><span class="pre">GL_HISTOGRAM</span></tt> (to
+obtain information for the current histogram table) or
+<tt class="docutils literal"><span class="pre">GL_PROXY_HISTOGRAM</span></tt> (to obtain information from the most recent
+proxy request) and one of the following values for the <em>pname</em> argument:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="43%" />
+<col width="57%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameter</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_HISTOGRAM_WIDTH</span></tt></td>
+<td>Histogram table width</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_HISTOGRAM_FORMAT</span></tt></td>
+<td>Internal format</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_HISTOGRAM_RED_SIZE</span></tt></td>
+<td>Red component counter size, in bits</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_HISTOGRAM_GREEN_SIZE</span></tt></td>
+<td>Green component counter size, in bits</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_HISTOGRAM_BLUE_SIZE</span></tt></td>
+<td>Blue component counter size, in bits</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_HISTOGRAM_ALPHA_SIZE</span></tt></td>
+<td>Alpha component counter size, in bits</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_HISTOGRAM_LUMINANCE_SIZE</span></tt></td>
+<td>Luminance component counter size, in bits</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_HISTOGRAM_SINK</span></tt></td>
+<td>Value of the <strong>sink</strong> parameter</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><a class="reference internal" href="#glGetHistogramParameter" title="glGetHistogramParameter"><tt class="xref c c-func docutils literal"><span class="pre">glGetHistogramParameter()</span></tt></a> is present only if <tt class="docutils literal"><span class="pre">ARB_imaging</span></tt> is returned when <a class="reference internal" href="../man4/glGetString.html#glGetString" title="glGetString"><tt class="xref c c-func docutils literal"><span class="pre">glGetString()</span></tt></a>
+is called with an argument of <tt class="docutils literal"><span class="pre">GL_EXTENSIONS</span></tt>.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>target</em> is not one of the allowable values.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>pname</em> is not one of the allowable values.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <a class="reference internal" href="#glGetHistogramParameter" title="glGetHistogramParameter"><tt class="xref c c-func docutils literal"><span class="pre">glGetHistogramParameter()</span></tt></a> is executed between the execution of <a class="reference internal" href="glBegin.html#glBegin" title="glBegin"><tt class="xref c c-func docutils literal"><span class="pre">glBegin()</span></tt></a> and the corresponding execution of <a class="reference internal" href="glBegin.html#glEnd" title="glEnd"><tt class="xref c c-func docutils literal"><span class="pre">glEnd()</span></tt></a>.</li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glGetHistogram.html"
+                        title="previous chapter">function <cite>glGetHistogram</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glGetLight.html"
+                        title="next chapter">function <cite>glGetLight</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/glGetHistogramParameter.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glGetLight.html" title="function glGetLight"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glGetHistogram.html" title="function glGetHistogram"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

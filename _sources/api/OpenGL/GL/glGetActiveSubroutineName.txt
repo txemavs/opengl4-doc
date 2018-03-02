@@ -1,0 +1,68 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glGetActiveSubroutineName`
+------------------------------------
+
+.. source file man4/glGetActiveSubroutineName
+
+.. currentmodule:: OpenGL.GL
+
+Query the name of an active shader subroutine
+
+.. c:function:: glGetActiveSubroutineName
+.. c:function:: void glGetActiveSubroutineName(GLuint  program, GLenum  shadertype, GLuint  index, GLsizei  bufsize, GLsizei * length, GLchar * name)
+   :noindex: 
+
+
+   
+   :param program:
+      Specifies the name of the program containing the subroutine.
+   
+   :param shadertype:
+      Specifies the shader stage from which to query the subroutine name.
+   
+   :param index:
+      Specifies the index of the shader subroutine uniform.
+   
+   :param bufsize:
+      Specifies the size of the buffer whose address is given in *name* .
+   
+   :param length:
+      Specifies the address of a variable which is to receive the length of the shader subroutine uniform name.
+   
+   :param name:
+      Specifies the address of an array into which the name of the shader subroutine uniform will be written.
+   
+
+.. seealso::
+
+   
+   :c:func:`glGetSubroutineIndex`, :c:func:`glGetActiveSubroutineUniform`, :c:func:`glGetProgramStage`
+   
+.. rubric:: Description
+
+
+:c:func:`glGetActiveSubroutineName` queries the name of an active shader subroutine uniform from the program object given in *program* . *index* specifies the index of the shader subroutine uniform within the shader stage given by *stage* , and must between zero and the value of ``GL_ACTIVE_SUBROUTINES`` minus one for the shader stage.
+
+The name of the selected subroutine is returned as a null-terminated string in *name* . The actual number of characters written into *name* , not including the null-terminator, is is returned in *length* . If *length* is ``NULL``, no length is returned. The maximum number of characters that may be written into *name* , including the null-terminator, is given in *bufsize* .
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGetProgramStage` with argument ``GL_ACTIVE_SUBROUTINE_UNIFORM_MAX_LENGTH``
+
+**Errors:**
+
+   * ``GL_INVALID_VALUE`` is generated if *index* is greater than or equal to the value of ``GL_ACTIVE_SUBROUTINES``.
+   * ``GL_INVALID_VALUE`` is generated if *program* is not the name of an existing program object.
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

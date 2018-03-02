@@ -1,0 +1,94 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glProvokingVertex`
+----------------------------
+
+.. source file man4/glProvokingVertex
+
+.. currentmodule:: OpenGL.GL
+
+Specifiy the vertex to be used as the source of data for flat shaded varyings
+
+.. c:function:: glProvokingVertex
+.. c:function:: void glProvokingVertex(GLenum  provokeMode)
+   :noindex: 
+
+
+   
+   :param provokeMode:
+      Specifies the vertex to be used as the source of data for flat shaded varyings.
+   
+
+.. rubric:: Description
+
+
+*`Flatshading`* a vertex shader varying output means to assign all vetices of the primitive the same value for that output. The vertex from which these values is derived is known as the *`provoking vertex`* and :c:func:`glProvokingVertex` specifies which vertex is to be used as the source of data for flat shaded varyings.
+
+*provokeMode* must be either ``GL_FIRST_VERTEX_CONVENTION`` or ``GL_LAST_VERTEX_CONVENTION``, and controls the selection of the vertex whose values are assigned to flatshaded varying outputs. The interpretation of these values for the supported primitive types is: 
+
+.. list-table:: 
+   :header-rows: 1
+
+   * - Primitive Type of Polygon i
+     - First Vertex Convention
+     - Last Vertex Convention
+   * - point
+     - i
+     - i
+   * - independent line
+     - 2 i - 1
+     - 2 i
+   * - line loop
+     - i
+     - i + 1, if i &amp;amp;lt; n 1, if i = n
+   * - line strip
+     - i
+     - i + 1
+   * - independent triangle
+     - 3 i - 2
+     - 3 i
+   * - triangle strip
+     - i
+     - i + 2
+   * - triangle fan
+     - i + 1
+     - i + 2
+   * - line adjacency
+     - 4 i - 2
+     - 4 i - 1
+   * - line strip adjacency
+     - i + 1
+     - i + 2
+   * - triangle adjacency
+     - 6 i - 5
+     - 6 i - 1
+   * - triangle strip adjacency
+     - 2 i - 1
+     - 2 i + 3
+
+
+
+
+If a vertex or geometry shader is active, user-defined varying outputs may be flatshaded by using the ``flat`` qualifier when declaring the output.
+
+
+**Errors:**
+
+   * ``GL_INVALID_ENUM`` is generated if *provokeMode* is not an accepted value.
+
+
+
+.. note::
+
+   * :c:func:`glProvokingVertex` is available only if the GL version is 3.2 or greater.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

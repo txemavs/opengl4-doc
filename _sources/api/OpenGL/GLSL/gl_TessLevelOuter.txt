@@ -1,0 +1,48 @@
+.. nabla.opengl-sphinx project
+
+.. ---------------------------
+
+.. this dodument source file 'man/gl_TessLevelOuter'is copyrighted by Khronos Group
+   See license details at http://opencontent.org/openpub/
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   
+
+function `gl_TessLevelOuter`
+----------------------------
+
+.. currentmodule:: OpenGL.GLSL
+
+Contains the outer tessellation levels for the current patch
+
+.. c:function:: gl_TessLevelOuter
+
+
+.. rubric:: Specification
+
+.. c:function:: patch out float gl_TessLevelOuter[4])
+
+.. seealso::
+
+   
+   :c:func:`gl_TessLevelInner`, :c:func:`gl_TessCoord`
+   
+.. rubric:: Description
+
+
+Available only in the tessellation control and evaluation languages, :c:func:`gl_TessLevelOuter` is used to assign values to the corresponding outer tesellation levels of the current patch. The values written into :c:func:`gl_TessLevelOuter` by the tessellation control shader are used by the tessellation primitive generator to control primitive tessellation and may be read by the subsequent tessellation evaluation shader.
+
+As inputs to the tessellation evaluation shader, :c:func:`gl_TessLevelOuter` contains the values written by the tessellation control shader, if present. If no tessellation control shader is present, it contains the default tessellation level.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2011 Khronos Group. Open Publication License.
+

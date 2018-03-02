@@ -1,0 +1,85 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:28
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glXGetContextIDEXT.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glXGetContextIDEXT`
+-----------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Get the XID for a context.
+
+.. c:function:: glXGetContextIDEXT
+
+
+         :param ctx:
+
+                  Specifies a GLX rendering context.
+
+.. rubric:: Specification
+
+.. c:function:: GLXContextID glXGetContextIDEXT(const GLXContext  ctx)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glXCreateContext`\ ,
+            :c:func:`glXQueryVersion`\ ,
+            :c:func:`glXQueryExtensionsString`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glXGetContextIDEXT` returns the XID associated with a GLXContext.
+
+
+No round trip is forced to the server; unlike most X calls that
+return a value, :c:func:`glXGetContextIDEXT` does not flush any pending events.
+
+
+:c:func:`glXGetContextIDEXT` is part of the ``EXT_import_context`` extension,
+not part of the core GLX command set. If _glxextstring(EXT_import_context)
+is included in the string returned by :c:func:`glXQueryExtensionsString`\ ,
+when called with argument ``GLX_EXTENSIONS``\ ,
+extension ``EXT_import_context`` is supported.
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GLXBadContext`` is generated if *ctx* does not refer to a valid context.
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glXGetContextIDEXT'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

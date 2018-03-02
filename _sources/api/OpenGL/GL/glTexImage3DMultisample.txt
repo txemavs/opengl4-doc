@@ -1,0 +1,80 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glTexImage3DMultisample`
+----------------------------------
+
+.. source file man4/glTexImage3DMultisample
+
+.. currentmodule:: OpenGL.GL
+
+Establish the data storage, format, dimensions, and number of samples of a multisample texture's image
+
+.. c:function:: glTexImage3DMultisample
+.. c:function:: void glTexImage3DMultisample(GLenum  target, GLsizei  samples, GLint  internalformat, GLsizei  width, GLsizei  height, GLsizei  depth, GLboolean  fixedsamplelocations)
+   :noindex: 
+
+
+   
+   :param target:
+      Specifies the target of the operation. *target* must be ``GL_TEXTURE_2D_MULTISAMPLE_ARRAY`` or ``GL_PROXY_TEXTURE_2D_MULTISAMPLE_ARRAY``.
+   
+   :param samples:
+      The number of samples in the multisample texture's image.
+   
+   :param internalformat:
+      The internal format to be used to store the multisample texture's image. *internalformat* must specify a color-renderable, depth-renderable, or stencil-renderable format.
+   
+   :param width:
+      The width of the multisample texture's image, in texels.
+   
+   :param height:
+      The height of the multisample texture's image, in texels.
+   
+   :param fixedsamplelocations:
+      Specifies whether the image will use identical sample locations and the same number of samples for all texels in the image, and the sample locations will not depend on the internal format or size of the image.
+   
+
+.. seealso::
+
+   
+   :c:func:`glTexImage3D`, :c:func:`glTexImage2DMultisample`
+   
+.. rubric:: Description
+
+
+:c:func:`glTexImage3DMultisample` establishes the data storage, format, dimensions and number of samples of a multisample texture's image.
+
+*target* must be ``GL_TEXTURE_2D_MULTISAMPLE_ARRAY`` or ``GL_PROXY_TEXTURE_2D_MULTISAMPLE_ARRAY``. *width* and *height* are the dimensions in texels of the texture, and must be in the range zero to ``GL_MAX_TEXTURE_SIZE`` - 1. *depth* is the number of array slices in the array texture's image. *samples* specifies the number of samples in the image and must be in the range zero to ``GL_MAX_SAMPLES`` - 1.
+
+*internalformat* must be a color-renderable, depth-renderable, or stencil-renderable format.
+
+If *fixedsamplelocations* is ``GL_TRUE``, the image will use identical sample locations and the same number of samples for all texels in the image, and the sample locations will not depend on the internal format or size of the image.
+
+When a multisample texture is accessed in a shader, the access takes one vector of integers describing which texel to fetch and an integer corresponding to the sample numbers describing which sample within the texel to fetch. No standard sampling instructions are allowed on the multisample texture targets.
+
+
+**Errors:**
+
+   * ``GL_INVALID_OPERATION`` is generated if *internalformat* is a depth- or stencil-renderable format and *samples* is greater than the value of ``GL_MAX_DEPTH_TEXTURE_SAMPLES``.
+   * ``GL_INVALID_OPERATION`` is generated if *internalformat* is a color-renderable format and *samples* is greater than the value of ``GL_MAX_COLOR_TEXTURE_SAMPLES``.
+   * ``GL_INVALID_OPERATION`` is generated if *internalformat* is a signed or unsigned integer format and *samples* is greater than the value of ``GL_MAX_INTEGER_SAMPLES``.
+   * ``GL_INVALID_VALUE`` is generated if either *width* or *height* negative or is greater than ``GL_MAX_TEXTURE_SIZE``.
+   * ``GL_INVALID_VALUE`` is generated if *depth* is negative or is greater than ``GL_MAX_ARRAY_TEXTURE_LAYERS``.
+   * ``GL_INVALID_VALUE`` is generated if *samples* is greater than ``GL_MAX_SAMPLES``.
+
+
+
+.. note::
+
+   * :c:func:`glTexImage2DMultisample` is available only if the GL version is 3.2 or greater.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

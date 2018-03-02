@@ -1,0 +1,106 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:26
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glGetClipPlane.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glGetClipPlane`
+-------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Return the coefficients of the specified clipping plane
+
+.. c:function:: glGetClipPlane
+
+
+         :param plane:
+
+                  Specifies a clipping plane.
+                  The number of clipping planes depends on the implementation,
+                  but at least six clipping planes are supported.
+                  They are identified by symbolic names of the form ``GL_CLIP_PLANE``
+                  |EQUATION_1_| where i ranges from 0 to the value of ``GL_MAX_CLIP_PLANES`` - 1.
+
+         :param equation:
+
+                  Returns four double-precision values that are the coefficients of the plane equation of *plane* in eye coordinates.
+                  The initial value is (0, 0, 0, 0).
+
+.. rubric:: Specification
+
+.. c:function:: void glGetClipPlane(GLenum  plane, GLdouble *  equation)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glClipPlane`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glGetClipPlane` returns in *equation* the four coefficients of the plane equation
+for *plane*\ .
+
+
+.. note::
+
+
+   It is always the case that ``GL_CLIP_PLANE``
+   |EQUATION_2_| = ``GL_CLIP_PLANE0`` + |EQUATION_3_|\ .
+
+
+   If an error is generated,
+   no change is made to the contents of *equation*\ .
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_ENUM`` is generated if *plane* is not an accepted value.
+* ``GL_INVALID_OPERATION`` is generated if :c:func:`glGetClipPlane` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`\ .
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glGetClipPlane'>
+
+.. role:: mml(raw)
+   :format: html
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math>` 
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

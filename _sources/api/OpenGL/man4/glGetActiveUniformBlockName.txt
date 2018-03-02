@@ -1,0 +1,122 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:29
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glGetActiveUniformBlockName.xml'
+.. (c)2010 Khronos Group.
+.. See license details at http://opencontent.org/openpub/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glGetActiveUniformBlockName`
+--------------------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Retrieve the name of an active uniform block
+
+.. c:function:: glGetActiveUniformBlockName
+
+
+         :param program:
+
+                  Specifies the name of a program containing the uniform block.
+
+         :param uniformBlockIndex:
+
+                  Specifies the index of the uniform block within *program*\ .
+
+         :param bufSize:
+
+                  Specifies the size of the buffer addressed by *uniformBlockName*\ .
+
+         :param length:
+
+                  Specifies the address of a variable to receive the number of characters that were written to *uniformBlockName*\ .
+
+         :param uniformBlockName:
+
+                  Specifies the address an array of characters to receive the name of the uniform block at *uniformBlockIndex*\ .
+
+.. rubric:: Specification
+
+.. c:function:: void glGetActiveUniformBlockName(GLuint  program, GLuint  uniformBlockIndex, GLsizei  bufSize, GLsizei * length, GLchar * uniformBlockName)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glGetActiveUniformBlock`\ ,
+            :c:func:`glGetUniformBlockIndex`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glGetActiveUniformBlockName` retrieves the name of the active uniform block at *uniformBlockIndex*
+within *program*\ .
+
+
+*program* must be the name of a program object for which the command
+:c:func:`glLinkProgram` must have been called in the past, although it is not required that
+:c:func:`glLinkProgram` must have succeeded. The link could have failed because the number
+of active uniforms exceeded the limit.
+
+
+*uniformBlockIndex* is an active uniform block index of *program*\ , and must be less than the value
+of ``GL_ACTIVE_UNIFORM_BLOCKS``\ .
+
+
+Upon success, the name of the uniform block identified by *unifomBlockIndex* is returned into
+*uniformBlockName*\ . The name is nul-terminated. The actual number of characters written into *uniformBlockName*\ ,
+excluding the nul terminator, is returned in *length*\ . If *length* is ``NULL``\ , no length is returned.
+
+
+*bufSize* contains the maximum number of characters (including the nul terminator) that will be written into
+*uniformBlockName*\ .
+
+
+If an error occurs, nothing will be written to *uniformBlockName* or *length*\ .
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_OPERATION`` is generated if *program* is not the name of a program object for which :c:func:`glLinkProgram` has been called in the past.
+* ``GL_INVALID_VALUE`` is generated if *uniformBlockIndex* is greater than or equal to the value of ``GL_ACTIVE_UNIFORM_BLOCKS`` or is not the index of an active uniform block in *program*\ .
+
+
+.. note::
+
+
+   :c:func:`glGetActiveUniformBlockName` is available only if the GL version is 3.1 or greater.
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glGetActiveUniformBlockName'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )2010 Khronos Group. Open Publication License.
+

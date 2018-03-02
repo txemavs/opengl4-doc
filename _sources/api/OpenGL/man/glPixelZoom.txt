@@ -1,0 +1,134 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:27
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glPixelZoom.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glPixelZoom`
+----------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Specify the pixel zoom factors
+
+.. c:function:: glPixelZoom
+
+
+         :param xfactor:
+         :param yfactor:
+
+                  Specify the
+                  |EQUATION_1_| and |EQUATION_2_| zoom factors for pixel write operations.
+
+.. rubric:: Specification
+
+.. c:function:: void glPixelZoom(GLfloat  xfactor, GLfloat  yfactor)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glCopyPixels`\ ,
+            :c:func:`glDrawPixels`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glPixelZoom` specifies values for the |EQUATION_3_| and |EQUATION_4_| zoom factors.
+During the execution of :c:func:`glDrawPixels` or :c:func:`glCopyPixels`\ ,
+if
+(\ |EQUATION_5_|\ , |EQUATION_6_|\ )
+is the current raster position,
+and a given element is in the |EQUATION_7_| th
+row and |EQUATION_8_| th
+column of the pixel rectangle,
+then pixels whose centers are in the rectangle with corners at
+
+
+(\ |EQUATION_9_|\ , |EQUATION_10_|\ )
+
+
+(\ |EQUATION_11_|\ , |EQUATION_12_|\ )
+
+
+are candidates for replacement.
+Any pixel whose center lies on the bottom or left edge of this rectangular
+region is also modified.
+
+
+Pixel zoom factors are not limited to positive values.
+Negative zoom factors reflect the resulting image about the current
+raster position.
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_OPERATION`` is generated if :c:func:`glPixelZoom` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`\ .
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGet` with argument ``GL_ZOOM_X``
+* :c:func:`glGet` with argument ``GL_ZOOM_Y``
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glPixelZoom'>
+
+.. role:: mml(raw)
+   :format: html
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">x</mi></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">y</mi></math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">x</mi></math>` 
+
+.. |EQUATION_4_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">y</mi></math>` 
+
+.. |EQUATION_5_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mi mathvariant="italic">xr</mi></math>` 
+
+.. |EQUATION_6_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mi mathvariant="italic">yr</mi></math>` 
+
+.. |EQUATION_7_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">m</mi></math>` 
+
+.. |EQUATION_8_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math>` 
+
+.. |EQUATION_9_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">xr</mi><mo>+</mo><mrow><mi mathvariant="italic">n</mi><mo>&CenterDot;</mo><mi mathvariant="italic">xfactor</mi></mrow></mrow></math>` 
+
+.. |EQUATION_10_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">yr</mi><mo>+</mo><mrow><mi mathvariant="italic">m</mi><mo>&CenterDot;</mo><mi mathvariant="italic">yfactor</mi></mrow></mrow></math>` 
+
+.. |EQUATION_11_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">xr</mi><mo>+</mo><mrow><mfenced open="(" close=")"><mrow><mi mathvariant="italic">n</mi><mo>+</mo><mn>1</mn></mrow></mfenced><mo>&CenterDot;</mo><mi mathvariant="italic">xfactor</mi></mrow></mrow></math>` 
+
+.. |EQUATION_12_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">yr</mi><mo>+</mo><mrow><mfenced open="(" close=")"><mrow><mi mathvariant="italic">m</mi><mo>+</mo><mn>1</mn></mrow></mfenced><mo>&CenterDot;</mo><mi mathvariant="italic">yfactor</mi></mrow></mrow></math>` 
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

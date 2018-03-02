@@ -1,0 +1,709 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glTexStorage1D &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glTexStorage2D" href="glTexStorage2D.html" />
+    <link rel="prev" title="function glTexParameter" href="glTexParameter.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glTexStorage2D.html" title="function glTexStorage2D"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glTexParameter.html" title="function glTexParameter"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-gltexstorage1d">
+<h1>function <cite>glTexStorage1D</cite><a class="headerlink" href="#function-gltexstorage1d" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Simultaneously specify storage for all levels of a one-dimensional texture</p>
+<dl class="function">
+<dt id="glTexStorage1D">
+<tt class="descname">glTexStorage1D</tt><big>(</big><big>)</big><a class="headerlink" href="#glTexStorage1D" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>target</strong> &#8211; Specify the target of the operation. <em>target</em> must be
+either <tt class="docutils literal"><span class="pre">GL_TEXTURE_1D</span></tt> or <tt class="docutils literal"><span class="pre">GL_PROXY_TEXTURE_1D</span></tt>.</li>
+<li><strong>levels</strong> &#8211; Specify the number of texture levels.</li>
+<li><strong>internalformat</strong> &#8211; Specifies the sized internal format to be used to store texture image data.</li>
+<li><strong>width</strong> &#8211; Specifies the width of the texture, in texels.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glTexStorage1D</tt><big>(</big>GLenum <em>&nbsp;target</em>, GLsizei <em>&nbsp;levels</em>, GLenum <em>&nbsp;internalformat</em>, GLsizei <em>&nbsp;width</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glTexImage1D.html#glTexImage1D" title="glTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage1D()</span></tt></a>,
+<a class="reference internal" href="glTexStorage2D.html#glTexStorage2D" title="glTexStorage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexStorage2D()</span></tt></a>,
+<a class="reference internal" href="glTexStorage3D.html#glTexStorage3D" title="glTexStorage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexStorage3D()</span></tt></a>.</p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glTexStorage1D" title="glTexStorage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexStorage1D()</span></tt></a> specifies the storage requirements for all levels
+of a one-dimensional texture simultaneously. Once a texture is specified with this
+command, the format and dimensions of all levels become immutable unless it is a proxy
+texture. The contents of the image may still be modified, however, its storage requirements
+may not change. Such a texture is referred to as an <strong>immutable-format</strong>
+texture.</p>
+<p>Calling <a class="reference internal" href="#glTexStorage1D" title="glTexStorage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexStorage1D()</span></tt></a> is equivalent, assuming no errors are generated,
+to executing the following pseudo-code:</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">levels</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">glTexImage1D</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">internalformat</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">format</span><span class="p">,</span> <span class="n">type</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+    <span class="n">width</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="n">width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Since no texture data is actually provided, the values used in the pseudo-code
+for <em>format</em> and <em>type</em> are
+irrelevant and may be considered to be any values that are legal for the
+chosen <em>internalformat</em> enumerant. <em>internalformat</em>
+must be one of the sized internal formats given in Table 1 below, one of the sized depth-component
+formats <tt class="docutils literal"><span class="pre">GL_DEPTH_COMPONENT32F</span></tt>, <tt class="docutils literal"><span class="pre">GL_DEPTH_COMPONENT24</span></tt>, or
+<tt class="docutils literal"><span class="pre">GL_DEPTH_COMPONENT16</span></tt>, or one of the combined depth-stencil formats,
+<tt class="docutils literal"><span class="pre">GL_DEPTH32F_STENCIL8</span></tt>, or <tt class="docutils literal"><span class="pre">GL_DEPTH24_STENCIL8</span></tt>. Upon success,
+the value of <tt class="docutils literal"><span class="pre">GL_TEXTURE_IMMUTABLE_FORMAT</span></tt> becomes
+<tt class="docutils literal"><span class="pre">GL_TRUE</span></tt>. The value of <tt class="docutils literal"><span class="pre">GL_TEXTURE_IMMUTABLE_FORMAT</span></tt>
+may be discovered by calling <a class="reference internal" href="glGetTexParameter.html#glGetTexParameter" title="glGetTexParameter"><tt class="xref c c-func docutils literal"><span class="pre">glGetTexParameter()</span></tt></a>
+with <em>pname</em> set to <tt class="docutils literal"><span class="pre">GL_TEXTURE_IMMUTABLE_FORMAT</span></tt>.
+No further changes to the dimensions or format of the texture object may be
+made. Using any command that might alter the dimensions or format of the
+texture object (such as <a class="reference internal" href="glTexImage1D.html#glTexImage1D" title="glTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage1D()</span></tt></a> or
+another call to <a class="reference internal" href="#glTexStorage1D" title="glTexStorage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexStorage1D()</span></tt></a>) will result in the
+generation of a <tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> error, even if it
+would not, in fact, alter the dimensions or format of the object.</p>
+<table border="1" class="docutils">
+<caption>Sized Internal Formats</caption>
+<colgroup>
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Sized Internal Format</strong></th>
+<th class="head"><strong>Base Internal Format</strong></th>
+<th class="head"><strong>Red Bits</strong></th>
+<th class="head"><strong>Green Bits</strong></th>
+<th class="head"><strong>Blue Bits</strong></th>
+<th class="head"><strong>Alpha Bits</strong></th>
+<th class="head"><strong>Shared Bits</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_R8</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RED</span></tt></td>
+<td>8</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_R8_SNORM</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RED</span></tt></td>
+<td>s8</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_R16</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RED</span></tt></td>
+<td>16</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_R16_SNORM</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RED</span></tt></td>
+<td>s16</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RG8</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RG</span></tt></td>
+<td>8</td>
+<td>8</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RG8_SNORM</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RG</span></tt></td>
+<td>s8</td>
+<td>s8</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RG16</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RG</span></tt></td>
+<td>16</td>
+<td>16</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RG16_SNORM</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RG</span></tt></td>
+<td>s16</td>
+<td>s16</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_R3_G3_B2</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>3</td>
+<td>3</td>
+<td>2</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RGB4</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RGB5</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>5</td>
+<td>5</td>
+<td>5</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RGB8</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>8</td>
+<td>8</td>
+<td>8</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RGB8_SNORM</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>s8</td>
+<td>s8</td>
+<td>s8</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RGB10</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>10</td>
+<td>10</td>
+<td>10</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RGB12</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>12</td>
+<td>12</td>
+<td>12</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RGB16_SNORM</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>16</td>
+<td>16</td>
+<td>16</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RGBA2</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RGBA4</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RGB5_A1</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGBA</span></tt></td>
+<td>5</td>
+<td>5</td>
+<td>5</td>
+<td>1</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RGBA8</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGBA</span></tt></td>
+<td>8</td>
+<td>8</td>
+<td>8</td>
+<td>8</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RGBA8_SNORM</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGBA</span></tt></td>
+<td>s8</td>
+<td>s8</td>
+<td>s8</td>
+<td>s8</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RGB10_A2</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGBA</span></tt></td>
+<td>10</td>
+<td>10</td>
+<td>10</td>
+<td>2</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RGB10_A2UI</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGBA</span></tt></td>
+<td>ui10</td>
+<td>ui10</td>
+<td>ui10</td>
+<td>ui2</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RGBA12</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGBA</span></tt></td>
+<td>12</td>
+<td>12</td>
+<td>12</td>
+<td>12</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RGBA16</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGBA</span></tt></td>
+<td>16</td>
+<td>16</td>
+<td>16</td>
+<td>16</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_SRGB8</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>8</td>
+<td>8</td>
+<td>8</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_SRGB8_ALPHA8</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGBA</span></tt></td>
+<td>8</td>
+<td>8</td>
+<td>8</td>
+<td>8</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_R16F</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RED</span></tt></td>
+<td>f16</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RG16F</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RG</span></tt></td>
+<td>f16</td>
+<td>f16</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RGB16F</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>f16</td>
+<td>f16</td>
+<td>f16</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RGBA16F</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGBA</span></tt></td>
+<td>f16</td>
+<td>f16</td>
+<td>f16</td>
+<td>f16</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_R32F</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RED</span></tt></td>
+<td>f32</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RG32F</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RG</span></tt></td>
+<td>f32</td>
+<td>f32</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RGB32F</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>f32</td>
+<td>f32</td>
+<td>f32</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RGBA32F</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGBA</span></tt></td>
+<td>f32</td>
+<td>f32</td>
+<td>f32</td>
+<td>f32</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_R11F_G11F_B10F</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>f11</td>
+<td>f11</td>
+<td>f10</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RGB9_E5</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>9</td>
+<td>9</td>
+<td>9</td>
+<td>&nbsp;</td>
+<td>5</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_R8I</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RED</span></tt></td>
+<td>i8</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_R8UI</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RED</span></tt></td>
+<td>ui8</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_R16I</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RED</span></tt></td>
+<td>i16</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_R16UI</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RED</span></tt></td>
+<td>ui16</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_R32I</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RED</span></tt></td>
+<td>i32</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_R32UI</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RED</span></tt></td>
+<td>ui32</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RG8I</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RG</span></tt></td>
+<td>i8</td>
+<td>i8</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RG8UI</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RG</span></tt></td>
+<td>ui8</td>
+<td>ui8</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RG16I</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RG</span></tt></td>
+<td>i16</td>
+<td>i16</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RG16UI</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RG</span></tt></td>
+<td>ui16</td>
+<td>ui16</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RG32I</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RG</span></tt></td>
+<td>i32</td>
+<td>i32</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RG32UI</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RG</span></tt></td>
+<td>ui32</td>
+<td>ui32</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RGB8I</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>i8</td>
+<td>i8</td>
+<td>i8</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RGB8UI</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>ui8</td>
+<td>ui8</td>
+<td>ui8</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RGB16I</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>i16</td>
+<td>i16</td>
+<td>i16</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RGB16UI</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>ui16</td>
+<td>ui16</td>
+<td>ui16</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RGB32I</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>i32</td>
+<td>i32</td>
+<td>i32</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RGB32UI</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>ui32</td>
+<td>ui32</td>
+<td>ui32</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RGBA8I</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGBA</span></tt></td>
+<td>i8</td>
+<td>i8</td>
+<td>i8</td>
+<td>i8</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RGBA8UI</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGBA</span></tt></td>
+<td>ui8</td>
+<td>ui8</td>
+<td>ui8</td>
+<td>ui8</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RGBA16I</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGBA</span></tt></td>
+<td>i16</td>
+<td>i16</td>
+<td>i16</td>
+<td>i16</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RGBA16UI</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGBA</span></tt></td>
+<td>ui16</td>
+<td>ui16</td>
+<td>ui16</td>
+<td>ui16</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RGBA32I</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGBA</span></tt></td>
+<td>i32</td>
+<td>i32</td>
+<td>i32</td>
+<td>i32</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RGBA32UI</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGBA</span></tt></td>
+<td>ui32</td>
+<td>ui32</td>
+<td>ui32</td>
+<td>ui32</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>internalformat</em> is not a valid sized internal format.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>target</em> is not <tt class="docutils literal"><span class="pre">GL_TEXTURE_1D</span></tt> or <tt class="docutils literal"><span class="pre">GL_TEXTURE_2D</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>width</em> or <em>levels</em> are less than 1.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <em>levels</em> is greater than <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mfenced open = '&lfloor;' close = '&rfloor;'><mrow><msub><mi>log</mi><mn>2</mn></msub><mfenced open = '(' close = ')'><mi>width</mi></mfenced></mrow></mfenced><mo>+</mo><mn>1</mn></mrow></math></span>.</li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)2011 Khronos Group. Open Publication License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glTexParameter.html"
+                        title="previous chapter">function <cite>glTexParameter</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glTexStorage2D.html"
+                        title="next chapter">function <cite>glTexStorage2D</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glTexStorage1D.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glTexStorage2D.html" title="function glTexStorage2D"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glTexParameter.html" title="function glTexParameter"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

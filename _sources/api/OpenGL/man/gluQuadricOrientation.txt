@@ -1,0 +1,91 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:28
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/gluQuadricOrientation.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `gluQuadricOrientation`
+--------------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Specify inside/outside orientation for quadrics
+
+.. c:function:: gluQuadricOrientation
+
+
+         :param quad:
+
+                  Specifies the quadrics object (created with :c:func:`gluNewQuadric`\ ).
+
+         :param orientation:
+
+                  Specifies the desired orientation. Valid values are
+                  ``GLU_OUTSIDE`` and
+                  ``GLU_INSIDE``\ .
+
+.. rubric:: Specification
+
+.. c:function:: void gluQuadricOrientation(GLUquadric*  quad, GLenum  orientation)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`gluNewQuadric`\ ,
+            :c:func:`gluQuadricDrawStyle`\ ,
+            :c:func:`gluQuadricNormals`\ ,
+            :c:func:`gluQuadricTexture`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`gluQuadricOrientation` specifies what kind of orientation is desired for quadrics rendered
+with *quad*\ . The *orientation* values are as follows:
+
+
+         ``GLU_OUTSIDE``
+
+
+               Quadrics are drawn with normals pointing outward (the initial value).
+
+
+         ``GLU_INSIDE``
+
+
+               Quadrics are drawn with normals pointing inward.
+
+
+Note that the interpretation of :strong:`outward` and :strong:`inward` depends on the
+quadric being drawn.
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'gluQuadricOrientation'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

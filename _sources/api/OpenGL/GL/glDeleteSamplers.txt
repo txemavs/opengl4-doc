@@ -1,0 +1,60 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glDeleteSamplers`
+---------------------------
+
+.. source file man4/glDeleteSamplers
+
+.. currentmodule:: OpenGL.GL
+
+Delete named sampler objects
+
+.. c:function:: glDeleteSamplers
+.. c:function:: void glDeleteSamplers(GLsizei  n, const GLuint *  ids)
+   :noindex: 
+
+
+   
+   :param n:
+      Specifies the number of sampler objects to be deleted.
+   
+   :param ids:
+      Specifies an array of sampler objects to be deleted.
+   
+
+.. seealso::
+
+   
+   :c:func:`glGenSamplers`, :c:func:`glBindSampler`, :c:func:`glDeleteSamplers`, :c:func:`glIsSampler`
+   
+.. rubric:: Description
+
+
+:c:func:`glDeleteSamplers` deletes *n* sampler objects named by the elements of the array *ids* . After a sampler object is deleted, its name is again unused. If a sampler object that is currently bound to a sampler unit is deleted, it is as though :c:func:`glBindSampler` is called with unit set to the unit the sampler is bound to and sampler zero. Unused names in samplers are silently ignored, as is the reserved name zero.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glIsSampler`
+
+**Errors:**
+
+   * ``GL_INVALID_VALUE`` is generated if *n* is negative.
+
+
+
+.. note::
+
+   * :c:func:`glDeleteSamplers` is available only if the GL version is 3.3 or higher.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

@@ -1,0 +1,53 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glResetMinmax`
+------------------------
+
+.. source file man/glResetMinmax
+
+.. currentmodule:: OpenGL.GL
+
+Reset minmax table entries to initial values
+
+.. c:function:: glResetMinmax
+.. c:function:: void glResetMinmax(GLenum  target)
+   :noindex: 
+
+
+   
+   :param target:
+      Must be ``GL_MINMAX``.
+   
+
+.. seealso::
+
+   
+   :c:func:`glMinmax`
+   
+.. rubric:: Description
+
+
+:c:func:`glResetMinmax` resets the elements of the current minmax table to their initial values: the ``maximum'' element receives the minimum possible component values, and the ``minimum'' element receives the maximum possible component values.
+
+
+**Errors:**
+
+   * ``GL_INVALID_ENUM`` is generated if *target* is not ``GL_MINMAX``.
+   * ``GL_INVALID_OPERATION`` is generated if :c:func:`glResetMinmax` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`.
+
+
+
+.. note::
+
+   * :c:func:`glResetMinmax` is present only if ``ARB_imaging`` is returned when :c:func:`glGetString` is called with an argument of ``GL_EXTENSIONS``.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

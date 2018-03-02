@@ -1,0 +1,204 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:26
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glGetMaterial.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glGetMaterial`
+------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Return material parameters
+
+.. c:function:: glGetMaterial
+
+
+         :param face:
+
+                  Specifies which of the two materials is being queried.
+                  ``GL_FRONT`` or ``GL_BACK`` are accepted,
+                  representing the front and back materials,
+                  respectively.
+
+         :param pname:
+
+                  Specifies the material parameter to return.
+                  ``GL_AMBIENT``\ ,
+                  ``GL_DIFFUSE``\ ,
+                  ``GL_SPECULAR``\ ,
+                  ``GL_EMISSION``\ ,
+                  ``GL_SHININESS``\ , and
+                  ``GL_COLOR_INDEXES``
+                  are accepted.
+
+         :param params:
+
+                  Returns the requested data.
+
+.. rubric:: Specification
+
+.. c:function:: void glGetMaterialfv(GLenum  face, GLenum  pname, GLfloat *  params, GLenum  face, GLenum  pname, GLint *  params)
+
+
+.. seealso::
+
+
+            :c:func:`glMaterial`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glGetMaterial` returns in *params* the value or values of parameter *pname*
+of material *face*\ . Six parameters are defined:
+
+
+         ``GL_AMBIENT``
+
+
+               *params* returns four integer or floating-point values representing the
+               ambient reflectance of the material.
+               Integer values,
+               when requested,
+               are linearly mapped from the internal floating-point representation
+               such that 1.0 maps to the most positive representable integer value,
+               and |EQUATION_1_| maps to the most negative representable integer value.
+               If the internal value is outside the range |EQUATION_2_|\ ,
+               the corresponding integer return value is undefined. The initial value is
+               (0.2, 0.2, 0.2, 1.0)
+
+
+         ``GL_DIFFUSE``
+
+
+               *params* returns four integer or floating-point values representing the
+               diffuse reflectance of the material.
+               Integer values,
+               when requested,
+               are linearly mapped from the internal floating-point representation
+               such that 1.0 maps to the most positive representable integer value,
+               and |EQUATION_3_| maps to the most negative representable integer value.
+               If the internal value is outside the range |EQUATION_4_|\ ,
+               the corresponding integer return value is undefined. The initial value is
+               (0.8, 0.8, 0.8, 1.0).
+
+
+         ``GL_SPECULAR``
+
+
+               *params* returns four integer or floating-point values representing the
+               specular reflectance of the material.
+               Integer values,
+               when requested,
+               are linearly mapped from the internal floating-point representation
+               such that 1.0 maps to the most positive representable integer value,
+               and |EQUATION_5_| maps to the most negative representable integer value.
+               If the internal value is outside the range |EQUATION_6_|\ ,
+               the corresponding integer return value is undefined. The initial value is
+               (0, 0, 0, 1).
+
+
+         ``GL_EMISSION``
+
+
+               *params* returns four integer or floating-point values representing the
+               emitted light intensity of the material.
+               Integer values,
+               when requested,
+               are linearly mapped from the internal floating-point representation
+               such that 1.0 maps to the most positive representable integer value,
+               and |EQUATION_7_| maps to the most negative representable integer value.
+               If the internal value is outside the range |EQUATION_8_|\ ,
+               the corresponding integer return value is undefined. The initial value is
+               (0, 0, 0, 1).
+
+
+         ``GL_SHININESS``
+
+
+               *params* returns one integer or floating-point value representing the
+               specular exponent of the material.
+               Integer values,
+               when requested,
+               are computed by rounding the internal floating-point value to the
+               nearest integer value. The initial value is 0.
+
+
+         ``GL_COLOR_INDEXES``
+
+
+               *params* returns three integer or floating-point values representing the
+               ambient, diffuse, and specular indices of the material.
+               These indices are used only for color index lighting.
+               (All the other parameters are used only for RGBA lighting.)
+               Integer values,
+               when requested,
+               are computed by rounding the internal floating-point values to the
+               nearest integer values.
+
+
+.. note::
+
+
+   If an error is generated,
+   no change is made to the contents of *params*\ .
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_ENUM`` is generated if *face* or *pname* is not an accepted value.
+* ``GL_INVALID_OPERATION`` is generated if :c:func:`glGetMaterial` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`\ .
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glGetMaterial'>
+
+.. role:: mml(raw)
+   :format: html
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mn>-1.0</mn></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"><mn>-1</mn><mn>1</mn></mfenced></math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mn>-1.0</mn></math>` 
+
+.. |EQUATION_4_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"><mn>-1</mn><mn>1</mn></mfenced></math>` 
+
+.. |EQUATION_5_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mn>-1.0</mn></math>` 
+
+.. |EQUATION_6_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"><mn>-1</mn><mn>1</mn></mfenced></math>` 
+
+.. |EQUATION_7_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mn>-1.0</mn></math>` 
+
+.. |EQUATION_8_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"><mn>-1</mn><mn>1</mn></mfenced></math>` 
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

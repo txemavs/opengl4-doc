@@ -1,0 +1,210 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glPolygonMode &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glPolygonOffset" href="glPolygonOffset.html" />
+    <link rel="prev" title="function glPointSize" href="glPointSize.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glPolygonOffset.html" title="function glPolygonOffset"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glPointSize.html" title="function glPointSize"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glpolygonmode">
+<h1>function <cite>glPolygonMode</cite><a class="headerlink" href="#function-glpolygonmode" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Select a polygon rasterization mode</p>
+<dl class="function">
+<dt id="glPolygonMode">
+<tt class="descname">glPolygonMode</tt><big>(</big><big>)</big><a class="headerlink" href="#glPolygonMode" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>face</strong> &#8211; Specifies the polygons that <em>mode</em> applies to.
+Must be <tt class="docutils literal"><span class="pre">GL_FRONT_AND_BACK</span></tt> for front- and back-facing polygons.</li>
+<li><strong>mode</strong> &#8211; Specifies how polygons will be rasterized.
+Accepted values are
+<tt class="docutils literal"><span class="pre">GL_POINT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LINE</span></tt>, and
+<tt class="docutils literal"><span class="pre">GL_FILL</span></tt>.
+The initial value is <tt class="docutils literal"><span class="pre">GL_FILL</span></tt> for both front- and back-facing polygons.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glPolygonMode</tt><big>(</big>GLenum <em>&nbsp;face</em>, GLenum <em>&nbsp;mode</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glLineWidth.html#glLineWidth" title="glLineWidth"><tt class="xref c c-func docutils literal"><span class="pre">glLineWidth()</span></tt></a>,
+<a class="reference internal" href="glPointSize.html#glPointSize" title="glPointSize"><tt class="xref c c-func docutils literal"><span class="pre">glPointSize()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glPolygonMode" title="glPolygonMode"><tt class="xref c c-func docutils literal"><span class="pre">glPolygonMode()</span></tt></a> controls the interpretation of polygons for rasterization.
+<em>face</em> describes which polygons <em>mode</em> applies to:
+both front and back-facing polygons (<tt class="docutils literal"><span class="pre">GL_FRONT_AND_BACK</span></tt>).
+The polygon mode affects only the final rasterization of polygons.
+In particular,
+a polygon&#8217;s vertices are lit and
+the polygon is clipped and possibly culled before these modes are applied.</p>
+<p>Three modes are defined and can be specified in <em>mode</em> :</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">GL_POINT</span></tt></p>
+<blockquote>
+<div>Polygon vertices that are marked as the start of a boundary edge
+are drawn as points.
+Point attributes such as
+<tt class="docutils literal"><span class="pre">GL_POINT_SIZE</span></tt> and
+<tt class="docutils literal"><span class="pre">GL_POINT_SMOOTH</span></tt> control
+the rasterization of the points.
+Polygon rasterization attributes other than <tt class="docutils literal"><span class="pre">GL_POLYGON_MODE</span></tt> have no effect.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_LINE</span></tt></p>
+<blockquote>
+<div>Boundary edges of the polygon are drawn as line segments.
+Line attributes such as
+<tt class="docutils literal"><span class="pre">GL_LINE_WIDTH</span></tt> and
+<tt class="docutils literal"><span class="pre">GL_LINE_SMOOTH</span></tt> control
+the rasterization of the lines.
+Polygon rasterization attributes other than <tt class="docutils literal"><span class="pre">GL_POLYGON_MODE</span></tt> have no effect.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_FILL</span></tt></p>
+<blockquote>
+<div>The interior of the polygon is filled.
+Polygon attributes such as <tt class="docutils literal"><span class="pre">GL_POLYGON_SMOOTH</span></tt> control the rasterization of the polygon.</div></blockquote>
+</div></blockquote>
+<p class="rubric">Examples</p>
+<p>To draw a surface with outlined polygons,
+call</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="n">glPolygonMode</span><span class="p">(</span><span class="n">GL_FRONT_AND_BACK</span><span class="p">,</span> <span class="n">GL_LINE</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Vertices are marked as boundary or nonboundary with an edge flag.
+Edge flags are generated internally by the GL when it decomposes
+triangle stips and fans.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if either <em>face</em> or <em>mode</em> is not an accepted value.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_POLYGON_MODE</span></tt></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glPointSize.html"
+                        title="previous chapter">function <cite>glPointSize</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glPolygonOffset.html"
+                        title="next chapter">function <cite>glPolygonOffset</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glPolygonMode.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glPolygonOffset.html" title="function glPolygonOffset"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glPointSize.html" title="function glPointSize"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

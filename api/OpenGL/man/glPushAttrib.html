@@ -1,0 +1,689 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glPushAttrib &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function glPushClientAttrib" href="glPushClientAttrib.html" />
+    <link rel="prev" title="function glPrioritizeTextures" href="glPrioritizeTextures.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glPushClientAttrib.html" title="function glPushClientAttrib"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glPrioritizeTextures.html" title="function glPrioritizeTextures"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glpushattrib">
+<h1>function <cite>glPushAttrib</cite><a class="headerlink" href="#function-glpushattrib" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Push and pop the server attribute stack</p>
+<dl class="function">
+<dt id="glPushAttrib">
+<tt class="descname">glPushAttrib</tt><big>(</big><big>)</big><a class="headerlink" href="#glPushAttrib" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>mask</strong> &#8211; Specifies a mask that indicates which attributes to save. Values for
+<em>mask</em> are listed below.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glPushAttrib</tt><big>(</big>GLbitfield <em>&nbsp;mask</em><big>)</big></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="glPopAttrib">
+void <tt class="descname">glPopAttrib</tt><big>(</big>void<big>)</big><a class="headerlink" href="#glPopAttrib" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a>,
+<a class="reference internal" href="glGetClipPlane.html#glGetClipPlane" title="glGetClipPlane"><tt class="xref c c-func docutils literal"><span class="pre">glGetClipPlane()</span></tt></a>,
+<a class="reference internal" href="../man4/glGetError.html#glGetError" title="glGetError"><tt class="xref c c-func docutils literal"><span class="pre">glGetError()</span></tt></a>,
+<a class="reference internal" href="glGetLight.html#glGetLight" title="glGetLight"><tt class="xref c c-func docutils literal"><span class="pre">glGetLight()</span></tt></a>,
+<a class="reference internal" href="glGetMap.html#glGetMap" title="glGetMap"><tt class="xref c c-func docutils literal"><span class="pre">glGetMap()</span></tt></a>,
+<a class="reference internal" href="glGetMaterial.html#glGetMaterial" title="glGetMaterial"><tt class="xref c c-func docutils literal"><span class="pre">glGetMaterial()</span></tt></a>,
+<a class="reference internal" href="glGetPixelMap.html#glGetPixelMap" title="glGetPixelMap"><tt class="xref c c-func docutils literal"><span class="pre">glGetPixelMap()</span></tt></a>,
+<a class="reference internal" href="glGetPolygonStipple.html#glGetPolygonStipple" title="glGetPolygonStipple"><tt class="xref c c-func docutils literal"><span class="pre">glGetPolygonStipple()</span></tt></a>,
+<a class="reference internal" href="../man4/glGetString.html#glGetString" title="glGetString"><tt class="xref c c-func docutils literal"><span class="pre">glGetString()</span></tt></a>,
+<a class="reference internal" href="glGetTexEnv.html#glGetTexEnv" title="glGetTexEnv"><tt class="xref c c-func docutils literal"><span class="pre">glGetTexEnv()</span></tt></a>,
+<a class="reference internal" href="glGetTexGen.html#glGetTexGen" title="glGetTexGen"><tt class="xref c c-func docutils literal"><span class="pre">glGetTexGen()</span></tt></a>,
+<a class="reference internal" href="../man4/glGetTexImage.html#glGetTexImage" title="glGetTexImage"><tt class="xref c c-func docutils literal"><span class="pre">glGetTexImage()</span></tt></a>,
+<a class="reference internal" href="../man4/glGetTexLevelParameter.html#glGetTexLevelParameter" title="glGetTexLevelParameter"><tt class="xref c c-func docutils literal"><span class="pre">glGetTexLevelParameter()</span></tt></a>,
+<a class="reference internal" href="../man4/glGetTexParameter.html#glGetTexParameter" title="glGetTexParameter"><tt class="xref c c-func docutils literal"><span class="pre">glGetTexParameter()</span></tt></a>,
+<a class="reference internal" href="../man4/glIsEnabled.html#glIsEnabled" title="glIsEnabled"><tt class="xref c c-func docutils literal"><span class="pre">glIsEnabled()</span></tt></a>,
+<a class="reference internal" href="glPushClientAttrib.html#glPushClientAttrib" title="glPushClientAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glPushClientAttrib()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glPushAttrib" title="glPushAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glPushAttrib()</span></tt></a> takes one argument,
+a mask that indicates which groups of state variables
+to save on the attribute stack.
+Symbolic constants are used to set bits in the mask.
+<em>mask</em>
+is typically constructed by specifying the bitwise-or of several
+of these constants together.
+The special mask
+<tt class="docutils literal"><span class="pre">GL_ALL_ATTRIB_BITS</span></tt>
+can be used to save all stackable states.</p>
+<p>The symbolic mask constants and their associated GL state are as follows
+(the second column lists which attributes are saved):</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_ACCUM_BUFFER_BIT</span></tt></td>
+<td>Accumulation buffer clear value</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_COLOR_BUFFER_BIT</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_ALPHA_TEST</span></tt> enable bit</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>Alpha test function and reference value</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_BLEND</span></tt> enable bit</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>Blending source and destination functions</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>Constant blend color</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>Blending equation</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_DITHER</span></tt> enable bit</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_DRAW_BUFFER</span></tt> setting</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_COLOR_LOGIC_OP</span></tt> enable bit</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_INDEX_LOGIC_OP</span></tt> enable bit</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>Logic op function</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>Color mode and index mode clear values</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>Color mode and index mode writemasks</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_CURRENT_BIT</span></tt></td>
+<td>Current RGBA color</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>Current color index</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>Current normal vector</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>Current texture coordinates</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>Current raster position</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_CURRENT_RASTER_POSITION_VALID</span></tt> flag</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>RGBA color associated with current raster position</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>Color index associated with current raster position</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>Texture coordinates associated with current raster position</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_EDGE_FLAG</span></tt> flag</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_DEPTH_BUFFER_BIT</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_DEPTH_TEST</span></tt> enable bit</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>Depth buffer test function</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>Depth buffer clear value</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_DEPTH_WRITEMASK</span></tt> enable bit</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_ENABLE_BIT</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_ALPHA_TEST</span></tt> flag</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_AUTO_NORMAL</span></tt> flag</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_BLEND</span></tt> flag</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>Enable bits for the user-definable clipping planes</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_COLOR_MATERIAL</span></tt></td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_CULL_FACE</span></tt> flag</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_DEPTH_TEST</span></tt> flag</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_DITHER</span></tt> flag</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_FOG</span></tt> flag</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_LIGHT</span></tt> <strong>i</strong> where <tt class="docutils literal"><span class="pre">0</span></tt> &lt;= <strong>i</strong> &lt; <tt class="docutils literal"><span class="pre">GL_MAX_LIGHTS</span></tt></td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_LIGHTING</span></tt> flag</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_LINE_SMOOTH</span></tt> flag</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_LINE_STIPPLE</span></tt> flag</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_COLOR_LOGIC_OP</span></tt> flag</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_INDEX_LOGIC_OP</span></tt> flag</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_MAP1_</span></tt> <strong>x</strong> where <strong>x</strong> is a map type</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_MAP2_</span></tt> <strong>x</strong> where <strong>x</strong> is a map type</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_MULTISAMPLE</span></tt> flag</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_NORMALIZE</span></tt> flag</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_POINT_SMOOTH</span></tt> flag</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_POLYGON_OFFSET_LINE</span></tt> flag</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_POLYGON_OFFSET_FILL</span></tt> flag</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_POLYGON_OFFSET_POINT</span></tt> flag</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_POLYGON_SMOOTH</span></tt> flag</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_POLYGON_STIPPLE</span></tt> flag</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_SAMPLE_ALPHA_TO_COVERAGE</span></tt> flag</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_SAMPLE_ALPHA_TO_ONE</span></tt> flag</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_SAMPLE_COVERAGE</span></tt> flag</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_SCISSOR_TEST</span></tt> flag</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_STENCIL_TEST</span></tt> flag</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_TEXTURE_1D</span></tt> flag</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_TEXTURE_2D</span></tt> flag</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_TEXTURE_3D</span></tt> flag</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>Flags <tt class="docutils literal"><span class="pre">GL_TEXTURE_GEN_</span></tt> <strong>x</strong> where <strong>x</strong> is S, T, R, or Q</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_EVAL_BIT</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_MAP1_</span></tt> <strong>x</strong> enable bits, where <strong>x</strong> is a map type</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_MAP2_</span></tt> <strong>x</strong> enable bits, where <strong>x</strong> is a map type</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>1D grid endpoints and divisions</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>2D grid endpoints and divisions</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_AUTO_NORMAL</span></tt> enable bit</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_FOG_BIT</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_FOG</span></tt> enable bit</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>Fog color</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>Fog density</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>Linear fog start</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>Linear fog end</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>Fog index</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_FOG_MODE</span></tt> value</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_HINT_BIT</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_PERSPECTIVE_CORRECTION_HINT</span></tt> setting</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_POINT_SMOOTH_HINT</span></tt> setting</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_LINE_SMOOTH_HINT</span></tt> setting</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_POLYGON_SMOOTH_HINT</span></tt> setting</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_FOG_HINT</span></tt> setting</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_GENERATE_MIPMAP_HINT</span></tt> setting</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_TEXTURE_COMPRESSION_HINT</span></tt> setting</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_LIGHTING_BIT</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_COLOR_MATERIAL</span></tt> enable bit</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_COLOR_MATERIAL_FACE</span></tt> value</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>Color material parameters that are tracking the current color</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>Ambient scene color</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_LIGHT_MODEL_LOCAL_VIEWER</span></tt> value</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_LIGHT_MODEL_TWO_SIDE</span></tt> setting</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_LIGHTING</span></tt> enable bit</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>Enable bit for each light</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>Ambient, diffuse, and specular intensity for each light</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>Direction, position, exponent, and cutoff angle for each light</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>Constant, linear, and quadratic attenuation factors for each light</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>Ambient, diffuse, specular, and emissive color for each material</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>Ambient, diffuse, and specular color indices for each material</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>Specular exponent for each material</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_SHADE_MODEL</span></tt> setting</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_LINE_BIT</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_LINE_SMOOTH</span></tt> flag</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_LINE_STIPPLE</span></tt> enable bit</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>Line stipple pattern and repeat counter</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>Line width</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_LIST_BIT</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_LIST_BASE</span></tt> setting</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_MULTISAMPLE_BIT</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_MULTISAMPLE</span></tt> flag</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_SAMPLE_ALPHA_TO_COVERAGE</span></tt> flag</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_SAMPLE_ALPHA_TO_ONE</span></tt> flag</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_SAMPLE_COVERAGE</span></tt> flag</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_SAMPLE_COVERAGE_VALUE</span></tt> value</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_SAMPLE_COVERAGE_INVERT</span></tt> value</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_PIXEL_MODE_BIT</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RED_BIAS</span></tt> and <tt class="docutils literal"><span class="pre">GL_RED_SCALE</span></tt> settings</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_GREEN_BIAS</span></tt> and <tt class="docutils literal"><span class="pre">GL_GREEN_SCALE</span></tt> values</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_BLUE_BIAS</span></tt> and <tt class="docutils literal"><span class="pre">GL_BLUE_SCALE</span></tt></td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_ALPHA_BIAS</span></tt> and <tt class="docutils literal"><span class="pre">GL_ALPHA_SCALE</span></tt></td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_DEPTH_BIAS</span></tt> and <tt class="docutils literal"><span class="pre">GL_DEPTH_SCALE</span></tt></td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_INDEX_OFFSET</span></tt> and <tt class="docutils literal"><span class="pre">GL_INDEX_SHIFT</span></tt> values</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_MAP_COLOR</span></tt> and <tt class="docutils literal"><span class="pre">GL_MAP_STENCIL</span></tt> flags</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_ZOOM_X</span></tt> and <tt class="docutils literal"><span class="pre">GL_ZOOM_Y</span></tt> factors</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_READ_BUFFER</span></tt> setting</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_POINT_BIT</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_POINT_SMOOTH</span></tt> flag</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>Point size</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_POLYGON_BIT</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_CULL_FACE</span></tt> enable bit</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_CULL_FACE_MODE</span></tt> value</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_FRONT_FACE</span></tt> indicator</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_POLYGON_MODE</span></tt> setting</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_POLYGON_SMOOTH</span></tt> flag</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_POLYGON_STIPPLE</span></tt> enable bit</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_POLYGON_OFFSET_FILL</span></tt> flag</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_POLYGON_OFFSET_LINE</span></tt> flag</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_POLYGON_OFFSET_POINT</span></tt> flag</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_POLYGON_OFFSET_FACTOR</span></tt></td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_POLYGON_OFFSET_UNITS</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_POLYGON_STIPPLE_BIT</span></tt></td>
+<td>Polygon stipple image</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_SCISSOR_BIT</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_SCISSOR_TEST</span></tt> flag</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>Scissor box</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_STENCIL_BUFFER_BIT</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_STENCIL_TEST</span></tt> enable bit</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>Stencil function and reference value</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>Stencil value mask</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>Stencil fail, pass, and depth buffer pass actions</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>Stencil buffer clear value</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>Stencil buffer writemask</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_TEXTURE_BIT</span></tt></td>
+<td>Enable bits for the four texture coordinates</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>Border color for each texture image</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>Minification function for each texture image</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>Magnification function for each texture image</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>Texture coordinates and wrap mode for each texture image</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>Color and mode for each texture environment</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>Enable bits <tt class="docutils literal"><span class="pre">GL_TEXTURE_GEN_</span></tt> <strong>x</strong>, <strong>x</strong> is S, T, R, and Q</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_TEXTURE_GEN_MODE</span></tt> setting for S, T, R, and Q</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><a class="reference internal" href="glTexGen.html#glTexGen" title="glTexGen"><tt class="xref c c-func docutils literal"><span class="pre">glTexGen()</span></tt></a> plane equations for S, T, R, and Q</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>Current texture bindings (for example, <tt class="docutils literal"><span class="pre">GL_TEXTURE_BINDING_2D</span></tt>)</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_TRANSFORM_BIT</span></tt></td>
+<td>Coefficients of the six clipping planes</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>Enable bits for the user-definable clipping planes</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_MATRIX_MODE</span></tt> value</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_NORMALIZE</span></tt> flag</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_RESCALE_NORMAL</span></tt> flag</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_VIEWPORT_BIT</span></tt></td>
+<td>Depth range (near and far)</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>Viewport origin and extent</td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference internal" href="#glPopAttrib" title="glPopAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glPopAttrib()</span></tt></a> restores the values of the state variables saved with the last
+<a class="reference internal" href="#glPushAttrib" title="glPushAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glPushAttrib()</span></tt></a> command.
+Those not saved are left unchanged.</p>
+<p>It is an error to push attributes onto a full stack
+or to pop attributes off an empty stack.
+In either case, the error flag is set
+and no other change is made to GL state.</p>
+<p>Initially, the attribute stack is empty.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Not all values for GL state can be saved on the attribute stack.
+For example,
+render mode state,
+and select and feedback state cannot be saved.
+Client state must be saved with
+<a class="reference internal" href="glPushClientAttrib.html#glPushClientAttrib" title="glPushClientAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glPushClientAttrib()</span></tt></a>.</p>
+<p>The depth of the attribute stack depends on the implementation,
+but it must be at least 16.</p>
+<p class="last">For OpenGL versions 1.3 and greater, or when the <tt class="docutils literal"><span class="pre">ARB_multitexture</span></tt> extension is supported, pushing and
+popping texture state applies to all supported texture units.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_STACK_OVERFLOW</span></tt> is generated if <a class="reference internal" href="#glPushAttrib" title="glPushAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glPushAttrib()</span></tt></a> is called while the attribute stack is full.</li>
+<li><tt class="docutils literal"><span class="pre">GL_STACK_UNDERFLOW</span></tt> is generated if <a class="reference internal" href="#glPopAttrib" title="glPopAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glPopAttrib()</span></tt></a> is called while the attribute stack is empty.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <a class="reference internal" href="#glPushAttrib" title="glPushAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glPushAttrib()</span></tt></a> or <a class="reference internal" href="#glPopAttrib" title="glPopAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glPopAttrib()</span></tt></a> is executed between the execution of <a class="reference internal" href="glBegin.html#glBegin" title="glBegin"><tt class="xref c c-func docutils literal"><span class="pre">glBegin()</span></tt></a> and the corresponding execution of <a class="reference internal" href="glBegin.html#glEnd" title="glEnd"><tt class="xref c c-func docutils literal"><span class="pre">glEnd()</span></tt></a>.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_ATTRIB_STACK_DEPTH</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_MAX_ATTRIB_STACK_DEPTH</span></tt></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glPrioritizeTextures.html"
+                        title="previous chapter">function <cite>glPrioritizeTextures</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glPushClientAttrib.html"
+                        title="next chapter">function <cite>glPushClientAttrib</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/glPushAttrib.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glPushClientAttrib.html" title="function glPushClientAttrib"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glPrioritizeTextures.html" title="function glPrioritizeTextures"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

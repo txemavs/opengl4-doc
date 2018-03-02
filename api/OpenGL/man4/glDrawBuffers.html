@@ -1,0 +1,237 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glDrawBuffers &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glDrawElements" href="glDrawElements.html" />
+    <link rel="prev" title="function glDrawBuffer" href="glDrawBuffer.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glDrawElements.html" title="function glDrawElements"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glDrawBuffer.html" title="function glDrawBuffer"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-gldrawbuffers">
+<h1>function <cite>glDrawBuffers</cite><a class="headerlink" href="#function-gldrawbuffers" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Specifies a list of color buffers to be drawn into</p>
+<dl class="function">
+<dt id="glDrawBuffers">
+<tt class="descname">glDrawBuffers</tt><big>(</big><big>)</big><a class="headerlink" href="#glDrawBuffers" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>n</strong> &#8211; Specifies the number of buffers in
+<em>bufs</em>.</li>
+<li><strong>bufs</strong> &#8211; Points to an array of symbolic constants
+specifying the buffers into which fragment colors or
+data values will be written.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glDrawBuffers</tt><big>(</big>GLsizei <em>&nbsp;n</em>, const GLenum *<em>&nbsp;bufs</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glBlendFunc.html#glBlendFunc" title="glBlendFunc"><tt class="xref c c-func docutils literal"><span class="pre">glBlendFunc()</span></tt></a>,
+<a class="reference internal" href="glColorMask.html#glColorMask" title="glColorMask"><tt class="xref c c-func docutils literal"><span class="pre">glColorMask()</span></tt></a>,
+<a class="reference internal" href="#glDrawBuffers" title="glDrawBuffers"><tt class="xref c c-func docutils literal"><span class="pre">glDrawBuffers()</span></tt></a>,
+<a class="reference internal" href="glLogicOp.html#glLogicOp" title="glLogicOp"><tt class="xref c c-func docutils literal"><span class="pre">glLogicOp()</span></tt></a>,
+<a class="reference internal" href="glReadBuffer.html#glReadBuffer" title="glReadBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glReadBuffer()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glDrawBuffers" title="glDrawBuffers"><tt class="xref c c-func docutils literal"><span class="pre">glDrawBuffers()</span></tt></a> defines an array of
+buffers into which outputs from the fragment shader data will
+be written. If a fragment shader writes a value
+to one or more user defined output
+variables, then the value of each variable will be written into the
+buffer specified at a location within <em>bufs</em>
+corresponding to the location assigned to that user defined output.
+The draw buffer used for user defined outputs assigned to locations
+greater than or equal to <em>n</em> is implicitly set
+to <tt class="docutils literal"><span class="pre">GL_NONE</span></tt> and any data written to such an output
+is discarded.</p>
+<p>The symbolic constants contained in
+<em>bufs</em> may be any of the following:</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">GL_NONE</span></tt></p>
+<blockquote>
+<div>The fragment shader output value is not written into
+any color buffer.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_FRONT_LEFT</span></tt></p>
+<blockquote>
+<div>The fragment shader output value is written into the
+front left color buffer.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_FRONT_RIGHT</span></tt></p>
+<blockquote>
+<div>The fragment shader output value is written into the
+front right color buffer.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_BACK_LEFT</span></tt></p>
+<blockquote>
+<div>The fragment shader output value is written into the
+back left color buffer.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_BACK_RIGHT</span></tt></p>
+<blockquote>
+<div>The fragment shader output value is written into the
+back right color buffer.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_COLOR_ATTACHMENT</span> <span class="pre">n</span></tt></p>
+<blockquote>
+<div>The fragment shader output value is written into the
+<strong>n</strong> th color attachment of the current framebuffer.
+<strong>n</strong> may range from 0 to the value of
+<tt class="docutils literal"><span class="pre">GL_MAX_COLOR_ATTACHMENTS</span></tt>.</div></blockquote>
+</div></blockquote>
+<p>Except for <tt class="docutils literal"><span class="pre">GL_NONE</span></tt>, the preceding
+symbolic constants may not appear more than once in
+<em>bufs</em>. The maximum number of draw buffers
+supported is implementation dependent and can be queried by
+calling
+<a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a>
+with the argument <tt class="docutils literal"><span class="pre">GL_MAX_DRAW_BUFFERS</span></tt>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The symbolic constants <tt class="docutils literal"><span class="pre">GL_FRONT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_BACK</span></tt>, <tt class="docutils literal"><span class="pre">GL_LEFT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RIGHT</span></tt>, and
+<tt class="docutils literal"><span class="pre">GL_FRONT_AND_BACK</span></tt> are not allowed in the
+<em>bufs</em> array since they may refer to
+multiple buffers.</p>
+<p class="last">If a fragment shader does not write to a user defined output variable,
+the values of the fragment
+colors following shader execution are undefined. For each
+fragment generated in this situation, a different value may be
+written into each of the buffers specified by
+<em>bufs</em>.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if one of the values in <em>bufs</em> is not an accepted value.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if the GL is bound to the default framebuffer and one or more of the values in <em>bufs</em> is one of the <tt class="docutils literal"><span class="pre">GL_COLOR_ATTACHMENT</span> <span class="pre">n</span></tt> tokens.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if the GL is bound to a framebuffer object and one or more of the values in <em>bufs</em> is anything other than <tt class="docutils literal"><span class="pre">GL_NONE</span></tt> or one of the <tt class="docutils literal"><span class="pre">GL_COLOR_ATTACHMENTS</span> <span class="pre">n</span></tt> tokens.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>n</em> is less than 0.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if a symbolic constant other than <tt class="docutils literal"><span class="pre">GL_NONE</span></tt> appears more than once in <em>bufs</em>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if any of the entries in <em>bufs</em> (other than <tt class="docutils literal"><span class="pre">GL_NONE</span></tt> ) indicates a color buffer that does not exist in the current GL context.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>n</em> is greater than <tt class="docutils literal"><span class="pre">GL_MAX_DRAW_BUFFERS</span></tt>.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_MAX_DRAW_BUFFERS</span></tt></li>
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_DRAW_BUFFER</span> <span class="pre">i</span></tt> where <tt class="docutils literal"><span class="pre">:strong:`i`</span></tt> indicates the number of the draw buffer whose value is to be queried</li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)2003-2005 3Dlabs Inc. Ltd. Open Publication License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glDrawBuffer.html"
+                        title="previous chapter">function <cite>glDrawBuffer</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glDrawElements.html"
+                        title="next chapter">function <cite>glDrawElements</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glDrawBuffers.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glDrawElements.html" title="function glDrawElements"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glDrawBuffer.html" title="function glDrawBuffer"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

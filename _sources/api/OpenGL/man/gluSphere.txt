@@ -1,0 +1,111 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:28
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/gluSphere.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `gluSphere`
+--------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Draw a sphere
+
+.. c:function:: gluSphere
+
+
+         :param quad:
+
+                  Specifies the quadrics object (created with :c:func:`gluNewQuadric`\ ).
+
+         :param radius:
+
+                  Specifies the radius of the sphere.
+
+         :param slices:
+
+                  Specifies the number of subdivisions around the :strong:`z` axis
+                  (similar to lines of longitude).
+
+         :param stacks:
+
+                  Specifies the number of subdivisions along the :strong:`z` axis
+                  (similar to lines of
+                  latitude).
+
+.. rubric:: Specification
+
+.. c:function:: void gluSphere(GLUquadric*  quad, GLdouble  radius, GLint  slices, GLint  stacks)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`gluCylinder`\ ,
+            :c:func:`gluDisk`\ ,
+            :c:func:`gluNewQuadric`\ ,
+            :c:func:`gluPartialDisk`\ ,
+            :c:func:`gluQuadricOrientation`\ ,
+            :c:func:`gluQuadricTexture`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`gluSphere` draws a sphere of the given radius centered around the origin. The
+sphere is subdivided around the :strong:`z` axis into slices and along the
+:strong:`z` axis
+into stacks (similar to lines of longitude and latitude).
+
+
+If the orientation is set to ``GLU_OUTSIDE``
+(with :c:func:`gluQuadricOrientation`\ ), then any normals generated
+point away from the center of the sphere.
+Otherwise, they point toward the center of the sphere.
+
+
+If texturing is turned on (with :c:func:`gluQuadricTexture`\ ), then texture
+coordinates are
+generated so that :strong:`t` ranges from 0.0 at |EQUATION_1_| to 1.0 at |EQUATION_2_| (\ :strong:`t` increases linearly along longitudinal
+lines),
+and :strong:`s` ranges from 0.0 at the + :strong:`y` axis, to 0.25 at the
++ :strong:`x` axis,
+to 0.5 at the \- :strong:`y` axis, to 0.75 at the \- :strong:`x` axis, and back to 1.0
+at the + :strong:`y` axis.
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'gluSphere'>
+
+.. role:: mml(raw)
+   :format: html
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">z</mi><mo>=</mo><mrow><mo>-</mo><mi mathvariant="italic">radius</mi></mrow></mrow></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">z</mi><mo>=</mo><mi mathvariant="italic">radius</mi></mrow></math>` 
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

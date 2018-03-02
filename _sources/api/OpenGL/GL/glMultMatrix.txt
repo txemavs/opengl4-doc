@@ -1,0 +1,90 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glMultMatrix`
+-----------------------
+
+.. source file man/glMultMatrix
+
+.. currentmodule:: OpenGL.GL
+
+Multiply the current matrix with the specified matrix
+
+.. c:function:: glMultMatrix
+.. c:function:: void glMultMatrixd(const GLdouble *  m, const GLfloat *  m)
+
+
+   
+   :param m:
+      Points to 16 consecutive values that are used as the elements of a |EQUATION_1_| column-major matrix.
+   
+
+.. seealso::
+
+   
+   :c:func:`glLoadIdentity`, :c:func:`glLoadMatrix`, :c:func:`glLoadTransposeMatrix`, :c:func:`glMatrixMode`, :c:func:`glMultTransposeMatrix`, :c:func:`glPushMatrix`
+   
+.. rubric:: Description
+
+
+:c:func:`glMultMatrix` multiplies the current matrix with the one specified using *m* , and replaces the current matrix with the product.
+
+The current matrix is determined by the current matrix mode (see :c:func:`glMatrixMode`). It is either the projection matrix, modelview matrix, or the texture matrix.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGet` with argument ``GL_MATRIX_MODE``
+   * :c:func:`glGet` with argument ``GL_COLOR_MATRIX``
+   * :c:func:`glGet` with argument ``GL_MODELVIEW_MATRIX``
+   * :c:func:`glGet` with argument ``GL_PROJECTION_MATRIX``
+   * :c:func:`glGet` with argument ``GL_TEXTURE_MATRIX``
+
+**Errors:**
+
+   * ``GL_INVALID_OPERATION`` is generated if :c:func:`glMultMatrix` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`.
+
+
+
+.. note::
+
+   * While the elements of the matrix may be specified with single or double precision, the GL may store or operate on these values in less-than-single precision.
+   * In many computer languages, |EQUATION_11_| arrays are represented in row-major order. The transformations just described represent these matrices in column-major order. The order of the multiplication is important. For example, if the current transformation is a rotation, and :c:func:`glMultMatrix` is called with a translation matrix, the translation is done directly on the coordinates to be transformed, while the rotation is done on the results of that translation.
+
+
+
+.. role:: mml(raw)
+   :format: html
+
+
+
+.. |EQUATION_10_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mn>4</mn> <mo>&times;</mo> <mn>1</mn> </mrow> </math>` 
+
+.. |EQUATION_11_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mn>4</mn> <mo>&times;</mo> <mn>4</mn> </mrow> </math>` 
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mn>4</mn> <mo>&times;</mo> <mn>4</mn> </mrow> </math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">C</mi></math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mi mathvariant="italic">v</mi> <mo>=</mo> <mfenced open="(" close=")"> <mrow> <mi mathvariant="italic">v</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>0</mn> </mfenced> </mrow> <mrow> <mi mathvariant="italic">v</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>1</mn> </mfenced> </mrow> <mrow> <mi mathvariant="italic">v</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>2</mn> </mfenced> </mrow> <mrow> <mi mathvariant="italic">v</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>3</mn> </mfenced> </mrow> </mfenced> </mrow> </math>` 
+
+.. |EQUATION_4_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mi mathvariant="italic">C</mi> <mo>&times;</mo> <mi mathvariant="italic">v</mi> </mrow> </math>` 
+
+.. |EQUATION_5_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mfenced open="(" close=")"> <mtable> <mtr> <mtd> <mrow> <mi mathvariant="italic">c</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>0</mn> </mfenced> </mrow> </mtd> <mtd> <mrow> <mi mathvariant="italic">c</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>4</mn> </mfenced> </mrow> </mtd> <mtd> <mrow> <mi mathvariant="italic">c</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>8</mn> </mfenced> </mrow> </mtd> <mtd> <mrow> <mi mathvariant="italic">c</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>12</mn> </mfenced> </mrow> </mtd> </mtr> <mtr> <mtd> <mrow> <mi mathvariant="italic">c</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>1</mn> </mfenced> </mrow> </mtd> <mtd> <mrow> <mi mathvariant="italic">c</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>5</mn> </mfenced> </mrow> </mtd> <mtd> <mrow> <mi mathvariant="italic">c</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>9</mn> </mfenced> </mrow> </mtd> <mtd> <mrow> <mi mathvariant="italic">c</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>13</mn> </mfenced> </mrow> </mtd> </mtr> <mtr> <mtd> <mrow> <mi mathvariant="italic">c</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>2</mn> </mfenced> </mrow> </mtd> <mtd> <mrow> <mi mathvariant="italic">c</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>6</mn> </mfenced> </mrow> </mtd> <mtd> <mrow> <mi mathvariant="italic">c</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>10</mn> </mfenced> </mrow> </mtd> <mtd> <mrow> <mi mathvariant="italic">c</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>14</mn> </mfenced> </mrow> </mtd> </mtr> <mtr> <mtd> <mrow> <mi mathvariant="italic">c</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>3</mn> </mfenced> </mrow> </mtd> <mtd> <mrow> <mi mathvariant="italic">c</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>7</mn> </mfenced> </mrow> </mtd> <mtd> <mrow> <mi mathvariant="italic">c</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>11</mn> </mfenced> </mrow> </mtd> <mtd> <mrow> <mi mathvariant="italic">c</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>15</mn> </mfenced> </mrow> </mtd> </mtr> </mtable> </mfenced> <mo>&times;</mo> <mfenced open="(" close=")"> <mtable> <mtr> <mtd> <mrow> <mi mathvariant="italic">v</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>0</mn> </mfenced> </mrow> </mtd> </mtr> <mtr> <mtd> <mrow> <mi mathvariant="italic">v</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>1</mn> </mfenced> </mrow> </mtd> </mtr> <mtr> <mtd> <mrow> <mi mathvariant="italic">v</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>2</mn> </mfenced> </mrow> </mtd> </mtr> <mtr> <mtd> <mrow> <mi mathvariant="italic">v</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>3</mn> </mfenced> </mrow> </mtd> </mtr> </mtable> </mfenced> </mrow> </math>` 
+
+.. |EQUATION_6_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mi mathvariant="italic">m</mi> <mo>=</mo> <mfenced open="{" close="}"> <mrow> <mi mathvariant="italic">m</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>0</mn> </mfenced> </mrow> <mrow> <mi mathvariant="italic">m</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>1</mn> </mfenced> </mrow> <mi mathvariant="italic">...</mi> <mrow> <mi mathvariant="italic">m</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>15</mn> </mfenced> </mrow> </mfenced> </mrow> </math>` 
+
+.. |EQUATION_7_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mfenced open="(" close=")"> <mrow> <mi mathvariant="italic">C</mi> <mo>&times;</mo> <mi mathvariant="italic">M</mi> </mrow> </mfenced> <mo>&times;</mo> <mi mathvariant="italic">v</mi> </mrow> </math>` 
+
+.. |EQUATION_8_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mfenced open="(" close=")"> <mtable> <mtr> <mtd> <mrow> <mi mathvariant="italic">c</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>0</mn> </mfenced> </mrow> </mtd> <mtd> <mrow> <mi mathvariant="italic">c</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>4</mn> </mfenced> </mrow> </mtd> <mtd> <mrow> <mi mathvariant="italic">c</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>8</mn> </mfenced> </mrow> </mtd> <mtd> <mrow> <mi mathvariant="italic">c</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>12</mn> </mfenced> </mrow> </mtd> </mtr> <mtr> <mtd> <mrow> <mi mathvariant="italic">c</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>1</mn> </mfenced> </mrow> </mtd> <mtd> <mrow> <mi mathvariant="italic">c</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>5</mn> </mfenced> </mrow> </mtd> <mtd> <mrow> <mi mathvariant="italic">c</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>9</mn> </mfenced> </mrow> </mtd> <mtd> <mrow> <mi mathvariant="italic">c</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>13</mn> </mfenced> </mrow> </mtd> </mtr> <mtr> <mtd> <mrow> <mi mathvariant="italic">c</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>2</mn> </mfenced> </mrow> </mtd> <mtd> <mrow> <mi mathvariant="italic">c</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>6</mn> </mfenced> </mrow> </mtd> <mtd> <mrow> <mi mathvariant="italic">c</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>10</mn> </mfenced> </mrow> </mtd> <mtd> <mrow> <mi mathvariant="italic">c</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>14</mn> </mfenced> </mrow> </mtd> </mtr> <mtr> <mtd> <mrow> <mi mathvariant="italic">c</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>3</mn> </mfenced> </mrow> </mtd> <mtd> <mrow> <mi mathvariant="italic">c</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>7</mn> </mfenced> </mrow> </mtd> <mtd> <mrow> <mi mathvariant="italic">c</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>11</mn> </mfenced> </mrow> </mtd> <mtd> <mrow> <mi mathvariant="italic">c</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>15</mn> </mfenced> </mrow> </mtd> </mtr> </mtable> </mfenced> <mo>&times;</mo> <mfenced open="(" close=")"> <mtable> <mtr> <mtd> <mrow> <mi mathvariant="italic">m</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>0</mn> </mfenced> </mrow> </mtd> <mtd> <mrow> <mi mathvariant="italic">m</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>4</mn> </mfenced> </mrow> </mtd> <mtd> <mrow> <mi mathvariant="italic">m</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>8</mn> </mfenced> </mrow> </mtd> <mtd> <mrow> <mi mathvariant="italic">m</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>12</mn> </mfenced> </mrow> </mtd> </mtr> <mtr> <mtd> <mrow> <mi mathvariant="italic">m</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>1</mn> </mfenced> </mrow> </mtd> <mtd> <mrow> <mi mathvariant="italic">m</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>5</mn> </mfenced> </mrow> </mtd> <mtd> <mrow> <mi mathvariant="italic">m</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>9</mn> </mfenced> </mrow> </mtd> <mtd> <mrow> <mi mathvariant="italic">m</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>13</mn> </mfenced> </mrow> </mtd> </mtr> <mtr> <mtd> <mrow> <mi mathvariant="italic">m</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>2</mn> </mfenced> </mrow> </mtd> <mtd> <mrow> <mi mathvariant="italic">m</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>6</mn> </mfenced> </mrow> </mtd> <mtd> <mrow> <mi mathvariant="italic">m</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>10</mn> </mfenced> </mrow> </mtd> <mtd> <mrow> <mi mathvariant="italic">m</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>14</mn> </mfenced> </mrow> </mtd> </mtr> <mtr> <mtd> <mrow> <mi mathvariant="italic">m</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>3</mn> </mfenced> </mrow> </mtd> <mtd> <mrow> <mi mathvariant="italic">m</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>7</mn> </mfenced> </mrow> </mtd> <mtd> <mrow> <mi mathvariant="italic">m</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>11</mn> </mfenced> </mrow> </mtd> <mtd> <mrow> <mi mathvariant="italic">m</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>15</mn> </mfenced> </mrow> </mtd> </mtr> </mtable> </mfenced> <mo>&times;</mo> <mfenced open="(" close=")"> <mtable> <mtr> <mtd> <mrow> <mi mathvariant="italic">v</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>0</mn> </mfenced> </mrow> </mtd> </mtr> <mtr> <mtd> <mrow> <mi mathvariant="italic">v</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>1</mn> </mfenced> </mrow> </mtd> </mtr> <mtr> <mtd> <mrow> <mi mathvariant="italic">v</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>2</mn> </mfenced> </mrow> </mtd> </mtr> <mtr> <mtd> <mrow> <mi mathvariant="italic">v</mi> <mo>&af;</mo> <mfenced open="[" close="]"> <mn>3</mn> </mfenced> </mrow> </mtd> </mtr> </mtable> </mfenced> </mrow> </math>` 
+
+.. |EQUATION_9_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">v</mi></math>` 
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

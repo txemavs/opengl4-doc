@@ -1,0 +1,247 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glDrawBuffer &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glDrawBuffers" href="glDrawBuffers.html" />
+    <link rel="prev" title="function glDrawArraysInstancedBaseInstance" href="glDrawArraysInstancedBaseInstance.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glDrawBuffers.html" title="function glDrawBuffers"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glDrawArraysInstancedBaseInstance.html" title="function glDrawArraysInstancedBaseInstance"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-gldrawbuffer">
+<h1>function <cite>glDrawBuffer</cite><a class="headerlink" href="#function-gldrawbuffer" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Specify which color buffers are to be drawn into</p>
+<dl class="function">
+<dt id="glDrawBuffer">
+<tt class="descname">glDrawBuffer</tt><big>(</big><big>)</big><a class="headerlink" href="#glDrawBuffer" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>mode</strong> &#8211; Specifies up to four color buffers to be drawn into.
+Symbolic constants
+<tt class="docutils literal"><span class="pre">GL_NONE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_FRONT_LEFT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_FRONT_RIGHT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_BACK_LEFT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_BACK_RIGHT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_FRONT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_BACK</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LEFT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RIGHT</span></tt>, and
+<tt class="docutils literal"><span class="pre">GL_FRONT_AND_BACK</span></tt>
+are accepted.
+The initial value is <tt class="docutils literal"><span class="pre">GL_FRONT</span></tt> for single-buffered contexts,
+and <tt class="docutils literal"><span class="pre">GL_BACK</span></tt> for double-buffered contexts.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glDrawBuffer</tt><big>(</big>GLenum <em>&nbsp;mode</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glBlendFunc.html#glBlendFunc" title="glBlendFunc"><tt class="xref c c-func docutils literal"><span class="pre">glBlendFunc()</span></tt></a>,
+<a class="reference internal" href="glColorMask.html#glColorMask" title="glColorMask"><tt class="xref c c-func docutils literal"><span class="pre">glColorMask()</span></tt></a>,
+<a class="reference internal" href="glDrawBuffers.html#glDrawBuffers" title="glDrawBuffers"><tt class="xref c c-func docutils literal"><span class="pre">glDrawBuffers()</span></tt></a>,
+<a class="reference internal" href="glLogicOp.html#glLogicOp" title="glLogicOp"><tt class="xref c c-func docutils literal"><span class="pre">glLogicOp()</span></tt></a>,
+<a class="reference internal" href="glReadBuffer.html#glReadBuffer" title="glReadBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glReadBuffer()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p>When colors are written to the frame buffer,
+they are written into the color buffers specified by <a class="reference internal" href="#glDrawBuffer" title="glDrawBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glDrawBuffer()</span></tt></a>.
+The specifications are as follows:</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">GL_NONE</span></tt></p>
+<blockquote>
+<div>No color buffers are written.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_FRONT_LEFT</span></tt></p>
+<blockquote>
+<div>Only the front left color buffer is written.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_FRONT_RIGHT</span></tt></p>
+<blockquote>
+<div>Only the front right color buffer is written.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_BACK_LEFT</span></tt></p>
+<blockquote>
+<div>Only the back left color buffer is written.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_BACK_RIGHT</span></tt></p>
+<blockquote>
+<div>Only the back right color buffer is written.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_FRONT</span></tt></p>
+<blockquote>
+<div>Only the front left and front right color buffers are written.
+If there is no front right color buffer,
+only the front left color buffer is written.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_BACK</span></tt></p>
+<blockquote>
+<div>Only the back left and back right color buffers are written.
+If there is no back right color buffer,
+only the back left color buffer is written.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_LEFT</span></tt></p>
+<blockquote>
+<div>Only the front left and back left color buffers are written.
+If there is no back left color buffer,
+only the front left color buffer is written.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_RIGHT</span></tt></p>
+<blockquote>
+<div>Only the front right and back right color buffers are written.
+If there is no back right color buffer,
+only the front right color buffer is written.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_FRONT_AND_BACK</span></tt></p>
+<blockquote>
+<div>All the front and back color buffers
+(front left, front right, back left, back right)
+are written.
+If there are no back color buffers,
+only the front left and front right color buffers are written.
+If there are no right color buffers,
+only the front left and back left color buffers are written.
+If there are no right or back color buffers,
+only the front left color buffer is written.</div></blockquote>
+</div></blockquote>
+<p>If more than one color buffer is selected for drawing,
+then blending or logical operations are computed and applied independently
+for each color buffer and can produce different results in each buffer.</p>
+<p>Monoscopic contexts include only
+<strong>left</strong>
+buffers, and stereoscopic contexts include both
+<strong>left</strong>
+and
+<strong>right</strong>
+buffers.
+Likewise, single-buffered contexts include only
+<strong>front</strong>
+buffers, and double-buffered contexts include both
+<strong>front</strong>
+and
+<strong>back</strong>
+buffers.
+The context is selected at GL initialization.</p>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>mode</em> is not an accepted value.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if none of the buffers indicated by <em>mode</em> exists.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_DRAW_BUFFER</span></tt></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glDrawArraysInstancedBaseInstance.html"
+                        title="previous chapter">function <cite>glDrawArraysInstancedBaseInstance</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glDrawBuffers.html"
+                        title="next chapter">function <cite>glDrawBuffers</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glDrawBuffer.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glDrawBuffers.html" title="function glDrawBuffers"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glDrawArraysInstancedBaseInstance.html" title="function glDrawArraysInstancedBaseInstance"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

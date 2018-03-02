@@ -1,0 +1,127 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:28
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/gluTessEndPolygon.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `gluTessEndPolygon`
+----------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Delimit a polygon description
+
+.. c:function:: gluTessEndPolygon
+
+
+         :param tess:
+
+                  Specifies the tessellation object (created with :c:func:`gluNewTess`\ ).
+
+.. rubric:: Specification
+
+.. c:function:: void gluTessEndPolygon(GLUtesselator*  tess)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`gluNewTess`\ ,
+            :c:func:`gluTessBeginContour`\ ,
+            :c:func:`gluTessBeginPolygon`\ ,
+            :c:func:`gluTessCallback`\ ,
+            :c:func:`gluTessNormal`\ ,
+            :c:func:`gluTessProperty`\ ,
+            :c:func:`gluTessVertex`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`gluTessBeginPolygon` and :c:func:`gluTessEndPolygon` delimit the
+definition of a convex, concave, or self-intersecting polygon. Within
+each :c:func:`gluTessBeginPolygon` / :c:func:`gluTessEndPolygon` pair, there must be
+one or more calls to :c:func:`gluTessBeginContour` / :c:func:`gluTessEndContour`\ .
+Within each contour, there are zero or more calls to :c:func:`gluTessVertex`\ .
+The vertices specify a closed contour (the last vertex of each contour
+is automatically linked to the first). See the :c:func:`gluTessVertex`\ ,
+:c:func:`gluTessBeginContour`\ , and :c:func:`gluTessEndContour` reference pages for
+more details.
+
+
+Once :c:func:`gluTessEndPolygon` is called, the polygon is tessellated, and the
+resulting triangles are described through callbacks.
+See :c:func:`gluTessCallback` for descriptions of the callback functions.
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Example
+
+..
+
+
+A quadrilateral with a triangular hole in it can be described like this:
+
+.. code-block:: c
+
+
+   gluTessBeginPolygon(tobj, NULL);
+      gluTessBeginContour(tobj);
+         gluTessVertex(tobj, v1, v1);
+         gluTessVertex(tobj, v2, v2);
+         gluTessVertex(tobj, v3, v3);
+         gluTessVertex(tobj, v4, v4);
+      gluTessEndContour(tobj);
+      gluTessBeginContour(tobj);
+         gluTessVertex(tobj, v5, v5);
+         gluTessVertex(tobj, v6, v6);
+         gluTessVertex(tobj, v7, v7);
+      gluTessEndContour(tobj);
+   gluTessEndPolygon(tobj);
+
+..
+
+
+In the above example the pointers, |EQUATION_1_| through |EQUATION_2_|\ ,
+should point to different
+addresses,
+since the values stored at these addresses will not be read by
+the tesselator until :c:func:`gluTessEndPolygon` is called.
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'gluTessEndPolygon'>
+
+.. role:: mml(raw)
+   :format: html
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">v1</mi></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">v7</mi></math>` 
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

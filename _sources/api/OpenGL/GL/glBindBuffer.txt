@@ -1,0 +1,99 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glBindBuffer`
+-----------------------
+
+.. source file man4/glBindBuffer
+
+.. currentmodule:: OpenGL.GL
+
+Bind a named buffer object
+
+.. c:function:: glBindBuffer
+.. c:function:: void glBindBuffer(GLenum  target, GLuint  buffer)
+   :noindex: 
+
+
+   
+   :param target:
+      Specifies the target to which the buffer object is bound. The symbolic constant must be ``GL_ARRAY_BUFFER``, ``GL_ATOMIC_COUNTER_BUFFER``, ``GL_COPY_READ_BUFFER``, ``GL_COPY_WRITE_BUFFER``, ``GL_DRAW_INDIRECT_BUFFER``, ``GL_ELEMENT_ARRAY_BUFFER``, ``GL_PIXEL_PACK_BUFFER``, ``GL_PIXEL_UNPACK_BUFFER``, ``GL_TEXTURE_BUFFER``, ``GL_TRANSFORM_FEEDBACK_BUFFER``, or ``GL_UNIFORM_BUFFER``.
+   
+   :param buffer:
+      Specifies the name of a buffer object.
+   
+
+.. seealso::
+
+   
+   :c:func:`glGenBuffers`, :c:func:`glBindBufferBase`, :c:func:`glBindBufferRange`, :c:func:`glMapBuffer`, :c:func:`glUnmapBuffer`, :c:func:`glDeleteBuffers`, :c:func:`glGet`, :c:func:`glIsBuffer`
+   
+.. rubric:: Description
+
+
+:c:func:`glBindBuffer` binds a buffer object to the specified buffer binding point. Calling :c:func:`glBindBuffer` with *target* set to one of the accepted symbolic constants and *buffer* set to the name of a buffer object binds that buffer object name to the target. If no buffer object with name *buffer* exists, one is created with that name. When a buffer object is bound to a target, the previous binding for that target is automatically broken.
+
+Buffer object names are unsigned integers. The value zero is reserved, but there is no default buffer object for each buffer object target. Instead, *buffer* set to zero effectively unbinds any buffer object previously bound, and restores client memory usage for that buffer object target (if supported for that target). Buffer object names and the corresponding buffer object contents are local to the shared object space of the current GL rendering context; two rendering contexts share buffer object names only if they explicitly enable sharing between contexts through the appropriate GL windows interfaces functions.
+
+:c:func:`glGenBuffers` must be used to generate a set of unused buffer object names.
+
+The state of a buffer object immediately after it is first bound is an unmapped zero-sized memory buffer with ``GL_READ_WRITE`` access and ``GL_STATIC_DRAW`` usage.
+
+While a non-zero buffer object name is bound, GL operations on the target to which it is bound affect the bound buffer object, and queries of the target to which it is bound return state from the bound buffer object. While buffer object name zero is bound, as in the initial state, attempts to modify or query state on the target to which it is bound generates an ``GL_INVALID_OPERATION`` error.
+
+When a non-zero buffer object is bound to the ``GL_ARRAY_BUFFER`` target, the vertex array pointer parameter is interpreted as an offset within the buffer object measured in basic machine units.
+
+When a non-zero buffer object is bound to the ``GL_DRAW_INDIRECT_BUFFER`` target, parameters for draws issued through :c:func:`glDrawArraysIndirect` and :c:func:`glDrawElementsIndirect` are sourced from that buffer object.
+
+While a non-zero buffer object is bound to the ``GL_ELEMENT_ARRAY_BUFFER`` target, the indices parameter of :c:func:`glDrawElements`, :c:func:`glDrawElementsInstanced`, :c:func:`glDrawElementsBaseVertex`, :c:func:`glDrawRangeElements`, :c:func:`glDrawRangeElementsBaseVertex`, :c:func:`glMultiDrawElements`, or :c:func:`glMultiDrawElementsBaseVertex` is interpreted as an offset within the buffer object measured in basic machine units.
+
+While a non-zero buffer object is bound to the ``GL_PIXEL_PACK_BUFFER`` target, the following commands are affected: :c:func:`glGetCompressedTexImage`, :c:func:`glGetTexImage`, and :c:func:`glReadPixels`. The pointer parameter is interpreted as an offset within the buffer object measured in basic machine units.
+
+While a non-zero buffer object is bound to the ``GL_PIXEL_UNPACK_BUFFER`` target, the following commands are affected: :c:func:`glCompressedTexImage1D`, :c:func:`glCompressedTexImage2D`, :c:func:`glCompressedTexImage3D`, :c:func:`glCompressedTexSubImage1D`, :c:func:`glCompressedTexSubImage2D`, :c:func:`glCompressedTexSubImage3D`, :c:func:`glTexImage1D`, :c:func:`glTexImage2D`, :c:func:`glTexImage3D`, :c:func:`glTexSubImage1D`, :c:func:`glTexSubImage2D`, and :c:func:`glTexSubImage3D`. The pointer parameter is interpreted as an offset within the buffer object measured in basic machine units.
+
+The buffer targets ``GL_COPY_READ_BUFFER`` and ``GL_COPY_WRITE_BUFFER`` are provided to allow :c:func:`glCopyBufferSubData` to be used without disturbing the state of other bindings. However, :c:func:`glCopyBufferSubData` may be used with any pair of buffer binding points.
+
+The ``GL_TRANSFORM_FEEDBACK_BUFFER`` buffer binding point may be passed to :c:func:`glBindBuffer`, but will not directly affect transform feedback state. Instead, the indexed ``GL_TRANSFORM_FEEDBACK_BUFFER`` bindings must be used through a call to :c:func:`glBindBufferBase` or :c:func:`glBindBufferRange`. This will affect the generic ``GL_TRANSFORM_FEEDABCK_BUFFER`` binding.
+
+Likewise, the ``GL_UNIFORM_BUFFER`` and ``GL_ATOMIC_COUNTER_BUFFER`` buffer binding points may be used, but do not directly affect uniform buffer or atomic counter buffer state, respectively. :c:func:`glBindBufferBase` or :c:func:`glBindBufferRange` must be used to bind a buffer to an indexed uniform buffer or atomic counter buffer binding point.
+
+A buffer object binding created with :c:func:`glBindBuffer` remains active until a different buffer object name is bound to the same target, or until the bound buffer object is deleted with :c:func:`glDeleteBuffers`.
+
+Once created, a named buffer object may be re-bound to any target as often as needed. However, the GL implementation may make choices about how to optimize the storage of a buffer object based on its initial binding target.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGet` with argument ``GL_ARRAY_BUFFER_BINDING``
+   * :c:func:`glGet` with argument ``GL_ATOMIC_COUNTER_BUFFER_BINDING``
+   * :c:func:`glGet` with argument ``GL_COPY_READ_BUFFER_BINDING``
+   * :c:func:`glGet` with argument ``GL_COPY_WRITE_BUFFER_BINDING``
+   * :c:func:`glGet` with argument ``GL_DRAW_INDIRECT_BUFFER_BINDING``
+   * :c:func:`glGet` with argument ``GL_ELEMENT_ARRAY_BUFFER_BINDING``
+   * :c:func:`glGet` with argument ``GL_PIXEL_PACK_BUFFER_BINDING``
+   * :c:func:`glGet` with argument ``GL_PIXEL_UNPACK_BUFFER_BINDING``
+   * :c:func:`glGet` with argument ``GL_TRANSFORM_FEEDBACK_BUFFER_BINDING``
+   * :c:func:`glGet` with argument ``GL_UNIFORM_BUFFER_BINDING``
+
+**Errors:**
+
+   * ``GL_INVALID_ENUM`` is generated if *target* is not one of the allowable values.
+   * ``GL_INVALID_VALUE`` is generated if *buffer* is not a name previously returned from a call to :c:func:`glGenBuffers`.
+
+
+
+.. note::
+
+   * The ``GL_COPY_READ_BUFFER``, ``GL_UNIFORM_BUFFER`` and ``GL_TEXTURE_BUFFER`` targets are available only if the GL version is 3.1 or greater.
+   * The ``GL_ATOMIC_COUNTER_BUFER`` target is available only if the GL version is 4.2 or greater.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

@@ -1,0 +1,48 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `gluTessBeginPolygon`
+------------------------------
+
+.. source file man/gluTessBeginPolygon
+
+.. currentmodule:: OpenGL.GLU
+
+Delimit a polygon description
+
+.. c:function:: gluTessBeginPolygon
+.. c:function:: void gluTessBeginPolygon(GLUtesselator*  tess, GLvoid*  data)
+   :noindex: 
+
+
+   
+   :param tess:
+      Specifies the tessellation object (created with :c:func:`gluNewTess`).
+   
+   :param data:
+      Specifies a pointer to user polygon data.
+   
+
+.. seealso::
+
+   
+   :c:func:`gluNewTess`, :c:func:`gluTessBeginContour`, :c:func:`gluTessCallback`, :c:func:`gluTessEndPolygon`, :c:func:`gluTessNormal`, :c:func:`gluTessProperty`, :c:func:`gluTessVertex`
+   
+.. rubric:: Description
+
+
+:c:func:`gluTessBeginPolygon` and :c:func:`gluTessEndPolygon` delimit the definition of a convex, concave or self-intersecting polygon. Within each :c:func:`gluTessBeginPolygon`/:c:func:`gluTessEndPolygon` pair, there must be one or more calls to :c:func:`gluTessBeginContour`/:c:func:`gluTessEndContour`. Within each contour, there are zero or more calls to :c:func:`gluTessVertex`. The vertices specify a closed contour (the last vertex of each contour is automatically linked to the first). See the :c:func:`gluTessVertex`, :c:func:`gluTessBeginContour`, and :c:func:`gluTessEndContour` reference pages for more details.
+
+*data* is a pointer to a user-defined data structure. If the appropriate callback(s) are specified (see :c:func:`gluTessCallback`), then this pointer is returned to the callback function(s). Thus, it is a convenient way to store per-polygon information.
+
+Once :c:func:`gluTessEndPolygon` is called, the polygon is tessellated, and the resulting triangles are described through callbacks. See :c:func:`gluTessCallback` for descriptions of the callback functions.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

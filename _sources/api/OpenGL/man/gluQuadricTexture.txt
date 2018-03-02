@@ -1,0 +1,80 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:28
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/gluQuadricTexture.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `gluQuadricTexture`
+----------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Specify if texturing is desired for quadrics
+
+.. c:function:: gluQuadricTexture
+
+
+         :param quad:
+
+                  Specifies the quadrics object (created with :c:func:`gluNewQuadric`\ ).
+
+         :param texture:
+
+                  Specifies a flag indicating if texture coordinates should be generated.
+
+.. rubric:: Specification
+
+.. c:function:: void gluQuadricTexture(GLUquadric*  quad, GLboolean  texture)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`gluNewQuadric`\ ,
+            :c:func:`gluQuadricDrawStyle`\ ,
+            :c:func:`gluQuadricNormals`\ ,
+            :c:func:`gluQuadricOrientation`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`gluQuadricTexture` specifies if texture coordinates should be generated
+for quadrics rendered with *quad*\ .
+If the value of *texture* is ``GLU_TRUE``\ , then texture coordinates
+are generated, and if *texture* is ``GLU_FALSE``\ , they are not.  The
+initial value is ``GLU_FALSE``\ .
+
+
+The manner in which texture coordinates are generated depends
+upon the specific quadric rendered.
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'gluQuadricTexture'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

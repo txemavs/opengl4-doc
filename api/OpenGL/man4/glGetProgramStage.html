@@ -1,0 +1,185 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glGetProgramStage &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glGetQueryIndexed" href="glGetQueryIndexed.html" />
+    <link rel="prev" title="function glGetProgramPipelineInfoLog" href="glGetProgramPipelineInfoLog.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glGetQueryIndexed.html" title="function glGetQueryIndexed"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glGetProgramPipelineInfoLog.html" title="function glGetProgramPipelineInfoLog"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glgetprogramstage">
+<h1>function <cite>glGetProgramStage</cite><a class="headerlink" href="#function-glgetprogramstage" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Retrieve properties of a program object corresponding to a specified shader stage</p>
+<dl class="function">
+<dt id="glGetProgramStage">
+<tt class="descname">glGetProgramStage</tt><big>(</big><big>)</big><a class="headerlink" href="#glGetProgramStage" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>program</strong> &#8211; Specifies the name of the program containing shader stage.</li>
+<li><strong>shadertype</strong> &#8211; Specifies the shader stage from which to query for the subroutine parameter. <em>shadertype</em>
+must be one of <tt class="docutils literal"><span class="pre">GL_VERTEX_SHADER</span></tt>, <tt class="docutils literal"><span class="pre">GL_TESS_CONTROL_SHADER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TESS_EVALUATION_SHADER</span></tt>, <tt class="docutils literal"><span class="pre">GL_GEOMETRY_SHADER</span></tt> or
+<tt class="docutils literal"><span class="pre">GL_FRAGMENT_SHADER</span></tt>.</li>
+<li><strong>pname</strong> &#8211; Specifies the parameter of the shader to query. <em>pname</em>
+must be <tt class="docutils literal"><span class="pre">GL_ACTIVE_SUBROUTINE_UNIFORMS</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_ACTIVE_SUBROUTINE_UNIFORM_LOCATIONS</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_ACTIVE_SUBROUTINES</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_ACTIVE_SUBROUTINE_UNIFORM_MAX_LENGTH</span></tt>,
+or <tt class="docutils literal"><span class="pre">GL_ACTIVE_SUBROUTINE_MAX_LENGTH</span></tt>.</li>
+<li><strong>values</strong> &#8211; Specifies the address of a variable into which the queried value or values will be placed.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt id="glGetProgramStageiv">
+void <tt class="descname">glGetProgramStageiv</tt><big>(</big>GLuint <em>&nbsp;program</em>, GLenum <em>&nbsp;shadertype</em>, GLenum <em>&nbsp;pname</em>, GLint *<em>&nbsp;values</em><big>)</big><a class="headerlink" href="#glGetProgramStageiv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glGetProgram.html#glGetProgram" title="glGetProgram"><tt class="xref c c-func docutils literal"><span class="pre">glGetProgram()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glGetProgramStage" title="glGetProgramStage"><tt class="xref c c-func docutils literal"><span class="pre">glGetProgramStage()</span></tt></a> queries a parameter of a shader stage attached to a program object.
+<em>program</em> contains the name of the program to which the shader is attached. <em>shadertype</em>
+specifies the stage from which to query the parameter. <em>pname</em> specifies which parameter
+should be queried. The value or values of the parameter to be queried is returned in the variable whose address
+is given in <em>values</em>.</p>
+<p>If <em>pname</em> is <tt class="docutils literal"><span class="pre">GL_ACTIVE_SUBROUTINE_UNIFORMS</span></tt>, the number
+of active subroutine variables in the stage is returned in <em>values</em>.</p>
+<p>If <em>pname</em> is <tt class="docutils literal"><span class="pre">GL_ACTIVE_SUBROUTINE_UNIFORM_LOCATIONS</span></tt>,
+the number of active subroutine variable locations in the stage is returned in <em>values</em>.</p>
+<p>If <em>pname</em> is <tt class="docutils literal"><span class="pre">GL_ACTIVE_SUBROUTINES</span></tt>,
+the number of active subroutines in the stage is returned in <em>values</em>.</p>
+<p>If <em>pname</em> is <tt class="docutils literal"><span class="pre">GL_ACTIVE_SUBROUTINE_UNIFORM_MAX_LENGTH</span></tt>,
+the length of the longest subroutine uniform for the stage is returned in <em>values</em>.</p>
+<p>If <em>pname</em> is <tt class="docutils literal"><span class="pre">GL_ACTIVE_SUBROUTINE_MAX_LENGTH</span></tt>,
+the length of the longest subroutine name for the stage is returned in <em>values</em>. The
+returned name length includes space for the null-terminator.</p>
+<p>If there is no shader present of type <em>shadertype</em>, the returned value will be consistent
+with a shader containing no subroutines or subroutine uniforms.</p>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>shadertype</em> or <em>pname</em> is not one of the accepted values.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>program</em> is not the name of an existing program object.</li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)2010 Khronos Group. Open Publication License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glGetProgramPipelineInfoLog.html"
+                        title="previous chapter">function <cite>glGetProgramPipelineInfoLog</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glGetQueryIndexed.html"
+                        title="next chapter">function <cite>glGetQueryIndexed</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glGetProgramStage.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glGetQueryIndexed.html" title="function glGetQueryIndexed"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glGetProgramPipelineInfoLog.html" title="function glGetProgramPipelineInfoLog"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

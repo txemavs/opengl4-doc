@@ -1,0 +1,108 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:29
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glCullFace.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glCullFace`
+---------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Specify whether front- or back-facing facets can be culled
+
+.. c:function:: glCullFace
+
+
+         :param mode:
+
+                  Specifies whether front- or back-facing facets are candidates for culling.
+                  Symbolic constants
+                  ``GL_FRONT``\ , ``GL_BACK``\ , and ``GL_FRONT_AND_BACK`` are accepted.
+                  The initial value is ``GL_BACK``\ .
+
+.. rubric:: Specification
+
+.. c:function:: void glCullFace(GLenum  mode)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glEnable`\ ,
+            :c:func:`glFrontFace`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glCullFace` specifies whether front- or back-facing facets are culled
+(as specified by :strong:`mode`\ ) when facet culling is enabled. Facet
+culling is initially disabled.
+To enable and disable facet culling, call the
+:c:func:`glEnable` and :c:func:`glDisable` commands
+with the argument ``GL_CULL_FACE``\ .
+Facets include triangles,
+quadrilaterals,
+polygons, and
+rectangles.
+
+
+:c:func:`glFrontFace` specifies which of the clockwise and counterclockwise facets
+are front-facing and back-facing.
+See :c:func:`glFrontFace`\ .
+
+
+.. note::
+
+
+   If *mode* is ``GL_FRONT_AND_BACK``\ , no facets are drawn, but other
+   primitives such as points and lines are drawn.
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_ENUM`` is generated if *mode* is not an accepted value.
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glIsEnabled` with argument ``GL_CULL_FACE``
+* :c:func:`glGet` with argument ``GL_CULL_FACE_MODE``
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glCullFace'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

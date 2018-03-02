@@ -1,0 +1,52 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glEnableVertexAttribArray`
+------------------------------------
+
+.. source file man4/glEnableVertexAttribArray
+
+.. currentmodule:: OpenGL.GL
+
+Enable or disable a generic vertex attribute array
+
+.. c:function:: glEnableVertexAttribArray
+.. c:function:: void glEnableVertexAttribArray(GLuint  index, GLuint  index)
+   :noindex: 
+
+
+   
+   :param index:
+      Specifies the index of the generic vertex attribute to be enabled or disabled.
+   
+
+.. seealso::
+
+   
+   :c:func:`glBindAttribLocation`, :c:func:`glDrawArrays`, :c:func:`glDrawElements`, :c:func:`glDrawRangeElements`, :c:func:`glMultiDrawElements`, :c:func:`glVertexAttrib`, :c:func:`glVertexAttribPointer`
+   
+.. rubric:: Description
+
+
+:c:func:`glEnableVertexAttribArray` enables the generic vertex attribute array specified by *index* . :c:func:`glDisableVertexAttribArray` disables the generic vertex attribute array specified by *index* . By default, all client-side capabilities are disabled, including all generic vertex attribute arrays. If enabled, the values in the generic vertex attribute array will be accessed and used for rendering when calls are made to vertex array commands such as :c:func:`glDrawArrays`, :c:func:`glDrawElements`, :c:func:`glDrawRangeElements`, :c:func:`glMultiDrawElements`, or :c:func:`glMultiDrawArrays`.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGet` with argument ``GL_MAX_VERTEX_ATTRIBS``
+   * :c:func:`glGetVertexAttrib` with arguments *index* and ``GL_VERTEX_ATTRIB_ARRAY_ENABLED`` **
+   * :c:func:`glGetVertexAttribPointerv` with arguments *index* and ``GL_VERTEX_ATTRIB_ARRAY_POINTER``
+
+**Errors:**
+
+   * ``GL_INVALID_VALUE`` is generated if *index* is greater than or equal to ``GL_MAX_VERTEX_ATTRIBS``.
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

@@ -1,0 +1,95 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:29
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glDepthMask.xml'
+.. (c)1991-2006 Silicon Graphics, Inc. 2012 Khronos Group.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glDepthMask`
+----------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Enable or disable writing into the depth buffer
+
+.. c:function:: glDepthMask
+
+
+         :param flag:
+
+                  Specifies whether the depth buffer is enabled for writing.
+                  If *flag* is ``GL_FALSE``\ ,
+                  depth buffer writing is disabled.
+                  Otherwise, it is enabled.
+                  Initially, depth buffer writing is enabled.
+
+.. rubric:: Specification
+
+.. c:function:: void glDepthMask(GLboolean  flag)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glColorMask`\ ,
+            :c:func:`glDepthFunc`\ ,
+            :c:func:`glDepthRange`\ ,
+            :c:func:`glStencilMask`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glDepthMask` specifies whether the depth buffer is enabled for writing.
+If *flag* is ``GL_FALSE``\ ,
+depth buffer writing is disabled.
+Otherwise, it is enabled.
+Initially, depth buffer writing is enabled.
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGet` with argument ``GL_DEPTH_WRITEMASK``
+
+
+.. note::
+
+
+   Even if the depth buffer exists and the depth mask is non-zero, the
+   depth buffer is not updated if the depth test is disabled. In order to
+   unconditionally write to the depth buffer, the depth test should be enabled
+   and set to ``GL_ALWAYS`` (see :c:func:`glDepthFunc`\ ).
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glDepthMask'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. (\ c\ )2012 Khronos Group. SGI Free Software B License.
+

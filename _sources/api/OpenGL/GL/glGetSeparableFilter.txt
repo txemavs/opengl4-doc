@@ -1,0 +1,90 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glGetSeparableFilter`
+-------------------------------
+
+.. source file man/glGetSeparableFilter
+
+.. currentmodule:: OpenGL.GL
+
+Get separable convolution filter kernel images
+
+.. c:function:: glGetSeparableFilter
+.. c:function:: void glGetSeparableFilter(GLenum  target, GLenum  format, GLenum  type, GLvoid *  row, GLvoid *  column, GLvoid *  span)
+   :noindex: 
+
+
+   
+   :param target:
+      The separable filter to be retrieved. Must be ``GL_SEPARABLE_2D``.
+   
+   :param format:
+      Format of the output images. Must be one of ``GL_RED``, ``GL_GREEN``, ``GL_BLUE``, ``GL_ALPHA``, ``GL_RGB``, ``GL_BGR`` ``GL_RGBA``, ``GL_BGRA``, ``GL_LUMINANCE``, or ``GL_LUMINANCE_ALPHA``.
+   
+   :param type:
+      Data type of components in the output images. Symbolic constants ``GL_UNSIGNED_BYTE``, ``GL_BYTE``, ``GL_BITMAP``, ``GL_UNSIGNED_SHORT``, ``GL_SHORT``, ``GL_UNSIGNED_INT``, ``GL_INT``, ``GL_FLOAT``, ``GL_UNSIGNED_BYTE_3_3_2``, ``GL_UNSIGNED_BYTE_2_3_3_REV``, ``GL_UNSIGNED_SHORT_5_6_5``, ``GL_UNSIGNED_SHORT_5_6_5_REV``, ``GL_UNSIGNED_SHORT_4_4_4_4``, ``GL_UNSIGNED_SHORT_4_4_4_4_REV``, ``GL_UNSIGNED_SHORT_5_5_5_1``, ``GL_UNSIGNED_SHORT_1_5_5_5_REV``, ``GL_UNSIGNED_INT_8_8_8_8``, ``GL_UNSIGNED_INT_8_8_8_8_REV``, ``GL_UNSIGNED_INT_10_10_10_2``, and ``GL_UNSIGNED_INT_2_10_10_10_REV`` are accepted.
+   
+   :param row:
+      Pointer to storage for the row filter image.
+   
+   :param column:
+      Pointer to storage for the column filter image.
+   
+   :param span:
+      Pointer to storage for the span filter image (currently unused).
+   
+
+.. seealso::
+
+   
+   :c:func:`glGetConvolutionFilter`, :c:func:`glConvolutionParameter`, :c:func:`glSeparableFilter2D`
+   
+.. rubric:: Description
+
+
+:c:func:`glGetSeparableFilter` returns the two one-dimensional filter kernel images for the current separable 2D convolution filter. The row image is placed in *row* and the column image is placed in *column* according to the specifications in *format* and *type* . (In the current implementation, *span* is not affected in any way.) No pixel transfer operations are performed on the images, but the relevant pixel storage modes are applied.
+
+If a non-zero named buffer object is bound to the ``GL_PIXEL_PACK_BUFFER`` target (see :c:func:`glBindBuffer`) while a separable convolution filter is requested, *row* , *column* , and *span* are treated as a byte offset into the buffer object's data store.
+
+Color components that are present in *format* but not included in the internal format of the filters are returned as zero. The assignments of internal color components to the components of *format* are as follows:
+
+
+
+
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGetConvolutionParameter`
+   * :c:func:`glGet` with argument ``GL_PIXEL_PACK_BUFFER_BINDING``
+
+**Errors:**
+
+   * ``GL_INVALID_ENUM`` is generated if *target* is not ``GL_SEPARABLE_2D``.
+   * ``GL_INVALID_ENUM`` is generated if *format* is not one of the allowable values.
+   * ``GL_INVALID_ENUM`` is generated if *type* is not one of the allowable values.
+   * ``GL_INVALID_OPERATION`` is generated if *type* is one of ``GL_UNSIGNED_BYTE_3_3_2``, ``GL_UNSIGNED_BYTE_2_3_3_REV``, ``GL_UNSIGNED_SHORT_5_6_5``, or ``GL_UNSIGNED_SHORT_5_6_5_REV`` and *format* is not ``GL_RGB``.
+   * ``GL_INVALID_OPERATION`` is generated if *type* is one of ``GL_UNSIGNED_SHORT_4_4_4_4``, ``GL_UNSIGNED_SHORT_4_4_4_4_REV``, ``GL_UNSIGNED_SHORT_5_5_5_1``, ``GL_UNSIGNED_SHORT_1_5_5_5_REV``, ``GL_UNSIGNED_INT_8_8_8_8``, ``GL_UNSIGNED_INT_8_8_8_8_REV``, ``GL_UNSIGNED_INT_10_10_10_2``, or ``GL_UNSIGNED_INT_2_10_10_10_REV`` and *format* is neither ``GL_RGBA`` nor ``GL_BGRA``.
+   * ``GL_INVALID_OPERATION`` is generated if a non-zero buffer object name is bound to the ``GL_PIXEL_PACK_BUFFER`` target and the buffer object's data store is currently mapped.
+   * ``GL_INVALID_OPERATION`` is generated if a non-zero buffer object name is bound to the ``GL_PIXEL_PACK_BUFFER`` target and the data would be packed to the buffer object such that the memory writes required would exceed the data store size.
+   * ``GL_INVALID_OPERATION`` is generated if a non-zero buffer object name is bound to the ``GL_PIXEL_PACK_BUFFER`` target and *row* or *column* is not evenly divisible into the number of bytes needed to store in memory a datum indicated by *type* .
+   * ``GL_INVALID_OPERATION`` is generated if :c:func:`glGetSeparableFilter` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`.
+
+
+
+.. note::
+
+   * :c:func:`glGetSeparableFilter` is present only if ``ARB_imaging`` is returned when :c:func:`glGetString` is called with an argument of ``GL_EXTENSIONS``.
+   * Non-separable 2D filters must be retrieved with :c:func:`glGetConvolutionFilter`.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

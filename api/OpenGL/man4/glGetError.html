@@ -1,0 +1,198 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glGetError &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glGetFragDataIndex" href="glGetFragDataIndex.html" />
+    <link rel="prev" title="function glGetCompressedTexImage" href="glGetCompressedTexImage.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glGetFragDataIndex.html" title="function glGetFragDataIndex"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glGetCompressedTexImage.html" title="function glGetCompressedTexImage"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glgeterror">
+<h1>function <cite>glGetError</cite><a class="headerlink" href="#function-glgeterror" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Return error information</p>
+<dl class="function">
+<dt id="glGetError">
+<tt class="descname">glGetError</tt><big>(</big><big>)</big><a class="headerlink" href="#glGetError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+GLenum <tt class="descname">glGetError</tt><big>(</big>void<big>)</big></dt>
+<dd></dd></dl>
+
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glGetError" title="glGetError"><tt class="xref c c-func docutils literal"><span class="pre">glGetError()</span></tt></a> returns the value of the error flag.
+Each detectable error is assigned a numeric code and symbolic name.
+When an error occurs,
+the error flag is set to the appropriate error code value.
+No other errors are recorded until <a class="reference internal" href="#glGetError" title="glGetError"><tt class="xref c c-func docutils literal"><span class="pre">glGetError()</span></tt></a> is called,
+the error code is returned,
+and the flag is reset to <tt class="docutils literal"><span class="pre">GL_NO_ERROR</span></tt>.
+If a call to <a class="reference internal" href="#glGetError" title="glGetError"><tt class="xref c c-func docutils literal"><span class="pre">glGetError()</span></tt></a> returns <tt class="docutils literal"><span class="pre">GL_NO_ERROR</span></tt>,
+there has been no detectable error since the last call to <a class="reference internal" href="#glGetError" title="glGetError"><tt class="xref c c-func docutils literal"><span class="pre">glGetError()</span></tt></a>,
+or since the GL was initialized.</p>
+<p>To allow for distributed implementations,
+there may be several error flags.
+If any single error flag has recorded an error,
+the value of that flag is returned
+and that flag is reset to <tt class="docutils literal"><span class="pre">GL_NO_ERROR</span></tt>
+when <a class="reference internal" href="#glGetError" title="glGetError"><tt class="xref c c-func docutils literal"><span class="pre">glGetError()</span></tt></a> is called.
+If more than one flag has recorded an error,
+<a class="reference internal" href="#glGetError" title="glGetError"><tt class="xref c c-func docutils literal"><span class="pre">glGetError()</span></tt></a> returns and clears an arbitrary error flag value.
+Thus, <a class="reference internal" href="#glGetError" title="glGetError"><tt class="xref c c-func docutils literal"><span class="pre">glGetError()</span></tt></a> should always be called in a loop,
+until it returns <tt class="docutils literal"><span class="pre">GL_NO_ERROR</span></tt>,
+if all error flags are to be reset.</p>
+<p>Initially, all error flags are set to <tt class="docutils literal"><span class="pre">GL_NO_ERROR</span></tt>.</p>
+<p>The following errors are currently defined:</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">GL_NO_ERROR</span></tt></p>
+<blockquote>
+<div>No error has been recorded.
+The value of this symbolic constant is guaranteed to be 0.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt></p>
+<blockquote>
+<div>An unacceptable value is specified for an enumerated argument.
+The offending command is ignored
+and has no other side effect than to set the error flag.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt></p>
+<blockquote>
+<div>A numeric argument is out of range.
+The offending command is ignored
+and has no other side effect than to set the error flag.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt></p>
+<blockquote>
+<div>The specified operation is not allowed in the current state.
+The offending command is ignored
+and has no other side effect than to set the error flag.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_INVALID_FRAMEBUFFER_OPERATION</span></tt></p>
+<blockquote>
+<div>The framebuffer object is not complete. The offending command
+is ignored and has no other side effect than to set the error flag.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_OUT_OF_MEMORY</span></tt></p>
+<blockquote>
+<div>There is not enough memory left to execute the command.
+The state of the GL is undefined,
+except for the state of the error flags,
+after this error is recorded.</div></blockquote>
+</div></blockquote>
+<p>When an error flag is set,
+results of a GL operation are undefined only if <tt class="docutils literal"><span class="pre">GL_OUT_OF_MEMORY</span></tt>
+has occurred.
+In all other cases,
+the command generating the error is ignored and has no effect on the GL state
+or frame buffer contents.
+If the generating command returns a value, it returns 0.
+If <a class="reference internal" href="#glGetError" title="glGetError"><tt class="xref c c-func docutils literal"><span class="pre">glGetError()</span></tt></a> itself generates an error, it returns 0.</p>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glGetCompressedTexImage.html"
+                        title="previous chapter">function <cite>glGetCompressedTexImage</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glGetFragDataIndex.html"
+                        title="next chapter">function <cite>glGetFragDataIndex</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glGetError.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glGetFragDataIndex.html" title="function glGetFragDataIndex"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glGetCompressedTexImage.html" title="function glGetCompressedTexImage"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

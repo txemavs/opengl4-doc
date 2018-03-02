@@ -1,0 +1,59 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glClearAccum`
+-----------------------
+
+.. source file man/glClearAccum
+
+.. currentmodule:: OpenGL.GL
+
+Specify clear values for the accumulation buffer
+
+.. c:function:: glClearAccum
+.. c:function:: void glClearAccum(GLfloat  red, GLfloat  green, GLfloat  blue, GLfloat  alpha)
+   :noindex: 
+
+
+   
+   :param red:
+      Specify the red, green, blue, and alpha values used when the accumulation buffer is cleared. The initial values are all 0.
+   
+
+.. seealso::
+
+   
+   :c:func:`glAccum`, :c:func:`glClear`
+   
+.. rubric:: Description
+
+
+:c:func:`glClearAccum` specifies the red, green, blue, and alpha values used by :c:func:`glClear` to clear the accumulation buffer.
+
+Values specified by :c:func:`glClearAccum` are clamped to the range |EQUATION_1_| .
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGet` with argument ``GL_ACCUM_CLEAR_VALUE``
+
+**Errors:**
+
+   * ``GL_INVALID_OPERATION`` is generated if :c:func:`glClearAccum` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`.
+
+
+.. role:: mml(raw)
+   :format: html
+
+
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"> <mn>-1</mn> <mn>1</mn> </mfenced> </math>` 
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

@@ -1,0 +1,52 @@
+.. nabla.opengl-sphinx project
+
+.. ---------------------------
+
+.. this dodument source file 'man/gl_PointSize'is copyrighted by Khronos Group
+   See license details at http://opencontent.org/openpub/
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   
+
+function `gl_PointSize`
+-----------------------
+
+.. currentmodule:: OpenGL.GLSL
+
+Contains size of rasterized points, in pixels
+
+.. c:function:: gl_PointSize
+
+
+.. rubric:: Specification
+
+.. c:function:: [!)
+
+.. seealso::
+
+   
+   :c:func:`gl_Position`, :c:func:`gl_ClipDistance`
+   
+.. rubric:: Description
+
+
+In the vertex, tessellation evaluation and geoemtry languages, a single global instance of the :c:func:`gl_PerVertex` named block is available and its :c:func:`gl_PointSize` member is an output that receives the intended size of the point to be rasterized, in pixels. It may be written at any time during shader execution. If ``GL_PROGRAM_POINT_SIZE`` is enabled, :c:func:`gl_PointSize` is used to determine the size of rasterized points, otherwise it is ignored by the rasterization stage.
+
+In the tessellation control language, the :c:func:`gl_PerVertex` named block is used to construct an array, :c:func:`gl_out[]`, whose members become available as inputs to the subsequent tessellation evaluation shader.
+
+The value of :c:func:`gl_PointSize` (or the :c:func:`gl_PointSize` member of the :c:func:`gl_out[]` array, in the case of the tessellation control shader) is undefined after the vertex, tessellation control, and tessellation evaluation shading stages if the corresponding shader executable does not write to gl_PointSize. It is also undefined after the geometry processing stage if the geometry shader executable calls :c:func:`EmitVertex` without having written :c:func:`gl_PointSize` since the last call to :c:func:`EmitVertex` (or hasn't written it at all).
+
+In the tessellation control, tessellation evaluation and geoemetry languages, the :c:func:`gl_PerVertex` named block is used to construct an array, :c:func:`gl_in[]` of per-vertex or per-control point inputs whose content represents the corresponding outputs written by the previous stage.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2011 Khronos Group. Open Publication License.
+

@@ -1,0 +1,66 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:27
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/gluNewTess.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `gluNewTess`
+---------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Create a tessellation object
+
+.. c:function:: gluNewTess
+
+
+.. rubric:: Specification
+
+.. c:function:: GLUtesselator* gluNewTess()
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`gluTessBeginPolygon`\ ,
+            :c:func:`gluDeleteTess`\ ,
+            :c:func:`gluTessCallback`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`gluNewTess` creates and returns a pointer to a new tessellation object.
+This object must be referred to when calling
+tessellation functions.  A return value of
+0 means that there is not enough memory to allocate the object.
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'gluNewTess'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

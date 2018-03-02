@@ -1,0 +1,183 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glXSwapBuffers &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function glXUseXFont" href="glXUseXFont.html" />
+    <link rel="prev" title="function glXSelectEvent" href="glXSelectEvent.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glXUseXFont.html" title="function glXUseXFont"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glXSelectEvent.html" title="function glXSelectEvent"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glxswapbuffers">
+<h1>function <cite>glXSwapBuffers</cite><a class="headerlink" href="#function-glxswapbuffers" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Exchange front and back buffers</p>
+<dl class="function">
+<dt id="glXSwapBuffers">
+<tt class="descname">glXSwapBuffers</tt><big>(</big><big>)</big><a class="headerlink" href="#glXSwapBuffers" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>dpy</strong> &#8211; Specifies the connection to the X server.</li>
+<li><strong>drawable</strong> &#8211; Specifies the drawable whose buffers are to be swapped.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glXSwapBuffers</tt><big>(</big>Display * <em>&nbsp;dpy</em>, GLXDrawable <em>&nbsp;drawable</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="../man4/glFlush.html#glFlush" title="glFlush"><tt class="xref c c-func docutils literal"><span class="pre">glFlush()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glXSwapBuffers" title="glXSwapBuffers"><tt class="xref c c-func docutils literal"><span class="pre">glXSwapBuffers()</span></tt></a> promotes the contents of the back buffer of <em>drawable</em> to become
+the contents of the front buffer of <em>drawable</em>.
+The contents of the back buffer then become undefined.
+The update typically takes place during the vertical retrace of
+the monitor,
+rather than immediately after <a class="reference internal" href="#glXSwapBuffers" title="glXSwapBuffers"><tt class="xref c c-func docutils literal"><span class="pre">glXSwapBuffers()</span></tt></a> is called.</p>
+<p><a class="reference internal" href="#glXSwapBuffers" title="glXSwapBuffers"><tt class="xref c c-func docutils literal"><span class="pre">glXSwapBuffers()</span></tt></a> performs an implicit <a class="reference internal" href="../man4/glFlush.html#glFlush" title="glFlush"><tt class="xref c c-func docutils literal"><span class="pre">glFlush()</span></tt></a> before it returns.
+Subsequent OpenGL commands may be issued immediately after calling <a class="reference internal" href="#glXSwapBuffers" title="glXSwapBuffers"><tt class="xref c c-func docutils literal"><span class="pre">glXSwapBuffers()</span></tt></a>,
+but are not executed until the buffer exchange is completed.</p>
+<p>If <em>drawable</em> was not created with respect to a double-buffered visual,
+<a class="reference internal" href="#glXSwapBuffers" title="glXSwapBuffers"><tt class="xref c c-func docutils literal"><span class="pre">glXSwapBuffers()</span></tt></a> has no effect,
+and no error is generated.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The contents of the back buffer become undefined after
+a swap. Note that this applies to pixel buffers as well as windows.</p>
+<p class="last">All GLX rendering contexts share the same notion of which are front buffers
+and which are back buffers.
+One consequence is that when multiple clients are rendering to the same
+double-buffered window,
+all of them should finish rendering before one of them issues the command
+to swap buffers.
+The clients are responsible for implementing this synchronization.
+Typically this is accomplished by executing <a class="reference internal" href="../man4/glFinish.html#glFinish" title="glFinish"><tt class="xref c c-func docutils literal"><span class="pre">glFinish()</span></tt></a> and then
+using a semaphore in shared memory to rendezvous before swapping.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GLXBadDrawable</span></tt> is generated if <em>drawable</em> is not a valid GLX drawable.</li>
+<li><tt class="docutils literal"><span class="pre">GLXBadCurrentWindow</span></tt> is generated if <em>dpy</em> and <em>drawable</em> are respectively the display and drawable associated with the current context of the calling thread, and <em>drawable</em> identifies a window that is no longer valid.</li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glXSelectEvent.html"
+                        title="previous chapter">function <cite>glXSelectEvent</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glXUseXFont.html"
+                        title="next chapter">function <cite>glXUseXFont</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/glXSwapBuffers.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glXUseXFont.html" title="function glXUseXFont"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glXSelectEvent.html" title="function glXSelectEvent"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

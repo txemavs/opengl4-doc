@@ -1,0 +1,103 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:29
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glEnableVertexAttribArray.xml'
+.. (c)2003-2005 3Dlabs Inc. Ltd.
+.. See license details at http://opencontent.org/openpub/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glEnableVertexAttribArray`
+------------------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Enable or disable a generic vertex attribute array
+
+.. c:function:: glEnableVertexAttribArray
+
+
+      :param index:
+
+            Specifies the index of the generic vertex
+            attribute to be enabled or disabled.
+
+.. rubric:: Specification
+
+.. c:function:: void glEnableVertexAttribArray(GLuint  index, GLuint  index)
+   :noindex: 
+
+
+.. seealso::
+
+
+      :c:func:`glBindAttribLocation`\ ,
+      :c:func:`glDrawArrays`\ ,
+      :c:func:`glDrawElements`\ ,
+      :c:func:`glDrawRangeElements`\ ,
+      :c:func:`glMultiDrawElements`\ ,
+      :c:func:`glVertexAttrib`\ ,
+      :c:func:`glVertexAttribPointer`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glEnableVertexAttribArray` enables the
+generic vertex attribute array specified by
+*index*\ .
+:c:func:`glDisableVertexAttribArray` disables the
+generic vertex attribute array specified by
+*index*\ . By default, all client-side
+capabilities are disabled, including all generic vertex
+attribute arrays. If enabled, the values in the generic vertex
+attribute array will be accessed and used for rendering when
+calls are made to vertex array commands such as
+:c:func:`glDrawArrays`\ ,
+:c:func:`glDrawElements`\ ,
+:c:func:`glDrawRangeElements`\ ,
+:c:func:`glMultiDrawElements`\ ,
+or
+:c:func:`glMultiDrawArrays`\ .
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_VALUE`` is generated if *index* is greater than or equal to ``GL_MAX_VERTEX_ATTRIBS``\ .
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGet` with argument ``GL_MAX_VERTEX_ATTRIBS``
+* :c:func:`glGetVertexAttrib` with arguments *index* and ``GL_VERTEX_ATTRIB_ARRAY_ENABLED`` **
+* :c:func:`glGetVertexAttribPointerv` with arguments *index* and ``GL_VERTEX_ATTRIB_ARRAY_POINTER``
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glEnableVertexAttribArray'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )2003-2005 3Dlabs Inc. Ltd. Open Publication License.
+

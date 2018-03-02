@@ -1,0 +1,92 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glRotate`
+-------------------
+
+.. source file man/glRotate
+
+.. currentmodule:: OpenGL.GL
+
+Multiply the current matrix by a rotation matrix
+
+.. c:function:: glRotate
+.. c:function:: void glRotated(GLdouble  angle, GLdouble  x, GLdouble  y, GLdouble  z, GLfloat  angle, GLfloat  x, GLfloat  y, GLfloat  z)
+
+
+   
+   :param angle:
+      Specifies the angle of rotation, in degrees.
+   
+   :param x:
+      Specify the *`x`* , *`y`* , and *`z`* coordinates of a vector, respectively.
+   
+
+.. seealso::
+
+   
+   :c:func:`glMatrixMode`, :c:func:`glMultMatrix`, :c:func:`glPushMatrix`, :c:func:`glScale`, :c:func:`glTranslate`
+   
+.. rubric:: Description
+
+
+:c:func:`glRotate` produces a rotation of *angle* degrees around the vector |EQUATION_1_| . The current matrix (see :c:func:`glMatrixMode`) is multiplied by a rotation matrix with the product replacing the current matrix, as if :c:func:`glMultMatrix` were called with the following matrix as its argument:
+
+|EQUATION_2_|
+
+
+
+Where |EQUATION_3_| , |EQUATION_4_| , and |EQUATION_5_| (if not, the GL will normalize this vector).
+
+
+
+
+
+If the matrix mode is either ``GL_MODELVIEW`` or ``GL_PROJECTION``, all objects drawn after :c:func:`glRotate` is called are rotated. Use :c:func:`glPushMatrix` and :c:func:`glPopMatrix` to save and restore the unrotated coordinate system.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGet` with argument ``GL_MATRIX_MODE``
+   * :c:func:`glGet` with argument ``GL_COLOR_MATRIX``
+   * :c:func:`glGet` with argument ``GL_MODELVIEW_MATRIX``
+   * :c:func:`glGet` with argument ``GL_PROJECTION_MATRIX``
+   * :c:func:`glGet` with argument ``GL_TEXTURE_MATRIX``
+
+**Errors:**
+
+   * ``GL_INVALID_OPERATION`` is generated if :c:func:`glRotate` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`.
+
+
+
+.. note::
+
+   * This rotation follows the right-hand rule, so if the vector |EQUATION_6_| points toward the user, the rotation will be counterclockwise.
+
+
+
+.. role:: mml(raw)
+   :format: html
+
+
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"> <mi mathvariant="italic">x</mi> <mi mathvariant="italic">y</mi> <mi mathvariant="italic">z</mi> </mfenced> </math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"> <mtable> <mtr> <mtd> <mrow> <mrow> <msup><mi mathvariant="italic">x</mi> <mn>2</mn> </msup> <mo>&af;</mo> <mfenced open="(" close=")"> <mrow> <mn>1</mn> <mo>-</mo> <mi mathvariant="italic">c</mi> </mrow> </mfenced> </mrow> <mo>+</mo> <mi mathvariant="italic">c</mi> </mrow> </mtd> <mtd> <mrow> <mi mathvariant="italic">x</mi> <mo>&it;</mo> <mrow> <mi mathvariant="italic">y</mi> <mo>&af;</mo> <mfenced open="(" close=")"> <mrow> <mn>1</mn> <mo>-</mo> <mi mathvariant="italic">c</mi> </mrow> </mfenced> </mrow> <mo>-</mo> <mi mathvariant="italic">z</mi> <mo>&it;</mo> <mi mathvariant="italic">s</mi> </mrow> </mtd> <mtd> <mrow> <mi mathvariant="italic">x</mi> <mo>&it;</mo> <mrow> <mi mathvariant="italic">z</mi> <mo>&af;</mo> <mfenced open="(" close=")"> <mrow> <mn>1</mn> <mo>-</mo> <mi mathvariant="italic">c</mi> </mrow> </mfenced> </mrow> <mo>+</mo> <mi mathvariant="italic">y</mi> <mo>&it;</mo> <mi mathvariant="italic">s</mi> </mrow> </mtd> <mtd> <mn>0</mn> </mtd> </mtr> <mtr> <mtd> <mrow> <mi mathvariant="italic">y</mi> <mo>&it;</mo> <mrow> <mi mathvariant="italic">x</mi> <mo>&af;</mo> <mfenced open="(" close=")"> <mrow> <mn>1</mn> <mo>-</mo> <mi mathvariant="italic">c</mi> </mrow> </mfenced> </mrow> <mo>+</mo> <mi mathvariant="italic">z</mi> <mo>&it;</mo> <mi mathvariant="italic">s</mi> </mrow> </mtd> <mtd> <mrow> <mrow> <msup><mi mathvariant="italic">y</mi> <mn>2</mn> </msup> <mo>&af;</mo> <mfenced open="(" close=")"> <mrow> <mn>1</mn> <mo>-</mo> <mi mathvariant="italic">c</mi> </mrow> </mfenced> </mrow> <mo>+</mo> <mi mathvariant="italic">c</mi> </mrow> </mtd> <mtd> <mrow> <mi mathvariant="italic">y</mi> <mo>&it;</mo> <mrow> <mi mathvariant="italic">z</mi> <mo>&af;</mo> <mfenced open="(" close=")"> <mrow> <mn>1</mn> <mo>-</mo> <mi mathvariant="italic">c</mi> </mrow> </mfenced> </mrow> <mo>-</mo> <mi mathvariant="italic">x</mi> <mo>&it;</mo> <mi mathvariant="italic">s</mi> </mrow> </mtd> <mtd> <mn>0</mn> </mtd> </mtr> <mtr> <mtd> <mrow> <mi mathvariant="italic">x</mi> <mo>&it;</mo> <mrow> <mi mathvariant="italic">z</mi> <mo>&af;</mo> <mfenced open="(" close=")"> <mrow> <mn>1</mn> <mo>-</mo> <mi mathvariant="italic">c</mi> </mrow> </mfenced> </mrow> <mo>-</mo> <mi mathvariant="italic">y</mi> <mo>&it;</mo> <mi mathvariant="italic">s</mi> </mrow> </mtd> <mtd> <mrow> <mi mathvariant="italic">y</mi> <mo>&it;</mo> <mrow> <mi mathvariant="italic">z</mi> <mo>&af;</mo> <mfenced open="(" close=")"> <mrow> <mn>1</mn> <mo>-</mo> <mi mathvariant="italic">c</mi> </mrow> </mfenced> </mrow> <mo>+</mo> <mi mathvariant="italic">x</mi> <mo>&it;</mo> <mi mathvariant="italic">s</mi> </mrow> </mtd> <mtd> <mrow> <mrow> <msup><mi mathvariant="italic">z</mi> <mn>2</mn> </msup> <mo>&af;</mo> <mfenced open="(" close=")"> <mrow> <mn>1</mn> <mo>-</mo> <mi mathvariant="italic">c</mi> </mrow> </mfenced> </mrow> <mo>+</mo> <mi mathvariant="italic">c</mi> </mrow> </mtd> <mtd> <mn>0</mn> </mtd> </mtr> <mtr> <mtd> <mn>0</mn> </mtd> <mtd> <mn>0</mn> </mtd> <mtd> <mn>0</mn> </mtd> <mtd> <mn>1</mn> </mtd> </mtr> </mtable> </mfenced> </math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mi mathvariant="italic">c</mi> <mo>=</mo> <mrow> <mi mathvariant="italic">cos</mi> <mo>&af;</mo> <mfenced open="(" close=")"> <mi mathvariant="italic">angle</mi> </mfenced> </mrow> </mrow> </math>` 
+
+.. |EQUATION_4_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mi mathvariant="italic">s</mi> <mo>=</mo> <mrow> <mi mathvariant="italic">sin</mi> <mo>&af;</mo> <mfenced open="(" close=")"> <mi mathvariant="italic">angle</mi> </mfenced> </mrow> </mrow> </math>` 
+
+.. |EQUATION_5_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mfenced open="&DoubleVerticalBar;" close="&DoubleVerticalBar;"> <mfenced open="(" close=")"> <mi mathvariant="italic">x</mi> <mi mathvariant="italic">y</mi> <mi mathvariant="italic">z</mi> </mfenced> </mfenced> <mo>=</mo> <mn>1</mn> </mrow> </math>` 
+
+.. |EQUATION_6_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"> <mi mathvariant="italic">x</mi> <mi mathvariant="italic">y</mi> <mi mathvariant="italic">z</mi> </mfenced> </math>` 
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

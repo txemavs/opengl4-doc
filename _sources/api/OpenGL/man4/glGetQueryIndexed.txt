@@ -1,0 +1,112 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:29
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glGetQueryIndexed.xml'
+.. (c)2010 Khronos Group.
+.. See license details at http://opencontent.org/openpub/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glGetQueryIndexed`
+----------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Return parameters of an indexed query object target
+
+.. c:function:: glGetQueryIndexed
+
+
+         :param target:
+
+                  Specifies a query object target.
+                  Must be ``GL_SAMPLES_PASSED``\ , ``GL_ANY_SAMPLES_PASSED``\ ,
+                  ``GL_PRIMITIVES_GENERATED``\ , ``GL_TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN``\ ,
+                  ``GL_TIME_ELAPSED``\ , or ``GL_TIMESTAMP``\ .
+
+         :param index:
+
+                  Specifies the index of the query object target.
+
+         :param pname:
+
+                  Specifies the symbolic name of a query object target parameter.
+                  Accepted values are ``GL_CURRENT_QUERY`` or ``GL_QUERY_COUNTER_BITS``\ .
+
+         :param params:
+
+                  Returns the requested data.
+
+.. rubric:: Specification
+
+.. c:function:: void glGetQueryIndexediv(GLenum  target, GLuint  index, GLenum  pname, GLint *  params)
+
+
+.. seealso::
+
+
+            :c:func:`glGetQueryObject`\ ,
+            :c:func:`glIsQuery`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glGetQueryIndexediv` returns in *params* a selected parameter of the indexed query object target
+specified by *target* and *index*\ . *index* specifies the index of the
+query object target and must be between zero and a target-specific maxiumum.
+
+
+*pname* names a specific query object target parameter.  When *pname* is
+``GL_CURRENT_QUERY``\ , the name of the currently active query for the specified *index* of *target*\ ,
+or zero if no query is active, will be placed in *params*\ .
+If *pname* is ``GL_QUERY_COUNTER_BITS``\ , the implementation-dependent number
+of bits used to hold the result of queries for *target* is returned in *params*\ .
+
+
+.. note::
+
+
+   If an error is generated,
+   no change is made to the contents of *params*\ .
+
+
+   Calling :c:func:`glGetQueryiv` is equivalent to calling
+   :c:func:`glGetQueryIndexediv` with *index* set to zero.
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_ENUM`` is generated if *target* or *pname* is not an accepted value.
+* ``GL_INVALID_VALUE`` is generated if *index* is greater than or equal to the *target* -specific maximum.
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glGetQueryIndexed'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )2010 Khronos Group. Open Publication License.
+

@@ -1,0 +1,175 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glClientWaitSync &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glColorMask" href="glColorMask.html" />
+    <link rel="prev" title="function glClearStencil" href="glClearStencil.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glColorMask.html" title="function glColorMask"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glClearStencil.html" title="function glClearStencil"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glclientwaitsync">
+<h1>function <cite>glClientWaitSync</cite><a class="headerlink" href="#function-glclientwaitsync" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Block and wait for a sync object to become signaled</p>
+<dl class="function">
+<dt id="glClientWaitSync">
+<tt class="descname">glClientWaitSync</tt><big>(</big><big>)</big><a class="headerlink" href="#glClientWaitSync" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>sync</strong> &#8211; The sync object whose status to wait on.</li>
+<li><strong>flags</strong> &#8211; A bitfield controlling the command flushing behavior. <em>flags</em> may be <tt class="docutils literal"><span class="pre">GL_SYNC_FLUSH_COMMANDS_BIT</span></tt>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+GLenum <tt class="descname">glClientWaitSync</tt><big>(</big>GLsync <em>&nbsp;sync</em>, GLbitfield <em>&nbsp;flags</em>, GLuint64 <em>&nbsp;timeout</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glFenceSync.html#glFenceSync" title="glFenceSync"><tt class="xref c c-func docutils literal"><span class="pre">glFenceSync()</span></tt></a>,
+<a class="reference internal" href="glIsSync.html#glIsSync" title="glIsSync"><tt class="xref c c-func docutils literal"><span class="pre">glIsSync()</span></tt></a>
+<a class="reference internal" href="glWaitSync.html#glWaitSync" title="glWaitSync"><tt class="xref c c-func docutils literal"><span class="pre">glWaitSync()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glClientWaitSync" title="glClientWaitSync"><tt class="xref c c-func docutils literal"><span class="pre">glClientWaitSync()</span></tt></a> causes the client to block and wait for the sync object specified by <em>sync</em> to become signaled. If
+<em>sync</em> is signaled when <a class="reference internal" href="#glClientWaitSync" title="glClientWaitSync"><tt class="xref c c-func docutils literal"><span class="pre">glClientWaitSync()</span></tt></a> is called, <a class="reference internal" href="#glClientWaitSync" title="glClientWaitSync"><tt class="xref c c-func docutils literal"><span class="pre">glClientWaitSync()</span></tt></a> returns immediately, otherwise
+it will block and wait for up to <em>timeout</em> nanoseconds for <em>sync</em> to become signaled.</p>
+<p>The return value is one of four status values:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_ALREADY_SIGNALED</span></tt> indicates that <em>sync</em> was signaled at the time that <a class="reference internal" href="#glClientWaitSync" title="glClientWaitSync"><tt class="xref c c-func docutils literal"><span class="pre">glClientWaitSync()</span></tt></a> was called.</li>
+<li><tt class="docutils literal"><span class="pre">GL_TIMEOUT_EXPIRED</span></tt> indicates that at least <em>timeout</em> nanoseconds passed and <em>sync</em> did not become signaled.</li>
+<li><tt class="docutils literal"><span class="pre">GL_CONDITION_SATISFIED</span></tt> indicates that <em>sync</em> was signaled before the timeout expired.</li>
+<li><tt class="docutils literal"><span class="pre">GL_WAIT_FAILED</span></tt> indicates that an error occurred. Additionally, an OpenGL error will be generated.</li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><a class="reference internal" href="#glClientWaitSync" title="glClientWaitSync"><tt class="xref c c-func docutils literal"><span class="pre">glClientWaitSync()</span></tt></a> is available only if the GL version is 3.2 or greater.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>sync</em> is not the name of an existing sync object.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>flags</em> contains any unsupported flag.</li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)2010 Khronos Group. Open Publication License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glClearStencil.html"
+                        title="previous chapter">function <cite>glClearStencil</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glColorMask.html"
+                        title="next chapter">function <cite>glColorMask</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glClientWaitSync.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glColorMask.html" title="function glColorMask"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glClearStencil.html" title="function glClearStencil"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

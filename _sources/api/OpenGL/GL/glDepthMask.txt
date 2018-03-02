@@ -1,0 +1,53 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glDepthMask`
+----------------------
+
+.. source file man4/glDepthMask
+
+.. currentmodule:: OpenGL.GL
+
+Enable or disable writing into the depth buffer
+
+.. c:function:: glDepthMask
+.. c:function:: void glDepthMask(GLboolean  flag)
+   :noindex: 
+
+
+   
+   :param flag:
+      Specifies whether the depth buffer is enabled for writing. If *flag* is ``GL_FALSE``, depth buffer writing is disabled. Otherwise, it is enabled. Initially, depth buffer writing is enabled.
+   
+
+.. seealso::
+
+   
+   :c:func:`glColorMask`, :c:func:`glDepthFunc`, :c:func:`glDepthRange`, :c:func:`glStencilMask`
+   
+.. rubric:: Description
+
+
+:c:func:`glDepthMask` specifies whether the depth buffer is enabled for writing. If *flag* is ``GL_FALSE``, depth buffer writing is disabled. Otherwise, it is enabled. Initially, depth buffer writing is enabled.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGet` with argument ``GL_DEPTH_WRITEMASK``
+
+
+
+.. note::
+
+   * Even if the depth buffer exists and the depth mask is non-zero, the depth buffer is not updated if the depth test is disabled. In order to unconditionally write to the depth buffer, the depth test should be enabled and set to ``GL_ALWAYS`` (see :c:func:`glDepthFunc`).
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

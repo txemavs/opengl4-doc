@@ -1,0 +1,61 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glGetPointerv`
+------------------------
+
+.. source file man/glGetPointerv
+
+.. currentmodule:: OpenGL.GL
+
+Return the address of the specified pointer
+
+.. c:function:: glGetPointerv
+.. c:function:: void glGetPointerv(GLenum  pname, GLvoid **  params)
+   :noindex: 
+
+
+   
+   :param pname:
+      Specifies the array or buffer pointer to be returned. Symbolic constants ``GL_COLOR_ARRAY_POINTER``, ``GL_EDGE_FLAG_ARRAY_POINTER``, ``GL_FOG_COORD_ARRAY_POINTER``, ``GL_FEEDBACK_BUFFER_POINTER``, ``GL_INDEX_ARRAY_POINTER``, ``GL_NORMAL_ARRAY_POINTER``, ``GL_SECONDARY_COLOR_ARRAY_POINTER``, ``GL_SELECTION_BUFFER_POINTER``, ``GL_TEXTURE_COORD_ARRAY_POINTER``, or ``GL_VERTEX_ARRAY_POINTER`` are accepted.
+   
+   :param params:
+      Returns the pointer value specified by *pname* .
+   
+
+.. seealso::
+
+   
+   :c:func:`glBindBuffer`, :c:func:`glClientActiveTexture`, :c:func:`glColorPointer`, :c:func:`glEdgeFlagPointer`, :c:func:`glFogCoordPointer`, :c:func:`glFeedbackBuffer`, :c:func:`glGetVertexAttribPointerv`, :c:func:`glIndexPointer`, :c:func:`glNormalPointer`, :c:func:`glSecondaryColorPointer`, :c:func:`glSelectBuffer`, :c:func:`glTexCoordPointer`, :c:func:`glVertexAttribPointer`, :c:func:`glVertexPointer`
+   
+.. rubric:: Description
+
+
+:c:func:`glGetPointerv` returns pointer information. *pname* is a symbolic constant indicating the pointer to be returned, and *params* is a pointer to a location in which to place the returned data.
+
+For all *pname* arguments except ``GL_FEEDBACK_BUFFER_POINTER`` and ``GL_SELECTION_BUFFER_POINTER``, if a non-zero named buffer object was bound to the ``GL_ARRAY_BUFFER`` target (see :c:func:`glBindBuffer`) when the desired pointer was previously specified, the pointer returned is a byte offset into the buffer object's data store. Buffer objects are only available in OpenGL versions 1.5 and greater.
+
+
+**Errors:**
+
+   * ``GL_INVALID_ENUM`` is generated if *pname* is not an accepted value.
+
+
+
+.. note::
+
+   * :c:func:`glGetPointerv` is available only if the GL version is 1.1 or greater.
+   * ``GL_FOG_COORD_ARRAY_POINTER`` and ``GL_SECONDARY_COLOR_ARRAY_POINTER`` are available only if the GL version is 1.4 or greater.
+   * The pointers are all client-side state.
+   * The initial value for each pointer is 0.
+   * For OpenGL versions 1.3 and greater, or when the ``ARB_multitexture`` extension is supported, querying the ``GL_TEXTURE_COORD_ARRAY_POINTER`` returns the value for the active client texture unit.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

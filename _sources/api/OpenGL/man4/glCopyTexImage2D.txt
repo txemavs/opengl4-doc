@@ -1,0 +1,240 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:29
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glCopyTexImage2D.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glCopyTexImage2D`
+---------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Copy pixels into a 2D texture image
+
+.. c:function:: glCopyTexImage2D
+
+
+         :param target:
+
+                  Specifies the target texture.
+                  Must be ``GL_TEXTURE_2D``\ ,
+                  ``GL_TEXTURE_CUBE_MAP_POSITIVE_X``\ ,
+                  ``GL_TEXTURE_CUBE_MAP_NEGATIVE_X``\ ,
+                  ``GL_TEXTURE_CUBE_MAP_POSITIVE_Y``\ ,
+                  ``GL_TEXTURE_CUBE_MAP_NEGATIVE_Y``\ ,
+                  ``GL_TEXTURE_CUBE_MAP_POSITIVE_Z``\ , or
+                  ``GL_TEXTURE_CUBE_MAP_NEGATIVE_Z``\ .
+
+         :param level:
+
+                  Specifies the level-of-detail number.
+                  Level 0 is the base image level.
+                  Level :strong:`n` is the :strong:`n` th mipmap reduction image.
+
+         :param internalformat:
+
+                  Specifies the internal format of the texture.
+                  Must be one of the following symbolic constants:
+                  ``GL_COMPRESSED_RED``\ ,
+                  ``GL_COMPRESSED_RG``\ ,
+                  ``GL_COMPRESSED_RGB``\ ,
+                  ``GL_COMPRESSED_RGBA``\ .
+                  ``GL_COMPRESSED_SRGB``\ ,
+                  ``GL_COMPRESSED_SRGB_ALPHA``\ .
+                  ``GL_DEPTH_COMPONENT``\ ,
+                  ``GL_DEPTH_COMPONENT16``\ ,
+                  ``GL_DEPTH_COMPONENT24``\ ,
+                  ``GL_DEPTH_COMPONENT32``\ ,
+                  ``GL_RED``\ ,
+                  ``GL_RG``\ ,
+                  ``GL_RGB``\ ,
+                  ``GL_R3_G3_B2``\ ,
+                  ``GL_RGB4``\ ,
+                  ``GL_RGB5``\ ,
+                  ``GL_RGB8``\ ,
+                  ``GL_RGB10``\ ,
+                  ``GL_RGB12``\ ,
+                  ``GL_RGB16``\ ,
+                  ``GL_RGBA``\ ,
+                  ``GL_RGBA2``\ ,
+                  ``GL_RGBA4``\ ,
+                  ``GL_RGB5_A1``\ ,
+                  ``GL_RGBA8``\ ,
+                  ``GL_RGB10_A2``\ ,
+                  ``GL_RGBA12``\ ,
+                  ``GL_RGBA16``\ ,
+                  ``GL_SRGB``\ ,
+                  ``GL_SRGB8``\ ,
+                  ``GL_SRGB_ALPHA``\ , or
+                  ``GL_SRGB8_ALPHA8``\ .
+
+         :param x:
+         :param y:
+
+                  Specify the window coordinates of the lower left corner
+                  of the rectangular region of pixels to be copied.
+
+         :param width:
+
+                  Specifies the width of the texture image.
+                  Must be 0 or
+                  |EQUATION_1_| for some integer |EQUATION_2_|\ .
+
+         :param height:
+
+                  Specifies the height of the texture image.
+                  Must be 0 or
+                  |EQUATION_3_| for some integer |EQUATION_4_|\ .
+
+         :param border:
+
+                  Specifies the width of the border.
+                  Must be either 0 or 1.
+
+.. rubric:: Specification
+
+.. c:function:: void glCopyTexImage2D(GLenum  target, GLint  level, GLenum  internalformat, GLint  x, GLint  y, GLsizei  width, GLsizei  height, GLint  border)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glCopyTexImage1D`\ ,
+            :c:func:`glCopyTexSubImage1D`\ ,
+            :c:func:`glCopyTexSubImage2D`\ ,
+            :c:func:`glPixelStore`\ ,
+            :c:func:`glTexImage1D`\ ,
+            :c:func:`glTexImage2D`\ ,
+            :c:func:`glTexSubImage1D`\ ,
+            :c:func:`glTexSubImage2D`\ ,
+            :c:func:`glTexParameter`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glCopyTexImage2D` defines a two-dimensional texture image, or cube-map texture image
+with pixels from the current
+``GL_READ_BUFFER``\ .
+
+
+The screen-aligned pixel rectangle with lower left corner at (\ *x*\ ,
+*y*\ ) and with a width of |EQUATION_5_| and a height of |EQUATION_6_| defines the texture array
+at the mipmap level specified by *level*\ .
+*internalformat* specifies the internal format of the texture array.
+
+
+The pixels in the rectangle are processed exactly as if
+:c:func:`glReadPixels` had been called, but the process stops just before
+final conversion.
+At this point all pixel component values are clamped to the range |EQUATION_7_| and then converted to the texture's internal format for storage in the texel
+array.
+
+
+Pixel ordering is such that lower
+|EQUATION_8_| and |EQUATION_9_| screen coordinates correspond to
+lower |EQUATION_10_| and |EQUATION_11_| texture coordinates.
+
+
+If any of the pixels within the specified rectangle of the current
+``GL_READ_BUFFER`` are outside the window associated with the current
+rendering context, then the values obtained for those pixels are undefined.
+
+
+When *internalformat* is one of the sRGB  types, the GL does not automatically convert the source pixels to the sRGB color space.  In this case, the :c:func:`glPixelMap` function can be used to accomplish the conversion.
+
+
+.. note::
+
+
+   1, 2, 3, and 4 are not accepted values for *internalformat*\ .
+
+
+   An image with height or width of 0 indicates a NULL texture.
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_ENUM`` is generated if *target* is not ``GL_TEXTURE_2D``\ , ``GL_TEXTURE_CUBE_MAP_POSITIVE_X``\ , ``GL_TEXTURE_CUBE_MAP_NEGATIVE_X``\ , ``GL_TEXTURE_CUBE_MAP_POSITIVE_Y``\ , ``GL_TEXTURE_CUBE_MAP_NEGATIVE_Y``\ , ``GL_TEXTURE_CUBE_MAP_POSITIVE_Z``\ , or ``GL_TEXTURE_CUBE_MAP_NEGATIVE_Z``\ .
+* ``GL_INVALID_VALUE`` is generated if *level* is less than 0.
+* ``GL_INVALID_VALUE`` may be generated if *level* is greater than |EQUATION_12_|\ , where |EQUATION_13_| is the returned value of ``GL_MAX_TEXTURE_SIZE``\ .
+* ``GL_INVALID_VALUE`` is generated if *width* is less than 0 or greater than ``GL_MAX_TEXTURE_SIZE``\ .
+* ``GL_INVALID_VALUE`` is generated if non-power-of-two textures are not supported and the *width* or *depth* cannot be represented as |EQUATION_14_| for some integer |EQUATION_15_|\ .
+* ``GL_INVALID_VALUE`` is generated if *border* is not 0 or 1.
+* ``GL_INVALID_VALUE`` is generated if *internalformat* is not an accepted format.
+* ``GL_INVALID_OPERATION`` is generated if *internalformat* is ``GL_DEPTH_COMPONENT``\ , ``GL_DEPTH_COMPONENT16``\ , ``GL_DEPTH_COMPONENT24``\ , or ``GL_DEPTH_COMPONENT32`` and there is no depth buffer.
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGetTexImage`
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glCopyTexImage2D'>
+
+.. role:: mml(raw)
+   :format: html
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mi mathvariant="italic">n</mi></msup><mo>+</mo><mrow><mn>2</mn><mo>&af;</mo><mfenced open="(" close=")"><mi mathvariant="italic">border</mi></mfenced></mrow></mrow></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mi mathvariant="italic">m</mi></msup><mo>+</mo><mrow><mn>2</mn><mo>&af;</mo><mfenced open="(" close=")"><mi mathvariant="italic">border</mi></mfenced></mrow></mrow></math>` 
+
+.. |EQUATION_4_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">m</mi></math>` 
+
+.. |EQUATION_5_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">width</mi><mo>+</mo><mrow><mn>2</mn><mo>&af;</mo><mfenced open="(" close=")"><mi mathvariant="italic">border</mi></mfenced></mrow></mrow></math>` 
+
+.. |EQUATION_6_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">height</mi><mo>+</mo><mrow><mn>2</mn><mo>&af;</mo><mfenced open="(" close=")"><mi mathvariant="italic">border</mi></mfenced></mrow></mrow></math>` 
+
+.. |EQUATION_7_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"><mn>0</mn><mn>1</mn></mfenced></math>` 
+
+.. |EQUATION_8_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">x</mi></math>` 
+
+.. |EQUATION_9_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">y</mi></math>` 
+
+.. |EQUATION_10_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">s</mi></math>` 
+
+.. |EQUATION_11_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">t</mi></math>` 
+
+.. |EQUATION_12_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">log</mi><mn>2</mn></msub><mo>&it;</mo><mi mathvariant="italic">max</mi></mrow></math>` 
+
+.. |EQUATION_13_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">max</mi></math>` 
+
+.. |EQUATION_14_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mi mathvariant="italic">k</mi></msup><mo>+</mo><mrow><mn>2</mn><mo>&af;</mo><mfenced open="(" close=")"><mi mathvariant="italic">border</mi></mfenced></mrow></mrow></math>` 
+
+.. |EQUATION_15_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">k</mi></math>` 
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

@@ -1,0 +1,286 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glEvalCoord &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function glEvalMesh" href="glEvalMesh.html" />
+    <link rel="prev" title="function glEnableClientState" href="glEnableClientState.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glEvalMesh.html" title="function glEvalMesh"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glEnableClientState.html" title="function glEnableClientState"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glevalcoord">
+<h1>function <cite>glEvalCoord</cite><a class="headerlink" href="#function-glevalcoord" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Evaluate enabled one- and two-dimensional maps</p>
+<dl class="function">
+<dt id="glEvalCoord">
+<tt class="descname">glEvalCoord</tt><big>(</big><big>)</big><a class="headerlink" href="#glEvalCoord" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>u</strong> &#8211; Specifies a value that is the domain coordinate
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">u</mi></math></span> to the basis function
+defined in a previous <a class="reference internal" href="glMap1.html#glMap1" title="glMap1"><tt class="xref c c-func docutils literal"><span class="pre">glMap1()</span></tt></a> or <a class="reference internal" href="glMap2.html#glMap2" title="glMap2"><tt class="xref c c-func docutils literal"><span class="pre">glMap2()</span></tt></a> command.</li>
+<li><strong>v</strong> &#8211; Specifies a value that is the domain coordinate
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">v</mi></math></span> to the basis function
+defined in a previous <a class="reference internal" href="glMap2.html#glMap2" title="glMap2"><tt class="xref c c-func docutils literal"><span class="pre">glMap2()</span></tt></a> command.
+This argument is not present in a <tt class="xref c c-func docutils literal"><span class="pre">glEvalCoord1()</span></tt> command.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt id="glEvalCoord1f">
+void <tt class="descname">glEvalCoord1f</tt><big>(</big>GLfloat <em>&nbsp;u</em>, GLdouble <em>&nbsp;u</em>, GLfloat <em>&nbsp;u</em>, GLfloat <em>&nbsp;v</em>, GLdouble <em>&nbsp;u</em>, GLdouble <em>&nbsp;v</em><big>)</big><a class="headerlink" href="#glEvalCoord1f" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="glEvalCoord1fv">
+void <tt class="descname">glEvalCoord1fv</tt><big>(</big>const GLfloat * <em>&nbsp;u</em>, const GLdouble * <em>&nbsp;u</em>, const GLfloat * <em>&nbsp;u</em>, const GLdouble * <em>&nbsp;u</em><big>)</big><a class="headerlink" href="#glEvalCoord1fv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glBegin.html#glBegin" title="glBegin"><tt class="xref c c-func docutils literal"><span class="pre">glBegin()</span></tt></a>,
+<a class="reference internal" href="glColor.html#glColor" title="glColor"><tt class="xref c c-func docutils literal"><span class="pre">glColor()</span></tt></a>,
+<a class="reference internal" href="../man4/glEnable.html#glEnable" title="glEnable"><tt class="xref c c-func docutils literal"><span class="pre">glEnable()</span></tt></a>,
+<a class="reference internal" href="glEvalMesh.html#glEvalMesh" title="glEvalMesh"><tt class="xref c c-func docutils literal"><span class="pre">glEvalMesh()</span></tt></a>,
+<a class="reference internal" href="glEvalPoint.html#glEvalPoint" title="glEvalPoint"><tt class="xref c c-func docutils literal"><span class="pre">glEvalPoint()</span></tt></a>,
+<a class="reference internal" href="glIndex.html#glIndex" title="glIndex"><tt class="xref c c-func docutils literal"><span class="pre">glIndex()</span></tt></a>,
+<a class="reference internal" href="glMap1.html#glMap1" title="glMap1"><tt class="xref c c-func docutils literal"><span class="pre">glMap1()</span></tt></a>,
+<a class="reference internal" href="glMap2.html#glMap2" title="glMap2"><tt class="xref c c-func docutils literal"><span class="pre">glMap2()</span></tt></a>,
+<a class="reference internal" href="glMapGrid.html#glMapGrid" title="glMapGrid"><tt class="xref c c-func docutils literal"><span class="pre">glMapGrid()</span></tt></a>,
+<a class="reference internal" href="glNormal.html#glNormal" title="glNormal"><tt class="xref c c-func docutils literal"><span class="pre">glNormal()</span></tt></a>,
+<a class="reference internal" href="glTexCoord.html#glTexCoord" title="glTexCoord"><tt class="xref c c-func docutils literal"><span class="pre">glTexCoord()</span></tt></a>,
+<a class="reference internal" href="glVertex.html#glVertex" title="glVertex"><tt class="xref c c-func docutils literal"><span class="pre">glVertex()</span></tt></a></p>
+</div>
+<p class="rubric">Parameters</p>
+<blockquote>
+<div><p><em>u</em></p>
+<blockquote>
+<div>Specifies a pointer to an array containing
+either one or two domain coordinates.
+The first coordinate is
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">u</mi></math></span>.
+The second coordinate is <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">v</mi></math></span>,
+which is present only in <tt class="xref c c-func docutils literal"><span class="pre">glEvalCoord2()</span></tt> versions.</div></blockquote>
+</div></blockquote>
+<p class="rubric">Description</p>
+<p><tt class="xref c c-func docutils literal"><span class="pre">glEvalCoord1()</span></tt> evaluates enabled one-dimensional maps at argument
+<em>u</em>.
+<tt class="xref c c-func docutils literal"><span class="pre">glEvalCoord2()</span></tt> does the same for two-dimensional maps using
+two domain values,
+<em>u</em> and <em>v</em>.
+To define a map, call <a class="reference internal" href="glMap1.html#glMap1" title="glMap1"><tt class="xref c c-func docutils literal"><span class="pre">glMap1()</span></tt></a> and <a class="reference internal" href="glMap2.html#glMap2" title="glMap2"><tt class="xref c c-func docutils literal"><span class="pre">glMap2()</span></tt></a>; to enable and
+disable it, call <a class="reference internal" href="../man4/glEnable.html#glEnable" title="glEnable"><tt class="xref c c-func docutils literal"><span class="pre">glEnable()</span></tt></a> and <a class="reference internal" href="../man4/glEnable.html#glDisable" title="glDisable"><tt class="xref c c-func docutils literal"><span class="pre">glDisable()</span></tt></a>.</p>
+<p>When one of the <a class="reference internal" href="#glEvalCoord" title="glEvalCoord"><tt class="xref c c-func docutils literal"><span class="pre">glEvalCoord()</span></tt></a> commands is issued,
+all currently enabled maps of the indicated dimension are evaluated.
+Then,
+for each enabled map,
+it is as if the corresponding GL command had been issued with the
+computed value.
+That is,
+if <tt class="docutils literal"><span class="pre">GL_MAP1_INDEX</span></tt> or
+<tt class="docutils literal"><span class="pre">GL_MAP2_INDEX</span></tt> is enabled,
+a <a class="reference internal" href="glIndex.html#glIndex" title="glIndex"><tt class="xref c c-func docutils literal"><span class="pre">glIndex()</span></tt></a> command is simulated.
+If <tt class="docutils literal"><span class="pre">GL_MAP1_COLOR_4</span></tt> or
+<tt class="docutils literal"><span class="pre">GL_MAP2_COLOR_4</span></tt> is enabled,
+a <a class="reference internal" href="glColor.html#glColor" title="glColor"><tt class="xref c c-func docutils literal"><span class="pre">glColor()</span></tt></a> command is simulated.
+If <tt class="docutils literal"><span class="pre">GL_MAP1_NORMAL</span></tt> or <tt class="docutils literal"><span class="pre">GL_MAP2_NORMAL</span></tt> is enabled,
+a normal vector is produced,
+and if any of
+<tt class="docutils literal"><span class="pre">GL_MAP1_TEXTURE_COORD_1</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_MAP1_TEXTURE_COORD_2</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_MAP1_TEXTURE_COORD_3</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_MAP1_TEXTURE_COORD_4</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_MAP2_TEXTURE_COORD_1</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_MAP2_TEXTURE_COORD_2</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_MAP2_TEXTURE_COORD_3</span></tt>, or
+<tt class="docutils literal"><span class="pre">GL_MAP2_TEXTURE_COORD_4</span></tt> is enabled, then an appropriate <a class="reference internal" href="glTexCoord.html#glTexCoord" title="glTexCoord"><tt class="xref c c-func docutils literal"><span class="pre">glTexCoord()</span></tt></a> command is simulated.</p>
+<p>For color,
+color index,
+normal,
+and texture coordinates the GL uses evaluated values instead of current values for those evaluations
+that are enabled,
+and current values otherwise,
+However,
+the evaluated values do not update the current values.
+Thus, if <a class="reference internal" href="glVertex.html#glVertex" title="glVertex"><tt class="xref c c-func docutils literal"><span class="pre">glVertex()</span></tt></a> commands are interspersed with <a class="reference internal" href="#glEvalCoord" title="glEvalCoord"><tt class="xref c c-func docutils literal"><span class="pre">glEvalCoord()</span></tt></a>
+commands, the color,
+normal,
+and texture coordinates associated with the <a class="reference internal" href="glVertex.html#glVertex" title="glVertex"><tt class="xref c c-func docutils literal"><span class="pre">glVertex()</span></tt></a> commands are not
+affected by the values generated by the <a class="reference internal" href="#glEvalCoord" title="glEvalCoord"><tt class="xref c c-func docutils literal"><span class="pre">glEvalCoord()</span></tt></a> commands,
+but only by the most recent
+<a class="reference internal" href="glColor.html#glColor" title="glColor"><tt class="xref c c-func docutils literal"><span class="pre">glColor()</span></tt></a>,
+<a class="reference internal" href="glIndex.html#glIndex" title="glIndex"><tt class="xref c c-func docutils literal"><span class="pre">glIndex()</span></tt></a>,
+<a class="reference internal" href="glNormal.html#glNormal" title="glNormal"><tt class="xref c c-func docutils literal"><span class="pre">glNormal()</span></tt></a>, and
+<a class="reference internal" href="glTexCoord.html#glTexCoord" title="glTexCoord"><tt class="xref c c-func docutils literal"><span class="pre">glTexCoord()</span></tt></a> commands.</p>
+<p>No commands are issued for maps that are not enabled.
+If more than one texture evaluation is enabled for a particular dimension
+(for example, <tt class="docutils literal"><span class="pre">GL_MAP2_TEXTURE_COORD_1</span></tt> and
+<tt class="docutils literal"><span class="pre">GL_MAP2_TEXTURE_COORD_2</span></tt>),
+then only the evaluation of the map that produces the larger
+number of coordinates
+(in this case, <tt class="docutils literal"><span class="pre">GL_MAP2_TEXTURE_COORD_2</span></tt>)
+is carried out.
+<tt class="docutils literal"><span class="pre">GL_MAP1_VERTEX_4</span></tt> overrides <tt class="docutils literal"><span class="pre">GL_MAP1_VERTEX_3</span></tt>,
+and
+<tt class="docutils literal"><span class="pre">GL_MAP2_VERTEX_4</span></tt> overrides <tt class="docutils literal"><span class="pre">GL_MAP2_VERTEX_3</span></tt>,
+in the same manner.
+If neither a three- nor a four-component vertex map is enabled for the
+specified dimension,
+the <a class="reference internal" href="#glEvalCoord" title="glEvalCoord"><tt class="xref c c-func docutils literal"><span class="pre">glEvalCoord()</span></tt></a> command is ignored.</p>
+<p>If you have enabled automatic normal generation,
+by calling <a class="reference internal" href="../man4/glEnable.html#glEnable" title="glEnable"><tt class="xref c c-func docutils literal"><span class="pre">glEnable()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_AUTO_NORMAL</span></tt>,
+<tt class="xref c c-func docutils literal"><span class="pre">glEvalCoord2()</span></tt> generates surface normals analytically,
+regardless of the contents or enabling of the <tt class="docutils literal"><span class="pre">GL_MAP2_NORMAL</span></tt> map.
+Let</p>
+<p><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="bold">m</mi><mo>=</mo><mrow><mfenced open="" close=""><mfrac><mfenced open="" close=""><mrow><mo>&PartialD;</mo><mi mathvariant="bold">p</mi></mrow></mfenced><mfenced open="" close=""><mrow><mo>&PartialD;</mo><mi mathvariant="italic">u</mi></mrow></mfenced></mfrac></mfenced><mo>&times;</mo><mfenced open="" close=""><mfrac><mfenced open="" close=""><mrow><mo>&PartialD;</mo><mi mathvariant="bold">p</mi></mrow></mfenced><mfenced open="" close=""><mrow><mo>&PartialD;</mo><mi mathvariant="italic">v</mi></mrow></mfenced></mfrac></mfenced></mrow></mrow></math></span></p>
+<p>Then the generated normal
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mi mathvariant="bold">n</mi></math></span> is <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="bold">n</mi><mo>=</mo><mfrac><mi mathvariant="bold">m</mi><mfenced open="" close=""><mfenced open="&DoubleVerticalBar;" close="&DoubleVerticalBar;"><mi mathvariant="bold">m</mi></mfenced></mfenced></mfrac></mrow></math></span></p>
+<p>If automatic normal generation is disabled,
+the corresponding normal map <tt class="docutils literal"><span class="pre">GL_MAP2_NORMAL</span></tt>,
+if enabled,
+is used to produce a normal.
+If neither automatic normal generation nor a normal map is enabled,
+no normal is generated for
+<tt class="xref c c-func docutils literal"><span class="pre">glEvalCoord2()</span></tt> commands.</p>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="../man4/glIsEnabled.html#glIsEnabled" title="glIsEnabled"><tt class="xref c c-func docutils literal"><span class="pre">glIsEnabled()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_MAP1_VERTEX_3</span></tt></li>
+<li><a class="reference internal" href="../man4/glIsEnabled.html#glIsEnabled" title="glIsEnabled"><tt class="xref c c-func docutils literal"><span class="pre">glIsEnabled()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_MAP1_VERTEX_4</span></tt></li>
+<li><a class="reference internal" href="../man4/glIsEnabled.html#glIsEnabled" title="glIsEnabled"><tt class="xref c c-func docutils literal"><span class="pre">glIsEnabled()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_MAP1_INDEX</span></tt></li>
+<li><a class="reference internal" href="../man4/glIsEnabled.html#glIsEnabled" title="glIsEnabled"><tt class="xref c c-func docutils literal"><span class="pre">glIsEnabled()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_MAP1_COLOR_4</span></tt></li>
+<li><a class="reference internal" href="../man4/glIsEnabled.html#glIsEnabled" title="glIsEnabled"><tt class="xref c c-func docutils literal"><span class="pre">glIsEnabled()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_MAP1_NORMAL</span></tt></li>
+<li><a class="reference internal" href="../man4/glIsEnabled.html#glIsEnabled" title="glIsEnabled"><tt class="xref c c-func docutils literal"><span class="pre">glIsEnabled()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_MAP1_TEXTURE_COORD_1</span></tt></li>
+<li><a class="reference internal" href="../man4/glIsEnabled.html#glIsEnabled" title="glIsEnabled"><tt class="xref c c-func docutils literal"><span class="pre">glIsEnabled()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_MAP1_TEXTURE_COORD_2</span></tt></li>
+<li><a class="reference internal" href="../man4/glIsEnabled.html#glIsEnabled" title="glIsEnabled"><tt class="xref c c-func docutils literal"><span class="pre">glIsEnabled()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_MAP1_TEXTURE_COORD_3</span></tt></li>
+<li><a class="reference internal" href="../man4/glIsEnabled.html#glIsEnabled" title="glIsEnabled"><tt class="xref c c-func docutils literal"><span class="pre">glIsEnabled()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_MAP1_TEXTURE_COORD_4</span></tt></li>
+<li><a class="reference internal" href="../man4/glIsEnabled.html#glIsEnabled" title="glIsEnabled"><tt class="xref c c-func docutils literal"><span class="pre">glIsEnabled()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_MAP2_VERTEX_3</span></tt></li>
+<li><a class="reference internal" href="../man4/glIsEnabled.html#glIsEnabled" title="glIsEnabled"><tt class="xref c c-func docutils literal"><span class="pre">glIsEnabled()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_MAP2_VERTEX_4</span></tt></li>
+<li><a class="reference internal" href="../man4/glIsEnabled.html#glIsEnabled" title="glIsEnabled"><tt class="xref c c-func docutils literal"><span class="pre">glIsEnabled()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_MAP2_INDEX</span></tt></li>
+<li><a class="reference internal" href="../man4/glIsEnabled.html#glIsEnabled" title="glIsEnabled"><tt class="xref c c-func docutils literal"><span class="pre">glIsEnabled()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_MAP2_COLOR_4</span></tt></li>
+<li><a class="reference internal" href="../man4/glIsEnabled.html#glIsEnabled" title="glIsEnabled"><tt class="xref c c-func docutils literal"><span class="pre">glIsEnabled()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_MAP2_NORMAL</span></tt></li>
+<li><a class="reference internal" href="../man4/glIsEnabled.html#glIsEnabled" title="glIsEnabled"><tt class="xref c c-func docutils literal"><span class="pre">glIsEnabled()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_MAP2_TEXTURE_COORD_1</span></tt></li>
+<li><a class="reference internal" href="../man4/glIsEnabled.html#glIsEnabled" title="glIsEnabled"><tt class="xref c c-func docutils literal"><span class="pre">glIsEnabled()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_MAP2_TEXTURE_COORD_2</span></tt></li>
+<li><a class="reference internal" href="../man4/glIsEnabled.html#glIsEnabled" title="glIsEnabled"><tt class="xref c c-func docutils literal"><span class="pre">glIsEnabled()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_MAP2_TEXTURE_COORD_3</span></tt></li>
+<li><a class="reference internal" href="../man4/glIsEnabled.html#glIsEnabled" title="glIsEnabled"><tt class="xref c c-func docutils literal"><span class="pre">glIsEnabled()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_MAP2_TEXTURE_COORD_4</span></tt></li>
+<li><a class="reference internal" href="../man4/glIsEnabled.html#glIsEnabled" title="glIsEnabled"><tt class="xref c c-func docutils literal"><span class="pre">glIsEnabled()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_AUTO_NORMAL</span></tt></li>
+<li><a class="reference internal" href="glGetMap.html#glGetMap" title="glGetMap"><tt class="xref c c-func docutils literal"><span class="pre">glGetMap()</span></tt></a></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glEnableClientState.html"
+                        title="previous chapter">function <cite>glEnableClientState</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glEvalMesh.html"
+                        title="next chapter">function <cite>glEvalMesh</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/glEvalCoord.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glEvalMesh.html" title="function glEvalMesh"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glEnableClientState.html" title="function glEnableClientState"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

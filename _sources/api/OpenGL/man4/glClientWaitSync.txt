@@ -1,0 +1,98 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:28
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glClientWaitSync.xml'
+.. (c)2010 Khronos Group.
+.. See license details at http://opencontent.org/openpub/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glClientWaitSync`
+---------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Block and wait for a sync object to become signaled
+
+.. c:function:: glClientWaitSync
+
+
+         :param sync:
+
+                  The sync object whose status to wait on.
+
+         :param flags:
+
+                  A bitfield controlling the command flushing behavior. *flags* may be ``GL_SYNC_FLUSH_COMMANDS_BIT``\ .
+
+.. rubric:: Specification
+
+.. c:function:: GLenum glClientWaitSync(GLsync  sync, GLbitfield  flags, GLuint64  timeout)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glFenceSync`\ ,
+            :c:func:`glIsSync`
+            :c:func:`glWaitSync`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glClientWaitSync` causes the client to block and wait for the sync object specified by *sync* to become signaled. If
+*sync* is signaled when :c:func:`glClientWaitSync` is called, :c:func:`glClientWaitSync` returns immediately, otherwise
+it will block and wait for up to *timeout* nanoseconds for *sync* to become signaled.
+
+
+The return value is one of four status values:
+
+         *  ``GL_ALREADY_SIGNALED`` indicates that *sync* was signaled at the time that :c:func:`glClientWaitSync` was called.
+         *  ``GL_TIMEOUT_EXPIRED`` indicates that at least *timeout* nanoseconds passed and *sync* did not become signaled.
+         *  ``GL_CONDITION_SATISFIED`` indicates that *sync* was signaled before the timeout expired.
+         *  ``GL_WAIT_FAILED`` indicates that an error occurred. Additionally, an OpenGL error will be generated.
+
+
+.. note::
+
+
+   :c:func:`glClientWaitSync` is available only if the GL version is 3.2 or greater.
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_VALUE`` is generated if *sync* is not the name of an existing sync object.
+* ``GL_INVALID_VALUE`` is generated if *flags* contains any unsupported flag.
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glClientWaitSync'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )2010 Khronos Group. Open Publication License.
+

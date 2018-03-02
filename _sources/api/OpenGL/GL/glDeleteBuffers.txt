@@ -1,0 +1,55 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glDeleteBuffers`
+--------------------------
+
+.. source file man4/glDeleteBuffers
+
+.. currentmodule:: OpenGL.GL
+
+Delete named buffer objects
+
+.. c:function:: glDeleteBuffers
+.. c:function:: void glDeleteBuffers(GLsizei  n, const GLuint *  buffers)
+   :noindex: 
+
+
+   
+   :param n:
+      Specifies the number of buffer objects to be deleted.
+   
+   :param buffers:
+      Specifies an array of buffer objects to be deleted.
+   
+
+.. seealso::
+
+   
+   :c:func:`glBindBuffer`, :c:func:`glGenBuffers`, :c:func:`glGet`
+   
+.. rubric:: Description
+
+
+:c:func:`glDeleteBuffers` deletes *n* buffer objects named by the elements of the array *buffers* . After a buffer object is deleted, it has no contents, and its name is free for reuse (for example by :c:func:`glGenBuffers`). If a buffer object that is currently bound is deleted, the binding reverts to 0 (the absence of any buffer object).
+
+:c:func:`glDeleteBuffers` silently ignores 0's and names that do not correspond to existing buffer objects.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glIsBuffer`
+
+**Errors:**
+
+   * ``GL_INVALID_VALUE`` is generated if *n* is negative.
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

@@ -1,0 +1,81 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:27
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glIsList.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glIsList`
+-------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Determine if a name corresponds to a display list
+
+.. c:function:: glIsList
+
+
+         :param list:
+
+                  Specifies a potential display list name.
+
+.. rubric:: Specification
+
+.. c:function:: GLboolean glIsList(GLuint  list)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glCallList`\ ,
+            :c:func:`glCallLists`\ ,
+            :c:func:`glDeleteLists`\ ,
+            :c:func:`glGenLists`\ ,
+            :c:func:`glNewList`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glIsList` returns ``GL_TRUE`` if *list* is the name
+of a display list and returns ``GL_FALSE`` if it is not, or if an error occurs.
+
+
+A name returned by :c:func:`glGenLists`\ , but not yet associated with a display list
+by calling :c:func:`glNewList`\ , is not the name of a display list.
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_OPERATION`` is generated if :c:func:`glIsList` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`\ .
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glIsList'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

@@ -1,0 +1,52 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `gluLoadSamplingMatrices`
+----------------------------------
+
+.. source file man/gluLoadSamplingMatrices
+
+.. currentmodule:: OpenGL.GLU
+
+Load NURBS sampling and culling matrices
+
+.. c:function:: gluLoadSamplingMatrices
+.. c:function:: void gluLoadSamplingMatrices(GLUnurbs*  nurb, const GLfloat *  model, const GLfloat *  perspective, const GLint *  view)
+   :noindex: 
+
+
+   
+   :param nurb:
+      Specifies the NURBS object (created with :c:func:`gluNewNurbsRenderer`).
+   
+   :param model:
+      Specifies a modelview matrix (as from a :c:func:`glGetFloatv` call).
+   
+   :param perspective:
+      Specifies a projection matrix (as from a :c:func:`glGetFloatv` call).
+   
+   :param view:
+      Specifies a viewport (as from a :c:func:`glGetIntegerv` call).
+   
+
+.. seealso::
+
+   
+   :c:func:`gluGetNurbsProperty`, :c:func:`gluNewNurbsRenderer`, :c:func:`gluNurbsProperty`
+   
+.. rubric:: Description
+
+
+:c:func:`gluLoadSamplingMatrices` uses *model* , *perspective* , and *view* to recompute the sampling and culling matrices stored in *nurb* . The sampling matrix determines how finely a NURBS curve or surface must be tessellated to satisfy the sampling tolerance (as determined by the ``GLU_SAMPLING_TOLERANCE`` property). The culling matrix is used in deciding if a NURBS curve or surface should be culled before rendering (when the ``GLU_CULLING`` property is turned on).
+
+:c:func:`gluLoadSamplingMatrices` is necessary only if the ``GLU_AUTO_LOAD_MATRIX`` property is turned off (see :c:func:`gluNurbsProperty`). Although it can be convenient to leave the ``GLU_AUTO_LOAD_MATRIX`` property turned on, there can be a performance penalty for doing so. (A round trip to the GL server is needed to fetch the current values of the modelview matrix, projection matrix, and viewport.)
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

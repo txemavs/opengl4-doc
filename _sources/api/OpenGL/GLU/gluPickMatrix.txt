@@ -1,0 +1,51 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `gluPickMatrix`
+------------------------
+
+.. source file man/gluPickMatrix
+
+.. currentmodule:: OpenGL.GLU
+
+Define a picking region
+
+.. c:function:: gluPickMatrix
+.. c:function:: void gluPickMatrix(GLdouble  x, GLdouble  y, GLdouble  delX, GLdouble  delY, GLint *  viewport)
+   :noindex: 
+
+
+   
+   :param x:
+      Specify the center of a picking region in window coordinates.
+   
+   :param delX:
+      Specify the width and height, respectively, of the picking region in window coordinates.
+   
+   :param viewport:
+      Specifies the current viewport (as from a :c:func:`glGetIntegerv` call).
+   
+
+.. seealso::
+
+   
+   :c:func:`gluPerspective`, :c:func:`glGet`, :c:func:`glLoadIdentity`, :c:func:`glMultMatrix`, :c:func:`glRenderMode`
+   
+.. rubric:: Description
+
+
+:c:func:`gluPickMatrix` creates a projection matrix that can be used to restrict drawing to a small region of the viewport. This is typically useful to determine what objects are being drawn near the cursor. Use :c:func:`gluPickMatrix` to restrict drawing to a small region around the cursor. Then, enter selection mode (with :c:func:`glRenderMode`) and rerender the scene. All primitives that would have been drawn near the cursor are identified and stored in the selection buffer.
+
+The matrix created by :c:func:`gluPickMatrix` is multiplied by the current matrix just as if :c:func:`glMultMatrix` is called with the generated matrix. To effectively use the generated pick matrix for picking, first call :c:func:`glLoadIdentity` to load an identity matrix onto the perspective matrix stack. Then call :c:func:`gluPickMatrix`, and, finally, call a command (such as :c:func:`gluPerspective`) to multiply the perspective matrix by the pick matrix.
+
+When using :c:func:`gluPickMatrix` to pick NURBS, be careful to turn off the NURBS property ``GLU_AUTO_LOAD_MATRIX``. If ``GLU_AUTO_LOAD_MATRIX`` is not turned off, then any NURBS surface rendered is subdivided differently with the pick matrix than the way it was subdivided without the pick matrix.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

@@ -1,0 +1,46 @@
+.. nabla.opengl-sphinx project
+
+.. ---------------------------
+
+.. this dodument source file 'man/gl_NumSamples'is copyrighted by Khronos Group
+   See license details at http://opencontent.org/openpub/
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   
+
+function `gl_NumSamples`
+------------------------
+
+.. currentmodule:: OpenGL.GLSL
+
+Contains the total number of samples in the framebuffer
+
+.. c:function:: gl_NumSamples
+
+
+.. rubric:: Specification
+
+.. c:function:: in int gl_NumSamples)
+
+.. seealso::
+
+   
+   :c:func:`gl_SamplePosition`, :c:func:`gl_SampleID`
+   
+.. rubric:: Description
+
+
+:c:func:`gl_NumSamples` is a fragment language input variable that contains the number of samples in the framebuffer, or 1 if rendering to a non-multisample framebuffer. :c:func:`gl_NumSamples` is the sample count of the framebuffer regardless of whether multisample rasterization is enabled or not.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2011 Khronos Group. Open Publication License.
+

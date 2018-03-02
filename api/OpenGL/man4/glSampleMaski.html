@@ -1,0 +1,170 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glSampleMaski &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glSamplerParameter" href="glSamplerParameter.html" />
+    <link rel="prev" title="function glSampleCoverage" href="glSampleCoverage.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glSamplerParameter.html" title="function glSamplerParameter"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glSampleCoverage.html" title="function glSampleCoverage"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glsamplemaski">
+<h1>function <cite>glSampleMaski</cite><a class="headerlink" href="#function-glsamplemaski" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Set the value of a sub-word of the sample mask</p>
+<dl class="function">
+<dt id="glSampleMaski">
+<tt class="descname">glSampleMaski</tt><big>(</big><big>)</big><a class="headerlink" href="#glSampleMaski" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>maskNumber</strong> &#8211; Specifies which 32-bit sub-word of the sample mask to update.</li>
+<li><strong>mask</strong> &#8211; Specifies the new value of the mask sub-word.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glSampleMaski</tt><big>(</big>GLuint <em>&nbsp;maskNumber</em>, GLbitfield <em>&nbsp;mask</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glGenRenderbuffers.html#glGenRenderbuffers" title="glGenRenderbuffers"><tt class="xref c c-func docutils literal"><span class="pre">glGenRenderbuffers()</span></tt></a>,
+<a class="reference internal" href="glBindRenderbuffer.html#glBindRenderbuffer" title="glBindRenderbuffer"><tt class="xref c c-func docutils literal"><span class="pre">glBindRenderbuffer()</span></tt></a>,
+<a class="reference internal" href="glRenderbufferStorageMultisample.html#glRenderbufferStorageMultisample" title="glRenderbufferStorageMultisample"><tt class="xref c c-func docutils literal"><span class="pre">glRenderbufferStorageMultisample()</span></tt></a>,
+<a class="reference internal" href="glFramebufferRenderbuffer.html#glFramebufferRenderbuffer" title="glFramebufferRenderbuffer"><tt class="xref c c-func docutils literal"><span class="pre">glFramebufferRenderbuffer()</span></tt></a>,
+<a class="reference internal" href="glDeleteRenderbuffers.html#glDeleteRenderbuffers" title="glDeleteRenderbuffers"><tt class="xref c c-func docutils literal"><span class="pre">glDeleteRenderbuffers()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glSampleMaski" title="glSampleMaski"><tt class="xref c c-func docutils literal"><span class="pre">glSampleMaski()</span></tt></a> sets one 32-bit sub-word of the multi-word sample mask, <tt class="docutils literal"><span class="pre">GL_SAMPLE_MASK_VALUE</span></tt>.</p>
+<p><em>maskIndex</em> specifies which 32-bit sub-word of the sample mask to update, and <em>mask</em> specifies
+the new value to use for that sub-word. <em>maskIndex</em> must be less than the value of
+<tt class="docutils literal"><span class="pre">GL_MAX_SAMPLE_MASK_WORDS</span></tt>. Bit <strong>B</strong> of mask word <strong>M</strong> corresponds to sample
+32 x <strong>M</strong> + <strong>B</strong>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><a class="reference internal" href="#glSampleMaski" title="glSampleMaski"><tt class="xref c c-func docutils literal"><span class="pre">glSampleMaski()</span></tt></a> is available only if the GL version is 3.2 or greater, or if the <tt class="docutils literal"><span class="pre">ARB_texture_multisample</span></tt>
+extension is supported.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>maskIndex</em> is greater than or equal to the value of <tt class="docutils literal"><span class="pre">GL_MAX_SAMPLE_MASK_WORDS</span></tt>.</li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)2010 Khronos Group. Open Publication License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glSampleCoverage.html"
+                        title="previous chapter">function <cite>glSampleCoverage</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glSamplerParameter.html"
+                        title="next chapter">function <cite>glSamplerParameter</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glSampleMaski.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glSamplerParameter.html" title="function glSamplerParameter"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glSampleCoverage.html" title="function glSampleCoverage"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

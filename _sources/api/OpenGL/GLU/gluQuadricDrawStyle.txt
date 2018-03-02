@@ -1,0 +1,58 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `gluQuadricDrawStyle`
+------------------------------
+
+.. source file man/gluQuadricDrawStyle
+
+.. currentmodule:: OpenGL.GLU
+
+Specify the draw style desired for quadrics
+
+.. c:function:: gluQuadricDrawStyle
+.. c:function:: void gluQuadricDrawStyle(GLUquadric*  quad, GLenum  draw)
+   :noindex: 
+
+
+   
+   :param quad:
+      Specifies the quadrics object (created with :c:func:`gluNewQuadric`).
+   
+   :param draw:
+      Specifies the desired draw style. Valid values are ``GLU_FILL``, ``GLU_LINE``, ``GLU_SILHOUETTE``, and ``GLU_POINT``.
+   
+
+.. seealso::
+
+   
+   :c:func:`gluNewQuadric`, :c:func:`gluQuadricNormals`, :c:func:`gluQuadricOrientation`, :c:func:`gluQuadricTexture`
+   
+.. rubric:: Description
+
+
+:c:func:`gluQuadricDrawStyle` specifies the draw style for quadrics rendered with *quad* . The legal values are as follows:
+
+
+   
+   ``GLU_FILL``
+      Quadrics are rendered with polygon primitives. The polygons are drawn in a counterclockwise fashion with respect to their normals (as defined with :c:func:`gluQuadricOrientation`).
+   
+   ``GLU_LINE``
+      Quadrics are rendered as a set of lines.
+   
+   ``GLU_SILHOUETTE``
+      Quadrics are rendered as a set of lines, except that edges separating coplanar faces will not be drawn.
+   
+   ``GLU_POINT``
+      Quadrics are rendered as a set of points.
+   
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

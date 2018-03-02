@@ -1,0 +1,116 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:29
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glGetBufferSubData.xml'
+.. (c)2005 Addison-Wesley.
+.. See license details at http://opencontent.org/openpub/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glGetBufferSubData`
+-----------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Returns a subset of a buffer object's data store
+
+.. c:function:: glGetBufferSubData
+
+
+         :param target:
+
+                  Specifies the target buffer object.
+                  The symbolic constant must be ``GL_ARRAY_BUFFER``\ ,
+                  ``GL_COPY_READ_BUFFER``\ ,
+                  ``GL_COPY_WRITE_BUFFER``\ ,
+                  ``GL_ELEMENT_ARRAY_BUFFER``\ ,
+                  ``GL_PIXEL_PACK_BUFFER``\ ,
+                  ``GL_PIXEL_UNPACK_BUFFER``\ ,
+                  ``GL_TEXTURE_BUFFER``\ ,
+                  ``GL_TRANSFORM_FEEDBACK_BUFFER``\ , or
+                  ``GL_UNIFORM_BUFFER``\ .
+
+         :param offset:
+
+                  Specifies the offset into the buffer object's data store from which data will be returned,
+                  measured in bytes.
+
+         :param size:
+
+                  Specifies the size in bytes of the data store region being returned.
+
+         :param data:
+
+                  Specifies a pointer to the location where buffer object data is returned.
+
+.. rubric:: Specification
+
+.. c:function:: void glGetBufferSubData(GLenum  target, GLintptr  offset, GLsizeiptr  size, GLvoid *  data)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glBindBuffer`\ ,
+            :c:func:`glBufferData`\ ,
+            :c:func:`glBufferSubData`\ ,
+            :c:func:`glMapBuffer`\ ,
+            :c:func:`glUnmapBuffer`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glGetBufferSubData` returns some or all of the data from the buffer object currently
+bound to *target*\ . Data starting at byte offset *offset* and
+extending for *size* bytes is copied from the data store to the memory pointed to by
+*data*\ . An error is thrown if the buffer object is currently mapped, or if
+*offset* and *size* together define a range beyond the bounds
+of the buffer object's data store.
+
+
+.. note::
+
+
+   If an error is generated,
+   no change is made to the contents of *data*\ .
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_ENUM`` is generated if *target* is not ``GL_ARRAY_BUFFER``\ , ``GL_ELEMENT_ARRAY_BUFFER``\ , ``GL_PIXEL_PACK_BUFFER``\ , or ``GL_PIXEL_UNPACK_BUFFER``\ .
+* ``GL_INVALID_VALUE`` is generated if *offset* or *size* is negative, or if together they define a region of memory that extends beyond the buffer object's allocated data store.
+* ``GL_INVALID_OPERATION`` is generated if the reserved buffer object name 0 is bound to *target*\ .
+* ``GL_INVALID_OPERATION`` is generated if the buffer object being queried is mapped.
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glGetBufferSubData'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )2005 Addison-Wesley. Open Publication License.
+

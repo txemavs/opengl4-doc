@@ -1,0 +1,82 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:27
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/gluGetTessProperty.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `gluGetTessProperty`
+-----------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Get a tessellation object property
+
+.. c:function:: gluGetTessProperty
+
+
+         :param tess:
+
+                  Specifies the tessellation object (created with :c:func:`gluNewTess`\ ).
+
+         :param which:
+
+                  Specifies the property whose value is to be fetched. Valid values are
+                  ``GLU_TESS_WINDING_RULE``\ ,
+                  ``GLU_TESS_BOUNDARY_ONLY``\ , and
+                  ``GLU_TESS_TOLERANCE``\ .
+
+         :param data:
+
+                  Specifies a pointer to the location into which the value of the
+                  named property is written.
+
+.. rubric:: Specification
+
+.. c:function:: void gluGetTessProperty(GLUtesselator*  tess, GLenum  which, GLdouble*  data)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`gluNewTess`\ ,
+            :c:func:`gluTessProperty`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`gluGetTessProperty` retrieves properties stored in a tessellation object. These
+properties affect the way that tessellation objects
+are interpreted and rendered. See the
+:c:func:`gluTessProperty` reference page for information about the
+properties and what they do.
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'gluGetTessProperty'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

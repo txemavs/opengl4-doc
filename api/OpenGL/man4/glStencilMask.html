@@ -1,0 +1,183 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glStencilMask &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glStencilMaskSeparate" href="glStencilMaskSeparate.html" />
+    <link rel="prev" title="function glStencilFuncSeparate" href="glStencilFuncSeparate.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glStencilMaskSeparate.html" title="function glStencilMaskSeparate"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glStencilFuncSeparate.html" title="function glStencilFuncSeparate"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glstencilmask">
+<h1>function <cite>glStencilMask</cite><a class="headerlink" href="#function-glstencilmask" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Control the front and back writing of individual bits in the stencil planes</p>
+<dl class="function">
+<dt id="glStencilMask">
+<tt class="descname">glStencilMask</tt><big>(</big><big>)</big><a class="headerlink" href="#glStencilMask" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>mask</strong> &#8211; Specifies a bit mask to enable and disable writing of individual bits
+in the stencil planes.
+Initially, the mask is all 1&#8217;s.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glStencilMask</tt><big>(</big>GLuint <em>&nbsp;mask</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glColorMask.html#glColorMask" title="glColorMask"><tt class="xref c c-func docutils literal"><span class="pre">glColorMask()</span></tt></a>,
+<a class="reference internal" href="glDepthMask.html#glDepthMask" title="glDepthMask"><tt class="xref c c-func docutils literal"><span class="pre">glDepthMask()</span></tt></a>,
+<a class="reference internal" href="glStencilFunc.html#glStencilFunc" title="glStencilFunc"><tt class="xref c c-func docutils literal"><span class="pre">glStencilFunc()</span></tt></a>,
+<a class="reference internal" href="glStencilFuncSeparate.html#glStencilFuncSeparate" title="glStencilFuncSeparate"><tt class="xref c c-func docutils literal"><span class="pre">glStencilFuncSeparate()</span></tt></a>,
+<a class="reference internal" href="glStencilMaskSeparate.html#glStencilMaskSeparate" title="glStencilMaskSeparate"><tt class="xref c c-func docutils literal"><span class="pre">glStencilMaskSeparate()</span></tt></a>,
+<a class="reference internal" href="glStencilOp.html#glStencilOp" title="glStencilOp"><tt class="xref c c-func docutils literal"><span class="pre">glStencilOp()</span></tt></a>,
+<a class="reference internal" href="glStencilOpSeparate.html#glStencilOpSeparate" title="glStencilOpSeparate"><tt class="xref c c-func docutils literal"><span class="pre">glStencilOpSeparate()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glStencilMask" title="glStencilMask"><tt class="xref c c-func docutils literal"><span class="pre">glStencilMask()</span></tt></a> controls the writing of individual bits in the stencil planes.
+The least significant <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math></span> bits of <em>mask</em>,
+where <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math></span> is the number of bits in the stencil buffer,
+specify a mask.
+Where a 1 appears in the mask,
+it&#8217;s possible to write to the corresponding bit in the stencil buffer.
+Where a 0 appears,
+the corresponding bit is write-protected.
+Initially, all bits are enabled for writing.</p>
+<p>There can be two separate <em>mask</em> writemasks; one affects back-facing polygons, and the other
+affects front-facing polygons as well as other non-polygon primitives.
+<a class="reference internal" href="#glStencilMask" title="glStencilMask"><tt class="xref c c-func docutils literal"><span class="pre">glStencilMask()</span></tt></a> sets both front
+and back stencil writemasks to the same values. Use <a class="reference internal" href="glStencilMaskSeparate.html#glStencilMaskSeparate" title="glStencilMaskSeparate"><tt class="xref c c-func docutils literal"><span class="pre">glStencilMaskSeparate()</span></tt></a>
+to set front and back stencil writemasks to different values.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><a class="reference internal" href="#glStencilMask" title="glStencilMask"><tt class="xref c c-func docutils literal"><span class="pre">glStencilMask()</span></tt></a> is the same as
+calling <a class="reference internal" href="glStencilMaskSeparate.html#glStencilMaskSeparate" title="glStencilMaskSeparate"><tt class="xref c c-func docutils literal"><span class="pre">glStencilMaskSeparate()</span></tt></a>
+with <em>face</em> set to <tt class="docutils literal"><span class="pre">GL_FRONT_AND_BACK</span></tt>.</p>
+</div>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_STENCIL_WRITEMASK</span></tt>, <tt class="docutils literal"><span class="pre">GL_STENCIL_BACK_WRITEMASK</span></tt>, or <tt class="docutils literal"><span class="pre">GL_STENCIL_BITS</span></tt></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glStencilFuncSeparate.html"
+                        title="previous chapter">function <cite>glStencilFuncSeparate</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glStencilMaskSeparate.html"
+                        title="next chapter">function <cite>glStencilMaskSeparate</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glStencilMask.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glStencilMaskSeparate.html" title="function glStencilMaskSeparate"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glStencilFuncSeparate.html" title="function glStencilFuncSeparate"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

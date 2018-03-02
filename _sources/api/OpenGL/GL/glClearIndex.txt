@@ -1,0 +1,60 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glClearIndex`
+-----------------------
+
+.. source file man/glClearIndex
+
+.. currentmodule:: OpenGL.GL
+
+Specify the clear value for the color index buffers
+
+.. c:function:: glClearIndex
+.. c:function:: void glClearIndex(GLfloat  c)
+   :noindex: 
+
+
+   
+   :param c:
+      Specifies the index used when the color index buffers are cleared. The initial value is 0.
+   
+
+.. seealso::
+
+   
+   :c:func:`glClear`
+   
+.. rubric:: Description
+
+
+:c:func:`glClearIndex` specifies the index used by :c:func:`glClear` to clear the color index buffers. *c* is not clamped. Rather, *c* is converted to a fixed-point value with unspecified precision to the right of the binary point. The integer part of this value is then masked with |EQUATION_1_| , where |EQUATION_2_| is the number of bits in a color index stored in the frame buffer.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGet` with argument ``GL_INDEX_CLEAR_VALUE``
+   * :c:func:`glGet` with argument ``GL_INDEX_BITS``
+
+**Errors:**
+
+   * ``GL_INVALID_OPERATION`` is generated if :c:func:`glClearIndex` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`.
+
+
+.. role:: mml(raw)
+   :format: html
+
+
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <msup><mn>2</mn> <mi mathvariant="italic">m</mi> </msup> <mo>-</mo> <mn>1</mn> </mrow> </math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">m</mi></math>` 
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

@@ -1,0 +1,48 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glDeleteVertexArrays`
+-------------------------------
+
+.. source file man4/glDeleteVertexArrays
+
+.. currentmodule:: OpenGL.GL
+
+Delete vertex array objects
+
+.. c:function:: glDeleteVertexArrays
+.. c:function:: void glDeleteVertexArrays(GLsizei  n, const GLuint * arrays)
+   :noindex: 
+
+
+   
+   :param n:
+      Specifies the number of vertex array objects to be deleted.
+   
+   :param arrays:
+      Specifies the address of an array containing the *n* names of the objects to be deleted.
+   
+
+.. seealso::
+
+   
+   :c:func:`glGenVertexArrays`, :c:func:`glIsVertexArray`, :c:func:`glBindVertexArray`
+   
+.. rubric:: Description
+
+
+:c:func:`glDeleteVertexArrays` deletes *n* vertex array objects whose names are stored in the array addressed by *arrays* . Once a vertex array object is deleted it has no contents and its name is again unused. If a vertex array object that is currently bound is deleted, the binding for that object reverts to zero and the default vertex array becomes current. Unused names in *arrays* are silently ignored, as is the value zero.
+
+
+**Errors:**
+
+   * ``GL_INVALID_VALUE`` is generated if *n* is negative.
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

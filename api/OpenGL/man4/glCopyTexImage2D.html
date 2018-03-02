@@ -1,0 +1,253 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glCopyTexImage2D &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glCopyTexSubImage1D" href="glCopyTexSubImage1D.html" />
+    <link rel="prev" title="function glCopyTexImage1D" href="glCopyTexImage1D.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glCopyTexSubImage1D.html" title="function glCopyTexSubImage1D"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glCopyTexImage1D.html" title="function glCopyTexImage1D"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glcopyteximage2d">
+<h1>function <cite>glCopyTexImage2D</cite><a class="headerlink" href="#function-glcopyteximage2d" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Copy pixels into a 2D texture image</p>
+<dl class="function">
+<dt id="glCopyTexImage2D">
+<tt class="descname">glCopyTexImage2D</tt><big>(</big><big>)</big><a class="headerlink" href="#glCopyTexImage2D" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>target</strong> &#8211; Specifies the target texture.
+Must be <tt class="docutils literal"><span class="pre">GL_TEXTURE_2D</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_POSITIVE_X</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_NEGATIVE_X</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_POSITIVE_Y</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_NEGATIVE_Y</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_POSITIVE_Z</span></tt>, or
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_NEGATIVE_Z</span></tt>.</li>
+<li><strong>level</strong> &#8211; Specifies the level-of-detail number.
+Level 0 is the base image level.
+Level <strong>n</strong> is the <strong>n</strong> th mipmap reduction image.</li>
+<li><strong>internalformat</strong> &#8211; Specifies the internal format of the texture.
+Must be one of the following symbolic constants:
+<tt class="docutils literal"><span class="pre">GL_COMPRESSED_RED</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_COMPRESSED_RG</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_COMPRESSED_RGB</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_COMPRESSED_RGBA</span></tt>.
+<tt class="docutils literal"><span class="pre">GL_COMPRESSED_SRGB</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_COMPRESSED_SRGB_ALPHA</span></tt>.
+<tt class="docutils literal"><span class="pre">GL_DEPTH_COMPONENT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_DEPTH_COMPONENT16</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_DEPTH_COMPONENT24</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_DEPTH_COMPONENT32</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RED</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RG</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGB</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_R3_G3_B2</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGB4</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGB5</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGB8</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGB10</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGB12</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGB16</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGBA</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGBA2</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGBA4</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGB5_A1</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGBA8</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGB10_A2</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGBA12</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGBA16</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_SRGB</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_SRGB8</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_SRGB_ALPHA</span></tt>, or
+<tt class="docutils literal"><span class="pre">GL_SRGB8_ALPHA8</span></tt>.</li>
+<li><strong>x</strong> &#8211; </li>
+<li><strong>y</strong> &#8211; Specify the window coordinates of the lower left corner
+of the rectangular region of pixels to be copied.</li>
+<li><strong>width</strong> &#8211; Specifies the width of the texture image.
+Must be 0 or
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mi mathvariant="italic">n</mi></msup><mo>+</mo><mrow><mn>2</mn><mo>&af;</mo><mfenced open="(" close=")"><mi mathvariant="italic">border</mi></mfenced></mrow></mrow></math></span> for some integer <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math></span>.</li>
+<li><strong>height</strong> &#8211; Specifies the height of the texture image.
+Must be 0 or
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mi mathvariant="italic">m</mi></msup><mo>+</mo><mrow><mn>2</mn><mo>&af;</mo><mfenced open="(" close=")"><mi mathvariant="italic">border</mi></mfenced></mrow></mrow></math></span> for some integer <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">m</mi></math></span>.</li>
+<li><strong>border</strong> &#8211; Specifies the width of the border.
+Must be either 0 or 1.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glCopyTexImage2D</tt><big>(</big>GLenum <em>&nbsp;target</em>, GLint <em>&nbsp;level</em>, GLenum <em>&nbsp;internalformat</em>, GLint <em>&nbsp;x</em>, GLint <em>&nbsp;y</em>, GLsizei <em>&nbsp;width</em>, GLsizei <em>&nbsp;height</em>, GLint <em>&nbsp;border</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glCopyTexImage1D.html#glCopyTexImage1D" title="glCopyTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexImage1D()</span></tt></a>,
+<a class="reference internal" href="glCopyTexSubImage1D.html#glCopyTexSubImage1D" title="glCopyTexSubImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexSubImage1D()</span></tt></a>,
+<a class="reference internal" href="glCopyTexSubImage2D.html#glCopyTexSubImage2D" title="glCopyTexSubImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexSubImage2D()</span></tt></a>,
+<a class="reference internal" href="glPixelStore.html#glPixelStore" title="glPixelStore"><tt class="xref c c-func docutils literal"><span class="pre">glPixelStore()</span></tt></a>,
+<a class="reference internal" href="glTexImage1D.html#glTexImage1D" title="glTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage1D()</span></tt></a>,
+<a class="reference internal" href="glTexImage2D.html#glTexImage2D" title="glTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage2D()</span></tt></a>,
+<a class="reference internal" href="glTexSubImage1D.html#glTexSubImage1D" title="glTexSubImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage1D()</span></tt></a>,
+<a class="reference internal" href="glTexSubImage2D.html#glTexSubImage2D" title="glTexSubImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage2D()</span></tt></a>,
+<a class="reference internal" href="glTexParameter.html#glTexParameter" title="glTexParameter"><tt class="xref c c-func docutils literal"><span class="pre">glTexParameter()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glCopyTexImage2D" title="glCopyTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexImage2D()</span></tt></a> defines a two-dimensional texture image, or cube-map texture image
+with pixels from the current
+<tt class="docutils literal"><span class="pre">GL_READ_BUFFER</span></tt>.</p>
+<p>The screen-aligned pixel rectangle with lower left corner at (<em>x</em>,
+<em>y</em>) and with a width of <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">width</mi><mo>+</mo><mrow><mn>2</mn><mo>&af;</mo><mfenced open="(" close=")"><mi mathvariant="italic">border</mi></mfenced></mrow></mrow></math></span> and a height of <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">height</mi><mo>+</mo><mrow><mn>2</mn><mo>&af;</mo><mfenced open="(" close=")"><mi mathvariant="italic">border</mi></mfenced></mrow></mrow></math></span> defines the texture array
+at the mipmap level specified by <em>level</em>.
+<em>internalformat</em> specifies the internal format of the texture array.</p>
+<p>The pixels in the rectangle are processed exactly as if
+<a class="reference internal" href="glReadPixels.html#glReadPixels" title="glReadPixels"><tt class="xref c c-func docutils literal"><span class="pre">glReadPixels()</span></tt></a> had been called, but the process stops just before
+final conversion.
+At this point all pixel component values are clamped to the range <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"><mn>0</mn><mn>1</mn></mfenced></math></span> and then converted to the texture&#8217;s internal format for storage in the texel
+array.</p>
+<p>Pixel ordering is such that lower
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">x</mi></math></span> and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">y</mi></math></span> screen coordinates correspond to
+lower <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">s</mi></math></span> and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">t</mi></math></span> texture coordinates.</p>
+<p>If any of the pixels within the specified rectangle of the current
+<tt class="docutils literal"><span class="pre">GL_READ_BUFFER</span></tt> are outside the window associated with the current
+rendering context, then the values obtained for those pixels are undefined.</p>
+<p>When <em>internalformat</em> is one of the sRGB  types, the GL does not automatically convert the source pixels to the sRGB color space.  In this case, the <a class="reference internal" href="../man/glPixelMap.html#glPixelMap" title="glPixelMap"><tt class="xref c c-func docutils literal"><span class="pre">glPixelMap()</span></tt></a> function can be used to accomplish the conversion.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>1, 2, 3, and 4 are not accepted values for <em>internalformat</em>.</p>
+<p class="last">An image with height or width of 0 indicates a NULL texture.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>target</em> is not <tt class="docutils literal"><span class="pre">GL_TEXTURE_2D</span></tt>, <tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_POSITIVE_X</span></tt>, <tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_NEGATIVE_X</span></tt>, <tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_POSITIVE_Y</span></tt>, <tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_NEGATIVE_Y</span></tt>, <tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_POSITIVE_Z</span></tt>, or <tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_NEGATIVE_Z</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>level</em> is less than 0.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> may be generated if <em>level</em> is greater than <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">log</mi><mn>2</mn></msub><mo>&it;</mo><mi mathvariant="italic">max</mi></mrow></math></span>, where <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">max</mi></math></span> is the returned value of <tt class="docutils literal"><span class="pre">GL_MAX_TEXTURE_SIZE</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>width</em> is less than 0 or greater than <tt class="docutils literal"><span class="pre">GL_MAX_TEXTURE_SIZE</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if non-power-of-two textures are not supported and the <em>width</em> or <em>depth</em> cannot be represented as <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mi mathvariant="italic">k</mi></msup><mo>+</mo><mrow><mn>2</mn><mo>&af;</mo><mfenced open="(" close=")"><mi mathvariant="italic">border</mi></mfenced></mrow></mrow></math></span> for some integer <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">k</mi></math></span>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>border</em> is not 0 or 1.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>internalformat</em> is not an accepted format.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <em>internalformat</em> is <tt class="docutils literal"><span class="pre">GL_DEPTH_COMPONENT</span></tt>, <tt class="docutils literal"><span class="pre">GL_DEPTH_COMPONENT16</span></tt>, <tt class="docutils literal"><span class="pre">GL_DEPTH_COMPONENT24</span></tt>, or <tt class="docutils literal"><span class="pre">GL_DEPTH_COMPONENT32</span></tt> and there is no depth buffer.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glGetTexImage.html#glGetTexImage" title="glGetTexImage"><tt class="xref c c-func docutils literal"><span class="pre">glGetTexImage()</span></tt></a></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glCopyTexImage1D.html"
+                        title="previous chapter">function <cite>glCopyTexImage1D</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glCopyTexSubImage1D.html"
+                        title="next chapter">function <cite>glCopyTexSubImage1D</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glCopyTexImage2D.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glCopyTexSubImage1D.html" title="function glCopyTexSubImage1D"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glCopyTexImage1D.html" title="function glCopyTexImage1D"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,77 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glHint`
+-----------------
+
+.. source file man4/glHint
+
+.. currentmodule:: OpenGL.GL
+
+Specify implementation-specific hints
+
+.. c:function:: glHint
+.. c:function:: void glHint(GLenum  target, GLenum  mode)
+   :noindex: 
+
+
+   
+   :param target:
+      Specifies a symbolic constant indicating the behavior to be controlled. ``GL_LINE_SMOOTH_HINT``, ``GL_POLYGON_SMOOTH_HINT``, ``GL_TEXTURE_COMPRESSION_HINT``, and ``GL_FRAGMENT_SHADER_DERIVATIVE_HINT`` are accepted.
+   
+   :param mode:
+      Specifies a symbolic constant indicating the desired behavior. ``GL_FASTEST``, ``GL_NICEST``, and ``GL_DONT_CARE`` are accepted.
+   
+
+.. rubric:: Description
+
+
+Certain aspects of GL behavior, when there is room for interpretation, can be controlled with hints. A hint is specified with two arguments. *target* is a symbolic constant indicating the behavior to be controlled, and *mode* is another symbolic constant indicating the desired behavior. The initial value for each *target* is ``GL_DONT_CARE``. *mode* can be one of the following:
+
+
+   
+   ``GL_FASTEST``
+      The most efficient option should be chosen.
+   
+   ``GL_NICEST``
+      The most correct, or highest quality, option should be chosen.
+   
+   ``GL_DONT_CARE``
+      No preference.
+   
+Though the implementation aspects that can be hinted are well defined, the interpretation of the hints depends on the implementation. The hint aspects that can be specified with *target* , along with suggested semantics, are as follows:
+
+
+   
+   ``GL_FRAGMENT_SHADER_DERIVATIVE_HINT``
+      Indicates the accuracy of the derivative calculation for the GL shading language fragment processing built-in functions: ``dFdx``, ``dFdy``, and ``fwidth``.
+   
+   ``GL_LINE_SMOOTH_HINT``
+      Indicates the sampling quality of antialiased lines. If a larger filter function is applied, hinting ``GL_NICEST`` can result in more pixel fragments being generated during rasterization.
+   
+   ``GL_POLYGON_SMOOTH_HINT``
+      Indicates the sampling quality of antialiased polygons. Hinting ``GL_NICEST`` can result in more pixel fragments being generated during rasterization, if a larger filter function is applied.
+   
+   ``GL_TEXTURE_COMPRESSION_HINT``
+      Indicates the quality and performance of the compressing texture images. Hinting ``GL_FASTEST`` indicates that texture images should be compressed as quickly as possible, while ``GL_NICEST`` indicates that texture images should be compressed with as little image quality loss as possible. ``GL_NICEST`` should be selected if the texture is to be retrieved by :c:func:`glGetCompressedTexImage` for reuse.
+   
+
+**Errors:**
+
+   * ``GL_INVALID_ENUM`` is generated if either *target* or *mode* is not an accepted value.
+
+
+
+.. note::
+
+   * The interpretation of hints depends on the implementation. Some implementations ignore :c:func:`glHint` settings.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

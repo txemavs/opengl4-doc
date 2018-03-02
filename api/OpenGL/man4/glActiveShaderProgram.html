@@ -1,0 +1,165 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glActiveShaderProgram &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glActiveTexture" href="glActiveTexture.html" />
+    <link rel="prev" title="OpenGL v.4 Reference" href="../../../index_man4.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glActiveTexture.html" title="function glActiveTexture"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../../../index_man4.html" title="OpenGL v.4 Reference"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glactiveshaderprogram">
+<h1>function <cite>glActiveShaderProgram</cite><a class="headerlink" href="#function-glactiveshaderprogram" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Set the active program object for a program pipeline object</p>
+<dl class="function">
+<dt id="glActiveShaderProgram">
+<tt class="descname">glActiveShaderProgram</tt><big>(</big><big>)</big><a class="headerlink" href="#glActiveShaderProgram" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>pipeline</strong> &#8211; Specifies the program pipeline object to set the active program object for.</li>
+<li><strong>program</strong> &#8211; Specifies the program object to set as the active program pipeline object <em>pipeline</em>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glActiveShaderProgram</tt><big>(</big>GLuint <em>&nbsp;pipeline</em>, GLuint <em>&nbsp;program</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glGenProgramPipelines.html#glGenProgramPipelines" title="glGenProgramPipelines"><tt class="xref c c-func docutils literal"><span class="pre">glGenProgramPipelines()</span></tt></a>,
+<a class="reference internal" href="glDeleteProgramPipelines.html#glDeleteProgramPipelines" title="glDeleteProgramPipelines"><tt class="xref c c-func docutils literal"><span class="pre">glDeleteProgramPipelines()</span></tt></a>,
+<a class="reference internal" href="glIsProgramPipeline.html#glIsProgramPipeline" title="glIsProgramPipeline"><tt class="xref c c-func docutils literal"><span class="pre">glIsProgramPipeline()</span></tt></a>,
+<a class="reference internal" href="glUseProgram.html#glUseProgram" title="glUseProgram"><tt class="xref c c-func docutils literal"><span class="pre">glUseProgram()</span></tt></a>,
+<a class="reference internal" href="glUniform.html#glUniform" title="glUniform"><tt class="xref c c-func docutils literal"><span class="pre">glUniform()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glActiveShaderProgram" title="glActiveShaderProgram"><tt class="xref c c-func docutils literal"><span class="pre">glActiveShaderProgram()</span></tt></a> sets the linked program named by <em>program</em>
+to be the active program for the program pipeline object <em>pipeline</em>. The active
+program in the active program pipeline object is the target of calls to <a class="reference internal" href="glUniform.html#glUniform" title="glUniform"><tt class="xref c c-func docutils literal"><span class="pre">glUniform()</span></tt></a>
+when no program has been made current through a call to <a class="reference internal" href="glUseProgram.html#glUseProgram" title="glUseProgram"><tt class="xref c c-func docutils literal"><span class="pre">glUseProgram()</span></tt></a>.</p>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <em>pipeline</em> is not a name previously returned from a call to <a class="reference internal" href="glGenProgramPipelines.html#glGenProgramPipelines" title="glGenProgramPipelines"><tt class="xref c c-func docutils literal"><span class="pre">glGenProgramPipelines()</span></tt></a> or if such a name has been deleted by a call to <a class="reference internal" href="glDeleteProgramPipelines.html#glDeleteProgramPipelines" title="glDeleteProgramPipelines"><tt class="xref c c-func docutils literal"><span class="pre">glDeleteProgramPipelines()</span></tt></a>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <em>program</em> refers to a program object that has not been successfully linked.</li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)2010 Khronos Group. Open Publication License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../../../index_man4.html"
+                        title="previous chapter">OpenGL v.4 Reference</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glActiveTexture.html"
+                        title="next chapter">function <cite>glActiveTexture</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glActiveShaderProgram.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glActiveTexture.html" title="function glActiveTexture"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../../../index_man4.html" title="OpenGL v.4 Reference"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

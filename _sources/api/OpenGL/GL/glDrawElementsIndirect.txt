@@ -1,0 +1,98 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glDrawElementsIndirect`
+---------------------------------
+
+.. source file man4/glDrawElementsIndirect
+
+.. currentmodule:: OpenGL.GL
+
+Render indexed primitives from array data, taking parameters from memory
+
+.. c:function:: glDrawElementsIndirect
+.. c:function:: void glDrawElementsIndirect(GLenum  mode, GLenum  type, const void * indirect)
+   :noindex: 
+
+
+   
+   :param mode:
+      Specifies what kind of primitives to render. Symbolic constants ``GL_POINTS``, ``GL_LINE_STRIP``, ``GL_LINE_LOOP``, ``GL_LINES``, ``GL_LINE_STRIP_ADJACENCY``, ``GL_LINES_ADJACENCY``, ``GL_TRIANGLE_STRIP``, ``GL_TRIANGLE_FAN``, ``GL_TRIANGLES``, ``GL_TRIANGLE_STRIP_ADJACENCY``, ``GL_TRIANGLES_ADJACENCY``, and ``GL_PATCHES`` are accepted.
+   
+   :param type:
+      Specifies the type of data in the buffer bound to the ``GL_ELEMENT_ARRAY_BUFFER`` binding.
+   
+   :param indirect:
+      Specifies the address of a structure containing the draw parameters.
+   
+
+.. seealso::
+
+   
+   :c:func:`glDrawArrays`, :c:func:`glDrawArraysInstanced`, :c:func:`glDrawArraysIndirect`, :c:func:`glDrawElements`, :c:func:`glDrawRangeElements`,
+   
+.. rubric:: Description
+
+
+:c:func:`glDrawElementsIndirect` specifies multiple indexed geometric primitives with very few subroutine calls. :c:func:`glDrawElementsIndirect` behaves similarly to :c:func:`glDrawElementsInstancedBaseVertexBaseInstance`, execpt that the parameters to :c:func:`glDrawElementsInstancedBaseVertexBaseInstance` are stored in memory at the address given by *indirect* .
+
+The parameters addressed by *indirect* are packed into a structure that takes the form (in C): 
+
+.. code-block:: c
+
+       typedef struct {
+          uint count;
+          uint primCount;
+          uint firstIndex;
+          uint baseVertex;
+          uint baseInstance;
+       } DrawElementsIndirectCommand;
+ :c:func:`glDrawElementsIndirect` is equivalent to: 
+
+.. code-block:: c
+
+       void glDrawElementsIndirect(GLenum mode, GLenum type, const void * indirect)
+       {
+          const DrawElementsIndirectCommand *cmd = (const DrawElementsIndirectCommand *)indirect;
+          glDrawElementsInstancedBaseVertexBaseInstance(mode,
+                                                         cmd->count,
+                                                         type,
+                                                         cmd->firstIndex + size-of-type,
+                                                         cmd->primCount,
+                                                         cmd->baseVertex,
+                                                         cmd->baseInstance);
+       }
+
+
+If a buffer is bound to the ``GL_DRAW_INDIRECT_BUFFER`` binding at the time of a call to :c:func:`glDrawElementsIndirect`, *indirect* is interpreted as an offset, in basic machine units, into that buffer and the parameter data is read from the buffer rather than from client memory.
+
+Note that indices stored in client memory are not supported. If no buffer is bound to the ``GL_ELEMENT_ARRAY_BUFFER`` binding, an error will be generated.
+
+The results of the operation are undefined if the ``reservedMustBeZero`` member of the parameter structure is non-zero. However, no error is generated in this case.
+
+Vertex attributes that are modified by :c:func:`glDrawElementsIndirect` have an unspecified value after :c:func:`glDrawElementsIndirect` returns. Attributes that aren't modified remain well defined.
+
+
+**Errors:**
+
+   * ``GL_INVALID_ENUM`` is generated if *mode* is not an accepted value.
+   * ``GL_INVALID_OPERATION`` is generated if no buffer is bound to the ``GL_ELEMENT_ARRAY_BUFFER`` binding, or if such a buffer's data store is currently mapped.
+   * ``GL_INVALID_OPERATION`` is generated if a non-zero buffer object name is bound to an enabled array or to the ``GL_DRAW_INDIRECT_BUFFER`` binding and the buffer object's data store is currently mapped.
+   * ``GL_INVALID_OPERATION`` is generated if a geometry shader is active and *mode* is incompatible with the input primitive type of the geometry shader in the currently installed program object.
+   * ``GL_INVALID_OPERATION`` is generated if *mode* is ``GL_PATCHES`` and no tessellation control shader is active.
+
+
+
+.. note::
+
+   * The *baseInstance* member of the *DrawElementsIndirectCommand* structure is defined only if the GL version is 4.2 or greater. For versions of the GL less than 4.2, this parameter is present but is reserved and should be set to zero. On earlier versions of the GL, behavior is undefined if it is non-zero.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

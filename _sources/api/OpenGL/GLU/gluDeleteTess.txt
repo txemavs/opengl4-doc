@@ -1,0 +1,41 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `gluDeleteTess`
+------------------------
+
+.. source file man/gluDeleteTess
+
+.. currentmodule:: OpenGL.GLU
+
+Destroy a tessellation object
+
+.. c:function:: gluDeleteTess
+.. c:function:: void gluDeleteTess(GLUtesselator*  tess)
+   :noindex: 
+
+
+   
+   :param tess:
+      Specifies the tessellation object to destroy.
+   
+
+.. seealso::
+
+   
+   :c:func:`gluBeginPolygon`, :c:func:`gluNewTess`, :c:func:`gluTessCallback`
+   
+.. rubric:: Description
+
+
+:c:func:`gluDeleteTess` destroys the indicated tessellation object (which was created with :c:func:`gluNewTess`) and frees any memory that it used.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

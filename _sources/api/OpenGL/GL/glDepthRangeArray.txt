@@ -1,0 +1,79 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glDepthRangeArray`
+----------------------------
+
+.. source file man4/glDepthRangeArray
+
+.. currentmodule:: OpenGL.GL
+
+Specify mapping of depth values from normalized device coordinates to window coordinates for a specified set of viewports
+
+.. c:function:: glDepthRangeArray
+.. c:function:: void glDepthRangeArrayv(GLuint  first, GLsizei  count, const GLdouble * v)
+
+
+   
+   :param first:
+      Specifies the index of the first viewport whose depth range to update.
+   
+   :param count:
+      Specifies the number of viewports whose depth range to update.
+   
+   :param v:
+      Specifies the address of an array containing the near and far values for the depth range of each modified viewport.
+   
+
+.. seealso::
+
+   
+   :c:func:`glDepthFunc`, :c:func:`glDepthRange`, :c:func:`glDepthRangeIndexed`, :c:func:`glPolygonOffset`, :c:func:`glViewportArray`, :c:func:`glViewport`, :c:func:`removedTypes`
+   
+.. rubric:: Description
+
+
+After clipping and division by *`w`* , depth coordinates range from |EQUATION_1_| to 1, corresponding to the near and far clipping planes. Each viewport has an independent depth range specified as a linear mapping of the normalized depth coordinates in this range to window depth coordinates. Regardless of the actual depth buffer implementation, window coordinate depth values are treated as though they range from 0 through 1 (like color components). :c:func:`glDepthRangeArray` specifies a linear mapping of the normalized depth coordinates in this range to window depth coordinates for each viewport in the range [ *first* , *first* + *count* ). Thus, the values accepted by :c:func:`glDepthRangeArray` are both clamped to this range before they are accepted.
+
+The *first* parameter specifies the index of the first viewport whose depth range to modify and must be less than the value of ``GL_MAX_VIEWPORTS``. *count* specifies the number of viewports whose depth range to modify. *first* + *count* must be less than or equal to the value of ``GL_MAX_VIEWPORTS``. *v* specifies the address of an array of pairs of double precision floating point values representing the near and far values of the depth range for each viewport, in that order.
+
+The setting of (0,1) maps the near plane to 0 and the far plane to 1. With this mapping, the depth buffer range is fully utilized.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGet` with argument ``GL_DEPTH_RANGE``
+
+**Errors:**
+
+   * ``GL_INVALID_VALUE`` is generated if *first* is greater than or equal to the value of ``GL_MAX_VIEWPORTS``.
+   * ``GL_INVALID_VALUE`` is generated if *first* + *count* is greater than or equal to the value of ``GL_MAX_VIEWPORTS``.
+
+
+
+.. note::
+
+   * It is not necessary that the near plane distance be less than the far plane distance. Reverse mappings such as |EQUATION_2_| , and |EQUATION_3_| are acceptable.
+   * The type of the *v* parameter was changed from GLclampd to GLdouble. This change is transparent to user code and is described in detail on the :c:func:`removedTypes` page.
+
+
+
+.. role:: mml(raw)
+   :format: html
+
+
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mn>-1</mn> </math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mi mathvariant="italic">near</mi> <mo>=</mo> <mn>1</mn> </mrow> </math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mi mathvariant="italic">far</mi> <mo>=</mo> <mn>0</mn> </mrow> </math>` 
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

@@ -1,0 +1,184 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glDrawElementsInstancedBaseVertex &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glDrawElementsInstancedBaseVertexBaseInstance" href="glDrawElementsInstancedBaseVertexBaseInstance.html" />
+    <link rel="prev" title="function glDrawElementsInstancedBaseInstance" href="glDrawElementsInstancedBaseInstance.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glDrawElementsInstancedBaseVertexBaseInstance.html" title="function glDrawElementsInstancedBaseVertexBaseInstance"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glDrawElementsInstancedBaseInstance.html" title="function glDrawElementsInstancedBaseInstance"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-gldrawelementsinstancedbasevertex">
+<h1>function <cite>glDrawElementsInstancedBaseVertex</cite><a class="headerlink" href="#function-gldrawelementsinstancedbasevertex" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Render multiple instances of a set of primitives from array data with a per-element offset</p>
+<dl class="function">
+<dt id="glDrawElementsInstancedBaseVertex">
+<tt class="descname">glDrawElementsInstancedBaseVertex</tt><big>(</big><big>)</big><a class="headerlink" href="#glDrawElementsInstancedBaseVertex" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>mode</strong> &#8211; Specifies what kind of primitives to render.
+Symbolic constants
+<tt class="docutils literal"><span class="pre">GL_POINTS</span></tt>, <tt class="docutils literal"><span class="pre">GL_LINE_STRIP</span></tt>, <tt class="docutils literal"><span class="pre">GL_LINE_LOOP</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LINES</span></tt>, <tt class="docutils literal"><span class="pre">GL_TRIANGLE_STRIP</span></tt>, <tt class="docutils literal"><span class="pre">GL_TRIANGLE_FAN</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TRIANGLES</span></tt>, <tt class="docutils literal"><span class="pre">GL_LINES_ADJACENCY</span></tt>, <tt class="docutils literal"><span class="pre">GL_LINE_STRIP_ADJACENCY</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TRIANGLES_ADJACENCY</span></tt>, <tt class="docutils literal"><span class="pre">GL_TRIANGLE_STRIP_ADJACENCY</span></tt> and <tt class="docutils literal"><span class="pre">GL_PATCHES</span></tt> are accepted.</li>
+<li><strong>count</strong> &#8211; Specifies the number of elements to be rendered.</li>
+<li><strong>type</strong> &#8211; Specifies the type of the values in indices. Must be one of <tt class="docutils literal"><span class="pre">GL_UNSIGNED_BYTE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT</span></tt>, or <tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT</span></tt>.</li>
+<li><strong>indices</strong> &#8211; Specifies a pointer to the location where the indices are stored.</li>
+<li><strong>primcount</strong> &#8211; Specifies the number of instances of the indexed geometry that should be drawn.</li>
+<li><strong>basevertex</strong> &#8211; Specifies a constant that should be added to each element of <em>indices</em>
+when chosing elements from the enabled vertex arrays.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glDrawElementsInstancedBaseVertex</tt><big>(</big>GLenum <em>&nbsp;mode</em>, GLsizei <em>&nbsp;count</em>, GLenum <em>&nbsp;type</em>, GLvoid *<em>&nbsp;indices</em>, GLsizei <em>&nbsp;primcount</em>, GLint <em>&nbsp;basevertex</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glDrawElements.html#glDrawElements" title="glDrawElements"><tt class="xref c c-func docutils literal"><span class="pre">glDrawElements()</span></tt></a>,
+<a class="reference internal" href="glDrawRangeElements.html#glDrawRangeElements" title="glDrawRangeElements"><tt class="xref c c-func docutils literal"><span class="pre">glDrawRangeElements()</span></tt></a>,
+<a class="reference internal" href="glDrawRangeElementsBaseVertex.html#glDrawRangeElementsBaseVertex" title="glDrawRangeElementsBaseVertex"><tt class="xref c c-func docutils literal"><span class="pre">glDrawRangeElementsBaseVertex()</span></tt></a>,
+<a class="reference internal" href="glDrawElementsInstanced.html#glDrawElementsInstanced" title="glDrawElementsInstanced"><tt class="xref c c-func docutils literal"><span class="pre">glDrawElementsInstanced()</span></tt></a>,
+<a class="reference internal" href="#glDrawElementsInstancedBaseVertex" title="glDrawElementsInstancedBaseVertex"><tt class="xref c c-func docutils literal"><span class="pre">glDrawElementsInstancedBaseVertex()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glDrawElementsInstancedBaseVertex" title="glDrawElementsInstancedBaseVertex"><tt class="xref c c-func docutils literal"><span class="pre">glDrawElementsInstancedBaseVertex()</span></tt></a> behaves identically to
+<a class="reference internal" href="glDrawElementsInstanced.html#glDrawElementsInstanced" title="glDrawElementsInstanced"><tt class="xref c c-func docutils literal"><span class="pre">glDrawElementsInstanced()</span></tt></a> except that the <strong>i</strong> th element
+transferred by the corresponding draw call will be taken from element <em>indices</em> [i] + <em>basevertex</em>
+of each enabled array. If the resulting value is larger than the maximum value representable by <em>type</em>,
+it is as if the calculation were upconverted to 32-bit unsigned integers (with wrapping on overflow conditions).
+The operation is undefined if the sum would be negative.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><a class="reference internal" href="#glDrawElementsInstancedBaseVertex" title="glDrawElementsInstancedBaseVertex"><tt class="xref c c-func docutils literal"><span class="pre">glDrawElementsInstancedBaseVertex()</span></tt></a> is only supported if the GL version is 3.2 or greater.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>mode</em> is not an accepted value.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>count</em> or <em>primcount</em> is negative.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if a geometry shader is active and <em>mode</em> is incompatible with the input primitive type of the geometry shader in the currently installed program object.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if a non-zero buffer object name is bound to an enabled array or the element array and the buffer object&#8217;s data store is currently mapped.</li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)2010 Khronos Group. Open Publication License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glDrawElementsInstancedBaseInstance.html"
+                        title="previous chapter">function <cite>glDrawElementsInstancedBaseInstance</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glDrawElementsInstancedBaseVertexBaseInstance.html"
+                        title="next chapter">function <cite>glDrawElementsInstancedBaseVertexBaseInstance</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glDrawElementsInstancedBaseVertex.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glDrawElementsInstancedBaseVertexBaseInstance.html" title="function glDrawElementsInstancedBaseVertexBaseInstance"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glDrawElementsInstancedBaseInstance.html" title="function glDrawElementsInstancedBaseInstance"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

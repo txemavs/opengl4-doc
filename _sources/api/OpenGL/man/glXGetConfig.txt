@@ -1,0 +1,270 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:28
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glXGetConfig.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glXGetConfig`
+-----------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Return information about GLX visuals
+
+.. c:function:: glXGetConfig
+
+
+         :param dpy:
+
+                  Specifies the connection to the X server.
+
+         :param vis:
+
+                  Specifies the visual to be queried.
+                  It is a pointer to an ``XVisualInfo`` structure,
+                  not a visual ID or a pointer to a ``Visual``\ .
+
+         :param attrib:
+
+                  Specifies the visual attribute to be returned.
+
+         :param value:
+
+                  Returns the requested value.
+
+.. rubric:: Specification
+
+.. c:function:: int glXGetConfig(Display *  dpy, XVisualInfo *  vis, int  attrib, int *  value)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glXChooseVisual`\ ,
+            :c:func:`glXCreateContext`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glXGetConfig` sets *value* to the *attrib* value of windows or GLX pixmaps
+created with respect to *vis*\ .
+:c:func:`glXGetConfig` returns an error code if it fails for any reason.
+Otherwise, zero is returned.
+
+
+*attrib* is one of the following:
+
+
+         ``GLX_USE_GL``
+
+
+               ``True`` if OpenGL rendering is supported by this visual,
+               ``False`` otherwise.
+
+
+         ``GLX_BUFFER_SIZE``
+
+
+               Number of bits per color buffer.
+               For RGBA visuals, ``GLX_BUFFER_SIZE`` is the sum of
+               ``GLX_RED_SIZE``\ ,
+               ``GLX_GREEN_SIZE``\ ,
+               ``GLX_BLUE_SIZE``\ , and
+               ``GLX_ALPHA_SIZE``\ .
+               For color index visuals, ``GLX_BUFFER_SIZE`` is the size of the
+               color indexes.
+
+
+         ``GLX_LEVEL``
+
+
+               Frame buffer level of the visual.
+               Level zero is the default frame buffer.
+               Positive levels correspond to frame buffers that overlay the default buffer,
+               and negative levels correspond to frame buffers that underlay the default
+               buffer.
+
+
+         ``GLX_RGBA``
+
+
+               ``True`` if color buffers store red, green, blue, and alpha values.
+               ``False`` if they store color indexes.
+
+
+         ``GLX_DOUBLEBUFFER``
+
+
+               ``True`` if color buffers exist in front/back pairs that can be swapped,
+               ``False`` otherwise.
+
+
+         ``GLX_STEREO``
+
+
+               ``True`` if color buffers exist in left/right pairs,
+               ``False`` otherwise.
+
+
+         ``GLX_AUX_BUFFERS``
+
+
+               Number of auxiliary color buffers that are available.
+               Zero indicates that no auxiliary color buffers exist.
+
+
+         ``GLX_RED_SIZE``
+
+
+               Number of bits of red stored in each color buffer.
+               Undefined if ``GLX_RGBA`` is ``False``\ .
+
+
+         ``GLX_GREEN_SIZE``
+
+
+               Number of bits of green stored in each color buffer.
+               Undefined if ``GLX_RGBA`` is ``False``\ .
+
+
+         ``GLX_BLUE_SIZE``
+
+
+               Number of bits of blue stored in each color buffer.
+               Undefined if ``GLX_RGBA`` is ``False``\ .
+
+
+         ``GLX_ALPHA_SIZE``
+
+
+               Number of bits of alpha stored in each color buffer.
+               Undefined if ``GLX_RGBA`` is ``False``\ .
+
+
+         ``GLX_DEPTH_SIZE``
+
+
+               Number of bits in the depth buffer.
+
+
+         ``GLX_STENCIL_SIZE``
+
+
+               Number of bits in the stencil buffer.
+
+
+         ``GLX_ACCUM_RED_SIZE``
+
+
+               Number of bits of red stored in the accumulation buffer.
+
+
+         ``GLX_ACCUM_GREEN_SIZE``
+
+
+               Number of bits of green stored in the accumulation buffer.
+
+
+         ``GLX_ACCUM_BLUE_SIZE``
+
+
+               Number of bits of blue stored in the accumulation buffer.
+
+
+         ``GLX_ACCUM_ALPHA_SIZE``
+
+
+               Number of bits of alpha stored in the accumulation buffer.
+
+
+The X protocol allows a single visual ID to be instantiated with
+different numbers of bits per pixel.
+Windows or GLX pixmaps that will be rendered with OpenGL, however,
+must be instantiated with a color buffer depth of ``GLX_BUFFER_SIZE``\ .
+
+
+Although a GLX implementation can export many visuals that support GL
+rendering,
+it must support
+at least one RGBA visual. This visual must have at
+least one color buffer,
+a stencil buffer of at least 1 bit,
+a depth buffer of at least 12 bits,
+and an accumulation buffer.
+Alpha bitplanes are optional in this visual.
+However,
+its color buffer size must be as great as that of the
+deepest ``TrueColor``\ , ``DirectColor``\ ,
+``PseudoColor``\ , or ``StaticColor`` visual supported on level zero,
+and it must itself be made available on level zero.
+
+
+In addition, if the X server exports a ``PseudoColor``
+or ``StaticColor`` visual on framebuffer level 0, a color index
+visual is also required on that level.
+It must have
+at least one color buffer,
+a stencil buffer of at least 1 bit,
+and a depth buffer of at least 12 bits.
+This visual must
+have as many
+color bitplanes as the deepest
+``PseudoColor`` or ``StaticColor`` visual supported on level 0.
+
+
+Applications are best written to select the visual that most closely
+meets their requirements.
+Creating windows or GLX pixmaps with unnecessary buffers can result in
+reduced rendering performance as well as poor resource allocation.
+
+
+.. note::
+
+
+   ``XVisualInfo`` is defined in :strong:`Xutil.h.`
+   It is a structure that includes :strong:`visual`\ , :strong:`visualID`\ , :strong:`screen`\ , and
+   :strong:`depth` elements.
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GLX_NO_EXTENSION`` is returned if *dpy* does not support the GLX extension.
+* ``GLX_BAD_SCREEN`` is returned if the screen of *vis* does not correspond to a screen.
+* ``GLX_BAD_ATTRIBUTE`` is returned if *attrib* is not a valid GLX attribute.
+* ``GLX_BAD_VISUAL`` is returned if *vis* doesn't support GLX and an attribute other than ``GLX_USE_GL`` is requested.
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glXGetConfig'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

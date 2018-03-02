@@ -1,0 +1,83 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glCopyConvolutionFilter1D`
+------------------------------------
+
+.. source file man/glCopyConvolutionFilter1D
+
+.. currentmodule:: OpenGL.GL
+
+Copy pixels into a one-dimensional convolution filter
+
+.. c:function:: glCopyConvolutionFilter1D
+.. c:function:: void glCopyConvolutionFilter1D(GLenum  target, GLenum  internalformat, GLint  x, GLint  y, GLsizei  width)
+   :noindex: 
+
+
+   
+   :param target:
+      Must be ``GL_CONVOLUTION_1D``.
+   
+   :param internalformat:
+      The internal format of the convolution filter kernel. The allowable values are ``GL_ALPHA``, ``GL_ALPHA4``, ``GL_ALPHA8``, ``GL_ALPHA12``, ``GL_ALPHA16``, ``GL_LUMINANCE``, ``GL_LUMINANCE4``, ``GL_LUMINANCE8``, ``GL_LUMINANCE12``, ``GL_LUMINANCE16``, ``GL_LUMINANCE_ALPHA``, ``GL_LUMINANCE4_ALPHA4``, ``GL_LUMINANCE6_ALPHA2``, ``GL_LUMINANCE8_ALPHA8``, ``GL_LUMINANCE12_ALPHA4``, ``GL_LUMINANCE12_ALPHA12``, ``GL_LUMINANCE16_ALPHA16``, ``GL_INTENSITY``, ``GL_INTENSITY4``, ``GL_INTENSITY8``, ``GL_INTENSITY12``, ``GL_INTENSITY16``, ``GL_R3_G3_B2``, ``GL_RGB``, ``GL_RGB4``, ``GL_RGB5``, ``GL_RGB8``, ``GL_RGB10``, ``GL_RGB12``, ``GL_RGB16``, ``GL_RGBA``, ``GL_RGBA2``, ``GL_RGBA4``, ``GL_RGB5_A1``, ``GL_RGBA8``, ``GL_RGB10_A2``, ``GL_RGBA12``, or ``GL_RGBA16``.
+   
+   :param x:
+      The window space coordinates of the lower-left coordinate of the pixel array to copy.
+   
+   :param width:
+      The width of the pixel array to copy.
+   
+
+.. seealso::
+
+   
+   :c:func:`glConvolutionFilter1D`, :c:func:`glConvolutionParameter`, :c:func:`glPixelTransfer`
+   
+.. rubric:: Description
+
+
+:c:func:`glCopyConvolutionFilter1D` defines a one-dimensional convolution filter kernel with pixels from the current ``GL_READ_BUFFER`` (rather than from main memory, as is the case for :c:func:`glConvolutionFilter1D`).
+
+The screen-aligned pixel rectangle with lower-left corner at ( *x* ,\ *y* ), width *width* and height 1 is used to define the convolution filter. If any pixels within this region are outside the window that is associated with the GL context, the values obtained for those pixels are undefined.
+
+The pixels in the rectangle are processed exactly as if :c:func:`glReadPixels` had been called with *`format`* set to RGBA, but the process stops just before final conversion. The R, G, B, and A components of each pixel are next scaled by the four 1D ``GL_CONVOLUTION_FILTER_SCALE`` parameters and biased by the four 1D ``GL_CONVOLUTION_FILTER_BIAS`` parameters. (The scale and bias parameters are set by :c:func:`glConvolutionParameter` using the ``GL_CONVOLUTION_1D`` target and the names ``GL_CONVOLUTION_FILTER_SCALE`` and ``GL_CONVOLUTION_FILTER_BIAS``. The parameters themselves are vectors of four values that are applied to red, green, blue, and alpha, in that order.) The R, G, B, and A values are not clamped to [0,1] at any time during this process.
+
+Each pixel is then converted to the internal format specified by *internalformat* . This conversion simply maps the component values of the pixel (R, G, B, and A) to the values included in the internal format (red, green, blue, alpha, luminance, and intensity). The mapping is as follows:
+
+
+
+The red, green, blue, alpha, luminance, and/or intensity components of the resulting pixels are stored in floating-point rather than integer format.
+
+Pixel ordering is such that lower x screen coordinates correspond to lower *`i`* filter image coordinates.
+
+Note that after a convolution is performed, the resulting color components are also scaled by their corresponding ``GL_POST_CONVOLUTION_c_SCALE`` parameters and biased by their corresponding ``GL_POST_CONVOLUTION_c_BIAS`` parameters (where *`c`* takes on the values *`RED`* , *`GREEN`* , *`BLUE`* , and *`ALPHA`* ). These parameters are set by :c:func:`glPixelTransfer`.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGetConvolutionParameter`, :c:func:`glGetConvolutionFilter`
+
+**Errors:**
+
+   * ``GL_INVALID_ENUM`` is generated if *target* is not ``GL_CONVOLUTION_1D``.
+   * ``GL_INVALID_ENUM`` is generated if *internalformat* is not one of the allowable values.
+   * ``GL_INVALID_VALUE`` is generated if *width* is less than zero or greater than the maximum supported value. This value may be queried with :c:func:`glGetConvolutionParameter` using target ``GL_CONVOLUTION_1D`` and name ``GL_MAX_CONVOLUTION_WIDTH``.
+   * ``GL_INVALID_OPERATION`` is generated if :c:func:`glCopyConvolutionFilter1D` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`.
+
+
+
+.. note::
+
+   * :c:func:`glCopyConvolutionFilter1D` is present only if ``ARB_imaging`` is returned when :c:func:`glGetString` is called with an argument of ``GL_EXTENSIONS``.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

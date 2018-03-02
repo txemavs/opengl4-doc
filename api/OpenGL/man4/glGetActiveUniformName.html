@@ -1,0 +1,178 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glGetActiveUniformName &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glGetActiveUniformsiv" href="glGetActiveUniformsiv.html" />
+    <link rel="prev" title="function glGetActiveUniformBlockName" href="glGetActiveUniformBlockName.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glGetActiveUniformsiv.html" title="function glGetActiveUniformsiv"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glGetActiveUniformBlockName.html" title="function glGetActiveUniformBlockName"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glgetactiveuniformname">
+<h1>function <cite>glGetActiveUniformName</cite><a class="headerlink" href="#function-glgetactiveuniformname" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Query the name of an active uniform</p>
+<dl class="function">
+<dt id="glGetActiveUniformName">
+<tt class="descname">glGetActiveUniformName</tt><big>(</big><big>)</big><a class="headerlink" href="#glGetActiveUniformName" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>program</strong> &#8211; Specifies the program containing the active uniform index <em>uniformIndex</em>.</li>
+<li><strong>uniformIndex</strong> &#8211; Specifies the index of the active uniform whose name to query.</li>
+<li><strong>bufSize</strong> &#8211; Specifies the size of the buffer, in units of <tt class="docutils literal"><span class="pre">GLchar</span></tt>, of the buffer whose address is specified in <em>uniformName</em>.</li>
+<li><strong>length</strong> &#8211; Specifies the address of a variable that will receive the number of characters that were or would have been written to the buffer addressed by <em>uniformName</em>.</li>
+<li><strong>uniformName</strong> &#8211; Specifies the address of a buffer into which the GL will place the name of the active uniform at <em>uniformIndex</em> within <em>program</em>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glGetActiveUniformName</tt><big>(</big>GLuint <em>&nbsp;program</em>, GLuint <em>&nbsp;uniformIndex</em>, GLsizei <em>&nbsp;bufSize</em>, GLsizei *<em>&nbsp;length</em>, GLchar *<em>&nbsp;uniformName</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glGetActiveUniform.html#glGetActiveUniform" title="glGetActiveUniform"><tt class="xref c c-func docutils literal"><span class="pre">glGetActiveUniform()</span></tt></a>,
+<a class="reference internal" href="glGetUniformIndices.html#glGetUniformIndices" title="glGetUniformIndices"><tt class="xref c c-func docutils literal"><span class="pre">glGetUniformIndices()</span></tt></a>,
+<a class="reference internal" href="glGetProgram.html#glGetProgram" title="glGetProgram"><tt class="xref c c-func docutils literal"><span class="pre">glGetProgram()</span></tt></a>,
+<a class="reference internal" href="glLinkProgram.html#glLinkProgram" title="glLinkProgram"><tt class="xref c c-func docutils literal"><span class="pre">glLinkProgram()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glGetActiveUniformName" title="glGetActiveUniformName"><tt class="xref c c-func docutils literal"><span class="pre">glGetActiveUniformName()</span></tt></a> returns the name of the active uniform at <em>uniformIndex</em> within <em>program</em>.
+If <em>uniformName</em> is not <tt class="docutils literal"><span class="pre">NULL</span></tt>, up to <em>bufSize</em> characters (including a nul-terminator) will be written into
+the array whose address is specified by <em>uniformName</em>. If <em>length</em> is not <tt class="docutils literal"><span class="pre">NULL</span></tt>, the number of characters
+that were (or would have been) written into <em>uniformName</em> (not including the nul-terminator) will be placed in the variable whose address
+is specified in <em>length</em>. If <em>length</em> is <tt class="docutils literal"><span class="pre">NULL</span></tt>, no length is returned. The length of the longest uniform
+name in <em>program</em> is given by the value of <tt class="docutils literal"><span class="pre">GL_ACTIVE_UNIFORM_MAX_LENGTH</span></tt>, which can be queried with
+<a class="reference internal" href="glGetProgram.html#glGetProgram" title="glGetProgram"><tt class="xref c c-func docutils literal"><span class="pre">glGetProgram()</span></tt></a>.</p>
+<p>If <a class="reference internal" href="#glGetActiveUniformName" title="glGetActiveUniformName"><tt class="xref c c-func docutils literal"><span class="pre">glGetActiveUniformName()</span></tt></a> is not successful, nothing is written to <em>length</em> or <em>uniformName</em>.</p>
+<p><em>program</em> must be the name of a program for which the command <a class="reference internal" href="glLinkProgram.html#glLinkProgram" title="glLinkProgram"><tt class="xref c c-func docutils literal"><span class="pre">glLinkProgram()</span></tt></a>
+has been issued in the past. It is not necessary for <em>program</em> to have been linked successfully. The link could have failed because
+the number of active uniforms exceeded the limit.</p>
+<p><em>uniformIndex</em> must be an active uniform index of the program <em>program</em>, in the range zero to
+<tt class="docutils literal"><span class="pre">GL_ACTIVE_UNIFORMS</span></tt> - 1. The value of <tt class="docutils literal"><span class="pre">GL_ACTIVE_UNIFORMS</span></tt> can be queried with
+<a class="reference internal" href="glGetProgram.html#glGetProgram" title="glGetProgram"><tt class="xref c c-func docutils literal"><span class="pre">glGetProgram()</span></tt></a>.</p>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>uniformIndex</em> is greater than or equal to the value of <tt class="docutils literal"><span class="pre">GL_ACTIVE_UNIFORMS</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>bufSize</em> is negative.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>program</em> is not the name of a program object for which <a class="reference internal" href="glLinkProgram.html#glLinkProgram" title="glLinkProgram"><tt class="xref c c-func docutils literal"><span class="pre">glLinkProgram()</span></tt></a> has been issued.</li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)2010 Khronos Group. Open Publication License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glGetActiveUniformBlockName.html"
+                        title="previous chapter">function <cite>glGetActiveUniformBlockName</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glGetActiveUniformsiv.html"
+                        title="next chapter">function <cite>glGetActiveUniformsiv</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glGetActiveUniformName.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glGetActiveUniformsiv.html" title="function glGetActiveUniformsiv"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glGetActiveUniformBlockName.html" title="function glGetActiveUniformBlockName"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,201 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function gluNurbsCurve &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function gluNurbsProperty" href="gluNurbsProperty.html" />
+    <link rel="prev" title="function gluNurbsCallbackDataEXT" href="gluNurbsCallbackDataEXT.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="gluNurbsProperty.html" title="function gluNurbsProperty"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="gluNurbsCallbackDataEXT.html" title="function gluNurbsCallbackDataEXT"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glunurbscurve">
+<h1>function <cite>gluNurbsCurve</cite><a class="headerlink" href="#function-glunurbscurve" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Define the shape of a NURBS curve</p>
+<dl class="function">
+<dt id="gluNurbsCurve">
+<tt class="descname">gluNurbsCurve</tt><big>(</big><big>)</big><a class="headerlink" href="#gluNurbsCurve" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>nurb</strong> &#8211; Specifies the NURBS object (created with <a class="reference internal" href="gluNewNurbsRenderer.html#gluNewNurbsRenderer" title="gluNewNurbsRenderer"><tt class="xref c c-func docutils literal"><span class="pre">gluNewNurbsRenderer()</span></tt></a>).</li>
+<li><strong>knotCount</strong> &#8211; Specifies the number of knots in <em>knots</em>.
+<em>knotCount</em> equals the number of control points plus the order.</li>
+<li><strong>knots</strong> &#8211; Specifies an array of <em>knotCount</em> nondecreasing knot values.</li>
+<li><strong>stride</strong> &#8211; Specifies the offset (as a number of single-precision floating-point values)
+between successive curve control points.</li>
+<li><strong>control</strong> &#8211; Specifies a pointer to an array of control points. The coordinates must
+agree with <em>type</em>, specified below.</li>
+<li><strong>order</strong> &#8211; Specifies the order of the NURBS curve. <em>order</em> equals degree + 1, hence
+a cubic curve has an order of 4.</li>
+<li><strong>type</strong> &#8211; Specifies the type of the curve. If this curve is defined within a
+<a class="reference internal" href="gluBeginCurve.html#gluBeginCurve" title="gluBeginCurve"><tt class="xref c c-func docutils literal"><span class="pre">gluBeginCurve()</span></tt></a> / <a class="reference internal" href="gluBeginCurve.html#gluEndCurve" title="gluEndCurve"><tt class="xref c c-func docutils literal"><span class="pre">gluEndCurve()</span></tt></a> pair, then
+the type can be any of the valid
+one-dimensional evaluator types (such as <tt class="docutils literal"><span class="pre">GLU_MAP1_VERTEX_3</span></tt> or
+<tt class="docutils literal"><span class="pre">GLU_MAP1_COLOR_4</span></tt>). Between a <a class="reference internal" href="gluBeginTrim.html#gluBeginTrim" title="gluBeginTrim"><tt class="xref c c-func docutils literal"><span class="pre">gluBeginTrim()</span></tt></a> / <a class="reference internal" href="gluBeginTrim.html#gluEndTrim" title="gluEndTrim"><tt class="xref c c-func docutils literal"><span class="pre">gluEndTrim()</span></tt></a> pair,
+the only valid types are <tt class="docutils literal"><span class="pre">GLU_MAP1_TRIM_2</span></tt> and <tt class="docutils literal"><span class="pre">GLU_MAP1_TRIM_3</span></tt>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">gluNurbsCurve</tt><big>(</big>GLUnurbs* <em>&nbsp;nurb</em>, GLint <em>&nbsp;knotCount</em>, GLfloat * <em>&nbsp;knots</em>, GLint <em>&nbsp;stride</em>, GLfloat * <em>&nbsp;control</em>, GLint <em>&nbsp;order</em>, GLenum <em>&nbsp;type</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="gluBeginCurve.html#gluBeginCurve" title="gluBeginCurve"><tt class="xref c c-func docutils literal"><span class="pre">gluBeginCurve()</span></tt></a>,
+<a class="reference internal" href="gluBeginTrim.html#gluBeginTrim" title="gluBeginTrim"><tt class="xref c c-func docutils literal"><span class="pre">gluBeginTrim()</span></tt></a>,
+<a class="reference internal" href="gluNewNurbsRenderer.html#gluNewNurbsRenderer" title="gluNewNurbsRenderer"><tt class="xref c c-func docutils literal"><span class="pre">gluNewNurbsRenderer()</span></tt></a>,
+<a class="reference internal" href="gluPwlCurve.html#gluPwlCurve" title="gluPwlCurve"><tt class="xref c c-func docutils literal"><span class="pre">gluPwlCurve()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p>Use <a class="reference internal" href="#gluNurbsCurve" title="gluNurbsCurve"><tt class="xref c c-func docutils literal"><span class="pre">gluNurbsCurve()</span></tt></a> to describe a NURBS curve.</p>
+<p>When <a class="reference internal" href="#gluNurbsCurve" title="gluNurbsCurve"><tt class="xref c c-func docutils literal"><span class="pre">gluNurbsCurve()</span></tt></a> appears between a <a class="reference internal" href="gluBeginCurve.html#gluBeginCurve" title="gluBeginCurve"><tt class="xref c c-func docutils literal"><span class="pre">gluBeginCurve()</span></tt></a> / <a class="reference internal" href="gluBeginCurve.html#gluEndCurve" title="gluEndCurve"><tt class="xref c c-func docutils literal"><span class="pre">gluEndCurve()</span></tt></a> pair, it is
+used to describe a curve to be rendered.
+Positional, texture, and color coordinates are associated
+by presenting each as a separate <a class="reference internal" href="#gluNurbsCurve" title="gluNurbsCurve"><tt class="xref c c-func docutils literal"><span class="pre">gluNurbsCurve()</span></tt></a> between a
+<a class="reference internal" href="gluBeginCurve.html#gluBeginCurve" title="gluBeginCurve"><tt class="xref c c-func docutils literal"><span class="pre">gluBeginCurve()</span></tt></a> / <a class="reference internal" href="gluBeginCurve.html#gluEndCurve" title="gluEndCurve"><tt class="xref c c-func docutils literal"><span class="pre">gluEndCurve()</span></tt></a> pair. No more than
+one call to <a class="reference internal" href="#gluNurbsCurve" title="gluNurbsCurve"><tt class="xref c c-func docutils literal"><span class="pre">gluNurbsCurve()</span></tt></a> for each of color, position, and texture
+data can be made within a single <a class="reference internal" href="gluBeginCurve.html#gluBeginCurve" title="gluBeginCurve"><tt class="xref c c-func docutils literal"><span class="pre">gluBeginCurve()</span></tt></a> / <a class="reference internal" href="gluBeginCurve.html#gluEndCurve" title="gluEndCurve"><tt class="xref c c-func docutils literal"><span class="pre">gluEndCurve()</span></tt></a>
+pair. Exactly one call must be made to describe the position of the
+curve (a <em>type</em> of <tt class="docutils literal"><span class="pre">GLU_MAP1_VERTEX_3</span></tt> or <tt class="docutils literal"><span class="pre">GLU_MAP1_VERTEX_4</span></tt>).</p>
+<p>When <a class="reference internal" href="#gluNurbsCurve" title="gluNurbsCurve"><tt class="xref c c-func docutils literal"><span class="pre">gluNurbsCurve()</span></tt></a> appears between a <a class="reference internal" href="gluBeginTrim.html#gluBeginTrim" title="gluBeginTrim"><tt class="xref c c-func docutils literal"><span class="pre">gluBeginTrim()</span></tt></a> / <a class="reference internal" href="gluBeginTrim.html#gluEndTrim" title="gluEndTrim"><tt class="xref c c-func docutils literal"><span class="pre">gluEndTrim()</span></tt></a> pair, it is
+used to describe a trimming curve on a NURBS surface. If <em>type</em> is
+<tt class="docutils literal"><span class="pre">GLU_MAP1_TRIM_2</span></tt>, then it describes a curve in two-dimensional (<strong>u</strong>
+and <strong>v</strong>)
+parameter space. If it is <tt class="docutils literal"><span class="pre">GLU_MAP1_TRIM_3</span></tt>, then it describes a
+curve in two-dimensional homogeneous (<strong>u</strong>, <strong>v</strong>, and <strong>w</strong>)
+parameter space.
+See the <a class="reference internal" href="gluBeginTrim.html#gluBeginTrim" title="gluBeginTrim"><tt class="xref c c-func docutils literal"><span class="pre">gluBeginTrim()</span></tt></a> reference page for more discussion about trimming
+curves.</p>
+<p class="rubric">Example</p>
+<p>The following commands render a textured NURBS curve with normals:</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="n">gluBeginCurve</span><span class="p">(</span><span class="n">nobj</span><span class="p">);</span>
+   <span class="n">gluNurbsCurve</span><span class="p">(</span><span class="n">nobj</span><span class="p">,</span> <span class="p">...,</span> <span class="n">GL_MAP1_TEXTURE_COORD_2</span><span class="p">);</span>
+   <span class="n">gluNurbsCurve</span><span class="p">(</span><span class="n">nobj</span><span class="p">,</span> <span class="p">...,</span> <span class="n">GL_MAP1_NORMAL</span><span class="p">);</span>
+   <span class="n">gluNurbsCurve</span><span class="p">(</span><span class="n">nobj</span><span class="p">,</span> <span class="p">...,</span> <span class="n">GL_MAP1_VERTEX_4</span><span class="p">);</span>
+<span class="n">gluEndCurve</span><span class="p">(</span><span class="n">nobj</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">To define trim curves that stitch well, use <a class="reference internal" href="gluPwlCurve.html#gluPwlCurve" title="gluPwlCurve"><tt class="xref c c-func docutils literal"><span class="pre">gluPwlCurve()</span></tt></a>.</p>
+</div>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="gluNurbsCallbackDataEXT.html"
+                        title="previous chapter">function <cite>gluNurbsCallbackDataEXT</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="gluNurbsProperty.html"
+                        title="next chapter">function <cite>gluNurbsProperty</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/gluNurbsCurve.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="gluNurbsProperty.html" title="function gluNurbsProperty"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="gluNurbsCallbackDataEXT.html" title="function gluNurbsCallbackDataEXT"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,1001 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glTexImage3D &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glTexImage3DMultisample" href="glTexImage3DMultisample.html" />
+    <link rel="prev" title="function glTexImage2DMultisample" href="glTexImage2DMultisample.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glTexImage3DMultisample.html" title="function glTexImage3DMultisample"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glTexImage2DMultisample.html" title="function glTexImage2DMultisample"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glteximage3d">
+<h1>function <cite>glTexImage3D</cite><a class="headerlink" href="#function-glteximage3d" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Specify a three-dimensional texture image</p>
+<dl class="function">
+<dt id="glTexImage3D">
+<tt class="descname">glTexImage3D</tt><big>(</big><big>)</big><a class="headerlink" href="#glTexImage3D" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>target</strong> &#8211; Specifies the target texture.
+Must be one of <tt class="docutils literal"><span class="pre">GL_TEXTURE_3D</span></tt>, <tt class="docutils literal"><span class="pre">GL_PROXY_TEXTURE_3D</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_2D_ARRAY</span></tt> or <tt class="docutils literal"><span class="pre">GL_PROXY_TEXTURE_2D_ARRAY</span></tt>.</li>
+<li><strong>level</strong> &#8211; Specifies the level-of-detail number.
+Level 0 is the base image level.
+Level
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math></span> is the <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <msup><mi mathvariant="italic">n</mi><mi mathvariant="italic">th</mi></msup></math></span> mipmap reduction image.</li>
+<li><strong>internalFormat</strong> &#8211; Specifies the number of color components in the texture.
+Must be one of base internal formats given in Table 1,
+one of the sized internal formats given in Table 2, or one
+of the compressed internal formats given in Table 3, below.</li>
+<li><strong>width</strong> &#8211; Specifies the width of the texture image.
+All implementations support 3D texture images that are at least 16 texels
+wide.</li>
+<li><strong>height</strong> &#8211; Specifies the height of the texture image.
+All implementations support 3D texture images that are at least 256 texels
+high.</li>
+<li><strong>depth</strong> &#8211; Specifies the depth of the texture image, or the number of layers in a texture array.
+All implementations support 3D texture images that are at least 256 texels
+deep, and texture arrays that are at least 256 layers deep.</li>
+<li><strong>border</strong> &#8211; This value must be 0.</li>
+<li><strong>format</strong> &#8211; Specifies the format of the pixel data.
+The following symbolic values are accepted:
+<tt class="docutils literal"><span class="pre">GL_RED</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RG</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGB</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_BGR</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGBA</span></tt>, and
+<tt class="docutils literal"><span class="pre">GL_BGRA</span></tt>.</li>
+<li><strong>type</strong> &#8211; Specifies the data type of the pixel data.
+The following symbolic values are accepted:
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_BYTE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_BYTE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_SHORT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_INT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_FLOAT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_BYTE_3_3_2</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_BYTE_2_3_3_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_5_6_5</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_5_6_5_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_4_4_4_4</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_4_4_4_4_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_5_5_5_1</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_1_5_5_5_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_8_8_8_8</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_8_8_8_8_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_10_10_10_2</span></tt>, and
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_2_10_10_10_REV</span></tt>.</li>
+<li><strong>data</strong> &#8211; Specifies a pointer to the image data in memory.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glTexImage3D</tt><big>(</big>GLenum <em>&nbsp;target</em>, GLint <em>&nbsp;level</em>, GLint <em>&nbsp;internalFormat</em>, GLsizei <em>&nbsp;width</em>, GLsizei <em>&nbsp;height</em>, GLsizei <em>&nbsp;depth</em>, GLint <em>&nbsp;border</em>, GLenum <em>&nbsp;format</em>, GLenum <em>&nbsp;type</em>, const GLvoid * <em>&nbsp;data</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glActiveTexture.html#glActiveTexture" title="glActiveTexture"><tt class="xref c c-func docutils literal"><span class="pre">glActiveTexture()</span></tt></a>,
+<a class="reference internal" href="glCompressedTexImage1D.html#glCompressedTexImage1D" title="glCompressedTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glCompressedTexImage1D()</span></tt></a>,
+<a class="reference internal" href="glCompressedTexImage2D.html#glCompressedTexImage2D" title="glCompressedTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glCompressedTexImage2D()</span></tt></a>,
+<a class="reference internal" href="glCompressedTexImage3D.html#glCompressedTexImage3D" title="glCompressedTexImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glCompressedTexImage3D()</span></tt></a>,
+<a class="reference internal" href="glCompressedTexSubImage1D.html#glCompressedTexSubImage1D" title="glCompressedTexSubImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glCompressedTexSubImage1D()</span></tt></a>,
+<a class="reference internal" href="glCompressedTexSubImage2D.html#glCompressedTexSubImage2D" title="glCompressedTexSubImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glCompressedTexSubImage2D()</span></tt></a>,
+<a class="reference internal" href="glCompressedTexSubImage3D.html#glCompressedTexSubImage3D" title="glCompressedTexSubImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glCompressedTexSubImage3D()</span></tt></a>,
+<a class="reference internal" href="glCopyTexImage1D.html#glCopyTexImage1D" title="glCopyTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexImage1D()</span></tt></a>,
+<a class="reference internal" href="glCopyTexImage2D.html#glCopyTexImage2D" title="glCopyTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexImage2D()</span></tt></a>,
+<a class="reference internal" href="glCopyTexSubImage1D.html#glCopyTexSubImage1D" title="glCopyTexSubImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexSubImage1D()</span></tt></a>,
+<a class="reference internal" href="glCopyTexSubImage2D.html#glCopyTexSubImage2D" title="glCopyTexSubImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexSubImage2D()</span></tt></a>,
+<a class="reference internal" href="glCopyTexSubImage3D.html#glCopyTexSubImage3D" title="glCopyTexSubImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexSubImage3D()</span></tt></a>,
+<a class="reference internal" href="glGetCompressedTexImage.html#glGetCompressedTexImage" title="glGetCompressedTexImage"><tt class="xref c c-func docutils literal"><span class="pre">glGetCompressedTexImage()</span></tt></a>,
+<a class="reference internal" href="glPixelStore.html#glPixelStore" title="glPixelStore"><tt class="xref c c-func docutils literal"><span class="pre">glPixelStore()</span></tt></a>,
+<a class="reference internal" href="glTexImage1D.html#glTexImage1D" title="glTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage1D()</span></tt></a>,
+<a class="reference internal" href="glTexImage2D.html#glTexImage2D" title="glTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage2D()</span></tt></a>,
+<a class="reference internal" href="glTexSubImage1D.html#glTexSubImage1D" title="glTexSubImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage1D()</span></tt></a>,
+<a class="reference internal" href="glTexSubImage2D.html#glTexSubImage2D" title="glTexSubImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage2D()</span></tt></a>,
+<a class="reference internal" href="glTexSubImage3D.html#glTexSubImage3D" title="glTexSubImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage3D()</span></tt></a>,
+<a class="reference internal" href="glTexParameter.html#glTexParameter" title="glTexParameter"><tt class="xref c c-func docutils literal"><span class="pre">glTexParameter()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p>Texturing maps a portion of a specified texture image
+onto each graphical primitive for which texturing is enabled.
+To enable and disable three-dimensional texturing, call <a class="reference internal" href="glEnable.html#glEnable" title="glEnable"><tt class="xref c c-func docutils literal"><span class="pre">glEnable()</span></tt></a>
+and <a class="reference internal" href="glEnable.html#glDisable" title="glDisable"><tt class="xref c c-func docutils literal"><span class="pre">glDisable()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_TEXTURE_3D</span></tt>.</p>
+<p>To define texture images, call <a class="reference internal" href="#glTexImage3D" title="glTexImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage3D()</span></tt></a>.
+The arguments describe the parameters of the texture image,
+such as height,
+width, depth,
+width of the border,
+level-of-detail number
+(see <a class="reference internal" href="glTexParameter.html#glTexParameter" title="glTexParameter"><tt class="xref c c-func docutils literal"><span class="pre">glTexParameter()</span></tt></a>),
+and number of color components provided.
+The last three arguments describe how the image is represented in memory.</p>
+<p>If <em>target</em> is <tt class="docutils literal"><span class="pre">GL_PROXY_TEXTURE_3D</span></tt>, no data is read from <em>data</em>, but
+all of the texture image state is recalculated, checked for
+consistency, and checked
+against the implementation&#8217;s capabilities. If the implementation cannot
+handle a texture of the requested texture size, it sets
+all of the image state to 0,
+but does not generate an error (see <a class="reference internal" href="glGetError.html#glGetError" title="glGetError"><tt class="xref c c-func docutils literal"><span class="pre">glGetError()</span></tt></a>). To query for an
+entire mipmap array, use an image array level greater than or equal to
+1.</p>
+<p>If <em>target</em> is <tt class="docutils literal"><span class="pre">GL_TEXTURE_3D</span></tt>,
+data is read from <em>data</em> as a sequence of signed or unsigned bytes,
+shorts,
+or longs,
+or single-precision floating-point values,
+depending on <em>type</em>.
+These values are grouped into sets of one,
+two,
+three,
+or four values,
+depending on <em>format</em>,
+to form elements.
+Each data byte is treated as eight 1-bit elements,
+with bit ordering determined by <tt class="docutils literal"><span class="pre">GL_UNPACK_LSB_FIRST</span></tt>
+(see <a class="reference internal" href="glPixelStore.html#glPixelStore" title="glPixelStore"><tt class="xref c c-func docutils literal"><span class="pre">glPixelStore()</span></tt></a>).</p>
+<p>If a non-zero named buffer object is bound to the <tt class="docutils literal"><span class="pre">GL_PIXEL_UNPACK_BUFFER</span></tt> target
+(see <a class="reference internal" href="glBindBuffer.html#glBindBuffer" title="glBindBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glBindBuffer()</span></tt></a>) while a texture image is
+specified, <em>data</em> is treated as a byte offset into the buffer object&#8217;s data store.</p>
+<p>The first element corresponds to the lower left corner of the texture
+image.
+Subsequent elements progress left-to-right through the remaining texels
+in the lowest row of the texture image, and then in successively higher
+rows of the texture image.
+The final element corresponds to the upper right corner of the texture
+image.</p>
+<p><em>format</em> determines the composition of each element in <em>data</em>.
+It can assume one of these symbolic values:</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">GL_RED</span></tt></p>
+<blockquote>
+<div>Each element is a single red component.
+The GL converts it to floating point and assembles it into an RGBA element
+by attaching 0 for green and blue, and 1 for alpha.
+Each component is then multiplied by the signed scale factor <tt class="docutils literal"><span class="pre">GL_c_SCALE</span></tt>,
+added to the signed bias <tt class="docutils literal"><span class="pre">GL_c_BIAS</span></tt>,
+and clamped to the range [0,1].</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_RG</span></tt></p>
+<blockquote>
+<div>Each element is a red and green pair.
+The GL converts each to floating point and assembles it into an RGBA element
+by attaching 0 for blue, and 1 for alpha.
+Each component is then multiplied by the signed scale factor <tt class="docutils literal"><span class="pre">GL_c_SCALE</span></tt>,
+added to the signed bias <tt class="docutils literal"><span class="pre">GL_c_BIAS</span></tt>,
+and clamped to the range [0,1].</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">GL_BGR</span></tt></p>
+<blockquote>
+<div>Each element is an RGB triple.
+The GL converts it to floating point and assembles it into an RGBA element
+by attaching 1 for alpha.
+Each component is then multiplied by the signed scale factor <tt class="docutils literal"><span class="pre">GL_c_SCALE</span></tt>,
+added to the signed bias <tt class="docutils literal"><span class="pre">GL_c_BIAS</span></tt>,
+and clamped to the range [0,1].</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_RGBA</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">GL_BGRA</span></tt></p>
+<blockquote>
+<div>Each element contains all four components.
+Each component is multiplied by the signed scale factor <tt class="docutils literal"><span class="pre">GL_c_SCALE</span></tt>,
+added to the signed bias <tt class="docutils literal"><span class="pre">GL_c_BIAS</span></tt>,
+and clamped to the range [0,1].</div></blockquote>
+</div></blockquote>
+<p>If an application wants to store the texture at a certain
+resolution or in a certain format, it can request the resolution
+and format with <em>internalFormat</em>. The GL will choose an internal
+representation that closely approximates that requested by <em>internalFormat</em>, but
+it may not match exactly.
+(The representations specified by <tt class="docutils literal"><span class="pre">GL_RED</span></tt>, <tt class="docutils literal"><span class="pre">GL_RG</span></tt>, <tt class="docutils literal"><span class="pre">GL_RGB</span></tt>,
+and <tt class="docutils literal"><span class="pre">GL_RGBA</span></tt> must match exactly.)</p>
+<p><em>internalFormat</em> may be one of the base internal formats shown in
+Table 1, below</p>
+<table border="1" class="docutils">
+<caption>Base Internal Formats</caption>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Base Internal Format</strong></th>
+<th class="head"><strong>RGBA, Depth and Stencil Values</strong></th>
+<th class="head"><strong>Internal Components</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_DEPTH_COMPONENT</span></tt></td>
+<td>Depth</td>
+<td>D</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_DEPTH_STENCIL</span></tt></td>
+<td>Depth, Stencil</td>
+<td>D, S</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RED</span></tt></td>
+<td>Red</td>
+<td>R</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RG</span></tt></td>
+<td>Red, Green</td>
+<td>R, G</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>Red, Green, Blue</td>
+<td>R, G, B</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RGBA</span></tt></td>
+<td>Red, Green, Blue, Alpha</td>
+<td>R, G, B, A</td>
+</tr>
+</tbody>
+</table>
+<p><em>internalFormat</em> may also be one of the sized internal formats
+shown in Table 2, below</p>
+<table border="1" class="docutils">
+<caption>Sized Internal Formats</caption>
+<colgroup>
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Sized Internal Format</strong></th>
+<th class="head"><strong>Base Internal Format</strong></th>
+<th class="head"><strong>Red Bits</strong></th>
+<th class="head"><strong>Green Bits</strong></th>
+<th class="head"><strong>Blue Bits</strong></th>
+<th class="head"><strong>Alpha Bits</strong></th>
+<th class="head"><strong>Shared Bits</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_R8</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RED</span></tt></td>
+<td>8</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_R8_SNORM</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RED</span></tt></td>
+<td>s8</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_R16</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RED</span></tt></td>
+<td>16</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_R16_SNORM</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RED</span></tt></td>
+<td>s16</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RG8</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RG</span></tt></td>
+<td>8</td>
+<td>8</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RG8_SNORM</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RG</span></tt></td>
+<td>s8</td>
+<td>s8</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RG16</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RG</span></tt></td>
+<td>16</td>
+<td>16</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RG16_SNORM</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RG</span></tt></td>
+<td>s16</td>
+<td>s16</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_R3_G3_B2</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>3</td>
+<td>3</td>
+<td>2</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RGB4</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RGB5</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>5</td>
+<td>5</td>
+<td>5</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RGB8</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>8</td>
+<td>8</td>
+<td>8</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RGB8_SNORM</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>s8</td>
+<td>s8</td>
+<td>s8</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RGB10</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>10</td>
+<td>10</td>
+<td>10</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RGB12</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>12</td>
+<td>12</td>
+<td>12</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RGB16_SNORM</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>16</td>
+<td>16</td>
+<td>16</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RGBA2</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RGBA4</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RGB5_A1</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGBA</span></tt></td>
+<td>5</td>
+<td>5</td>
+<td>5</td>
+<td>1</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RGBA8</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGBA</span></tt></td>
+<td>8</td>
+<td>8</td>
+<td>8</td>
+<td>8</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RGBA8_SNORM</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGBA</span></tt></td>
+<td>s8</td>
+<td>s8</td>
+<td>s8</td>
+<td>s8</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RGB10_A2</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGBA</span></tt></td>
+<td>10</td>
+<td>10</td>
+<td>10</td>
+<td>2</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RGB10_A2UI</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGBA</span></tt></td>
+<td>ui10</td>
+<td>ui10</td>
+<td>ui10</td>
+<td>ui2</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RGBA12</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGBA</span></tt></td>
+<td>12</td>
+<td>12</td>
+<td>12</td>
+<td>12</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RGBA16</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGBA</span></tt></td>
+<td>16</td>
+<td>16</td>
+<td>16</td>
+<td>16</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_SRGB8</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>8</td>
+<td>8</td>
+<td>8</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_SRGB8_ALPHA8</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGBA</span></tt></td>
+<td>8</td>
+<td>8</td>
+<td>8</td>
+<td>8</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_R16F</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RED</span></tt></td>
+<td>f16</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RG16F</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RG</span></tt></td>
+<td>f16</td>
+<td>f16</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RGB16F</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>f16</td>
+<td>f16</td>
+<td>f16</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RGBA16F</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGBA</span></tt></td>
+<td>f16</td>
+<td>f16</td>
+<td>f16</td>
+<td>f16</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_R32F</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RED</span></tt></td>
+<td>f32</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RG32F</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RG</span></tt></td>
+<td>f32</td>
+<td>f32</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RGB32F</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>f32</td>
+<td>f32</td>
+<td>f32</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RGBA32F</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGBA</span></tt></td>
+<td>f32</td>
+<td>f32</td>
+<td>f32</td>
+<td>f32</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_R11F_G11F_B10F</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>f11</td>
+<td>f11</td>
+<td>f10</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RGB9_E5</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>9</td>
+<td>9</td>
+<td>9</td>
+<td>&nbsp;</td>
+<td>5</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_R8I</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RED</span></tt></td>
+<td>i8</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_R8UI</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RED</span></tt></td>
+<td>ui8</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_R16I</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RED</span></tt></td>
+<td>i16</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_R16UI</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RED</span></tt></td>
+<td>ui16</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_R32I</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RED</span></tt></td>
+<td>i32</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_R32UI</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RED</span></tt></td>
+<td>ui32</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RG8I</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RG</span></tt></td>
+<td>i8</td>
+<td>i8</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RG8UI</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RG</span></tt></td>
+<td>ui8</td>
+<td>ui8</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RG16I</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RG</span></tt></td>
+<td>i16</td>
+<td>i16</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RG16UI</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RG</span></tt></td>
+<td>ui16</td>
+<td>ui16</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RG32I</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RG</span></tt></td>
+<td>i32</td>
+<td>i32</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RG32UI</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RG</span></tt></td>
+<td>ui32</td>
+<td>ui32</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RGB8I</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>i8</td>
+<td>i8</td>
+<td>i8</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RGB8UI</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>ui8</td>
+<td>ui8</td>
+<td>ui8</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RGB16I</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>i16</td>
+<td>i16</td>
+<td>i16</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RGB16UI</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>ui16</td>
+<td>ui16</td>
+<td>ui16</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RGB32I</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>i32</td>
+<td>i32</td>
+<td>i32</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RGB32UI</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>ui32</td>
+<td>ui32</td>
+<td>ui32</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RGBA8I</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGBA</span></tt></td>
+<td>i8</td>
+<td>i8</td>
+<td>i8</td>
+<td>i8</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RGBA8UI</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGBA</span></tt></td>
+<td>ui8</td>
+<td>ui8</td>
+<td>ui8</td>
+<td>ui8</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RGBA16I</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGBA</span></tt></td>
+<td>i16</td>
+<td>i16</td>
+<td>i16</td>
+<td>i16</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RGBA16UI</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGBA</span></tt></td>
+<td>ui16</td>
+<td>ui16</td>
+<td>ui16</td>
+<td>ui16</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RGBA32I</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGBA</span></tt></td>
+<td>i32</td>
+<td>i32</td>
+<td>i32</td>
+<td>i32</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RGBA32UI</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGBA</span></tt></td>
+<td>ui32</td>
+<td>ui32</td>
+<td>ui32</td>
+<td>ui32</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>Finally, <em>internalFormat</em> may also be one of the generic or compressed
+compressed texture formats shown in Table 3 below</p>
+<table border="1" class="docutils">
+<caption>Compressed Internal Formats</caption>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Compressed Internal Format</strong></th>
+<th class="head"><strong>Base Internal Format</strong></th>
+<th class="head"><strong>Type</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_COMPRESSED_RED</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RED</span></tt></td>
+<td>Generic</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_COMPRESSED_RG</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RG</span></tt></td>
+<td>Generic</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_COMPRESSED_RGB</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>Generic</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_COMPRESSED_RGBA</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGBA</span></tt></td>
+<td>Generic</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_COMPRESSED_SRGB</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>Generic</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_COMPRESSED_SRGB_ALPHA</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGBA</span></tt></td>
+<td>Generic</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_COMPRESSED_RED_RGTC1</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RED</span></tt></td>
+<td>Specific</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_COMPRESSED_SIGNED_RED_RGTC1</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RED</span></tt></td>
+<td>Specific</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_COMPRESSED_RG_RGTC2</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RG</span></tt></td>
+<td>Specific</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_COMPRESSED_SIGNED_RG_RGTC2</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RG</span></tt></td>
+<td>Specific</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_COMPRESSED_RGBA_BPTC_UNORM</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGBA</span></tt></td>
+<td>Specific</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_COMPRESSED_SRGB_ALPHA_BPTC_UNORM</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGBA</span></tt></td>
+<td>Specific</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_COMPRESSED_RGB_BPTC_SIGNED_FLOAT</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>Specific</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>Specific</td>
+</tr>
+</tbody>
+</table>
+<p>If the <em>internalFormat</em> parameter is one of the generic compressed formats,
+<tt class="docutils literal"><span class="pre">GL_COMPRESSED_RED</span></tt>, <tt class="docutils literal"><span class="pre">GL_COMPRESSED_RG</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_COMPRESSED_RGB</span></tt>, or
+<tt class="docutils literal"><span class="pre">GL_COMPRESSED_RGBA</span></tt>, the GL will replace the internal format with the symbolic constant for a specific internal format and compress the texture before storage.  If no corresponding internal format is available, or the GL can not compress that image for any reason, the internal format is instead replaced with a corresponding base internal format.</p>
+<p>If the <em>internalFormat</em> parameter is
+<tt class="docutils literal"><span class="pre">GL_SRGB</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_SRGB8</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_SRGB_ALPHA</span></tt>, or
+<tt class="docutils literal"><span class="pre">GL_SRGB8_ALPHA8</span></tt>, the texture is treated as if the red, green, blue, or luminance components are encoded in the sRGB color space.    Any alpha component is left unchanged.  The conversion from the sRGB encoded component
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">c</mi><mi mathvariant="italic">s</mi></msub></math></span>                   to a linear component
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">c</mi><mi mathvariant="italic">l</mi></msub></math></span> is:</p>
+<p><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msub><mi mathvariant="italic">c</mi><mi mathvariant="italic">l</mi></msub><mo>=</mo><mrow><mo>{</mo><mtable columnalign="left"><mtr><mtd columnalign="left"><mfrac><msub><mi mathvariant="italic">c</mi><mi mathvariant="italic">s</mi></msub><mn>12.92</mn></mfrac></mtd><mtd columnalign="left"><mrow><mspace width="1ex"/><mo>if</mo><mspace width="1ex"/></mrow><msub><mi mathvariant="italic">c</mi><mi mathvariant="italic">s</mi></msub><mo>&le;</mo><mn>0.04045</mn></mtd></mtr><mtr><mtd columnalign="left"><msup><mrow><mo>(</mo><mfrac><mrow><msub><mi>c</mi><mi>s</mi></msub><mo>+</mo><mn>0.055</mn></mrow><mn>1.055</mn></mfrac><mo>)</mo></mrow><mn>2.4</mn></msup></mtd><mtd columnalign="left"><mrow><mspace width="1ex"/><mo>if</mo><mspace width="1ex"/></mrow><msub><mi mathvariant="italic">c</mi><mi mathvariant="italic">s</mi></msub><mo>></mo><mn>0.04045</mn></mtd></mtr></mtable></mrow></mrow></math></span></p>
+<p>Assume
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">c</mi><mi mathvariant="italic">s</mi></msub></math></span>                   is the sRGB component in the range [0,1].</p>
+<p>Use the <tt class="docutils literal"><span class="pre">GL_PROXY_TEXTURE_3D</span></tt> target to try out a resolution and
+format. The implementation will
+update and recompute its best match for the requested storage resolution
+and format. To then query this state, call <a class="reference internal" href="glGetTexLevelParameter.html#glGetTexLevelParameter" title="glGetTexLevelParameter"><tt class="xref c c-func docutils literal"><span class="pre">glGetTexLevelParameter()</span></tt></a>.
+If the texture cannot be accommodated, texture state is set to 0.</p>
+<p>A one-component texture image uses only the red component of the RGBA
+color extracted from <em>data</em>.
+A two-component image uses the R and A values.
+A three-component image uses the R, G, and B values.
+A four-component image uses all of the RGBA components.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The <a class="reference internal" href="glPixelStore.html#glPixelStore" title="glPixelStore"><tt class="xref c c-func docutils literal"><span class="pre">glPixelStore()</span></tt></a> mode affects texture images.</p>
+<p><em>data</em> may be a null pointer.
+In this case texture memory is
+allocated to accommodate a texture of width <em>width</em>, height <em>height</em>,
+and depth <em>depth</em>.
+You can then download subtextures to initialize this
+texture memory.
+The image is undefined if the user tries to apply
+an uninitialized portion of the texture image to a primitive.</p>
+<p class="last"><a class="reference internal" href="#glTexImage3D" title="glTexImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage3D()</span></tt></a> specifies the three-dimensional texture for the current texture unit,
+specified with <a class="reference internal" href="glActiveTexture.html#glActiveTexture" title="glActiveTexture"><tt class="xref c c-func docutils literal"><span class="pre">glActiveTexture()</span></tt></a>.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>target</em> is not <tt class="docutils literal"><span class="pre">GL_TEXTURE_3D</span></tt> or <tt class="docutils literal"><span class="pre">GL_PROXY_TEXTURE_3D</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>format</em> is not an accepted format constant. Format constants other than <tt class="docutils literal"><span class="pre">GL_STENCIL_INDEX</span></tt> and <tt class="docutils literal"><span class="pre">GL_DEPTH_COMPONENT</span></tt> are accepted.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>type</em> is not a type constant.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>level</em> is less than 0.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> may be generated if <em>level</em> is greater than <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">log</mi><mn>2</mn></msub><mo>&af;</mo><mfenced open="(" close=")"><mi mathvariant="italic">max</mi></mfenced></mrow></math></span>, where <strong>max</strong> is the returned value of <tt class="docutils literal"><span class="pre">GL_MAX_TEXTURE_SIZE</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>internalFormat</em> is not one of the accepted resolution and format symbolic constants.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>width</em>, <em>height</em>, or <em>depth</em> is less than 0 or greater than <tt class="docutils literal"><span class="pre">GL_MAX_TEXTURE_SIZE</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if non-power-of-two textures are not supported and the <em>width</em>, <em>height</em>, or <em>depth</em> cannot be represented as <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mi mathvariant="italic">k</mi></msup><mo>+</mo><mrow><mn>2</mn><mo>&af;</mo><mfenced open="(" close=")"><mi mathvariant="italic">border</mi></mfenced></mrow></mrow></math></span> for some integer value of <strong>k</strong>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>border</em> is not 0 or 1.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <em>type</em> is one of <tt class="docutils literal"><span class="pre">GL_UNSIGNED_BYTE_3_3_2</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_BYTE_2_3_3_REV</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_5_6_5</span></tt>, or <tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_5_6_5_REV</span></tt> and <em>format</em> is not <tt class="docutils literal"><span class="pre">GL_RGB</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <em>type</em> is one of <tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_4_4_4_4</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_4_4_4_4_REV</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_5_5_5_1</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_1_5_5_5_REV</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_8_8_8_8</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_8_8_8_8_REV</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_10_10_10_2</span></tt>, or <tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_2_10_10_10_REV</span></tt> and <em>format</em> is neither <tt class="docutils literal"><span class="pre">GL_RGBA</span></tt> nor <tt class="docutils literal"><span class="pre">GL_BGRA</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <em>format</em> or <em>internalFormat</em> is <tt class="docutils literal"><span class="pre">GL_DEPTH_COMPONENT</span></tt>, <tt class="docutils literal"><span class="pre">GL_DEPTH_COMPONENT16</span></tt>, <tt class="docutils literal"><span class="pre">GL_DEPTH_COMPONENT24</span></tt>, or <tt class="docutils literal"><span class="pre">GL_DEPTH_COMPONENT32</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if a non-zero buffer object name is bound to the <tt class="docutils literal"><span class="pre">GL_PIXEL_UNPACK_BUFFER</span></tt> target and the buffer object&#8217;s data store is currently mapped.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if a non-zero buffer object name is bound to the <tt class="docutils literal"><span class="pre">GL_PIXEL_UNPACK_BUFFER</span></tt> target and the data would be unpacked from the buffer object such that the memory reads required would exceed the data store size.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if a non-zero buffer object name is bound to the <tt class="docutils literal"><span class="pre">GL_PIXEL_UNPACK_BUFFER</span></tt> target and <em>data</em> is not evenly divisible into the number of bytes needed to store in memory a datum indicated by <em>type</em>.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glGetTexImage.html#glGetTexImage" title="glGetTexImage"><tt class="xref c c-func docutils literal"><span class="pre">glGetTexImage()</span></tt></a></li>
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_PIXEL_UNPACK_BUFFER_BINDING</span></tt></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. (c)2011 Khronos Group. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glTexImage2DMultisample.html"
+                        title="previous chapter">function <cite>glTexImage2DMultisample</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glTexImage3DMultisample.html"
+                        title="next chapter">function <cite>glTexImage3DMultisample</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glTexImage3D.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glTexImage3DMultisample.html" title="function glTexImage3DMultisample"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glTexImage2DMultisample.html" title="function glTexImage2DMultisample"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

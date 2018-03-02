@@ -1,0 +1,209 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glGetUniformLocation &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glGetUniformSubroutine" href="glGetUniformSubroutine.html" />
+    <link rel="prev" title="function glGetUniformIndices" href="glGetUniformIndices.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glGetUniformSubroutine.html" title="function glGetUniformSubroutine"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glGetUniformIndices.html" title="function glGetUniformIndices"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glgetuniformlocation">
+<h1>function <cite>glGetUniformLocation</cite><a class="headerlink" href="#function-glgetuniformlocation" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Returns the location of a uniform variable</p>
+<dl class="function">
+<dt id="glGetUniformLocation">
+<tt class="descname">glGetUniformLocation</tt><big>(</big><big>)</big><a class="headerlink" href="#glGetUniformLocation" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>program</strong> &#8211; Specifies the program object to be
+queried.</li>
+<li><strong>name</strong> &#8211; Points to a null terminated string containing
+the name of the uniform variable whose location is
+to be queried.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+GLint <tt class="descname">glGetUniformLocation</tt><big>(</big>GLuint <em>&nbsp;program</em>, const GLchar *<em>&nbsp;name</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glLinkProgram.html#glLinkProgram" title="glLinkProgram"><tt class="xref c c-func docutils literal"><span class="pre">glLinkProgram()</span></tt></a>,
+<a class="reference internal" href="glUniform.html#glUniform" title="glUniform"><tt class="xref c c-func docutils literal"><span class="pre">glUniform()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glGetUniformLocation" title="glGetUniformLocation"><tt class="xref c c-func docutils literal"><span class="pre">glGetUniformLocation()</span></tt></a> returns an
+integer that represents the location of a specific uniform
+variable within a program object. <em>name</em>
+must be a null terminated string that contains no white space.
+<em>name</em> must be an active uniform variable
+name in <em>program</em> that is not a structure,
+an array of structures, or a subcomponent of a vector or a
+matrix. This function returns -1 if <em>name</em>
+does not correspond to an active uniform variable in
+<em>program</em>, if <em>name</em>
+starts with the reserved prefix <tt class="docutils literal"><span class="pre">gl_</span></tt>, or if
+<em>name</em> is associated with an atomic counter or
+a named uniform block.</p>
+<p>Uniform variables that are structures or arrays of
+structures may be queried by calling
+<a class="reference internal" href="#glGetUniformLocation" title="glGetUniformLocation"><tt class="xref c c-func docutils literal"><span class="pre">glGetUniformLocation()</span></tt></a> for each field within
+the structure. The array element operator &#8220;[]&#8221; and the
+structure field operator &#8221;.&#8221; may be used in
+<em>name</em> in order to select elements within
+an array or fields within a structure. The result of using these
+operators is not allowed to be another structure, an array of
+structures, or a subcomponent of a vector or a matrix. Except if
+the last part of <em>name</em> indicates a uniform
+variable array, the location of the first element of an array
+can be retrieved by using the name of the array, or by using the
+name appended by &#8220;[0]&#8221;.</p>
+<p>The actual locations assigned to uniform variables are not
+known until the program object is linked successfully. After
+linking has occurred, the command
+<a class="reference internal" href="#glGetUniformLocation" title="glGetUniformLocation"><tt class="xref c c-func docutils literal"><span class="pre">glGetUniformLocation()</span></tt></a> can be used to obtain
+the location of a uniform variable. This location value can then
+be passed to
+<a class="reference internal" href="glUniform.html#glUniform" title="glUniform"><tt class="xref c c-func docutils literal"><span class="pre">glUniform()</span></tt></a>
+to set the value of the uniform variable or to
+<a class="reference internal" href="glGetUniform.html#glGetUniform" title="glGetUniform"><tt class="xref c c-func docutils literal"><span class="pre">glGetUniform()</span></tt></a>
+in order to query the current value of the uniform variable.
+After a program object has been linked successfully, the index
+values for uniform variables remain fixed until the next link
+command occurs. Uniform variable locations and values can only
+be queried after a link if the link was successful.</p>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>program</em> is not a value generated by OpenGL.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <em>program</em> is not a program object.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <em>program</em> has not been successfully linked.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glGetActiveUniform.html#glGetActiveUniform" title="glGetActiveUniform"><tt class="xref c c-func docutils literal"><span class="pre">glGetActiveUniform()</span></tt></a> with arguments <em>program</em> and the index of an active uniform variable</li>
+<li><a class="reference internal" href="glGetProgram.html#glGetProgram" title="glGetProgram"><tt class="xref c c-func docutils literal"><span class="pre">glGetProgram()</span></tt></a> with arguments <em>program</em> and <tt class="docutils literal"><span class="pre">GL_ACTIVE_UNIFORMS</span></tt> or <tt class="docutils literal"><span class="pre">GL_ACTIVE_UNIFORM_MAX_LENGTH</span></tt></li>
+<li><a class="reference internal" href="glGetUniform.html#glGetUniform" title="glGetUniform"><tt class="xref c c-func docutils literal"><span class="pre">glGetUniform()</span></tt></a> with arguments <em>program</em> and the name of a uniform variable</li>
+<li><a class="reference internal" href="glIsProgram.html#glIsProgram" title="glIsProgram"><tt class="xref c c-func docutils literal"><span class="pre">glIsProgram()</span></tt></a></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)2003-2005 3Dlabs Inc. Ltd. 2011 Khronos Group. Open Publication License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glGetUniformIndices.html"
+                        title="previous chapter">function <cite>glGetUniformIndices</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glGetUniformSubroutine.html"
+                        title="next chapter">function <cite>glGetUniformSubroutine</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glGetUniformLocation.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glGetUniformSubroutine.html" title="function glGetUniformSubroutine"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glGetUniformIndices.html" title="function glGetUniformIndices"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

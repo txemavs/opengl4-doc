@@ -1,0 +1,87 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:27
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glResetMinmax.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glResetMinmax`
+------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Reset minmax table entries to initial values
+
+.. c:function:: glResetMinmax
+
+
+         :param target:
+
+                  Must be
+                  ``GL_MINMAX``\ .
+
+.. rubric:: Specification
+
+.. c:function:: void glResetMinmax(GLenum  target)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glMinmax`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glResetMinmax` resets the elements of the current minmax table to their
+initial values: the "maximum" element receives the minimum possible
+component values, and the "minimum" element receives the maximum
+possible component values.
+
+
+.. note::
+
+
+   :c:func:`glResetMinmax` is present only if ``ARB_imaging`` is returned when :c:func:`glGetString`
+   is called with an argument of ``GL_EXTENSIONS``\ .
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_ENUM`` is generated if *target* is not ``GL_MINMAX``\ .
+* ``GL_INVALID_OPERATION`` is generated if :c:func:`glResetMinmax` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`\ .
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glResetMinmax'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

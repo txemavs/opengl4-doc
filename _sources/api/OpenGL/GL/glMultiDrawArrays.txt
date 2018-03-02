@@ -1,0 +1,69 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glMultiDrawArrays`
+----------------------------
+
+.. source file man4/glMultiDrawArrays
+
+.. currentmodule:: OpenGL.GL
+
+Render multiple sets of primitives from array data
+
+.. c:function:: glMultiDrawArrays
+.. c:function:: void glMultiDrawArrays(GLenum  mode, const GLint *  first, const GLsizei *  count, GLsizei  primcount)
+   :noindex: 
+
+
+   
+   :param mode:
+      Specifies what kind of primitives to render. Symbolic constants ``GL_POINTS``, ``GL_LINE_STRIP``, ``GL_LINE_LOOP``, ``GL_LINES``, ``GL_LINE_STRIP_ADJACENCY``, ``GL_LINES_ADJACENCY``, ``GL_TRIANGLE_STRIP``, ``GL_TRIANGLE_FAN``, ``GL_TRIANGLES``, ``GL_TRIANGLE_STRIP_ADJACENCY``, ``GL_TRIANGLES_ADJACENCY`` and ``GL_PATCHES`` are accepted.
+   
+   :param first:
+      Points to an array of starting indices in the enabled arrays.
+   
+   :param count:
+      Points to an array of the number of indices to be rendered.
+   
+   :param primcount:
+      Specifies the size of the first and count
+   
+
+.. seealso::
+
+   
+   :c:func:`glDrawElements`, :c:func:`glDrawRangeElements`
+   
+.. rubric:: Description
+
+
+:c:func:`glMultiDrawArrays` specifies multiple sets of geometric primitives with very few subroutine calls. Instead of calling a GL procedure to pass each individual vertex, normal, texture coordinate, edge flag, or color, you can prespecify separate arrays of vertices, normals, and colors and use them to construct a sequence of primitives with a single call to :c:func:`glMultiDrawArrays`.
+
+:c:func:`glMultiDrawArrays` behaves identically to :c:func:`glDrawArrays` except that *primcount* separate ranges of elements are specified instead.
+
+When :c:func:`glMultiDrawArrays` is called, it uses *count* sequential elements from each enabled array to construct a sequence of geometric primitives, beginning with element *first* . *mode* specifies what kind of primitives are constructed, and how the array elements construct those primitives.
+
+Vertex attributes that are modified by :c:func:`glMultiDrawArrays` have an unspecified value after :c:func:`glMultiDrawArrays` returns. Attributes that aren't modified remain well defined.
+
+
+**Errors:**
+
+   * ``GL_INVALID_ENUM`` is generated if *mode* is not an accepted value.
+   * ``GL_INVALID_VALUE`` is generated if *primcount* is negative.
+   * ``GL_INVALID_OPERATION`` is generated if a non-zero buffer object name is bound to an enabled array and the buffer object's data store is currently mapped.
+
+
+
+.. note::
+
+   * ``GL_LINE_STRIP_ADJACENCY``, ``GL_LINES_ADJACENCY``, ``GL_TRIANGLE_STRIP_ADJACENCY`` and ``GL_TRIANGLES_ADJACENCY`` are available only if the GL version is 3.2 or greater.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

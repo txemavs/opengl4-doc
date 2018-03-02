@@ -1,0 +1,209 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glXQueryDrawable &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function glXQueryExtension" href="glXQueryExtension.html" />
+    <link rel="prev" title="function glXQueryContextInfoEXT" href="glXQueryContextInfoEXT.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glXQueryExtension.html" title="function glXQueryExtension"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glXQueryContextInfoEXT.html" title="function glXQueryContextInfoEXT"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glxquerydrawable">
+<h1>function <cite>glXQueryDrawable</cite><a class="headerlink" href="#function-glxquerydrawable" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Returns an attribute assoicated with a GLX drawable</p>
+<dl class="function">
+<dt id="glXQueryDrawable">
+<tt class="descname">glXQueryDrawable</tt><big>(</big><big>)</big><a class="headerlink" href="#glXQueryDrawable" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>dpy</strong> &#8211; Specifies the connection to the X server.</li>
+<li><strong>draw</strong> &#8211; Specifies the GLX drawable to be queried.</li>
+<li><strong>attribute</strong> &#8211; Specifies the attribute to be returned.  Must be one of
+<tt class="docutils literal"><span class="pre">GLX_WIDTH</span></tt>,
+<tt class="docutils literal"><span class="pre">GLX_HEIGHT</span></tt>,
+<tt class="docutils literal"><span class="pre">GLX_PRESERVED_CONTENTS</span></tt>,
+<tt class="docutils literal"><span class="pre">GLX_LARGEST_PBUFFER</span></tt>, or
+<tt class="docutils literal"><span class="pre">GLX_FBCONFIG_ID</span></tt>.</li>
+<li><strong>value</strong> &#8211; Contains the return value for
+<em>attribute</em>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+int <tt class="descname">glXQueryDrawable</tt><big>(</big>Display * <em>&nbsp;dpy</em>, GLXDrawable <em>&nbsp;draw</em>, int <em>&nbsp;attribute</em>, unsigned int * <em>&nbsp;value</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glXCreateWindow.html#glXCreateWindow" title="glXCreateWindow"><tt class="xref c c-func docutils literal"><span class="pre">glXCreateWindow()</span></tt></a>,
+<a class="reference internal" href="glXCreatePixmap.html#glXCreatePixmap" title="glXCreatePixmap"><tt class="xref c c-func docutils literal"><span class="pre">glXCreatePixmap()</span></tt></a>,
+<a class="reference internal" href="glXCreatePbuffer.html#glXCreatePbuffer" title="glXCreatePbuffer"><tt class="xref c c-func docutils literal"><span class="pre">glXCreatePbuffer()</span></tt></a>,
+<a class="reference internal" href="glXGetFBConfigAttrib.html#glXGetFBConfigAttrib" title="glXGetFBConfigAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glXGetFBConfigAttrib()</span></tt></a>,
+<a class="reference internal" href="glXChooseFBConfig.html#glXChooseFBConfig" title="glXChooseFBConfig"><tt class="xref c c-func docutils literal"><span class="pre">glXChooseFBConfig()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glXQueryDrawable" title="glXQueryDrawable"><tt class="xref c c-func docutils literal"><span class="pre">glXQueryDrawable()</span></tt></a> sets
+<em>value</em> to the value of
+<em>attribute</em> with respect to the GLXDrawable
+<em>draw</em>.</p>
+<p><em>attribute</em> may be one of the following:</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">GLX_WIDTH</span></tt></p>
+<blockquote>
+<div>Returns the width of <em>ctx</em>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLX_HEIGHT</span></tt></p>
+<blockquote>
+<div>Returns the height of <em>ctx</em>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLX_PRESERVED_CONTENTS</span></tt></p>
+<blockquote>
+<div>Returns <tt class="docutils literal"><span class="pre">True</span></tt> if the contents
+of a GLXPbuffer are preserved when a resource
+conflict occurs; <tt class="docutils literal"><span class="pre">False</span></tt> otherwise.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLX_LARGEST_PBUFFER</span></tt></p>
+<blockquote>
+<div>Returns the value set when
+<a class="reference internal" href="glXCreatePbuffer.html#glXCreatePbuffer" title="glXCreatePbuffer"><tt class="xref c c-func docutils literal"><span class="pre">glXCreatePbuffer()</span></tt></a> was called to
+create the GLXPbuffer. If
+<tt class="docutils literal"><span class="pre">False</span></tt> is returned, then the
+call to <a class="reference internal" href="glXCreatePbuffer.html#glXCreatePbuffer" title="glXCreatePbuffer"><tt class="xref c c-func docutils literal"><span class="pre">glXCreatePbuffer()</span></tt></a> will
+fail to create a GLXPbuffer if the requested size
+is larger than the implementation maximum or
+available resources.  If <tt class="docutils literal"><span class="pre">True</span></tt>
+is returned, a GLXPbuffer of the maximum availble
+size (if less than the requested width and height)
+is created.</div></blockquote>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLX_FBCONFIG_ID</span></tt></p>
+<p>Returns the XID for <em>draw</em>.</p>
+<p>If <em>draw</em> is a GLXWindow or GLXPixmap and
+<em>attribute</em> is set to
+<tt class="docutils literal"><span class="pre">GLX_PRESERVED_CONTENTS</span></tt> or
+<tt class="docutils literal"><span class="pre">GLX_LARGETST_PBUFFER</span></tt>, the contents of
+<em>value</em> are undefined.  If
+<em>attribute</em> is not one of the attributes
+listed above, the contents of <em>value</em> are
+unedfined.</p>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li>A <tt class="docutils literal"><span class="pre">GLXBadDrawable</span></tt> is generated if <em>draw</em> is not a valid GLXDrawable.</li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glXQueryContextInfoEXT.html"
+                        title="previous chapter">function <cite>glXQueryContextInfoEXT</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glXQueryExtension.html"
+                        title="next chapter">function <cite>glXQueryExtension</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/glXQueryDrawable.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glXQueryExtension.html" title="function glXQueryExtension"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glXQueryContextInfoEXT.html" title="function glXQueryContextInfoEXT"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

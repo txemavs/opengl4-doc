@@ -1,0 +1,158 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:28
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glXCreatePbuffer.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glXCreatePbuffer`
+---------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Create an off-screen rendering area
+
+.. c:function:: glXCreatePbuffer
+
+
+         :param dpy:
+
+                  Specifies the connection to the X server.
+
+         :param config:
+
+                  Specifies a GLXFBConfig structure with the desired attributes for the
+                  window.
+
+         :param attrib_list:
+
+                  Specifies a list of attribute value pairs, which must be terminated with
+                  ``None`` or ``NULL``\ . Accepted attributes are
+                  ``GLX_PBUFFER_WIDTH``\ , ``GLX_PBUFFER_HEIGHT``\ ,
+                  ``GLX_PRESERVED_CONTENTS``\ , and ``GLX_LARGEST_PBUFFER``\ .
+
+.. rubric:: Specification
+
+.. c:function:: GLXPbuffer glXCreatePbuffer(Display *  dpy, GLXFBConfig  config, const int *  attrib_list)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glXChooseFBConfig`\ ,
+            :c:func:`glXCreatePbuffer`\ ,
+            :c:func:`glXMakeContextCurrent`\ ,
+            :c:func:`glXSelectEvent`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glXCreatePbuffer` creates an off-screen rendering area and returns its XID.
+Any GLX rendering context that was created with respect to *config*
+can be used to render into this window.
+Use :c:func:`glXMakeContextCurrent` to associate the rendering area with a GLX
+rendering context.
+
+
+The accepted attributes for a GLXPbuffer are:
+
+
+         ``GLX_PBUFFER_WIDTH``
+
+
+               Specify the pixel width of the requested GLXPbuffer. The default value
+               is 0.
+
+
+         ``GLX_PBUFFER_HEIGHT``
+
+
+               Specify the pixel height of the requested GLXPbuffer. The default value
+               is 0.
+
+
+         ``GLX_LARGEST_PBUFFER``
+
+
+               Specify to obtain the largest available pixel buffer, if the requested
+               allocation would have failed. The width and height of the allocated
+               pixel buffer will never exceed the specified ``GLX_PBUFFER_WIDTH`` or
+               ``GLX_PBUFFER_HEIGHT``\ , respectively.  Use :c:func:`glXQueryDrawable` to
+               retrieve the dimensions of the allocated pixel buffer. The default value is
+               ``False``\ .
+
+
+         ``GLX_PRESERVED_CONTENTS``
+
+
+               Specify if the contents of the pixel buffer should be preserved when a
+               resource conflict occurs.  If set to ``False``\ , the contents of the
+               pixel buffer may be lost at any time.  If set to ``True``\ , or not
+               specified in *attrib_list*\ , then the contents of the pixel buffer will be preserved
+               (most likely by copying the contents into main system memory from the
+               frame buffer).  In either case, the client can register (using
+               :c:func:`glXSelectEvent`\ , to receive
+               pixel buffer clobber events that are generated when the pbuffer contents have
+               been preserved or damaged.
+
+
+GLXPbuffers contain the color and ancillary buffers specified by
+*config*\ .  It is possible to create a pixel buffer with back buffers and
+to swap those buffers using :c:func:`glXSwapBuffers`\ .
+
+
+.. note::
+
+
+   :c:func:`glXCreatePbuffer` is available only if the GLX version is 1.3 or greater.
+
+
+   If the GLX version is 1.1 or 1.0, the GL version must be 1.0.
+   If the GLX version is 1.2, then the GL version must be 1.1.
+   If the GLX version is 1.3, then the GL version must be 1.2.
+
+
+   GLXPbuffers are allocated from frame buffer resources; applications
+   should consider deallocating them when they are not in use.
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``BadAlloc`` is generated if there are insufficient resources to allocate the requested GLXPbuffer.
+* ``GLXBadFBConfig`` is generated if *config* is not a valid GLXFBConfig.
+* ``BadMatch`` is generated if *config* does not support rendering to pixel buffers (e.g., ``GLX_DRAWABLE_TYPE`` does not contain ``GLX_PBUFFER_BIT``\ ).
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glXCreatePbuffer'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

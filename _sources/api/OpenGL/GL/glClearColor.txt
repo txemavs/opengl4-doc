@@ -1,0 +1,60 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glClearColor`
+-----------------------
+
+.. source file man4/glClearColor
+
+.. currentmodule:: OpenGL.GL
+
+Specify clear values for the color buffers
+
+.. c:function:: glClearColor
+.. c:function:: void glClearColor(GLfloat  red, GLfloat  green, GLfloat  blue, GLfloat  alpha)
+   :noindex: 
+
+
+   
+   :param red:
+      Specify the red, green, blue, and alpha values used when the color buffers are cleared. The initial values are all 0.
+   
+
+.. seealso::
+
+   
+   :c:func:`glClear`, :c:func:`removedTypes`
+   
+.. rubric:: Description
+
+
+:c:func:`glClearColor` specifies the red, green, blue, and alpha values used by :c:func:`glClear` to clear the color buffers. Values specified by :c:func:`glClearColor` are clamped to the range |EQUATION_1_| .
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGet` with argument ``GL_COLOR_CLEAR_VALUE``
+
+
+
+.. note::
+
+   * The type of the *red* , *green* , *blue* , and *alpha* parameters was changed from GLclampf to GLfloat. This change is transparent to user code and is described in detail on the :c:func:`removedTypes` page.
+
+
+
+.. role:: mml(raw)
+   :format: html
+
+
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"> <mn>0</mn> <mn>1</mn> </mfenced> </math>` 
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

@@ -1,0 +1,133 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:27
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glRect.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glRect`
+-----------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Draw a rectangle
+
+.. c:function:: glRect
+
+
+         :param x1:
+         :param y1:
+
+                  Specify one vertex of a rectangle.
+
+         :param x2:
+         :param y2:
+
+                  Specify the opposite vertex of the rectangle.
+
+.. rubric:: Specification
+
+.. c:function:: void glRectd(GLdouble  x1, GLdouble  y1, GLdouble  x2, GLdouble  y2, GLfloat  x1, GLfloat  y1, GLfloat  x2, GLfloat  y2, GLint  x1, GLint  y1, GLint  x2, GLint  y2, GLshort  x1, GLshort  y1, GLshort  x2, GLshort  y2)
+.. c:function:: void glRectdv(const GLdouble *  v1, const GLdouble *  v2, const GLfloat *  v1, const GLfloat *  v2, const GLint *  v1, const GLint *  v2, const GLshort *  v1, const GLshort *  v2)
+
+
+.. seealso::
+
+
+            :c:func:`glBegin`\ ,
+            :c:func:`glVertex`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Parameters
+
+..
+
+
+      *v1*
+
+
+            Specifies a pointer to one vertex of a rectangle.
+
+
+      *v2*
+
+
+            Specifies a pointer to the opposite vertex of the rectangle.
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glRect` supports efficient specification of rectangles as two corner points.
+Each
+rectangle command takes four arguments,
+organized either as two consecutive pairs of |EQUATION_1_| coordinates
+or as two pointers to arrays,
+each containing an |EQUATION_2_| pair.
+The resulting rectangle is defined in the |EQUATION_3_| plane.
+
+
+:c:func:`glRect` (\ *x1*\ , *y1*\ , *x2*\ , *y2*\ )
+is exactly equivalent to the following sequence:
+
+.. code-block:: c
+
+
+   glBegin(GL_POLYGON);
+   glVertex2(x1, y1);
+   glVertex2(x2, y1);
+   glVertex2(x2, y2);
+   glVertex2(x1, y2);
+   glEnd();
+
+..
+
+
+Note that if the second vertex is above and to the right of the first vertex,
+the rectangle is constructed with a counterclockwise winding.
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_OPERATION`` is generated if :c:func:`glRect` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`\ .
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glRect'>
+
+.. role:: mml(raw)
+   :format: html
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mi mathvariant="italic">x</mi><mi mathvariant="italic">y</mi></mfenced></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mi mathvariant="italic">x</mi><mi mathvariant="italic">y</mi></mfenced></math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">z</mi><mo>=</mo><mn>0</mn></mrow></math>` 
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

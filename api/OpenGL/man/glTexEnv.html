@@ -1,0 +1,687 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glTexEnv &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function glTexGen" href="glTexGen.html" />
+    <link rel="prev" title="function glTexCoordPointer" href="glTexCoordPointer.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glTexGen.html" title="function glTexGen"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glTexCoordPointer.html" title="function glTexCoordPointer"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-gltexenv">
+<h1>function <cite>glTexEnv</cite><a class="headerlink" href="#function-gltexenv" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Set texture environment parameters</p>
+<dl class="function">
+<dt id="glTexEnv">
+<tt class="descname">glTexEnv</tt><big>(</big><big>)</big><a class="headerlink" href="#glTexEnv" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>target</strong> &#8211; Specifies a texture environment.
+May be <tt class="docutils literal"><span class="pre">GL_TEXTURE_ENV</span></tt>, <tt class="docutils literal"><span class="pre">GL_TEXTURE_FILTER_CONTROL</span></tt> or <tt class="docutils literal"><span class="pre">GL_POINT_SPRITE</span></tt>.</li>
+<li><strong>pname</strong> &#8211; Specifies the symbolic name of a single-valued texture environment parameter.
+May be either <tt class="docutils literal"><span class="pre">GL_TEXTURE_ENV_MODE</span></tt>, <tt class="docutils literal"><span class="pre">GL_TEXTURE_LOD_BIAS</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_COMBINE_RGB</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_COMBINE_ALPHA</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_SRC0_RGB</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_SRC1_RGB</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_SRC2_RGB</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_SRC0_ALPHA</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_SRC1_ALPHA</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_SRC2_ALPHA</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_OPERAND0_RGB</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_OPERAND1_RGB</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_OPERAND2_RGB</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_OPERAND0_ALPHA</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_OPERAND1_ALPHA</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_OPERAND2_ALPHA</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGB_SCALE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_ALPHA_SCALE</span></tt>, or
+<tt class="docutils literal"><span class="pre">GL_COORD_REPLACE</span></tt>.</li>
+<li><strong>param</strong> &#8211; Specifies a single symbolic constant, one of <tt class="docutils literal"><span class="pre">GL_ADD</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_ADD_SIGNED</span></tt>, <tt class="docutils literal"><span class="pre">GL_INTERPOLATE</span></tt>, <tt class="docutils literal"><span class="pre">GL_MODULATE</span></tt>, <tt class="docutils literal"><span class="pre">GL_DECAL</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_BLEND</span></tt>, <tt class="docutils literal"><span class="pre">GL_REPLACE</span></tt>, <tt class="docutils literal"><span class="pre">GL_SUBTRACT</span></tt>, <tt class="docutils literal"><span class="pre">GL_COMBINE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE</span></tt>, <tt class="docutils literal"><span class="pre">GL_CONSTANT</span></tt>, <tt class="docutils literal"><span class="pre">GL_PRIMARY_COLOR</span></tt>, <tt class="docutils literal"><span class="pre">GL_PREVIOUS</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_SRC_COLOR</span></tt>, <tt class="docutils literal"><span class="pre">GL_ONE_MINUS_SRC_COLOR</span></tt>, <tt class="docutils literal"><span class="pre">GL_SRC_ALPHA</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_ONE_MINUS_SRC_ALPHA</span></tt>,
+a single boolean value for the point sprite texture coordinate replacement,
+a single floating-point value for the texture level-of-detail bias,
+or 1.0, 2.0, or 4.0 when specifying the <tt class="docutils literal"><span class="pre">GL_RGB_SCALE</span></tt> or <tt class="docutils literal"><span class="pre">GL_ALPHA_SCALE</span></tt>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt id="glTexEnvf">
+void <tt class="descname">glTexEnvf</tt><big>(</big>GLenum <em>&nbsp;target</em>, GLenum <em>&nbsp;pname</em>, GLfloat <em>&nbsp;param</em>, GLenum <em>&nbsp;target</em>, GLenum <em>&nbsp;pname</em>, GLint <em>&nbsp;param</em><big>)</big><a class="headerlink" href="#glTexEnvf" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="glTexEnvfv">
+void <tt class="descname">glTexEnvfv</tt><big>(</big>GLenum <em>&nbsp;target</em>, GLenum <em>&nbsp;pname</em>, const GLfloat * <em>&nbsp;params</em>, GLenum <em>&nbsp;target</em>, GLenum <em>&nbsp;pname</em>, const GLint * <em>&nbsp;params</em><big>)</big><a class="headerlink" href="#glTexEnvfv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="../man4/glActiveTexture.html#glActiveTexture" title="glActiveTexture"><tt class="xref c c-func docutils literal"><span class="pre">glActiveTexture()</span></tt></a>,
+<a class="reference internal" href="glCopyPixels.html#glCopyPixels" title="glCopyPixels"><tt class="xref c c-func docutils literal"><span class="pre">glCopyPixels()</span></tt></a>,
+<a class="reference internal" href="../man4/glCopyTexImage1D.html#glCopyTexImage1D" title="glCopyTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexImage1D()</span></tt></a>,
+<a class="reference internal" href="../man4/glCopyTexImage2D.html#glCopyTexImage2D" title="glCopyTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexImage2D()</span></tt></a>,
+<a class="reference internal" href="../man4/glCopyTexSubImage1D.html#glCopyTexSubImage1D" title="glCopyTexSubImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexSubImage1D()</span></tt></a>,
+<a class="reference internal" href="../man4/glCopyTexSubImage2D.html#glCopyTexSubImage2D" title="glCopyTexSubImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexSubImage2D()</span></tt></a>,
+<a class="reference internal" href="../man4/glCopyTexSubImage3D.html#glCopyTexSubImage3D" title="glCopyTexSubImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexSubImage3D()</span></tt></a>,
+<a class="reference internal" href="../man4/glTexImage1D.html#glTexImage1D" title="glTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage1D()</span></tt></a>,
+<a class="reference internal" href="../man4/glTexImage2D.html#glTexImage2D" title="glTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage2D()</span></tt></a>,
+<a class="reference internal" href="../man4/glTexImage3D.html#glTexImage3D" title="glTexImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage3D()</span></tt></a>,
+<a class="reference internal" href="../man4/glTexParameter.html#glTexParameter" title="glTexParameter"><tt class="xref c c-func docutils literal"><span class="pre">glTexParameter()</span></tt></a>,
+<a class="reference internal" href="../man4/glTexSubImage1D.html#glTexSubImage1D" title="glTexSubImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage1D()</span></tt></a>,
+<a class="reference internal" href="../man4/glTexSubImage2D.html#glTexSubImage2D" title="glTexSubImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage2D()</span></tt></a>,
+<a class="reference internal" href="../man4/glTexSubImage3D.html#glTexSubImage3D" title="glTexSubImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage3D()</span></tt></a></p>
+</div>
+<p class="rubric">Parameters</p>
+<blockquote>
+<div><p><em>target</em></p>
+<blockquote>
+<div>Specifies a texture environment.
+May be either <tt class="docutils literal"><span class="pre">GL_TEXTURE_ENV</span></tt>, or <tt class="docutils literal"><span class="pre">GL_TEXTURE_FILTER_CONTROL</span></tt>.</div></blockquote>
+<p><em>pname</em></p>
+<blockquote>
+<div>Specifies the symbolic name of a texture environment parameter.
+Accepted values are <tt class="docutils literal"><span class="pre">GL_TEXTURE_ENV_MODE</span></tt>, <tt class="docutils literal"><span class="pre">GL_TEXTURE_ENV_COLOR</span></tt>, or
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_LOD_BIAS</span></tt>.</div></blockquote>
+<p><em>params</em></p>
+<blockquote>
+<div>Specifies a pointer to a parameter array that contains
+either a single symbolic constant, single floating-point number, or an RGBA
+color.</div></blockquote>
+</div></blockquote>
+<p class="rubric">Description</p>
+<p>A texture environment specifies how texture values are interpreted when a
+fragment is textured.  When <em>target</em> is <tt class="docutils literal"><span class="pre">GL_TEXTURE_FILTER_CONTROL</span></tt>,
+<em>pname</em> must be <tt class="docutils literal"><span class="pre">GL_TEXTURE_LOD_BIAS</span></tt>.  When <em>target</em> is
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_ENV</span></tt>, <em>pname</em> can be <tt class="docutils literal"><span class="pre">GL_TEXTURE_ENV_MODE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_ENV_COLOR</span></tt>, <tt class="docutils literal"><span class="pre">GL_COMBINE_RGB</span></tt>, <tt class="docutils literal"><span class="pre">GL_COMBINE_ALPHA</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGB_SCALE</span></tt>, <tt class="docutils literal"><span class="pre">GL_ALPHA_SCALE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_SRC0_RGB</span></tt>, <tt class="docutils literal"><span class="pre">GL_SRC1_RGB</span></tt>, <tt class="docutils literal"><span class="pre">GL_SRC2_RGB</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_SRC0_ALPHA</span></tt>, <tt class="docutils literal"><span class="pre">GL_SRC1_ALPHA</span></tt>, or <tt class="docutils literal"><span class="pre">GL_SRC2_ALPHA</span></tt>.</p>
+<p>If <em>pname</em> is <tt class="docutils literal"><span class="pre">GL_TEXTURE_ENV_MODE</span></tt>,
+then <em>params</em> is (or points to) the symbolic name of a texture function.
+Six texture functions may be specified:
+<tt class="docutils literal"><span class="pre">GL_ADD</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_MODULATE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_DECAL</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_BLEND</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_REPLACE</span></tt>, or
+<tt class="docutils literal"><span class="pre">GL_COMBINE</span></tt>.</p>
+<p>The following table shows the correspondence of filtered texture
+values
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">R</mi><mi mathvariant="italic">t</mi></msub></math></span>,
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">G</mi><mi mathvariant="italic">t</mi></msub></math></span>,
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">B</mi><mi mathvariant="italic">t</mi></msub></math></span>,
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">t</mi></msub></math></span>,
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">L</mi><mi mathvariant="italic">t</mi></msub></math></span>,
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">I</mi><mi mathvariant="italic">t</mi></msub></math></span> to texture source components. <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></math></span> and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></math></span> are used by the texture functions described below.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="66%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Texture Base Internal Format</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="bold-italic">C</mi><mi mathvariant="italic">s</mi></msub></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_ALPHA</span></tt></td>
+<td>(0, 0, 0)</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_LUMINANCE</span></tt></td>
+<td>( <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">L</mi><mi mathvariant="italic">t</mi></msub></math></span>, <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">L</mi><mi mathvariant="italic">t</mi></msub></math></span>, <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">L</mi><mi mathvariant="italic">t</mi></msub></math></span>)</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_LUMINANCE_ALPHA</span></tt></td>
+<td>( <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">L</mi><mi mathvariant="italic">t</mi></msub></math></span>, <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">L</mi><mi mathvariant="italic">t</mi></msub></math></span>, <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">L</mi><mi mathvariant="italic">t</mi></msub></math></span>)</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_INTENSITY</span></tt></td>
+<td>( <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">I</mi><mi mathvariant="italic">t</mi></msub></math></span>, <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">I</mi><mi mathvariant="italic">t</mi></msub></math></span>, <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">I</mi><mi mathvariant="italic">t</mi></msub></math></span>)</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>( <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">R</mi><mi mathvariant="italic">t</mi></msub></math></span>, <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">G</mi><mi mathvariant="italic">t</mi></msub></math></span>, <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">B</mi><mi mathvariant="italic">t</mi></msub></math></span>)</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RGBA</span></tt></td>
+<td>( <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">R</mi><mi mathvariant="italic">t</mi></msub></math></span>, <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">G</mi><mi mathvariant="italic">t</mi></msub></math></span>, <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><msub><mi mathvariant="italic">B</mi><mi mathvariant="italic">t</mi></msub></math></span>)</td>
+</tr>
+</tbody>
+</table>
+<p>A texture function acts on the fragment to be textured using
+the texture image value that applies to the fragment
+(see <a class="reference internal" href="../man4/glTexParameter.html#glTexParameter" title="glTexParameter"><tt class="xref c c-func docutils literal"><span class="pre">glTexParameter()</span></tt></a>)
+and produces an RGBA color for that fragment.
+The following table shows how the RGBA color is produced for each
+of the first five texture functions that can be chosen. <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">C</mi></math></span> is a triple of color values (RGB) and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">A</mi></math></span> is the associated alpha value.
+RGBA values extracted from a texture image are in the range [0,1].
+The subscript <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">p</mi></math></span> refers to the color computed from the previous texture stage (or the incoming fragment if processing texture stage 0),
+the subscript <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">s</mi></math></span> to the texture source color,
+the subscript <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">c</mi></math></span> to the texture environment color,
+and the subscript <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">v</mi></math></span> indicates a value produced by the texture function.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="10%" />
+<col width="15%" />
+<col width="16%" />
+<col width="14%" />
+<col width="14%" />
+<col width="13%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Texture Base Internal Format</td>
+<td><tt class="docutils literal"><span class="pre">Value</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_REPLACE</span></tt> Function</td>
+<td><tt class="docutils literal"><span class="pre">GL_MODULATE</span></tt> Function</td>
+<td><tt class="docutils literal"><span class="pre">GL_DECAL</span></tt> Function</td>
+<td><tt class="docutils literal"><span class="pre">GL_BLEND</span></tt> Function</td>
+<td><tt class="docutils literal"><span class="pre">GL_ADD</span></tt> Function</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_ALPHA</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">v</mi></msub><mo>=</mo></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">p</mi></msub></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">p</mi></msub></mrow></math></span></td>
+<td>undefined</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">p</mi></msub></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">p</mi></msub></mrow></math></span></td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">v</mi></msub><mo>=</mo></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub><mo>&it;</mo><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math></span></td>
+<td>&nbsp;</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">v</mi></msub><mo>=</mo><mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub><mo>&it;</mo><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub><mo>&it;</mo><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_LUMINANCE</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">v</mi></msub><mo>=</mo></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">p</mi></msub><mo>&it;</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math></span></td>
+<td>undefined</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">p</mi></msub><mo>&it;</mo><mfenced open="(" close=")"><mrow><mn>1</mn><mo>-</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></mfenced><mo>+</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">c</mi></msub><mo>&it;</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">p</mi></msub><mo>+</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math></span></td>
+</tr>
+<tr class="row-odd"><td>(or 1)</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">v</mi></msub><mo>=</mo></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub></mrow></math></span></td>
+<td>&nbsp;</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub></mrow></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_LUMINANCE_ALPHA</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">v</mi></msub><mo>=</mo></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">p</mi></msub><mo>&it;</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math></span></td>
+<td>undefined</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">p</mi></msub><mo>&it;</mo><mfenced open="(" close=")"><mrow><mn>1</mn><mo>-</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></mfenced><mo>+</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">c</mi></msub><mo>&it;</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">p</mi></msub><mo>+</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math></span></td>
+</tr>
+<tr class="row-odd"><td>(or 2)</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">v</mi></msub><mo>=</mo></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub><mo>&it;</mo><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math></span></td>
+<td>&nbsp;</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub><mo>&it;</mo><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub><mo>&it;</mo><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_INTENSITY</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">v</mi></msub><mo>=</mo></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">p</mi></msub><mo>&it;</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math></span></td>
+<td>undefined</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">p</mi></msub><mo>&it;</mo><mfenced open="(" close=")"><mrow><mn>1</mn><mo>-</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></mfenced><mo>+</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">c</mi></msub><mo>&it;</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">p</mi></msub><mo>+</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math></span></td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">v</mi></msub><mo>=</mo></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub><mo>&it;</mo><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math></span></td>
+<td>&nbsp;</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub><mo>&it;</mo><mfenced open="(" close=")"><mrow><mn>1</mn><mo>-</mo><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mrow></mfenced><mo>+</mo><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">c</mi></msub><mo>&it;</mo><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub><mo>+</mo><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">v</mi></msub><mo>=</mo></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">p</mi></msub><mo>&it;</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">p</mi></msub><mo>&it;</mo><mfenced open="(" close=")"><mrow><mn>1</mn><mo>-</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></mfenced><mo>+</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">c</mi></msub><mo>&it;</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">p</mi></msub><mo>+</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math></span></td>
+</tr>
+<tr class="row-odd"><td>(or 3)</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">v</mi></msub><mo>=</mo></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub></mrow></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RGBA</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">v</mi></msub><mo>=</mo></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">p</mi></msub><mo>&it;</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">p</mi></msub><mo>&it;</mo><mfenced open="(" close=")"><mrow><mn>1</mn><mo>-</mo><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mrow></mfenced><mo>+</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub><mo>&it;</mo><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">p</mi></msub><mo>&it;</mo><mfenced open="(" close=")"><mrow><mn>1</mn><mo>-</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></mfenced><mo>+</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">c</mi></msub><mo>&it;</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">p</mi></msub><mo>+</mo><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math></span></td>
+</tr>
+<tr class="row-odd"><td>(or 4)</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">v</mi></msub><mo>=</mo></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub><mo>&it;</mo><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub><mo>&it;</mo><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub><mo>&it;</mo><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mrow></mrow></math></span></td>
+</tr>
+</tbody>
+</table>
+<p>If <em>pname</em> is <tt class="docutils literal"><span class="pre">GL_TEXTURE_ENV_MODE</span></tt>, and <em>params</em> is <tt class="docutils literal"><span class="pre">GL_COMBINE</span></tt>, the
+form of the texture function depends on the values of <tt class="docutils literal"><span class="pre">GL_COMBINE_RGB</span></tt>
+and <tt class="docutils literal"><span class="pre">GL_COMBINE_ALPHA</span></tt>.</p>
+<p>The following describes how the texture sources, as specified by
+<tt class="docutils literal"><span class="pre">GL_SRC0_RGB</span></tt>, <tt class="docutils literal"><span class="pre">GL_SRC1_RGB</span></tt>, <tt class="docutils literal"><span class="pre">GL_SRC2_RGB</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_SRC0_ALPHA</span></tt>, <tt class="docutils literal"><span class="pre">GL_SRC1_ALPHA</span></tt>, and <tt class="docutils literal"><span class="pre">GL_SRC2_ALPHA</span></tt>,
+are combined to produce a final texture color. In the following tables,
+<tt class="docutils literal"><span class="pre">GL_SRC0_c</span></tt> is represented by <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">Arg0</mi></math></span>,
+<tt class="docutils literal"><span class="pre">GL_SRC1_c</span></tt> is
+represented by <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">Arg1</mi></math></span>,
+and <tt class="docutils literal"><span class="pre">GL_SRC2_c</span></tt> is represented by <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">Arg2</mi></math></span>.</p>
+<p><tt class="docutils literal"><span class="pre">GL_COMBINE_RGB</span></tt> accepts any of <tt class="docutils literal"><span class="pre">GL_REPLACE</span></tt>, <tt class="docutils literal"><span class="pre">GL_MODULATE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_ADD</span></tt>, <tt class="docutils literal"><span class="pre">GL_ADD_SIGNED</span></tt>, <tt class="docutils literal"><span class="pre">GL_INTERPOLATE</span></tt>, <tt class="docutils literal"><span class="pre">GL_SUBTRACT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_DOT3_RGB</span></tt>, or <tt class="docutils literal"><span class="pre">GL_DOT3_RGBA</span></tt>.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="57%" />
+<col width="43%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>:strong:<tt class="docutils literal"><span class="pre">`GL_COMBINE_RGB`</span></tt></td>
+<td><strong>Texture Function</strong></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_REPLACE</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">Arg0</mi></math></span></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_MODULATE</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">Arg0</mi><mo>&times;</mo><mi mathvariant="italic">Arg1</mi></mrow></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_ADD</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">Arg0</mi><mo>+</mo><mi mathvariant="italic">Arg1</mi></mrow></math></span></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_ADD_SIGNED</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">Arg0</mi><mo>+</mo><mi mathvariant="italic">Arg1</mi><mo>-</mo><mn>0.5</mn></mrow></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_INTERPOLATE</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><mi mathvariant="italic">Arg0</mi><mo>&times;</mo><mi mathvariant="italic">Arg2</mi></mrow><mo>+</mo><mrow><mi mathvariant="italic">Arg1</mi><mo>&times;</mo><mfenced open="(" close=")"><mrow><mn>1</mn><mo>-</mo><mi mathvariant="italic">Arg2</mi></mrow></mfenced></mrow></mrow></math></span></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_SUBTRACT</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">Arg0</mi><mo>-</mo><mi mathvariant="italic">Arg1</mi></mrow></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_DOT3_RGB</span></tt> or <tt class="docutils literal"><span class="pre">GL_DOT3_RGBA</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mn>4</mn><mo>&times;</mo><mfenced open="(" close=")"><mrow><mfenced open="(" close=")"><mrow><mfenced open="(" close=")"><mrow><mfenced open="" close=""><msub><mi mathvariant="italic">Arg0</mi><mi mathvariant="italic">r</mi></msub></mfenced><mo>-</mo><mn>0.5</mn></mrow></mfenced><mo>&times;</mo><mfenced open="(" close=")"><mrow><mfenced open="" close=""><msub><mi mathvariant="italic">Arg1</mi><mi mathvariant="italic">r</mi></msub></mfenced><mo>-</mo><mn>0.5</mn></mrow></mfenced></mrow></mfenced><mo>+</mo><mfenced open="(" close=")"><mrow><mfenced open="(" close=")"><mrow><mfenced open="" close=""><msub><mi mathvariant="italic">Arg0</mi><mi mathvariant="italic">g</mi></msub></mfenced><mo>-</mo><mn>0.5</mn></mrow></mfenced><mo>&times;</mo><mfenced open="(" close=")"><mrow><mfenced open="" close=""><msub><mi mathvariant="italic">Arg1</mi><mi mathvariant="italic">g</mi></msub></mfenced><mo>-</mo><mn>0.5</mn></mrow></mfenced></mrow></mfenced><mo>+</mo><mfenced open="(" close=")"><mrow><mfenced open="(" close=")"><mrow><mfenced open="" close=""><msub><mi mathvariant="italic">Arg0</mi><mi mathvariant="italic">b</mi></msub></mfenced><mo>-</mo><mn>0.5</mn></mrow></mfenced><mo>&times;</mo><mfenced open="(" close=")"><mrow><mfenced open="" close=""><msub><mi mathvariant="italic">Arg1</mi><mi mathvariant="italic">b</mi></msub></mfenced><mo>-</mo><mn>0.5</mn></mrow></mfenced></mrow></mfenced></mrow></mfenced></mrow></math></span></td>
+</tr>
+</tbody>
+</table>
+<p>The scalar results for <tt class="docutils literal"><span class="pre">GL_DOT3_RGB</span></tt> and <tt class="docutils literal"><span class="pre">GL_DOT3_RGBA</span></tt> are placed
+into each of the 3 (RGB) or 4 (RGBA) components on output.</p>
+<p>Likewise, <tt class="docutils literal"><span class="pre">GL_COMBINE_ALPHA</span></tt> accepts any of <tt class="docutils literal"><span class="pre">GL_REPLACE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_MODULATE</span></tt>, <tt class="docutils literal"><span class="pre">GL_ADD</span></tt>, <tt class="docutils literal"><span class="pre">GL_ADD_SIGNED</span></tt>, <tt class="docutils literal"><span class="pre">GL_INTERPOLATE</span></tt>, or
+<tt class="docutils literal"><span class="pre">GL_SUBTRACT</span></tt>.  The following table describes how alpha values are
+combined:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="53%" />
+<col width="47%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>:strong:<tt class="docutils literal"><span class="pre">`GL_COMBINE_ALPHA`</span></tt></td>
+<td><strong>Texture Function</strong></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_REPLACE</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">Arg0</mi></math></span></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_MODULATE</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">Arg0</mi><mo>&times;</mo><mi mathvariant="italic">Arg1</mi></mrow></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_ADD</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">Arg0</mi><mo>+</mo><mi mathvariant="italic">Arg1</mi></mrow></math></span></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_ADD_SIGNED</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">Arg0</mi><mo>+</mo><mi mathvariant="italic">Arg1</mi><mo>-</mo><mn>0.5</mn></mrow></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_INTERPOLATE</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><mi mathvariant="italic">Arg0</mi><mo>&times;</mo><mi mathvariant="italic">Arg2</mi></mrow><mo>+</mo><mrow><mi mathvariant="italic">Arg1</mi><mo>&times;</mo><mfenced open="(" close=")"><mrow><mn>1</mn><mo>-</mo><mi mathvariant="italic">Arg2</mi></mrow></mfenced></mrow></mrow></math></span></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_SUBTRACT</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">Arg0</mi><mo>-</mo><mi mathvariant="italic">Arg1</mi></mrow></math></span></td>
+</tr>
+</tbody>
+</table>
+<p>In the following tables, the value
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></math></span> represents the color sampled
+from the currently bound texture, <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">c</mi></msub></math></span> represents the constant
+texture-environment color, <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">f</mi></msub></math></span> represents the primary color of the
+incoming fragment, and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">p</mi></msub></math></span> represents the color computed from the
+previous texture stage or <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">f</mi></msub></math></span> if processing texture stage 0.  Likewise, <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></math></span>,
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">c</mi></msub></math></span>,
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">f</mi></msub></math></span>,
+and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub></math></span> represent the respective
+alpha values.</p>
+<p>The following table describes the values assigned to
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">Arg0</mi></math></span>,
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">Arg1</mi></math></span>,
+and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">Arg2</mi></math></span> based upon the RGB sources and operands:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="32%" />
+<col width="37%" />
+<col width="31%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>:strong:<tt class="docutils literal"><span class="pre">`GL_SRCn_RGB`</span></tt></td>
+<td>:strong:<tt class="docutils literal"><span class="pre">`GL_OPERANDn_RGB`</span></tt></td>
+<td><strong>Argument Value</strong></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_TEXTURE</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_SRC_COLOR</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="" close=""><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mfenced></math></span></td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_ONE_MINUS_SRC_COLOR</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>1</mn><mo>-</mo><mfenced open="" close=""><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mfenced></mrow></math></span></td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_SRC_ALPHA</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="" close=""><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mfenced></math></span></td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_ONE_MINUS_SRC_ALPHA</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>1</mn><mo>-</mo><mfenced open="" close=""><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mfenced></mrow></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_TEXTUREn</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_SRC_COLOR</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="" close=""><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mfenced></math></span></td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_ONE_MINUS_SRC_COLOR</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>1</mn><mo>-</mo><mfenced open="" close=""><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></mfenced></mrow></math></span></td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_SRC_ALPHA</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="" close=""><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mfenced></math></span></td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_ONE_MINUS_SRC_ALPHA</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>1</mn><mo>-</mo><mfenced open="" close=""><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mfenced></mrow></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_CONSTANT</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_SRC_COLOR</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="" close=""><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">c</mi></msub></mfenced></math></span></td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_ONE_MINUS_SRC_COLOR</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>1</mn><mo>-</mo><mfenced open="" close=""><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">c</mi></msub></mfenced></mrow></math></span></td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_SRC_ALPHA</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="" close=""><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">c</mi></msub></mfenced></math></span></td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_ONE_MINUS_SRC_ALPHA</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>1</mn><mo>-</mo><mfenced open="" close=""><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">c</mi></msub></mfenced></mrow></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_PRIMARY_COLOR</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_SRC_COLOR</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="" close=""><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">f</mi></msub></mfenced></math></span></td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_ONE_MINUS_SRC_COLOR</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>1</mn><mo>-</mo><mfenced open="" close=""><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">f</mi></msub></mfenced></mrow></math></span></td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_SRC_ALPHA</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="" close=""><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">f</mi></msub></mfenced></math></span></td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_ONE_MINUS_SRC_ALPHA</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>1</mn><mo>-</mo><mfenced open="" close=""><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">f</mi></msub></mfenced></mrow></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_PREVIOUS</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_SRC_COLOR</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="" close=""><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">p</mi></msub></mfenced></math></span></td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_ONE_MINUS_SRC_COLOR</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>1</mn><mo>-</mo><mfenced open="" close=""><msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">p</mi></msub></mfenced></mrow></math></span></td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_SRC_ALPHA</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="" close=""><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub></mfenced></math></span></td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_ONE_MINUS_SRC_ALPHA</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>1</mn><mo>-</mo><mfenced open="" close=""><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub></mfenced></mrow></math></span></td>
+</tr>
+</tbody>
+</table>
+<p>For <tt class="docutils literal"><span class="pre">GL_TEXTUREn</span></tt> sources, <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">s</mi></msub></math></span> and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></math></span> represent the color
+and alpha, respectively, produced from texture stage <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math></span>.</p>
+<p>The follow table describes the values assigned to
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">Arg0</mi></math></span>,
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">Arg1</mi></math></span>,
+and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">Arg2</mi></math></span> based upon the alpha sources and operands:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="38%" />
+<col width="30%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>:strong:<tt class="docutils literal"><span class="pre">`GL_SRCn_ALPHA`</span></tt></td>
+<td>:strong:<tt class="docutils literal"><span class="pre">`GL_OPERANDn_ALPHA`</span></tt></td>
+<td><strong>Argument Value</strong></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_TEXTURE</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_SRC_ALPHA</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="" close=""><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mfenced></math></span></td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_ONE_MINUS_SRC_ALPHA</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>1</mn><mo>-</mo><mfenced open="" close=""><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mfenced></mrow></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_TEXTUREn</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_SRC_ALPHA</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="" close=""><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mfenced></math></span></td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_ONE_MINUS_SRC_ALPHA</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>1</mn><mo>-</mo><mfenced open="" close=""><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">s</mi></msub></mfenced></mrow></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_CONSTANT</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_SRC_ALPHA</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="" close=""><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">c</mi></msub></mfenced></math></span></td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_ONE_MINUS_SRC_ALPHA</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>1</mn><mo>-</mo><mfenced open="" close=""><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">c</mi></msub></mfenced></mrow></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_PRIMARY_COLOR</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_SRC_ALPHA</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="" close=""><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">f</mi></msub></mfenced></math></span></td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_ONE_MINUS_SRC_ALPHA</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>1</mn><mo>-</mo><mfenced open="" close=""><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">f</mi></msub></mfenced></mrow></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_PREVIOUS</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">GL_SRC_ALPHA</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="" close=""><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub></mfenced></math></span></td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">GL_ONE_MINUS_SRC_ALPHA</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>1</mn><mo>-</mo><mfenced open="" close=""><msub><mi mathvariant="italic">A</mi><mi mathvariant="italic">p</mi></msub></mfenced></mrow></math></span></td>
+</tr>
+</tbody>
+</table>
+<p>The RGB and alpha results of the texture function are multipled by the
+values of <tt class="docutils literal"><span class="pre">GL_RGB_SCALE</span></tt> and <tt class="docutils literal"><span class="pre">GL_ALPHA_SCALE</span></tt>, respectively, and
+clamped to the range <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"><mn>0</mn><mn>1</mn></mfenced></math></span>.</p>
+<p>If <em>pname</em> is <tt class="docutils literal"><span class="pre">GL_TEXTURE_ENV_COLOR</span></tt>,
+<em>params</em> is a pointer to an array that holds an RGBA color consisting of four
+values.
+Integer color components are interpreted linearly such that the most
+positive integer maps to 1.0,
+and the most negative integer maps to -1.0.
+The values are clamped to the range [0,1] when they are specified. <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">C</mi><mi mathvariant="italic">c</mi></msub></math></span> takes these four values.</p>
+<p>If <em>pname</em> is <tt class="docutils literal"><span class="pre">GL_TEXTURE_LOD_BIAS</span></tt>, the value specified is added to the
+texture level-of-detail parameter, that selects which mipmap, or mipmaps
+depending upon the selected <tt class="docutils literal"><span class="pre">GL_TEXTURE_MIN_FILTER</span></tt>, will be sampled.</p>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_ENV_MODE</span></tt> defaults to <tt class="docutils literal"><span class="pre">GL_MODULATE</span></tt> and
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_ENV_COLOR</span></tt> defaults to (0, 0, 0, 0).</p>
+<p>If <em>target</em> is <tt class="docutils literal"><span class="pre">GL_POINT_SPRITE</span></tt> and <em>pname</em> is <tt class="docutils literal"><span class="pre">GL_COORD_REPLACE</span></tt>, the boolean value specified
+is used to either enable or disable point sprite texture coordinate replacement. The default value is <tt class="docutils literal"><span class="pre">GL_FALSE</span></tt>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><tt class="docutils literal"><span class="pre">GL_REPLACE</span></tt> may only be used if the GL version is 1.1 or greater.</p>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_FILTER_CONTROL</span></tt> and <tt class="docutils literal"><span class="pre">GL_TEXTURE_LOD_BIAS</span></tt> may only be
+used if the GL version is 1.4 or greater.</p>
+<p><tt class="docutils literal"><span class="pre">GL_COMBINE</span></tt> mode and its associated constants may only be used if the
+GL version is 1.3 or greater.</p>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTUREn</span></tt> may only be used if the GL version is 1.4 or greater.</p>
+<p>Internal formats other than 1, 2, 3, or 4 may only be used if the GL
+version is 1.1 or greater.</p>
+<p>For OpenGL versions 1.3 and greater, or when the <tt class="docutils literal"><span class="pre">ARB_multitexture</span></tt> extension is supported, <a class="reference internal" href="#glTexEnv" title="glTexEnv"><tt class="xref c c-func docutils literal"><span class="pre">glTexEnv()</span></tt></a> controls
+the texture environment for the current active texture unit, selected by
+<a class="reference internal" href="../man4/glActiveTexture.html#glActiveTexture" title="glActiveTexture"><tt class="xref c c-func docutils literal"><span class="pre">glActiveTexture()</span></tt></a>.</p>
+<p class="last"><tt class="docutils literal"><span class="pre">GL_POINT_SPRITE</span></tt> and <tt class="docutils literal"><span class="pre">GL_COORD_REPLACE</span></tt> are available
+only if the GL version is 2.0 or greater.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated when <em>target</em> or <em>pname</em> is not one of the accepted defined values, or when <em>params</em> should have a defined constant value (based on the value of <em>pname</em>) and does not.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if the <em>params</em> value for <tt class="docutils literal"><span class="pre">GL_RGB_SCALE</span></tt> or <tt class="docutils literal"><span class="pre">GL_ALPHA_SCALE</span></tt> are not one of 1.0, 2.0, or 4.0.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <a class="reference internal" href="#glTexEnv" title="glTexEnv"><tt class="xref c c-func docutils literal"><span class="pre">glTexEnv()</span></tt></a> is executed between the execution of <a class="reference internal" href="glBegin.html#glBegin" title="glBegin"><tt class="xref c c-func docutils literal"><span class="pre">glBegin()</span></tt></a> and the corresponding execution of <a class="reference internal" href="glBegin.html#glEnd" title="glEnd"><tt class="xref c c-func docutils literal"><span class="pre">glEnd()</span></tt></a>.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glGetTexEnv.html#glGetTexEnv" title="glGetTexEnv"><tt class="xref c c-func docutils literal"><span class="pre">glGetTexEnv()</span></tt></a></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glTexCoordPointer.html"
+                        title="previous chapter">function <cite>glTexCoordPointer</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glTexGen.html"
+                        title="next chapter">function <cite>glTexGen</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/glTexEnv.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glTexGen.html" title="function glTexGen"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glTexCoordPointer.html" title="function glTexCoordPointer"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

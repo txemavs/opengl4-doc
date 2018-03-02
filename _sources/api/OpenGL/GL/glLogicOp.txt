@@ -1,0 +1,63 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glLogicOp`
+--------------------
+
+.. source file man4/glLogicOp
+
+.. currentmodule:: OpenGL.GL
+
+Specify a logical pixel operation for rendering
+
+.. c:function:: glLogicOp
+.. c:function:: void glLogicOp(GLenum  opcode)
+   :noindex: 
+
+
+   
+   :param opcode:
+      Specifies a symbolic constant that selects a logical operation. The following symbols are accepted: ``GL_CLEAR``, ``GL_SET``, ``GL_COPY``, ``GL_COPY_INVERTED``, ``GL_NOOP``, ``GL_INVERT``, ``GL_AND``, ``GL_NAND``, ``GL_OR``, ``GL_NOR``, ``GL_XOR``, ``GL_EQUIV``, ``GL_AND_REVERSE``, ``GL_AND_INVERTED``, ``GL_OR_REVERSE``, and ``GL_OR_INVERTED``. The initial value is ``GL_COPY``.
+   
+
+.. seealso::
+
+   
+   :c:func:`glBlendFunc`, :c:func:`glDrawBuffer`, :c:func:`glEnable`, :c:func:`glStencilOp`
+   
+.. rubric:: Description
+
+
+:c:func:`glLogicOp` specifies a logical operation that, when enabled, is applied between the incoming RGBA color and the RGBA color at the corresponding location in the frame buffer. To enable or disable the logical operation, call :c:func:`glEnable` and :c:func:`glDisable` using the symbolic constant ``GL_COLOR_LOGIC_OP``. The initial value is disabled.
+
+
+
+*opcode* is a symbolic constant chosen from the list above. In the explanation of the logical operations, *`s`* represents the incoming color and *`d`* represents the color in the frame buffer. Standard C-language operators are used. As these bitwise operators suggest, the logical operation is applied independently to each bit pair of the source and destination colors.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGet` with argument ``GL_LOGIC_OP_MODE``.
+   * :c:func:`glIsEnabled` with argument ``GL_COLOR_LOGIC_OP``.
+
+**Errors:**
+
+   * ``GL_INVALID_ENUM`` is generated if *opcode* is not an accepted value.
+
+
+
+.. note::
+
+   * When more than one RGBA color buffer is enabled for drawing, logical operations are performed separately for each enabled buffer, using for the destination value the contents of that buffer (see :c:func:`glDrawBuffer`).
+   * Logic operations have no effect on floating point draw buffers. However, if ``GL_COLOR_LOGIC_OP`` is enabled, blending is still disabled in this case.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

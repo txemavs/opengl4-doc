@@ -1,0 +1,69 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glGetActiveSubroutineUniformName`
+-------------------------------------------
+
+.. source file man4/glGetActiveSubroutineUniformName
+
+.. currentmodule:: OpenGL.GL
+
+Query the name of an active shader subroutine uniform
+
+.. c:function:: glGetActiveSubroutineUniformName
+.. c:function:: void glGetActiveSubroutineUniformName(GLuint  program, GLenum  shadertype, GLuint  index, GLsizei  bufsize, GLsizei * length, GLchar * name)
+   :noindex: 
+
+
+   
+   :param program:
+      Specifies the name of the program containing the subroutine.
+   
+   :param shadertype:
+      Specifies the shader stage from which to query for the subroutine parameter. *shadertype* must be one of ``GL_VERTEX_SHADER``, ``GL_TESS_CONTROL_SHADER``, ``GL_TESS_EVALUATION_SHADER``, ``GL_GEOMETRY_SHADER`` or ``GL_FRAGMENT_SHADER``.
+   
+   :param index:
+      Specifies the index of the shader subroutine uniform.
+   
+   :param bufsize:
+      Specifies the size of the buffer whose address is given in *name* .
+   
+   :param length:
+      Specifies the address of a variable into which is written the number of characters copied into *name* .
+   
+   :param name:
+      Specifies the address of a buffer that will receive the name of the specified shader subroutine uniform.
+   
+
+.. seealso::
+
+   
+   :c:func:`glGetSubroutineIndex`, :c:func:`glGetActiveSubroutineUniform`, :c:func:`glGetProgramStage`
+   
+.. rubric:: Description
+
+
+:c:func:`glGetActiveSubroutineUniformName` retrieves the name of an active shader subroutine uniform. *program* contains the name of the program containing the uniform. *shadertype* specifies the stage for which which the uniform location, given by *index* , is valid. *index* must be between zero and the value of ``GL_ACTIVE_SUBROUTINE_UNIFORMS`` minus one for the shader stage.
+
+The uniform name is returned as a null-terminated string in *name* . The actual number of characters written into *name* , excluding the null terminator is returned in *length* . If *length* is ``NULL``, no length is returned. The maximum number of characters that may be written into *name* , including the null terminator, is specified by *bufsize* . The length of the longest subroutine uniform name in *program* and *shadertype* is given by the value of ``GL_ACTIVE_SUBROUTINE_UNIFORM_MAX_LENGTH``, which can be queried with :c:func:`glGetProgramStage`.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGetProgramStage` with argument ``GL_ACTIVE_SUBROUTINE_UNIFORMS``
+
+**Errors:**
+
+   * ``GL_INVALID_ENUM`` is generated if *shadertype* or *pname* is not one of the accepted values.
+   * ``GL_INVALID_VALUE`` is generated if *index* is greater than or equal to the value of ``GL_ACTIVE_SUBROUTINES``.
+   * ``GL_INVALID_VALUE`` is generated if *program* is not the name of an existing program object.
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

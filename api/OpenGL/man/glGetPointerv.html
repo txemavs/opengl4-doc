@@ -1,0 +1,201 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glGetPointerv &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function glGetPolygonStipple" href="glGetPolygonStipple.html" />
+    <link rel="prev" title="function glGetPixelMap" href="glGetPixelMap.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glGetPolygonStipple.html" title="function glGetPolygonStipple"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glGetPixelMap.html" title="function glGetPixelMap"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glgetpointerv">
+<h1>function <cite>glGetPointerv</cite><a class="headerlink" href="#function-glgetpointerv" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Return the address of the specified pointer</p>
+<dl class="function">
+<dt id="glGetPointerv">
+<tt class="descname">glGetPointerv</tt><big>(</big><big>)</big><a class="headerlink" href="#glGetPointerv" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>pname</strong> &#8211; Specifies the array or buffer pointer to be returned.
+Symbolic constants
+<tt class="docutils literal"><span class="pre">GL_COLOR_ARRAY_POINTER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_EDGE_FLAG_ARRAY_POINTER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_FOG_COORD_ARRAY_POINTER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_FEEDBACK_BUFFER_POINTER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_INDEX_ARRAY_POINTER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_NORMAL_ARRAY_POINTER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_SECONDARY_COLOR_ARRAY_POINTER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_SELECTION_BUFFER_POINTER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_COORD_ARRAY_POINTER</span></tt>,
+or
+<tt class="docutils literal"><span class="pre">GL_VERTEX_ARRAY_POINTER</span></tt>
+are accepted.</li>
+<li><strong>params</strong> &#8211; Returns the pointer value specified by <em>pname</em>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glGetPointerv</tt><big>(</big>GLenum <em>&nbsp;pname</em>, GLvoid ** <em>&nbsp;params</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="../man4/glBindBuffer.html#glBindBuffer" title="glBindBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glBindBuffer()</span></tt></a>,
+<a class="reference internal" href="glClientActiveTexture.html#glClientActiveTexture" title="glClientActiveTexture"><tt class="xref c c-func docutils literal"><span class="pre">glClientActiveTexture()</span></tt></a>,
+<a class="reference internal" href="glColorPointer.html#glColorPointer" title="glColorPointer"><tt class="xref c c-func docutils literal"><span class="pre">glColorPointer()</span></tt></a>,
+<a class="reference internal" href="glEdgeFlagPointer.html#glEdgeFlagPointer" title="glEdgeFlagPointer"><tt class="xref c c-func docutils literal"><span class="pre">glEdgeFlagPointer()</span></tt></a>,
+<a class="reference internal" href="glFogCoordPointer.html#glFogCoordPointer" title="glFogCoordPointer"><tt class="xref c c-func docutils literal"><span class="pre">glFogCoordPointer()</span></tt></a>,
+<a class="reference internal" href="glFeedbackBuffer.html#glFeedbackBuffer" title="glFeedbackBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glFeedbackBuffer()</span></tt></a>,
+<a class="reference internal" href="../man4/glGetVertexAttribPointerv.html#glGetVertexAttribPointerv" title="glGetVertexAttribPointerv"><tt class="xref c c-func docutils literal"><span class="pre">glGetVertexAttribPointerv()</span></tt></a>,
+<a class="reference internal" href="glIndexPointer.html#glIndexPointer" title="glIndexPointer"><tt class="xref c c-func docutils literal"><span class="pre">glIndexPointer()</span></tt></a>,
+<a class="reference internal" href="glNormalPointer.html#glNormalPointer" title="glNormalPointer"><tt class="xref c c-func docutils literal"><span class="pre">glNormalPointer()</span></tt></a>,
+<a class="reference internal" href="glSecondaryColorPointer.html#glSecondaryColorPointer" title="glSecondaryColorPointer"><tt class="xref c c-func docutils literal"><span class="pre">glSecondaryColorPointer()</span></tt></a>,
+<a class="reference internal" href="glSelectBuffer.html#glSelectBuffer" title="glSelectBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glSelectBuffer()</span></tt></a>,
+<a class="reference internal" href="glTexCoordPointer.html#glTexCoordPointer" title="glTexCoordPointer"><tt class="xref c c-func docutils literal"><span class="pre">glTexCoordPointer()</span></tt></a>,
+<a class="reference internal" href="../man4/glVertexAttribPointer.html#glVertexAttribPointer" title="glVertexAttribPointer"><tt class="xref c c-func docutils literal"><span class="pre">glVertexAttribPointer()</span></tt></a>,
+<a class="reference internal" href="glVertexPointer.html#glVertexPointer" title="glVertexPointer"><tt class="xref c c-func docutils literal"><span class="pre">glVertexPointer()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glGetPointerv" title="glGetPointerv"><tt class="xref c c-func docutils literal"><span class="pre">glGetPointerv()</span></tt></a> returns pointer information. <em>pname</em> is a symbolic constant
+indicating the pointer to be returned, and <em>params</em> is a pointer to a
+location in which to place the returned data.</p>
+<p>For all <em>pname</em> arguments except <tt class="docutils literal"><span class="pre">GL_FEEDBACK_BUFFER_POINTER</span></tt> and <tt class="docutils literal"><span class="pre">GL_SELECTION_BUFFER_POINTER</span></tt>,
+if a non-zero named buffer object was bound to the <tt class="docutils literal"><span class="pre">GL_ARRAY_BUFFER</span></tt> target
+(see <a class="reference internal" href="../man4/glBindBuffer.html#glBindBuffer" title="glBindBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glBindBuffer()</span></tt></a>) when the desired pointer was previously
+specified, the pointer returned is a byte offset into the buffer object&#8217;s data store.
+Buffer objects are only available in OpenGL versions 1.5 and greater.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><a class="reference internal" href="#glGetPointerv" title="glGetPointerv"><tt class="xref c c-func docutils literal"><span class="pre">glGetPointerv()</span></tt></a> is available only if the GL version is 1.1 or greater.</p>
+<p><tt class="docutils literal"><span class="pre">GL_FOG_COORD_ARRAY_POINTER</span></tt> and <tt class="docutils literal"><span class="pre">GL_SECONDARY_COLOR_ARRAY_POINTER</span></tt>
+are available only if the GL version is 1.4 or greater.</p>
+<p>The pointers are all client-side state.</p>
+<p>The initial value for each pointer is 0.</p>
+<p class="last">For OpenGL versions 1.3 and greater, or when the <tt class="docutils literal"><span class="pre">ARB_multitexture</span></tt>
+extension is supported, querying the <tt class="docutils literal"><span class="pre">GL_TEXTURE_COORD_ARRAY_POINTER</span></tt>
+returns the value for the active client texture unit.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>pname</em> is not an accepted value.</li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glGetPixelMap.html"
+                        title="previous chapter">function <cite>glGetPixelMap</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glGetPolygonStipple.html"
+                        title="next chapter">function <cite>glGetPolygonStipple</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/glGetPointerv.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glGetPolygonStipple.html" title="function glGetPolygonStipple"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glGetPixelMap.html" title="function glGetPixelMap"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

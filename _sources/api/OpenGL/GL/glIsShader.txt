@@ -1,0 +1,57 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glIsShader`
+---------------------
+
+.. source file man4/glIsShader
+
+.. currentmodule:: OpenGL.GL
+
+Determines if a name corresponds to a shader object
+
+.. c:function:: glIsShader
+.. c:function:: GLboolean glIsShader(GLuint  shader)
+   :noindex: 
+
+
+   
+   :param shader:
+      Specifies a potential shader object.
+   
+
+.. seealso::
+
+   
+   :c:func:`glAttachShader`, :c:func:`glCompileShader`, :c:func:`glCreateShader`, :c:func:`glDeleteShader`, :c:func:`glDetachShader`, :c:func:`glLinkProgram`, :c:func:`glShaderSource`
+   
+.. rubric:: Description
+
+
+:c:func:`glIsShader` returns ``GL_TRUE`` if *shader* is the name of a shader object previously created with :c:func:`glCreateShader` and not yet deleted with :c:func:`glDeleteShader`. If *shader* is zero or a non-zero value that is not the name of a shader object, or if an error occurs, :c:func:`glIsShader ` returns ``GL_FALSE``.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGetAttachedShaders` with a valid program object
+   * :c:func:`glGetShader` with arguments *shader* and a parameter to be queried
+   * :c:func:`glGetShaderInfoLog` with argument *object*
+   * :c:func:`glGetShaderSource` with argument *object*
+
+
+
+.. note::
+
+   * No error is generated if *shader* is not a valid shader object name.
+   * A shader object marked for deletion with :c:func:`glDeleteShader` but still attached to a program object is still considered a shader object and :c:func:`glIsShader` will return ``GL_TRUE``.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

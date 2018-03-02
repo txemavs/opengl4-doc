@@ -1,0 +1,63 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `gluSphere`
+--------------------
+
+.. source file man/gluSphere
+
+.. currentmodule:: OpenGL.GLU
+
+Draw a sphere
+
+.. c:function:: gluSphere
+.. c:function:: void gluSphere(GLUquadric*  quad, GLdouble  radius, GLint  slices, GLint  stacks)
+   :noindex: 
+
+
+   
+   :param quad:
+      Specifies the quadrics object (created with :c:func:`gluNewQuadric`).
+   
+   :param radius:
+      Specifies the radius of the sphere.
+   
+   :param slices:
+      Specifies the number of subdivisions around the *`z`* axis (similar to lines of longitude).
+   
+   :param stacks:
+      Specifies the number of subdivisions along the *`z`* axis (similar to lines of latitude).
+   
+
+.. seealso::
+
+   
+   :c:func:`gluCylinder`, :c:func:`gluDisk`, :c:func:`gluNewQuadric`, :c:func:`gluPartialDisk`, :c:func:`gluQuadricOrientation`, :c:func:`gluQuadricTexture`
+   
+.. rubric:: Description
+
+
+:c:func:`gluSphere` draws a sphere of the given radius centered around the origin. The sphere is subdivided around the *`z`* axis into slices and along the *`z`* axis into stacks (similar to lines of longitude and latitude).
+
+If the orientation is set to ``GLU_OUTSIDE`` (with :c:func:`gluQuadricOrientation`), then any normals generated point away from the center of the sphere. Otherwise, they point toward the center of the sphere.
+
+If texturing is turned on (with :c:func:`gluQuadricTexture`), then texture coordinates are generated so that *`t`* ranges from 0.0 at |EQUATION_1_| to 1.0 at |EQUATION_2_| ( *`t`* increases linearly along longitudinal lines), and *`s`* ranges from 0.0 at the + *`y`* axis, to 0.25 at the + *`x`* axis, to 0.5 at the \- *`y`* axis, to 0.75 at the \- *`x`* axis, and back to 1.0 at the + *`y`* axis.
+
+
+
+.. role:: mml(raw)
+   :format: html
+
+
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mi mathvariant="italic">z</mi> <mo>=</mo> <mrow> <mo>-</mo> <mi mathvariant="italic">radius</mi> </mrow> </mrow> </math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mi mathvariant="italic">z</mi> <mo>=</mo> <mi mathvariant="italic">radius</mi> </mrow> </math>` 
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

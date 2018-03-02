@@ -1,0 +1,185 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glGetProgramPipeline &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glGetProgramPipelineInfoLog" href="glGetProgramPipelineInfoLog.html" />
+    <link rel="prev" title="function glGetProgramInfoLog" href="glGetProgramInfoLog.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glGetProgramPipelineInfoLog.html" title="function glGetProgramPipelineInfoLog"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glGetProgramInfoLog.html" title="function glGetProgramInfoLog"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glgetprogrampipeline">
+<h1>function <cite>glGetProgramPipeline</cite><a class="headerlink" href="#function-glgetprogrampipeline" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Retrieve properties of a program pipeline object</p>
+<dl class="function">
+<dt id="glGetProgramPipeline">
+<tt class="descname">glGetProgramPipeline</tt><big>(</big><big>)</big><a class="headerlink" href="#glGetProgramPipeline" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>pipeline</strong> &#8211; Specifies the name of a program pipeline object whose parameter retrieve.</li>
+<li><strong>pname</strong> &#8211; Specifies the name of the parameter to retrieve.</li>
+<li><strong>params</strong> &#8211; Specifies the address of a variable into which will be written the value or values
+of <em>pname</em> for <em>pipeline</em>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt id="glGetProgramPipelineiv">
+void <tt class="descname">glGetProgramPipelineiv</tt><big>(</big>GLuint <em>&nbsp;pipeline</em>, GLenum <em>&nbsp;pname</em>, GLint *<em>&nbsp;params</em><big>)</big><a class="headerlink" href="#glGetProgramPipelineiv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><tt class="xref c c-func docutils literal"><span class="pre">glGetProgramPipelines()</span></tt>,
+<a class="reference internal" href="glBindProgramPipeline.html#glBindProgramPipeline" title="glBindProgramPipeline"><tt class="xref c c-func docutils literal"><span class="pre">glBindProgramPipeline()</span></tt></a>,
+<a class="reference internal" href="glDeleteProgramPipelines.html#glDeleteProgramPipelines" title="glDeleteProgramPipelines"><tt class="xref c c-func docutils literal"><span class="pre">glDeleteProgramPipelines()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glGetProgramPipelineiv" title="glGetProgramPipelineiv"><tt class="xref c c-func docutils literal"><span class="pre">glGetProgramPipelineiv()</span></tt></a> retrieves the value of a property of the program
+pipeline object <em>pipeline</em>. <em>pname</em> specifies the
+name of the parameter whose value to retrieve. The value of the parameter is written to
+the variable whose address is given by <em>params</em>.</p>
+<p>If <em>pname</em> is <tt class="docutils literal"><span class="pre">GL_ACTIVE_PROGRAM</span></tt>, the name of the
+active program object of the program pipeline object is returned in <em>params</em>.</p>
+<p>If <em>pname</em> is <tt class="docutils literal"><span class="pre">GL_VERTEX_SHADER</span></tt>, the name of the
+current program object for the vertex shader type of the program pipeline object is
+returned in <em>params</em>.</p>
+<p>If <em>pname</em> is <tt class="docutils literal"><span class="pre">GL_TESS_CONTROL_SHADER</span></tt>, the name of the
+current program object for the tessellation control shader type of the program pipeline object is
+returned in <em>params</em>.</p>
+<p>If <em>pname</em> is <tt class="docutils literal"><span class="pre">GL_TESS_EVALUATION_SHADER</span></tt>, the name of the
+current program object for the tessellation evaluation shader type of the program pipeline object is
+returned in <em>params</em>.</p>
+<p>If <em>pname</em> is <tt class="docutils literal"><span class="pre">GL_GEOMETRY_SHADER</span></tt>, the name of the
+current program object for the geometry shader type of the program pipeline object is
+returned in <em>params</em>.</p>
+<p>If <em>pname</em> is <tt class="docutils literal"><span class="pre">GL_FRAGMENT_SHADER</span></tt>, the name of the
+current program object for the fragment shader type of the program pipeline object is
+returned in <em>params</em>.</p>
+<p>If <em>pname</em> is <tt class="docutils literal"><span class="pre">GL_INFO_LOG_LENGTH</span></tt>, the length of the
+info log, including the null terminator, is returned in <em>params</em>. If there
+is no info log, zero is returned.</p>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <em>pipeline</em> is not zero or a name previously returned from a call to <a class="reference internal" href="glGenProgramPipelines.html#glGenProgramPipelines" title="glGenProgramPipelines"><tt class="xref c c-func docutils literal"><span class="pre">glGenProgramPipelines()</span></tt></a> or if such a name has been deleted by a call to <a class="reference internal" href="glDeleteProgramPipelines.html#glDeleteProgramPipelines" title="glDeleteProgramPipelines"><tt class="xref c c-func docutils literal"><span class="pre">glDeleteProgramPipelines()</span></tt></a>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>pname</em> is not one of the accepted values.</li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)2010 Khronos Group. Open Publication License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glGetProgramInfoLog.html"
+                        title="previous chapter">function <cite>glGetProgramInfoLog</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glGetProgramPipelineInfoLog.html"
+                        title="next chapter">function <cite>glGetProgramPipelineInfoLog</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glGetProgramPipeline.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glGetProgramPipelineInfoLog.html" title="function glGetProgramPipelineInfoLog"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glGetProgramInfoLog.html" title="function glGetProgramInfoLog"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

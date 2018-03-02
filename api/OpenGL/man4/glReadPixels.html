@@ -1,0 +1,422 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glReadPixels &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glReleaseShaderCompiler" href="glReleaseShaderCompiler.html" />
+    <link rel="prev" title="function glReadBuffer" href="glReadBuffer.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glReleaseShaderCompiler.html" title="function glReleaseShaderCompiler"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glReadBuffer.html" title="function glReadBuffer"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glreadpixels">
+<h1>function <cite>glReadPixels</cite><a class="headerlink" href="#function-glreadpixels" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Read a block of pixels from the frame buffer</p>
+<dl class="function">
+<dt id="glReadPixels">
+<tt class="descname">glReadPixels</tt><big>(</big><big>)</big><a class="headerlink" href="#glReadPixels" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> &#8211; </li>
+<li><strong>y</strong> &#8211; Specify the window coordinates of the first pixel
+that is read from the frame buffer.
+This location is the lower left corner of a rectangular block of pixels.</li>
+<li><strong>width</strong> &#8211; </li>
+<li><strong>height</strong> &#8211; Specify the dimensions of the pixel rectangle.
+<em>width</em> and <em>height</em> of one correspond to a single pixel.</li>
+<li><strong>format</strong> &#8211; Specifies the format of the pixel data.
+The following symbolic values are accepted:
+<tt class="docutils literal"><span class="pre">GL_STENCIL_INDEX</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_DEPTH_COMPONENT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_DEPTH_STENCIL</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RED</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_GREEN</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_BLUE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGB</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_BGR</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGBA</span></tt>, and
+<tt class="docutils literal"><span class="pre">GL_BGRA</span></tt>.</li>
+<li><strong>type</strong> &#8211; Specifies the data type of the pixel data.
+Must be one of
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_BYTE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_BYTE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_SHORT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_INT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_HALF_FLOAT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_FLOAT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_BYTE_3_3_2</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_BYTE_2_3_3_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_5_6_5</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_5_6_5_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_4_4_4_4</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_4_4_4_4_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_5_5_5_1</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_1_5_5_5_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_8_8_8_8</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_8_8_8_8_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_10_10_10_2</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_2_10_10_10_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_24_8</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_10F_11F_11F_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_5_9_9_9_REV</span></tt>, or
+<tt class="docutils literal"><span class="pre">GL_FLOAT_32_UNSIGNED_INT_24_8_REV</span></tt>.</li>
+<li><strong>data</strong> &#8211; Returns the pixel data.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glReadPixels</tt><big>(</big>GLint <em>&nbsp;x</em>, GLint <em>&nbsp;y</em>, GLsizei <em>&nbsp;width</em>, GLsizei <em>&nbsp;height</em>, GLenum <em>&nbsp;format</em>, GLenum <em>&nbsp;type</em>, GLvoid * <em>&nbsp;data</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glPixelStore.html#glPixelStore" title="glPixelStore"><tt class="xref c c-func docutils literal"><span class="pre">glPixelStore()</span></tt></a>,
+<a class="reference internal" href="glReadBuffer.html#glReadBuffer" title="glReadBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glReadBuffer()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glReadPixels" title="glReadPixels"><tt class="xref c c-func docutils literal"><span class="pre">glReadPixels()</span></tt></a> returns pixel data from the frame buffer,
+starting with the pixel whose lower left corner
+is at location (<em>x</em>, <em>y</em>),
+into client memory starting at location <em>data</em>.
+Several parameters control the processing of the pixel data before
+it is placed into client memory.
+These parameters are set with <a class="reference internal" href="glPixelStore.html#glPixelStore" title="glPixelStore"><tt class="xref c c-func docutils literal"><span class="pre">glPixelStore()</span></tt></a>.
+This reference page describes the effects on <a class="reference internal" href="#glReadPixels" title="glReadPixels"><tt class="xref c c-func docutils literal"><span class="pre">glReadPixels()</span></tt></a> of most,
+but not all of the parameters specified by these three commands.</p>
+<p>If a non-zero named buffer object is bound to the <tt class="docutils literal"><span class="pre">GL_PIXEL_PACK_BUFFER</span></tt> target
+(see <a class="reference internal" href="glBindBuffer.html#glBindBuffer" title="glBindBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glBindBuffer()</span></tt></a>) while a block of pixels is
+requested, <em>data</em> is treated as a byte offset into the buffer object&#8217;s data store
+rather than a pointer to client memory.</p>
+<p><a class="reference internal" href="#glReadPixels" title="glReadPixels"><tt class="xref c c-func docutils literal"><span class="pre">glReadPixels()</span></tt></a> returns values from each pixel with lower left corner at <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mrow><mi mathvariant="italic">x</mi><mo>+</mo><mi mathvariant="italic">i</mi></mrow><mrow><mi mathvariant="italic">y</mi><mo>+</mo><mi mathvariant="italic">j</mi></mrow></mfenced></math></span> for <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>0</mn><mo><=</mo><mi mathvariant="italic">i</mi><mo><</mo><mi mathvariant="italic">width</mi></mrow></math></span> and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>0</mn><mo><=</mo><mi mathvariant="italic">j</mi><mo><</mo><mi mathvariant="italic">height</mi></mrow></math></span>.
+This pixel is said to be the <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math></span> th
+pixel in the <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">j</mi></math></span> th
+row.
+Pixels are returned in row order from the lowest to the highest row,
+left to right in each row.</p>
+<p><em>format</em> specifies the format for the returned pixel values;
+accepted values are:</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">GL_STENCIL_INDEX</span></tt></p>
+<blockquote>
+<div>Stencil values are read from the stencil buffer.
+Each index is converted to fixed point,
+shifted left or right depending on the value and sign of <tt class="docutils literal"><span class="pre">GL_INDEX_SHIFT</span></tt>,
+and added to <tt class="docutils literal"><span class="pre">GL_INDEX_OFFSET</span></tt>.
+If <tt class="docutils literal"><span class="pre">GL_MAP_STENCIL</span></tt> is <tt class="docutils literal"><span class="pre">GL_TRUE</span></tt>,
+indices are replaced by their mappings in the table <tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_S_TO_S</span></tt>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_DEPTH_COMPONENT</span></tt></p>
+<blockquote>
+<div>Depth values are read from the depth buffer.
+Each component is converted to floating point such that the minimum depth
+value maps to 0 and the maximum value maps to 1.
+Each component is then multiplied by <tt class="docutils literal"><span class="pre">GL_DEPTH_SCALE</span></tt>,
+added to <tt class="docutils literal"><span class="pre">GL_DEPTH_BIAS</span></tt>,
+and finally clamped to the range <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"><mn>0</mn><mn>1</mn></mfenced></math></span>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_DEPTH_STENCIL</span></tt></p>
+<blockquote>
+<div>Values are taken from both the depth and stencil buffers. The <em>type</em> parameter
+must be <tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_24_8</span></tt> or <tt class="docutils literal"><span class="pre">GL_FLOAT_32_UNSIGNED_INT_24_8_REV</span></tt>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_RED</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">GL_GREEN</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">GL_BLUE</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">GL_BGR</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">GL_RGBA</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">GL_BGRA</span></tt></p>
+</div></blockquote>
+<p>Finally, the indices or components
+are converted to the proper format,
+as specified by <em>type</em>.
+If <em>format</em> is <tt class="docutils literal"><span class="pre">GL_STENCIL_INDEX</span></tt>
+and <em>type</em> is not <tt class="docutils literal"><span class="pre">GL_FLOAT</span></tt>,
+each index is masked with the mask value given in the following table.
+If <em>type</em> is <tt class="docutils literal"><span class="pre">GL_FLOAT</span></tt>, then each integer index is converted to
+single-precision floating-point format.</p>
+<p>If <em>format</em> is
+<tt class="docutils literal"><span class="pre">GL_RED</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_GREEN</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_BLUE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGB</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_BGR</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGBA</span></tt>, or
+<tt class="docutils literal"><span class="pre">GL_BGRA</span></tt> and <em>type</em> is not <tt class="docutils literal"><span class="pre">GL_FLOAT</span></tt>,
+each component is multiplied by the multiplier shown in the following table.
+If type is <tt class="docutils literal"><span class="pre">GL_FLOAT</span></tt>, then each component is passed as is
+(or converted to the client&#8217;s single-precision floating-point format if
+it is different from the one used by the GL).</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="42%" />
+<col width="24%" />
+<col width="34%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><em>type</em></td>
+<td><strong>Index Mask</strong></td>
+<td><strong>Component Conversion</strong></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_UNSIGNED_BYTE</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mn>8</mn></msup><mo>-</mo><mn>1</mn></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mfenced open="(" close=")"><mrow><msup><mn>2</mn><mn>8</mn></msup><mo>-</mo><mn>1</mn></mrow></mfenced><mo>&it;</mo><mi mathvariant="italic">c</mi></mrow></math></span></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_BYTE</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mn>7</mn></msup><mo>-</mo><mn>1</mn></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfrac><mfenced open="" close=""><mrow><mfenced open="(" close=")"><mrow><msup><mn>2</mn><mn>8</mn></msup><mo>-</mo><mn>1</mn></mrow></mfenced><mo>&it;</mo><mi mathvariant="italic">c</mi><mo>-</mo><mn>1</mn></mrow></mfenced><mn>2</mn></mfrac></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mn>16</mn></msup><mo>-</mo><mn>1</mn></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mfenced open="(" close=")"><mrow><msup><mn>2</mn><mn>16</mn></msup><mo>-</mo><mn>1</mn></mrow></mfenced><mo>&it;</mo><mi mathvariant="italic">c</mi></mrow></math></span></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_SHORT</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mn>15</mn></msup><mo>-</mo><mn>1</mn></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfrac><mfenced open="" close=""><mrow><mfenced open="(" close=")"><mrow><msup><mn>2</mn><mn>16</mn></msup><mo>-</mo><mn>1</mn></mrow></mfenced><mo>&it;</mo><mi mathvariant="italic">c</mi><mo>-</mo><mn>1</mn></mrow></mfenced><mn>2</mn></mfrac></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mn>32</mn></msup><mo>-</mo><mn>1</mn></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mfenced open="(" close=")"><mrow><msup><mn>2</mn><mn>32</mn></msup><mo>-</mo><mn>1</mn></mrow></mfenced><mo>&it;</mo><mi mathvariant="italic">c</mi></mrow></math></span></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_INT</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mn>31</mn></msup><mo>-</mo><mn>1</mn></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfrac><mfenced open="" close=""><mrow><mfenced open="(" close=")"><mrow><msup><mn>2</mn><mn>32</mn></msup><mo>-</mo><mn>1</mn></mrow></mfenced><mo>&it;</mo><mi mathvariant="italic">c</mi><mo>-</mo><mn>1</mn></mrow></mfenced><mn>2</mn></mfrac></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_HALF_FLOAT</span></tt></td>
+<td>none</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">c</mi></math></span></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_FLOAT</span></tt></td>
+<td>none</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">c</mi></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_UNSIGNED_BYTE_3_3_2</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mfenced open="(" close=")"><mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></mfenced><mo>&it;</mo><mi mathvariant="italic">c</mi></mrow></math></span></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_UNSIGNED_BYTE_2_3_3_REV</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mfenced open="(" close=")"><mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></mfenced><mo>&it;</mo><mi mathvariant="italic">c</mi></mrow></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_5_6_5</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mfenced open="(" close=")"><mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></mfenced><mo>&it;</mo><mi mathvariant="italic">c</mi></mrow></math></span></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_5_6_5_REV</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mfenced open="(" close=")"><mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></mfenced><mo>&it;</mo><mi mathvariant="italic">c</mi></mrow></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_4_4_4_4</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mfenced open="(" close=")"><mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></mfenced><mo>&it;</mo><mi mathvariant="italic">c</mi></mrow></math></span></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_4_4_4_4_REV</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mfenced open="(" close=")"><mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></mfenced><mo>&it;</mo><mi mathvariant="italic">c</mi></mrow></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_5_5_5_1</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mfenced open="(" close=")"><mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></mfenced><mo>&it;</mo><mi mathvariant="italic">c</mi></mrow></math></span></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_1_5_5_5_REV</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mfenced open="(" close=")"><mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></mfenced><mo>&it;</mo><mi mathvariant="italic">c</mi></mrow></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_8_8_8_8</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mfenced open="(" close=")"><mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></mfenced><mo>&it;</mo><mi mathvariant="italic">c</mi></mrow></math></span></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_8_8_8_8_REV</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mfenced open="(" close=")"><mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></mfenced><mo>&it;</mo><mi mathvariant="italic">c</mi></mrow></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_10_10_10_2</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mfenced open="(" close=")"><mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></mfenced><mo>&it;</mo><mi mathvariant="italic">c</mi></mrow></math></span></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_2_10_10_10_REV</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mfenced open="(" close=")"><mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></mfenced><mo>&it;</mo><mi mathvariant="italic">c</mi></mrow></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_24_8</span></tt></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></math></span></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mfenced open="(" close=")"><mrow><msup><mn>2</mn><mn>N</mn></msup><mo>-</mo><mn>1</mn></mrow></mfenced><mo>&it;</mo><mi mathvariant="italic">c</mi></mrow></math></span></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_10F_11F_11F_REV</span></tt></td>
+<td>&#8211;</td>
+<td>Special</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_5_9_9_9_REV</span></tt></td>
+<td>&#8211;</td>
+<td>Special</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_FLOAT_32_UNSIGNED_INT_24_8_REV</span></tt></td>
+<td>none</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">c</mi></math></span> (Depth Only)</td>
+</tr>
+</tbody>
+</table>
+<p>Return values are placed in memory as follows.
+If <em>format</em> is
+<tt class="docutils literal"><span class="pre">GL_STENCIL_INDEX</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_DEPTH_COMPONENT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RED</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_GREEN</span></tt>, or
+<tt class="docutils literal"><span class="pre">GL_BLUE</span></tt>,
+a single value is returned and the data for the <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math></span> th
+pixel in the <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">j</mi></math></span> th
+row
+is placed in location <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mfenced open="(" close=")"><mi mathvariant="italic">j</mi></mfenced><mo>&it;</mo><mi mathvariant="italic">width</mi><mo>+</mo><mi mathvariant="italic">i</mi></mrow></math></span>.
+<tt class="docutils literal"><span class="pre">GL_RGB</span></tt> and <tt class="docutils literal"><span class="pre">GL_BGR</span></tt> return three values,
+<tt class="docutils literal"><span class="pre">GL_RGBA</span></tt> and <tt class="docutils literal"><span class="pre">GL_BGRA</span></tt> return four values for each pixel,
+with all values corresponding to a single pixel occupying contiguous space
+in <em>data</em>.
+Storage parameters set by <a class="reference internal" href="glPixelStore.html#glPixelStore" title="glPixelStore"><tt class="xref c c-func docutils literal"><span class="pre">glPixelStore()</span></tt></a>,
+such as <tt class="docutils literal"><span class="pre">GL_PACK_LSB_FIRST</span></tt> and <tt class="docutils literal"><span class="pre">GL_PACK_SWAP_BYTES</span></tt>,
+affect the way that data is written into memory.
+See <a class="reference internal" href="glPixelStore.html#glPixelStore" title="glPixelStore"><tt class="xref c c-func docutils literal"><span class="pre">glPixelStore()</span></tt></a> for a description.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Values for pixels that lie outside the window
+connected to the current GL context are undefined.</p>
+<p class="last">If an error is generated,
+no change is made to the contents of <em>data</em>.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>format</em> or <em>type</em> is not an accepted value.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if either <em>width</em> or <em>height</em> is negative.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <em>format</em> is <tt class="docutils literal"><span class="pre">GL_STENCIL_INDEX</span></tt> and there is no stencil buffer.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <em>format</em> is <tt class="docutils literal"><span class="pre">GL_DEPTH_COMPONENT</span></tt> and there is no depth buffer.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <em>format</em> is <tt class="docutils literal"><span class="pre">GL_DEPTH_STENCIL</span></tt> and there is no depth buffer or if there is no stencil buffer.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>format</em> is <tt class="docutils literal"><span class="pre">GL_DEPTH_STENCIL</span></tt> and <em>type</em> is not <tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_24_8</span></tt> or <tt class="docutils literal"><span class="pre">GL_FLOAT_32_UNSIGNED_INT_24_8_REV</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <em>type</em> is one of <tt class="docutils literal"><span class="pre">GL_UNSIGNED_BYTE_3_3_2</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_BYTE_2_3_3_REV</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_5_6_5</span></tt>, or <tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_5_6_5_REV</span></tt> and <em>format</em> is not <tt class="docutils literal"><span class="pre">GL_RGB</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <em>type</em> is one of <tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_4_4_4_4</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_4_4_4_4_REV</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_5_5_5_1</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_1_5_5_5_REV</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_8_8_8_8</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_8_8_8_8_REV</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_10_10_10_2</span></tt>, or <tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_2_10_10_10_REV</span></tt> and <em>format</em> is neither <tt class="docutils literal"><span class="pre">GL_RGBA</span></tt> nor <tt class="docutils literal"><span class="pre">GL_BGRA</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if a non-zero buffer object name is bound to the <tt class="docutils literal"><span class="pre">GL_PIXEL_PACK_BUFFER</span></tt> target and the buffer object&#8217;s data store is currently mapped.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if a non-zero buffer object name is bound to the <tt class="docutils literal"><span class="pre">GL_PIXEL_PACK_BUFFER</span></tt> target and the data would be packed to the buffer object such that the memory writes required would exceed the data store size.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if a non-zero buffer object name is bound to the <tt class="docutils literal"><span class="pre">GL_PIXEL_PACK_BUFFER</span></tt> target and <em>data</em> is not evenly divisible into the number of bytes needed to store in memory a datum indicated by <em>type</em>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <tt class="docutils literal"><span class="pre">GL_READ_FRAMEBUFFER_BINDING</span></tt> is non-zero, the read framebuffer is complete, and the value of <tt class="docutils literal"><span class="pre">GL_SAMPLE_BUFFERS</span></tt> for the read framebuffer is greater than zero.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_INDEX_MODE</span></tt></li>
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_PIXEL_PACK_BUFFER_BINDING</span></tt></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glReadBuffer.html"
+                        title="previous chapter">function <cite>glReadBuffer</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glReleaseShaderCompiler.html"
+                        title="next chapter">function <cite>glReleaseShaderCompiler</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glReadPixels.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glReleaseShaderCompiler.html" title="function glReleaseShaderCompiler"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glReadBuffer.html" title="function glReadBuffer"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

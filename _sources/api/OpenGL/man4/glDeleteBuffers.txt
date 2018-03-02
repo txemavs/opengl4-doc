@@ -1,0 +1,93 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:29
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glDeleteBuffers.xml'
+.. (c)2005 Addison-Wesley.
+.. See license details at http://opencontent.org/openpub/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glDeleteBuffers`
+--------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Delete named buffer objects
+
+.. c:function:: glDeleteBuffers
+
+
+         :param n:
+
+                  Specifies the number of buffer objects to be deleted.
+
+         :param buffers:
+
+                  Specifies an array of buffer objects to be deleted.
+
+.. rubric:: Specification
+
+.. c:function:: void glDeleteBuffers(GLsizei  n, const GLuint *  buffers)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glBindBuffer`\ ,
+            :c:func:`glGenBuffers`\ ,
+            :c:func:`glGet`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glDeleteBuffers` deletes *n* buffer objects named by the elements of the array *buffers*\ .
+After a buffer object is deleted, it has no contents,
+and its name is free for reuse (for example by :c:func:`glGenBuffers`\ ).
+If a buffer object that is currently bound is deleted, the binding reverts
+to 0 (the absence of any buffer object).
+
+
+:c:func:`glDeleteBuffers` silently ignores 0's and names that do not correspond to
+existing buffer objects.
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_VALUE`` is generated if *n* is negative.
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glIsBuffer`
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glDeleteBuffers'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )2005 Addison-Wesley. Open Publication License.
+

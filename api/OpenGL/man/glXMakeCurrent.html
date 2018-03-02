@@ -1,0 +1,208 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glXMakeCurrent &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function glXQueryContext" href="glXQueryContext.html" />
+    <link rel="prev" title="function glXMakeContextCurrent" href="glXMakeContextCurrent.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glXQueryContext.html" title="function glXQueryContext"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glXMakeContextCurrent.html" title="function glXMakeContextCurrent"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glxmakecurrent">
+<h1>function <cite>glXMakeCurrent</cite><a class="headerlink" href="#function-glxmakecurrent" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Attach a GLX context to a window or a GLX pixmap</p>
+<dl class="function">
+<dt id="glXMakeCurrent">
+<tt class="descname">glXMakeCurrent</tt><big>(</big><big>)</big><a class="headerlink" href="#glXMakeCurrent" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>dpy</strong> &#8211; Specifies the connection to the X server.</li>
+<li><strong>drawable</strong> &#8211; Specifies a GLX drawable.
+Must be either an X window ID or a GLX pixmap ID.</li>
+<li><strong>ctx</strong> &#8211; Specifies a GLX rendering context that is to be attached to <em>drawable</em>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+Bool <tt class="descname">glXMakeCurrent</tt><big>(</big>Display * <em>&nbsp;dpy</em>, GLXDrawable <em>&nbsp;drawable</em>, GLXContext <em>&nbsp;ctx</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glXCreateContext.html#glXCreateContext" title="glXCreateContext"><tt class="xref c c-func docutils literal"><span class="pre">glXCreateContext()</span></tt></a>,
+<a class="reference internal" href="glXCreateGLXPixmap.html#glXCreateGLXPixmap" title="glXCreateGLXPixmap"><tt class="xref c c-func docutils literal"><span class="pre">glXCreateGLXPixmap()</span></tt></a>
+<a class="reference internal" href="glXGetCurrentContext.html#glXGetCurrentContext" title="glXGetCurrentContext"><tt class="xref c c-func docutils literal"><span class="pre">glXGetCurrentContext()</span></tt></a>,
+<a class="reference internal" href="glXGetCurrentDisplay.html#glXGetCurrentDisplay" title="glXGetCurrentDisplay"><tt class="xref c c-func docutils literal"><span class="pre">glXGetCurrentDisplay()</span></tt></a>,
+<a class="reference internal" href="glXGetCurrentDrawable.html#glXGetCurrentDrawable" title="glXGetCurrentDrawable"><tt class="xref c c-func docutils literal"><span class="pre">glXGetCurrentDrawable()</span></tt></a>,
+<a class="reference internal" href="glXGetCurrentReadDrawable.html#glXGetCurrentReadDrawable" title="glXGetCurrentReadDrawable"><tt class="xref c c-func docutils literal"><span class="pre">glXGetCurrentReadDrawable()</span></tt></a>,
+<a class="reference internal" href="glXMakeContextCurrent.html#glXMakeContextCurrent" title="glXMakeContextCurrent"><tt class="xref c c-func docutils literal"><span class="pre">glXMakeContextCurrent()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glXMakeCurrent" title="glXMakeCurrent"><tt class="xref c c-func docutils literal"><span class="pre">glXMakeCurrent()</span></tt></a> does two things:
+It makes <em>ctx</em> the current GLX rendering context of the calling thread,
+replacing the previously current context if there was one,
+and it attaches <em>ctx</em> to a GLX drawable,
+either a window or a GLX pixmap.
+As a result of these two actions,
+subsequent GL rendering calls
+use rendering context <em>ctx</em> to modify GLX drawable <em>drawable</em> (for
+reading and writing).
+Because <a class="reference internal" href="#glXMakeCurrent" title="glXMakeCurrent"><tt class="xref c c-func docutils literal"><span class="pre">glXMakeCurrent()</span></tt></a> always replaces the current rendering context with <em>ctx</em>,
+there can be only one current context per thread.</p>
+<p>Pending commands to the
+previous context, if any, are flushed before it is released.</p>
+<p>The first time <em>ctx</em> is made current to any thread,
+its viewport is set to the full size of <em>drawable</em>.
+Subsequent calls by any thread to <a class="reference internal" href="#glXMakeCurrent" title="glXMakeCurrent"><tt class="xref c c-func docutils literal"><span class="pre">glXMakeCurrent()</span></tt></a> with <em>ctx</em>
+have no effect on its viewport.</p>
+<p>To release the current context without assigning a new one,
+call <a class="reference internal" href="#glXMakeCurrent" title="glXMakeCurrent"><tt class="xref c c-func docutils literal"><span class="pre">glXMakeCurrent()</span></tt></a> with <em>drawable</em> set to <tt class="docutils literal"><span class="pre">None</span></tt> and <em>ctx</em>
+set to <tt class="docutils literal"><span class="pre">NULL</span></tt>.</p>
+<p><a class="reference internal" href="#glXMakeCurrent" title="glXMakeCurrent"><tt class="xref c c-func docutils literal"><span class="pre">glXMakeCurrent()</span></tt></a> returns <tt class="docutils literal"><span class="pre">True</span></tt> if it is successful,
+<tt class="docutils literal"><span class="pre">False</span></tt> otherwise.
+If <tt class="docutils literal"><span class="pre">False</span></tt> is returned, the previously current rendering context
+and drawable (if any) remain unchanged.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>A <strong>process</strong> is a single-execution environment,
+implemented in a single address space,
+consisting of one or more threads.</p>
+<p class="last">A <strong>thread</strong> is one of a set of subprocesses that share
+a single address space,
+but maintain separate program counters,
+stack spaces,
+and other related global data.
+A <strong>thread</strong> that is the only member of its subprocess group
+is equivalent to a <strong>process</strong>.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">BadMatch</span></tt> is generated if <em>drawable</em> was not created with the same X screen and visual as <em>ctx</em>. It is also generated if <em>drawable</em> is <tt class="docutils literal"><span class="pre">None</span></tt> and <em>ctx</em> is not <tt class="docutils literal"><span class="pre">NULL</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">BadAccess</span></tt> is generated if <em>ctx</em> was current to another thread at the time <a class="reference internal" href="#glXMakeCurrent" title="glXMakeCurrent"><tt class="xref c c-func docutils literal"><span class="pre">glXMakeCurrent()</span></tt></a> was called.</li>
+<li><tt class="docutils literal"><span class="pre">GLXBadDrawable</span></tt> is generated if <em>drawable</em> is not a valid GLX drawable.</li>
+<li><tt class="docutils literal"><span class="pre">GLXBadContext</span></tt> is generated if <em>ctx</em> is not a valid GLX context.</li>
+<li><tt class="docutils literal"><span class="pre">GLXBadContextState</span></tt> is generated if <a class="reference internal" href="#glXMakeCurrent" title="glXMakeCurrent"><tt class="xref c c-func docutils literal"><span class="pre">glXMakeCurrent()</span></tt></a> is executed between the execution of <a class="reference internal" href="glBegin.html#glBegin" title="glBegin"><tt class="xref c c-func docutils literal"><span class="pre">glBegin()</span></tt></a> and the corresponding execution of <a class="reference internal" href="glBegin.html#glEnd" title="glEnd"><tt class="xref c c-func docutils literal"><span class="pre">glEnd()</span></tt></a>.</li>
+<li><tt class="docutils literal"><span class="pre">GLXBadContextState</span></tt> is also generated if the rendering context current to the calling thread has GL renderer state <tt class="docutils literal"><span class="pre">GLX_FEEDBACK</span></tt> or <tt class="docutils literal"><span class="pre">GLX_SELECT</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GLXBadCurrentWindow</span></tt> is generated if there are pending GL commands for the previous context and the current drawable is a window that is no longer valid.</li>
+<li><tt class="docutils literal"><span class="pre">BadAlloc</span></tt> may be generated if the server has delayed allocation of ancillary buffers until <a class="reference internal" href="#glXMakeCurrent" title="glXMakeCurrent"><tt class="xref c c-func docutils literal"><span class="pre">glXMakeCurrent()</span></tt></a> is called, only to find that it has insufficient resources to complete the allocation.</li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glXMakeContextCurrent.html"
+                        title="previous chapter">function <cite>glXMakeContextCurrent</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glXQueryContext.html"
+                        title="next chapter">function <cite>glXQueryContext</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/glXMakeCurrent.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glXQueryContext.html" title="function glXQueryContext"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glXMakeContextCurrent.html" title="function glXMakeContextCurrent"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

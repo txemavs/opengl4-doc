@@ -1,0 +1,96 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:30
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glSampleMaski.xml'
+.. (c)2010 Khronos Group.
+.. See license details at http://opencontent.org/openpub/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glSampleMaski`
+------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Set the value of a sub-word of the sample mask
+
+.. c:function:: glSampleMaski
+
+
+         :param maskNumber:
+
+                  Specifies which 32-bit sub-word of the sample mask to update.
+
+         :param mask:
+
+                  Specifies the new value of the mask sub-word.
+
+.. rubric:: Specification
+
+.. c:function:: void glSampleMaski(GLuint  maskNumber, GLbitfield  mask)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glGenRenderbuffers`\ ,
+            :c:func:`glBindRenderbuffer`\ ,
+            :c:func:`glRenderbufferStorageMultisample`\ ,
+            :c:func:`glFramebufferRenderbuffer`\ ,
+            :c:func:`glDeleteRenderbuffers`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glSampleMaski` sets one 32-bit sub-word of the multi-word sample mask, ``GL_SAMPLE_MASK_VALUE``\ .
+
+
+*maskIndex* specifies which 32-bit sub-word of the sample mask to update, and *mask* specifies
+the new value to use for that sub-word. *maskIndex* must be less than the value of
+``GL_MAX_SAMPLE_MASK_WORDS``\ . Bit :strong:`B` of mask word :strong:`M` corresponds to sample
+32 x :strong:`M` + :strong:`B`\ .
+
+
+.. note::
+
+
+   :c:func:`glSampleMaski` is available only if the GL version is 3.2 or greater, or if the ``ARB_texture_multisample``
+   extension is supported.
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_VALUE`` is generated if *maskIndex* is greater than or equal to the value of ``GL_MAX_SAMPLE_MASK_WORDS``\ .
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glSampleMaski'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )2010 Khronos Group. Open Publication License.
+

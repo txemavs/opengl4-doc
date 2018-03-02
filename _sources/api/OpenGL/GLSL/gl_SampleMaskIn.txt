@@ -1,0 +1,46 @@
+.. nabla.opengl-sphinx project
+
+.. ---------------------------
+
+.. this dodument source file 'man/gl_SampleMaskIn'is copyrighted by Khronos Group
+   See license details at http://opencontent.org/openpub/
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   
+
+function `gl_SampleMaskIn`
+--------------------------
+
+.. currentmodule:: OpenGL.GLSL
+
+Contains the computed sample coverage mask for the current fragment
+
+.. c:function:: gl_SampleMaskIn
+
+
+.. rubric:: Specification
+
+.. c:function:: in int gl_SampleMaskIn[])
+
+.. seealso::
+
+   
+   :c:func:`gl_SampleMask`, :c:func:`gl_SampleID`, :c:func:`gl_SamplePosition`, :c:func:`gl_FragCoord`
+   
+.. rubric:: Description
+
+
+:c:func:`gl_SampleMaskIn` is a fragment language that indicates the set of samples covered by the primitive generating the fragment during multisample rasterization. It has a sample bit set if and only if the sample is considered covered for this fragment shader invocation. Bit *`B`* of mask :c:func:`gl_SampleMask[M]` corresponds to sample 32 * *`M`* + *`B`* . The array has :c:func:`ceil`( *`s`* / 32) elements where *`s`* is the maximum number of color samples supported by the implementation.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2011 Khronos Group. Open Publication License.
+

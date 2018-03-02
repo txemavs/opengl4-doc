@@ -1,0 +1,177 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glFramebufferTextureLayer &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glFrontFace" href="glFrontFace.html" />
+    <link rel="prev" title="function glFramebufferTexture" href="glFramebufferTexture.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glFrontFace.html" title="function glFrontFace"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glFramebufferTexture.html" title="function glFramebufferTexture"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glframebuffertexturelayer">
+<h1>function <cite>glFramebufferTextureLayer</cite><a class="headerlink" href="#function-glframebuffertexturelayer" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Attach a single layer of a texture to a framebuffer</p>
+<dl class="function">
+<dt id="glFramebufferTextureLayer">
+<tt class="descname">glFramebufferTextureLayer</tt><big>(</big><big>)</big><a class="headerlink" href="#glFramebufferTextureLayer" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>target</strong> &#8211; Specifies the framebuffer target. <em>target</em> must be <tt class="docutils literal"><span class="pre">GL_DRAW_FRAMEBUFFER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_READ_FRAMEBUFFER</span></tt>, or <tt class="docutils literal"><span class="pre">GL_FRAMEBUFFER</span></tt>. <tt class="docutils literal"><span class="pre">GL_FRAMEBUFFER</span></tt>
+is equivalent to <tt class="docutils literal"><span class="pre">GL_DRAW_FRAMEBUFFER</span></tt>.</li>
+<li><strong>attachment</strong> &#8211; Specifies the attachment point of the framebuffer. <em>attachment</em> must be
+<tt class="docutils literal"><span class="pre">GL_COLOR_ATTACHMENT</span> <span class="pre">i</span></tt>, <tt class="docutils literal"><span class="pre">GL_DEPTH_ATTACHMENT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_STENCIL_ATTACHMENT</span></tt> or <tt class="docutils literal"><span class="pre">GL_DEPTH_STENCIL_ATTACHMMENT</span></tt>.</li>
+<li><strong>texture</strong> &#8211; Specifies the texture object to attach to the framebuffer attachment point named by <em>attachment</em>.</li>
+<li><strong>level</strong> &#8211; Specifies the mipmap level of <em>texture</em> to attach.</li>
+<li><strong>layer</strong> &#8211; Specifies the layer of <em>texture</em> to attach.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glFramebufferTextureLayer</tt><big>(</big>GLenum <em>&nbsp;target</em>, GLenum <em>&nbsp;attachment</em>, GLuint <em>&nbsp;texture</em>, GLint <em>&nbsp;level</em>, GLint <em>&nbsp;layer</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glGenFramebuffers.html#glGenFramebuffers" title="glGenFramebuffers"><tt class="xref c c-func docutils literal"><span class="pre">glGenFramebuffers()</span></tt></a>,
+<a class="reference internal" href="glBindFramebuffer.html#glBindFramebuffer" title="glBindFramebuffer"><tt class="xref c c-func docutils literal"><span class="pre">glBindFramebuffer()</span></tt></a>,
+<a class="reference internal" href="glGenRenderbuffers.html#glGenRenderbuffers" title="glGenRenderbuffers"><tt class="xref c c-func docutils literal"><span class="pre">glGenRenderbuffers()</span></tt></a>,
+<a class="reference internal" href="glFramebufferTexture.html#glFramebufferTexture" title="glFramebufferTexture"><tt class="xref c c-func docutils literal"><span class="pre">glFramebufferTexture()</span></tt></a>,
+<tt class="xref c c-func docutils literal"><span class="pre">glFramebufferTextureFace()</span></tt></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glFramebufferTextureLayer" title="glFramebufferTextureLayer"><tt class="xref c c-func docutils literal"><span class="pre">glFramebufferTextureLayer()</span></tt></a> operates like <a class="reference internal" href="glFramebufferTexture.html#glFramebufferTexture" title="glFramebufferTexture"><tt class="xref c c-func docutils literal"><span class="pre">glFramebufferTexture()</span></tt></a>,
+except that only a single layer of the texture level, given by <em>layer</em>, is attached to the attachment point.
+If <em>texture</em> is not zero, <em>layer</em> must be greater than or equal to zero.
+<em>texture</em> must either be zero or the name of an existing three-dimensional texture, one- or two-dimensional array texture,
+or multisample array texture.</p>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>target</em> is not one of the accepted tokens.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>attachment</em> is not one of the accepted tokens.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>texture</em> is not zero or the name of an existing texture object.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>texture</em> is not zero and <em>layer</em> is negative.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if zero is bound to <em>target</em>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <em>texture</em> is not zero or the name of an existing cube map texture.</li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)2010 Khronos Group. Open Publication License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glFramebufferTexture.html"
+                        title="previous chapter">function <cite>glFramebufferTexture</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glFrontFace.html"
+                        title="next chapter">function <cite>glFrontFace</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glFramebufferTextureLayer.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glFrontFace.html" title="function glFrontFace"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glFramebufferTexture.html" title="function glFramebufferTexture"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

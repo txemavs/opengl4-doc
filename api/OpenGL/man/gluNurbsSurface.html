@@ -1,0 +1,210 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function gluNurbsSurface &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function gluOrtho2D" href="gluOrtho2D.html" />
+    <link rel="prev" title="function gluNurbsProperty" href="gluNurbsProperty.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="gluOrtho2D.html" title="function gluOrtho2D"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="gluNurbsProperty.html" title="function gluNurbsProperty"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glunurbssurface">
+<h1>function <cite>gluNurbsSurface</cite><a class="headerlink" href="#function-glunurbssurface" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Define the shape of a NURBS surface</p>
+<dl class="function">
+<dt id="gluNurbsSurface">
+<tt class="descname">gluNurbsSurface</tt><big>(</big><big>)</big><a class="headerlink" href="#gluNurbsSurface" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>nurb</strong> &#8211; Specifies the NURBS object (created with <a class="reference internal" href="gluNewNurbsRenderer.html#gluNewNurbsRenderer" title="gluNewNurbsRenderer"><tt class="xref c c-func docutils literal"><span class="pre">gluNewNurbsRenderer()</span></tt></a>).</li>
+<li><strong>sKnotCount</strong> &#8211; Specifies the number of knots in the parametric <strong>u</strong> direction.</li>
+<li><strong>sKnots</strong> &#8211; Specifies an array of <em>sKnotCount</em> nondecreasing knot values in the parametric
+<strong>u</strong> direction.</li>
+<li><strong>tKnotCount</strong> &#8211; Specifies the number of knots in the parametric <strong>v</strong> direction.</li>
+<li><strong>tKnots</strong> &#8211; Specifies an array of <em>tKnotCount</em> nondecreasing knot values in the parametric
+<strong>v</strong> direction.</li>
+<li><strong>sStride</strong> &#8211; Specifies the offset (as a number of single-precision floating-point values)
+between successive control points in the parametric <strong>u</strong> direction
+in <em>control</em>.</li>
+<li><strong>tStride</strong> &#8211; Specifies the offset (in single-precision floating-point values)
+between successive control points in the parametric <strong>v</strong> direction
+in <em>control</em>.</li>
+<li><strong>control</strong> &#8211; Specifies an array containing control points for the NURBS surface.
+The offsets between successive control points in the parametric <strong>u</strong>
+and <strong>v</strong> directions are given by <em>sStride</em> and <em>tStride</em>.</li>
+<li><strong>sOrder</strong> &#8211; Specifies the order of the NURBS surface in the parametric <strong>u</strong>
+direction. The order is one more than the degree, hence
+a surface that is cubic in <strong>u</strong> has a <strong>u</strong> order of 4.</li>
+<li><strong>tOrder</strong> &#8211; Specifies the order of the NURBS surface in the parametric <strong>v</strong>
+direction. The order is one more than the degree, hence
+a surface that is cubic in <strong>v</strong> has a <strong>v</strong> order of 4.</li>
+<li><strong>type</strong> &#8211; Specifies type of the surface. <em>type</em> can be any of the valid
+two-dimensional evaluator types (such as <tt class="docutils literal"><span class="pre">GLU_MAP2_VERTEX_3</span></tt> or
+<tt class="docutils literal"><span class="pre">GLU_MAP2_COLOR_4</span></tt>).</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">gluNurbsSurface</tt><big>(</big>GLUnurbs* <em>&nbsp;nurb</em>, GLint <em>&nbsp;sKnotCount</em>, GLfloat* <em>&nbsp;sKnots</em>, GLint <em>&nbsp;tKnotCount</em>, GLfloat* <em>&nbsp;tKnots</em>, GLint <em>&nbsp;sStride</em>, GLint <em>&nbsp;tStride</em>, GLfloat* <em>&nbsp;control</em>, GLint <em>&nbsp;sOrder</em>, GLint <em>&nbsp;tOrder</em>, GLenum <em>&nbsp;type</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="gluBeginSurface.html#gluBeginSurface" title="gluBeginSurface"><tt class="xref c c-func docutils literal"><span class="pre">gluBeginSurface()</span></tt></a>,
+<a class="reference internal" href="gluBeginTrim.html#gluBeginTrim" title="gluBeginTrim"><tt class="xref c c-func docutils literal"><span class="pre">gluBeginTrim()</span></tt></a>,
+<a class="reference internal" href="gluNewNurbsRenderer.html#gluNewNurbsRenderer" title="gluNewNurbsRenderer"><tt class="xref c c-func docutils literal"><span class="pre">gluNewNurbsRenderer()</span></tt></a>,
+<a class="reference internal" href="gluNurbsCurve.html#gluNurbsCurve" title="gluNurbsCurve"><tt class="xref c c-func docutils literal"><span class="pre">gluNurbsCurve()</span></tt></a>,
+<a class="reference internal" href="gluPwlCurve.html#gluPwlCurve" title="gluPwlCurve"><tt class="xref c c-func docutils literal"><span class="pre">gluPwlCurve()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p>Use <a class="reference internal" href="#gluNurbsSurface" title="gluNurbsSurface"><tt class="xref c c-func docutils literal"><span class="pre">gluNurbsSurface()</span></tt></a> within a NURBS (Non-Uniform Rational B-Spline) surface
+definition to describe the shape of a NURBS surface (before
+any trimming). To mark the beginning of
+a NURBS surface definition, use the <a class="reference internal" href="gluBeginSurface.html#gluBeginSurface" title="gluBeginSurface"><tt class="xref c c-func docutils literal"><span class="pre">gluBeginSurface()</span></tt></a> command.
+To mark the end of a NURBS surface definition, use the
+<a class="reference internal" href="gluBeginSurface.html#gluEndSurface" title="gluEndSurface"><tt class="xref c c-func docutils literal"><span class="pre">gluEndSurface()</span></tt></a> command. Call <a class="reference internal" href="#gluNurbsSurface" title="gluNurbsSurface"><tt class="xref c c-func docutils literal"><span class="pre">gluNurbsSurface()</span></tt></a> within a NURBS
+surface definition only.</p>
+<p>Positional, texture, and color coordinates are associated
+with a surface by presenting each as a separate <a class="reference internal" href="#gluNurbsSurface" title="gluNurbsSurface"><tt class="xref c c-func docutils literal"><span class="pre">gluNurbsSurface()</span></tt></a> between a
+<a class="reference internal" href="gluBeginSurface.html#gluBeginSurface" title="gluBeginSurface"><tt class="xref c c-func docutils literal"><span class="pre">gluBeginSurface()</span></tt></a> / <a class="reference internal" href="gluBeginSurface.html#gluEndSurface" title="gluEndSurface"><tt class="xref c c-func docutils literal"><span class="pre">gluEndSurface()</span></tt></a> pair. No more than
+one call to <a class="reference internal" href="#gluNurbsSurface" title="gluNurbsSurface"><tt class="xref c c-func docutils literal"><span class="pre">gluNurbsSurface()</span></tt></a> for each of color, position, and texture
+data can be made within a single <a class="reference internal" href="gluBeginSurface.html#gluBeginSurface" title="gluBeginSurface"><tt class="xref c c-func docutils literal"><span class="pre">gluBeginSurface()</span></tt></a> / <a class="reference internal" href="gluBeginSurface.html#gluEndSurface" title="gluEndSurface"><tt class="xref c c-func docutils literal"><span class="pre">gluEndSurface()</span></tt></a>
+pair. Exactly one call must be made to describe the position of the
+surface (a <em>type</em> of <tt class="docutils literal"><span class="pre">GLU_MAP2_VERTEX_3</span></tt> or <tt class="docutils literal"><span class="pre">GLU_MAP2_VERTEX_4</span></tt>).</p>
+<p>A NURBS surface can be trimmed by using the commands
+<a class="reference internal" href="gluNurbsCurve.html#gluNurbsCurve" title="gluNurbsCurve"><tt class="xref c c-func docutils literal"><span class="pre">gluNurbsCurve()</span></tt></a> and <a class="reference internal" href="gluPwlCurve.html#gluPwlCurve" title="gluPwlCurve"><tt class="xref c c-func docutils literal"><span class="pre">gluPwlCurve()</span></tt></a> between calls to
+<a class="reference internal" href="gluBeginTrim.html#gluBeginTrim" title="gluBeginTrim"><tt class="xref c c-func docutils literal"><span class="pre">gluBeginTrim()</span></tt></a> and <a class="reference internal" href="gluBeginTrim.html#gluEndTrim" title="gluEndTrim"><tt class="xref c c-func docutils literal"><span class="pre">gluEndTrim()</span></tt></a>.</p>
+<p>Note that a <a class="reference internal" href="#gluNurbsSurface" title="gluNurbsSurface"><tt class="xref c c-func docutils literal"><span class="pre">gluNurbsSurface()</span></tt></a> with <em>sKnotCount</em> knots in the <strong>u</strong> direction
+and <em>tKnotCount</em> knots in the <strong>v</strong> direction with orders
+<em>sOrder</em> and <em>tOrder</em> must have
+(<em>sKnotCount</em> - <em>sOrder</em>) <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">times</mi></math></span> (<em>tKnotCount</em> - <em>tOrder</em>) control points.</p>
+<p class="rubric">Example</p>
+<p>The following commands render a textured NURBS surface with normals;
+the texture coordinates and normals are also NURBS surfaces:</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="n">gluBeginSurface</span><span class="p">(</span><span class="n">nobj</span><span class="p">);</span>
+   <span class="n">gluNurbsSurface</span><span class="p">(</span><span class="n">nobj</span><span class="p">,</span> <span class="p">...,</span> <span class="n">GL_MAP2_TEXTURE_COORD_2</span><span class="p">);</span>
+   <span class="n">gluNurbsSurface</span><span class="p">(</span><span class="n">nobj</span><span class="p">,</span> <span class="p">...,</span> <span class="n">GL_MAP2_NORMAL</span><span class="p">);</span>
+   <span class="n">gluNurbsSurface</span><span class="p">(</span><span class="n">nobj</span><span class="p">,</span> <span class="p">...,</span> <span class="n">GL_MAP2_VERTEX_4</span><span class="p">);</span>
+<span class="n">gluEndSurface</span><span class="p">(</span><span class="n">nobj</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="gluNurbsProperty.html"
+                        title="previous chapter">function <cite>gluNurbsProperty</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="gluOrtho2D.html"
+                        title="next chapter">function <cite>gluOrtho2D</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/gluNurbsSurface.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="gluOrtho2D.html" title="function gluOrtho2D"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="gluNurbsProperty.html" title="function gluNurbsProperty"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,159 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glIsTransformFeedback &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glIsVertexArray" href="glIsVertexArray.html" />
+    <link rel="prev" title="function glIsTexture" href="glIsTexture.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glIsVertexArray.html" title="function glIsVertexArray"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glIsTexture.html" title="function glIsTexture"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glistransformfeedback">
+<h1>function <cite>glIsTransformFeedback</cite><a class="headerlink" href="#function-glistransformfeedback" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Determine if a name corresponds to a transform feedback object</p>
+<dl class="function">
+<dt id="glIsTransformFeedback">
+<tt class="descname">glIsTransformFeedback</tt><big>(</big><big>)</big><a class="headerlink" href="#glIsTransformFeedback" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>id</strong> &#8211; Specifies a value that may be the name of a transform feedback object.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+GLboolean <tt class="descname">glIsTransformFeedback</tt><big>(</big>GLuint <em>&nbsp;id</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glGenTransformFeedbacks.html#glGenTransformFeedbacks" title="glGenTransformFeedbacks"><tt class="xref c c-func docutils literal"><span class="pre">glGenTransformFeedbacks()</span></tt></a>,
+<a class="reference internal" href="glBindTransformFeedback.html#glBindTransformFeedback" title="glBindTransformFeedback"><tt class="xref c c-func docutils literal"><span class="pre">glBindTransformFeedback()</span></tt></a>,
+<a class="reference internal" href="glDeleteTransformFeedbacks.html#glDeleteTransformFeedbacks" title="glDeleteTransformFeedbacks"><tt class="xref c c-func docutils literal"><span class="pre">glDeleteTransformFeedbacks()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glIsTransformFeedback" title="glIsTransformFeedback"><tt class="xref c c-func docutils literal"><span class="pre">glIsTransformFeedback()</span></tt></a> returns <tt class="docutils literal"><span class="pre">GL_TRUE</span></tt> if <em>id</em> is currently the name of a transform feedback
+object. If <em>id</em> is zero, or if <tt class="docutils literal"><span class="pre">id</span></tt> is not the name of a transform feedback object, or if an error
+occurs, <a class="reference internal" href="#glIsTransformFeedback" title="glIsTransformFeedback"><tt class="xref c c-func docutils literal"><span class="pre">glIsTransformFeedback()</span></tt></a> returns <tt class="docutils literal"><span class="pre">GL_FALSE</span></tt>. If <em>id</em> is a name returned by
+<a class="reference internal" href="glGenTransformFeedbacks.html#glGenTransformFeedbacks" title="glGenTransformFeedbacks"><tt class="xref c c-func docutils literal"><span class="pre">glGenTransformFeedbacks()</span></tt></a>, but that has not yet been bound through a call to
+<a class="reference internal" href="glBindTransformFeedback.html#glBindTransformFeedback" title="glBindTransformFeedback"><tt class="xref c c-func docutils literal"><span class="pre">glBindTransformFeedback()</span></tt></a>, then the name is not a transform feedback object and <a class="reference internal" href="#glIsTransformFeedback" title="glIsTransformFeedback"><tt class="xref c c-func docutils literal"><span class="pre">glIsTransformFeedback()</span></tt></a>
+returns <tt class="docutils literal"><span class="pre">GL_FALSE</span></tt>.</p>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)2010 Khronos Group. Open Publication License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glIsTexture.html"
+                        title="previous chapter">function <cite>glIsTexture</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glIsVertexArray.html"
+                        title="next chapter">function <cite>glIsVertexArray</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glIsTransformFeedback.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glIsVertexArray.html" title="function glIsVertexArray"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glIsTexture.html" title="function glIsTexture"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:27
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glInitNames.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glInitNames`
+----------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Initialize the name stack
+
+.. c:function:: glInitNames
+
+
+.. rubric:: Specification
+
+.. c:function:: void glInitNames(  void)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glLoadName`\ ,
+            :c:func:`glPushName`\ ,
+            :c:func:`glRenderMode`\ ,
+            :c:func:`glSelectBuffer`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+The name stack is used during selection mode to allow sets of rendering
+commands to be uniquely identified.
+It consists of an ordered set of unsigned integers.
+:c:func:`glInitNames` causes the name stack to be initialized to its default empty state.
+
+
+The name stack is always empty while the render mode is not ``GL_SELECT``\ .
+Calls to :c:func:`glInitNames` while the render mode is not ``GL_SELECT`` are ignored.
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_OPERATION`` is generated if :c:func:`glInitNames` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`\ .
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGet` with argument ``GL_NAME_STACK_DEPTH``
+* :c:func:`glGet` with argument ``GL_MAX_NAME_STACK_DEPTH``
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glInitNames'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

@@ -1,0 +1,80 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:28
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/gluOrtho2D.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `gluOrtho2D`
+---------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Define a 2D orthographic projection matrix
+
+.. c:function:: gluOrtho2D
+
+
+         :param left:
+         :param right:
+
+                  Specify the coordinates for the left and right vertical clipping planes.
+
+         :param bottom:
+         :param top:
+
+                  Specify the coordinates for the bottom and top horizontal clipping planes.
+
+.. rubric:: Specification
+
+.. c:function:: void gluOrtho2D(GLdouble  left, GLdouble  right, GLdouble  bottom, GLdouble  top)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glOrtho`\ ,
+            :c:func:`gluPerspective`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`gluOrtho2D` sets up a two-dimensional orthographic viewing region.
+This is equivalent to calling :c:func:`glOrtho` with |EQUATION_1_| and |EQUATION_2_|\ .
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'gluOrtho2D'>
+
+.. role:: mml(raw)
+   :format: html
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">near</mi><mo>=</mo><mn>-1</mn></mrow></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">far</mi><mo>=</mo><mn>1</mn></mrow></math>` 
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

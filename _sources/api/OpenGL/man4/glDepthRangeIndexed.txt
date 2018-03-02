@@ -1,0 +1,148 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:29
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glDepthRangeIndexed.xml'
+.. (c)2010 Khronos Group.
+.. See license details at http://opencontent.org/openpub/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glDepthRangeIndexed`
+------------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Specify mapping of depth values from normalized device coordinates to window coordinates for a specified viewport
+
+.. c:function:: glDepthRangeIndexed
+
+
+         :param index:
+
+                  Specifies the index of the viewport whose depth range to update.
+
+         :param nearVal:
+
+                  Specifies the mapping of the near clipping plane to window coordinates.
+                  The initial value is 0.
+
+         :param farVal:
+
+                  Specifies the mapping of the far clipping plane to window coordinates.
+                  The initial value is 1.
+
+.. rubric:: Specification
+
+.. c:function:: void glDepthRangeIndexed(GLuint  index, GLdouble  nearVal, GLdouble  farVal)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glDepthFunc`\ ,
+            :c:func:`glDepthRange`\ ,
+            :c:func:`glDepthRangeArray`\ ,
+            :c:func:`glPolygonOffset`\ ,
+            :c:func:`glViewportArray`\ ,
+            :c:func:`glViewport`\ ,
+            :c:func:`removedTypes`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+After clipping and division by :strong:`w`\ ,
+depth coordinates range from |EQUATION_1_| to 1,
+corresponding to the near and far clipping planes.
+Each viewport has an independent depth range specified as a linear mapping of the normalized
+depth coordinates in this range to window depth coordinates.
+Regardless of the actual depth buffer implementation,
+window coordinate depth values are treated as though they range
+from 0 through 1 (like color components).
+:c:func:`glDepthRangeIndexed` specifies a linear mapping of the normalized depth coordinates
+in this range to window depth coordinates for a specified viewport.
+Thus,
+the values accepted by :c:func:`glDepthRangeIndexed` are both clamped to this range
+before they are accepted.
+
+
+The *index* parameter specifies the index of first viewport whose depth
+range to modify and must be less than the value of ``GL_MAX_VIEWPORTS``\ .
+*nearVal* and *farVal* specify near and far values of the
+depth range for the specified viewport, respectively.
+
+
+The setting of (0,1) maps the near plane to 0 and
+the far plane to 1.
+With this mapping,
+the depth buffer range is fully utilized.
+
+
+.. note::
+
+
+   It is not necessary that the near plane distance be less than the far plane distance.
+   Reverse mappings such as
+   |EQUATION_2_|\ ,
+   and |EQUATION_3_| are acceptable.
+
+
+   The type of the *nearVal* and
+   *farVal* parameters was changed from
+   GLclampd to GLdouble. This change is transparent to user
+   code and is described in detail on the
+   :c:func:`removedTypes`
+   page.
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_VALUE`` is generated if *index* is greater than or equal to the value of ``GL_MAX_VIEWPORTS``\ .
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGet` with argument ``GL_DEPTH_RANGE``
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glDepthRangeIndexed'>
+
+.. role:: mml(raw)
+   :format: html
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mn>-1</mn></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">nearVal</mi><mo>=</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">farVal</mi><mo>=</mo><mn>0</mn></mrow></math>` 
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )2010 Khronos Group. Open Publication License.
+

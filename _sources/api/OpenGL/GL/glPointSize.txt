@@ -1,0 +1,63 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glPointSize`
+----------------------
+
+.. source file man4/glPointSize
+
+.. currentmodule:: OpenGL.GL
+
+Specify the diameter of rasterized points
+
+.. c:function:: glPointSize
+.. c:function:: void glPointSize(GLfloat  size)
+   :noindex: 
+
+
+   
+   :param size:
+      Specifies the diameter of rasterized points. The initial value is 1.
+   
+
+.. seealso::
+
+   
+   :c:func:`glEnable`, :c:func:`glPointParameter`
+   
+.. rubric:: Description
+
+
+:c:func:`glPointSize` specifies the rasterized diameter of points. If point size mode is disabled (see :c:func:`glEnable` with parameter ``GL_PROGRAM_POINT_SIZE``), this value will be used to rasterize points. Otherwise, the value written to the shading language built-in variable ``gl_PointSize`` will be used.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGet` with argument ``GL_POINT_SIZE_RANGE``
+   * :c:func:`glGet` with argument ``GL_POINT_SIZE_GRANULARITY``
+   * :c:func:`glGet` with argument ``GL_POINT_SIZE``
+   * :c:func:`glGet` with argument ``GL_POINT_SIZE_MIN``
+   * :c:func:`glGet` with argument ``GL_POINT_SIZE_MAX``
+   * :c:func:`glGet` with argument ``GL_POINT_FADE_THRESHOLD_SIZE``
+   * :c:func:`glIsEnabled` with argument ``GL_PROGRAM_POINT_SIZE``
+
+**Errors:**
+
+   * ``GL_INVALID_VALUE`` is generated if *size* is less than or equal to 0.
+
+
+
+.. note::
+
+   * The point size specified by :c:func:`glPointSize` is always returned when ``GL_POINT_SIZE`` is queried. Clamping and rounding for points have no effect on the specified value.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

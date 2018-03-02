@@ -1,0 +1,51 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `gluBeginPolygon`
+--------------------------
+
+.. source file man/gluBeginPolygon
+
+.. currentmodule:: OpenGL.GLU
+
+Delimit a polygon description
+
+.. c:function:: gluBeginPolygon
+.. c:function:: void gluBeginPolygon(GLUtesselator*  tess)
+   :noindex: 
+
+
+   
+   :param tess:
+      Specifies the tessellation object (created with :c:func:`gluNewTess`).
+   
+.. c:function:: void gluEndPolygon(GLUtesselator*  tess)
+
+.. seealso::
+
+   
+   :c:func:`gluNewTess`, :c:func:`gluNextContour`, :c:func:`gluTessBeginContour`, :c:func:`gluTessBeginPolygon`, :c:func:`gluTessCallback`, :c:func:`gluTessVertex`
+   
+.. rubric:: Description
+
+
+:c:func:`gluBeginPolygon` and :c:func:`gluEndPolygon` delimit the definition of a nonconvex polygon. To define such a polygon, first call :c:func:`gluBeginPolygon`. Then define the contours of the polygon by calling :c:func:`gluTessVertex` for each vertex and :c:func:`gluNextContour` to start each new contour. Finally, call :c:func:`gluEndPolygon` to signal the end of the definition. See the :c:func:`gluTessVertex` and :c:func:`gluNextContour` reference pages for more details.
+
+Once :c:func:`gluEndPolygon` is called, the polygon is tessellated, and the resulting triangles are described through callbacks. See :c:func:`gluTessCallback` for descriptions of the callback functions.
+
+
+
+
+.. note::
+
+   * This command is obsolete and is provided for backward compatibility only. Calls to :c:func:`gluBeginPolygon` are mapped to :c:func:`gluTessBeginPolygon` followed by :c:func:`gluTessBeginContour`. Calls to :c:func:`gluEndPolygon` are mapped to :c:func:`gluTessEndContour` followed by :c:func:`gluTessEndPolygon`.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

@@ -1,0 +1,95 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glVertex`
+-------------------
+
+.. source file man/glVertex
+
+.. currentmodule:: OpenGL.GL
+
+Specify a vertex
+
+.. c:function:: glVertex
+.. c:function:: void glVertex2s(GLshort  x, GLshort  y, GLint  x, GLint  y, GLfloat  x, GLfloat  y, GLdouble  x, GLdouble  y, GLshort  x, GLshort  y, GLshort  z, GLint  x, GLint  y, GLint  z, GLfloat  x, GLfloat  y, GLfloat  z, GLdouble  x, GLdouble  y, GLdouble  z, GLshort  x, GLshort  y, GLshort  z, GLshort  w, GLint  x, GLint  y, GLint  z, GLint  w, GLfloat  x, GLfloat  y, GLfloat  z, GLfloat  w, GLdouble  x, GLdouble  y, GLdouble  z, GLdouble  w)
+
+
+   
+   :param x:
+      Specify *`x`* , *`y`* , *`z`* , and *`w`* coordinates of a vertex. Not all parameters are present in all forms of the command.
+   
+.. c:function:: void glVertex2sv(const GLshort *  v, const GLint *  v, const GLfloat *  v, const GLdouble *  v, const GLshort *  v, const GLint *  v, const GLfloat *  v, const GLdouble *  v, const GLshort *  v, const GLint *  v, const GLfloat *  v, const GLdouble *  v)
+
+
+   
+   :param v:
+      Specifies a pointer to an array of two, three, or four elements. The elements of a two-element array are |EQUATION_1_| and |EQUATION_2_| ; of a three-element array, |EQUATION_3_| , |EQUATION_4_| , and |EQUATION_5_| ; and of a four-element array, |EQUATION_6_| , |EQUATION_7_| , |EQUATION_8_| , and |EQUATION_9_| .
+   
+
+.. seealso::
+
+   
+   :c:func:`glBegin`, :c:func:`glCallList`, :c:func:`glColor`, :c:func:`glEdgeFlag`, :c:func:`glEvalCoord`, :c:func:`glFogCoord`, :c:func:`glIndex`, :c:func:`glMaterial`, :c:func:`glMultiTexCoord`, :c:func:`glNormal`, :c:func:`glRect`, :c:func:`glTexCoord`, :c:func:`glVertexPointer`
+   
+.. rubric:: Description
+
+
+:c:func:`glVertex` commands are used within :c:func:`glBegin`/:c:func:`glEnd` pairs to specify point, line, and polygon vertices. The current color, normal, texture coordinates, and fog coordinate are associated with the vertex when :c:func:`glVertex` is called.
+
+When only |EQUATION_10_| and |EQUATION_11_| are specified, |EQUATION_12_| defaults to 0 and |EQUATION_13_| defaults to 1. When |EQUATION_14_| , |EQUATION_15_| , and |EQUATION_16_| are specified, |EQUATION_17_| defaults to 1.
+
+
+
+
+.. note::
+
+   * Invoking :c:func:`glVertex` outside of a :c:func:`glBegin`/:c:func:`glEnd` pair results in undefined behavior.
+
+
+
+.. role:: mml(raw)
+   :format: html
+
+
+
+.. |EQUATION_10_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">x</mi></math>` 
+
+.. |EQUATION_11_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">y</mi></math>` 
+
+.. |EQUATION_12_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">z</mi></math>` 
+
+.. |EQUATION_13_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">w</mi></math>` 
+
+.. |EQUATION_14_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">x</mi></math>` 
+
+.. |EQUATION_15_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">y</mi></math>` 
+
+.. |EQUATION_16_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">z</mi></math>` 
+
+.. |EQUATION_17_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">w</mi></math>` 
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">x</mi></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">y</mi></math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">x</mi></math>` 
+
+.. |EQUATION_4_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">y</mi></math>` 
+
+.. |EQUATION_5_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">z</mi></math>` 
+
+.. |EQUATION_6_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">x</mi></math>` 
+
+.. |EQUATION_7_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">y</mi></math>` 
+
+.. |EQUATION_8_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">z</mi></math>` 
+
+.. |EQUATION_9_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">w</mi></math>` 
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

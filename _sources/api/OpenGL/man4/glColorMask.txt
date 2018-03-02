@@ -1,0 +1,97 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:28
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glColorMask.xml'
+.. (c)1991-2006 Silicon Graphics, Inc. 2010-2011 Khronos Group.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glColorMask`
+----------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Enable and disable writing of frame buffer color components
+
+.. c:function:: glColorMask
+
+
+         :param buf:
+
+                  For :c:func:`glColorMaski`\ , specifies the index of the
+                  draw buffer whose color mask to set.
+
+         :param red:
+         :param green:
+         :param blue:
+         :param alpha:
+
+                  Specify whether red, green, blue, and alpha are to be written
+                  into the frame buffer.
+                  The initial values are all ``GL_TRUE``\ ,
+                  indicating that the color components are written.
+
+.. rubric:: Specification
+
+.. c:function:: void glColorMask(GLboolean  red, GLboolean  green, GLboolean  blue, GLboolean  alpha, GLuint  buf, GLboolean  red, GLboolean  green, GLboolean  blue, GLboolean  alpha)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glClear`\ ,
+            :c:func:`glDepthMask`\ ,
+            :c:func:`glStencilMask`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glColorMask` and :c:func:`glColorMaski` specify whether the individual color components in the frame buffer
+can or cannot be written. :c:func:`glColorMaski` sets the mask for a specific draw buffer, whereas
+:c:func:`glColorMask` sets the mask for all draw buffers.
+If *red* is ``GL_FALSE``\ ,
+for example,
+no change is made to the red component of any pixel in any of the
+color buffers,
+regardless of the drawing operation attempted.
+
+
+Changes to individual bits of components cannot be controlled.
+Rather,
+changes are either enabled or disabled for entire color components.
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGet` with argument ``GL_COLOR_WRITEMASK``
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glColorMask'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. (\ c\ )2010-2011 Khronos Group. SGI Free Software B License.
+

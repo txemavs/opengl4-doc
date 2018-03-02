@@ -1,0 +1,54 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glGetRenderbufferParameter`
+-------------------------------------
+
+.. source file man4/glGetRenderbufferParameter
+
+.. currentmodule:: OpenGL.GL
+
+Retrieve information about a bound renderbuffer object
+
+.. c:function:: glGetRenderbufferParameter
+.. c:function:: void glGetRenderbufferParameteriv(GLenum  target, GLenum  pname, GLint * params)
+
+
+   
+   :param target:
+      Specifies the target of the query operation. *target* must be ``GL_RENDERBUFFER``.
+   
+   :param pname:
+      Specifies the parameter whose value to retrieve from the renderbuffer bound to *target* .
+   
+   :param params:
+      Specifies the address of an array to receive the value of the queried parameter.
+   
+
+.. seealso::
+
+   
+   :c:func:`glGenRenderbuffers`, :c:func:`glFramebufferRenderbuffer`, :c:func:`glBindRenderbuffer`, :c:func:`glRenderbufferStorage`, :c:func:`glRenderbufferStorageMultisample`
+   
+.. rubric:: Description
+
+
+:c:func:`glGetRenderbufferParameteriv` retrieves information about a bound renderbuffer object. *target* specifies the target of the query operation and must be ``GL_RENDERBUFFER``. *pname* specifies the parameter whose value to query and must be one of ``GL_RENDERBUFFER_WIDTH``, ``GL_RENDERBUFFER_HEIGHT``, ``GL_RENDERBUFFER_INTERNAL_FORMAT``, ``GL_RENDERBUFFER_RED_SIZE``, ``GL_RENDERBUFFER_GREEN_SIZE``, ``GL_RENDERBUFFER_BLUE_SIZE``, ``GL_RENDERBUFFER_ALPHA_SIZE``, ``GL_RENDERBUFFER_DEPTH_SIZE``, ``GL_RENDERBUFFER_DEPTH_SIZE``, ``GL_RENDERBUFFER_STENCIL_SIZE``, or ``GL_RENDERBUFFER_SAMPLES``.
+
+Upon a successful return from :c:func:`glGetRenderbufferParameteriv`, if *pname* is ``GL_RENDERBUFFER_WIDTH``, ``GL_RENDERBUFFER_HEIGHT``, ``GL_RENDERBUFFER_INTERNAL_FORMAT``, or ``GL_RENDERBUFFER_SAMPLES``, then *params* will contain the width in pixels, the height in pixels, the internal format, or the number of samples, respectively, of the image of the renderbuffer currently bound to *target* .
+
+If *pname* is ``GL_RENDERBUFFER_RED_SIZE``, ``GL_RENDERBUFFER_GREEN_SIZE``, ``GL_RENDERBUFFER_BLUE_SIZE``, ``GL_RENDERBUFFER_ALPHA_SIZE``, ``GL_RENDERBUFFER_DEPTH_SIZE``, or ``GL_RENDERBUFFER_STENCIL_SIZE``, then *params* will contain the actual resolutions (not the resolutions specified when the image array was defined) for the red, green, blue, alpha depth, or stencil components, respectively, of the image of the renderbuffer currently bound to *target* .
+
+
+**Errors:**
+
+   * ``GL_INVALID_ENUM`` is generated if *pname* is not one of the accepted tokens.
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

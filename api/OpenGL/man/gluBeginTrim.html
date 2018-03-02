@@ -1,0 +1,221 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function gluBeginTrim &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function gluBuild1DMipmapLevels" href="gluBuild1DMipmapLevels.html" />
+    <link rel="prev" title="function gluBeginSurface" href="gluBeginSurface.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="gluBuild1DMipmapLevels.html" title="function gluBuild1DMipmapLevels"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="gluBeginSurface.html" title="function gluBeginSurface"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glubegintrim">
+<h1>function <cite>gluBeginTrim</cite><a class="headerlink" href="#function-glubegintrim" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Delimit a NURBS trimming loop definition</p>
+<dl class="function">
+<dt id="gluBeginTrim">
+<tt class="descname">gluBeginTrim</tt><big>(</big><big>)</big><a class="headerlink" href="#gluBeginTrim" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>nurb</strong> &#8211; Specifies the NURBS object (created with <a class="reference internal" href="gluNewNurbsRenderer.html#gluNewNurbsRenderer" title="gluNewNurbsRenderer"><tt class="xref c c-func docutils literal"><span class="pre">gluNewNurbsRenderer()</span></tt></a>).</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">gluBeginTrim</tt><big>(</big>GLUnurbs* <em>&nbsp;nurb</em><big>)</big></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="gluEndTrim">
+void <tt class="descname">gluEndTrim</tt><big>(</big>GLUnurbs* <em>&nbsp;nurb</em><big>)</big><a class="headerlink" href="#gluEndTrim" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="gluBeginSurface.html#gluBeginSurface" title="gluBeginSurface"><tt class="xref c c-func docutils literal"><span class="pre">gluBeginSurface()</span></tt></a>,
+<a class="reference internal" href="gluNewNurbsRenderer.html#gluNewNurbsRenderer" title="gluNewNurbsRenderer"><tt class="xref c c-func docutils literal"><span class="pre">gluNewNurbsRenderer()</span></tt></a>,
+<a class="reference internal" href="gluNurbsCallback.html#gluNurbsCallback" title="gluNurbsCallback"><tt class="xref c c-func docutils literal"><span class="pre">gluNurbsCallback()</span></tt></a>,
+<a class="reference internal" href="gluNurbsCurve.html#gluNurbsCurve" title="gluNurbsCurve"><tt class="xref c c-func docutils literal"><span class="pre">gluNurbsCurve()</span></tt></a>,
+<a class="reference internal" href="gluPwlCurve.html#gluPwlCurve" title="gluPwlCurve"><tt class="xref c c-func docutils literal"><span class="pre">gluPwlCurve()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p>Use <a class="reference internal" href="#gluBeginTrim" title="gluBeginTrim"><tt class="xref c c-func docutils literal"><span class="pre">gluBeginTrim()</span></tt></a> to mark the beginning of a
+trimming loop and <a class="reference internal" href="#gluEndTrim" title="gluEndTrim"><tt class="xref c c-func docutils literal"><span class="pre">gluEndTrim()</span></tt></a> to mark the end
+of a trimming loop. A trimming loop is
+a set of oriented curve segments (forming a closed curve) that
+define boundaries of a NURBS surface. You include these
+trimming loops in the definition of a NURBS
+surface, between calls to <a class="reference internal" href="gluBeginSurface.html#gluBeginSurface" title="gluBeginSurface"><tt class="xref c c-func docutils literal"><span class="pre">gluBeginSurface()</span></tt></a> and <a class="reference internal" href="gluBeginSurface.html#gluEndSurface" title="gluEndSurface"><tt class="xref c c-func docutils literal"><span class="pre">gluEndSurface()</span></tt></a>.</p>
+<p>The definition for a NURBS surface can contain many
+trimming loops. For example, if you wrote a definition
+for a NURBS surface that resembled a rectangle with
+a hole punched out, the definition would contain two
+trimming loops. One loop would define the outer edge
+of the rectangle; the other would define
+the hole punched out of the rectangle. The definitions
+of each of these trimming loops would be bracketed by a
+<a class="reference internal" href="#gluBeginTrim" title="gluBeginTrim"><tt class="xref c c-func docutils literal"><span class="pre">gluBeginTrim()</span></tt></a> / <a class="reference internal" href="#gluEndTrim" title="gluEndTrim"><tt class="xref c c-func docutils literal"><span class="pre">gluEndTrim()</span></tt></a> pair.</p>
+<p>The definition of a single closed trimming loop can consist
+of multiple curve segments, each described as a piecewise
+linear curve (see <a class="reference internal" href="gluPwlCurve.html#gluPwlCurve" title="gluPwlCurve"><tt class="xref c c-func docutils literal"><span class="pre">gluPwlCurve()</span></tt></a>) or as a single NURBS
+curve (see <a class="reference internal" href="gluNurbsCurve.html#gluNurbsCurve" title="gluNurbsCurve"><tt class="xref c c-func docutils literal"><span class="pre">gluNurbsCurve()</span></tt></a>), or as a combination of
+both in any order. The only library calls that can
+appear in a trimming loop definition (between the calls
+to <a class="reference internal" href="#gluBeginTrim" title="gluBeginTrim"><tt class="xref c c-func docutils literal"><span class="pre">gluBeginTrim()</span></tt></a> and <a class="reference internal" href="#gluEndTrim" title="gluEndTrim"><tt class="xref c c-func docutils literal"><span class="pre">gluEndTrim()</span></tt></a>) are
+<a class="reference internal" href="gluPwlCurve.html#gluPwlCurve" title="gluPwlCurve"><tt class="xref c c-func docutils literal"><span class="pre">gluPwlCurve()</span></tt></a> and <a class="reference internal" href="gluNurbsCurve.html#gluNurbsCurve" title="gluNurbsCurve"><tt class="xref c c-func docutils literal"><span class="pre">gluNurbsCurve()</span></tt></a>.</p>
+<p>The area of the NURBS surface that is displayed is the
+region in the domain to the left of the trimming curve
+as the curve parameter increases. Thus, the retained
+region of the NURBS surface is inside a
+counterclockwise trimming loop and outside a clockwise
+trimming loop. For the rectangle mentioned earlier,
+the trimming loop for the outer edge of the rectangle runs
+counterclockwise, while the trimming loop for the punched-out hole
+runs clockwise.</p>
+<p>If you use more than one curve to define a single trimming
+loop, the curve segments must form a closed loop (that is,
+the endpoint of each curve must be the starting point of the
+next curve, and the endpoint of the final curve must
+be the starting point of the first curve). If the
+endpoints of the curve are sufficiently close together
+but not exactly coincident, they will be coerced to match.
+If the endpoints are not sufficiently close, an error results
+(see <a class="reference internal" href="gluNurbsCallback.html#gluNurbsCallback" title="gluNurbsCallback"><tt class="xref c c-func docutils literal"><span class="pre">gluNurbsCallback()</span></tt></a>).</p>
+<p>If a trimming loop definition contains multiple curves,
+the direction of the curves must be consistent (that is, the
+inside must be to the left of all of the curves). Nested
+trimming loops are legal as long as the curve orientations
+alternate correctly.
+If trimming curves are self-intersecting,
+or intersect one another, an error results.</p>
+<p>If no trimming information is given
+for a NURBS surface, the entire surface is drawn.</p>
+<p class="rubric">Example</p>
+<p>This code fragment defines a trimming loop that consists of one
+piecewise linear curve, and two NURBS curves:</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="n">gluBeginTrim</span><span class="p">(</span><span class="n">nobj</span><span class="p">);</span>
+   <span class="n">gluPwlCurve</span><span class="p">(...,</span> <span class="n">GLU_MAP1_TRIM_2</span><span class="p">);</span>
+   <span class="n">gluNurbsCurve</span><span class="p">(...,</span> <span class="n">GLU_MAP1_TRIM_2</span><span class="p">);</span>
+   <span class="n">gluNurbsCurve</span><span class="p">(...,</span> <span class="n">GLU_MAP1_TRIM_3</span><span class="p">);</span>
+<span class="n">gluEndTrim</span><span class="p">(</span><span class="n">nobj</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="gluBeginSurface.html"
+                        title="previous chapter">function <cite>gluBeginSurface</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="gluBuild1DMipmapLevels.html"
+                        title="next chapter">function <cite>gluBuild1DMipmapLevels</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/gluBeginTrim.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="gluBuild1DMipmapLevels.html" title="function gluBuild1DMipmapLevels"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="gluBeginSurface.html" title="function gluBeginSurface"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

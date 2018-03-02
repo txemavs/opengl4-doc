@@ -1,0 +1,60 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glFogCoord`
+---------------------
+
+.. source file man/glFogCoord
+
+.. currentmodule:: OpenGL.GL
+
+Set the current fog coordinates
+
+.. c:function:: glFogCoord
+.. c:function:: void glFogCoordd(GLdouble  coord, GLfloat  coord)
+
+
+   
+   :param coord:
+      Specify the fog distance.
+   
+.. c:function:: void glFogCoorddv(GLdouble *  coord, GLfloat *  coord)
+
+
+   
+   :param coord:
+      Specifies a pointer to an array containing a single value representing the fog distance.
+   
+
+.. seealso::
+
+   
+   :c:func:`glFog`, :c:func:`glFogCoordPointer`, :c:func:`glVertex`
+   
+.. rubric:: Description
+
+
+:c:func:`glFogCoord` specifies the fog coordinate that is associated with each vertex and the current raster position. The value specified is interpolated and used in computing the fog color (see :c:func:`glFog`).
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGet` with argument ``GL_CURRENT_FOG_COORD``
+
+
+
+.. note::
+
+   * :c:func:`glFogCoord` is available only if the GL version is 1.4 or greater.
+   * The current fog coordinate can be updated at any time. In particular, :c:func:`glFogCoord` can be called between a call to :c:func:`glBegin` and the corresponding call to :c:func:`glEnd`.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

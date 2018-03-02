@@ -1,0 +1,60 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glClearDepth`
+-----------------------
+
+.. source file man4/glClearDepth
+
+.. currentmodule:: OpenGL.GL
+
+Specify the clear value for the depth buffer
+
+.. c:function:: glClearDepth
+.. c:function:: void glClearDepth(GLdouble  depth, GLfloat  depth)
+   :noindex: 
+
+
+   
+   :param depth:
+      Specifies the depth value used when the depth buffer is cleared. The initial value is 1.
+   
+
+.. seealso::
+
+   
+   :c:func:`glClear`, :c:func:`removedTypes`
+   
+.. rubric:: Description
+
+
+:c:func:`glClearDepth` specifies the depth value used by :c:func:`glClear` to clear the depth buffer. Values specified by :c:func:`glClearDepth` are clamped to the range |EQUATION_1_| .
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGet` with argument ``GL_DEPTH_CLEAR_VALUE``
+
+
+
+.. note::
+
+   * The type of the *depth* parameter was changed from GLclampf to GLfloat for :c:func:`glClearDepthf` and from GLclampd to GLdouble for :c:func:`glClearDepth`. This change is transparent to user code and is described in detail on the :c:func:`removedTypes` page.
+
+
+
+.. role:: mml(raw)
+   :format: html
+
+
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"> <mn>0</mn> <mn>1</mn> </mfenced> </math>` 
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

@@ -1,0 +1,64 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glGenLists`
+---------------------
+
+.. source file man/glGenLists
+
+.. currentmodule:: OpenGL.GL
+
+Generate a contiguous set of empty display lists
+
+.. c:function:: glGenLists
+.. c:function:: GLuint glGenLists(GLsizei  range)
+   :noindex: 
+
+
+   
+   :param range:
+      Specifies the number of contiguous empty display lists to be generated.
+   
+
+.. seealso::
+
+   
+   :c:func:`glCallList`, :c:func:`glCallLists`, :c:func:`glDeleteLists`, :c:func:`glNewList`
+   
+.. rubric:: Description
+
+
+:c:func:`glGenLists` has one argument, *range* . It returns an integer *`n`* such that *range* contiguous empty display lists, named |EQUATION_1_| , |EQUATION_2_| , |EQUATION_3_| , |EQUATION_4_| , are created. If *range* is 0, if there is no group of *range* contiguous names available, or if any error is generated, no display lists are generated, and 0 is returned.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glIsList`
+
+**Errors:**
+
+   * ``GL_INVALID_VALUE`` is generated if *range* is negative.
+   * ``GL_INVALID_OPERATION`` is generated if :c:func:`glGenLists` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`.
+
+
+.. role:: mml(raw)
+   :format: html
+
+
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mi mathvariant="italic">n</mi> <mo>+</mo> <mn>1</mn> </mrow> </math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mi mathvariant="italic">...</mi> </math>` 
+
+.. |EQUATION_4_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mi mathvariant="italic">n</mi> <mo>+</mo> <mi mathvariant="italic">range</mi> <mo>-</mo> <mn>1</mn> </mrow> </math>` 
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

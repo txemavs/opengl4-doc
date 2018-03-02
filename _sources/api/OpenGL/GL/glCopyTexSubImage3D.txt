@@ -1,0 +1,133 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glCopyTexSubImage3D`
+------------------------------
+
+.. source file man4/glCopyTexSubImage3D
+
+.. currentmodule:: OpenGL.GL
+
+Copy a three-dimensional texture subimage
+
+.. c:function:: glCopyTexSubImage3D
+.. c:function:: void glCopyTexSubImage3D(GLenum  target, GLint  level, GLint  xoffset, GLint  yoffset, GLint  zoffset, GLint  x, GLint  y, GLsizei  width, GLsizei  height)
+   :noindex: 
+
+
+   
+   :param target:
+      Specifies the target texture. Must be ``GL_TEXTURE_3D``
+   
+   :param level:
+      Specifies the level-of-detail number. Level 0 is the base image level. Level *`n`* is the *`n`* th mipmap reduction image.
+   
+   :param xoffset:
+      Specifies a texel offset in the x direction within the texture array.
+   
+   :param yoffset:
+      Specifies a texel offset in the y direction within the texture array.
+   
+   :param zoffset:
+      Specifies a texel offset in the z direction within the texture array.
+   
+   :param x:
+      Specify the window coordinates of the lower left corner of the rectangular region of pixels to be copied.
+   
+   :param width:
+      Specifies the width of the texture subimage.
+   
+   :param height:
+      Specifies the height of the texture subimage.
+   
+
+.. seealso::
+
+   
+   :c:func:`glCopyTexImage1D`, :c:func:`glCopyTexImage2D`, :c:func:`glCopyTexSubImage1D`, :c:func:`glCopyTexSubImage2D`, :c:func:`glPixelStore`, :c:func:`glReadBuffer`, :c:func:`glTexImage1D`, :c:func:`glTexImage2D`, :c:func:`glTexImage3D`, :c:func:`glTexParameter`, :c:func:`glTexSubImage1D`, :c:func:`glTexSubImage2D`, :c:func:`glTexSubImage3D`
+   
+.. rubric:: Description
+
+
+:c:func:`glCopyTexSubImage3D` replaces a rectangular portion of a three-dimensional texture image with pixels from the current ``GL_READ_BUFFER`` (rather than from main memory, as is the case for :c:func:`glTexSubImage3D`).
+
+The screen-aligned pixel rectangle with lower left corner at ( *x* , *y* ) and with width *width* and height *height* replaces the portion of the texture array with x indices *xoffset* through |EQUATION_1_| , inclusive, and y indices *yoffset* through |EQUATION_2_| , inclusive, at z index *zoffset* and at the mipmap level specified by *level* .
+
+The pixels in the rectangle are processed exactly as if :c:func:`glReadPixels` had been called, but the process stops just before final conversion. At this point, all pixel component values are clamped to the range |EQUATION_3_| and then converted to the texture's internal format for storage in the texel array.
+
+The destination rectangle in the texture array may not include any texels outside the texture array as it was originally specified. It is not an error to specify a subtexture with zero width or height, but such a specification has no effect.
+
+If any of the pixels within the specified rectangle of the current ``GL_READ_BUFFER`` are outside the read window associated with the current rendering context, then the values obtained for those pixels are undefined.
+
+No change is made to the *`internalformat`* , *`width`* , *`height`* , *`depth`* , or *`border`* parameters of the specified texture array or to texel values outside the specified subregion.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGetTexImage`
+
+**Errors:**
+
+   * ``GL_INVALID_ENUM`` is generated if / *target* is not ``GL_TEXTURE_3D``.
+   * ``GL_INVALID_OPERATION`` is generated if the texture array has not been defined by a previous :c:func:`glTexImage3D` operation.
+   * ``GL_INVALID_VALUE`` is generated if *level* is less than 0.
+   * ``GL_INVALID_VALUE`` may be generated if |EQUATION_4_| , where |EQUATION_5_| is the returned value of ``GL_MAX_3D_TEXTURE_SIZE``.
+   * ``GL_INVALID_VALUE`` is generated if |EQUATION_6_| , |EQUATION_7_| , |EQUATION_8_| , |EQUATION_9_| , |EQUATION_10_| , or |EQUATION_11_| , where |EQUATION_12_| is the ``GL_TEXTURE_WIDTH``, |EQUATION_13_| is the ``GL_TEXTURE_HEIGHT``, |EQUATION_14_| is the ``GL_TEXTURE_DEPTH``, and |EQUATION_15_| is the ``GL_TEXTURE_BORDER`` of the texture image being modified. Note that |EQUATION_16_| , |EQUATION_17_| , and |EQUATION_18_| include twice the border width.
+
+
+
+.. note::
+
+   * :c:func:`glPixelStore` modes affect texture images.
+
+
+
+.. role:: mml(raw)
+   :format: html
+
+
+
+.. |EQUATION_10_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mi mathvariant="italic">zoffset</mi> <mo>&lt;</mo> <mrow> <mo>-</mo> <mi mathvariant="italic">b</mi> </mrow> </mrow> </math>` 
+
+.. |EQUATION_11_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mfenced open="(" close=")"> <mrow> <mi mathvariant="italic">zoffset</mi> <mo>+</mo> <mn>1</mn> </mrow> </mfenced> <mo>&gt;</mo> <mfenced open="(" close=")"> <mrow> <mi mathvariant="italic">d</mi> <mo>-</mo> <mi mathvariant="italic">b</mi> </mrow> </mfenced> </mrow> </math>` 
+
+.. |EQUATION_12_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">w</mi></math>` 
+
+.. |EQUATION_13_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">h</mi></math>` 
+
+.. |EQUATION_14_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">d</mi></math>` 
+
+.. |EQUATION_15_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">b</mi></math>` 
+
+.. |EQUATION_16_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">w</mi></math>` 
+
+.. |EQUATION_17_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">h</mi></math>` 
+
+.. |EQUATION_18_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">d</mi></math>` 
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mi mathvariant="italic">xoffset</mi> <mo>+</mo> <mi mathvariant="italic">width</mi> <mo>-</mo> <mn>1</mn> </mrow> </math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mi mathvariant="italic">yoffset</mi> <mo>+</mo> <mi mathvariant="italic">height</mi> <mo>-</mo> <mn>1</mn> </mrow> </math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"> <mn>0</mn> <mn>1</mn> </mfenced> </math>` 
+
+.. |EQUATION_4_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mi mathvariant="italic">level</mi> <mo>&gt;</mo> <mrow> <msub><mi mathvariant="italic">log</mi> <mn>2</mn> </msub> <mo>&af;</mo> <mfenced open="(" close=")"> <mi mathvariant="italic">max</mi> </mfenced> </mrow> </mrow> </math>` 
+
+.. |EQUATION_5_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">max</mi></math>` 
+
+.. |EQUATION_6_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mi mathvariant="italic">xoffset</mi> <mo>&lt;</mo> <mrow> <mo>-</mo> <mi mathvariant="italic">b</mi> </mrow> </mrow> </math>` 
+
+.. |EQUATION_7_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mfenced open="(" close=")"> <mrow> <mi mathvariant="italic">xoffset</mi> <mo>+</mo> <mi mathvariant="italic">width</mi> </mrow> </mfenced> <mo>&gt;</mo> <mfenced open="(" close=")"> <mrow> <mi mathvariant="italic">w</mi> <mo>-</mo> <mi mathvariant="italic">b</mi> </mrow> </mfenced> </mrow> </math>` 
+
+.. |EQUATION_8_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mi mathvariant="italic">yoffset</mi> <mo>&lt;</mo> <mrow> <mo>-</mo> <mi mathvariant="italic">b</mi> </mrow> </mrow> </math>` 
+
+.. |EQUATION_9_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mfenced open="(" close=")"> <mrow> <mi mathvariant="italic">yoffset</mi> <mo>+</mo> <mi mathvariant="italic">height</mi> </mrow> </mfenced> <mo>&gt;</mo> <mfenced open="(" close=")"> <mrow> <mi mathvariant="italic">h</mi> <mo>-</mo> <mi mathvariant="italic">b</mi> </mrow> </mfenced> </mrow> </math>` 
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

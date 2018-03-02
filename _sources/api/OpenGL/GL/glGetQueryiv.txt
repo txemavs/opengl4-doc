@@ -1,0 +1,60 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glGetQueryiv`
+-----------------------
+
+.. source file man4/glGetQueryiv
+
+.. currentmodule:: OpenGL.GL
+
+Return parameters of a query object target
+
+.. c:function:: glGetQueryiv
+.. c:function:: void glGetQueryiv(GLenum  target, GLenum  pname, GLint *  params)
+   :noindex: 
+
+
+   
+   :param target:
+      Specifies a query object target. Must be ``GL_SAMPLES_PASSED``, ``GL_ANY_SAMPLES_PASSED``, ``GL_PRIMITIVES_GENERATED``, ``GL_TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN``, ``GL_TIME_ELAPSED``, or ``GL_TIMESTAMP``.
+   
+   :param pname:
+      Specifies the symbolic name of a query object target parameter. Accepted values are ``GL_CURRENT_QUERY`` or ``GL_QUERY_COUNTER_BITS``.
+   
+   :param params:
+      Returns the requested data.
+   
+
+.. seealso::
+
+   
+   :c:func:`glGetQueryObject`, :c:func:`glIsQuery`
+   
+.. rubric:: Description
+
+
+:c:func:`glGetQueryiv` returns in *params* a selected parameter of the query object target specified by *target* .
+
+*pname* names a specific query object target parameter. When *pname* is ``GL_CURRENT_QUERY``, the name of the currently active query for *target* , or zero if no query is active, will be placed in *params* . If *pname* is ``GL_QUERY_COUNTER_BITS``, the implementation-dependent number of bits used to hold the result of queries for *target* is returned in *params* .
+
+
+**Errors:**
+
+   * ``GL_INVALID_ENUM`` is generated if *target* or *pname* is not an accepted value.
+
+
+
+.. note::
+
+   * If an error is generated, no change is made to the contents of *params* .
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

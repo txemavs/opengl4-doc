@@ -1,0 +1,177 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glUniformBlockBinding &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glUniformSubroutines" href="glUniformSubroutines.html" />
+    <link rel="prev" title="function glUniform" href="glUniform.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glUniformSubroutines.html" title="function glUniformSubroutines"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glUniform.html" title="function glUniform"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-gluniformblockbinding">
+<h1>function <cite>glUniformBlockBinding</cite><a class="headerlink" href="#function-gluniformblockbinding" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Assign a binding point to an active uniform block</p>
+<dl class="function">
+<dt id="glUniformBlockBinding">
+<tt class="descname">glUniformBlockBinding</tt><big>(</big><big>)</big><a class="headerlink" href="#glUniformBlockBinding" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>program</strong> &#8211; The name of a program object containing the active uniform block whose binding to assign.</li>
+<li><strong>uniformBlockIndex</strong> &#8211; The index of the active uniform block within <em>program</em> whose binding to assign.</li>
+<li><strong>uniformBlockBinding</strong> &#8211; Specifies the binding point to which to bind the uniform block with index <em>uniformBlockIndex</em> within <em>program</em>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glUniformBlockBinding</tt><big>(</big>GLuint <em>&nbsp;program</em>, GLuint <em>&nbsp;uniformBlockIndex</em>, GLuint <em>&nbsp;uniformBlockBinding</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glLinkProgram.html#glLinkProgram" title="glLinkProgram"><tt class="xref c c-func docutils literal"><span class="pre">glLinkProgram()</span></tt></a>,
+<a class="reference internal" href="glBindBufferBase.html#glBindBufferBase" title="glBindBufferBase"><tt class="xref c c-func docutils literal"><span class="pre">glBindBufferBase()</span></tt></a>,
+<a class="reference internal" href="glBindBufferRange.html#glBindBufferRange" title="glBindBufferRange"><tt class="xref c c-func docutils literal"><span class="pre">glBindBufferRange()</span></tt></a>,
+<a class="reference internal" href="glGetActiveUniformBlock.html#glGetActiveUniformBlock" title="glGetActiveUniformBlock"><tt class="xref c c-func docutils literal"><span class="pre">glGetActiveUniformBlock()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p>Binding points for active uniform blocks are assigned using <a class="reference internal" href="#glUniformBlockBinding" title="glUniformBlockBinding"><tt class="xref c c-func docutils literal"><span class="pre">glUniformBlockBinding()</span></tt></a>. Each of a program&#8217;s active uniform
+blocks has a corresponding uniform buffer binding point. <em>program</em> is the name of a program object for which the command
+<a class="reference internal" href="glLinkProgram.html#glLinkProgram" title="glLinkProgram"><tt class="xref c c-func docutils literal"><span class="pre">glLinkProgram()</span></tt></a> has been issued in the past.</p>
+<p>If successful, <a class="reference internal" href="#glUniformBlockBinding" title="glUniformBlockBinding"><tt class="xref c c-func docutils literal"><span class="pre">glUniformBlockBinding()</span></tt></a> specifies that <em>program</em> will use the data store of the
+buffer object bound to the binding point <em>uniformBlockBinding</em> to extract the values of the uniforms in the
+uniform block identified by <em>uniformBlockIndex</em>.</p>
+<p>When a program object is linked or re-linked, the uniform buffer object binding point assigned to each of its active uniform blocks is reset to zero.</p>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>uniformBlockIndex</em> is not an active uniform block index of <em>program</em>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>uniformBlockBinding</em> is greater than or equal to the value of <tt class="docutils literal"><span class="pre">GL_MAX_UNIFORM_BUFFER_BINDINGS</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated <em>program</em> is not the name of a program object generated by the GL.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><a class="reference internal" href="#glUniformBlockBinding" title="glUniformBlockBinding"><tt class="xref c c-func docutils literal"><span class="pre">glUniformBlockBinding()</span></tt></a> is available only if the GL version is 3.1 or greater.</p>
+</div>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glGetActiveUniformBlock.html#glGetActiveUniformBlock" title="glGetActiveUniformBlock"><tt class="xref c c-func docutils literal"><span class="pre">glGetActiveUniformBlock()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_UNIFORM_BLOCK_BINDING</span></tt></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)2010 Khronos Group. Open Publication License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glUniform.html"
+                        title="previous chapter">function <cite>glUniform</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glUniformSubroutines.html"
+                        title="next chapter">function <cite>glUniformSubroutines</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glUniformBlockBinding.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glUniformSubroutines.html" title="function glUniformSubroutines"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glUniform.html" title="function glUniform"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

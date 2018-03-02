@@ -1,0 +1,190 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glIndex &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function glIndexMask" href="glIndexMask.html" />
+    <link rel="prev" title="function glHistogram" href="glHistogram.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glIndexMask.html" title="function glIndexMask"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glHistogram.html" title="function glHistogram"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glindex">
+<h1>function <cite>glIndex</cite><a class="headerlink" href="#function-glindex" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Set the current color index</p>
+<dl class="function">
+<dt id="glIndex">
+<tt class="descname">glIndex</tt><big>(</big><big>)</big><a class="headerlink" href="#glIndex" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>c</strong> &#8211; Specifies the new value for the current color index.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt id="glIndexs">
+void <tt class="descname">glIndexs</tt><big>(</big>GLshort <em>&nbsp;c</em>, GLint <em>&nbsp;c</em>, GLfloat <em>&nbsp;c</em>, GLdouble <em>&nbsp;c</em>, GLubyte <em>&nbsp;c</em><big>)</big><a class="headerlink" href="#glIndexs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="glIndexsv">
+void <tt class="descname">glIndexsv</tt><big>(</big>const GLshort * <em>&nbsp;c</em>, const GLint * <em>&nbsp;c</em>, const GLfloat * <em>&nbsp;c</em>, const GLdouble * <em>&nbsp;c</em>, const GLubyte * <em>&nbsp;c</em><big>)</big><a class="headerlink" href="#glIndexsv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glColor.html#glColor" title="glColor"><tt class="xref c c-func docutils literal"><span class="pre">glColor()</span></tt></a>,
+<a class="reference internal" href="glIndexPointer.html#glIndexPointer" title="glIndexPointer"><tt class="xref c c-func docutils literal"><span class="pre">glIndexPointer()</span></tt></a></p>
+</div>
+<p class="rubric">Parameters</p>
+<blockquote>
+<div><p><em>c</em></p>
+<blockquote>
+<div>Specifies a pointer to a one-element array that contains
+the new value for the current color index.</div></blockquote>
+</div></blockquote>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glIndex" title="glIndex"><tt class="xref c c-func docutils literal"><span class="pre">glIndex()</span></tt></a> updates the current (single-valued) color index.
+It takes one argument, the new value for the current color index.</p>
+<p>The current index is stored as a floating-point value.
+Integer values are converted directly to floating-point values,
+with no special mapping.
+The initial value is 1.</p>
+<p>Index values outside the representable range of the color index buffer
+are not clamped.
+However,
+before an index is dithered (if enabled) and written to the frame buffer,
+it is converted to fixed-point format.
+Any bits in the integer portion of the resulting fixed-point value
+that do not correspond to bits in the frame buffer are masked out.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><tt class="xref c c-func docutils literal"><span class="pre">glIndexub()</span></tt> and <tt class="xref c c-func docutils literal"><span class="pre">glIndexubv()</span></tt> are available only if the GL version is
+1.1 or greater.</p>
+<p class="last">The current index can be updated at any time.
+In particular,
+<a class="reference internal" href="#glIndex" title="glIndex"><tt class="xref c c-func docutils literal"><span class="pre">glIndex()</span></tt></a> can be called between a call to <a class="reference internal" href="glBegin.html#glBegin" title="glBegin"><tt class="xref c c-func docutils literal"><span class="pre">glBegin()</span></tt></a> and the corresponding
+call to <a class="reference internal" href="glBegin.html#glEnd" title="glEnd"><tt class="xref c c-func docutils literal"><span class="pre">glEnd()</span></tt></a>.</p>
+</div>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_CURRENT_INDEX</span></tt></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glHistogram.html"
+                        title="previous chapter">function <cite>glHistogram</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glIndexMask.html"
+                        title="next chapter">function <cite>glIndexMask</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/glIndex.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glIndexMask.html" title="function glIndexMask"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glHistogram.html" title="function glHistogram"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

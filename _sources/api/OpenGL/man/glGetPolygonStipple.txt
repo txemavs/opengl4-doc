@@ -1,0 +1,117 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:26
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glGetPolygonStipple.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glGetPolygonStipple`
+------------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Return the polygon stipple pattern
+
+.. c:function:: glGetPolygonStipple
+
+
+         :param pattern:
+
+                  Returns the stipple pattern. The initial value is all 1's.
+
+.. rubric:: Specification
+
+.. c:function:: void glGetPolygonStipple(GLubyte *  pattern)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glPixelStore`\ ,
+            :c:func:`glPixelTransfer`\ ,
+            :c:func:`glPolygonStipple`\ ,
+            :c:func:`glReadPixels`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glGetPolygonStipple` returns to *pattern* a |EQUATION_1_| polygon stipple pattern.
+The pattern is packed into memory as if :c:func:`glReadPixels`
+with both :strong:`height` and :strong:`width` of 32,
+:strong:`type` of ``GL_BITMAP``\ ,
+and :strong:`format` of ``GL_COLOR_INDEX`` were called,
+and the stipple pattern were stored in an internal |EQUATION_2_| color
+index buffer.
+Unlike :c:func:`glReadPixels`\ ,
+however,
+pixel transfer operations
+(shift, offset, pixel map)
+are not applied to the returned stipple image.
+
+
+If a non-zero named buffer object is bound to the ``GL_PIXEL_PACK_BUFFER`` target
+(see :c:func:`glBindBuffer`\ ) while a polygon stipple pattern is
+requested, *pattern* is treated as a byte offset into the buffer object's data store.
+
+
+.. note::
+
+
+   If an error is generated,
+   no change is made to the contents of *pattern*\ .
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_OPERATION`` is generated if a non-zero buffer object name is bound to the ``GL_PIXEL_PACK_BUFFER`` target and the buffer object's data store is currently mapped.
+* ``GL_INVALID_OPERATION`` is generated if a non-zero buffer object name is bound to the ``GL_PIXEL_PACK_BUFFER`` target and the data would be packed to the buffer object such that the memory writes required would exceed the data store size.
+* ``GL_INVALID_OPERATION`` is generated if :c:func:`glGetPolygonStipple` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`\ .
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGet` with argument ``GL_PIXEL_PACK_BUFFER_BINDING``
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glGetPolygonStipple'>
+
+.. role:: mml(raw)
+   :format: html
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>32</mn><mo>&times;</mo><mn>32</mn></mrow></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>32</mn><mo>&times;</mo><mn>32</mn></mrow></math>` 
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

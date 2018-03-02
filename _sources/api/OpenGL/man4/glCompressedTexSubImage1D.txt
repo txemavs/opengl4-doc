@@ -1,0 +1,159 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:28
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glCompressedTexSubImage1D.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glCompressedTexSubImage1D`
+------------------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Specify a one-dimensional texture subimage in a compressed format
+
+.. c:function:: glCompressedTexSubImage1D
+
+
+         :param target:
+
+                  Specifies the target texture.
+                  Must be ``GL_TEXTURE_1D``\ .
+
+         :param level:
+
+                  Specifies the level-of-detail number.
+                  Level 0 is the base image level.
+                  Level :strong:`n` is the :strong:`n` th mipmap reduction image.
+
+         :param xoffset:
+
+                  Specifies a texel offset in the x direction within the texture array.
+
+         :param width:
+
+                  Specifies the width of the texture subimage.
+
+         :param format:
+
+                  Specifies the format of the compressed image data stored at address *data*\ .
+
+         :param imageSize:
+
+                  Specifies the number of unsigned bytes of image data starting at the
+                  address specified by *data*\ .
+
+         :param data:
+
+                  Specifies a pointer to the compressed image data in memory.
+
+.. rubric:: Specification
+
+.. c:function:: void glCompressedTexSubImage1D(GLenum  target, GLint  level, GLint  xoffset, GLsizei  width, GLenum  format, GLsizei  imageSize, const GLvoid *  data)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glActiveTexture`\ ,
+            :c:func:`glCompressedTexImage1D`\ ,
+            :c:func:`glCompressedTexImage2D`\ ,
+            :c:func:`glCompressedTexImage3D`\ ,
+            :c:func:`glCompressedTexSubImage2D`\ ,
+            :c:func:`glCompressedTexSubImage3D`\ ,
+            :c:func:`glCopyTexImage1D`\ ,
+            :c:func:`glCopyTexImage2D`\ ,
+            :c:func:`glCopyTexSubImage1D`\ ,
+            :c:func:`glCopyTexSubImage2D`\ ,
+            :c:func:`glCopyTexSubImage3D`\ ,
+            :c:func:`glPixelStore`\ ,
+            :c:func:`glTexImage2D`\ ,
+            :c:func:`glTexImage3D`\ ,
+            :c:func:`glTexSubImage1D`\ ,
+            :c:func:`glTexSubImage2D`\ ,
+            :c:func:`glTexSubImage3D`\ ,
+            :c:func:`glTexParameter`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+Texturing allows elements of an image array to be read by shaders.
+
+
+:c:func:`glCompressedTexSubImage1D` redefines a contiguous subregion of an existing one-dimensional
+texture image.  The texels referenced by *data* replace the portion of the
+existing texture array with x indices *xoffset* and |EQUATION_1_|\ ,
+inclusive.  This region may not include any texels
+outside the range of the texture array as it was originally specified.  It
+is not an error to specify a subtexture with width of 0, but such a
+specification has no effect.
+
+
+*internalformat* must be a known compressed image format (such as ``GL_RGTC``\ )
+or an extension-specified compressed-texture format.
+The *format* of the compressed texture
+image is selected by the GL implementation that compressed it (see
+:c:func:`glTexImage1D`\ ), and should be queried at the time the texture was
+compressed with :c:func:`glGetTexLevelParameter`\ .
+
+
+If a non-zero named buffer object is bound to the ``GL_PIXEL_UNPACK_BUFFER`` target
+(see :c:func:`glBindBuffer`\ ) while a texture image is
+specified, *data* is treated as a byte offset into the buffer object's data store.
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_ENUM`` is generated if *internalformat* is not one of the generic compressed internal formats: ``GL_COMPRESSED_RED``\ , ``GL_COMPRESSED_RG``\ , ``GL_COMPRESSED_RGB``\ , ``GL_COMPRESSED_RGBA``\ . ``GL_COMPRESSED_SRGB``\ , or ``GL_COMPRESSED_SRGB_ALPHA``\ .
+* ``GL_INVALID_VALUE`` is generated if *imageSize* is not consistent with the format, dimensions, and contents of the specified compressed image data.
+* ``GL_INVALID_OPERATION`` is generated if parameter combinations are not supported by the specific compressed internal format as specified in the specific texture compression extension.
+* ``GL_INVALID_OPERATION`` is generated if a non-zero buffer object name is bound to the ``GL_PIXEL_UNPACK_BUFFER`` target and the buffer object's data store is currently mapped.
+* ``GL_INVALID_OPERATION`` is generated if a non-zero buffer object name is bound to the ``GL_PIXEL_UNPACK_BUFFER`` target and the data would be unpacked from the buffer object such that the memory reads required would exceed the data store size.
+* Undefined results, including abnormal program termination, are generated if *data* is not encoded in a manner consistent with the extension specification defining the internal compression format.
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGetCompressedTexImage`
+* :c:func:`glGet` with argument ``GL_TEXTURE_COMPRESSED``
+* :c:func:`glGet` with argument ``GL_PIXEL_UNPACK_BUFFER_BINDING``
+* :c:func:`glGetTexLevelParameter` with arguments ``GL_TEXTURE_INTERNAL_FORMAT`` and ``GL_TEXTURE_COMPRESSED_IMAGE_SIZE``
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glCompressedTexSubImage1D'>
+
+.. role:: mml(raw)
+   :format: html
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">xoffset</mi><mo>+</mo><mi mathvariant="italic">width</mi><mo>-</mo><mn>1</mn></mrow></math>` 
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

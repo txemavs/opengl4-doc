@@ -1,0 +1,110 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:28
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glActiveTexture.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glActiveTexture`
+--------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Select active texture unit
+
+.. c:function:: glActiveTexture
+
+
+         :param texture:
+
+                  Specifies which texture unit to make active. The number
+                  of texture units is implementation dependent, but must be at least
+                  80. *texture* must be one of
+                  ``GL_TEXTURE i``\ ,
+                  where
+                  :strong:`i` ranges from 0 (\ ``GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS`` - 1).
+                  The initial value is ``GL_TEXTURE0``\ .
+
+.. rubric:: Specification
+
+.. c:function:: void glActiveTexture(GLenum  texture)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glGenTextures`\ ,
+            :c:func:`glBindTexture`\ ,
+            :c:func:`glCompressedTexImage1D`\ ,
+            :c:func:`glCompressedTexImage2D`\ ,
+            :c:func:`glCompressedTexImage3D`\ ,
+            :c:func:`glCompressedTexSubImage1D`\ ,
+            :c:func:`glCompressedTexSubImage2D`\ ,
+            :c:func:`glCompressedTexSubImage3D`\ ,
+            :c:func:`glCopyTexImage1D`\ ,
+            :c:func:`glCopyTexImage2D`\ ,
+            :c:func:`glCopyTexSubImage1D`\ ,
+            :c:func:`glCopyTexSubImage2D`\ ,
+            :c:func:`glCopyTexSubImage3D`\ ,
+            :c:func:`glDeleteTextures`
+            :c:func:`glIsTexture`\ ,
+            :c:func:`glTexImage1D`\ ,
+            :c:func:`glTexImage2D`\ ,
+            :c:func:`glTexImage2DMultisample`\ ,
+            :c:func:`glTexImage3D`\ ,
+            :c:func:`glTexImage3DMultisample`\ ,
+            :c:func:`glTexSubImage1D`\ ,
+            :c:func:`glTexSubImage2D`\ ,
+            :c:func:`glTexSubImage3D`\ ,
+            :c:func:`glTexParameter`\ ,
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glActiveTexture` selects which texture unit subsequent texture state calls will
+affect.  The number of texture units an implementation supports is
+implementation dependent, but must be at least 80.
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_ENUM`` is generated if *texture* is not one of ``GL_TEXTURE i``\ , where :strong:`i` ranges from 0 to (\ ``GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS`` - 1).
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGet` with argument ``GL_ACTIVE_TEXTURE``\ , or ``GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS``\ .
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glActiveTexture'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

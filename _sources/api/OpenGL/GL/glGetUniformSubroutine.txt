@@ -1,0 +1,52 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glGetUniformSubroutine`
+---------------------------------
+
+.. source file man4/glGetUniformSubroutine
+
+.. currentmodule:: OpenGL.GL
+
+Retrieve the value of a subroutine uniform of a given shader stage of the current program
+
+.. c:function:: glGetUniformSubroutine
+.. c:function:: void glGetUniformSubroutineuiv(GLenum  shadertype, GLint  location, GLuint * values)
+
+
+   
+   :param shadertype:
+      Specifies the shader stage from which to query for subroutine uniform index. *shadertype* must be one of ``GL_VERTEX_SHADER``, ``GL_TESS_CONTROL_SHADER``, ``GL_TESS_EVALUATION_SHADER``, ``GL_GEOMETRY_SHADER`` or ``GL_FRAGMENT_SHADER``.
+   
+   :param location:
+      Specifies the location of the subroutine uniform.
+   
+   :param values:
+      Specifies the address of a variable to receive the value or values of the subroutine uniform.
+   
+
+.. seealso::
+
+   
+   :c:func:`glGetProgram`, :c:func:`glGetActiveSubroutineUniform`, :c:func:`glGetActiveSubroutineUniformName`, :c:func:`glGetUniformLocation`
+   
+.. rubric:: Description
+
+
+:c:func:`glGetUniformSubroutine` retrieves the value of the subroutine uniform at location *location* for shader stage *shadertype* of the current program. *location* must be less than the value of ``GL_ACTIVE_SUBROUTINE_UNIFORM_LOCATIONS`` for the shader currently in use at shader stage *shadertype* . The value of the subroutine uniform is returned in *values* .
+
+
+**Errors:**
+
+   * ``GL_INVALID_ENUM`` is generated if *shadertype* is not one of the accepted values.
+   * ``GL_INVALID_VALUE`` is generated if *location* is greater than or equal to the value of ``GL_ACTIVE_SUBROUTINE_UNIFORM_LOCATIONS`` for the shader currently in use at shader stage *shadertype* .
+   * ``GL_INVALID_OPERATION`` is generated if no program is active.
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

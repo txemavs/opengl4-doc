@@ -1,0 +1,73 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:27
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/gluNewQuadric.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `gluNewQuadric`
+------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Create a quadrics object
+
+.. c:function:: gluNewQuadric
+
+
+.. rubric:: Specification
+
+.. c:function:: GLUquadric* gluNewQuadric()
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`gluCylinder`\ ,
+            :c:func:`gluDeleteQuadric`\ ,
+            :c:func:`gluDisk`\ ,
+            :c:func:`gluPartialDisk`\ ,
+            :c:func:`gluQuadricCallback`\ ,
+            :c:func:`gluQuadricDrawStyle`\ ,
+            :c:func:`gluQuadricNormals`\ ,
+            :c:func:`gluQuadricOrientation`\ ,
+            :c:func:`gluQuadricTexture`\ ,
+            :c:func:`gluSphere`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`gluNewQuadric` creates and returns a pointer to
+a new quadrics object. This object must be referred to when
+calling quadrics rendering and control functions. A return value of
+0 means that there is not enough memory to allocate the object.
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'gluNewQuadric'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

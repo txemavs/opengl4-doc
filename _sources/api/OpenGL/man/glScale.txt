@@ -1,0 +1,128 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:27
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glScale.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glScale`
+------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Multiply the current matrix by a general scaling matrix
+
+.. c:function:: glScale
+
+
+         :param x:
+         :param y:
+         :param z:
+
+                  Specify scale factors along the :strong:`x`\ , :strong:`y`\ , and :strong:`z` axes, respectively.
+
+.. rubric:: Specification
+
+.. c:function:: void glScaled(GLdouble  x, GLdouble  y, GLdouble  z, GLfloat  x, GLfloat  y, GLfloat  z)
+
+
+.. seealso::
+
+
+            :c:func:`glMatrixMode`\ ,
+            :c:func:`glMultMatrix`\ ,
+            :c:func:`glPushMatrix`\ ,
+            :c:func:`glRotate`\ ,
+            :c:func:`glTranslate`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glScale` produces a nonuniform scaling along the :strong:`x`\ , :strong:`y`\ , and
+:strong:`z` axes.
+The three parameters indicate the desired scale factor along
+each of the three axes.
+
+
+The current matrix
+(see :c:func:`glMatrixMode`\ )
+is multiplied by this scale matrix,
+and the product replaces the current matrix
+as if :c:func:`glMultMatrix` were called with the following matrix
+as its argument:
+
+
+|EQUATION_1_|
+
+
+If the matrix mode is either ``GL_MODELVIEW`` or ``GL_PROJECTION``\ ,
+all objects drawn after :c:func:`glScale` is called are scaled.
+
+
+Use :c:func:`glPushMatrix` and :c:func:`glPopMatrix` to save and restore
+the unscaled coordinate
+system.
+
+
+.. note::
+
+
+   If scale factors other than 1 are applied to the modelview matrix
+   and lighting is enabled, lighting often appears wrong.
+   In that case, enable automatic normalization of normals by
+   calling :c:func:`glEnable` with the argument ``GL_NORMALIZE``\ .
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_OPERATION`` is generated if :c:func:`glScale` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`\ .
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGet` with argument ``GL_MATRIX_MODE``
+* :c:func:`glGet` with argument ``GL_COLOR_MATRIX``
+* :c:func:`glGet` with argument ``GL_MODELVIEW_MATRIX``
+* :c:func:`glGet` with argument ``GL_PROJECTION_MATRIX``
+* :c:func:`glGet` with argument ``GL_TEXTURE_MATRIX``
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glScale'>
+
+.. role:: mml(raw)
+   :format: html
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mtable><mtr><mtd><mi mathvariant="italic">x</mi></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mi mathvariant="italic">y</mi></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mi mathvariant="italic">z</mi></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd></mtr></mtable></mfenced></math>` 
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

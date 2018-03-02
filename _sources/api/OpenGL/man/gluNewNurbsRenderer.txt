@@ -1,0 +1,70 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:27
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/gluNewNurbsRenderer.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `gluNewNurbsRenderer`
+------------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Create a NURBS object
+
+.. c:function:: gluNewNurbsRenderer
+
+
+.. rubric:: Specification
+
+.. c:function:: GLUnurbs* gluNewNurbsRenderer()
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`gluBeginCurve`\ ,
+            :c:func:`gluBeginSurface`\ ,
+            :c:func:`gluBeginTrim`\ ,
+            :c:func:`gluDeleteNurbsRenderer`\ ,
+            :c:func:`gluNurbsCallback`\ ,
+            :c:func:`gluNurbsProperty`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`gluNewNurbsRenderer` creates and returns a pointer to
+a new NURBS object.
+This object must be referred to when calling
+NURBS rendering and control functions. A return value of
+0 means that there is not enough memory to allocate the object.
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'gluNewNurbsRenderer'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

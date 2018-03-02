@@ -1,0 +1,194 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glTransformFeedbackVaryings &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glUniform" href="glUniform.html" />
+    <link rel="prev" title="function glTexSubImage3D" href="glTexSubImage3D.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glUniform.html" title="function glUniform"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glTexSubImage3D.html" title="function glTexSubImage3D"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-gltransformfeedbackvaryings">
+<h1>function <cite>glTransformFeedbackVaryings</cite><a class="headerlink" href="#function-gltransformfeedbackvaryings" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Specify values to record in transform feedback buffers</p>
+<dl class="function">
+<dt id="glTransformFeedbackVaryings">
+<tt class="descname">glTransformFeedbackVaryings</tt><big>(</big><big>)</big><a class="headerlink" href="#glTransformFeedbackVaryings" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>program</strong> &#8211; The name of the target program object.</li>
+<li><strong>count</strong> &#8211; The number of varying variables used for transform feedback.</li>
+<li><strong>varyings</strong> &#8211; An array of <em>count</em> zero-terminated strings specifying the
+names of the varying variables to use for transform feedback.</li>
+<li><strong>bufferMode</strong> &#8211; Identifies the mode used to capture the varying variables when transform feedback is active.
+<em>bufferMode</em> must be <tt class="docutils literal"><span class="pre">GL_INTERLEAVED_ATTRIBS</span></tt> or <tt class="docutils literal"><span class="pre">GL_SEPARATE_ATTRIBS</span></tt>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glTransformFeedbackVaryings</tt><big>(</big>GLuint<em>&nbsp;program</em>, GLsizei<em>&nbsp;count</em>, const char **<em>&nbsp;varyings</em>, GLenum<em>&nbsp;bufferMode</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glBeginTransformFeedback.html#glBeginTransformFeedback" title="glBeginTransformFeedback"><tt class="xref c c-func docutils literal"><span class="pre">glBeginTransformFeedback()</span></tt></a>,
+<a class="reference internal" href="glBeginTransformFeedback.html#glEndTransformFeedback" title="glEndTransformFeedback"><tt class="xref c c-func docutils literal"><span class="pre">glEndTransformFeedback()</span></tt></a>,
+<a class="reference internal" href="glGetTransformFeedbackVarying.html#glGetTransformFeedbackVarying" title="glGetTransformFeedbackVarying"><tt class="xref c c-func docutils literal"><span class="pre">glGetTransformFeedbackVarying()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p>The names of the vertex or geometry shader outputs to be recorded in transform feedback mode
+are specified using <a class="reference internal" href="#glTransformFeedbackVaryings" title="glTransformFeedbackVaryings"><tt class="xref c c-func docutils literal"><span class="pre">glTransformFeedbackVaryings()</span></tt></a>. When a geometry shader
+is active, transform feedback records the values of selected geometry shader output variables
+from the emitted vertices. Otherwise, the values of the selected vertex shader outputs are
+recorded.</p>
+<p>The state set by <tt class="xref c c-func docutils literal"><span class="pre">glTranformFeedbackVaryings()</span></tt> is stored and takes effect
+next time <a class="reference internal" href="glLinkProgram.html#glLinkProgram" title="glLinkProgram"><tt class="xref c c-func docutils literal"><span class="pre">glLinkProgram()</span></tt></a> is called
+on <em>program</em>. When <a class="reference internal" href="glLinkProgram.html#glLinkProgram" title="glLinkProgram"><tt class="xref c c-func docutils literal"><span class="pre">glLinkProgram()</span></tt></a>
+is called, <em>program</em> is linked so that the values of the specified varying variables
+for the vertices of each primitive generated by the GL are written to a single buffer
+object if <em>bufferMode</em> is <tt class="docutils literal"><span class="pre">GL_INTERLEAVED_ATTRIBS</span></tt> or multiple
+buffer objects if <em>bufferMode</em> is <tt class="docutils literal"><span class="pre">GL_SEPARATE_ATTRIBS</span></tt>.</p>
+<p>In addition to the errors generated by <a class="reference internal" href="#glTransformFeedbackVaryings" title="glTransformFeedbackVaryings"><tt class="xref c c-func docutils literal"><span class="pre">glTransformFeedbackVaryings()</span></tt></a>, the
+program <em>program</em> will fail to link if:</p>
+<blockquote>
+<div><ul class="simple">
+<li>The count specified by <a class="reference internal" href="#glTransformFeedbackVaryings" title="glTransformFeedbackVaryings"><tt class="xref c c-func docutils literal"><span class="pre">glTransformFeedbackVaryings()</span></tt></a> is non-zero, but the program object has no vertex or geometry shader.</li>
+<li>Any variable name specified in the <em>varyings</em> array is not declared as an output in the vertex shader (or the geometry shader, if active).</li>
+<li>Any two entries in the <em>varyings</em> array specify the same varying variable.</li>
+<li>The total number of components to capture in any varying variable in <em>varyings</em> is greater than the constant <tt class="docutils literal"><span class="pre">GL_MAX_TRANSFORM_FEEDBACK_SEPARATE_COMPONENTS</span></tt> and the buffer mode is <tt class="docutils literal"><span class="pre">GL_SEPARATE_ATTRIBS</span></tt>.</li>
+<li>The total number of components to capture is greater than the constant <tt class="docutils literal"><span class="pre">GL_MAX_TRANSFORM_FEEDBACK_INTERLEAVED_COMPONENTS</span></tt> and the buffer mode is <tt class="docutils literal"><span class="pre">GL_INTERLEAVED_ATTRIBS</span></tt>.</li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><a class="reference internal" href="glGetTransformFeedbackVarying.html#glGetTransformFeedbackVarying" title="glGetTransformFeedbackVarying"><tt class="xref c c-func docutils literal"><span class="pre">glGetTransformFeedbackVarying()</span></tt></a> is available only if the GL version is 3.0 or greater.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>program</em> is not the name of a program object.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>bufferMode</em> is <tt class="docutils literal"><span class="pre">GL_SEPARATE_ATTRIBS</span></tt> and <em>count</em> is greater than the implementation-dependent limit <tt class="docutils literal"><span class="pre">GL_MAX_TRANSFORM_FEEDBACK_SEPARATE_ATTRIBS</span></tt>.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glGetTransformFeedbackVarying.html#glGetTransformFeedbackVarying" title="glGetTransformFeedbackVarying"><tt class="xref c c-func docutils literal"><span class="pre">glGetTransformFeedbackVarying()</span></tt></a></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)2010 Khronos Group. Open Publication License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glTexSubImage3D.html"
+                        title="previous chapter">function <cite>glTexSubImage3D</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glUniform.html"
+                        title="next chapter">function <cite>glUniform</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glTransformFeedbackVaryings.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glUniform.html" title="function glUniform"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glTexSubImage3D.html" title="function glTexSubImage3D"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

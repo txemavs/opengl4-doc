@@ -1,0 +1,67 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:27
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/gluDeleteQuadric.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `gluDeleteQuadric`
+---------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Destroy a quadrics object
+
+.. c:function:: gluDeleteQuadric
+
+
+         :param quad:
+
+                  Specifies the quadrics object to be destroyed.
+
+.. rubric:: Specification
+
+.. c:function:: void gluDeleteQuadric(GLUquadric*  quad)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`gluNewQuadric`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`gluDeleteQuadric` destroys the quadrics object (created with :c:func:`gluNewQuadric`\ )
+and frees any memory it uses.
+Once :c:func:`gluDeleteQuadric` has been called, *quad* cannot be used again.
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'gluDeleteQuadric'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

@@ -1,0 +1,185 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glFrontFace &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glGenBuffers" href="glGenBuffers.html" />
+    <link rel="prev" title="function glFramebufferTextureLayer" href="glFramebufferTextureLayer.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glGenBuffers.html" title="function glGenBuffers"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glFramebufferTextureLayer.html" title="function glFramebufferTextureLayer"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glfrontface">
+<h1>function <cite>glFrontFace</cite><a class="headerlink" href="#function-glfrontface" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Define front- and back-facing polygons</p>
+<dl class="function">
+<dt id="glFrontFace">
+<tt class="descname">glFrontFace</tt><big>(</big><big>)</big><a class="headerlink" href="#glFrontFace" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>mode</strong> &#8211; Specifies the orientation of front-facing polygons.
+<tt class="docutils literal"><span class="pre">GL_CW</span></tt> and <tt class="docutils literal"><span class="pre">GL_CCW</span></tt> are accepted.
+The initial value is <tt class="docutils literal"><span class="pre">GL_CCW</span></tt>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glFrontFace</tt><big>(</big>GLenum <em>&nbsp;mode</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glCullFace.html#glCullFace" title="glCullFace"><tt class="xref c c-func docutils literal"><span class="pre">glCullFace()</span></tt></a>,</p>
+</div>
+<p class="rubric">Description</p>
+<p>In a scene composed entirely of opaque closed surfaces,
+back-facing polygons are never visible.
+Eliminating these invisible polygons has the obvious benefit
+of speeding up the rendering of the image.
+To enable and disable elimination of back-facing polygons, call <a class="reference internal" href="glEnable.html#glEnable" title="glEnable"><tt class="xref c c-func docutils literal"><span class="pre">glEnable()</span></tt></a>
+and <a class="reference internal" href="glEnable.html#glDisable" title="glDisable"><tt class="xref c c-func docutils literal"><span class="pre">glDisable()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_CULL_FACE</span></tt>.</p>
+<p>The projection of a polygon to window coordinates is said to have
+clockwise winding if an imaginary object following the path
+from its first vertex,
+its second vertex,
+and so on,
+to its last vertex,
+and finally back to its first vertex,
+moves in a clockwise direction about the interior of the polygon.
+The polygon&#8217;s winding is said to be counterclockwise if the imaginary
+object following the same path moves in a counterclockwise direction
+about the interior of the polygon.
+<a class="reference internal" href="#glFrontFace" title="glFrontFace"><tt class="xref c c-func docutils literal"><span class="pre">glFrontFace()</span></tt></a> specifies whether polygons with clockwise winding in window coordinates,
+or counterclockwise winding in window coordinates,
+are taken to be front-facing.
+Passing <tt class="docutils literal"><span class="pre">GL_CCW</span></tt> to <em>mode</em> selects counterclockwise polygons as
+front-facing;
+<tt class="docutils literal"><span class="pre">GL_CW</span></tt> selects clockwise polygons as front-facing.
+By default, counterclockwise polygons are taken to be front-facing.</p>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>mode</em> is not an accepted value.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_FRONT_FACE</span></tt></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glFramebufferTextureLayer.html"
+                        title="previous chapter">function <cite>glFramebufferTextureLayer</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glGenBuffers.html"
+                        title="next chapter">function <cite>glGenBuffers</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glFrontFace.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glGenBuffers.html" title="function glGenBuffers"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glFramebufferTextureLayer.html" title="function glFramebufferTextureLayer"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

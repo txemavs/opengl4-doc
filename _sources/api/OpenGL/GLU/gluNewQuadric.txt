@@ -1,0 +1,34 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `gluNewQuadric`
+------------------------
+
+.. source file man/gluNewQuadric
+
+.. currentmodule:: OpenGL.GLU
+
+Create a quadrics object
+
+.. c:function:: gluNewQuadric
+.. c:function:: GLUquadric* gluNewQuadri)
+
+.. seealso::
+
+   
+   :c:func:`gluCylinder`, :c:func:`gluDeleteQuadric`, :c:func:`gluDisk`, :c:func:`gluPartialDisk`, :c:func:`gluQuadricCallback`, :c:func:`gluQuadricDrawStyle`, :c:func:`gluQuadricNormals`, :c:func:`gluQuadricOrientation`, :c:func:`gluQuadricTexture`, :c:func:`gluSphere`
+   
+.. rubric:: Description
+
+
+:c:func:`gluNewQuadric` creates and returns a pointer to a new quadrics object. This object must be referred to when calling quadrics rendering and control functions. A return value of 0 means that there is not enough memory to allocate the object.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

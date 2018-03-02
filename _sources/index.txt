@@ -1,0 +1,36 @@
+OpenGL Documentation
+--------------------
+
+
+OpenGL (Open Graphics Library) is a standard specification defining a
+cross-language, multi-platform API for writing applications and simulating
+physics, that produce 2D and 3D computer graphics. The interface consists
+of over 250 different function calls which can be used to draw complex
+three-dimensional scenes from simple primitives. OpenGL was developed by
+Silicon Graphics Inc. (SGI) in 1992 and is widely used in CAD, virtual
+reality, scientific visualization, information visualization, flight
+simulation, and video games. OpenGL is managed by the non-profit technology
+consortium Khronos Group.
+
+
+.. toctree::
+   :maxdepth: 1
+
+   index_man1
+   index_man3
+   index_man4
+
+
+Related information
+
+.. toctree::
+   :maxdepth: 1
+
+   API generation warnings <warnings_xml>
+
+This site contains documentation from
+https://cvs.khronos.org/svn/repos/ogl/trunk/ecosystem/public/sdk/docs/
+
+
+
+

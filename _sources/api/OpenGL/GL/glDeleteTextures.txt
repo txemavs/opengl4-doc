@@ -1,0 +1,55 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glDeleteTextures`
+---------------------------
+
+.. source file man4/glDeleteTextures
+
+.. currentmodule:: OpenGL.GL
+
+Delete named textures
+
+.. c:function:: glDeleteTextures
+.. c:function:: void glDeleteTextures(GLsizei  n, const GLuint *  textures)
+   :noindex: 
+
+
+   
+   :param n:
+      Specifies the number of textures to be deleted.
+   
+   :param textures:
+      Specifies an array of textures to be deleted.
+   
+
+.. seealso::
+
+   
+   :c:func:`glBindTexture`, :c:func:`glCopyTexImage1D`, :c:func:`glCopyTexImage2D`, :c:func:`glGenTextures`, :c:func:`glGet`, :c:func:`glGetTexParameter`, :c:func:`glTexImage1D`, :c:func:`glTexImage2D`, :c:func:`glTexParameter`
+   
+.. rubric:: Description
+
+
+:c:func:`glDeleteTextures` deletes *n* textures named by the elements of the array *textures* . After a texture is deleted, it has no contents or dimensionality, and its name is free for reuse (for example by :c:func:`glGenTextures`). If a texture that is currently bound is deleted, the binding reverts to 0 (the default texture).
+
+:c:func:`glDeleteTextures` silently ignores 0's and names that do not correspond to existing textures.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glIsTexture`
+
+**Errors:**
+
+   * ``GL_INVALID_VALUE`` is generated if *n* is negative.
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

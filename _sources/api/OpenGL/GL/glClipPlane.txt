@@ -1,0 +1,79 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glClipPlane`
+----------------------
+
+.. source file man/glClipPlane
+
+.. currentmodule:: OpenGL.GL
+
+Specify a plane against which all geometry is clipped
+
+.. c:function:: glClipPlane
+.. c:function:: void glClipPlane(GLenum  plane, const GLdouble *  equation)
+   :noindex: 
+
+
+   
+   :param plane:
+      Specifies which clipping plane is being positioned. Symbolic names of the form ``GL_CLIP_PLANE`` *`i`* , where *`i`* is an integer between 0 and ``GL_MAX_CLIP_PLANES`` |EQUATION_1_| , are accepted.
+   
+   :param equation:
+      Specifies the address of an array of four double-precision floating-point values. These values are interpreted as a plane equation.
+   
+
+.. seealso::
+
+   
+   :c:func:`glEnable`
+   
+.. rubric:: Description
+
+
+Geometry is always clipped against the boundaries of a six-plane frustum in *`x`* , *`y`* , and *`z`* . :c:func:`glClipPlane` allows the specification of additional planes, not necessarily perpendicular to the *`x`* , *`y`* , or *`z`* axis, against which all geometry is clipped. To determine the maximum number of additional clipping planes, call :c:func:`glGetIntegerv` with argument ``GL_MAX_CLIP_PLANES``. All implementations support at least six such clipping planes. Because the resulting clipping region is the intersection of the defined half-spaces, it is always convex.
+
+:c:func:`glClipPlane` specifies a half-space using a four-component plane equation. When :c:func:`glClipPlane` is called, *equation* is transformed by the inverse of the modelview matrix and stored in the resulting eye coordinates. Subsequent changes to the modelview matrix have no effect on the stored plane-equation components. If the dot product of the eye coordinates of a vertex with the stored plane equation components is positive or zero, the vertex is *`in`* with respect to that clipping plane. Otherwise, it is *`out`* .
+
+To enable and disable clipping planes, call :c:func:`glEnable` and :c:func:`glDisable` with the argument ``GL_CLIP_PLANE`` *`i`* , where *`i`* is the plane number.
+
+All clipping planes are initially defined as (0, 0, 0, 0) in eye coordinates and are disabled.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGetClipPlane`
+   * :c:func:`glIsEnabled` with argument ``GL_CLIP_PLANE`` *`i`*
+
+**Errors:**
+
+   * ``GL_INVALID_ENUM`` is generated if *plane* is not an accepted value.
+   * ``GL_INVALID_OPERATION`` is generated if :c:func:`glClipPlane` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`.
+
+
+
+.. note::
+
+   * It is always the case that ``GL_CLIP_PLANE`` |EQUATION_2_| = ``GL_CLIP_PLANE0`` + |EQUATION_3_| .
+
+
+
+.. role:: mml(raw)
+   :format: html
+
+
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mn>-1</mn> </math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math>` 
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

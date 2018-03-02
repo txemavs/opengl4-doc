@@ -1,0 +1,64 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glStencilMaskSeparate`
+--------------------------------
+
+.. source file man4/glStencilMaskSeparate
+
+.. currentmodule:: OpenGL.GL
+
+Control the front and/or back writing of individual bits in the stencil planes
+
+.. c:function:: glStencilMaskSeparate
+.. c:function:: void glStencilMaskSeparate(GLenum  face, GLuint  mask)
+   :noindex: 
+
+
+   
+   :param face:
+      Specifies whether the front and/or back stencil writemask is updated. Three symbolic constants are valid: ``GL_FRONT``, ``GL_BACK``, and ``GL_FRONT_AND_BACK``.
+   
+   :param mask:
+      Specifies a bit mask to enable and disable writing of individual bits in the stencil planes. Initially, the mask is all 1's.
+   
+
+.. seealso::
+
+   
+   :c:func:`glColorMask`, :c:func:`glDepthMask`, :c:func:`glStencilFunc`, :c:func:`glStencilFuncSeparate`, :c:func:`glStencilMask`, :c:func:`glStencilOp`, :c:func:`glStencilOpSeparate`
+   
+.. rubric:: Description
+
+
+:c:func:`glStencilMaskSeparate` controls the writing of individual bits in the stencil planes. The least significant |EQUATION_1_| bits of *mask* , where |EQUATION_2_| is the number of bits in the stencil buffer, specify a mask. Where a 1 appears in the mask, it's possible to write to the corresponding bit in the stencil buffer. Where a 0 appears, the corresponding bit is write-protected. Initially, all bits are enabled for writing.
+
+There can be two separate *mask* writemasks; one affects back-facing polygons, and the other affects front-facing polygons as well as other non-polygon primitives. :c:func:`glStencilMask` sets both front and back stencil writemasks to the same values, as if :c:func:`glStencilMaskSeparate` were called with *face* set to ``GL_FRONT_AND_BACK``.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGet` with argument ``GL_STENCIL_WRITEMASK``, ``GL_STENCIL_BACK_WRITEMASK``, or ``GL_STENCIL_BITS``
+
+**Errors:**
+
+   * ``GL_INVALID_ENUM`` is generated if *face* is not one of the accepted tokens.
+
+
+.. role:: mml(raw)
+   :format: html
+
+
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math>` 
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

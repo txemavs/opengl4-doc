@@ -1,0 +1,61 @@
+.. nabla.opengl-sphinx project
+
+.. ---------------------------
+
+.. this dodument source file 'man/gl_FrontFacing'is copyrighted by Khronos Group
+   See license details at http://opencontent.org/openpub/
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   
+
+function `gl_FrontFacing`
+-------------------------
+
+.. currentmodule:: OpenGL.GLSL
+
+Indicates whether a primitive is front or back facing
+
+.. c:function:: gl_FrontFacing
+
+
+.. rubric:: Specification
+
+.. c:function:: in bool gl_FrontFacing)
+
+.. seealso::
+
+   
+   :c:func:`gl_FragCoord`
+   
+.. rubric:: Description
+
+
+Available only in the fragment language, :c:func:`gl_FrontFacing` is an input variable whose value is :c:func:`true` if the fragment belongs to a front-facing primitive and false otherwise. The determination of whether a triangle primitive is front-facing is made by examining the sign of the area of the triangle, including a possible reversal of this sign as controlled by :c:func:`glFrontFace`. One way to compute this area is:
+
+|EQUATION_1_|
+
+where |EQUATION_2_| and |EQUATION_3_| are the x and y window coordinates of the *`i`* th vertex of the n-vertex polygon.
+
+
+
+.. role:: mml(raw)
+   :format: html
+
+
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mi>a</mi><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac> <msubsup><mo>&#x2211;</mo><mrow> <mi>j</mi><mo>=</mo><mn>0</mn> </mrow> <mrow> <mi>n</mi><mo>-</mo><mn>1</mn> </mrow></msubsup> <msubsup><mi>x</mi><mrow>w</mrow><mrow><mi>i</mi></mrow></msubsup> <msubsup><mi>y</mi><mrow>w</mrow><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msubsup> <mo>-</mo> <msubsup><mi>x</mi><mrow>w</mrow><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msubsup> <msubsup><mi>y</mi><mrow>w</mrow><mrow><mi>i</mi></mrow></msubsup> </math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><msubsup><mi>x</mi><mrow>w</mrow><mrow><mi>i</mi></mrow></msubsup></math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><msubsup><mi>y</mi><mrow>w</mrow><mrow><mi>i</mi></mrow></msubsup></math>` 
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2011 Khronos Group. Open Publication License.
+

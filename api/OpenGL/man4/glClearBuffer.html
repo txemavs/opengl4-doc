@@ -1,0 +1,188 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glClearBuffer &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glClearColor" href="glClearColor.html" />
+    <link rel="prev" title="function glClear" href="glClear.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glClearColor.html" title="function glClearColor"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glClear.html" title="function glClear"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glclearbuffer">
+<h1>function <cite>glClearBuffer</cite><a class="headerlink" href="#function-glclearbuffer" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Clear individual buffers of the currently bound draw framebuffer</p>
+<dl class="function">
+<dt id="glClearBuffer">
+<tt class="descname">glClearBuffer</tt><big>(</big><big>)</big><a class="headerlink" href="#glClearBuffer" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>buffer</strong> &#8211; Specify the buffer to clear.</li>
+<li><strong>drawBuffer</strong> &#8211; Specify a particular draw buffer to clear.</li>
+<li><strong>value</strong> &#8211; For color buffers, a pointer to a four-element vector specifying R, G, B and A values to clear the buffer to.
+For depth buffers, a pointer to a single depth value to clear the buffer to.
+For stencil buffers, a pointer to a single stencil value to clear the buffer to.</li>
+<li><strong>depth</strong> &#8211; The value to clear a depth render buffer to.</li>
+<li><strong>stencil</strong> &#8211; The value to clear a stencil render buffer to.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt id="glClearBufferiv">
+void <tt class="descname">glClearBufferiv</tt><big>(</big>GLenum <em>&nbsp;buffer</em>, GLint <em>&nbsp;drawBuffer</em>, const GLint * <em>&nbsp;value</em>, GLenum <em>&nbsp;buffer</em>, GLint <em>&nbsp;drawBuffer</em>, const GLuint * <em>&nbsp;value</em>, GLenum <em>&nbsp;buffer</em>, GLint <em>&nbsp;drawBuffer</em>, const GLfloat * <em>&nbsp;value</em>, GLenum <em>&nbsp;buffer</em>, GLint <em>&nbsp;drawBuffer</em>, GLfloat <em>&nbsp;depth</em>, GLint <em>&nbsp;stencil</em><big>)</big><a class="headerlink" href="#glClearBufferiv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glClearColor.html#glClearColor" title="glClearColor"><tt class="xref c c-func docutils literal"><span class="pre">glClearColor()</span></tt></a>,
+<a class="reference internal" href="glClearDepth.html#glClearDepth" title="glClearDepth"><tt class="xref c c-func docutils literal"><span class="pre">glClearDepth()</span></tt></a>,
+<a class="reference internal" href="glClearStencil.html#glClearStencil" title="glClearStencil"><tt class="xref c c-func docutils literal"><span class="pre">glClearStencil()</span></tt></a>,
+<a class="reference internal" href="glClear.html#glClear" title="glClear"><tt class="xref c c-func docutils literal"><span class="pre">glClear()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glClearBuffer" title="glClearBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glClearBuffer*()</span></tt></a> clears the specified buffer to the specified value(s). If <em>buffer</em> is
+<tt class="docutils literal"><span class="pre">GL_COLOR</span></tt>, a particular draw buffer <tt class="docutils literal"><span class="pre">GL_DRAWBUFFER</span> <span class="pre">i</span></tt> is specified
+by passing <em>i</em> as <em>drawBuffer</em>. In this case, <em>value</em> points to
+a four-element vector specifying the R, G, B and A color to clear that draw buffer to. If <em>buffer</em> is
+one of <tt class="docutils literal"><span class="pre">GL_FRONT</span></tt>, <tt class="docutils literal"><span class="pre">GL_BACK</span></tt>, <tt class="docutils literal"><span class="pre">GL_LEFT</span></tt>, <tt class="docutils literal"><span class="pre">GL_RIGHT</span></tt>,
+or <tt class="docutils literal"><span class="pre">GL_FRONT_AND_BACK</span></tt>, identifying multiple buffers, each selected buffer is cleared to the same value.
+Clamping and conversion for fixed-point color buffers are performed in the same fashion as
+<a class="reference internal" href="glClearColor.html#glClearColor" title="glClearColor"><tt class="xref c c-func docutils literal"><span class="pre">glClearColor()</span></tt></a>.</p>
+<p>If <em>buffer</em> is <tt class="docutils literal"><span class="pre">GL_DEPTH</span></tt>, <em>drawBuffer</em> must be zero, and <em>value</em>
+points to a single value to clear the depth buffer to. Only <tt class="xref c c-func docutils literal"><span class="pre">glClearBufferfv()</span></tt> should be used to clear
+depth buffers. Clamping and conversion for fixed-point depth buffers are performed in the same fashion as
+<a class="reference internal" href="glClearDepth.html#glClearDepth" title="glClearDepth"><tt class="xref c c-func docutils literal"><span class="pre">glClearDepth()</span></tt></a>.</p>
+<p>If <em>buffer</em> is <tt class="docutils literal"><span class="pre">GL_STENCIL</span></tt>, <em>drawBuffer</em> must be zero, and <em>value</em>
+points to a single value to clear the stencil buffer to. Only <a class="reference internal" href="#glClearBufferiv" title="glClearBufferiv"><tt class="xref c c-func docutils literal"><span class="pre">glClearBufferiv()</span></tt></a> should be used to clear
+stencil buffers. Masking and type conversion are performed in the same fashion as
+<a class="reference internal" href="glClearStencil.html#glClearStencil" title="glClearStencil"><tt class="xref c c-func docutils literal"><span class="pre">glClearStencil()</span></tt></a>.</p>
+<p><tt class="xref c c-func docutils literal"><span class="pre">glClearBufferfi()</span></tt> may be used to clear the depth and stencil buffers. <em>buffer</em> must be
+<tt class="docutils literal"><span class="pre">GL_DEPTH_STENCIL</span></tt> and <em>drawBuffer</em> must be zero. <em>depth</em> and
+<em>stencil</em> are the depth and stencil values, respectively.</p>
+<p>The result of <a class="reference internal" href="#glClearBuffer" title="glClearBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glClearBuffer()</span></tt></a> is undefined if no conversion between the type of <em>value</em>
+and the buffer being cleared is defined. However, this is not an error.</p>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated by <tt class="xref c c-func docutils literal"><span class="pre">glClearBufferif()</span></tt>, <tt class="xref c c-func docutils literal"><span class="pre">glClearBufferfv()</span></tt> and <tt class="xref c c-func docutils literal"><span class="pre">glClearBufferuiv()</span></tt> if <em>buffer</em> is not <tt class="docutils literal"><span class="pre">GL_COLOR</span></tt>, <tt class="docutils literal"><span class="pre">GL_FRONT</span></tt>, <tt class="docutils literal"><span class="pre">GL_BACK</span></tt>, <tt class="docutils literal"><span class="pre">GL_LEFT</span></tt>, <tt class="docutils literal"><span class="pre">GL_RIGHT</span></tt>, <tt class="docutils literal"><span class="pre">GL_FRONT_AND_BACK</span></tt>, <tt class="docutils literal"><span class="pre">GL_DEPTH</span></tt> or <tt class="docutils literal"><span class="pre">GL_STENCIL</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated by <tt class="xref c c-func docutils literal"><span class="pre">glClearBufferfi()</span></tt> if <em>buffer</em> is not <tt class="docutils literal"><span class="pre">GL_DEPTH_STENCIL</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>buffer</em> is <tt class="docutils literal"><span class="pre">GL_COLOR</span></tt>, <tt class="docutils literal"><span class="pre">GL_FRONT</span></tt>, <tt class="docutils literal"><span class="pre">GL_BACK</span></tt>, <tt class="docutils literal"><span class="pre">GL_LEFT</span></tt>, <tt class="docutils literal"><span class="pre">GL_RIGHT</span></tt>, or <tt class="docutils literal"><span class="pre">GL_FRONT_AND_BACK</span></tt> and <em>drawBuffer</em> is greater than or equal to <tt class="docutils literal"><span class="pre">GL_MAX_DRAW_BUFFERS</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>buffer</em> is <tt class="docutils literal"><span class="pre">GL_DEPTH</span></tt>, <tt class="docutils literal"><span class="pre">GL_STENCIL</span></tt> or <tt class="docutils literal"><span class="pre">GL_DEPTH_STENCIL</span></tt> and <em>drawBuffer</em> is not zero.</li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)2010 Khronos Group. Open Publication License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glClear.html"
+                        title="previous chapter">function <cite>glClear</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glClearColor.html"
+                        title="next chapter">function <cite>glClearColor</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glClearBuffer.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glClearColor.html" title="function glClearColor"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glClear.html" title="function glClear"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

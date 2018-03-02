@@ -1,0 +1,176 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glRenderbufferStorage &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glRenderbufferStorageMultisample" href="glRenderbufferStorageMultisample.html" />
+    <link rel="prev" title="function glReleaseShaderCompiler" href="glReleaseShaderCompiler.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glRenderbufferStorageMultisample.html" title="function glRenderbufferStorageMultisample"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glReleaseShaderCompiler.html" title="function glReleaseShaderCompiler"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glrenderbufferstorage">
+<h1>function <cite>glRenderbufferStorage</cite><a class="headerlink" href="#function-glrenderbufferstorage" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Establish data storage, format and dimensions of a renderbuffer object&#8217;s image</p>
+<dl class="function">
+<dt id="glRenderbufferStorage">
+<tt class="descname">glRenderbufferStorage</tt><big>(</big><big>)</big><a class="headerlink" href="#glRenderbufferStorage" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>target</strong> &#8211; Specifies a binding to which the target of the allocation and must be <tt class="docutils literal"><span class="pre">GL_RENDERBUFFER</span></tt>.</li>
+<li><strong>internalformat</strong> &#8211; Specifies the internal format to use for the renderbuffer object&#8217;s image.</li>
+<li><strong>width</strong> &#8211; Specifies the width of the renderbuffer, in pixels.</li>
+<li><strong>height</strong> &#8211; Specifies the height of the renderbuffer, in pixels.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glRenderbufferStorage</tt><big>(</big>GLenum <em>&nbsp;target</em>, GLenum <em>&nbsp;internalformat</em>, GLsizei <em>&nbsp;width</em>, GLsizei <em>&nbsp;height</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glGenRenderbuffers.html#glGenRenderbuffers" title="glGenRenderbuffers"><tt class="xref c c-func docutils literal"><span class="pre">glGenRenderbuffers()</span></tt></a>,
+<a class="reference internal" href="glBindRenderbuffer.html#glBindRenderbuffer" title="glBindRenderbuffer"><tt class="xref c c-func docutils literal"><span class="pre">glBindRenderbuffer()</span></tt></a>,
+<a class="reference internal" href="glRenderbufferStorageMultisample.html#glRenderbufferStorageMultisample" title="glRenderbufferStorageMultisample"><tt class="xref c c-func docutils literal"><span class="pre">glRenderbufferStorageMultisample()</span></tt></a>,
+<a class="reference internal" href="glFramebufferRenderbuffer.html#glFramebufferRenderbuffer" title="glFramebufferRenderbuffer"><tt class="xref c c-func docutils literal"><span class="pre">glFramebufferRenderbuffer()</span></tt></a>,
+<a class="reference internal" href="glDeleteRenderbuffers.html#glDeleteRenderbuffers" title="glDeleteRenderbuffers"><tt class="xref c c-func docutils literal"><span class="pre">glDeleteRenderbuffers()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glRenderbufferStorage" title="glRenderbufferStorage"><tt class="xref c c-func docutils literal"><span class="pre">glRenderbufferStorage()</span></tt></a> is equivalent to calling
+<a class="reference internal" href="glRenderbufferStorageMultisample.html#glRenderbufferStorageMultisample" title="glRenderbufferStorageMultisample"><tt class="xref c c-func docutils literal"><span class="pre">glRenderbufferStorageMultisample()</span></tt></a> with the
+<em>samples</em> set to zero.</p>
+<p>The target of the operation, specified by <em>target</em> must be <tt class="docutils literal"><span class="pre">GL_RENDERBUFFER</span></tt>.
+<em>internalformat</em> specifies the internal format to be used for the renderbuffer object&#8217;s storage and
+must be a color-renderable, depth-renderable, or stencil-renderable format.
+<em>width</em> and <em>height</em> are the dimensions, in pixels, of the renderbuffer.
+Both <em>width</em> and <em>height</em> must be less than or equal to the value of
+<tt class="docutils literal"><span class="pre">GL_MAX_RENDERBUFFER_SIZE</span></tt>.</p>
+<p>Upon success, <a class="reference internal" href="#glRenderbufferStorage" title="glRenderbufferStorage"><tt class="xref c c-func docutils literal"><span class="pre">glRenderbufferStorage()</span></tt></a> deletes any existing data store for the renderbuffer
+image and the contents of the data store after calling <a class="reference internal" href="#glRenderbufferStorage" title="glRenderbufferStorage"><tt class="xref c c-func docutils literal"><span class="pre">glRenderbufferStorage()</span></tt></a> are undefined.</p>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>target</em> is not <tt class="docutils literal"><span class="pre">GL_RENDERBUFFER</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if either of <em>width</em> or <em>height</em> is negative, or greater than the value of <tt class="docutils literal"><span class="pre">GL_MAX_RENDERBUFFER_SIZE</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>internalformat</em> is not a color-renderable, depth-renderable, or stencil-renderable format.</li>
+<li><tt class="docutils literal"><span class="pre">GL_OUT_OF_MEMORY</span></tt> is generated if the GL is unable to create a data store of the requested size.</li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)2010 Khronos Group. Open Publication License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glReleaseShaderCompiler.html"
+                        title="previous chapter">function <cite>glReleaseShaderCompiler</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glRenderbufferStorageMultisample.html"
+                        title="next chapter">function <cite>glRenderbufferStorageMultisample</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glRenderbufferStorage.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glRenderbufferStorageMultisample.html" title="function glRenderbufferStorageMultisample"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glReleaseShaderCompiler.html" title="function glReleaseShaderCompiler"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

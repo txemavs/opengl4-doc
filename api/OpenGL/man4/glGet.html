@@ -1,0 +1,1374 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glGet &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glGetActiveAtomicCounterBufferiv" href="glGetActiveAtomicCounterBufferiv.html" />
+    <link rel="prev" title="function glGenVertexArrays" href="glGenVertexArrays.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glGetActiveAtomicCounterBufferiv.html" title="function glGetActiveAtomicCounterBufferiv"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glGenVertexArrays.html" title="function glGenVertexArrays"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glget">
+<h1>function <cite>glGet</cite><a class="headerlink" href="#function-glget" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Return the value or values of a selected parameter</p>
+<dl class="function">
+<dt id="glGet">
+<tt class="descname">glGet</tt><big>(</big><big>)</big><a class="headerlink" href="#glGet" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>pname</strong> &#8211; Specifies the parameter value to be returned.
+The symbolic constants in the list below are accepted.</li>
+<li><strong>params</strong> &#8211; Returns the value or values of the specified parameter.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt id="glGetBooleanv">
+void <tt class="descname">glGetBooleanv</tt><big>(</big>GLenum <em>&nbsp;pname</em>, GLboolean * <em>&nbsp;params</em><big>)</big><a class="headerlink" href="#glGetBooleanv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="glGetDoublev">
+void <tt class="descname">glGetDoublev</tt><big>(</big>GLenum <em>&nbsp;pname</em>, GLdouble * <em>&nbsp;params</em><big>)</big><a class="headerlink" href="#glGetDoublev" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="glGetFloatv">
+void <tt class="descname">glGetFloatv</tt><big>(</big>GLenum <em>&nbsp;pname</em>, GLfloat * <em>&nbsp;params</em><big>)</big><a class="headerlink" href="#glGetFloatv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="glGetIntegerv">
+void <tt class="descname">glGetIntegerv</tt><big>(</big>GLenum <em>&nbsp;pname</em>, GLint * <em>&nbsp;params</em><big>)</big><a class="headerlink" href="#glGetIntegerv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="glGetInteger64v">
+void <tt class="descname">glGetInteger64v</tt><big>(</big>GLenum <em>&nbsp;pname</em>, GLint64 * <em>&nbsp;params</em><big>)</big><a class="headerlink" href="#glGetInteger64v" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="glGetBooleani_v">
+void <tt class="descname">glGetBooleani_v</tt><big>(</big>GLenum <em>&nbsp;pname</em>, GLuint <em>&nbsp;index</em>, GLboolean * <em>&nbsp;data</em><big>)</big><a class="headerlink" href="#glGetBooleani_v" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="glGetIntegeri_v">
+void <tt class="descname">glGetIntegeri_v</tt><big>(</big>GLenum <em>&nbsp;pname</em>, GLuint <em>&nbsp;index</em>, GLint * <em>&nbsp;data</em><big>)</big><a class="headerlink" href="#glGetIntegeri_v" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="glGetInteger64i_v">
+void <tt class="descname">glGetInteger64i_v</tt><big>(</big>GLenum <em>&nbsp;pname</em>, GLuint <em>&nbsp;index</em>, GLint64 * <em>&nbsp;data</em><big>)</big><a class="headerlink" href="#glGetInteger64i_v" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glGetActiveUniform.html#glGetActiveUniform" title="glGetActiveUniform"><tt class="xref c c-func docutils literal"><span class="pre">glGetActiveUniform()</span></tt></a>,
+<a class="reference internal" href="glGetAttachedShaders.html#glGetAttachedShaders" title="glGetAttachedShaders"><tt class="xref c c-func docutils literal"><span class="pre">glGetAttachedShaders()</span></tt></a>,
+<a class="reference internal" href="glGetAttribLocation.html#glGetAttribLocation" title="glGetAttribLocation"><tt class="xref c c-func docutils literal"><span class="pre">glGetAttribLocation()</span></tt></a>,
+<tt class="xref c c-func docutils literal"><span class="pre">glGetBufferParameter()</span></tt>,
+<a class="reference internal" href="glGetBufferPointerv.html#glGetBufferPointerv" title="glGetBufferPointerv"><tt class="xref c c-func docutils literal"><span class="pre">glGetBufferPointerv()</span></tt></a>,
+<a class="reference internal" href="glGetBufferSubData.html#glGetBufferSubData" title="glGetBufferSubData"><tt class="xref c c-func docutils literal"><span class="pre">glGetBufferSubData()</span></tt></a>,
+<a class="reference internal" href="glGetCompressedTexImage.html#glGetCompressedTexImage" title="glGetCompressedTexImage"><tt class="xref c c-func docutils literal"><span class="pre">glGetCompressedTexImage()</span></tt></a>,
+<a class="reference internal" href="glGetError.html#glGetError" title="glGetError"><tt class="xref c c-func docutils literal"><span class="pre">glGetError()</span></tt></a>,
+<a class="reference internal" href="glGetProgram.html#glGetProgram" title="glGetProgram"><tt class="xref c c-func docutils literal"><span class="pre">glGetProgram()</span></tt></a>,
+<a class="reference internal" href="glGetProgramInfoLog.html#glGetProgramInfoLog" title="glGetProgramInfoLog"><tt class="xref c c-func docutils literal"><span class="pre">glGetProgramInfoLog()</span></tt></a>,
+<a class="reference internal" href="glGetQueryiv.html#glGetQueryiv" title="glGetQueryiv"><tt class="xref c c-func docutils literal"><span class="pre">glGetQueryiv()</span></tt></a>,
+<a class="reference internal" href="glGetQueryObject.html#glGetQueryObject" title="glGetQueryObject"><tt class="xref c c-func docutils literal"><span class="pre">glGetQueryObject()</span></tt></a>,
+<a class="reference internal" href="glGetShader.html#glGetShader" title="glGetShader"><tt class="xref c c-func docutils literal"><span class="pre">glGetShader()</span></tt></a>,
+<a class="reference internal" href="glGetShaderInfoLog.html#glGetShaderInfoLog" title="glGetShaderInfoLog"><tt class="xref c c-func docutils literal"><span class="pre">glGetShaderInfoLog()</span></tt></a>,
+<a class="reference internal" href="glGetShaderSource.html#glGetShaderSource" title="glGetShaderSource"><tt class="xref c c-func docutils literal"><span class="pre">glGetShaderSource()</span></tt></a>,
+<a class="reference internal" href="glGetString.html#glGetString" title="glGetString"><tt class="xref c c-func docutils literal"><span class="pre">glGetString()</span></tt></a>,
+<a class="reference internal" href="glGetTexImage.html#glGetTexImage" title="glGetTexImage"><tt class="xref c c-func docutils literal"><span class="pre">glGetTexImage()</span></tt></a>,
+<a class="reference internal" href="glGetTexLevelParameter.html#glGetTexLevelParameter" title="glGetTexLevelParameter"><tt class="xref c c-func docutils literal"><span class="pre">glGetTexLevelParameter()</span></tt></a>,
+<a class="reference internal" href="glGetTexParameter.html#glGetTexParameter" title="glGetTexParameter"><tt class="xref c c-func docutils literal"><span class="pre">glGetTexParameter()</span></tt></a>,
+<a class="reference internal" href="glGetUniform.html#glGetUniform" title="glGetUniform"><tt class="xref c c-func docutils literal"><span class="pre">glGetUniform()</span></tt></a>,
+<a class="reference internal" href="glGetUniformLocation.html#glGetUniformLocation" title="glGetUniformLocation"><tt class="xref c c-func docutils literal"><span class="pre">glGetUniformLocation()</span></tt></a>,
+<a class="reference internal" href="glGetVertexAttrib.html#glGetVertexAttrib" title="glGetVertexAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glGetVertexAttrib()</span></tt></a>,
+<a class="reference internal" href="glGetVertexAttribPointerv.html#glGetVertexAttribPointerv" title="glGetVertexAttribPointerv"><tt class="xref c c-func docutils literal"><span class="pre">glGetVertexAttribPointerv()</span></tt></a>,
+<a class="reference internal" href="glIsEnabled.html#glIsEnabled" title="glIsEnabled"><tt class="xref c c-func docutils literal"><span class="pre">glIsEnabled()</span></tt></a></p>
+</div>
+<p class="rubric">Parameters</p>
+<blockquote>
+<div><p><em>pname</em></p>
+<blockquote>
+<div>Specifies the parameter value to be returned.
+The symbolic constants in the list below are accepted.</div></blockquote>
+<p><em>index</em></p>
+<blockquote>
+<div>Specifies the index of the particular element being queried.</div></blockquote>
+<p><em>data</em></p>
+<blockquote>
+<div>Returns the value or values of the specified parameter.</div></blockquote>
+</div></blockquote>
+<p class="rubric">Description</p>
+<p>These four commands return values for simple state variables in GL.
+<em>pname</em> is a symbolic constant indicating the state variable to be returned,
+and <em>params</em> is a pointer to an array of the indicated type in
+which to place the returned data.</p>
+<p>Type conversion is performed if <em>params</em> has a different type than
+the state variable value being requested.
+If <a class="reference internal" href="#glGetBooleanv" title="glGetBooleanv"><tt class="xref c c-func docutils literal"><span class="pre">glGetBooleanv()</span></tt></a> is called,
+a floating-point (or integer) value is converted to <tt class="docutils literal"><span class="pre">GL_FALSE</span></tt> if
+and only if it is 0.0 (or 0).
+Otherwise,
+it is converted to <tt class="docutils literal"><span class="pre">GL_TRUE</span></tt>.
+If <a class="reference internal" href="#glGetIntegerv" title="glGetIntegerv"><tt class="xref c c-func docutils literal"><span class="pre">glGetIntegerv()</span></tt></a> is called, boolean values are returned as
+<tt class="docutils literal"><span class="pre">GL_TRUE</span></tt> or <tt class="docutils literal"><span class="pre">GL_FALSE</span></tt>, and most floating-point values are
+rounded to the nearest integer value. Floating-point colors and
+normals, however, are returned with a linear mapping that maps 1.0 to
+the most positive representable integer value
+and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mn>-1.0</mn></math></span> to the most negative representable integer value.
+If <a class="reference internal" href="#glGetFloatv" title="glGetFloatv"><tt class="xref c c-func docutils literal"><span class="pre">glGetFloatv()</span></tt></a> or <a class="reference internal" href="#glGetDoublev" title="glGetDoublev"><tt class="xref c c-func docutils literal"><span class="pre">glGetDoublev()</span></tt></a> is called,
+boolean values are returned as <tt class="docutils literal"><span class="pre">GL_TRUE</span></tt> or <tt class="docutils literal"><span class="pre">GL_FALSE</span></tt>,
+and integer values are converted to floating-point values.</p>
+<p>The following symbolic constants are accepted by <em>pname</em> :</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">GL_ACTIVE_TEXTURE</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single value indicating the active multitexture unit.
+The initial value is <tt class="docutils literal"><span class="pre">GL_TEXTURE0</span></tt>.
+See <a class="reference internal" href="glActiveTexture.html#glActiveTexture" title="glActiveTexture"><tt class="xref c c-func docutils literal"><span class="pre">glActiveTexture()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_ALIASED_LINE_WIDTH_RANGE</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a pair of values indicating the range of
+widths supported for aliased lines. See <a class="reference internal" href="glLineWidth.html#glLineWidth" title="glLineWidth"><tt class="xref c c-func docutils literal"><span class="pre">glLineWidth()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_ARRAY_BUFFER_BINDING</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single value, the name of the buffer object
+currently bound to the target <tt class="docutils literal"><span class="pre">GL_ARRAY_BUFFER</span></tt>. If no buffer object
+is bound to this target, 0 is returned.  The initial value is 0.
+See <a class="reference internal" href="glBindBuffer.html#glBindBuffer" title="glBindBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glBindBuffer()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_BLEND</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single boolean value indicating whether blending is
+enabled. The initial value is <tt class="docutils literal"><span class="pre">GL_FALSE</span></tt>.
+See <a class="reference internal" href="glBlendFunc.html#glBlendFunc" title="glBlendFunc"><tt class="xref c c-func docutils literal"><span class="pre">glBlendFunc()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_BLEND_COLOR</span></tt></p>
+<blockquote>
+<div><em>params</em> returns four values,
+the red, green, blue, and alpha values which are the components of
+the blend color.
+See <a class="reference internal" href="glBlendColor.html#glBlendColor" title="glBlendColor"><tt class="xref c c-func docutils literal"><span class="pre">glBlendColor()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_BLEND_DST_ALPHA</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the symbolic constant identifying the alpha destination blend
+function. The initial value is <tt class="docutils literal"><span class="pre">GL_ZERO</span></tt>.
+See <a class="reference internal" href="glBlendFunc.html#glBlendFunc" title="glBlendFunc"><tt class="xref c c-func docutils literal"><span class="pre">glBlendFunc()</span></tt></a> and <a class="reference internal" href="glBlendFuncSeparate.html#glBlendFuncSeparate" title="glBlendFuncSeparate"><tt class="xref c c-func docutils literal"><span class="pre">glBlendFuncSeparate()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_BLEND_DST_RGB</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the symbolic constant identifying the RGB destination blend
+function. The initial value is <tt class="docutils literal"><span class="pre">GL_ZERO</span></tt>.
+See <a class="reference internal" href="glBlendFunc.html#glBlendFunc" title="glBlendFunc"><tt class="xref c c-func docutils literal"><span class="pre">glBlendFunc()</span></tt></a> and <a class="reference internal" href="glBlendFuncSeparate.html#glBlendFuncSeparate" title="glBlendFuncSeparate"><tt class="xref c c-func docutils literal"><span class="pre">glBlendFuncSeparate()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_BLEND_EQUATION_RGB</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value, a symbolic constant indicating whether
+the RGB blend equation is <tt class="docutils literal"><span class="pre">GL_FUNC_ADD</span></tt>, <tt class="docutils literal"><span class="pre">GL_FUNC_SUBTRACT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_FUNC_REVERSE_SUBTRACT</span></tt>, <tt class="docutils literal"><span class="pre">GL_MIN</span></tt> or <tt class="docutils literal"><span class="pre">GL_MAX</span></tt>.
+See <a class="reference internal" href="glBlendEquationSeparate.html#glBlendEquationSeparate" title="glBlendEquationSeparate"><tt class="xref c c-func docutils literal"><span class="pre">glBlendEquationSeparate()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_BLEND_EQUATION_ALPHA</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value, a symbolic constant indicating whether
+the Alpha blend equation is <tt class="docutils literal"><span class="pre">GL_FUNC_ADD</span></tt>, <tt class="docutils literal"><span class="pre">GL_FUNC_SUBTRACT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_FUNC_REVERSE_SUBTRACT</span></tt>, <tt class="docutils literal"><span class="pre">GL_MIN</span></tt> or <tt class="docutils literal"><span class="pre">GL_MAX</span></tt>.
+See <a class="reference internal" href="glBlendEquationSeparate.html#glBlendEquationSeparate" title="glBlendEquationSeparate"><tt class="xref c c-func docutils literal"><span class="pre">glBlendEquationSeparate()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_BLEND_SRC_ALPHA</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the symbolic constant identifying the alpha source blend function. The initial
+value is <tt class="docutils literal"><span class="pre">GL_ONE</span></tt>.
+See <a class="reference internal" href="glBlendFunc.html#glBlendFunc" title="glBlendFunc"><tt class="xref c c-func docutils literal"><span class="pre">glBlendFunc()</span></tt></a> and <a class="reference internal" href="glBlendFuncSeparate.html#glBlendFuncSeparate" title="glBlendFuncSeparate"><tt class="xref c c-func docutils literal"><span class="pre">glBlendFuncSeparate()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_BLEND_SRC_RGB</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the symbolic constant identifying the RGB source blend function. The initial
+value is <tt class="docutils literal"><span class="pre">GL_ONE</span></tt>.
+See <a class="reference internal" href="glBlendFunc.html#glBlendFunc" title="glBlendFunc"><tt class="xref c c-func docutils literal"><span class="pre">glBlendFunc()</span></tt></a> and <a class="reference internal" href="glBlendFuncSeparate.html#glBlendFuncSeparate" title="glBlendFuncSeparate"><tt class="xref c c-func docutils literal"><span class="pre">glBlendFuncSeparate()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_COLOR_CLEAR_VALUE</span></tt></p>
+<blockquote>
+<div><em>params</em> returns four values:
+the red, green, blue, and alpha values used to clear the color buffers.
+Integer values,
+if requested,
+are linearly mapped from the internal floating-point representation such
+that 1.0 returns the most positive representable integer value,
+and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mn>-1.0</mn></math></span> returns the most negative representable integer
+value. The initial value is (0, 0, 0, 0).
+See <a class="reference internal" href="glClearColor.html#glClearColor" title="glClearColor"><tt class="xref c c-func docutils literal"><span class="pre">glClearColor()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_COLOR_LOGIC_OP</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single boolean value indicating whether a fragment&#8217;s
+RGBA color values are merged into the framebuffer using a logical
+operation. The initial value is <tt class="docutils literal"><span class="pre">GL_FALSE</span></tt>.
+See <a class="reference internal" href="glLogicOp.html#glLogicOp" title="glLogicOp"><tt class="xref c c-func docutils literal"><span class="pre">glLogicOp()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_COLOR_WRITEMASK</span></tt></p>
+<blockquote>
+<div><em>params</em> returns four boolean values:
+the red, green, blue, and alpha write enables for the color
+buffers. The initial value is (<tt class="docutils literal"><span class="pre">GL_TRUE</span></tt>, <tt class="docutils literal"><span class="pre">GL_TRUE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TRUE</span></tt>, <tt class="docutils literal"><span class="pre">GL_TRUE</span></tt>).
+See <a class="reference internal" href="glColorMask.html#glColorMask" title="glColorMask"><tt class="xref c c-func docutils literal"><span class="pre">glColorMask()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_COMPRESSED_TEXTURE_FORMATS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a list of symbolic
+constants of length <tt class="docutils literal"><span class="pre">GL_NUM_COMPRESSED_TEXTURE_FORMATS</span></tt>
+indicating which compressed texture formats are available.
+See <a class="reference internal" href="glCompressedTexImage2D.html#glCompressedTexImage2D" title="glCompressedTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glCompressedTexImage2D()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_CONTEXT_FLAGS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the flags with which the context was created (such as debugging functionality).</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_CULL_FACE</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single boolean value indicating whether polygon culling
+is enabled. The initial value is <tt class="docutils literal"><span class="pre">GL_FALSE</span></tt>.
+See <a class="reference internal" href="glCullFace.html#glCullFace" title="glCullFace"><tt class="xref c c-func docutils literal"><span class="pre">glCullFace()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_CURRENT_PROGRAM</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the name of the program object that is currently active, or 0 if no program object is active.
+See <a class="reference internal" href="glUseProgram.html#glUseProgram" title="glUseProgram"><tt class="xref c c-func docutils literal"><span class="pre">glUseProgram()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_DEPTH_CLEAR_VALUE</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the value that is used to clear the depth buffer.
+Integer values,
+if requested,
+are linearly mapped from the internal floating-point representation such
+that 1.0 returns the most positive representable integer value,
+and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mn>-1.0</mn></math></span> returns the most negative representable integer
+value. The initial value is 1.
+See <a class="reference internal" href="glClearDepth.html#glClearDepth" title="glClearDepth"><tt class="xref c c-func docutils literal"><span class="pre">glClearDepth()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_DEPTH_FUNC</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the symbolic constant that indicates the depth comparison
+function. The initial value is <tt class="docutils literal"><span class="pre">GL_LESS</span></tt>.
+See <a class="reference internal" href="glDepthFunc.html#glDepthFunc" title="glDepthFunc"><tt class="xref c c-func docutils literal"><span class="pre">glDepthFunc()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_DEPTH_RANGE</span></tt></p>
+<blockquote>
+<div><em>params</em> returns two values:
+the near and far mapping limits for the depth buffer.
+Integer values,
+if requested,
+are linearly mapped from the internal floating-point representation such
+that 1.0 returns the most positive representable integer value,
+and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mn>-1.0</mn></math></span> returns the most negative representable integer
+value. The initial value is (0, 1).
+See <a class="reference internal" href="glDepthRange.html#glDepthRange" title="glDepthRange"><tt class="xref c c-func docutils literal"><span class="pre">glDepthRange()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_DEPTH_TEST</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single boolean value indicating whether depth testing
+of fragments is enabled. The initial value is <tt class="docutils literal"><span class="pre">GL_FALSE</span></tt>.
+See <a class="reference internal" href="glDepthFunc.html#glDepthFunc" title="glDepthFunc"><tt class="xref c c-func docutils literal"><span class="pre">glDepthFunc()</span></tt></a> and <a class="reference internal" href="glDepthRange.html#glDepthRange" title="glDepthRange"><tt class="xref c c-func docutils literal"><span class="pre">glDepthRange()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_DEPTH_WRITEMASK</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single boolean value indicating if the depth buffer
+is enabled for writing. The initial value is <tt class="docutils literal"><span class="pre">GL_TRUE</span></tt>.
+See <a class="reference internal" href="glDepthMask.html#glDepthMask" title="glDepthMask"><tt class="xref c c-func docutils literal"><span class="pre">glDepthMask()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_DITHER</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single boolean value indicating whether dithering of
+fragment colors and indices is enabled. The initial value is <tt class="docutils literal"><span class="pre">GL_TRUE</span></tt>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_DOUBLEBUFFER</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single boolean value indicating whether double buffering
+is supported.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_DRAW_BUFFER</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+a symbolic constant indicating which buffers are being drawn to.
+See <a class="reference internal" href="glDrawBuffer.html#glDrawBuffer" title="glDrawBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glDrawBuffer()</span></tt></a>. The initial value is <tt class="docutils literal"><span class="pre">GL_BACK</span></tt> if there
+are back buffers, otherwise it is <tt class="docutils literal"><span class="pre">GL_FRONT</span></tt>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_DRAW_BUFFER</span></tt> <strong>i</strong></p>
+<blockquote>
+<div><em>params</em> returns one value,
+a symbolic constant indicating which buffers are being drawn to by the corresponding output color.
+See <a class="reference internal" href="glDrawBuffers.html#glDrawBuffers" title="glDrawBuffers"><tt class="xref c c-func docutils literal"><span class="pre">glDrawBuffers()</span></tt></a>.
+The initial value of <tt class="docutils literal"><span class="pre">GL_DRAW_BUFFER0</span></tt> is <tt class="docutils literal"><span class="pre">GL_BACK</span></tt> if there
+are back buffers, otherwise it is <tt class="docutils literal"><span class="pre">GL_FRONT</span></tt>.  The
+initial values of draw buffers for all other output colors is <tt class="docutils literal"><span class="pre">GL_NONE</span></tt>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_DRAW_FRAMEBUFFER_BINDING</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the name of the framebuffer object currently bound to the <tt class="docutils literal"><span class="pre">GL_DRAW_FRAMEBUFFER</span></tt> target.
+If the default framebuffer is bound, this value will be zero. The initial value is zero.
+See <a class="reference internal" href="glBindFramebuffer.html#glBindFramebuffer" title="glBindFramebuffer"><tt class="xref c c-func docutils literal"><span class="pre">glBindFramebuffer()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_READ_FRAMEBUFFER_BINDING</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the name of the framebuffer object currently bound to the <tt class="docutils literal"><span class="pre">GL_READ_FRAMEBUFFER</span></tt> target.
+If the default framebuffer is bound, this value will be zero. The initial value is zero.
+See <a class="reference internal" href="glBindFramebuffer.html#glBindFramebuffer" title="glBindFramebuffer"><tt class="xref c c-func docutils literal"><span class="pre">glBindFramebuffer()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_ELEMENT_ARRAY_BUFFER_BINDING</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single value, the name of the buffer object
+currently bound to the target <tt class="docutils literal"><span class="pre">GL_ELEMENT_ARRAY_BUFFER</span></tt>. If no buffer object
+is bound to this target, 0 is returned.  The initial value is 0.
+See <a class="reference internal" href="glBindBuffer.html#glBindBuffer" title="glBindBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glBindBuffer()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_FRAGMENT_SHADER_DERIVATIVE_HINT</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+a symbolic constant indicating the mode of the derivative accuracy hint
+for fragment shaders. The initial value
+is <tt class="docutils literal"><span class="pre">GL_DONT_CARE</span></tt>.
+See <a class="reference internal" href="glHint.html#glHint" title="glHint"><tt class="xref c c-func docutils literal"><span class="pre">glHint()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_IMPLEMENTATION_COLOR_READ_FORMAT</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single GLenum value indicating
+the implementation&#8217;s preferred pixel data format.
+See <a class="reference internal" href="glReadPixels.html#glReadPixels" title="glReadPixels"><tt class="xref c c-func docutils literal"><span class="pre">glReadPixels()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_IMPLEMENTATION_COLOR_READ_TYPE</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single GLenum value indicating
+the implementation&#8217;s preferred pixel data type.
+See <a class="reference internal" href="glReadPixels.html#glReadPixels" title="glReadPixels"><tt class="xref c c-func docutils literal"><span class="pre">glReadPixels()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_LINE_SMOOTH</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single boolean value indicating whether antialiasing of
+lines is enabled. The initial value is <tt class="docutils literal"><span class="pre">GL_FALSE</span></tt>.
+See <a class="reference internal" href="glLineWidth.html#glLineWidth" title="glLineWidth"><tt class="xref c c-func docutils literal"><span class="pre">glLineWidth()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_LINE_SMOOTH_HINT</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+a symbolic constant indicating the mode of the line antialiasing
+hint. The initial value is <tt class="docutils literal"><span class="pre">GL_DONT_CARE</span></tt>.
+See <a class="reference internal" href="glHint.html#glHint" title="glHint"><tt class="xref c c-func docutils literal"><span class="pre">glHint()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_LINE_WIDTH</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the line width as specified with <a class="reference internal" href="glLineWidth.html#glLineWidth" title="glLineWidth"><tt class="xref c c-func docutils literal"><span class="pre">glLineWidth()</span></tt></a>. The initial value is
+1.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_LAYER_PROVOKING_VERTEX</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the implementation dependent specifc vertex of a primitive that is used to select the rendering layer.
+If the value returned is equivalent to <tt class="docutils literal"><span class="pre">GL_PROVOKING_VERTEX</span></tt>, then the vertex
+selection follows the convention specified by
+<a class="reference internal" href="glProvokingVertex.html#glProvokingVertex" title="glProvokingVertex"><tt class="xref c c-func docutils literal"><span class="pre">glProvokingVertex()</span></tt></a>.
+If the value returned is equivalent to <tt class="docutils literal"><span class="pre">GL_FIRST_VERTEX_CONVENTION</span></tt>, then the
+selection is always taken from the first vertex in the primitive.
+If the value returned is equivalent to <tt class="docutils literal"><span class="pre">GL_LAST_VERTEX_CONVENTION</span></tt>, then the
+selection is always taken from the last vertex in the primitive.
+If the value returned is equivalent to <tt class="docutils literal"><span class="pre">GL_UNDEFINED_VERTEX</span></tt>, then the
+selection is not guaranteed to be taken from any specific vertex in the primitive.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_LINE_WIDTH_GRANULARITY</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the width difference between adjacent supported widths for antialiased lines.
+See <a class="reference internal" href="glLineWidth.html#glLineWidth" title="glLineWidth"><tt class="xref c c-func docutils literal"><span class="pre">glLineWidth()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_LINE_WIDTH_RANGE</span></tt></p>
+<blockquote>
+<div><em>params</em> returns two values:
+the smallest and largest supported widths for antialiased
+lines.
+See <a class="reference internal" href="glLineWidth.html#glLineWidth" title="glLineWidth"><tt class="xref c c-func docutils literal"><span class="pre">glLineWidth()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_LOGIC_OP_MODE</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+a symbolic constant indicating the selected logic operation
+mode. The initial value is <tt class="docutils literal"><span class="pre">GL_COPY</span></tt>.
+See <a class="reference internal" href="glLogicOp.html#glLogicOp" title="glLogicOp"><tt class="xref c c-func docutils literal"><span class="pre">glLogicOp()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAJOR_VERSION</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the major version number of the OpenGL API supported by the current context.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_3D_TEXTURE_SIZE</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+a rough estimate of the largest 3D texture that the GL can handle.
+The value must be at least 64.
+Use <tt class="docutils literal"><span class="pre">GL_PROXY_TEXTURE_3D</span></tt> to determine if a texture is too large.
+See <a class="reference internal" href="glTexImage3D.html#glTexImage3D" title="glTexImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage3D()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_ARRAY_TEXTURE_LAYERS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value.
+The value indicates the maximum number of layers allowed in an array texture, and must be at least 256.
+See <a class="reference internal" href="glTexImage2D.html#glTexImage2D" title="glTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage2D()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_CLIP_DISTANCES</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the maximum number of application-defined clipping distances. The value must be at least 8.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_COLOR_TEXTURE_SAMPLES</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the maximum number of samples in a color multisample texture.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_COMBINED_ATOMIC_COUNTERS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single value, the maximum number of atomic counters available to all active shaders.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_COMBINED_FRAGMENT_UNIFORM_COMPONENTS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the number of words for fragment shader uniform variables in all uniform
+blocks (including default). The value must be at least 1.
+See <a class="reference internal" href="glUniform.html#glUniform" title="glUniform"><tt class="xref c c-func docutils literal"><span class="pre">glUniform()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_COMBINED_GEOMETRY_UNIFORM_COMPONENTS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the number of words for geometry shader uniform variables in all uniform
+blocks (including default). The value must be at least 1.
+See <a class="reference internal" href="glUniform.html#glUniform" title="glUniform"><tt class="xref c c-func docutils literal"><span class="pre">glUniform()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value, the maximum supported texture image units that
+can be used to access texture maps from the vertex shader and the fragment processor combined.
+If both the vertex shader and the fragment processing stage access the same texture image
+unit, then that counts as using two texture image units against this limit.
+The value must be at least 48.
+See <a class="reference internal" href="glActiveTexture.html#glActiveTexture" title="glActiveTexture"><tt class="xref c c-func docutils literal"><span class="pre">glActiveTexture()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_COMBINED_UNIFORM_BLOCKS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the maximum number of uniform blocks per program.  The value must be at least 36.
+See <a class="reference internal" href="glUniformBlockBinding.html#glUniformBlockBinding" title="glUniformBlockBinding"><tt class="xref c c-func docutils literal"><span class="pre">glUniformBlockBinding()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_COMBINED_VERTEX_UNIFORM_COMPONENTS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the number of words for vertex shader uniform variables in all uniform
+blocks (including default). The value must be at least 1.
+See <a class="reference internal" href="glUniform.html#glUniform" title="glUniform"><tt class="xref c c-func docutils literal"><span class="pre">glUniform()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_CUBE_MAP_TEXTURE_SIZE</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value.
+The value gives a rough estimate of the largest cube-map texture that
+the GL can handle. The value must be at least 1024.
+Use <tt class="docutils literal"><span class="pre">GL_PROXY_TEXTURE_CUBE_MAP</span></tt>
+to determine if a texture is too large.
+See <a class="reference internal" href="glTexImage2D.html#glTexImage2D" title="glTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage2D()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_DEPTH_TEXTURE_SAMPLES</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the maximum number of samples in a multisample depth or depth-stencil texture.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_DRAW_BUFFERS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value, the maximum number
+of simultaneous outputs that may be written in a fragment shader.
+The value must be at least 8.
+See <a class="reference internal" href="glDrawBuffers.html#glDrawBuffers" title="glDrawBuffers"><tt class="xref c c-func docutils literal"><span class="pre">glDrawBuffers()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_DUALSOURCE_DRAW_BUFFERS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value, the maximum number
+of active draw buffers when using dual-source  blending. The value must be at least 1.
+See <a class="reference internal" href="glBlendFunc.html#glBlendFunc" title="glBlendFunc"><tt class="xref c c-func docutils literal"><span class="pre">glBlendFunc()</span></tt></a> and
+<a class="reference internal" href="glBlendFuncSeparate.html#glBlendFuncSeparate" title="glBlendFuncSeparate"><tt class="xref c c-func docutils literal"><span class="pre">glBlendFuncSeparate()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_ELEMENTS_INDICES</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the recommended maximum number of vertex array indices.
+See <a class="reference internal" href="glDrawRangeElements.html#glDrawRangeElements" title="glDrawRangeElements"><tt class="xref c c-func docutils literal"><span class="pre">glDrawRangeElements()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_ELEMENTS_VERTICES</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the recommended maximum number of vertex array vertices.
+See <a class="reference internal" href="glDrawRangeElements.html#glDrawRangeElements" title="glDrawRangeElements"><tt class="xref c c-func docutils literal"><span class="pre">glDrawRangeElements()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_FRAGMENT_ATOMIC_COUNTERS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single value, the maximum number of atomic counters available to fragment shaders.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_FRAGMENT_INPUT_COMPONENTS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the maximum number of components of the inputs read by the fragment shader, which must be at least 128.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_FRAGMENT_UNIFORM_COMPONENTS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the maximum number of individual floating-point, integer, or boolean values that can be held
+in uniform variable storage for a fragment shader. The value must be at least 1024.
+See <a class="reference internal" href="glUniform.html#glUniform" title="glUniform"><tt class="xref c c-func docutils literal"><span class="pre">glUniform()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_FRAGMENT_UNIFORM_VECTORS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the maximum number of individual 4-vectors of floating-point, integer, or boolean values
+that can be held
+in uniform variable storage for a fragment shader. The value is equal to the value of
+<tt class="docutils literal"><span class="pre">GL_MAX_FRAGMENT_UNIFORM_COMPONENTS</span></tt> divided by 4 and must be at least 256.
+See <a class="reference internal" href="glUniform.html#glUniform" title="glUniform"><tt class="xref c c-func docutils literal"><span class="pre">glUniform()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_FRAGMENT_UNIFORM_BLOCKS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the maximum number of uniform blocks per fragment shader.  The value must be at least 12.
+See <a class="reference internal" href="glUniformBlockBinding.html#glUniformBlockBinding" title="glUniformBlockBinding"><tt class="xref c c-func docutils literal"><span class="pre">glUniformBlockBinding()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_GEOMETRY_ATOMIC_COUNTERS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single value, the maximum number of atomic counters available to geometry shaders.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_GEOMETRY_INPUT_COMPONENTS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the maximum number of components of inputs read by a geometry shader, which must be at least 64.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_GEOMETRY_OUTPUT_COMPONENTS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the maximum number of components of outputs written by a geometry shader, which must be at least 128.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_GEOMETRY_TEXTURE_IMAGE_UNITS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value, the maximum supported texture image units that
+can be used to access texture maps from the geometry shader. The value must be at least 16.
+See <a class="reference internal" href="glActiveTexture.html#glActiveTexture" title="glActiveTexture"><tt class="xref c c-func docutils literal"><span class="pre">glActiveTexture()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_GEOMETRY_UNIFORM_BLOCKS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the maximum number of uniform blocks per geometry shader.  The value must be at least 12.
+See <a class="reference internal" href="glUniformBlockBinding.html#glUniformBlockBinding" title="glUniformBlockBinding"><tt class="xref c c-func docutils literal"><span class="pre">glUniformBlockBinding()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_GEOMETRY_UNIFORM_COMPONENTS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the maximum number of individual floating-point, integer, or boolean values that can be held
+in uniform variable storage for a geometry shader. The value must be at least 1024.
+See <a class="reference internal" href="glUniform.html#glUniform" title="glUniform"><tt class="xref c c-func docutils literal"><span class="pre">glUniform()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_INTEGER_SAMPLES</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the maximum number of samples supported in integer format multisample buffers.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MIN_MAP_BUFFER_ALIGNMENT</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the minimum alignment in basic machine units of pointers returned from <a class="reference internal" href="glMapBuffer.html#glMapBuffer" title="glMapBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glMapBuffer()</span></tt></a>
+and <a class="reference internal" href="glMapBufferRange.html#glMapBufferRange" title="glMapBufferRange"><tt class="xref c c-func docutils literal"><span class="pre">glMapBufferRange()</span></tt></a>. This value must be a power of two and must
+be at least 64.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_PROGRAM_TEXEL_OFFSET</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the maximum texel offset allowed in a texture lookup, which must be at least 7.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MIN_PROGRAM_TEXEL_OFFSET</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the minimum texel offset allowed in a texture lookup, which must be at most -8.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_RECTANGLE_TEXTURE_SIZE</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value.
+The value gives a rough estimate of the largest rectangular texture that
+the GL can handle. The value must be at least 1024.
+Use <tt class="docutils literal"><span class="pre">GL_PROXY_RECTANGLE_TEXTURE</span></tt>
+to determine if a texture is too large.
+See <a class="reference internal" href="glTexImage2D.html#glTexImage2D" title="glTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage2D()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_RENDERBUFFER_SIZE</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value.
+The value indicates the maximum supported size for renderbuffers.
+See <a class="reference internal" href="glFramebufferRenderbuffer.html#glFramebufferRenderbuffer" title="glFramebufferRenderbuffer"><tt class="xref c c-func docutils literal"><span class="pre">glFramebufferRenderbuffer()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_SAMPLE_MASK_WORDS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the maximum number of sample mask words.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_SERVER_WAIT_TIMEOUT</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the maximum <a class="reference internal" href="glWaitSync.html#glWaitSync" title="glWaitSync"><tt class="xref c c-func docutils literal"><span class="pre">glWaitSync()</span></tt></a> timeout interval.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_TESS_CONTROL_ATOMIC_COUNTERS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single value, the maximum number of atomic counters available to tessellation control shaders.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_TESS_EVALUATION_ATOMIC_COUNTERS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single value, the maximum number of atomic counters available to tessellation evaluation shaders.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_TEXTURE_BUFFER_SIZE</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value.
+The value gives the maximum number of texels allowed in the texel array of a texture buffer object.
+Value must be at least 65536.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_TEXTURE_IMAGE_UNITS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value, the maximum supported texture image units that
+can be used to access texture maps from the fragment shader.
+The value must be at least 16.
+See <a class="reference internal" href="glActiveTexture.html#glActiveTexture" title="glActiveTexture"><tt class="xref c c-func docutils literal"><span class="pre">glActiveTexture()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_TEXTURE_LOD_BIAS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the maximum, absolute value of the texture level-of-detail bias.  The
+value must be at least 2.0.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_TEXTURE_SIZE</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value.
+The value gives a rough estimate of the largest texture that
+the GL can handle. The value must be at least 1024.
+Use a proxy texture target such as <tt class="docutils literal"><span class="pre">GL_PROXY_TEXTURE_1D</span></tt> or <tt class="docutils literal"><span class="pre">GL_PROXY_TEXTURE_2D</span></tt>
+to determine if a texture is too large.
+See <a class="reference internal" href="glTexImage1D.html#glTexImage1D" title="glTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage1D()</span></tt></a> and <a class="reference internal" href="glTexImage2D.html#glTexImage2D" title="glTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage2D()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_UNIFORM_BUFFER_BINDINGS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the maximum number of uniform buffer binding points on the context, which must be at least 36.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_UNIFORM_BLOCK_SIZE</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the maximum size in basic machine units of a uniform block, which must be at least 16384.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_VARYING_COMPONENTS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the number components for varying variables, which must be at least 60.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_VARYING_VECTORS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the number 4-vectors for varying variables, which is equal to the value of
+<tt class="docutils literal"><span class="pre">GL_MAX_VARYING_COMPONENTS</span></tt> and must be at least 15.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_VARYING_FLOATS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the maximum number of interpolators available for processing varying variables used by
+vertex and fragment shaders. This value represents the number of individual floating-point
+values that can be interpolated; varying variables declared as vectors, matrices, and arrays
+will all consume multiple interpolators. The value must be at least 32.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_VERTEX_ATOMIC_COUNTERS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single value, the maximum number of atomic counters available to vertex shaders.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_VERTEX_ATTRIBS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the maximum number of 4-component generic vertex attributes accessible to a vertex shader.
+The value must be at least 16.
+See <a class="reference internal" href="glVertexAttrib.html#glVertexAttrib" title="glVertexAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glVertexAttrib()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_VERTEX_TEXTURE_IMAGE_UNITS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value, the maximum supported texture image units that
+can be used to access texture maps from the vertex shader. The value may be at least 16.
+See <a class="reference internal" href="glActiveTexture.html#glActiveTexture" title="glActiveTexture"><tt class="xref c c-func docutils literal"><span class="pre">glActiveTexture()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_VERTEX_UNIFORM_COMPONENTS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the maximum number of individual floating-point, integer, or boolean values that can be held
+in uniform variable storage for a vertex shader. The value must be at least 1024.
+See <a class="reference internal" href="glUniform.html#glUniform" title="glUniform"><tt class="xref c c-func docutils literal"><span class="pre">glUniform()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_VERTEX_UNIFORM_VECTORS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the maximum number of 4-vectors that may be held in uniform variable storage for the vertex
+shader. The value of <tt class="docutils literal"><span class="pre">GL_MAX_VERTEX_UNIFORM_VECTORS</span></tt> is equal to the
+value of <tt class="docutils literal"><span class="pre">GL_MAX_VERTEX_UNIFORM_COMPONENTS</span></tt> and must be at least
+256.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_VERTEX_OUTPUT_COMPONENTS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the maximum number of components of output written by a vertex shader, which must be at least 64.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_VERTEX_UNIFORM_BLOCKS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the maximum number of uniform blocks per vertex shader.  The value must be at least 12.
+See <a class="reference internal" href="glUniformBlockBinding.html#glUniformBlockBinding" title="glUniformBlockBinding"><tt class="xref c c-func docutils literal"><span class="pre">glUniformBlockBinding()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_VIEWPORT_DIMS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns two values:
+the maximum supported width and height of the viewport.
+These must be at least as large as the visible dimensions of the display
+being rendered to.
+See <a class="reference internal" href="glViewport.html#glViewport" title="glViewport"><tt class="xref c c-func docutils literal"><span class="pre">glViewport()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_VIEWPORTS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value, the maximum number
+of simultaneous viewports that are supported.
+The value must be at least 16.
+See <a class="reference internal" href="glViewportIndexed.html#glViewportIndexed" title="glViewportIndexed"><tt class="xref c c-func docutils literal"><span class="pre">glViewportIndexed()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MINOR_VERSION</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the minor version number of the OpenGL API supported by the current context.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_NUM_COMPRESSED_TEXTURE_FORMATS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single integer value indicating the number of available
+compressed texture formats.  The minimum value is 4.
+See <a class="reference internal" href="glCompressedTexImage2D.html#glCompressedTexImage2D" title="glCompressedTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glCompressedTexImage2D()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_NUM_EXTENSIONS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the number of extensions supported by the GL implementation for the current context.
+See <a class="reference internal" href="glGetString.html#glGetString" title="glGetString"><tt class="xref c c-func docutils literal"><span class="pre">glGetString()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_NUM_PROGRAM_BINARY_FORMATS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the number of program binary formats supported by the implementation.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_NUM_SHADER_BINARY_FORMATS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the number of binary shader formats supported by the implementation. If this value is
+greater than zero, then the implementation supports loading binary shaders. If it is
+zero, then the loading of binary shaders by the implementation is not supported.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_PACK_ALIGNMENT</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the byte alignment used for writing pixel data to memory. The initial
+value is 4.
+See <a class="reference internal" href="glPixelStore.html#glPixelStore" title="glPixelStore"><tt class="xref c c-func docutils literal"><span class="pre">glPixelStore()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_PACK_IMAGE_HEIGHT</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the image height used for writing pixel data to memory.  The initial
+value is 0.
+See <a class="reference internal" href="glPixelStore.html#glPixelStore" title="glPixelStore"><tt class="xref c c-func docutils literal"><span class="pre">glPixelStore()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_PACK_LSB_FIRST</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single boolean value indicating whether single-bit
+pixels being written to memory are written first to the least significant
+bit of each unsigned byte. The initial value is <tt class="docutils literal"><span class="pre">GL_FALSE</span></tt>.
+See <a class="reference internal" href="glPixelStore.html#glPixelStore" title="glPixelStore"><tt class="xref c c-func docutils literal"><span class="pre">glPixelStore()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_PACK_ROW_LENGTH</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the row length used for writing pixel data to memory. The initial value is
+0.
+See <a class="reference internal" href="glPixelStore.html#glPixelStore" title="glPixelStore"><tt class="xref c c-func docutils literal"><span class="pre">glPixelStore()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_PACK_SKIP_IMAGES</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the number of pixel images skipped before the first pixel is written
+into memory. The initial value is 0.
+See <a class="reference internal" href="glPixelStore.html#glPixelStore" title="glPixelStore"><tt class="xref c c-func docutils literal"><span class="pre">glPixelStore()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_PACK_SKIP_PIXELS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the number of pixel locations skipped before the first pixel is written
+into memory. The initial value is 0.
+See <a class="reference internal" href="glPixelStore.html#glPixelStore" title="glPixelStore"><tt class="xref c c-func docutils literal"><span class="pre">glPixelStore()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_PACK_SKIP_ROWS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the number of rows of pixel locations skipped before the first pixel is written
+into memory. The initial value is 0.
+See <a class="reference internal" href="glPixelStore.html#glPixelStore" title="glPixelStore"><tt class="xref c c-func docutils literal"><span class="pre">glPixelStore()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_PACK_SWAP_BYTES</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single boolean value indicating whether the bytes of
+two-byte and four-byte pixel indices and components are swapped before being
+written to memory. The initial value is <tt class="docutils literal"><span class="pre">GL_FALSE</span></tt>.
+See <a class="reference internal" href="glPixelStore.html#glPixelStore" title="glPixelStore"><tt class="xref c c-func docutils literal"><span class="pre">glPixelStore()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_PIXEL_PACK_BUFFER_BINDING</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single value, the name of the buffer object
+currently bound to the target <tt class="docutils literal"><span class="pre">GL_PIXEL_PACK_BUFFER</span></tt>. If no buffer object
+is bound to this target, 0 is returned.  The initial value is 0.
+See <a class="reference internal" href="glBindBuffer.html#glBindBuffer" title="glBindBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glBindBuffer()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_PIXEL_UNPACK_BUFFER_BINDING</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single value, the name of the buffer object
+currently bound to the target <tt class="docutils literal"><span class="pre">GL_PIXEL_UNPACK_BUFFER</span></tt>. If no buffer object
+is bound to this target, 0 is returned.  The initial value is 0.
+See <a class="reference internal" href="glBindBuffer.html#glBindBuffer" title="glBindBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glBindBuffer()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_POINT_FADE_THRESHOLD_SIZE</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the point size threshold for determining the point size.
+See <a class="reference internal" href="glPointParameter.html#glPointParameter" title="glPointParameter"><tt class="xref c c-func docutils literal"><span class="pre">glPointParameter()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_PRIMITIVE_RESTART_INDEX</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the current primitive restart index. The initial value is 0.
+See <a class="reference internal" href="glPrimitiveRestartIndex.html#glPrimitiveRestartIndex" title="glPrimitiveRestartIndex"><tt class="xref c c-func docutils literal"><span class="pre">glPrimitiveRestartIndex()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_PROGRAM_BINARY_FORMATS</span></tt></p>
+<blockquote>
+<div><em>params</em> an array of <tt class="docutils literal"><span class="pre">GL_NUM_PROGRAM_BINARY_FORMATS</span></tt> values,
+indicating the proram binary formats supported by the implementation.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_PROGRAM_PIPELINE_BINDING</span></tt></p>
+<blockquote>
+<div><em>params</em> a single value, the name of the currently bound program pipeline
+object, or zero if no program pipeline object is bound.
+See <a class="reference internal" href="glBindProgramPipeline.html#glBindProgramPipeline" title="glBindProgramPipeline"><tt class="xref c c-func docutils literal"><span class="pre">glBindProgramPipeline()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_PROVOKING_VERTEX</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the currently selected provoking vertex convention. The initial value is <tt class="docutils literal"><span class="pre">GL_LAST_VERTEX_CONVENTION</span></tt>.
+See <a class="reference internal" href="glProvokingVertex.html#glProvokingVertex" title="glProvokingVertex"><tt class="xref c c-func docutils literal"><span class="pre">glProvokingVertex()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_POINT_SIZE</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the point size as specified by <a class="reference internal" href="glPointSize.html#glPointSize" title="glPointSize"><tt class="xref c c-func docutils literal"><span class="pre">glPointSize()</span></tt></a>.
+The initial value is 1.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_POINT_SIZE_GRANULARITY</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the size difference between adjacent supported sizes for antialiased points.
+See <a class="reference internal" href="glPointSize.html#glPointSize" title="glPointSize"><tt class="xref c c-func docutils literal"><span class="pre">glPointSize()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_POINT_SIZE_RANGE</span></tt></p>
+<blockquote>
+<div><em>params</em> returns two values:
+the smallest and largest supported sizes for antialiased
+points. The smallest size must be at most 1, and the largest size must
+be at least 1.
+See <a class="reference internal" href="glPointSize.html#glPointSize" title="glPointSize"><tt class="xref c c-func docutils literal"><span class="pre">glPointSize()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_POLYGON_OFFSET_FACTOR</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the scaling factor used to determine the variable offset that is added
+to the depth value of each fragment generated when a polygon is
+rasterized. The initial value is 0.
+See <a class="reference internal" href="glPolygonOffset.html#glPolygonOffset" title="glPolygonOffset"><tt class="xref c c-func docutils literal"><span class="pre">glPolygonOffset()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_POLYGON_OFFSET_UNITS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value.
+This value is multiplied by an implementation-specific value and then
+added to the depth value of each fragment
+generated when a polygon is rasterized. The initial value is 0.
+See <a class="reference internal" href="glPolygonOffset.html#glPolygonOffset" title="glPolygonOffset"><tt class="xref c c-func docutils literal"><span class="pre">glPolygonOffset()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_POLYGON_OFFSET_FILL</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single boolean value indicating whether polygon offset
+is enabled for polygons in fill mode. The initial value is <tt class="docutils literal"><span class="pre">GL_FALSE</span></tt>.
+See <a class="reference internal" href="glPolygonOffset.html#glPolygonOffset" title="glPolygonOffset"><tt class="xref c c-func docutils literal"><span class="pre">glPolygonOffset()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_POLYGON_OFFSET_LINE</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single boolean value indicating whether polygon offset
+is enabled for polygons in line mode. The initial value is <tt class="docutils literal"><span class="pre">GL_FALSE</span></tt>.
+See <a class="reference internal" href="glPolygonOffset.html#glPolygonOffset" title="glPolygonOffset"><tt class="xref c c-func docutils literal"><span class="pre">glPolygonOffset()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_POLYGON_OFFSET_POINT</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single boolean value indicating whether polygon offset
+is enabled for polygons in point mode. The initial value is <tt class="docutils literal"><span class="pre">GL_FALSE</span></tt>.
+See <a class="reference internal" href="glPolygonOffset.html#glPolygonOffset" title="glPolygonOffset"><tt class="xref c c-func docutils literal"><span class="pre">glPolygonOffset()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_POLYGON_SMOOTH</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single boolean value indicating whether antialiasing of
+polygons is enabled. The initial value is <tt class="docutils literal"><span class="pre">GL_FALSE</span></tt>.
+See <a class="reference internal" href="glPolygonMode.html#glPolygonMode" title="glPolygonMode"><tt class="xref c c-func docutils literal"><span class="pre">glPolygonMode()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_POLYGON_SMOOTH_HINT</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+a symbolic constant indicating the mode of the polygon antialiasing
+hint. The initial value is <tt class="docutils literal"><span class="pre">GL_DONT_CARE</span></tt>.
+See <a class="reference internal" href="glHint.html#glHint" title="glHint"><tt class="xref c c-func docutils literal"><span class="pre">glHint()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_READ_BUFFER</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+a symbolic constant indicating which color buffer is selected for
+reading. The initial value is <tt class="docutils literal"><span class="pre">GL_BACK</span></tt> if there is a back buffer,
+otherwise it is <tt class="docutils literal"><span class="pre">GL_FRONT</span></tt>.
+See
+<a class="reference internal" href="glReadPixels.html#glReadPixels" title="glReadPixels"><tt class="xref c c-func docutils literal"><span class="pre">glReadPixels()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_RENDERBUFFER_BINDING</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single value, the name of the renderbuffer object
+currently bound to the target <tt class="docutils literal"><span class="pre">GL_RENDERBUFFER</span></tt>. If no renderbuffer object
+is bound to this target, 0 is returned.  The initial value is 0.
+See <a class="reference internal" href="glBindRenderbuffer.html#glBindRenderbuffer" title="glBindRenderbuffer"><tt class="xref c c-func docutils literal"><span class="pre">glBindRenderbuffer()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_SAMPLE_BUFFERS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single integer value indicating the number of sample buffers
+associated with the framebuffer.
+See <a class="reference internal" href="glSampleCoverage.html#glSampleCoverage" title="glSampleCoverage"><tt class="xref c c-func docutils literal"><span class="pre">glSampleCoverage()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_SAMPLE_COVERAGE_VALUE</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single positive floating-point value indicating the
+current sample coverage value.
+See <a class="reference internal" href="glSampleCoverage.html#glSampleCoverage" title="glSampleCoverage"><tt class="xref c c-func docutils literal"><span class="pre">glSampleCoverage()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_SAMPLE_COVERAGE_INVERT</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single boolean value indicating if the temporary
+coverage value should be inverted.
+See <a class="reference internal" href="glSampleCoverage.html#glSampleCoverage" title="glSampleCoverage"><tt class="xref c c-func docutils literal"><span class="pre">glSampleCoverage()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_SAMPLER_BINDING</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single value, the name of the sampler object
+currently bound to the active texture unit.  The initial value is 0.
+See <a class="reference internal" href="glBindSampler.html#glBindSampler" title="glBindSampler"><tt class="xref c c-func docutils literal"><span class="pre">glBindSampler()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_SAMPLES</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single integer value indicating the coverage mask size.
+See <a class="reference internal" href="glSampleCoverage.html#glSampleCoverage" title="glSampleCoverage"><tt class="xref c c-func docutils literal"><span class="pre">glSampleCoverage()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_SCISSOR_BOX</span></tt></p>
+<blockquote>
+<div><em>params</em> returns four values:
+the <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">x</mi></math></span> and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">y</mi></math></span> window coordinates of the scissor box,
+followed by its width and height.
+Initially the <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">x</mi></math></span> and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">y</mi></math></span> window coordinates are both 0 and the
+width and height are set to the size of the window.
+See <a class="reference internal" href="glScissor.html#glScissor" title="glScissor"><tt class="xref c c-func docutils literal"><span class="pre">glScissor()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_SCISSOR_TEST</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single boolean value indicating whether scissoring is
+enabled. The initial value is <tt class="docutils literal"><span class="pre">GL_FALSE</span></tt>.
+See <a class="reference internal" href="glScissor.html#glScissor" title="glScissor"><tt class="xref c c-func docutils literal"><span class="pre">glScissor()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_SHADER_COMPILER</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single boolean value indicating whether an online shader
+compiler is present in the implementation. All desktop OpenGL implementations must support
+online shader compilations, and therefore the value of <tt class="docutils literal"><span class="pre">GL_SHADER_COMPILER</span></tt>
+will always be <tt class="docutils literal"><span class="pre">GL_TRUE</span></tt>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_SMOOTH_LINE_WIDTH_RANGE</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a pair of values indicating the range of
+widths supported for smooth (antialiased) lines. See <a class="reference internal" href="glLineWidth.html#glLineWidth" title="glLineWidth"><tt class="xref c c-func docutils literal"><span class="pre">glLineWidth()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_SMOOTH_LINE_WIDTH_GRANULARITY</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single value indicating the level of
+quantization applied to smooth line width parameters.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_STENCIL_BACK_FAIL</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+a symbolic constant indicating what action is taken for back-facing polygons when the stencil
+test fails. The initial value is <tt class="docutils literal"><span class="pre">GL_KEEP</span></tt>.
+See <a class="reference internal" href="glStencilOpSeparate.html#glStencilOpSeparate" title="glStencilOpSeparate"><tt class="xref c c-func docutils literal"><span class="pre">glStencilOpSeparate()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_STENCIL_BACK_FUNC</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+a symbolic constant indicating what function is used for back-facing polygons to compare the
+stencil reference value with the stencil buffer value. The initial value
+is <tt class="docutils literal"><span class="pre">GL_ALWAYS</span></tt>.
+See <a class="reference internal" href="glStencilFuncSeparate.html#glStencilFuncSeparate" title="glStencilFuncSeparate"><tt class="xref c c-func docutils literal"><span class="pre">glStencilFuncSeparate()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_STENCIL_BACK_PASS_DEPTH_FAIL</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+a symbolic constant indicating what action is taken for back-facing polygons when the stencil
+test passes,
+but the depth test fails. The initial value is <tt class="docutils literal"><span class="pre">GL_KEEP</span></tt>.
+See <a class="reference internal" href="glStencilOpSeparate.html#glStencilOpSeparate" title="glStencilOpSeparate"><tt class="xref c c-func docutils literal"><span class="pre">glStencilOpSeparate()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_STENCIL_BACK_PASS_DEPTH_PASS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+a symbolic constant indicating what action is taken for back-facing polygons when the stencil
+test passes and the depth test passes. The initial value is <tt class="docutils literal"><span class="pre">GL_KEEP</span></tt>.
+See <a class="reference internal" href="glStencilOpSeparate.html#glStencilOpSeparate" title="glStencilOpSeparate"><tt class="xref c c-func docutils literal"><span class="pre">glStencilOpSeparate()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_STENCIL_BACK_REF</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the reference value that is compared with the contents of the stencil
+buffer for back-facing polygons. The initial value is 0.
+See <a class="reference internal" href="glStencilFuncSeparate.html#glStencilFuncSeparate" title="glStencilFuncSeparate"><tt class="xref c c-func docutils literal"><span class="pre">glStencilFuncSeparate()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_STENCIL_BACK_VALUE_MASK</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the mask that is used for back-facing polygons to mask both the stencil reference value and the
+stencil buffer value before they are compared. The initial value is all 1&#8217;s.
+See <a class="reference internal" href="glStencilFuncSeparate.html#glStencilFuncSeparate" title="glStencilFuncSeparate"><tt class="xref c c-func docutils literal"><span class="pre">glStencilFuncSeparate()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_STENCIL_BACK_WRITEMASK</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the mask that controls writing of the stencil bitplanes for back-facing polygons. The initial value
+is all 1&#8217;s.
+See <a class="reference internal" href="glStencilMaskSeparate.html#glStencilMaskSeparate" title="glStencilMaskSeparate"><tt class="xref c c-func docutils literal"><span class="pre">glStencilMaskSeparate()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_STENCIL_CLEAR_VALUE</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the index to which the stencil bitplanes are cleared. The initial value is
+0.
+See <a class="reference internal" href="glClearStencil.html#glClearStencil" title="glClearStencil"><tt class="xref c c-func docutils literal"><span class="pre">glClearStencil()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_STENCIL_FAIL</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+a symbolic constant indicating what action is taken when the stencil
+test fails. The initial value is <tt class="docutils literal"><span class="pre">GL_KEEP</span></tt>.
+See <a class="reference internal" href="glStencilOp.html#glStencilOp" title="glStencilOp"><tt class="xref c c-func docutils literal"><span class="pre">glStencilOp()</span></tt></a>.
+This stencil state only affects non-polygons
+and front-facing polygons.  Back-facing polygons use separate stencil state.
+See <a class="reference internal" href="glStencilOpSeparate.html#glStencilOpSeparate" title="glStencilOpSeparate"><tt class="xref c c-func docutils literal"><span class="pre">glStencilOpSeparate()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_STENCIL_FUNC</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+a symbolic constant indicating what function is used to compare the
+stencil reference value with the stencil buffer value. The initial value
+is <tt class="docutils literal"><span class="pre">GL_ALWAYS</span></tt>.
+See <a class="reference internal" href="glStencilFunc.html#glStencilFunc" title="glStencilFunc"><tt class="xref c c-func docutils literal"><span class="pre">glStencilFunc()</span></tt></a>.
+This stencil state only affects non-polygons
+and front-facing polygons.  Back-facing polygons use separate stencil state.
+See <a class="reference internal" href="glStencilFuncSeparate.html#glStencilFuncSeparate" title="glStencilFuncSeparate"><tt class="xref c c-func docutils literal"><span class="pre">glStencilFuncSeparate()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_STENCIL_PASS_DEPTH_FAIL</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+a symbolic constant indicating what action is taken when the stencil
+test passes,
+but the depth test fails. The initial value is <tt class="docutils literal"><span class="pre">GL_KEEP</span></tt>.
+See <a class="reference internal" href="glStencilOp.html#glStencilOp" title="glStencilOp"><tt class="xref c c-func docutils literal"><span class="pre">glStencilOp()</span></tt></a>.
+This stencil state only affects non-polygons
+and front-facing polygons.  Back-facing polygons use separate stencil state.
+See <a class="reference internal" href="glStencilOpSeparate.html#glStencilOpSeparate" title="glStencilOpSeparate"><tt class="xref c c-func docutils literal"><span class="pre">glStencilOpSeparate()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_STENCIL_PASS_DEPTH_PASS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+a symbolic constant indicating what action is taken when the stencil
+test passes and the depth test passes. The initial value is <tt class="docutils literal"><span class="pre">GL_KEEP</span></tt>.
+See <a class="reference internal" href="glStencilOp.html#glStencilOp" title="glStencilOp"><tt class="xref c c-func docutils literal"><span class="pre">glStencilOp()</span></tt></a>.
+This stencil state only affects non-polygons
+and front-facing polygons.  Back-facing polygons use separate stencil state.
+See <a class="reference internal" href="glStencilOpSeparate.html#glStencilOpSeparate" title="glStencilOpSeparate"><tt class="xref c c-func docutils literal"><span class="pre">glStencilOpSeparate()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_STENCIL_REF</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the reference value that is compared with the contents of the stencil
+buffer. The initial value is 0.
+See <a class="reference internal" href="glStencilFunc.html#glStencilFunc" title="glStencilFunc"><tt class="xref c c-func docutils literal"><span class="pre">glStencilFunc()</span></tt></a>.
+This stencil state only affects non-polygons
+and front-facing polygons.  Back-facing polygons use separate stencil state.
+See <a class="reference internal" href="glStencilFuncSeparate.html#glStencilFuncSeparate" title="glStencilFuncSeparate"><tt class="xref c c-func docutils literal"><span class="pre">glStencilFuncSeparate()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_STENCIL_TEST</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single boolean value indicating whether stencil testing
+of fragments is enabled. The initial value is <tt class="docutils literal"><span class="pre">GL_FALSE</span></tt>.
+See <a class="reference internal" href="glStencilFunc.html#glStencilFunc" title="glStencilFunc"><tt class="xref c c-func docutils literal"><span class="pre">glStencilFunc()</span></tt></a> and <a class="reference internal" href="glStencilOp.html#glStencilOp" title="glStencilOp"><tt class="xref c c-func docutils literal"><span class="pre">glStencilOp()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_STENCIL_VALUE_MASK</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the mask that is used to mask both the stencil reference value and the
+stencil buffer value before they are compared. The initial value is all 1&#8217;s.
+See <a class="reference internal" href="glStencilFunc.html#glStencilFunc" title="glStencilFunc"><tt class="xref c c-func docutils literal"><span class="pre">glStencilFunc()</span></tt></a>.
+This stencil state only affects non-polygons
+and front-facing polygons.  Back-facing polygons use separate stencil state.
+See <a class="reference internal" href="glStencilFuncSeparate.html#glStencilFuncSeparate" title="glStencilFuncSeparate"><tt class="xref c c-func docutils literal"><span class="pre">glStencilFuncSeparate()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_STENCIL_WRITEMASK</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the mask that controls writing of the stencil bitplanes. The initial value
+is all 1&#8217;s.
+See <a class="reference internal" href="glStencilMask.html#glStencilMask" title="glStencilMask"><tt class="xref c c-func docutils literal"><span class="pre">glStencilMask()</span></tt></a>.
+This stencil state only affects non-polygons
+and front-facing polygons.  Back-facing polygons use separate stencil state.
+See <a class="reference internal" href="glStencilMaskSeparate.html#glStencilMaskSeparate" title="glStencilMaskSeparate"><tt class="xref c c-func docutils literal"><span class="pre">glStencilMaskSeparate()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_STEREO</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single boolean value indicating whether stereo buffers
+(left and right) are supported.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_SUBPIXEL_BITS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+an estimate of the number of bits of subpixel resolution that are used to
+position rasterized geometry in window coordinates. The value must be at least 4.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_BINDING_1D</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single value, the name of the texture
+currently bound to the target <tt class="docutils literal"><span class="pre">GL_TEXTURE_1D</span></tt>. The initial value is 0.
+See <a class="reference internal" href="glBindTexture.html#glBindTexture" title="glBindTexture"><tt class="xref c c-func docutils literal"><span class="pre">glBindTexture()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_BINDING_1D_ARRAY</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single value, the name of the texture
+currently bound to the target <tt class="docutils literal"><span class="pre">GL_TEXTURE_1D_ARRAY</span></tt>. The initial value is 0.
+See <a class="reference internal" href="glBindTexture.html#glBindTexture" title="glBindTexture"><tt class="xref c c-func docutils literal"><span class="pre">glBindTexture()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_BINDING_2D</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single value, the name of the texture
+currently bound to the target <tt class="docutils literal"><span class="pre">GL_TEXTURE_2D</span></tt>. The initial value is 0.
+See <a class="reference internal" href="glBindTexture.html#glBindTexture" title="glBindTexture"><tt class="xref c c-func docutils literal"><span class="pre">glBindTexture()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_BINDING_2D_ARRAY</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single value, the name of the texture
+currently bound to the target <tt class="docutils literal"><span class="pre">GL_TEXTURE_2D_ARRAY</span></tt>. The initial value is 0.
+See <a class="reference internal" href="glBindTexture.html#glBindTexture" title="glBindTexture"><tt class="xref c c-func docutils literal"><span class="pre">glBindTexture()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_BINDING_2D_MULTISAMPLE</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single value, the name of the texture
+currently bound to the target <tt class="docutils literal"><span class="pre">GL_TEXTURE_2D_MULTISAMPLE</span></tt>. The initial value is 0.
+See <a class="reference internal" href="glBindTexture.html#glBindTexture" title="glBindTexture"><tt class="xref c c-func docutils literal"><span class="pre">glBindTexture()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_BINDING_2D_MULTISAMPLE_ARRAY</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single value, the name of the texture
+currently bound to the target <tt class="docutils literal"><span class="pre">GL_TEXTURE_2D_MULTISAMPLE_ARRAY</span></tt>. The initial value is 0.
+See <a class="reference internal" href="glBindTexture.html#glBindTexture" title="glBindTexture"><tt class="xref c c-func docutils literal"><span class="pre">glBindTexture()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_BINDING_3D</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single value, the name of the texture
+currently bound to the target <tt class="docutils literal"><span class="pre">GL_TEXTURE_3D</span></tt>. The initial value is 0.
+See <a class="reference internal" href="glBindTexture.html#glBindTexture" title="glBindTexture"><tt class="xref c c-func docutils literal"><span class="pre">glBindTexture()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_BINDING_BUFFER</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single value, the name of the texture
+currently bound to the target <tt class="docutils literal"><span class="pre">GL_TEXTURE_BUFFER</span></tt>. The initial value is 0.
+See <a class="reference internal" href="glBindTexture.html#glBindTexture" title="glBindTexture"><tt class="xref c c-func docutils literal"><span class="pre">glBindTexture()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_BINDING_CUBE_MAP</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single value, the name of the texture
+currently bound to the target <tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP</span></tt>. The initial value is 0.
+See <a class="reference internal" href="glBindTexture.html#glBindTexture" title="glBindTexture"><tt class="xref c c-func docutils literal"><span class="pre">glBindTexture()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_BINDING_RECTANGLE</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single value, the name of the texture
+currently bound to the target <tt class="docutils literal"><span class="pre">GL_TEXTURE_RECTANGLE</span></tt>. The initial value is 0.
+See <a class="reference internal" href="glBindTexture.html#glBindTexture" title="glBindTexture"><tt class="xref c c-func docutils literal"><span class="pre">glBindTexture()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_COMPRESSION_HINT</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single value indicating the mode of the texture
+compression hint.  The initial value is <tt class="docutils literal"><span class="pre">GL_DONT_CARE</span></tt>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_BUFFER_BINDING</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single value, the name of the texture buffer object
+currently bound.  The initial value is 0.
+See <a class="reference internal" href="glBindBuffer.html#glBindBuffer" title="glBindBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glBindBuffer()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TIMESTAMP</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single value, the 64-bit value of the current
+GL time.
+See <a class="reference internal" href="glQueryCounter.html#glQueryCounter" title="glQueryCounter"><tt class="xref c c-func docutils literal"><span class="pre">glQueryCounter()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TRANSFORM_FEEDBACK_BUFFER_BINDING</span></tt></p>
+<blockquote>
+<div>When used with non-indexed variants of <a class="reference internal" href="#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> (such as <a class="reference internal" href="#glGetIntegerv" title="glGetIntegerv"><tt class="xref c c-func docutils literal"><span class="pre">glGetIntegerv()</span></tt></a>),
+<em>params</em> returns a single value, the name of the buffer object
+currently bound to the target <tt class="docutils literal"><span class="pre">GL_TRANSFORM_FEEDBACK_BUFFER</span></tt>. If no buffer object
+is bound to this target, 0 is returned.
+When used with indexed variants of <a class="reference internal" href="#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> (such as <a class="reference internal" href="#glGetIntegeri_v" title="glGetIntegeri_v"><tt class="xref c c-func docutils literal"><span class="pre">glGetIntegeri_v()</span></tt></a>),
+<em>params</em> returns a single value, the name of the buffer object
+bound to the indexed transform feedback attribute stream. The initial value is 0 for all targets.
+See <a class="reference internal" href="glBindBuffer.html#glBindBuffer" title="glBindBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glBindBuffer()</span></tt></a>, <a class="reference internal" href="glBindBufferBase.html#glBindBufferBase" title="glBindBufferBase"><tt class="xref c c-func docutils literal"><span class="pre">glBindBufferBase()</span></tt></a>, and
+<a class="reference internal" href="glBindBufferRange.html#glBindBufferRange" title="glBindBufferRange"><tt class="xref c c-func docutils literal"><span class="pre">glBindBufferRange()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TRANSFORM_FEEDBACK_BUFFER_START</span></tt></p>
+<blockquote>
+<div>When used with indexed variants of <a class="reference internal" href="#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> (such as <a class="reference internal" href="#glGetInteger64i_v" title="glGetInteger64i_v"><tt class="xref c c-func docutils literal"><span class="pre">glGetInteger64i_v()</span></tt></a>),
+<em>params</em> returns a single value, the start offset of the binding range for each
+transform feedback attribute stream. The initial value is 0 for all streams.
+See <a class="reference internal" href="glBindBufferRange.html#glBindBufferRange" title="glBindBufferRange"><tt class="xref c c-func docutils literal"><span class="pre">glBindBufferRange()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TRANSFORM_FEEDBACK_BUFFER_SIZE</span></tt></p>
+<blockquote>
+<div>When used with indexed variants of <a class="reference internal" href="#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> (such as <a class="reference internal" href="#glGetInteger64i_v" title="glGetInteger64i_v"><tt class="xref c c-func docutils literal"><span class="pre">glGetInteger64i_v()</span></tt></a>),
+<em>params</em> returns a single value, the size of the binding range for each
+transform feedback attribute stream. The initial value is 0 for all streams.
+See <a class="reference internal" href="glBindBufferRange.html#glBindBufferRange" title="glBindBufferRange"><tt class="xref c c-func docutils literal"><span class="pre">glBindBufferRange()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_UNIFORM_BUFFER_BINDING</span></tt></p>
+<blockquote>
+<div>When used with non-indexed variants of <a class="reference internal" href="#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> (such as <a class="reference internal" href="#glGetIntegerv" title="glGetIntegerv"><tt class="xref c c-func docutils literal"><span class="pre">glGetIntegerv()</span></tt></a>),
+<em>params</em> returns a single value, the name of the buffer object
+currently bound to the target <tt class="docutils literal"><span class="pre">GL_UNIFORM_BUFFER</span></tt>. If no buffer object
+is bound to this target, 0 is returned.
+When used with indexed variants of <a class="reference internal" href="#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> (such as <a class="reference internal" href="#glGetIntegeri_v" title="glGetIntegeri_v"><tt class="xref c c-func docutils literal"><span class="pre">glGetIntegeri_v()</span></tt></a>),
+<em>params</em> returns a single value, the name of the buffer object
+bound to the indexed uniform buffer binding point. The initial value is 0 for all targets.
+See <a class="reference internal" href="glBindBuffer.html#glBindBuffer" title="glBindBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glBindBuffer()</span></tt></a>, <a class="reference internal" href="glBindBufferBase.html#glBindBufferBase" title="glBindBufferBase"><tt class="xref c c-func docutils literal"><span class="pre">glBindBufferBase()</span></tt></a>, and
+<a class="reference internal" href="glBindBufferRange.html#glBindBufferRange" title="glBindBufferRange"><tt class="xref c c-func docutils literal"><span class="pre">glBindBufferRange()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_UNIFORM_BUFFER_OFFSET_ALIGNMENT</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single value, the minimum required alignment
+for uniform buffer sizes and offset.  The initial value is 1.
+See <a class="reference internal" href="glUniformBlockBinding.html#glUniformBlockBinding" title="glUniformBlockBinding"><tt class="xref c c-func docutils literal"><span class="pre">glUniformBlockBinding()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_UNIFORM_BUFFER_SIZE</span></tt></p>
+<blockquote>
+<div>When used with indexed variants of <a class="reference internal" href="#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> (such as <a class="reference internal" href="#glGetInteger64i_v" title="glGetInteger64i_v"><tt class="xref c c-func docutils literal"><span class="pre">glGetInteger64i_v()</span></tt></a>),
+<em>params</em> returns a single value, the size of the binding range for each
+indexed uniform buffer binding. The initial value is 0 for all bindings.
+See <a class="reference internal" href="glBindBufferRange.html#glBindBufferRange" title="glBindBufferRange"><tt class="xref c c-func docutils literal"><span class="pre">glBindBufferRange()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_UNIFORM_BUFFER_START</span></tt></p>
+<blockquote>
+<div>When used with indexed variants of <a class="reference internal" href="#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> (such as <a class="reference internal" href="#glGetInteger64i_v" title="glGetInteger64i_v"><tt class="xref c c-func docutils literal"><span class="pre">glGetInteger64i_v()</span></tt></a>),
+<em>params</em> returns a single value, the start offset of the binding range for each
+indexed uniform buffer binding. The initial value is 0 for all bindings.
+See <a class="reference internal" href="glBindBufferRange.html#glBindBufferRange" title="glBindBufferRange"><tt class="xref c c-func docutils literal"><span class="pre">glBindBufferRange()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_UNPACK_ALIGNMENT</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the byte alignment used for reading pixel data from memory. The initial
+value is 4.
+See <a class="reference internal" href="glPixelStore.html#glPixelStore" title="glPixelStore"><tt class="xref c c-func docutils literal"><span class="pre">glPixelStore()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_UNPACK_IMAGE_HEIGHT</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the image height used for reading pixel data from memory.  The initial
+is 0.
+See <a class="reference internal" href="glPixelStore.html#glPixelStore" title="glPixelStore"><tt class="xref c c-func docutils literal"><span class="pre">glPixelStore()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_UNPACK_LSB_FIRST</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single boolean value indicating whether single-bit
+pixels being read from memory are read first from the least significant
+bit of each unsigned byte. The initial value is <tt class="docutils literal"><span class="pre">GL_FALSE</span></tt>.
+See <a class="reference internal" href="glPixelStore.html#glPixelStore" title="glPixelStore"><tt class="xref c c-func docutils literal"><span class="pre">glPixelStore()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_UNPACK_ROW_LENGTH</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the row length used for reading pixel data from memory. The initial value
+is 0.
+See <a class="reference internal" href="glPixelStore.html#glPixelStore" title="glPixelStore"><tt class="xref c c-func docutils literal"><span class="pre">glPixelStore()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_UNPACK_SKIP_IMAGES</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the number of pixel images skipped before the first pixel is read
+from memory. The initial value is 0.
+See <a class="reference internal" href="glPixelStore.html#glPixelStore" title="glPixelStore"><tt class="xref c c-func docutils literal"><span class="pre">glPixelStore()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_UNPACK_SKIP_PIXELS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the number of pixel locations skipped before the first pixel is read
+from memory. The initial value is 0.
+See <a class="reference internal" href="glPixelStore.html#glPixelStore" title="glPixelStore"><tt class="xref c c-func docutils literal"><span class="pre">glPixelStore()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_UNPACK_SKIP_ROWS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the number of rows of pixel locations skipped before the first pixel is read
+from memory. The initial value is 0.
+See <a class="reference internal" href="glPixelStore.html#glPixelStore" title="glPixelStore"><tt class="xref c c-func docutils literal"><span class="pre">glPixelStore()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_UNPACK_SWAP_BYTES</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single boolean value indicating whether the bytes of
+two-byte and four-byte pixel indices and components are swapped after being
+read from memory. The initial value is <tt class="docutils literal"><span class="pre">GL_FALSE</span></tt>.
+See <a class="reference internal" href="glPixelStore.html#glPixelStore" title="glPixelStore"><tt class="xref c c-func docutils literal"><span class="pre">glPixelStore()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_VERTEX_PROGRAM_POINT_SIZE</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single boolean value indicating whether vertex
+program point size mode is enabled. If enabled, and a vertex shader is active, then the
+point size is taken from the shader built-in <tt class="docutils literal"><span class="pre">gl_PointSize</span></tt>. If disabled,
+and a vertex shader is active, then the point size is taken from the point state as specified
+by <a class="reference internal" href="glPointSize.html#glPointSize" title="glPointSize"><tt class="xref c c-func docutils literal"><span class="pre">glPointSize()</span></tt></a>.
+The initial value is <tt class="docutils literal"><span class="pre">GL_FALSE</span></tt>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_VIEWPORT</span></tt></p>
+<blockquote>
+<div><p>When used with non-indexed variants of <a class="reference internal" href="#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> (such as <a class="reference internal" href="#glGetIntegerv" title="glGetIntegerv"><tt class="xref c c-func docutils literal"><span class="pre">glGetIntegerv()</span></tt></a>),
+<em>params</em> returns four values:
+the <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">x</mi></math></span> and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">y</mi></math></span> window coordinates of the viewport, followed by its width and height.
+Initially the <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">x</mi></math></span> and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">y</mi></math></span> window coordinates are both set to 0,
+and the width and height are set to the width and height of the window into
+which the GL will do its rendering.
+See <a class="reference internal" href="glViewport.html#glViewport" title="glViewport"><tt class="xref c c-func docutils literal"><span class="pre">glViewport()</span></tt></a>.</p>
+<p>When used with indexed variants of <a class="reference internal" href="#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> (such as <a class="reference internal" href="#glGetIntegeri_v" title="glGetIntegeri_v"><tt class="xref c c-func docutils literal"><span class="pre">glGetIntegeri_v()</span></tt></a>),
+<em>params</em> returns four values:
+the <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">x</mi></math></span> and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">y</mi></math></span> window coordinates of the indexed viewport, followed by its width and height.
+Initially the <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">x</mi></math></span> and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">y</mi></math></span> window coordinates are both set to 0,
+and the width and height are set to the width and height of the window into
+which the GL will do its rendering.
+See <a class="reference internal" href="glViewportIndexed.html#glViewportIndexedf" title="glViewportIndexedf"><tt class="xref c c-func docutils literal"><span class="pre">glViewportIndexedf()</span></tt></a>.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_VIEWPORT_BOUNDS_RANGE</span></tt></p>
+<blockquote>
+<div><em>params</em> returns two values, the minimum and maximum viewport bounds range.
+The minimum range should be at least [-32768, 32767].</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_VIEWPORT_INDEX_PROVOKING_VERTEX</span></tt></p>
+<blockquote>
+<div><em>params</em> returns one value,
+the implementation dependent specifc vertex of a primitive that is used to select the viewport index.
+If the value returned is equivalent to <tt class="docutils literal"><span class="pre">GL_PROVOKING_VERTEX</span></tt>, then the vertex
+selection follows the convention specified by
+<a class="reference internal" href="glProvokingVertex.html#glProvokingVertex" title="glProvokingVertex"><tt class="xref c c-func docutils literal"><span class="pre">glProvokingVertex()</span></tt></a>.
+If the value returned is equivalent to <tt class="docutils literal"><span class="pre">GL_FIRST_VERTEX_CONVENTION</span></tt>, then the
+selection is always taken from the first vertex in the primitive.
+If the value returned is equivalent to <tt class="docutils literal"><span class="pre">GL_LAST_VERTEX_CONVENTION</span></tt>, then the
+selection is always taken from the last vertex in the primitive.
+If the value returned is equivalent to <tt class="docutils literal"><span class="pre">GL_UNDEFINED_VERTEX</span></tt>, then the
+selection is not guaranteed to be taken from any specific vertex in the primitive.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_VIEWPORT_SUBPIXEL_BITS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single value, the number of bits of sub-pixel precision which the GL
+uses to interpret the floating point viewport bounds. The minimum value is 0.</div></blockquote>
+</div></blockquote>
+<p>Many of the boolean parameters can also be queried more easily using
+<a class="reference internal" href="glIsEnabled.html#glIsEnabled" title="glIsEnabled"><tt class="xref c c-func docutils literal"><span class="pre">glIsEnabled()</span></tt></a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The following parameters return the associated value for the active texture unit:
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_1D</span></tt>, <tt class="docutils literal"><span class="pre">GL_TEXTURE_BINDING_1D</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_2D</span></tt>, <tt class="docutils literal"><span class="pre">GL_TEXTURE_BINDING_2D</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_3D</span></tt> and <tt class="docutils literal"><span class="pre">GL_TEXTURE_BINDING_3D</span></tt>.</p>
+<p><tt class="docutils literal"><span class="pre">GL_MAX_VIEWPORTS</span></tt>, <tt class="docutils literal"><span class="pre">GL_VIEWPORT_SUBPIXEL_BITS</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_VIEWPORT_BOUNDS_RANGE</span></tt>, <tt class="docutils literal"><span class="pre">GL_LAYER_PROVOKING_VERTEX</span></tt>,
+and <tt class="docutils literal"><span class="pre">GL_VIEWPORT_INDEX_PROVOKING_VERTEX</span></tt>
+are available only if the GL version is 4.1 or greater.</p>
+<p class="last"><tt class="docutils literal"><span class="pre">GL_MAX_VERTEX_ATOMIC_COUNTERS</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_MAX_TESS_CONTROL_ATOMIC_COUNTERS</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_MAX_TESS_EVALUATION_ATOMIC_COUNTERS</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_MAX_GEOMETRY_ATOMIC_COUNTERS</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_MAX_FRAMGENT_ATOMIC_COUNTERS</span></tt>, and
+<tt class="docutils literal"><span class="pre">GL_MIN_MAP_BUFFER_ALIGNMENT</span></tt> are accepted by <em>pname</em>
+of the GL version is 4.2 or greater.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>pname</em> is not an accepted value.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated on any of <a class="reference internal" href="#glGetBooleani_v" title="glGetBooleani_v"><tt class="xref c c-func docutils literal"><span class="pre">glGetBooleani_v()</span></tt></a>, <a class="reference internal" href="#glGetIntegeri_v" title="glGetIntegeri_v"><tt class="xref c c-func docutils literal"><span class="pre">glGetIntegeri_v()</span></tt></a>, or <a class="reference internal" href="#glGetInteger64i_v" title="glGetInteger64i_v"><tt class="xref c c-func docutils literal"><span class="pre">glGetInteger64i_v()</span></tt></a> if <em>index</em> is outside of the valid range for the indexed state <em>target</em>.</li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. (c)2010-2011 Khronos Group. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glGenVertexArrays.html"
+                        title="previous chapter">function <cite>glGenVertexArrays</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glGetActiveAtomicCounterBufferiv.html"
+                        title="next chapter">function <cite>glGetActiveAtomicCounterBufferiv</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glGet.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glGetActiveAtomicCounterBufferiv.html" title="function glGetActiveAtomicCounterBufferiv"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glGenVertexArrays.html" title="function glGenVertexArrays"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

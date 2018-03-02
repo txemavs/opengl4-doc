@@ -1,0 +1,75 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glGetBufferParameteriv`
+---------------------------------
+
+.. source file man4/glGetBufferParameter
+
+.. currentmodule:: OpenGL.GL
+
+Return parameters of a buffer object
+
+.. c:function:: glGetBufferParameteriv
+.. c:function:: void glGetBufferParameteriv(GLenum  target, GLenum  value, GLint *  data)
+   :noindex: 
+
+
+   
+   :param target:
+      Specifies the target buffer object. The symbolic constant must be ``GL_ARRAY_BUFFER``, ``GL_COPY_READ_BUFFER``, ``GL_COPY_WRITE_BUFFER``, ``GL_ELEMENT_ARRAY_BUFFER``, ``GL_PIXEL_PACK_BUFFER``, ``GL_PIXEL_UNPACK_BUFFER``, ``GL_TEXTURE_BUFFER``, ``GL_TRANSFORM_FEEDBACK_BUFFER``, or ``GL_UNIFORM_BUFFER``.
+   
+   :param value:
+      Specifies the symbolic name of a buffer object parameter. Accepted values are ``GL_BUFFER_ACCESS``, ``GL_BUFFER_MAPPED``, ``GL_BUFFER_SIZE``, or ``GL_BUFFER_USAGE``.
+   
+   :param data:
+      Returns the requested parameter.
+   
+
+.. seealso::
+
+   
+   :c:func:`glBindBuffer`, :c:func:`glBufferData`, :c:func:`glMapBuffer`, :c:func:`glUnmapBuffer`
+   
+.. rubric:: Description
+
+
+:c:func:`glGetBufferParameteriv` returns in *data* a selected parameter of the buffer object specified by *target* .
+
+*value* names a specific buffer object parameter, as follows:
+
+
+   
+   ``GL_BUFFER_ACCESS``
+      *params* returns the access policy set while mapping the buffer object. The initial value is ``GL_READ_WRITE``.
+   
+   ``GL_BUFFER_MAPPED``
+      *params* returns a flag indicating whether the buffer object is currently mapped. The initial value is ``GL_FALSE``.
+   
+   ``GL_BUFFER_SIZE``
+      *params* returns the size of the buffer object, measured in bytes. The initial value is 0.
+   
+   ``GL_BUFFER_USAGE``
+      *params* returns the buffer object's usage pattern. The initial value is ``GL_STATIC_DRAW``.
+   
+
+**Errors:**
+
+   * ``GL_INVALID_ENUM`` is generated if *target* or *value* is not an accepted value.
+   * ``GL_INVALID_OPERATION`` is generated if the reserved buffer object name 0 is bound to *target* .
+
+
+
+.. note::
+
+   * If an error is generated, no change is made to the contents of *data* .
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

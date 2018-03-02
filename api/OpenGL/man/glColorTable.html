@@ -1,0 +1,513 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glColorTable &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function glColorTableParameter" href="glColorTableParameter.html" />
+    <link rel="prev" title="function glColorSubTable" href="glColorSubTable.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glColorTableParameter.html" title="function glColorTableParameter"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glColorSubTable.html" title="function glColorSubTable"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glcolortable">
+<h1>function <cite>glColorTable</cite><a class="headerlink" href="#function-glcolortable" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Define a color lookup table</p>
+<dl class="function">
+<dt id="glColorTable">
+<tt class="descname">glColorTable</tt><big>(</big><big>)</big><a class="headerlink" href="#glColorTable" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>target</strong> &#8211; Must be one of
+<tt class="docutils literal"><span class="pre">GL_COLOR_TABLE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_POST_CONVOLUTION_COLOR_TABLE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_POST_COLOR_MATRIX_COLOR_TABLE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_PROXY_COLOR_TABLE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_PROXY_POST_CONVOLUTION_COLOR_TABLE</span></tt>,
+or
+<tt class="docutils literal"><span class="pre">GL_PROXY_POST_COLOR_MATRIX_COLOR_TABLE</span></tt>.</li>
+<li><strong>internalformat</strong> &#8211; The internal format of the color table.
+The allowable values are
+<tt class="docutils literal"><span class="pre">GL_ALPHA</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_ALPHA4</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_ALPHA8</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_ALPHA12</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_ALPHA16</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LUMINANCE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LUMINANCE4</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LUMINANCE8</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LUMINANCE12</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LUMINANCE16</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LUMINANCE_ALPHA</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LUMINANCE4_ALPHA4</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LUMINANCE6_ALPHA2</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LUMINANCE8_ALPHA8</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LUMINANCE12_ALPHA4</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LUMINANCE12_ALPHA12</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LUMINANCE16_ALPHA16</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_INTENSITY</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_INTENSITY4</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_INTENSITY8</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_INTENSITY12</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_INTENSITY16</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_R3_G3_B2</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGB</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGB4</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGB5</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGB8</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGB10</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGB12</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGB16</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGBA</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGBA2</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGBA4</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGB5_A1</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGBA8</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGB10_A2</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGBA12</span></tt>, and
+<tt class="docutils literal"><span class="pre">GL_RGBA16</span></tt>.</li>
+<li><strong>width</strong> &#8211; The number of entries in the color lookup table specified by <em>data</em>.</li>
+<li><strong>format</strong> &#8211; The format of the pixel data in <em>data</em>.
+The allowable values are
+<tt class="docutils literal"><span class="pre">GL_RED</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_GREEN</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_BLUE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_ALPHA</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LUMINANCE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LUMINANCE_ALPHA</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGB</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_BGR</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGBA</span></tt>, and
+<tt class="docutils literal"><span class="pre">GL_BGRA</span></tt>.</li>
+<li><strong>type</strong> &#8211; The type of the pixel data in <em>data</em>.
+The allowable values are
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_BYTE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_BYTE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_SHORT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_INT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_FLOAT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_BYTE_3_3_2</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_BYTE_2_3_3_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_5_6_5</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_5_6_5_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_4_4_4_4</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_4_4_4_4_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_5_5_5_1</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_1_5_5_5_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_8_8_8_8</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_8_8_8_8_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_10_10_10_2</span></tt>, and
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_2_10_10_10_REV</span></tt>.</li>
+<li><strong>data</strong> &#8211; Pointer to a one-dimensional array of pixel data that is processed to
+build the color table.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glColorTable</tt><big>(</big>GLenum <em>&nbsp;target</em>, GLenum <em>&nbsp;internalformat</em>, GLsizei <em>&nbsp;width</em>, GLenum <em>&nbsp;format</em>, GLenum <em>&nbsp;type</em>, const GLvoid * <em>&nbsp;data</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glColorSubTable.html#glColorSubTable" title="glColorSubTable"><tt class="xref c c-func docutils literal"><span class="pre">glColorSubTable()</span></tt></a>,
+<a class="reference internal" href="glColorTableParameter.html#glColorTableParameter" title="glColorTableParameter"><tt class="xref c c-func docutils literal"><span class="pre">glColorTableParameter()</span></tt></a>,
+<a class="reference internal" href="glCopyColorTable.html#glCopyColorTable" title="glCopyColorTable"><tt class="xref c c-func docutils literal"><span class="pre">glCopyColorTable()</span></tt></a>,
+<a class="reference internal" href="glCopyColorSubTable.html#glCopyColorSubTable" title="glCopyColorSubTable"><tt class="xref c c-func docutils literal"><span class="pre">glCopyColorSubTable()</span></tt></a>,
+<a class="reference internal" href="glGetColorTable.html#glGetColorTable" title="glGetColorTable"><tt class="xref c c-func docutils literal"><span class="pre">glGetColorTable()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glColorTable" title="glColorTable"><tt class="xref c c-func docutils literal"><span class="pre">glColorTable()</span></tt></a> may be used in two ways:
+to test the actual size and color resolution of a lookup table
+given a particular set of parameters,
+or to load the contents of a color lookup
+table.
+Use the targets <tt class="docutils literal"><span class="pre">GL_PROXY_\*</span></tt> for the first case
+and the other targets for the second case.</p>
+<p>If a non-zero named buffer object is bound to the <tt class="docutils literal"><span class="pre">GL_PIXEL_UNPACK_BUFFER</span></tt> target
+(see <a class="reference internal" href="../man4/glBindBuffer.html#glBindBuffer" title="glBindBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glBindBuffer()</span></tt></a>) while a color table is
+specified, <em>data</em> is treated as a byte offset into the buffer object&#8217;s data store.</p>
+<p>If <em>target</em> is <tt class="docutils literal"><span class="pre">GL_COLOR_TABLE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_POST_CONVOLUTION_COLOR_TABLE</span></tt>,
+or
+<tt class="docutils literal"><span class="pre">GL_POST_COLOR_MATRIX_COLOR_TABLE</span></tt>,
+<a class="reference internal" href="#glColorTable" title="glColorTable"><tt class="xref c c-func docutils literal"><span class="pre">glColorTable()</span></tt></a> builds a color lookup table from an array of pixels.
+The pixel array specified by <em>width</em>, <em>format</em>, <em>type</em>, and <em>data</em>
+is extracted from memory and
+processed just as if <a class="reference internal" href="glDrawPixels.html#glDrawPixels" title="glDrawPixels"><tt class="xref c c-func docutils literal"><span class="pre">glDrawPixels()</span></tt></a> were called, but processing
+stops after the final expansion to RGBA is completed.</p>
+<p>The four scale parameters and the four bias parameters that are defined
+for the table are then used to scale and bias the R, G, B, and A components
+of each pixel.
+(Use <a class="reference internal" href="glColorTableParameter.html#glColorTableParameter" title="glColorTableParameter"><tt class="xref c c-func docutils literal"><span class="pre">glColorTableParameter()</span></tt></a> to set these scale and bias
+parameters.)</p>
+<p>Next, the R, G, B, and A values are clamped to the range
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"><mn>0</mn><mn>1</mn></mfenced></math></span>.
+Each pixel is then converted to the internal format specified by
+<em>internalformat</em>.
+This conversion simply maps the component values of the pixel (R, G, B,
+and A) to the values included in the internal format (red, green, blue,
+alpha, luminance, and intensity).  The mapping is as follows:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="11%" />
+<col width="13%" />
+<col width="12%" />
+<col width="13%" />
+<col width="16%" />
+<col width="16%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Internal Format</strong></td>
+<td><strong>Red</strong></td>
+<td><strong>Green</strong></td>
+<td><strong>Blue</strong></td>
+<td><strong>Alpha</strong></td>
+<td><strong>Luminance</strong></td>
+<td><strong>Intensity</strong></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_ALPHA</span></tt></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>A</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_LUMINANCE</span></tt></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>R</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_LUMINANCE_ALPHA</span></tt></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>A</td>
+<td>R</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_INTENSITY</span></tt></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>R</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td>R</td>
+<td>G</td>
+<td>B</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RGBA</span></tt></td>
+<td>R</td>
+<td>G</td>
+<td>B</td>
+<td>A</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>Finally, the red, green, blue, alpha, luminance, and/or intensity components of
+the resulting pixels are stored in the color table.
+They form a one-dimensional table with indices in the range
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"><mn>0</mn><mrow><mi mathvariant="italic">width</mi><mo>-</mo><mn>1</mn></mrow></mfenced></math></span>.</p>
+<p>If <em>target</em> is <tt class="docutils literal"><span class="pre">GL_PROXY_\*</span></tt>,
+<a class="reference internal" href="#glColorTable" title="glColorTable"><tt class="xref c c-func docutils literal"><span class="pre">glColorTable()</span></tt></a> recomputes and stores the values of the proxy color table&#8217;s state
+variables
+<tt class="docutils literal"><span class="pre">GL_COLOR_TABLE_FORMAT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_COLOR_TABLE_WIDTH</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_COLOR_TABLE_RED_SIZE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_COLOR_TABLE_GREEN_SIZE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_COLOR_TABLE_BLUE_SIZE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_COLOR_TABLE_ALPHA_SIZE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_COLOR_TABLE_LUMINANCE_SIZE</span></tt>, and
+<tt class="docutils literal"><span class="pre">GL_COLOR_TABLE_INTENSITY_SIZE</span></tt>.
+There is no effect on the image or state of any actual color table.
+If the specified color table is too large to be supported, then all the
+proxy state variables listed above are set to zero.
+Otherwise, the color table could be supported by <a class="reference internal" href="#glColorTable" title="glColorTable"><tt class="xref c c-func docutils literal"><span class="pre">glColorTable()</span></tt></a>
+using the corresponding non-proxy target,
+and the proxy state variables are set as if that target were being defined.</p>
+<p>The proxy state variables can be retrieved by calling
+<a class="reference internal" href="glGetColorTableParameter.html#glGetColorTableParameter" title="glGetColorTableParameter"><tt class="xref c c-func docutils literal"><span class="pre">glGetColorTableParameter()</span></tt></a> with a target of
+<tt class="docutils literal"><span class="pre">GL_PROXY_\*</span></tt>.
+This allows the application to decide if a particular <a class="reference internal" href="#glColorTable" title="glColorTable"><tt class="xref c c-func docutils literal"><span class="pre">glColorTable()</span></tt></a>
+command would succeed, and to determine what the resulting color table
+attributes would be.</p>
+<p>If a color table is enabled, and its width is non-zero, then its
+contents are used to replace a subset of the components of each RGBA
+pixel group, based on the internal format of the table.</p>
+<p>Each pixel group has color components (R, G, B, A)
+that are in the range
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"><mn>0.0</mn><mn>1.0</mn></mfenced></math></span>.
+The color components are rescaled to
+the size of the color lookup table to form an index.
+Then a subset of the components based on the internal format of the table are
+replaced by the table entry selected by that index.
+If the color components and contents of the table are represented as follows:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="41%" />
+<col width="59%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Representation</strong></td>
+<td><strong>Meaning</strong></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">r</span></tt></td>
+<td>Table index computed from <tt class="docutils literal"><span class="pre">R</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">g</span></tt></td>
+<td>Table index computed from <tt class="docutils literal"><span class="pre">G</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">b</span></tt></td>
+<td>Table index computed from <tt class="docutils literal"><span class="pre">B</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">a</span></tt></td>
+<td>Table index computed from <tt class="docutils literal"><span class="pre">A</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">L[i]</span></tt></td>
+<td>Luminance value at table index <tt class="docutils literal"><span class="pre">i</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">I[i]</span></tt></td>
+<td>Intensity value at table index <tt class="docutils literal"><span class="pre">i</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">R[i]</span></tt></td>
+<td>Red value at table index <tt class="docutils literal"><span class="pre">i</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">G[i]</span></tt></td>
+<td>Green value at table index <tt class="docutils literal"><span class="pre">i</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">B[i]</span></tt></td>
+<td>Blue value at table index <tt class="docutils literal"><span class="pre">i</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">A[i]</span></tt></td>
+<td>Alpha value at table index <tt class="docutils literal"><span class="pre">i</span></tt></td>
+</tr>
+</tbody>
+</table>
+<p>then the result of color table lookup is as follows:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="19%" />
+<col width="19%" />
+<col width="19%" />
+<col width="19%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>:strong:``</td>
+<td colspan="4"><strong>Resulting Texture Components</strong></td>
+</tr>
+<tr class="row-even"><td><strong>Table Internal Format</strong></td>
+<td><strong>R</strong></td>
+<td><strong>G</strong></td>
+<td><strong>B</strong></td>
+<td><strong>A</strong></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_ALPHA</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">R</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">G</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">B</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">A[a]</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_LUMINANCE</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">L[r]</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">L[g]</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">L[b]</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">At</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_LUMINANCE_ALPHA</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">L[r]</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">L[g]</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">L[b]</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">A[a]</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_INTENSITY</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">I[r]</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">I[g]</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">I[b]</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">I[a]</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">R[r]</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">G[g]</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">B[b]</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">A</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RGBA</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">R[r]</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">G[g]</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">B[b]</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">A[a]</span></tt></td>
+</tr>
+</tbody>
+</table>
+<p>When <tt class="docutils literal"><span class="pre">GL_COLOR_TABLE</span></tt> is enabled, the colors resulting from
+the pixel map operation (if it is enabled) are mapped
+by the color lookup table before being passed to the convolution
+operation. The colors resulting from the convolution operation
+are modified by the post convolution color lookup table when
+<tt class="docutils literal"><span class="pre">GL_POST_CONVOLUTION_COLOR_TABLE</span></tt>
+is enabled. These modified colors are then sent to the color matrix operation.
+Finally, if <tt class="docutils literal"><span class="pre">GL_POST_COLOR_MATRIX_COLOR_TABLE</span></tt>
+is enabled, the colors resulting from the color matrix operation
+are mapped by the post color matrix color lookup table before being
+used by the histogram operation.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><a class="reference internal" href="#glColorTable" title="glColorTable"><tt class="xref c c-func docutils literal"><span class="pre">glColorTable()</span></tt></a> is present only if <tt class="docutils literal"><span class="pre">ARB_imaging</span></tt> is returned when <a class="reference internal" href="../man4/glGetString.html#glGetString" title="glGetString"><tt class="xref c c-func docutils literal"><span class="pre">glGetString()</span></tt></a>
+is called with an argument of <tt class="docutils literal"><span class="pre">GL_EXTENSIONS</span></tt>.</p>
+<p class="last">If <em>target</em> is set to <tt class="docutils literal"><span class="pre">GL_COLOR_TABLE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_POST_CONVOLUTION_COLOR_TABLE</span></tt>,
+or <tt class="docutils literal"><span class="pre">GL_POST_COLOR_MATRIX_COLOR_TABLE</span></tt>,
+then <em>width</em> must be a power of two or a <tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt>
+error is generated.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>target</em> is not one of the allowable values.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>internalformat</em> is not one of the allowable values.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>format</em> is not one of the allowable values.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>type</em> is not one of the allowable values.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>width</em> is less than zero.</li>
+<li><tt class="docutils literal"><span class="pre">GL_TABLE_TOO_LARGE</span></tt> is generated if the requested color table is too large to be supported by the implementation, and <em>target</em> is not a <tt class="docutils literal"><span class="pre">GL_PROXY_\*</span></tt> target.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if a non-zero buffer object name is bound to the <tt class="docutils literal"><span class="pre">GL_PIXEL_UNPACK_BUFFER</span></tt> target and the buffer object&#8217;s data store is currently mapped.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if a non-zero buffer object name is bound to the <tt class="docutils literal"><span class="pre">GL_PIXEL_UNPACK_BUFFER</span></tt> target and the data would be unpacked from the buffer object such that the memory reads required would exceed the data store size.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if a non-zero buffer object name is bound to the <tt class="docutils literal"><span class="pre">GL_PIXEL_UNPACK_BUFFER</span></tt> target and <em>data</em> is not evenly divisible into the number of bytes needed to store in memory a datum indicated by <em>type</em>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <a class="reference internal" href="#glColorTable" title="glColorTable"><tt class="xref c c-func docutils literal"><span class="pre">glColorTable()</span></tt></a> is executed between the execution of <a class="reference internal" href="glBegin.html#glBegin" title="glBegin"><tt class="xref c c-func docutils literal"><span class="pre">glBegin()</span></tt></a> and the corresponding execution of <a class="reference internal" href="glBegin.html#glEnd" title="glEnd"><tt class="xref c c-func docutils literal"><span class="pre">glEnd()</span></tt></a>.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glGetColorTableParameter.html#glGetColorTableParameter" title="glGetColorTableParameter"><tt class="xref c c-func docutils literal"><span class="pre">glGetColorTableParameter()</span></tt></a></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_PIXEL_UNPACK_BUFFER_BINDING</span></tt></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glColorSubTable.html"
+                        title="previous chapter">function <cite>glColorSubTable</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glColorTableParameter.html"
+                        title="next chapter">function <cite>glColorTableParameter</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/glColorTable.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glColorTableParameter.html" title="function glColorTableParameter"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glColorSubTable.html" title="function glColorSubTable"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

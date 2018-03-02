@@ -1,0 +1,105 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:30
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glIsProgram.xml'
+.. (c)2003-2005 3Dlabs Inc. Ltd.
+.. See license details at http://opencontent.org/openpub/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glIsProgram`
+----------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Determines if a name corresponds to a program object
+
+.. c:function:: glIsProgram
+
+
+      :param program:
+
+            Specifies a potential program object.
+
+.. rubric:: Specification
+
+.. c:function:: GLboolean glIsProgram(GLuint  program)
+   :noindex: 
+
+
+.. seealso::
+
+   :c:func:`glAttachShader`\ ,
+   :c:func:`glBindAttribLocation`\ ,
+   :c:func:`glCreateProgram`\ ,
+   :c:func:`glDeleteProgram`\ ,
+   :c:func:`glDetachShader`\ ,
+   :c:func:`glLinkProgram`\ ,
+   :c:func:`glUniform`\ ,
+   :c:func:`glUseProgram`\ ,
+   :c:func:`glValidateProgram`
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glIsProgram` returns
+``GL_TRUE`` if *program*
+is the name of a program object previously created with
+:c:func:`glCreateProgram`
+and not yet deleted with :c:func:`glDeleteProgram`\ .
+If *program* is zero or a non-zero value that
+is not the name of a program object, or if an error occurs,
+:c:func:`glIsProgram` returns ``GL_FALSE``\ .
+
+
+.. note::
+
+   No error is generated if *program* is
+   not a valid program object name.
+
+   A program object marked for deletion with :c:func:`glDeleteProgram`
+   but still in use as part of current rendering state is still considered
+   a program object and :c:func:`glIsProgram` will return ``GL_TRUE``\ .
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGet` with the argument ``GL_CURRENT_PROGRAM``
+* :c:func:`glGetActiveAttrib` with arguments *program* and the index of an active attribute variable
+* :c:func:`glGetActiveUniform` with arguments *program* and the index of an active uniform variable
+* :c:func:`glGetAttachedShaders` with argument *program*
+* :c:func:`glGetAttribLocation` with arguments *program* and the name of an attribute variable
+* :c:func:`glGetProgram` with arguments *program* and the parameter to be queried
+* :c:func:`glGetProgramInfoLog` with argument *program*
+* :c:func:`glGetUniform` with arguments *program* and the location of a uniform variable
+* :c:func:`glGetUniformLocation` with arguments *program* and the name of a uniform variable
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glIsProgram'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )2003-2005 3Dlabs Inc. Ltd. Open Publication License.
+

@@ -1,0 +1,186 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glGetBufferSubData &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glGetCompressedTexImage" href="glGetCompressedTexImage.html" />
+    <link rel="prev" title="function glGetBufferPointerv" href="glGetBufferPointerv.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glGetCompressedTexImage.html" title="function glGetCompressedTexImage"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glGetBufferPointerv.html" title="function glGetBufferPointerv"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glgetbuffersubdata">
+<h1>function <cite>glGetBufferSubData</cite><a class="headerlink" href="#function-glgetbuffersubdata" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Returns a subset of a buffer object&#8217;s data store</p>
+<dl class="function">
+<dt id="glGetBufferSubData">
+<tt class="descname">glGetBufferSubData</tt><big>(</big><big>)</big><a class="headerlink" href="#glGetBufferSubData" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>target</strong> &#8211; Specifies the target buffer object.
+The symbolic constant must be <tt class="docutils literal"><span class="pre">GL_ARRAY_BUFFER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_COPY_READ_BUFFER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_COPY_WRITE_BUFFER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_ELEMENT_ARRAY_BUFFER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_PIXEL_PACK_BUFFER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_PIXEL_UNPACK_BUFFER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_BUFFER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TRANSFORM_FEEDBACK_BUFFER</span></tt>, or
+<tt class="docutils literal"><span class="pre">GL_UNIFORM_BUFFER</span></tt>.</li>
+<li><strong>offset</strong> &#8211; Specifies the offset into the buffer object&#8217;s data store from which data will be returned,
+measured in bytes.</li>
+<li><strong>size</strong> &#8211; Specifies the size in bytes of the data store region being returned.</li>
+<li><strong>data</strong> &#8211; Specifies a pointer to the location where buffer object data is returned.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glGetBufferSubData</tt><big>(</big>GLenum <em>&nbsp;target</em>, GLintptr <em>&nbsp;offset</em>, GLsizeiptr <em>&nbsp;size</em>, GLvoid * <em>&nbsp;data</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glBindBuffer.html#glBindBuffer" title="glBindBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glBindBuffer()</span></tt></a>,
+<a class="reference internal" href="glBufferData.html#glBufferData" title="glBufferData"><tt class="xref c c-func docutils literal"><span class="pre">glBufferData()</span></tt></a>,
+<a class="reference internal" href="glBufferSubData.html#glBufferSubData" title="glBufferSubData"><tt class="xref c c-func docutils literal"><span class="pre">glBufferSubData()</span></tt></a>,
+<a class="reference internal" href="glMapBuffer.html#glMapBuffer" title="glMapBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glMapBuffer()</span></tt></a>,
+<a class="reference internal" href="glMapBuffer.html#glUnmapBuffer" title="glUnmapBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glUnmapBuffer()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glGetBufferSubData" title="glGetBufferSubData"><tt class="xref c c-func docutils literal"><span class="pre">glGetBufferSubData()</span></tt></a> returns some or all of the data from the buffer object currently
+bound to <em>target</em>. Data starting at byte offset <em>offset</em> and
+extending for <em>size</em> bytes is copied from the data store to the memory pointed to by
+<em>data</em>. An error is thrown if the buffer object is currently mapped, or if
+<em>offset</em> and <em>size</em> together define a range beyond the bounds
+of the buffer object&#8217;s data store.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If an error is generated,
+no change is made to the contents of <em>data</em>.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>target</em> is not <tt class="docutils literal"><span class="pre">GL_ARRAY_BUFFER</span></tt>, <tt class="docutils literal"><span class="pre">GL_ELEMENT_ARRAY_BUFFER</span></tt>, <tt class="docutils literal"><span class="pre">GL_PIXEL_PACK_BUFFER</span></tt>, or <tt class="docutils literal"><span class="pre">GL_PIXEL_UNPACK_BUFFER</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>offset</em> or <em>size</em> is negative, or if together they define a region of memory that extends beyond the buffer object&#8217;s allocated data store.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if the reserved buffer object name 0 is bound to <em>target</em>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if the buffer object being queried is mapped.</li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)2005 Addison-Wesley. Open Publication License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glGetBufferPointerv.html"
+                        title="previous chapter">function <cite>glGetBufferPointerv</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glGetCompressedTexImage.html"
+                        title="next chapter">function <cite>glGetCompressedTexImage</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glGetBufferSubData.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glGetCompressedTexImage.html" title="function glGetCompressedTexImage"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glGetBufferPointerv.html" title="function glGetBufferPointerv"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

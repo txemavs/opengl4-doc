@@ -1,0 +1,269 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:31
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glVertexAttrib.xml'
+.. (c)2003-2005 3Dlabs Inc. Ltd. 2010 Khronos Group.
+.. See license details at http://opencontent.org/openpub/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glVertexAttrib`
+-------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Specifies the value of a generic vertex attribute
+
+.. c:function:: glVertexAttrib
+
+
+      :param index:
+
+            Specifies the index of the generic vertex
+            attribute to be modified.
+
+         :param v0:\ ,
+         *v1*\ ,
+         *v2*\ ,
+         *v3*
+
+            Specifies the new values to be used for the
+            specified vertex attribute.
+
+.. rubric:: Specification
+
+.. c:function:: void glVertexAttrib1f(GLuint  index, GLfloat  v0, GLuint  index, GLshort  v0, GLuint  index, GLdouble  v0, GLuint  index, GLint  v0, GLuint  index, GLuint  v0, GLuint  index, GLfloat  v0, GLfloat  v1, GLuint  index, GLshort  v0, GLshort  v1, GLuint  index, GLdouble  v0, GLdouble  v1, GLuint  index, GLint  v0, GLint  v1, GLuint  index, GLuint  v0, GLuint  v1, GLuint  index, GLfloat  v0, GLfloat  v1, GLfloat  v2, GLuint  index, GLshort  v0, GLshort  v1, GLshort  v2, GLuint  index, GLdouble  v0, GLdouble  v1, GLdouble  v2, GLuint  index, GLint  v0, GLint  v1, GLint  v2, GLuint  index, GLuint  v0, GLuint  v1, GLuint  v2, GLuint  index, GLfloat  v0, GLfloat  v1, GLfloat  v2, GLfloat  v3, GLuint  index, GLshort  v0, GLshort  v1, GLshort  v2, GLshort  v3, GLuint  index, GLdouble  v0, GLdouble  v1, GLdouble  v2, GLdouble  v3, GLuint  index, GLubyte  v0, GLubyte  v1, GLubyte  v2, GLubyte  v3, GLuint  index, GLint  v0, GLint  v1, GLint  v2, GLint  v3, GLuint  index, GLuint  v0, GLuint  v1, GLuint  v2, GLuint  v3, GLuint  index, GLdouble  v0, GLuint  index, GLdouble  v0, GLdouble  v1, GLuint  index, GLdouble  v0, GLdouble  v1, GLdouble  v2, GLuint  index, GLdouble  v0, GLdouble  v1, GLdouble  v2, GLdouble  v3)
+.. c:function:: void glVertexAttrib1fv(GLuint  index, const GLfloat * v, GLuint  index, const GLshort * v, GLuint  index, const GLdouble * v, GLuint  index, const GLint * v, GLuint  index, const GLuint * v, GLuint  index, const GLfloat * v, GLuint  index, const GLshort * v, GLuint  index, const GLdouble * v, GLuint  index, const GLint * v, GLuint  index, const GLuint * v, GLuint  index, const GLfloat * v, GLuint  index, const GLshort * v, GLuint  index, const GLdouble * v, GLuint  index, const GLint * v, GLuint  index, const GLuint * v, GLuint  index, const GLfloat * v, GLuint  index, const GLshort * v, GLuint  index, const GLdouble * v, GLuint  index, const GLint * v, GLuint  index, const GLbyte * v, GLuint  index, const GLubyte * v, GLuint  index, const GLushort * v, GLuint  index, const GLuint * v, GLuint  index, const GLbyte * v, GLuint  index, const GLshort * v, GLuint  index, const GLint * v, GLuint  index, const GLubyte * v, GLuint  index, const GLushort * v, GLuint  index, const GLuint * v, GLuint  index, const GLbyte * v, GLuint  index, const GLubyte * v, GLuint  index, const GLshort * v, GLuint  index, const GLushort * v, GLuint  index, const GLint * v, GLuint  index, const GLuint * v, GLuint  index, const GLdouble * v, GLuint  index, const GLdouble * v, GLuint  index, const GLdouble * v, GLuint  index, const GLdouble * v)
+.. c:function:: void glVertexAttribP1ui(GLuint  index, GLenum  type, GLboolean  normalized, GLuint  value, GLuint  index, GLenum  type, GLboolean  normalized, GLuint  value, GLuint  index, GLenum  type, GLboolean  normalized, GLuint  value, GLuint  index, GLenum  type, GLboolean  normalized, GLuint  value)
+
+
+.. seealso::
+
+   :c:func:`glBindAttribLocation`\ ,
+   :c:func:`glVertexAttribPointer`
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Parameters
+
+..
+
+
+   *index*
+
+      Specifies the index of the generic vertex
+      attribute to be modified.
+
+
+   *v*
+
+      Specifies a pointer to an array of values to
+      be used for the generic vertex attribute.
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Parameters
+
+..
+
+
+   *index*
+
+      Specifies the index of the generic vertex
+      attribute to be modified.
+
+
+   *type*
+
+      Type of packing used on the data. This parameter must be
+      ``GL_INT_10_10_10_2`` or ``GL_UNSIGNED_INT_10_10_10_2``
+      to specify signed or unsigned data, respectively.
+
+
+   *normalized*
+
+      If ``GL_TRUE``\ , then the values are to be
+      converted to floating point values by normalizing. Otherwise,
+      they are converted directly to floating point values.
+
+
+      *value*
+
+
+      Specifies the new packed value to be used for the
+      specified vertex attribute.
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+The :c:func:`glVertexAttrib` family of entry points
+allows an application to pass generic vertex attributes in
+numbered locations.
+
+Generic attributes are defined as four-component values
+that are organized into an array. The first entry of this array
+is numbered 0, and the size of the array is specified by the
+implementation-dependent constant
+``GL_MAX_VERTEX_ATTRIBS``\ . Individual elements
+of this array can be modified with a
+:c:func:`glVertexAttrib` call that specifies the
+index of the element to be modified and a value for that
+element.
+
+These commands can be used to specify one, two, three, or
+all four components of the generic vertex attribute specified by
+*index*\ . A :c:func:`1` in the
+name of the command indicates that only one value is passed, and
+it will be used to modify the first component of the generic
+vertex attribute. The second and third components will be set to
+0, and the fourth component will be set to 1. Similarly, a
+:c:func:`2` in the name of the command indicates that
+values are provided for the first two components, the third
+component will be set to 0, and the fourth component will be set
+to 1. A :c:func:`3` in the name of the command
+indicates that values are provided for the first three
+components and the fourth component will be set to 1, whereas a
+:c:func:`4` in the name indicates that values are
+provided for all four components.
+
+The letters :c:func:`s`\ ,
+:c:func:`f`\ , :c:func:`i`\ ,
+:c:func:`d`\ , :c:func:`ub`\ ,
+:c:func:`us`\ , and :c:func:`ui` indicate
+whether the arguments are of type short, float, int, double,
+unsigned byte, unsigned short, or unsigned int. When
+:c:func:`v` is appended to the name, the commands can
+take a pointer to an array of such values.
+
+Additional capitalized letters can indicate further alterations
+to the default behavior of the glVertexAttrib function:
+
+
+The commands containing :c:func:`N` indicate that
+the arguments will be passed as fixed-point values that are
+scaled to a normalized range according to the component
+conversion rules defined by the OpenGL specification. Signed
+values are understood to represent fixed-point values in the
+range [-1,1], and unsigned values are understood to represent
+fixed-point values in the range [0,1].
+
+
+The commands containing :c:func:`I` indicate that
+the arguments are extended to full signed or unsigned integers.
+
+
+The commands containing :c:func:`P` indicate that
+the arguments are stored as packed components within a larger
+natural type.
+
+
+The commands containing :c:func:`L` indicate that
+the arguments are full 64-bit quantities and should be passed directly
+to shader inputs declared as 64-bit double precision types.
+
+
+OpenGL Shading Language attribute variables are allowed to
+be of type mat2, mat3, or mat4. Attributes of these types may be
+loaded using the :c:func:`glVertexAttrib` entry
+points. Matrices must be loaded into successive generic
+attribute slots in column major order, with one column of the
+matrix in each generic attribute slot.
+
+A user-defined attribute variable declared in a vertex
+shader can be bound to a generic attribute index by calling
+:c:func:`glBindAttribLocation`\ .
+This allows an application to use more descriptive variable
+names in a vertex shader. A subsequent change to the specified
+generic vertex attribute will be immediately reflected as a
+change to the corresponding attribute variable in the vertex
+shader.
+
+The binding between a generic vertex attribute index and a
+user-defined attribute variable in a vertex shader is part of
+the state of a program object, but the current value of the
+generic vertex attribute is not. The value of each generic
+vertex attribute is part of current state, just like standard
+vertex attributes, and it is maintained even if a different
+program object is used.
+
+An application may freely modify generic vertex attributes
+that are not bound to a named vertex shader attribute variable.
+These values are simply maintained as part of current state and
+will not be accessed by the vertex shader. If a generic vertex
+attribute bound to an attribute variable in a vertex shader is
+not updated while the vertex shader is executing, the vertex
+shader will repeatedly use the current value for the generic
+vertex attribute.
+
+
+.. note::
+
+   Generic vertex attributes can be updated at any time.
+
+   It is possible for an application to bind more than one
+   attribute name to the same generic vertex attribute index. This
+   is referred to as aliasing, and it is allowed only if just one
+   of the aliased attribute variables is active in the vertex
+   shader, or if no path through the vertex shader consumes more
+   than one of the attributes aliased to the same location. OpenGL
+   implementations are not required to do error checking to detect
+   aliasing, they are allowed to assume that aliasing will not
+   occur, and they are allowed to employ optimizations that work
+   only in the absence of aliasing.
+
+   There is no provision for binding standard vertex
+   attributes; therefore, it is not possible to alias generic
+   attributes with standard attributes.
+
+
+   :c:func:`glVertexAttribL` versions are available only if the GL version is 4.1 or higher.
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_VALUE`` is generated if *index* is greater than or equal to ``GL_MAX_VERTEX_ATTRIBS``\ .
+* ``GL_INVALID_ENUM`` is generated if :c:func:`glVertexAttribP` is used with a *type* other than ``GL_INT_10_10_10_2`` or ``GL_UNSIGNED_INT_10_10_10_2``\ .
+* ``GL_INVALID_ENUM`` is generated if :c:func:`glVertexAttribL` is used with a *type* other than ``GL_DOUBLE``\ .
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGet` with the argument ``GL_CURRENT_PROGRAM``
+* :c:func:`glGetActiveAttrib` with argument *program* and the index of an active attribute variable
+* :c:func:`glGetAttribLocation` with argument *program* and an attribute variable name
+* :c:func:`glGetVertexAttrib` with arguments ``GL_CURRENT_VERTEX_ATTRIB`` and *index*
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glVertexAttrib'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )2003-2005 3Dlabs Inc. Ltd. (\ c\ )2010 Khronos Group. Open Publication License.
+

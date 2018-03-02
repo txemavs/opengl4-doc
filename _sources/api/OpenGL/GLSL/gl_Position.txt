@@ -1,0 +1,52 @@
+.. nabla.opengl-sphinx project
+
+.. ---------------------------
+
+.. this dodument source file 'man/gl_Position'is copyrighted by Khronos Group
+   See license details at http://opencontent.org/openpub/
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   
+
+function `gl_Position`
+----------------------
+
+.. currentmodule:: OpenGL.GLSL
+
+Contains the position of the current vertex
+
+.. c:function:: gl_Position
+
+
+.. rubric:: Specification
+
+.. c:function:: [!)
+
+.. seealso::
+
+   
+   :c:func:`gl_PointSize`, :c:func:`gl_ClipDistance`
+   
+.. rubric:: Description
+
+
+In the vertex, tessellation evaluation and geoemtry languages, a single global instance of the :c:func:`gl_PerVertex` named block is available and its :c:func:`gl_Position` member is an output that receives the homogeneous vertex position. It may be written at any time during shader execution. The value written to :c:func:`gl_Position` will be used by primitive assembly, clipping, culling and other fixed functionality operations, if present, that operate on primitives after vertex processing has occurred.
+
+In the tessellation control language, the :c:func:`gl_PerVertex` named block is used to construct an array, :c:func:`gl_out[]`, whose :c:func:`gl_Position` members hold the homogeneous control point position, which become available as inputs to the subsequent tessellation evaluation shader.
+
+The value of :c:func:`gl_Position` (or the :c:func:`gl_Position` member of the :c:func:`gl_out[]` array, in the case of the tessellation control shader) is undefined after the vertex, tessellation control, and tessellation evaluation shading stages if the corresponding shader executable does not write to gl_Position. It is also undefined after the geometry processing stage if the geometry shader executable calls :c:func:`EmitVertex` without having written :c:func:`gl_Position` since the last call to :c:func:`EmitVertex` (or hasn't written it at all).
+
+In the tessellation control, tessellation evaluation and geoemetry languages, the :c:func:`gl_PerVertex` named block is used to construct an array, :c:func:`gl_in[]` of per-vertex or per-control point inputs whose content represents the corresponding outputs written by the previous stage.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2011 Khronos Group. Open Publication License.
+

@@ -1,0 +1,72 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:28
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glXGetCurrentDrawable.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glXGetCurrentDrawable`
+--------------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Return the current drawable
+
+.. c:function:: glXGetCurrentDrawable
+
+
+.. rubric:: Specification
+
+.. c:function:: GLXDrawable glXGetCurrentDrawable()
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glXCreateGLXPixmap`\ ,
+            :c:func:`glXGetCurrentContext`\ ,
+            :c:func:`glXGetCurrentDisplay`\ ,
+            :c:func:`glXGetCurrentReadDrawable`\ ,
+            :c:func:`glXMakeCurrent`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glXGetCurrentDrawable` returns the current drawable,
+as specified by :c:func:`glXMakeCurrent`\ .
+If there is no current drawable,
+``None`` is returned.
+
+
+:c:func:`glXGetCurrentDrawable` returns client-side information.
+It does not make a round trip to the server.
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glXGetCurrentDrawable'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

@@ -1,0 +1,189 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function gluPartialDisk &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function gluPerspective" href="gluPerspective.html" />
+    <link rel="prev" title="function gluOrtho2D" href="gluOrtho2D.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="gluPerspective.html" title="function gluPerspective"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="gluOrtho2D.html" title="function gluOrtho2D"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glupartialdisk">
+<h1>function <cite>gluPartialDisk</cite><a class="headerlink" href="#function-glupartialdisk" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Draw an arc of a disk</p>
+<dl class="function">
+<dt id="gluPartialDisk">
+<tt class="descname">gluPartialDisk</tt><big>(</big><big>)</big><a class="headerlink" href="#gluPartialDisk" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>quad</strong> &#8211; Specifies a quadrics object (created with <a class="reference internal" href="gluNewQuadric.html#gluNewQuadric" title="gluNewQuadric"><tt class="xref c c-func docutils literal"><span class="pre">gluNewQuadric()</span></tt></a>).</li>
+<li><strong>inner</strong> &#8211; Specifies the inner radius of the partial disk (can be 0).</li>
+<li><strong>outer</strong> &#8211; Specifies the outer radius of the partial disk.</li>
+<li><strong>slices</strong> &#8211; Specifies the number of subdivisions around the <strong>z</strong> axis.</li>
+<li><strong>loops</strong> &#8211; Specifies the number of concentric rings about the origin into which
+the partial disk is subdivided.</li>
+<li><strong>start</strong> &#8211; Specifies the starting angle, in degrees, of the disk portion.</li>
+<li><strong>sweep</strong> &#8211; Specifies the sweep angle, in degrees, of the disk portion.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">gluPartialDisk</tt><big>(</big>GLUquadric* <em>&nbsp;quad</em>, GLdouble <em>&nbsp;inner</em>, GLdouble <em>&nbsp;outer</em>, GLint <em>&nbsp;slices</em>, GLint <em>&nbsp;loops</em>, GLdouble <em>&nbsp;start</em>, GLdouble <em>&nbsp;sweep</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="gluCylinder.html#gluCylinder" title="gluCylinder"><tt class="xref c c-func docutils literal"><span class="pre">gluCylinder()</span></tt></a>,
+<a class="reference internal" href="gluDisk.html#gluDisk" title="gluDisk"><tt class="xref c c-func docutils literal"><span class="pre">gluDisk()</span></tt></a>,
+<a class="reference internal" href="gluNewQuadric.html#gluNewQuadric" title="gluNewQuadric"><tt class="xref c c-func docutils literal"><span class="pre">gluNewQuadric()</span></tt></a>,
+<a class="reference internal" href="gluQuadricOrientation.html#gluQuadricOrientation" title="gluQuadricOrientation"><tt class="xref c c-func docutils literal"><span class="pre">gluQuadricOrientation()</span></tt></a>,
+<a class="reference internal" href="gluQuadricTexture.html#gluQuadricTexture" title="gluQuadricTexture"><tt class="xref c c-func docutils literal"><span class="pre">gluQuadricTexture()</span></tt></a>,
+<a class="reference internal" href="gluSphere.html#gluSphere" title="gluSphere"><tt class="xref c c-func docutils literal"><span class="pre">gluSphere()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#gluPartialDisk" title="gluPartialDisk"><tt class="xref c c-func docutils literal"><span class="pre">gluPartialDisk()</span></tt></a> renders a partial disk on the <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">z</mi><mo>=</mo><mn>0</mn></mrow></math></span> plane. A partial disk is
+similar to a full disk, except that only the subset of the disk from
+<em>start</em> through <em>start</em> + <em>sweep</em> is included (where 0 degrees is along the
++f2yf axis,
+90 degrees along the + <strong>x</strong> axis, 180 degrees along the - <strong>y</strong> axis, and
+270 degrees along the - <strong>x</strong> axis).</p>
+<p>The partial disk has a radius of
+<em>outer</em> and contains a concentric circular hole with a radius
+of <em>inner</em>. If <em>inner</em> is 0, then no hole is generated. The partial disk is
+subdivided around the <strong>z</strong> axis into slices (like pizza slices) and also
+about the <strong>z</strong> axis into rings
+(as specified by <em>slices</em> and <em>loops</em>, respectively).</p>
+<p>With respect to orientation, the + <strong>z</strong>
+side of the partial disk is considered to
+be outside (see <a class="reference internal" href="gluQuadricOrientation.html#gluQuadricOrientation" title="gluQuadricOrientation"><tt class="xref c c-func docutils literal"><span class="pre">gluQuadricOrientation()</span></tt></a>).
+This means that if the
+orientation is set to <tt class="docutils literal"><span class="pre">GLU_OUTSIDE</span></tt>, then any normals generated
+point along the + <strong>z</strong> axis. Otherwise, they point along the - <strong>z</strong>
+axis.</p>
+<p>If texturing is turned on (with <a class="reference internal" href="gluQuadricTexture.html#gluQuadricTexture" title="gluQuadricTexture"><tt class="xref c c-func docutils literal"><span class="pre">gluQuadricTexture()</span></tt></a>), texture
+coordinates are generated
+linearly such that where <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">r</mi><mo>=</mo><mi mathvariant="italic">outer</mi></mrow></math></span>,
+the value at (<strong>r</strong>, 0, 0) is
+(1.0, 0.5), at (0, <strong>r</strong>, 0) it is (0.5, 1.0), at (- <strong>r</strong>, 0, 0)
+it is (0.0, 0.5), and
+at (0, - <strong>r</strong>, 0) it is (0.5, 0.0).</p>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="gluOrtho2D.html"
+                        title="previous chapter">function <cite>gluOrtho2D</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="gluPerspective.html"
+                        title="next chapter">function <cite>gluPerspective</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/gluPartialDisk.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="gluPerspective.html" title="function gluPerspective"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="gluOrtho2D.html" title="function gluOrtho2D"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

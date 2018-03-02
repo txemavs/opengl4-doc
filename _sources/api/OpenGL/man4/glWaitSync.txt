@@ -1,0 +1,107 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:31
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glWaitSync.xml'
+.. (c)2010 Khronos Group.
+.. See license details at http://opencontent.org/openpub/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glWaitSync`
+---------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Instruct the GL server to block until the specified sync object becomes signaled
+
+.. c:function:: glWaitSync
+
+
+         :param sync:
+
+                  Specifies the sync object whose status to wait on.
+
+         :param flags:
+
+                  A bitfield controlling the command flushing behavior. *flags* may be zero.
+
+         :param timeout:
+
+                  Specifies the timeout that the server should wait before continuing. *timeout* must be ``GL_TIMEOUT_IGNORED``\ .
+
+.. rubric:: Specification
+
+.. c:function:: void glWaitSync(GLsync  sync, GLbitfield  flags, GLuint64  timeout)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glFenceSync`\ ,
+            :c:func:`glClientWaitSync`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glWaitSync` causes the GL server to block and wait until *sync* becomes signaled. *sync*
+is the name of an existing sync object upon which to wait. *flags* and *timeout* are currently not used and
+must be set to zero and the special value ``GL_TIMEOUT_IGNORED``\ , respectively [1]_ . :c:func:`glWaitSync` will always wait no longer than an implementation-dependent timeout. The
+duration of this timeout in nanoseconds may be queried by calling :c:func:`glGet` with the
+parameter ``GL_MAX_SERVER_WAIT_TIMEOUT``\ . There is currently no way to determine whether :c:func:`glWaitSync` unblocked
+because the timeout expired or because the sync object being waited on was signaled.
+
+
+If an error occurs, :c:func:`glWaitSync` does not cause the GL server to block.
+
+
+.. note::
+
+
+   :c:func:`glWaitSync` is available only if the GL version is 3.2 or higher.
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_OPERATION`` is generated if *sync* is not the name of a sync object.
+* ``GL_INVALID_VALUE`` is generated if *flags* is not zero.
+* ``GL_INVALID_VALUE`` is generated if *timeout* is not ``GL_TIMEOUT_IGNORED``\ .
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glWaitSync'>
+
+.. rubric:: Notes
+
+.. 
+
+
+.. [1] *flags* and *timeout* are placeholders for anticipated future extensions of sync object capabilities. They must have these reserved values in order that existing code calling :c:func:`glWaitSync` operate properly in the presence of such extensions.
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )2010 Khronos Group. Open Publication License.
+

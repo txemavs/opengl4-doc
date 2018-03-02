@@ -1,0 +1,68 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glGetColorTableParameter`
+-----------------------------------
+
+.. source file man/glGetColorTableParameter
+
+.. currentmodule:: OpenGL.GL
+
+Get color lookup table parameters
+
+.. c:function:: glGetColorTableParameter
+.. c:function:: void glGetColorTableParameterfv(GLenum  target, GLenum  pname, GLfloat *  params, GLenum  target, GLenum  pname, GLint *  params)
+
+
+   
+   :param target:
+      The target color table. Must be ``GL_COLOR_TABLE``, ``GL_POST_CONVOLUTION_COLOR_TABLE``, ``GL_POST_COLOR_MATRIX_COLOR_TABLE``, ``GL_PROXY_COLOR_TABLE``, ``GL_PROXY_POST_CONVOLUTION_COLOR_TABLE``, or ``GL_PROXY_POST_COLOR_MATRIX_COLOR_TABLE``.
+   
+   :param pname:
+      The symbolic name of a color lookup table parameter. Must be one of ``GL_COLOR_TABLE_BIAS``, ``GL_COLOR_TABLE_SCALE``, ``GL_COLOR_TABLE_FORMAT``, ``GL_COLOR_TABLE_WIDTH``, ``GL_COLOR_TABLE_RED_SIZE``, ``GL_COLOR_TABLE_GREEN_SIZE``, ``GL_COLOR_TABLE_BLUE_SIZE``, ``GL_COLOR_TABLE_ALPHA_SIZE``, ``GL_COLOR_TABLE_LUMINANCE_SIZE``, or ``GL_COLOR_TABLE_INTENSITY_SIZE``.
+   
+   :param params:
+      A pointer to an array where the values of the parameter will be stored.
+   
+
+.. seealso::
+
+   
+   :c:func:`glColorTable`, :c:func:`glTexParameter`, :c:func:`glColorTableParameter`
+   
+.. rubric:: Description
+
+
+Returns parameters specific to color table *target* .
+
+When *pname* is set to ``GL_COLOR_TABLE_SCALE`` or ``GL_COLOR_TABLE_BIAS``, :c:func:`glGetColorTableParameter` returns the color table scale or bias parameters for the table specified by *target* . For these queries, *target* must be set to ``GL_COLOR_TABLE``, ``GL_POST_CONVOLUTION_COLOR_TABLE``, or ``GL_POST_COLOR_MATRIX_COLOR_TABLE`` and *params* points to an array of four elements, which receive the scale or bias factors for red, green, blue, and alpha, in that order.
+
+:c:func:`glGetColorTableParameter` can also be used to retrieve the format and size parameters for a color table. For these queries, set *target* to either the color table target or the proxy color table target. The format and size parameters are set by :c:func:`glColorTable`.
+
+The following table lists the format and size parameters that may be queried. For each symbolic constant listed below for *pname* , *params* must point to an array of the given length and receive the values indicated.
+
+
+
+
+
+
+**Errors:**
+
+   * ``GL_INVALID_ENUM`` is generated if *target* or *pname* is not an acceptable value.
+   * ``GL_INVALID_OPERATION`` is generated if :c:func:`glGetColorTableParameter` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`.
+
+
+
+.. note::
+
+   * :c:func:`glGetColorTableParameter` is present only if ``ARB_imaging`` is returned when :c:func:`glGetString` is called with an argument of ``GL_EXTENSIONS``.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

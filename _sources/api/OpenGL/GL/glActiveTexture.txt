@@ -1,0 +1,50 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glActiveTexture`
+--------------------------
+
+.. source file man4/glActiveTexture
+
+.. currentmodule:: OpenGL.GL
+
+Select active texture unit
+
+.. c:function:: glActiveTexture
+.. c:function:: void glActiveTexture(GLenum  texture)
+   :noindex: 
+
+
+   
+   :param texture:
+      Specifies which texture unit to make active. The number of texture units is implementation dependent, but must be at least 80. *texture* must be one of ``GL_TEXTURE``, where *`i`* *`i`* ranges from 0 (``GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS`` - 1). The initial value is ``GL_TEXTURE0``.
+   
+
+.. seealso::
+
+   
+   :c:func:`glGenTextures`, :c:func:`glBindTexture`, :c:func:`glCompressedTexImage1D`, :c:func:`glCompressedTexImage2D`, :c:func:`glCompressedTexImage3D`, :c:func:`glCompressedTexSubImage1D`, :c:func:`glCompressedTexSubImage2D`, :c:func:`glCompressedTexSubImage3D`, :c:func:`glCopyTexImage1D`, :c:func:`glCopyTexImage2D`, :c:func:`glCopyTexSubImage1D`, :c:func:`glCopyTexSubImage2D`, :c:func:`glCopyTexSubImage3D`, :c:func:`glDeleteTextures` :c:func:`glIsTexture`, :c:func:`glTexImage1D`, :c:func:`glTexImage2D`, :c:func:`glTexImage2DMultisample`, :c:func:`glTexImage3D`, :c:func:`glTexImage3DMultisample`, :c:func:`glTexSubImage1D`, :c:func:`glTexSubImage2D`, :c:func:`glTexSubImage3D`, :c:func:`glTexParameter`,
+   
+.. rubric:: Description
+
+
+:c:func:`glActiveTexture` selects which texture unit subsequent texture state calls will affect. The number of texture units an implementation supports is implementation dependent, but must be at least 80.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGet` with argument ``GL_ACTIVE_TEXTURE``, or ``GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS``.
+
+**Errors:**
+
+   * ``GL_INVALID_ENUM`` is generated if *texture* is not one of ``GL_TEXTURE``, where *`i`* *`i`* ranges from 0 to (``GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS`` - 1).
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

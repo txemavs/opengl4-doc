@@ -1,0 +1,54 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glValidateProgramPipeline`
+------------------------------------
+
+.. source file man4/glValidateProgramPipeline
+
+.. currentmodule:: OpenGL.GL
+
+Validate a program pipeline object against current GL state
+
+.. c:function:: glValidateProgramPipeline
+.. c:function:: void glValidateProgramPipeline(GLuint  pipeline)
+   :noindex: 
+
+
+   
+   :param pipeline:
+      Specifies the name of a program pipeline object to validate.
+   
+
+.. seealso::
+
+   
+   :c:func:`glGenProgramPipelines`, :c:func:`glBindProgramPipeline`, :c:func:`glDeleteProgramPipelines`
+   
+.. rubric:: Description
+
+
+:c:func:`glValidateProgramPipeline` instructs the implementation to validate the shader executables contained in *pipeline* against the current GL state. The implementation may use this as an opportunity to perform any internal shader modifications that may be required to ensure correct operation of the installed shaders given the current GL state.
+
+After a program pipeline has been validated, its validation status is set to ``GL_TRUE``. The validation status of a program pipeline object may be queried by calling :c:func:`glGetProgramPipeline` with parameter ``GL_VALIDATE_STATUS``.
+
+If *pipeline* is a name previously returned from a call to :c:func:`glGenProgramPipelines` but that has not yet been bound by a call to :c:func:`glBindProgramPipeline`, a new program pipeline object is created with name *pipeline* and the default state vector.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGetProgramPipeline` with parameter ``GL_VALIDATE_STATUS``.
+
+**Errors:**
+
+   * ``GL_INVALID_OPERATION`` is generated if *pipeline* is not a name previously returned from a call to :c:func:`glGenProgramPipelines` or if such a name has been deleted by a call to :c:func:`glDeleteProgramPipelines`.
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

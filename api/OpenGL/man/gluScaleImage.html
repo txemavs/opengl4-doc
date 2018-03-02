@@ -1,0 +1,255 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function gluScaleImage &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function gluSphere" href="gluSphere.html" />
+    <link rel="prev" title="function gluQuadricTexture" href="gluQuadricTexture.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="gluSphere.html" title="function gluSphere"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="gluQuadricTexture.html" title="function gluQuadricTexture"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-gluscaleimage">
+<h1>function <cite>gluScaleImage</cite><a class="headerlink" href="#function-gluscaleimage" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Scale an image to an arbitrary size</p>
+<dl class="function">
+<dt id="gluScaleImage">
+<tt class="descname">gluScaleImage</tt><big>(</big><big>)</big><a class="headerlink" href="#gluScaleImage" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>format</strong> &#8211; Specifies the format of the pixel data.
+The following symbolic values are valid:
+<tt class="docutils literal"><span class="pre">GLU_COLOR_INDEX</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_STENCIL_INDEX</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_DEPTH_COMPONENT</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_RED</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_GREEN</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_BLUE</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_ALPHA</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_RGB</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_RGBA</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_BGR</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_BGRA</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_LUMINANCE</span></tt>, and
+<tt class="docutils literal"><span class="pre">GLU_LUMINANCE_ALPHA</span></tt>.</li>
+<li><strong>wIn</strong> &#8211; </li>
+<li><strong>hIn</strong> &#8211; Specify in pixels the width and height, respectively, of the source image.</li>
+<li><strong>typeIn</strong> &#8211; Specifies the data type for <em>dataIn</em>. Must be one of
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_BYTE</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_BYTE</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_BITMAP</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_SHORT</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_SHORT</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_INT</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_INT</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_FLOAT</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_BYTE_3_3_2</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_BYTE_2_3_3_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_SHORT_5_6_5</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_SHORT_5_6_5_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_SHORT_4_4_4_4</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_SHORT_4_4_4_4_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_SHORT_5_5_5_1</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_SHORT_1_5_5_5_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_INT_8_8_8_8</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_INT_8_8_8_8_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_INT_10_10_10_2</span></tt>, or
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_INT_2_10_10_10_REV</span></tt>.</li>
+<li><strong>dataIn</strong> &#8211; Specifies a pointer to the source image.</li>
+<li><strong>wOut</strong> &#8211; </li>
+<li><strong>hOut</strong> &#8211; Specify the width and height, respectively, in pixels of the destination image.</li>
+<li><strong>typeOut</strong> &#8211; Specifies the data type for <em>dataOut</em>. Must be one of
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_BYTE</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_BYTE</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_BITMAP</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_SHORT</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_SHORT</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_INT</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_INT</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_FLOAT</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_BYTE_3_3_2</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_BYTE_2_3_3_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_SHORT_5_6_5</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_SHORT_5_6_5_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_SHORT_4_4_4_4</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_SHORT_4_4_4_4_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_SHORT_5_5_5_1</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_SHORT_1_5_5_5_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_INT_8_8_8_8</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_INT_8_8_8_8_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_INT_10_10_10_2</span></tt>, or
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_INT_2_10_10_10_REV</span></tt>.</li>
+<li><strong>dataOut</strong> &#8211; Specifies a pointer to the destination image.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+GLint <tt class="descname">gluScaleImage</tt><big>(</big>GLenum <em>&nbsp;format</em>, GLsizei <em>&nbsp;wIn</em>, GLsizei <em>&nbsp;hIn</em>, GLenum <em>&nbsp;typeIn</em>, const void * <em>&nbsp;dataIn</em>, GLsizei <em>&nbsp;wOut</em>, GLsizei <em>&nbsp;hOut</em>, GLenum <em>&nbsp;typeOut</em>, GLvoid* <em>&nbsp;dataOut</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="gluBuild1DMipmaps.html#gluBuild1DMipmaps" title="gluBuild1DMipmaps"><tt class="xref c c-func docutils literal"><span class="pre">gluBuild1DMipmaps()</span></tt></a>,
+<a class="reference internal" href="gluBuild2DMipmaps.html#gluBuild2DMipmaps" title="gluBuild2DMipmaps"><tt class="xref c c-func docutils literal"><span class="pre">gluBuild2DMipmaps()</span></tt></a>,
+<a class="reference internal" href="gluBuild3DMipmaps.html#gluBuild3DMipmaps" title="gluBuild3DMipmaps"><tt class="xref c c-func docutils literal"><span class="pre">gluBuild3DMipmaps()</span></tt></a>,
+<a class="reference internal" href="gluErrorString.html#gluErrorString" title="gluErrorString"><tt class="xref c c-func docutils literal"><span class="pre">gluErrorString()</span></tt></a>,
+<a class="reference internal" href="glDrawPixels.html#glDrawPixels" title="glDrawPixels"><tt class="xref c c-func docutils literal"><span class="pre">glDrawPixels()</span></tt></a>,
+<a class="reference internal" href="../man4/glReadPixels.html#glReadPixels" title="glReadPixels"><tt class="xref c c-func docutils literal"><span class="pre">glReadPixels()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#gluScaleImage" title="gluScaleImage"><tt class="xref c c-func docutils literal"><span class="pre">gluScaleImage()</span></tt></a> scales a pixel image using the appropriate pixel store modes to
+unpack data from the source image and pack data into the destination image.</p>
+<p>When shrinking an image, <a class="reference internal" href="#gluScaleImage" title="gluScaleImage"><tt class="xref c c-func docutils literal"><span class="pre">gluScaleImage()</span></tt></a> uses a box filter to sample the source image
+and create pixels for the destination image.  When magnifying an image,
+the pixels from the source image are linearly interpolated to create the
+destination image.</p>
+<p>A return value of zero indicates success, otherwise a GLU error code is returned (see <a class="reference internal" href="gluErrorString.html#gluErrorString" title="gluErrorString"><tt class="xref c c-func docutils literal"><span class="pre">gluErrorString()</span></tt></a>).</p>
+<p>See the <a class="reference internal" href="../man4/glReadPixels.html#glReadPixels" title="glReadPixels"><tt class="xref c c-func docutils literal"><span class="pre">glReadPixels()</span></tt></a> reference page for a description of
+the acceptable values for the <em>format</em>, <em>typeIn</em>, and <em>typeOut</em> parameters.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Formats <tt class="docutils literal"><span class="pre">GLU_BGR</span></tt>, and <tt class="docutils literal"><span class="pre">GLU_BGRA</span></tt>, and types
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_BYTE_3_3_2</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_BYTE_2_3_3_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_SHORT_5_6_5</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_SHORT_5_6_5_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_SHORT_4_4_4_4</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_SHORT_4_4_4_4_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_SHORT_5_5_5_1</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_SHORT_1_5_5_5_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_INT_8_8_8_8</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_INT_8_8_8_8_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_INT_10_10_10_2</span></tt>, and
+<tt class="docutils literal"><span class="pre">GLU_UNSIGNED_INT_2_10_10_10_REV</span></tt> are only available if the GL version
+is 1.2 or greater.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GLU_INVALID_VALUE</span></tt> is returned if <em>wIn</em>, <em>hIn</em>, <em>wOut</em>, or <em>hOut</em> is negative.</li>
+<li><tt class="docutils literal"><span class="pre">GLU_INVALID_ENUM</span></tt> is returned if <em>format</em>, <em>typeIn</em>, or <em>typeOut</em> is not legal.</li>
+<li><tt class="docutils literal"><span class="pre">GLU_INVALID_OPERATION</span></tt> is returned if <em>typeIn</em> or <em>typeOut</em> is <tt class="docutils literal"><span class="pre">GLU_UNSIGNED_BYTE_3_3_2</span></tt> or <tt class="docutils literal"><span class="pre">GLU_UNSIGNED_BYTE_2_3_3_REV</span></tt> and <em>format</em> is not <tt class="docutils literal"><span class="pre">GLU_RGB</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GLU_INVALID_OPERATION</span></tt> is returned if <em>typeIn</em> or <em>typeOut</em> is <tt class="docutils literal"><span class="pre">GLU_UNSIGNED_SHORT_5_6_5</span></tt> or <tt class="docutils literal"><span class="pre">GLU_UNSIGNED_SHORT_5_6_5_REV</span></tt> and <em>format</em> is not <tt class="docutils literal"><span class="pre">GLU_RGB</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GLU_INVALID_OPERATION</span></tt> is returned if <em>typeIn</em> or <em>typeOut</em> is <tt class="docutils literal"><span class="pre">GLU_UNSIGNED_SHORT_4_4_4_4</span></tt> or <tt class="docutils literal"><span class="pre">GLU_UNSIGNED_SHORT_4_4_4_4_REV</span></tt> and <em>format</em> is neither <tt class="docutils literal"><span class="pre">GLU_RGBA</span></tt> nor <tt class="docutils literal"><span class="pre">GLU_BGRA</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GLU_INVALID_OPERATION</span></tt> is returned if <em>typeIn</em> or <em>typeOut</em> is <tt class="docutils literal"><span class="pre">GLU_UNSIGNED_SHORT_5_5_5_1</span></tt> or <tt class="docutils literal"><span class="pre">GLU_UNSIGNED_SHORT_1_5_5_5_REV</span></tt> and <em>format</em> is neither <tt class="docutils literal"><span class="pre">GLU_RGBA</span></tt> nor <tt class="docutils literal"><span class="pre">GLU_BGRA</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GLU_INVALID_OPERATION</span></tt> is returned if <em>typeIn</em> or <em>typeOut</em> is <tt class="docutils literal"><span class="pre">GLU_UNSIGNED_INT_8_8_8_8</span></tt> or <tt class="docutils literal"><span class="pre">GLU_UNSIGNED_INT_8_8_8_8_REV</span></tt> and <em>format</em> is neither <tt class="docutils literal"><span class="pre">GLU_RGBA</span></tt> nor <tt class="docutils literal"><span class="pre">GLU_BGRA</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GLU_INVALID_OPERATION</span></tt> is returned if <em>typeIn</em> or <em>typeOut</em> is <tt class="docutils literal"><span class="pre">GLU_UNSIGNED_INT_10_10_10_2</span></tt> or <tt class="docutils literal"><span class="pre">GLU_UNSIGNED_INT_2_10_10_10_REV</span></tt> and <em>format</em> is neither <tt class="docutils literal"><span class="pre">GLU_RGBA</span></tt> nor <tt class="docutils literal"><span class="pre">GLU_BGRA</span></tt>.</li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="gluQuadricTexture.html"
+                        title="previous chapter">function <cite>gluQuadricTexture</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="gluSphere.html"
+                        title="next chapter">function <cite>gluSphere</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/gluScaleImage.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="gluSphere.html" title="function gluSphere"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="gluQuadricTexture.html" title="function gluQuadricTexture"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

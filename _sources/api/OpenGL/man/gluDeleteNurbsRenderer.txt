@@ -1,0 +1,68 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:27
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/gluDeleteNurbsRenderer.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `gluDeleteNurbsRenderer`
+---------------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Destroy a NURBS object
+
+.. c:function:: gluDeleteNurbsRenderer
+
+
+         :param nurb:
+
+                  Specifies the NURBS object to be destroyed.
+
+.. rubric:: Specification
+
+.. c:function:: void gluDeleteNurbsRenderer(GLUnurbs*  nurb)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`gluNewNurbsRenderer`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`gluDeleteNurbsRenderer` destroys the NURBS object (which was created with
+:c:func:`gluNewNurbsRenderer`\ ) and frees any memory it uses.
+Once
+:c:func:`gluDeleteNurbsRenderer` has been called, *nurb* cannot be used again.
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'gluDeleteNurbsRenderer'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

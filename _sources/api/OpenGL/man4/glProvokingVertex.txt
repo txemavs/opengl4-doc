@@ -1,0 +1,109 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:30
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glProvokingVertex.xml'
+.. (c)2010 Khronos Group.
+.. See license details at http://opencontent.org/openpub/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glProvokingVertex`
+----------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Specifiy the vertex to be used as the source of data for flat shaded varyings
+
+.. c:function:: glProvokingVertex
+
+
+         :param provokeMode:
+
+                  Specifies the vertex to be used as the source of data for flat shaded varyings.
+
+.. rubric:: Specification
+
+.. c:function:: void glProvokingVertex(GLenum  provokeMode)
+   :noindex: 
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:strong:`Flatshading` a vertex shader varying output means to assign all vetices of the primitive the same value
+for that output. The vertex from which these values is derived is known as the :strong:`provoking vertex` and
+:c:func:`glProvokingVertex` specifies which vertex is to be used as the source of data for flat shaded varyings.
+
+
+*provokeMode* must be either ``GL_FIRST_VERTEX_CONVENTION`` or
+``GL_LAST_VERTEX_CONVENTION``\ , and controls the selection of the vertex whose values are assigned to flatshaded
+varying outputs. The interpretation of these values for the supported primitive types is:
+
+         +-------------------------------------------------+-----------------------------------+-------------------------------------------------------------------------------+
+         | :strong:`Primitive Type of Polygon :strong:`i`` | :strong:`First Vertex Convention` | :strong:`Last Vertex Convention`                                              |
+         +-------------------------------------------------+-----------------------------------+-------------------------------------------------------------------------------+
+         | point                                           | :strong:`i`                       | :strong:`i`                                                                   |
+         +-------------------------------------------------+-----------------------------------+-------------------------------------------------------------------------------+
+         | independent line                                | 2 :strong:`i` - 1                 | 2 :strong:`i`                                                                 |
+         +-------------------------------------------------+-----------------------------------+-------------------------------------------------------------------------------+
+         | line loop                                       | :strong:`i`                       | :strong:`i` + 1, if :strong:`i` < :strong:`n` 1, if :strong:`i` = :strong:`n` |
+         +-------------------------------------------------+-----------------------------------+-------------------------------------------------------------------------------+
+         | line strip                                      | :strong:`i`                       | :strong:`i` + 1                                                               |
+         +-------------------------------------------------+-----------------------------------+-------------------------------------------------------------------------------+
+         | independent triangle                            | 3 :strong:`i` - 2                 | 3 :strong:`i`                                                                 |
+         +-------------------------------------------------+-----------------------------------+-------------------------------------------------------------------------------+
+         | triangle strip                                  | :strong:`i`                       | :strong:`i` + 2                                                               |
+         +-------------------------------------------------+-----------------------------------+-------------------------------------------------------------------------------+
+         | triangle fan                                    | :strong:`i` + 1                   | :strong:`i` + 2                                                               |
+         +-------------------------------------------------+-----------------------------------+-------------------------------------------------------------------------------+
+         | line adjacency                                  | 4 :strong:`i` - 2                 | 4 :strong:`i` - 1                                                             |
+         +-------------------------------------------------+-----------------------------------+-------------------------------------------------------------------------------+
+         | line strip adjacency                            | :strong:`i` + 1                   | :strong:`i` + 2                                                               |
+         +-------------------------------------------------+-----------------------------------+-------------------------------------------------------------------------------+
+         | triangle adjacency                              | 6 :strong:`i` - 5                 | 6 :strong:`i` - 1                                                             |
+         +-------------------------------------------------+-----------------------------------+-------------------------------------------------------------------------------+
+         | triangle strip adjacency                        | 2 :strong:`i` - 1                 | 2 :strong:`i` + 3                                                             |
+         +-------------------------------------------------+-----------------------------------+-------------------------------------------------------------------------------+
+
+
+If a vertex or geometry shader is active, user-defined varying outputs may be flatshaded by using the
+``flat`` qualifier when declaring the output.
+
+
+.. note::
+
+
+   :c:func:`glProvokingVertex` is available only if the GL version is 3.2 or greater.
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_ENUM`` is generated if *provokeMode* is not an accepted value.
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glProvokingVertex'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )2010 Khronos Group. Open Publication License.
+

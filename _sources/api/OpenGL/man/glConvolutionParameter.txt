@@ -1,0 +1,236 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:26
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glConvolutionParameter.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glConvolutionParameter`
+---------------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Set convolution parameters
+
+.. c:function:: glConvolutionParameter
+
+
+         :param target:
+
+                  The target for the convolution parameter.
+                  Must be one of
+                  ``GL_CONVOLUTION_1D``\ ,
+                  ``GL_CONVOLUTION_2D``\ , or
+                  ``GL_SEPARABLE_2D``\ .
+
+         :param pname:
+
+                  The parameter to be set.
+                  Must be
+                  ``GL_CONVOLUTION_BORDER_MODE``\ .
+
+         :param params:
+
+                  The parameter value.
+                  Must be one of
+                  ``GL_REDUCE``\ , ``GL_CONSTANT_BORDER``\ , ``GL_REPLICATE_BORDER``\ .
+
+.. rubric:: Specification
+
+.. c:function:: void glConvolutionParameterf(GLenum  target, GLenum  pname, GLfloat  params, GLenum  target, GLenum  pname, GLint  params)
+.. c:function:: void glConvolutionParameterfv(GLenum  target, GLenum  pname, const GLfloat *  params, GLenum  target, GLenum  pname, const GLint *  params)
+
+
+.. seealso::
+
+
+            :c:func:`glConvolutionFilter1D`\ ,
+            :c:func:`glConvolutionFilter2D`\ ,
+            :c:func:`glSeparableFilter2D`\ ,
+            :c:func:`glGetConvolutionParameter`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Parameters
+
+..
+
+
+      *target*
+
+
+            The target for the convolution parameter.
+            Must be one of
+            ``GL_CONVOLUTION_1D``\ ,
+            ``GL_CONVOLUTION_2D``\ , or
+            ``GL_SEPARABLE_2D``\ .
+
+
+      *pname*
+
+
+            The parameter to be set.
+            Must be one of
+            ``GL_CONVOLUTION_BORDER_MODE``\ ,
+            ``GL_CONVOLUTION_BORDER_COLOR``\ ,
+            ``GL_CONVOLUTION_FILTER_SCALE``\ , or
+            ``GL_CONVOLUTION_FILTER_BIAS``\ .
+
+
+      *params*
+
+
+            The parameter value.
+            If *pname* v is ``GL_CONVOLUTION_BORDER_MODE``\ , *params* v must be one of
+            ``GL_REDUCE``\ , ``GL_CONSTANT_BORDER``\ , or ``GL_REPLICATE_BORDER``\ .
+            Otherwise, must be a vector of four values (for red, green, blue, and alpha,
+            respectively) to be used for
+            scaling (when *pname* v is ``GL_CONVOLUTION_FILTER_SCALE``\ ), or
+            biasing (when *pname* v is ``GL_CONVOLUTION_FILTER_BIAS``\ ) a convolution
+            filter kernel or setting the constant border color (when *pname* v is
+            ``GL_CONVOLUTION_BORDER_COLOR``\ .
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glConvolutionParameter` sets the value of a convolution parameter.
+
+
+*target* selects the convolution filter to be affected:
+``GL_CONVOLUTION_1D``\ ,
+``GL_CONVOLUTION_2D``\ , or
+``GL_SEPARABLE_2D``
+for the 1D, 2D, or separable 2D filter, respectively.
+
+
+*pname* selects the parameter to be changed.
+``GL_CONVOLUTION_FILTER_SCALE`` and ``GL_CONVOLUTION_FILTER_BIAS``
+affect the definition of the convolution filter kernel; see
+:c:func:`glConvolutionFilter1D`\ , :c:func:`glConvolutionFilter2D`\ , and
+:c:func:`glSeparableFilter2D` for details.
+In these cases, *params* v is an array of four values to be applied to
+red, green, blue, and alpha values, respectively. The initial value for
+``GL_CONVOLUTION_FILTER_SCALE`` is (1, 1, 1, 1), and the initial value
+for ``GL_CONVOLUTION_FILTER_BIAS`` is (0, 0, 0, 0).
+
+
+A *pname* value of ``GL_CONVOLUTION_BORDER_MODE`` controls the
+convolution border mode. The accepted modes are:
+
+
+         ``GL_REDUCE``
+
+
+               The image resulting from convolution is
+               smaller than the source image.
+               If the filter width is
+               |EQUATION_1_| and height is |EQUATION_2_|\ ,
+               and the source image width is |EQUATION_3_| and height is |EQUATION_4_|\ ,
+               then the convolved image width will be |EQUATION_5_| and height
+               will be |EQUATION_6_|\ .
+               (If this reduction would generate an image with zero or negative width
+               and/or height, the output is simply null, with no error generated.)
+               The coordinates of the image resulting from convolution are zero
+               through |EQUATION_7_| in width and zero through |EQUATION_8_| in
+               height.
+
+
+         ``GL_CONSTANT_BORDER``
+
+
+               The image resulting from convolution is the same size as the source image, and
+               processed as if the source image were surrounded by pixels with their color
+               specified by the ``GL_CONVOLUTION_BORDER_COLOR``\ .
+
+
+         ``GL_REPLICATE_BORDER``
+
+
+               The image resulting from convolution is the same size as the source image, and
+               processed as if the outermost pixel on the border of the source image were
+               replicated.
+
+
+.. note::
+
+
+   :c:func:`glConvolutionParameter` is present only if ``ARB_imaging`` is returned when :c:func:`glGetString`
+   is called with an argument of ``GL_EXTENSIONS``\ .
+
+
+   In cases where errors can result from the specification of invalid
+   image dimensions, it is the dimensions after convolution that are
+   tested, not the dimensions of the source image.
+   For example, :c:func:`glTexImage1D` requires power-of-two image size.
+   When ``GL_REDUCE`` border mode is in effect,
+   the source image must be larger than the final power-of-two size
+   by one less than the size of the 1D filter kernel.
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_ENUM`` is generated if *target* is not one of the allowable values.
+* ``GL_INVALID_ENUM`` is generated if *pname* is not one of the allowable values.
+* ``GL_INVALID_ENUM`` is generated if *pname* is ``GL_CONVOLUTION_BORDER_MODE`` and *params* is not one of ``GL_REDUCE``\ , ``GL_CONSTANT_BORDER``\ , or ``GL_REPLICATE_BORDER``\ .
+* ``GL_INVALID_OPERATION`` is generated if :c:func:`glConvolutionParameter` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`\ .
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGetConvolutionParameter`
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glConvolutionParameter'>
+
+.. role:: mml(raw)
+   :format: html
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">Wf</mi></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">Hf</mi></math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">Ws</mi></math>` 
+
+.. |EQUATION_4_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">Hs</mi></math>` 
+
+.. |EQUATION_5_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">Ws</mi><mo>-</mo><mi mathvariant="italic">Wf</mi><mo>+</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_6_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">Hs</mi><mo>-</mo><mi mathvariant="italic">Hf</mi><mo>+</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_7_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">Ws</mi><mo>-</mo><mi mathvariant="italic">Wf</mi></mrow></math>` 
+
+.. |EQUATION_8_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">Hs</mi><mo>-</mo><mi mathvariant="italic">Hf</mi></mrow></math>` 
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

@@ -1,0 +1,354 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glCopyPixels &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function glDeleteLists" href="glDeleteLists.html" />
+    <link rel="prev" title="function glCopyConvolutionFilter2D" href="glCopyConvolutionFilter2D.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glDeleteLists.html" title="function glDeleteLists"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glCopyConvolutionFilter2D.html" title="function glCopyConvolutionFilter2D"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glcopypixels">
+<h1>function <cite>glCopyPixels</cite><a class="headerlink" href="#function-glcopypixels" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Copy pixels in the frame buffer</p>
+<dl class="function">
+<dt id="glCopyPixels">
+<tt class="descname">glCopyPixels</tt><big>(</big><big>)</big><a class="headerlink" href="#glCopyPixels" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> &#8211; </li>
+<li><strong>y</strong> &#8211; Specify the window coordinates of the lower left corner
+of the rectangular region of pixels to be copied.</li>
+<li><strong>width</strong> &#8211; </li>
+<li><strong>height</strong> &#8211; Specify the dimensions of the rectangular region of pixels to be copied.
+Both must be nonnegative.</li>
+<li><strong>type</strong> &#8211; Specifies whether color values,
+depth values,
+or stencil values are to be copied.
+Symbolic constants
+<tt class="docutils literal"><span class="pre">GL_COLOR</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_DEPTH</span></tt>,
+and <tt class="docutils literal"><span class="pre">GL_STENCIL</span></tt> are accepted.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glCopyPixels</tt><big>(</big>GLint <em>&nbsp;x</em>, GLint <em>&nbsp;y</em>, GLsizei <em>&nbsp;width</em>, GLsizei <em>&nbsp;height</em>, GLenum <em>&nbsp;type</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glColorTable.html#glColorTable" title="glColorTable"><tt class="xref c c-func docutils literal"><span class="pre">glColorTable()</span></tt></a>,
+<a class="reference internal" href="glConvolutionFilter1D.html#glConvolutionFilter1D" title="glConvolutionFilter1D"><tt class="xref c c-func docutils literal"><span class="pre">glConvolutionFilter1D()</span></tt></a>,
+<a class="reference internal" href="glConvolutionFilter2D.html#glConvolutionFilter2D" title="glConvolutionFilter2D"><tt class="xref c c-func docutils literal"><span class="pre">glConvolutionFilter2D()</span></tt></a>,
+<a class="reference internal" href="../man4/glDepthFunc.html#glDepthFunc" title="glDepthFunc"><tt class="xref c c-func docutils literal"><span class="pre">glDepthFunc()</span></tt></a>,
+<a class="reference internal" href="../man4/glDrawBuffer.html#glDrawBuffer" title="glDrawBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glDrawBuffer()</span></tt></a>,
+<a class="reference internal" href="glDrawPixels.html#glDrawPixels" title="glDrawPixels"><tt class="xref c c-func docutils literal"><span class="pre">glDrawPixels()</span></tt></a>,
+<a class="reference internal" href="glMatrixMode.html#glMatrixMode" title="glMatrixMode"><tt class="xref c c-func docutils literal"><span class="pre">glMatrixMode()</span></tt></a>,
+<a class="reference internal" href="glPixelMap.html#glPixelMap" title="glPixelMap"><tt class="xref c c-func docutils literal"><span class="pre">glPixelMap()</span></tt></a>,
+<a class="reference internal" href="glPixelTransfer.html#glPixelTransfer" title="glPixelTransfer"><tt class="xref c c-func docutils literal"><span class="pre">glPixelTransfer()</span></tt></a>,
+<a class="reference internal" href="glPixelZoom.html#glPixelZoom" title="glPixelZoom"><tt class="xref c c-func docutils literal"><span class="pre">glPixelZoom()</span></tt></a>,
+<a class="reference internal" href="glRasterPos.html#glRasterPos" title="glRasterPos"><tt class="xref c c-func docutils literal"><span class="pre">glRasterPos()</span></tt></a>,
+<a class="reference internal" href="../man4/glReadBuffer.html#glReadBuffer" title="glReadBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glReadBuffer()</span></tt></a>,
+<a class="reference internal" href="../man4/glReadPixels.html#glReadPixels" title="glReadPixels"><tt class="xref c c-func docutils literal"><span class="pre">glReadPixels()</span></tt></a>,
+<a class="reference internal" href="glSeparableFilter2D.html#glSeparableFilter2D" title="glSeparableFilter2D"><tt class="xref c c-func docutils literal"><span class="pre">glSeparableFilter2D()</span></tt></a>,
+<a class="reference internal" href="../man4/glStencilFunc.html#glStencilFunc" title="glStencilFunc"><tt class="xref c c-func docutils literal"><span class="pre">glStencilFunc()</span></tt></a>,
+<a class="reference internal" href="glWindowPos.html#glWindowPos" title="glWindowPos"><tt class="xref c c-func docutils literal"><span class="pre">glWindowPos()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glCopyPixels" title="glCopyPixels"><tt class="xref c c-func docutils literal"><span class="pre">glCopyPixels()</span></tt></a> copies a screen-aligned rectangle of pixels
+from the specified frame buffer location to a region relative to the
+current raster position.
+Its operation is well defined only if the entire pixel source region
+is within the exposed portion of the window.
+Results of copies from outside the window,
+or from regions of the window that are not exposed,
+are hardware dependent and undefined.</p>
+<p><em>x</em> and <em>y</em> specify the window coordinates of
+the lower left corner of the rectangular region to be copied.
+<em>width</em> and <em>height</em> specify the dimensions of the
+rectangular region to be copied.
+Both <em>width</em> and <em>height</em> must not be negative.</p>
+<p>Several parameters control the processing of the pixel data
+while it is being copied.
+These parameters are set with three commands:
+<a class="reference internal" href="glPixelTransfer.html#glPixelTransfer" title="glPixelTransfer"><tt class="xref c c-func docutils literal"><span class="pre">glPixelTransfer()</span></tt></a>,
+<a class="reference internal" href="glPixelMap.html#glPixelMap" title="glPixelMap"><tt class="xref c c-func docutils literal"><span class="pre">glPixelMap()</span></tt></a>, and
+<a class="reference internal" href="glPixelZoom.html#glPixelZoom" title="glPixelZoom"><tt class="xref c c-func docutils literal"><span class="pre">glPixelZoom()</span></tt></a>.
+This reference page describes the effects on <a class="reference internal" href="#glCopyPixels" title="glCopyPixels"><tt class="xref c c-func docutils literal"><span class="pre">glCopyPixels()</span></tt></a> of most,
+but not all, of the parameters specified by these three commands.</p>
+<p><a class="reference internal" href="#glCopyPixels" title="glCopyPixels"><tt class="xref c c-func docutils literal"><span class="pre">glCopyPixels()</span></tt></a> copies values from each pixel with the lower left-hand corner at <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mrow><mi mathvariant="italic">x</mi><mo>+</mo><mi mathvariant="italic">i</mi></mrow><mrow><mi mathvariant="italic">y</mi><mo>+</mo><mi mathvariant="italic">j</mi></mrow></mfenced></math></span> for <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>0</mn><mo><=</mo><mi mathvariant="italic">i</mi><mo><</mo><mi mathvariant="italic">width</mi></mrow></math></span> and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>0</mn><mo><=</mo><mi mathvariant="italic">j</mi><mo><</mo><mi mathvariant="italic">height</mi></mrow></math></span>.
+This pixel is said to be the <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math></span> th
+pixel in the <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">j</mi></math></span> th
+row.
+Pixels are copied in row order from the lowest to the highest row,
+left to right in each row.</p>
+<p><em>type</em> specifies whether color, depth, or stencil data is to be copied.
+The details of the transfer for each data type are as follows:</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">GL_COLOR</span></tt></p>
+<blockquote>
+<div><p>Indices or RGBA colors are read from the buffer currently specified as the
+read source buffer (see <a class="reference internal" href="../man4/glReadBuffer.html#glReadBuffer" title="glReadBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glReadBuffer()</span></tt></a>).
+If the GL is in color index mode,
+each index that is read from this buffer is converted
+to a fixed-point format with an unspecified
+number of bits to the right of the binary point.
+Each index is then shifted left by <tt class="docutils literal"><span class="pre">GL_INDEX_SHIFT</span></tt> bits,
+and added to <tt class="docutils literal"><span class="pre">GL_INDEX_OFFSET</span></tt>.
+If <tt class="docutils literal"><span class="pre">GL_INDEX_SHIFT</span></tt> is negative,
+the shift is to the right.
+In either case, zero bits fill otherwise unspecified bit locations in the
+result.
+If <tt class="docutils literal"><span class="pre">GL_MAP_COLOR</span></tt> is true,
+the index is replaced with the value that it references in lookup table
+<tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_I_TO_I</span></tt>.
+Whether the lookup replacement of the index is done or not,
+the integer part of the index is then ANDed with <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mi mathvariant="italic">b</mi></msup><mo>-</mo><mn>1</mn></mrow></math></span>,
+where <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">b</mi></math></span> is the number of bits in a color index buffer.</p>
+<p>If the GL is in RGBA mode,
+the red, green, blue, and alpha components of each pixel that is read
+are converted to an internal floating-point format with unspecified
+precision.
+The conversion maps the largest representable component value to 1.0,
+and component value 0 to 0.0.
+The resulting floating-point color values are then multiplied
+by <tt class="docutils literal"><span class="pre">GL_c_SCALE</span></tt> and added to <tt class="docutils literal"><span class="pre">GL_c_BIAS</span></tt>,
+where <strong>c</strong> is RED, GREEN, BLUE, and ALPHA
+for the respective color components.
+The results are clamped to the range [0,1].
+If <tt class="docutils literal"><span class="pre">GL_MAP_COLOR</span></tt> is true,
+each color component is scaled by the size of lookup table
+<tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_c_TO_c</span></tt>,
+then replaced by the value that it references in that table.
+<strong>c</strong> is R, G, B, or A.</p>
+<p>If the <tt class="docutils literal"><span class="pre">ARB_imaging</span></tt> extension is supported, the color values may
+be
+additionally processed by color-table lookups, color-matrix
+transformations, and convolution filters.</p>
+<p>The GL then converts the resulting indices or RGBA colors to fragments
+by attaching the current raster position <strong>z</strong> coordinate and
+texture coordinates to each pixel,
+then assigning window coordinates <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mrow><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">r</mi></msub><mo>+</mo><mi mathvariant="italic">i</mi></mrow><mrow><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">r</mi></msub><mo>+</mo><mi mathvariant="italic">j</mi></mrow></mfenced></math></span>,
+where <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">r</mi></msub><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">r</mi></msub></mfenced></math></span> is the current raster position,
+and the pixel was the <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math></span> th
+pixel in the <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">j</mi></math></span> th
+row.
+These pixel fragments are then treated just like the fragments generated by
+rasterizing points, lines, or polygons.
+Texture mapping,
+fog,
+and all the fragment operations are applied before the fragments are written
+to the frame buffer.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_DEPTH</span></tt></p>
+<blockquote>
+<div><p>Depth values are read from the depth buffer and
+converted directly to an internal floating-point format
+with unspecified precision.
+The resulting floating-point depth value is then multiplied
+by <tt class="docutils literal"><span class="pre">GL_DEPTH_SCALE</span></tt> and added to <tt class="docutils literal"><span class="pre">GL_DEPTH_BIAS</span></tt>.
+The result is clamped to the range [0,1].</p>
+<p>The GL then converts the resulting depth components to fragments
+by attaching the current raster position color or color index and
+texture coordinates to each pixel,
+then assigning window coordinates
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mrow><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">r</mi></msub><mo>+</mo><mi mathvariant="italic">i</mi></mrow><mrow><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">r</mi></msub><mo>+</mo><mi mathvariant="italic">j</mi></mrow></mfenced></math></span>,
+where <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">r</mi></msub><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">r</mi></msub></mfenced></math></span> is the current raster position,
+and the pixel was the <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math></span> th
+pixel in the <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">j</mi></math></span> th
+row.
+These pixel fragments are then treated just like the fragments generated by
+rasterizing points, lines, or polygons.
+Texture mapping,
+fog,
+and all the fragment operations are applied before the fragments are written
+to the frame buffer.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_STENCIL</span></tt></p>
+<blockquote>
+<div>Stencil indices are read from the stencil buffer and
+converted to an internal fixed-point format
+with an unspecified number of bits to the right of the binary point.
+Each fixed-point index is then shifted left by <tt class="docutils literal"><span class="pre">GL_INDEX_SHIFT</span></tt> bits,
+and added to <tt class="docutils literal"><span class="pre">GL_INDEX_OFFSET</span></tt>.
+If <tt class="docutils literal"><span class="pre">GL_INDEX_SHIFT</span></tt> is negative,
+the shift is to the right.
+In either case, zero bits fill otherwise unspecified bit locations in the
+result.
+If <tt class="docutils literal"><span class="pre">GL_MAP_STENCIL</span></tt> is true,
+the index is replaced with the value that it references in lookup table
+<tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_S_TO_S</span></tt>.
+Whether the lookup replacement of the index is done or not,
+the integer part of the index is then ANDed with <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mi mathvariant="italic">b</mi></msup><mo>-</mo><mn>1</mn></mrow></math></span>,
+where <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">b</mi></math></span> is the number of bits in the stencil buffer.
+The resulting stencil indices are then written to the stencil buffer
+such that the index read from the <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math></span> th
+location of the <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">j</mi></math></span> th
+row
+is written to location <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mrow><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">r</mi></msub><mo>+</mo><mi mathvariant="italic">i</mi></mrow><mrow><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">r</mi></msub><mo>+</mo><mi mathvariant="italic">j</mi></mrow></mfenced></math></span>,
+where <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">r</mi></msub><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">r</mi></msub></mfenced></math></span> is the current raster position.
+Only the pixel ownership test,
+the scissor test,
+and the stencil writemask affect these write operations.</div></blockquote>
+</div></blockquote>
+<p>The rasterization described thus far assumes pixel zoom factors of 1.0.
+If
+<a class="reference internal" href="glPixelZoom.html#glPixelZoom" title="glPixelZoom"><tt class="xref c c-func docutils literal"><span class="pre">glPixelZoom()</span></tt></a> is used to change the <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">x</mi></math></span> and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">y</mi></math></span> pixel zoom factors,
+pixels are converted to fragments as follows.
+If <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">r</mi></msub><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">r</mi></msub></mfenced></math></span> is the current raster position,
+and a given pixel is in the <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math></span> th
+location in the <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">j</mi></math></span> th
+row of the source
+pixel rectangle,
+then fragments are generated for pixels whose centers are in the rectangle
+with corners at</p>
+<p><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mrow><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">r</mi></msub><mo>+</mo><mfenced open="" close=""><msub><mi mathvariant="italic">zoom</mi><mi mathvariant="italic">x</mi></msub></mfenced><mo>&it;</mo><mi mathvariant="italic">i</mi></mrow><mrow><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">r</mi></msub><mo>+</mo><mfenced open="" close=""><msub><mi mathvariant="italic">zoom</mi><mi mathvariant="italic">y</mi></msub></mfenced><mo>&it;</mo><mi mathvariant="italic">j</mi></mrow></mfenced></math></span></p>
+<p>and</p>
+<p><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mrow><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">r</mi></msub><mo>+</mo><mrow><mfenced open="" close=""><msub><mi mathvariant="italic">zoom</mi><mi mathvariant="italic">x</mi></msub></mfenced><mo>&af;</mo><mfenced open="(" close=")"><mrow><mi mathvariant="italic">i</mi><mo>+</mo><mn>1</mn></mrow></mfenced></mrow></mrow><mrow><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">r</mi></msub><mo>+</mo><mrow><mfenced open="" close=""><msub><mi mathvariant="italic">zoom</mi><mi mathvariant="italic">y</mi></msub></mfenced><mo>&af;</mo><mfenced open="(" close=")"><mrow><mi mathvariant="italic">j</mi><mo>+</mo><mn>1</mn></mrow></mfenced></mrow></mrow></mfenced></math></span></p>
+<p>where
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">zoom</mi><mi mathvariant="italic">x</mi></msub></math></span> is the value of <tt class="docutils literal"><span class="pre">GL_ZOOM_X</span></tt> and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">zoom</mi><mi mathvariant="italic">y</mi></msub></math></span> is the value of <tt class="docutils literal"><span class="pre">GL_ZOOM_Y</span></tt>.</p>
+<p class="rubric">Examples</p>
+<p>To copy the color pixel in the lower left corner of the window to the current raster position,
+use</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="n">glCopyPixels</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">GL_COLOR</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Modes specified by <a class="reference internal" href="../man4/glPixelStore.html#glPixelStore" title="glPixelStore"><tt class="xref c c-func docutils literal"><span class="pre">glPixelStore()</span></tt></a> have no effect on the operation
+of <a class="reference internal" href="#glCopyPixels" title="glCopyPixels"><tt class="xref c c-func docutils literal"><span class="pre">glCopyPixels()</span></tt></a>.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>type</em> is not an accepted value.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if either <em>width</em> or <em>height</em> is negative.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <em>type</em> is <tt class="docutils literal"><span class="pre">GL_DEPTH</span></tt> and there is no depth buffer.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <em>type</em> is <tt class="docutils literal"><span class="pre">GL_STENCIL</span></tt> and there is no stencil buffer.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <a class="reference internal" href="#glCopyPixels" title="glCopyPixels"><tt class="xref c c-func docutils literal"><span class="pre">glCopyPixels()</span></tt></a> is executed between the execution of <a class="reference internal" href="glBegin.html#glBegin" title="glBegin"><tt class="xref c c-func docutils literal"><span class="pre">glBegin()</span></tt></a> and the corresponding execution of <a class="reference internal" href="glBegin.html#glEnd" title="glEnd"><tt class="xref c c-func docutils literal"><span class="pre">glEnd()</span></tt></a>.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_CURRENT_RASTER_POSITION</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_CURRENT_RASTER_POSITION_VALID</span></tt></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glCopyConvolutionFilter2D.html"
+                        title="previous chapter">function <cite>glCopyConvolutionFilter2D</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glDeleteLists.html"
+                        title="next chapter">function <cite>glDeleteLists</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/glCopyPixels.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glDeleteLists.html" title="function glDeleteLists"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glCopyConvolutionFilter2D.html" title="function glCopyConvolutionFilter2D"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

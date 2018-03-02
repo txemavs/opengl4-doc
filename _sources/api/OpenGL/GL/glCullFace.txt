@@ -1,0 +1,60 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glCullFace`
+---------------------
+
+.. source file man4/glCullFace
+
+.. currentmodule:: OpenGL.GL
+
+Specify whether front- or back-facing facets can be culled
+
+.. c:function:: glCullFace
+.. c:function:: void glCullFace(GLenum  mode)
+   :noindex: 
+
+
+   
+   :param mode:
+      Specifies whether front- or back-facing facets are candidates for culling. Symbolic constants ``GL_FRONT``, ``GL_BACK``, and ``GL_FRONT_AND_BACK`` are accepted. The initial value is ``GL_BACK``.
+   
+
+.. seealso::
+
+   
+   :c:func:`glEnable`, :c:func:`glFrontFace`
+   
+.. rubric:: Description
+
+
+:c:func:`glCullFace` specifies whether front- or back-facing facets are culled (as specified by *`mode`* ) when facet culling is enabled. Facet culling is initially disabled. To enable and disable facet culling, call the :c:func:`glEnable` and :c:func:`glDisable` commands with the argument ``GL_CULL_FACE``. Facets include triangles, quadrilaterals, polygons, and rectangles.
+
+:c:func:`glFrontFace` specifies which of the clockwise and counterclockwise facets are front-facing and back-facing. See :c:func:`glFrontFace`.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glIsEnabled` with argument ``GL_CULL_FACE``
+   * :c:func:`glGet` with argument ``GL_CULL_FACE_MODE``
+
+**Errors:**
+
+   * ``GL_INVALID_ENUM`` is generated if *mode* is not an accepted value.
+
+
+
+.. note::
+
+   * If *mode* is ``GL_FRONT_AND_BACK``, no facets are drawn, but other primitives such as points and lines are drawn.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

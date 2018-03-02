@@ -1,0 +1,630 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glDrawPixels &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function glEdgeFlag" href="glEdgeFlag.html" />
+    <link rel="prev" title="function glDeleteLists" href="glDeleteLists.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glEdgeFlag.html" title="function glEdgeFlag"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glDeleteLists.html" title="function glDeleteLists"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-gldrawpixels">
+<h1>function <cite>glDrawPixels</cite><a class="headerlink" href="#function-gldrawpixels" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Write a block of pixels to the frame buffer</p>
+<dl class="function">
+<dt id="glDrawPixels">
+<tt class="descname">glDrawPixels</tt><big>(</big><big>)</big><a class="headerlink" href="#glDrawPixels" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>width</strong> &#8211; </li>
+<li><strong>height</strong> &#8211; Specify the dimensions of the pixel rectangle to be written
+into the frame buffer.</li>
+<li><strong>format</strong> &#8211; Specifies the format of the pixel data.
+Symbolic constants
+<tt class="docutils literal"><span class="pre">GL_COLOR_INDEX</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_STENCIL_INDEX</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_DEPTH_COMPONENT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGB</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_BGR</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGBA</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_BGRA</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RED</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_GREEN</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_BLUE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_ALPHA</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LUMINANCE</span></tt>, and
+<tt class="docutils literal"><span class="pre">GL_LUMINANCE_ALPHA</span></tt> are accepted.</li>
+<li><strong>type</strong> &#8211; Specifies the data type for <em>data</em>.
+Symbolic constants
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_BYTE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_BYTE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_BITMAP</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_SHORT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_INT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_FLOAT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_BYTE_3_3_2</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_BYTE_2_3_3_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_5_6_5</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_5_6_5_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_4_4_4_4</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_4_4_4_4_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_5_5_5_1</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_1_5_5_5_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_8_8_8_8</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_8_8_8_8_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_10_10_10_2</span></tt>, and
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_2_10_10_10_REV</span></tt>
+are accepted.</li>
+<li><strong>data</strong> &#8211; Specifies a pointer to the pixel data.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glDrawPixels</tt><big>(</big>GLsizei <em>&nbsp;width</em>, GLsizei <em>&nbsp;height</em>, GLenum <em>&nbsp;format</em>, GLenum <em>&nbsp;type</em>, const GLvoid * <em>&nbsp;data</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glAlphaFunc.html#glAlphaFunc" title="glAlphaFunc"><tt class="xref c c-func docutils literal"><span class="pre">glAlphaFunc()</span></tt></a>,
+<a class="reference internal" href="../man4/glBlendFunc.html#glBlendFunc" title="glBlendFunc"><tt class="xref c c-func docutils literal"><span class="pre">glBlendFunc()</span></tt></a>,
+<a class="reference internal" href="glCopyPixels.html#glCopyPixels" title="glCopyPixels"><tt class="xref c c-func docutils literal"><span class="pre">glCopyPixels()</span></tt></a>,
+<a class="reference internal" href="../man4/glDepthFunc.html#glDepthFunc" title="glDepthFunc"><tt class="xref c c-func docutils literal"><span class="pre">glDepthFunc()</span></tt></a>,
+<a class="reference internal" href="../man4/glLogicOp.html#glLogicOp" title="glLogicOp"><tt class="xref c c-func docutils literal"><span class="pre">glLogicOp()</span></tt></a>,
+<a class="reference internal" href="glPixelMap.html#glPixelMap" title="glPixelMap"><tt class="xref c c-func docutils literal"><span class="pre">glPixelMap()</span></tt></a>,
+<a class="reference internal" href="../man4/glPixelStore.html#glPixelStore" title="glPixelStore"><tt class="xref c c-func docutils literal"><span class="pre">glPixelStore()</span></tt></a>,
+<a class="reference internal" href="glPixelTransfer.html#glPixelTransfer" title="glPixelTransfer"><tt class="xref c c-func docutils literal"><span class="pre">glPixelTransfer()</span></tt></a>,
+<a class="reference internal" href="glPixelZoom.html#glPixelZoom" title="glPixelZoom"><tt class="xref c c-func docutils literal"><span class="pre">glPixelZoom()</span></tt></a>,
+<a class="reference internal" href="glRasterPos.html#glRasterPos" title="glRasterPos"><tt class="xref c c-func docutils literal"><span class="pre">glRasterPos()</span></tt></a>,
+<a class="reference internal" href="../man4/glReadPixels.html#glReadPixels" title="glReadPixels"><tt class="xref c c-func docutils literal"><span class="pre">glReadPixels()</span></tt></a>,
+<a class="reference internal" href="../man4/glScissor.html#glScissor" title="glScissor"><tt class="xref c c-func docutils literal"><span class="pre">glScissor()</span></tt></a>,
+<a class="reference internal" href="../man4/glStencilFunc.html#glStencilFunc" title="glStencilFunc"><tt class="xref c c-func docutils literal"><span class="pre">glStencilFunc()</span></tt></a>,
+<a class="reference internal" href="glWindowPos.html#glWindowPos" title="glWindowPos"><tt class="xref c c-func docutils literal"><span class="pre">glWindowPos()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glDrawPixels" title="glDrawPixels"><tt class="xref c c-func docutils literal"><span class="pre">glDrawPixels()</span></tt></a> reads pixel data from memory and writes it into the frame buffer
+relative to the current raster position, provided that the raster
+position is valid.  Use
+<a class="reference internal" href="glRasterPos.html#glRasterPos" title="glRasterPos"><tt class="xref c c-func docutils literal"><span class="pre">glRasterPos()</span></tt></a> or <a class="reference internal" href="glWindowPos.html#glWindowPos" title="glWindowPos"><tt class="xref c c-func docutils literal"><span class="pre">glWindowPos()</span></tt></a> to set the current raster position; use
+<a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_CURRENT_RASTER_POSITION_VALID</span></tt>
+to determine if the specified raster position is valid, and
+<a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_CURRENT_RASTER_POSITION</span></tt>
+to query the raster position.</p>
+<p>Several parameters define the encoding of pixel data in memory
+and control the processing of the pixel data
+before it is placed in the frame buffer.
+These parameters are set with four commands:
+<a class="reference internal" href="../man4/glPixelStore.html#glPixelStore" title="glPixelStore"><tt class="xref c c-func docutils literal"><span class="pre">glPixelStore()</span></tt></a>,
+<a class="reference internal" href="glPixelTransfer.html#glPixelTransfer" title="glPixelTransfer"><tt class="xref c c-func docutils literal"><span class="pre">glPixelTransfer()</span></tt></a>,
+<a class="reference internal" href="glPixelMap.html#glPixelMap" title="glPixelMap"><tt class="xref c c-func docutils literal"><span class="pre">glPixelMap()</span></tt></a>, and <a class="reference internal" href="glPixelZoom.html#glPixelZoom" title="glPixelZoom"><tt class="xref c c-func docutils literal"><span class="pre">glPixelZoom()</span></tt></a>.
+This reference page describes the effects on <a class="reference internal" href="#glDrawPixels" title="glDrawPixels"><tt class="xref c c-func docutils literal"><span class="pre">glDrawPixels()</span></tt></a> of many,
+but not all, of the parameters specified by these four commands.</p>
+<p>Data is read from <em>data</em> as a sequence of signed or unsigned bytes,
+signed or unsigned shorts, signed or unsigned integers, or
+single-precision floating-point values, depending on <em>type</em>.
+When <em>type</em> is one of <tt class="docutils literal"><span class="pre">GL_UNSIGNED_BYTE</span></tt>, <tt class="docutils literal"><span class="pre">GL_BYTE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT</span></tt>, <tt class="docutils literal"><span class="pre">GL_SHORT</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_INT</span></tt>, or <tt class="docutils literal"><span class="pre">GL_FLOAT</span></tt> each of these bytes, shorts, integers, or
+floating-point values is interpreted as one color or depth component, or
+one index, depending on <em>format</em>.
+When <em>type</em> is one of <tt class="docutils literal"><span class="pre">GL_UNSIGNED_BYTE_3_3_2</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_5_6_5</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_4_4_4_4</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_5_5_5_1</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_8_8_8_8</span></tt>, or
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_10_10_10_2</span></tt>, each unsigned value is interpreted as
+containing all the components for a single pixel, with the color
+components arranged according to <em>format</em>.
+When <em>type</em> is one of <tt class="docutils literal"><span class="pre">GL_UNSIGNED_BYTE_2_3_3_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_5_6_5_REV</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_4_4_4_4_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_1_5_5_5_REV</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_8_8_8_8_REV</span></tt>, or
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_2_10_10_10_REV</span></tt>, each unsigned value is interpreted
+as containing all color components, specified by <em>format</em>, for a single
+pixel in a reversed order. Indices are always treated individually.
+Color components are treated as groups of one, two, three, or four
+values, again based on <em>format</em>. Both individual indices and groups of
+components are referred to as pixels.
+If <em>type</em> is <tt class="docutils literal"><span class="pre">GL_BITMAP</span></tt>, the data must be unsigned bytes, and
+<em>format</em> must be either <tt class="docutils literal"><span class="pre">GL_COLOR_INDEX</span></tt> or <tt class="docutils literal"><span class="pre">GL_STENCIL_INDEX</span></tt>.
+Each unsigned byte is treated as eight 1-bit pixels, with bit ordering
+determined by <tt class="docutils literal"><span class="pre">GL_UNPACK_LSB_FIRST</span></tt> (see <a class="reference internal" href="../man4/glPixelStore.html#glPixelStore" title="glPixelStore"><tt class="xref c c-func docutils literal"><span class="pre">glPixelStore()</span></tt></a>).</p>
+<p><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">width</mi><mo>&times;</mo><mi mathvariant="italic">height</mi></mrow></math></span> pixels are read from memory,
+starting at location <em>data</em>.
+By default, these pixels are taken from adjacent memory locations,
+except that after all <em>width</em> pixels are read,
+the read pointer is advanced to the next four-byte boundary.
+The four-byte row alignment is specified by <a class="reference internal" href="../man4/glPixelStore.html#glPixelStore" title="glPixelStore"><tt class="xref c c-func docutils literal"><span class="pre">glPixelStore()</span></tt></a> with
+argument <tt class="docutils literal"><span class="pre">GL_UNPACK_ALIGNMENT</span></tt>,
+and it can be set to one, two, four, or eight bytes.
+Other pixel store parameters specify different read pointer advancements,
+both before the first pixel is read
+and after all <em>width</em> pixels are read.
+See the <a class="reference internal" href="../man4/glPixelStore.html#glPixelStore" title="glPixelStore"><tt class="xref c c-func docutils literal"><span class="pre">glPixelStore()</span></tt></a> reference page for details on these options.</p>
+<p>If a non-zero named buffer object is bound to the <tt class="docutils literal"><span class="pre">GL_PIXEL_UNPACK_BUFFER</span></tt> target
+(see <a class="reference internal" href="../man4/glBindBuffer.html#glBindBuffer" title="glBindBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glBindBuffer()</span></tt></a>) while a block of pixels is
+specified, <em>data</em> is treated as a byte offset into the buffer object&#8217;s data store.</p>
+<p>The
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">width</mi><mo>&times;</mo><mi mathvariant="italic">height</mi></mrow></math></span> pixels that are read from memory are
+each operated on in the same way,
+based on the values of several parameters specified by <a class="reference internal" href="glPixelTransfer.html#glPixelTransfer" title="glPixelTransfer"><tt class="xref c c-func docutils literal"><span class="pre">glPixelTransfer()</span></tt></a>
+and <a class="reference internal" href="glPixelMap.html#glPixelMap" title="glPixelMap"><tt class="xref c c-func docutils literal"><span class="pre">glPixelMap()</span></tt></a>.
+The details of these operations,
+as well as the target buffer into which the pixels are drawn,
+are specific to the format of the pixels,
+as specified by <em>format</em>.
+<em>format</em> can assume one of 13 symbolic values:</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">GL_COLOR_INDEX</span></tt></p>
+<blockquote>
+<div><p>Each pixel is a single value,
+a color index.
+It is converted to fixed-point format,
+with an unspecified number of bits to the right of the binary point,
+regardless of the memory data type.
+Floating-point values convert to true fixed-point values.
+Signed and unsigned integer data is converted with all fraction bits
+set to 0.
+Bitmap data convert to either 0 or 1.</p>
+<p>Each fixed-point index is then shifted left by <tt class="docutils literal"><span class="pre">GL_INDEX_SHIFT</span></tt> bits
+and added to <tt class="docutils literal"><span class="pre">GL_INDEX_OFFSET</span></tt>.
+If <tt class="docutils literal"><span class="pre">GL_INDEX_SHIFT</span></tt> is negative,
+the shift is to the right.
+In either case, zero bits fill otherwise unspecified bit locations in the
+result.</p>
+<p>If the GL is in RGBA mode,
+the resulting index is converted to an RGBA pixel
+with the help of the <tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_I_TO_R</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_I_TO_G</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_I_TO_B</span></tt>,
+and <tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_I_TO_A</span></tt> tables.
+If the GL is in color index mode,
+and if <tt class="docutils literal"><span class="pre">GL_MAP_COLOR</span></tt> is true,
+the index is replaced with the value that it references in lookup table
+<tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_I_TO_I</span></tt>.
+Whether the lookup replacement of the index is done or not,
+the integer part of the index is then ANDed with <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mi mathvariant="italic">b</mi></msup><mo>-</mo><mn>1</mn></mrow></math></span>,
+where <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">b</mi></math></span> is the number of bits in a color index buffer.</p>
+<p>The GL then converts the resulting indices or RGBA colors to fragments
+by attaching the current raster position <strong>z</strong> coordinate and
+texture coordinates to each pixel,
+then assigning <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">x</mi></math></span> and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">y</mi></math></span> window coordinates to the <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math></span> th
+fragment such that
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">n</mi></msub><mo>=</mo><mrow><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">r</mi></msub><mo>+</mo><mrow><mi mathvariant="italic">n</mi><mo>%</mo><mi mathvariant="italic">width</mi></mrow></mrow></mrow></math></span></p>
+<blockquote>
+<div><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">n</mi></msub><mo>=</mo><mrow><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">r</mi></msub><mo>+</mo><mfenced open="&LeftFloor;" close="&RightFloor;"><mfrac><mi mathvariant="italic">n</mi><mi mathvariant="italic">width</mi></mfrac></mfenced></mrow></mrow></math></span></div></blockquote>
+<p>where
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">r</mi></msub><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">r</mi></msub></mfenced></math></span> is the current raster position.
+These pixel fragments are then treated just like the fragments generated by
+rasterizing points, lines, or polygons.
+Texture mapping,
+fog,
+and all the fragment operations are applied before the fragments are written
+to the frame buffer.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_STENCIL_INDEX</span></tt></p>
+<blockquote>
+<div><p>Each pixel is a single value,
+a stencil index.
+It is converted to fixed-point format,
+with an unspecified number of bits to the right of the binary point,
+regardless of the memory data type.
+Floating-point values convert to true fixed-point values.
+Signed and unsigned integer data is converted with all fraction bits
+set to 0.
+Bitmap data convert to either 0 or 1.</p>
+<p>Each fixed-point index is then shifted left by <tt class="docutils literal"><span class="pre">GL_INDEX_SHIFT</span></tt> bits,
+and added to <tt class="docutils literal"><span class="pre">GL_INDEX_OFFSET</span></tt>.
+If <tt class="docutils literal"><span class="pre">GL_INDEX_SHIFT</span></tt> is negative,
+the shift is to the right.
+In either case, zero bits fill otherwise unspecified bit locations in the
+result.
+If <tt class="docutils literal"><span class="pre">GL_MAP_STENCIL</span></tt> is true,
+the index is replaced with the value that it references in lookup table
+<tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_S_TO_S</span></tt>.
+Whether the lookup replacement of the index is done or not,
+the integer part of the index is then ANDed with <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mn>2</mn><mi mathvariant="italic">b</mi></msup><mo>-</mo><mn>1</mn></mrow></math></span>,
+where <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">b</mi></math></span> is the number of bits in the stencil buffer.
+The resulting stencil indices are then written to the stencil buffer
+such that the <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math></span> th
+index is written to location</p>
+<p><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">n</mi></msub><mo>=</mo><mrow><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">r</mi></msub><mo>+</mo><mrow><mi mathvariant="italic">n</mi><mo>%</mo><mi mathvariant="italic">width</mi></mrow></mrow></mrow></math></span></p>
+<blockquote>
+<div><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">n</mi></msub><mo>=</mo><mrow><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">r</mi></msub><mo>+</mo><mfenced open="&LeftFloor;" close="&RightFloor;"><mfrac><mi mathvariant="italic">n</mi><mi mathvariant="italic">width</mi></mfrac></mfenced></mrow></mrow></math></span></div></blockquote>
+<p>where
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">r</mi></msub><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">r</mi></msub></mfenced></math></span> is the current raster position.
+Only the pixel ownership test,
+the scissor test,
+and the stencil writemask affect these write operations.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_DEPTH_COMPONENT</span></tt></p>
+<blockquote>
+<div><p>Each pixel is a single-depth component.
+Floating-point data is converted directly to an internal floating-point
+format with unspecified precision.
+Signed integer data is mapped linearly to the internal floating-point
+format such that the most positive representable integer value maps to 1.0,
+and the most negative representable value maps to
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mn>-1.0</mn></math></span>.
+Unsigned integer data is mapped similarly:
+the largest integer value maps to 1.0,
+and 0 maps to 0.0.
+The resulting floating-point depth value is then multiplied
+by <tt class="docutils literal"><span class="pre">GL_DEPTH_SCALE</span></tt> and added to <tt class="docutils literal"><span class="pre">GL_DEPTH_BIAS</span></tt>.
+The result is clamped to the range <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"><mn>0</mn><mn>1</mn></mfenced></math></span>.</p>
+<p>The GL then converts the resulting depth components to fragments
+by attaching the current raster position color or color index and
+texture coordinates to each pixel,
+then assigning
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">x</mi></math></span> and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">y</mi></math></span> window coordinates to the <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math></span> th
+fragment such that</p>
+<p><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">n</mi></msub><mo>=</mo><mrow><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">r</mi></msub><mo>+</mo><mrow><mi mathvariant="italic">n</mi><mo>%</mo><mi mathvariant="italic">width</mi></mrow></mrow></mrow></math></span></p>
+<blockquote>
+<div><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">n</mi></msub><mo>=</mo><mrow><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">r</mi></msub><mo>+</mo><mfenced open="&LeftFloor;" close="&RightFloor;"><mfrac><mi mathvariant="italic">n</mi><mi mathvariant="italic">width</mi></mfrac></mfenced></mrow></mrow></math></span></div></blockquote>
+<p>where
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">r</mi></msub><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">r</mi></msub></mfenced></math></span> is the current raster position.
+These pixel fragments are then treated just like the fragments generated by
+rasterizing points, lines, or polygons.
+Texture mapping,
+fog,
+and all the fragment operations are applied before the fragments are written
+to the frame buffer.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_RGBA</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">GL_BGRA</span></tt></p>
+<blockquote>
+<div><p>Each pixel is a four-component group: For <tt class="docutils literal"><span class="pre">GL_RGBA</span></tt>, the red
+component is first, followed by green, followed by blue, followed by
+alpha; for <tt class="docutils literal"><span class="pre">GL_BGRA</span></tt> the order is blue, green, red and then alpha.
+Floating-point values are converted directly to an internal floating-point
+format with unspecified precision.
+Signed integer values are mapped linearly to the internal floating-point
+format such that the most positive representable integer value maps to 1.0,
+and the most negative representable value maps to <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mn>-1.0</mn></math></span>.
+(Note that
+this mapping does not convert 0 precisely to 0.0.)
+Unsigned integer data is mapped similarly:
+The largest integer value maps to 1.0,
+and 0 maps to 0.0.
+The resulting floating-point color values are then multiplied
+by <tt class="docutils literal"><span class="pre">GL_c_SCALE</span></tt> and added to <tt class="docutils literal"><span class="pre">GL_c_BIAS</span></tt>,
+where <strong>c</strong> is RED, GREEN, BLUE, and ALPHA
+for the respective color components.
+The results are clamped to the range <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"><mn>0</mn><mn>1</mn></mfenced></math></span>.</p>
+<p>If <tt class="docutils literal"><span class="pre">GL_MAP_COLOR</span></tt> is true,
+each color component is scaled by the size of lookup table
+<tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_c_TO_c</span></tt>,
+then replaced by the value that it references in that table.
+<strong>c</strong> is R, G, B, or A respectively.</p>
+<p>The GL then converts the resulting RGBA colors to fragments
+by attaching the current raster position <strong>z</strong> coordinate and
+texture coordinates to each pixel,
+then assigning <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">x</mi></math></span> and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">y</mi></math></span> window coordinates to the <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math></span> th
+fragment such that</p>
+<p><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">n</mi></msub><mo>=</mo><mrow><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">r</mi></msub><mo>+</mo><mrow><mi mathvariant="italic">n</mi><mo>%</mo><mi mathvariant="italic">width</mi></mrow></mrow></mrow></math></span></p>
+<blockquote>
+<div><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">n</mi></msub><mo>=</mo><mrow><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">r</mi></msub><mo>+</mo><mfenced open="&LeftFloor;" close="&RightFloor;"><mfrac><mi mathvariant="italic">n</mi><mi mathvariant="italic">width</mi></mfrac></mfenced></mrow></mrow></math></span></div></blockquote>
+<p>where
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">r</mi></msub><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">r</mi></msub></mfenced></math></span> is the current raster position.
+These pixel fragments are then treated just like the fragments generated by
+rasterizing points, lines, or polygons.
+Texture mapping,
+fog,
+and all the fragment operations are applied before the fragments are written
+to the frame buffer.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_RED</span></tt></p>
+<blockquote>
+<div>Each pixel is a single red component.
+This component is converted to the internal floating-point format in
+the same way the red component of an RGBA pixel is. It is
+then converted to an RGBA pixel with green and blue set to 0,
+and alpha set to 1.
+After this conversion, the pixel is treated as if it had been read
+as an RGBA pixel.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_GREEN</span></tt></p>
+<blockquote>
+<div>Each pixel is a single green component.
+This component is converted to the internal floating-point format in
+the same way the green component of an RGBA pixel is.
+It is then converted to an RGBA pixel with red and blue set to 0,
+and alpha set to 1.
+After this conversion, the pixel is treated as if it had been read
+as an RGBA pixel.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_BLUE</span></tt></p>
+<blockquote>
+<div>Each pixel is a single blue component.
+This component is converted to the internal floating-point format in
+the same way the blue component of an RGBA pixel is.
+It is then converted to an RGBA pixel with red and green set to 0,
+and alpha set to 1.
+After this conversion, the pixel is treated as if it had been read
+as an RGBA pixel.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_ALPHA</span></tt></p>
+<blockquote>
+<div>Each pixel is a single alpha component.
+This component is converted to the internal floating-point format in
+the same way the alpha component of an RGBA pixel is.
+It is then converted to an RGBA pixel with red, green, and blue set to 0.
+After this conversion, the pixel is treated as if it had been read
+as an RGBA pixel.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_RGB</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">GL_BGR</span></tt></p>
+<blockquote>
+<div>Each pixel is a three-component group:
+red first, followed by green, followed by blue; for <tt class="docutils literal"><span class="pre">GL_BGR</span></tt>, the
+first component is blue, followed by green and then red.
+Each component is converted to the internal floating-point format in
+the same way the red, green, and blue components of an RGBA pixel are.
+The color triple is converted to an RGBA pixel with alpha set to 1.
+After this conversion, the pixel is treated as if it had been read
+as an RGBA pixel.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_LUMINANCE</span></tt></p>
+<blockquote>
+<div>Each pixel is a single luminance component.
+This component is converted to the internal floating-point format in
+the same way the red component of an RGBA pixel is.
+It is then converted to an RGBA pixel with red, green, and blue set to the
+converted luminance value,
+and alpha set to 1.
+After this conversion, the pixel is treated as if it had been read
+as an RGBA pixel.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_LUMINANCE_ALPHA</span></tt></p>
+<blockquote>
+<div>Each pixel is a two-component group:
+luminance first, followed by alpha.
+The two components are converted to the internal floating-point format in
+the same way the red component of an RGBA pixel is.
+They are then converted to an RGBA pixel with red, green, and blue set to the
+converted luminance value,
+and alpha set to the converted alpha value.
+After this conversion, the pixel is treated as if it had been read
+as an RGBA pixel.</div></blockquote>
+<p>The following table summarizes the meaning of the valid constants for the
+<strong>type</strong> parameter:</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="62%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Type</strong></td>
+<td><strong>Corresponding Type</strong></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_UNSIGNED_BYTE</span></tt></td>
+<td>unsigned 8-bit integer</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_BYTE</span></tt></td>
+<td>signed 8-bit integer</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_BITMAP</span></tt></td>
+<td>single bits in unsigned 8-bit integers</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT</span></tt></td>
+<td>unsigned 16-bit integer</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_SHORT</span></tt></td>
+<td>signed 16-bit integer</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT</span></tt></td>
+<td>unsigned 32-bit integer</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_INT</span></tt></td>
+<td>32-bit integer</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_FLOAT</span></tt></td>
+<td>single-precision floating-point</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_UNSIGNED_BYTE_3_3_2</span></tt></td>
+<td>unsigned 8-bit integer</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_UNSIGNED_BYTE_2_3_3_REV</span></tt></td>
+<td>unsigned 8-bit integer with reversed component ordering</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_5_6_5</span></tt></td>
+<td>unsigned 16-bit integer</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_5_6_5_REV</span></tt></td>
+<td>unsigned 16-bit integer with reversed component ordering</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_4_4_4_4</span></tt></td>
+<td>unsigned 16-bit integer</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_4_4_4_4_REV</span></tt></td>
+<td>unsigned 16-bit integer with reversed component ordering</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_5_5_5_1</span></tt></td>
+<td>unsigned 16-bit integer</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_1_5_5_5_REV</span></tt></td>
+<td>unsigned 16-bit integer with reversed component ordering</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_8_8_8_8</span></tt></td>
+<td>unsigned 32-bit integer</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_8_8_8_8_REV</span></tt></td>
+<td>unsigned 32-bit integer with reversed component ordering</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_10_10_10_2</span></tt></td>
+<td>unsigned 32-bit integer</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_2_10_10_10_REV</span></tt></td>
+<td>unsigned 32-bit integer with reversed component ordering</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div></blockquote>
+<p>The rasterization described so far assumes pixel zoom factors of 1.
+If
+<a class="reference internal" href="glPixelZoom.html#glPixelZoom" title="glPixelZoom"><tt class="xref c c-func docutils literal"><span class="pre">glPixelZoom()</span></tt></a> is used to change the <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">x</mi></math></span> and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">y</mi></math></span> pixel zoom factors,
+pixels are converted to fragments as follows.
+If <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">r</mi></msub><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">r</mi></msub></mfenced></math></span> is the current raster position,
+and a given pixel is in the <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math></span> th
+column and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">m</mi></math></span> th
+row
+of the pixel rectangle,
+then fragments are generated for pixels whose centers are in the rectangle
+with corners at</p>
+<p><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mrow><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">r</mi></msub><mo>+</mo><mfenced open="" close=""><msub><mi mathvariant="italic">zoom</mi><mi mathvariant="italic">x</mi></msub></mfenced><mo>&it;</mo><mi mathvariant="italic">n</mi></mrow><mrow><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">r</mi></msub><mo>+</mo><mfenced open="" close=""><msub><mi mathvariant="italic">zoom</mi><mi mathvariant="italic">y</mi></msub></mfenced><mo>&it;</mo><mi mathvariant="italic">m</mi></mrow></mfenced></math></span></p>
+<blockquote>
+<div><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mrow><msub><mi mathvariant="italic">x</mi><mi mathvariant="italic">r</mi></msub><mo>+</mo><mrow><mfenced open="" close=""><msub><mi mathvariant="italic">zoom</mi><mi mathvariant="italic">x</mi></msub></mfenced><mo>&af;</mo><mfenced open="(" close=")"><mrow><mi mathvariant="italic">n</mi><mo>+</mo><mn>1</mn></mrow></mfenced></mrow></mrow><mrow><msub><mi mathvariant="italic">y</mi><mi mathvariant="italic">r</mi></msub><mo>+</mo><mrow><mfenced open="" close=""><msub><mi mathvariant="italic">zoom</mi><mi mathvariant="italic">y</mi></msub></mfenced><mo>&af;</mo><mfenced open="(" close=")"><mrow><mi mathvariant="italic">m</mi><mo>+</mo><mn>1</mn></mrow></mfenced></mrow></mrow></mfenced></math></span></div></blockquote>
+<p>where
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">zoom</mi><mi mathvariant="italic">x</mi></msub></math></span> is the value of <tt class="docutils literal"><span class="pre">GL_ZOOM_X</span></tt> and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">zoom</mi><mi mathvariant="italic">y</mi></msub></math></span> is the value of <tt class="docutils literal"><span class="pre">GL_ZOOM_Y</span></tt>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><tt class="docutils literal"><span class="pre">GL_BGR</span></tt> and <tt class="docutils literal"><span class="pre">GL_BGRA</span></tt> are only valid for <em>format</em> if the GL
+version is 1.2 or greater.</p>
+<p class="last"><tt class="docutils literal"><span class="pre">GL_UNSIGNED_BYTE_3_3_2</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_BYTE_2_3_3_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_5_6_5</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_5_6_5_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_4_4_4_4</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_4_4_4_4_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_5_5_5_1</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_1_5_5_5_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_8_8_8_8</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_8_8_8_8_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_10_10_10_2</span></tt>, and
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_2_10_10_10_REV</span></tt> are only valid for <em>type</em> if the
+GL version is 1.2 or greater.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>format</em> or <em>type</em> is not one of the accepted values.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>type</em> is <tt class="docutils literal"><span class="pre">GL_BITMAP</span></tt> and <em>format</em> is not either <tt class="docutils literal"><span class="pre">GL_COLOR_INDEX</span></tt> or <tt class="docutils literal"><span class="pre">GL_STENCIL_INDEX</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if either <em>width</em> or <em>height</em> is negative.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <em>format</em> is <tt class="docutils literal"><span class="pre">GL_STENCIL_INDEX</span></tt> and there is no stencil buffer.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <em>format</em> is <tt class="docutils literal"><span class="pre">GL_RED</span></tt>, <tt class="docutils literal"><span class="pre">GL_GREEN</span></tt>, <tt class="docutils literal"><span class="pre">GL_BLUE</span></tt>, <tt class="docutils literal"><span class="pre">GL_ALPHA</span></tt>, <tt class="docutils literal"><span class="pre">GL_RGB</span></tt>, <tt class="docutils literal"><span class="pre">GL_RGBA</span></tt>, <tt class="docutils literal"><span class="pre">GL_BGR</span></tt>, <tt class="docutils literal"><span class="pre">GL_BGRA</span></tt>, <tt class="docutils literal"><span class="pre">GL_LUMINANCE</span></tt>, or <tt class="docutils literal"><span class="pre">GL_LUMINANCE_ALPHA</span></tt>, and the GL is in color index mode.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <em>format</em> is one of <tt class="docutils literal"><span class="pre">GL_UNSIGNED_BYTE_3_3_2</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_BYTE_2_3_3_REV</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_5_6_5</span></tt>, or <tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_5_6_5_REV</span></tt> and <em>format</em> is not <tt class="docutils literal"><span class="pre">GL_RGB</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <em>format</em> is one of <tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_4_4_4_4</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_4_4_4_4_REV</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_5_5_5_1</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_1_5_5_5_REV</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_8_8_8_8</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_8_8_8_8_REV</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_10_10_10_2</span></tt>, or <tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_2_10_10_10_REV</span></tt> and <em>format</em> is neither <tt class="docutils literal"><span class="pre">GL_RGBA</span></tt> nor <tt class="docutils literal"><span class="pre">GL_BGRA</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if a non-zero buffer object name is bound to the <tt class="docutils literal"><span class="pre">GL_PIXEL_UNPACK_BUFFER</span></tt> target and the buffer object&#8217;s data store is currently mapped.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if a non-zero buffer object name is bound to the <tt class="docutils literal"><span class="pre">GL_PIXEL_UNPACK_BUFFER</span></tt> target and the data would be unpacked from the buffer object such that the memory reads required would exceed the data store size.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if a non-zero buffer object name is bound to the <tt class="docutils literal"><span class="pre">GL_PIXEL_UNPACK_BUFFER</span></tt> target and <em>data</em> is not evenly divisible into the number of bytes needed to store in memory a datum indicated by <em>type</em>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <a class="reference internal" href="#glDrawPixels" title="glDrawPixels"><tt class="xref c c-func docutils literal"><span class="pre">glDrawPixels()</span></tt></a> is executed between the execution of <a class="reference internal" href="glBegin.html#glBegin" title="glBegin"><tt class="xref c c-func docutils literal"><span class="pre">glBegin()</span></tt></a> and the corresponding execution of <a class="reference internal" href="glBegin.html#glEnd" title="glEnd"><tt class="xref c c-func docutils literal"><span class="pre">glEnd()</span></tt></a>.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_CURRENT_RASTER_POSITION</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_CURRENT_RASTER_POSITION_VALID</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_PIXEL_UNPACK_BUFFER_BINDING</span></tt></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glDeleteLists.html"
+                        title="previous chapter">function <cite>glDeleteLists</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glEdgeFlag.html"
+                        title="next chapter">function <cite>glEdgeFlag</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/glDrawPixels.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glEdgeFlag.html" title="function glEdgeFlag"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glDeleteLists.html" title="function glDeleteLists"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

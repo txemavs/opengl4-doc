@@ -1,0 +1,65 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:30
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glReleaseShaderCompiler.xml'
+.. (c)2010 Khronos Group.
+.. See license details at http://opencontent.org/openpub/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glReleaseShaderCompiler`
+----------------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Release resources consumed by the implementation's shader compiler
+
+.. c:function:: glReleaseShaderCompiler
+
+
+.. rubric:: Specification
+
+.. c:function:: void glReleaseShaderCompiler()
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glCompileShader`\ ,
+            :c:func:`glLinkProgram`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glReleaseShaderCompiler` provides a hint to the implementation that it
+may free internal resources associated with its shader compiler. :c:func:`glCompileShader`
+may subsequently be called and the implementation may at that time reallocate resources
+previously freed by the call to :c:func:`glReleaseShaderCompiler`\ .
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glReleaseShaderCompiler'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )2010 Khronos Group. Open Publication License.
+

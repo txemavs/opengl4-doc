@@ -1,0 +1,280 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:26
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glGetLight.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glGetLight`
+---------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Return light source parameter values
+
+.. c:function:: glGetLight
+
+
+         :param light:
+
+                  Specifies a light source.
+                  The number of possible lights depends on the implementation,
+                  but at least eight lights are supported.
+                  They are identified by symbolic names of the form ``GL_LIGHT``
+                  |EQUATION_1_| where |EQUATION_2_| ranges from 0 to the value of ``GL_MAX_LIGHTS`` - 1.
+
+         :param pname:
+
+                  Specifies a light source parameter for *light*\ .
+                  Accepted symbolic names are
+                  ``GL_AMBIENT``\ ,
+                  ``GL_DIFFUSE``\ ,
+                  ``GL_SPECULAR``\ ,
+                  ``GL_POSITION``\ ,
+                  ``GL_SPOT_DIRECTION``\ ,
+                  ``GL_SPOT_EXPONENT``\ ,
+                  ``GL_SPOT_CUTOFF``\ ,
+                  ``GL_CONSTANT_ATTENUATION``\ ,
+                  ``GL_LINEAR_ATTENUATION``\ , and
+                  ``GL_QUADRATIC_ATTENUATION``\ .
+
+         :param params:
+
+                  Returns the requested data.
+
+.. rubric:: Specification
+
+.. c:function:: void glGetLightfv(GLenum  light, GLenum  pname, GLfloat *  params, GLenum  light, GLenum  pname, GLint *  params)
+
+
+.. seealso::
+
+
+            :c:func:`glLight`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glGetLight` returns in *params* the value or values of a light source parameter.
+*light* names the light and is a symbolic name of the form ``GL_LIGHT``
+|EQUATION_3_| where i ranges from 0 to the value of ``GL_MAX_LIGHTS`` - 1.
+``GL_MAX_LIGHTS`` is an implementation dependent constant that is
+greater than or equal to eight.
+*pname* specifies one of ten light source parameters,
+again by symbolic name.
+
+
+The following parameters are defined:
+
+
+         ``GL_AMBIENT``
+
+
+               *params* returns four integer or floating-point values representing the
+               ambient intensity of the light source.
+               Integer values,
+               when requested,
+               are linearly mapped from the internal floating-point representation
+               such that 1.0 maps to the most positive representable integer value,
+               and |EQUATION_4_| maps to the most negative representable integer value.
+               If the internal value is outside the range |EQUATION_5_|\ ,
+               the corresponding integer return value is undefined. The initial value is
+               (0, 0, 0, 1).
+
+
+         ``GL_DIFFUSE``
+
+
+               *params* returns four integer or floating-point values representing the
+               diffuse intensity of the light source.
+               Integer values,
+               when requested,
+               are linearly mapped from the internal floating-point representation
+               such that 1.0 maps to the most positive representable integer value,
+               and |EQUATION_6_| maps to the most negative representable integer value.
+               If the internal value is outside the range |EQUATION_7_|\ ,
+               the corresponding integer return value is undefined. The initial value
+               for ``GL_LIGHT0`` is (1, 1, 1, 1); for other lights, the
+               initial value is (0, 0, 0, 0).
+
+
+         ``GL_SPECULAR``
+
+
+               *params* returns four integer or floating-point values representing the
+               specular intensity of the light source.
+               Integer values,
+               when requested,
+               are linearly mapped from the internal floating-point representation
+               such that 1.0 maps to the most positive representable integer value,
+               and |EQUATION_8_| maps to the most negative representable integer value.
+               If the internal value is outside the range |EQUATION_9_|\ ,
+               the corresponding integer return value is undefined. The initial value
+               for ``GL_LIGHT0`` is (1, 1, 1, 1); for other lights, the
+               initial value is (0, 0, 0, 0).
+
+
+         ``GL_POSITION``
+
+
+               *params* returns four integer or floating-point values representing the
+               position of the light source.
+               Integer values,
+               when requested,
+               are computed by rounding the internal floating-point values to the
+               nearest integer value.
+               The returned values are those maintained in eye coordinates.
+               They will not be equal to the values specified using :c:func:`glLight`\ ,
+               unless the modelview matrix was identity at the time :c:func:`glLight` was
+               called. The initial value is (0, 0, 1, 0).
+
+
+         ``GL_SPOT_DIRECTION``
+
+
+               *params* returns three integer or floating-point values representing the
+               direction of the light source.
+               Integer values,
+               when requested,
+               are computed by rounding the internal floating-point values to the
+               nearest integer value.
+               The returned values are those maintained in eye coordinates.
+               They will not be equal to the values specified using :c:func:`glLight`\ ,
+               unless the modelview matrix was identity at the time :c:func:`glLight` was called.
+               Although spot direction is normalized before being used in the lighting
+               equation,
+               the returned values are the transformed versions of the specified values
+               prior to normalization. The initial value is |EQUATION_10_|\ .
+
+
+         ``GL_SPOT_EXPONENT``
+
+
+               *params* returns a single integer or floating-point value representing the
+               spot exponent of the light.
+               An integer value,
+               when requested,
+               is computed by rounding the internal floating-point representation to
+               the nearest integer. The initial value is 0.
+
+
+         ``GL_SPOT_CUTOFF``
+
+
+               *params* returns a single integer or floating-point value representing the
+               spot cutoff angle of the light.
+               An integer value,
+               when requested,
+               is computed by rounding the internal floating-point representation to
+               the nearest integer. The initial value is 180.
+
+
+         ``GL_CONSTANT_ATTENUATION``
+
+
+               *params* returns a single integer or floating-point value representing the
+               constant (not distance-related) attenuation of the light.
+               An integer value,
+               when requested,
+               is computed by rounding the internal floating-point representation to
+               the nearest integer. The initial value is 1.
+
+
+         ``GL_LINEAR_ATTENUATION``
+
+
+               *params* returns a single integer or floating-point value representing the
+               linear attenuation of the light.
+               An integer value,
+               when requested,
+               is computed by rounding the internal floating-point representation to
+               the nearest integer. The initial value is 0.
+
+
+         ``GL_QUADRATIC_ATTENUATION``
+
+
+               *params* returns a single integer or floating-point value representing the
+               quadratic attenuation of the light.
+               An integer value,
+               when requested,
+               is computed by rounding the internal floating-point representation to
+               the nearest integer. The initial value is 0.
+
+
+.. note::
+
+
+   It is always the case that ``GL_LIGHT``
+   |EQUATION_11_| = ``GL_LIGHT0`` + |EQUATION_12_|\ .
+
+
+   If an error is generated,
+   no change is made to the contents of *params*\ .
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_ENUM`` is generated if *light* or *pname* is not an accepted value.
+* ``GL_INVALID_OPERATION`` is generated if :c:func:`glGetLight` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`\ .
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glGetLight'>
+
+.. role:: mml(raw)
+   :format: html
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math>` 
+
+.. |EQUATION_4_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mn>-1.0</mn></math>` 
+
+.. |EQUATION_5_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"><mn>-1</mn><mn>1</mn></mfenced></math>` 
+
+.. |EQUATION_6_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mn>-1.0</mn></math>` 
+
+.. |EQUATION_7_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"><mn>-1</mn><mn>1</mn></mfenced></math>` 
+
+.. |EQUATION_8_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mn>-1.0</mn></math>` 
+
+.. |EQUATION_9_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"><mn>-1</mn><mn>1</mn></mfenced></math>` 
+
+.. |EQUATION_10_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mn>0</mn><mn>0</mn><mn>-1</mn></mfenced></math>` 
+
+.. |EQUATION_11_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math>` 
+
+.. |EQUATION_12_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math>` 
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

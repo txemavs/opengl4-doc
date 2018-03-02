@@ -1,0 +1,171 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glGenBuffers &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glGenerateMipmap" href="glGenerateMipmap.html" />
+    <link rel="prev" title="function glFrontFace" href="glFrontFace.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glGenerateMipmap.html" title="function glGenerateMipmap"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glFrontFace.html" title="function glFrontFace"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glgenbuffers">
+<h1>function <cite>glGenBuffers</cite><a class="headerlink" href="#function-glgenbuffers" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Generate buffer object names</p>
+<dl class="function">
+<dt id="glGenBuffers">
+<tt class="descname">glGenBuffers</tt><big>(</big><big>)</big><a class="headerlink" href="#glGenBuffers" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>n</strong> &#8211; Specifies the number of buffer object names to be generated.</li>
+<li><strong>buffers</strong> &#8211; Specifies an array in which the generated buffer object names are stored.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glGenBuffers</tt><big>(</big>GLsizei <em>&nbsp;n</em>, GLuint * <em>&nbsp;buffers</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glBindBuffer.html#glBindBuffer" title="glBindBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glBindBuffer()</span></tt></a>,
+<a class="reference internal" href="glDeleteBuffers.html#glDeleteBuffers" title="glDeleteBuffers"><tt class="xref c c-func docutils literal"><span class="pre">glDeleteBuffers()</span></tt></a>,
+<a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glGenBuffers" title="glGenBuffers"><tt class="xref c c-func docutils literal"><span class="pre">glGenBuffers()</span></tt></a> returns <em>n</em> buffer object names in <em>buffers</em>.
+There is no guarantee that the names form a contiguous set of integers;
+however, it is guaranteed that none of the returned names was in use
+immediately before the call to <a class="reference internal" href="#glGenBuffers" title="glGenBuffers"><tt class="xref c c-func docutils literal"><span class="pre">glGenBuffers()</span></tt></a>.</p>
+<p>Buffer object names returned by a call to <a class="reference internal" href="#glGenBuffers" title="glGenBuffers"><tt class="xref c c-func docutils literal"><span class="pre">glGenBuffers()</span></tt></a> are not returned by
+subsequent calls, unless they are first deleted with
+<a class="reference internal" href="glDeleteBuffers.html#glDeleteBuffers" title="glDeleteBuffers"><tt class="xref c c-func docutils literal"><span class="pre">glDeleteBuffers()</span></tt></a>.</p>
+<p>No buffer objects are associated with the returned buffer object names until they are first bound by calling
+<a class="reference internal" href="glBindBuffer.html#glBindBuffer" title="glBindBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glBindBuffer()</span></tt></a>.</p>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>n</em> is negative.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glIsBuffer.html#glIsBuffer" title="glIsBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glIsBuffer()</span></tt></a></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)2005 Addison-Wesley. Open Publication License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glFrontFace.html"
+                        title="previous chapter">function <cite>glFrontFace</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glGenerateMipmap.html"
+                        title="next chapter">function <cite>glGenerateMipmap</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glGenBuffers.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glGenerateMipmap.html" title="function glGenerateMipmap"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glFrontFace.html" title="function glFrontFace"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

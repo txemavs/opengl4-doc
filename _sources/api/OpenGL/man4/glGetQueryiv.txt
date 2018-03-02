@@ -1,0 +1,103 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:29
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glGetQueryiv.xml'
+.. (c)2005 Addison-Wesley.
+.. See license details at http://opencontent.org/openpub/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glGetQueryiv`
+-----------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Return parameters of a query object target
+
+.. c:function:: glGetQueryiv
+
+
+         :param target:
+
+                  Specifies a query object target.
+                  Must be ``GL_SAMPLES_PASSED``\ , ``GL_ANY_SAMPLES_PASSED``\ ,
+                  ``GL_PRIMITIVES_GENERATED``\ , ``GL_TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN``\ ,
+                  ``GL_TIME_ELAPSED``\ , or ``GL_TIMESTAMP``\ .
+
+         :param pname:
+
+                  Specifies the symbolic name of a query object target parameter.
+                  Accepted values are ``GL_CURRENT_QUERY`` or ``GL_QUERY_COUNTER_BITS``\ .
+
+         :param params:
+
+                  Returns the requested data.
+
+.. rubric:: Specification
+
+.. c:function:: void glGetQueryiv(GLenum  target, GLenum  pname, GLint *  params)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glGetQueryObject`\ ,
+            :c:func:`glIsQuery`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glGetQueryiv` returns in *params* a selected parameter of the query object target
+specified by *target*\ .
+
+
+*pname* names a specific query object target parameter.  When *pname* is
+``GL_CURRENT_QUERY``\ , the name of the currently active query for *target*\ ,
+or zero if no query is active, will be placed in *params*\ .
+If *pname* is ``GL_QUERY_COUNTER_BITS``\ , the implementation-dependent number
+of bits used to hold the result of queries for *target* is returned in *params*\ .
+
+
+.. note::
+
+
+   If an error is generated,
+   no change is made to the contents of *params*\ .
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_ENUM`` is generated if *target* or *pname* is not an accepted value.
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glGetQueryiv'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )2005 Addison-Wesley. Open Publication License.
+

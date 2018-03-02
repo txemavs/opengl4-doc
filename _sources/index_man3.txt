@@ -1,0 +1,9 @@
+OpenGL v.3 Reference
+--------------------
+
+.. toctree::
+
+   api/OpenGL/man3/glGetBufferParameteriv
+   api/OpenGL/man3/glMultiTexCoord
+
+

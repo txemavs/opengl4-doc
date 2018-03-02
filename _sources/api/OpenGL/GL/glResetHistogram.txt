@@ -1,0 +1,53 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glResetHistogram`
+---------------------------
+
+.. source file man/glResetHistogram
+
+.. currentmodule:: OpenGL.GL
+
+Reset histogram table entries to zero
+
+.. c:function:: glResetHistogram
+.. c:function:: void glResetHistogram(GLenum  target)
+   :noindex: 
+
+
+   
+   :param target:
+      Must be ``GL_HISTOGRAM``.
+   
+
+.. seealso::
+
+   
+   :c:func:`glHistogram`
+   
+.. rubric:: Description
+
+
+:c:func:`glResetHistogram` resets all the elements of the current histogram table to zero.
+
+
+**Errors:**
+
+   * ``GL_INVALID_ENUM`` is generated if *target* is not ``GL_HISTOGRAM``.
+   * ``GL_INVALID_OPERATION`` is generated if :c:func:`glResetHistogram` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`.
+
+
+
+.. note::
+
+   * :c:func:`glResetHistogram` is present only if ``ARB_imaging`` is returned when :c:func:`glGetString` is called with an argument of ``GL_EXTENSIONS``.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

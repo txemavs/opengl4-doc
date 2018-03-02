@@ -1,0 +1,77 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glGetActiveAtomicCounterBufferiv`
+-------------------------------------------
+
+.. source file man4/glGetActiveAtomicCounterBufferiv
+
+.. currentmodule:: OpenGL.GL
+
+Retrieve information about the set of active atomic counter buffers for a program
+
+.. c:function:: glGetActiveAtomicCounterBufferiv
+.. c:function:: void glGetActiveAtomicCounterBufferiv(Gluint  program, GLuint  bufferIndex, GLenum  pname, GLint * params)
+   :noindex: 
+
+
+   
+   :param program:
+      The name of a program object from which to retrieve information.
+   
+   :param bufferIndex:
+      Specifies index of an active atomic counter buffer.
+   
+   :param pname:
+      Specifies which parameter of the atomic counter buffer to retrieve.
+   
+   :param params:
+      Specifies the address of a variable into which to write the retrieved information.
+   
+
+.. seealso::
+
+   
+   :c:func:`glGetProgram`, :c:func:`glGetActiveSubroutineUniform`, :c:func:`glGetActiveSubroutineUniformName`, :c:func:`glGetUniformLocation`
+   
+.. rubric:: Description
+
+
+:c:func:`glGetActiveAtomicCounterBufferiv` retrieves information about the set of active atomic counter buffers for a program object. *program* is the name of a program object for which the command :c:func:`glLinkProgram` has been issued in the past. It is not necessary for *program* to have been linked successfully. The link may have failed because the number of active atomic counters exceeded the limits.
+
+*bufferIndex* specifies the index of an active atomic counter buffer and must be in the range zero to the value of ``GL_ACTIVE_ATOMIC_COUNTER_BUFFERS`` minus one. The value of ``GL_ACTIVE_ATOMIC_COUNTER_BUFFERS`` for *program* indicates the number of active atomic counter buffer and can be queried with :c:func:`glGetProgram`.
+
+If no error occurs, the parameter(s) specified by *pname* are returned in *params* . If an error is generated, the contents of *params* are not modified.
+
+If *pname* is ``GL_ATOMIC_COUNTER_BUFFER_BINDING``, then the index of the counter buffer binding point associated with the active atomic counter buffer *bufferIndex* for *program* is returned.
+
+If *pname* is ``GL_ATOMIC_COUNTER_BUFFER_DATA_SIZE``, then the implementation-dependent minimum total buffer object size, in baseic machine units, required to hold all active atomic counters in the atomic counter binding point identified by *bufferIndex* is returned.
+
+If *pname* is ``GL_ATOMIC_COUNTER_BUFFER_ACTIVE_ATOMIC_COUNTERS``, then the number of active atomic counters for the atomic counter buffer identified by *bufferIndex* is returned.
+
+If *pname* is ``GL_ATOMIC_COUNTER_BUFFER_ACTIVE_ATOMIC_COUNTER_INDICES``, then a list of the active atomic counter indices for the atomic counter buffer identified by *bufferIndex* is returned. The number of elements that will be written into *params* is the value of ``GL_ATOMIC_COUNTER_BUFFER_ACTIVE_ATOMIC_COUNTERS`` for *bufferIndex* .
+
+If *pname* is ``GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_VERTEX_SHADER``, ``GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_TESS_CONTROL_SHADER``, ``GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_TESS_EVALUATION_SHADER``, ``GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_GEOMETRY_SHADER``, or ``GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_FRAGMENT_SHADER``, then a boolean value indicating whether the atomic counter buffer identified by *bufferIndex* is referenced by the vertex, tessellation control, tessellation evaluation, geometry or fragment processing stages of *program* , respectively, is returned.
+
+
+**Errors:**
+
+   * ``GL_INVALID_VALUE`` is generated if *program* is not the name of a program object for which :c:func:`glLinkProgram` has been called in the past.
+   * ``GL_INVALID_VALUE`` is generated if *bufferIndex* is greater than or equal to the value of ``GL_ACTIVE_ATOMIC_COUNTER_BUFFERS`` for *program* .
+   * ``GL_INVALID_ENUM`` is generated if *pname* is not one of the accepted tokens.
+
+
+
+.. note::
+
+   * :c:func:`glGetActiveAtomicCounterBufferiv` is available only if the GL version is 4.2 or higher.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

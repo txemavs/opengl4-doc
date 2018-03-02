@@ -1,0 +1,110 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:27
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/gluBeginCurve.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `gluBeginCurve`
+------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Delimit a NURBS curve definition
+
+.. c:function:: gluBeginCurve
+
+
+         :param nurb:
+
+                  Specifies the NURBS object (created with :c:func:`gluNewNurbsRenderer`\ ).
+
+.. rubric:: Specification
+
+.. c:function:: void gluBeginCurve(GLUnurbs*  nurb)
+   :noindex: 
+
+.. c:function:: void gluEndCurve(GLUnurbs*  nurb)
+
+
+.. seealso::
+
+
+            :c:func:`gluBeginSurface`\ ,
+            :c:func:`gluBeginTrim`\ ,
+            :c:func:`gluNewNurbsRenderer`\ ,
+            :c:func:`gluNurbsCurve`\ ,
+            :c:func:`glPopAttrib`\ ,
+            :c:func:`glPushAttrib`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+Use :c:func:`gluBeginCurve` to mark the beginning of a NURBS
+curve definition.
+After
+calling :c:func:`gluBeginCurve`\ , make one or more calls to
+:c:func:`gluNurbsCurve` to define the attributes of the curve.
+Exactly one of the calls to :c:func:`gluNurbsCurve` must have
+a curve type of ``GLU_MAP1_VERTEX_3`` or ``GLU_MAP1_VERTEX_4``\ .
+To mark the end of the NURBS curve definition, call :c:func:`gluEndCurve`\ .
+
+
+GL evaluators are used to render the NURBS curve as a series of line
+segments.
+Evaluator state is preserved during rendering
+with :c:func:`glPushAttrib` (\ ``GLU_EVAL_BIT``\ ) and
+:c:func:`glPopAttrib` ().
+See the :c:func:`glPushAttrib` reference page for details on exactly what state
+these calls preserve.
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Example
+
+..
+
+
+The following commands render a textured NURBS curve with normals;
+texture coordinates and normals are also specified as NURBS curves:
+
+.. code-block:: c
+
+
+   gluBeginCurve(nobj);
+      gluNurbsCurve(nobj, ..., GL_MAP1_TEXTURE_COORD_2);
+      gluNurbsCurve(nobj, ..., GL_MAP1_NORMAL);
+      gluNurbsCurve(nobj, ..., GL_MAP1_VERTEX_4);
+   gluEndCurve(nobj);
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'gluBeginCurve'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

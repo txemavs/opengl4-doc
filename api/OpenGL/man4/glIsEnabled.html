@@ -1,0 +1,251 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glIsEnabled &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glIsFramebuffer" href="glIsFramebuffer.html" />
+    <link rel="prev" title="function glIsBuffer" href="glIsBuffer.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glIsFramebuffer.html" title="function glIsFramebuffer"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glIsBuffer.html" title="function glIsBuffer"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glisenabled">
+<h1>function <cite>glIsEnabled</cite><a class="headerlink" href="#function-glisenabled" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Test whether a capability is enabled</p>
+<dl class="function">
+<dt id="glIsEnabled">
+<tt class="descname">glIsEnabled</tt><big>(</big><big>)</big><a class="headerlink" href="#glIsEnabled" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>cap</strong> &#8211; Specifies a symbolic constant indicating a GL capability.</li>
+<li><strong>index</strong> &#8211; Specifies the index of the capability.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+GLboolean <tt class="descname">glIsEnabled</tt><big>(</big>GLenum <em>&nbsp;cap</em>, GLenum <em>&nbsp;cap</em>, GLuint <em>&nbsp;index</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glEnable.html#glEnable" title="glEnable"><tt class="xref c c-func docutils literal"><span class="pre">glEnable()</span></tt></a>,
+<a class="reference internal" href="glEnable.html#glDisable" title="glDisable"><tt class="xref c c-func docutils literal"><span class="pre">glDisable()</span></tt></a>,
+<a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glIsEnabled" title="glIsEnabled"><tt class="xref c c-func docutils literal"><span class="pre">glIsEnabled()</span></tt></a> returns <tt class="docutils literal"><span class="pre">GL_TRUE</span></tt> if <em>cap</em> is an enabled capability
+and returns <tt class="docutils literal"><span class="pre">GL_FALSE</span></tt> otherwise. Boolean states that are indexed may be tested with <tt class="xref c c-func docutils literal"><span class="pre">glIsEnabledi()</span></tt>.
+For <tt class="xref c c-func docutils literal"><span class="pre">glIsEnabledi()</span></tt>, <em>index</em> specifies the index of the capability to test. <em>index</em>
+must be between zero and the count of indexed capabilities for <em>cap</em>.
+Initially all capabilities except <tt class="docutils literal"><span class="pre">GL_DITHER</span></tt> are disabled;
+<tt class="docutils literal"><span class="pre">GL_DITHER</span></tt> is initially enabled.</p>
+<p>The following capabilities are accepted for <em>cap</em> :</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="37%" />
+<col width="63%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Constant</strong></td>
+<td><strong>See</strong></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_BLEND</span></tt></td>
+<td><a class="reference internal" href="glBlendFunc.html#glBlendFunc" title="glBlendFunc"><tt class="xref c c-func docutils literal"><span class="pre">glBlendFunc()</span></tt></a>, <a class="reference internal" href="glLogicOp.html#glLogicOp" title="glLogicOp"><tt class="xref c c-func docutils literal"><span class="pre">glLogicOp()</span></tt></a></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_CLIP_DISTANCE</span></tt> <strong>i</strong></td>
+<td><a class="reference internal" href="glEnable.html#glEnable" title="glEnable"><tt class="xref c c-func docutils literal"><span class="pre">glEnable()</span></tt></a></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_COLOR_LOGIC_OP</span></tt></td>
+<td><a class="reference internal" href="glLogicOp.html#glLogicOp" title="glLogicOp"><tt class="xref c c-func docutils literal"><span class="pre">glLogicOp()</span></tt></a></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_CULL_FACE</span></tt></td>
+<td><a class="reference internal" href="glCullFace.html#glCullFace" title="glCullFace"><tt class="xref c c-func docutils literal"><span class="pre">glCullFace()</span></tt></a></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_DEPTH_CLAMP</span></tt></td>
+<td><a class="reference internal" href="glEnable.html#glEnable" title="glEnable"><tt class="xref c c-func docutils literal"><span class="pre">glEnable()</span></tt></a></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_DEPTH_TEST</span></tt></td>
+<td><a class="reference internal" href="glDepthFunc.html#glDepthFunc" title="glDepthFunc"><tt class="xref c c-func docutils literal"><span class="pre">glDepthFunc()</span></tt></a>, <a class="reference internal" href="glDepthRange.html#glDepthRange" title="glDepthRange"><tt class="xref c c-func docutils literal"><span class="pre">glDepthRange()</span></tt></a></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_DITHER</span></tt></td>
+<td><a class="reference internal" href="glEnable.html#glEnable" title="glEnable"><tt class="xref c c-func docutils literal"><span class="pre">glEnable()</span></tt></a></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_FRAMEBUFFER_SRGB</span></tt></td>
+<td><a class="reference internal" href="glEnable.html#glEnable" title="glEnable"><tt class="xref c c-func docutils literal"><span class="pre">glEnable()</span></tt></a></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_LINE_SMOOTH</span></tt></td>
+<td><a class="reference internal" href="glLineWidth.html#glLineWidth" title="glLineWidth"><tt class="xref c c-func docutils literal"><span class="pre">glLineWidth()</span></tt></a></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_MULTISAMPLE</span></tt></td>
+<td><a class="reference internal" href="glSampleCoverage.html#glSampleCoverage" title="glSampleCoverage"><tt class="xref c c-func docutils literal"><span class="pre">glSampleCoverage()</span></tt></a></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_POLYGON_SMOOTH</span></tt></td>
+<td><a class="reference internal" href="glPolygonMode.html#glPolygonMode" title="glPolygonMode"><tt class="xref c c-func docutils literal"><span class="pre">glPolygonMode()</span></tt></a></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_POLYGON_OFFSET_FILL</span></tt></td>
+<td><a class="reference internal" href="glPolygonOffset.html#glPolygonOffset" title="glPolygonOffset"><tt class="xref c c-func docutils literal"><span class="pre">glPolygonOffset()</span></tt></a></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_POLYGON_OFFSET_LINE</span></tt></td>
+<td><a class="reference internal" href="glPolygonOffset.html#glPolygonOffset" title="glPolygonOffset"><tt class="xref c c-func docutils literal"><span class="pre">glPolygonOffset()</span></tt></a></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_POLYGON_OFFSET_POINT</span></tt></td>
+<td><a class="reference internal" href="glPolygonOffset.html#glPolygonOffset" title="glPolygonOffset"><tt class="xref c c-func docutils literal"><span class="pre">glPolygonOffset()</span></tt></a></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_PROGRAM_POINT_SIZE</span></tt></td>
+<td><a class="reference internal" href="glEnable.html#glEnable" title="glEnable"><tt class="xref c c-func docutils literal"><span class="pre">glEnable()</span></tt></a></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_PRIMITIVE_RESTART</span></tt></td>
+<td><a class="reference internal" href="glEnable.html#glEnable" title="glEnable"><tt class="xref c c-func docutils literal"><span class="pre">glEnable()</span></tt></a>, <a class="reference internal" href="glPrimitiveRestartIndex.html#glPrimitiveRestartIndex" title="glPrimitiveRestartIndex"><tt class="xref c c-func docutils literal"><span class="pre">glPrimitiveRestartIndex()</span></tt></a></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_SAMPLE_ALPHA_TO_COVERAGE</span></tt></td>
+<td><a class="reference internal" href="glSampleCoverage.html#glSampleCoverage" title="glSampleCoverage"><tt class="xref c c-func docutils literal"><span class="pre">glSampleCoverage()</span></tt></a></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_SAMPLE_ALPHA_TO_ONE</span></tt></td>
+<td><a class="reference internal" href="glSampleCoverage.html#glSampleCoverage" title="glSampleCoverage"><tt class="xref c c-func docutils literal"><span class="pre">glSampleCoverage()</span></tt></a></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_SAMPLE_COVERAGE</span></tt></td>
+<td><a class="reference internal" href="glSampleCoverage.html#glSampleCoverage" title="glSampleCoverage"><tt class="xref c c-func docutils literal"><span class="pre">glSampleCoverage()</span></tt></a></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_SAMPLE_MASK</span></tt></td>
+<td><a class="reference internal" href="glEnable.html#glEnable" title="glEnable"><tt class="xref c c-func docutils literal"><span class="pre">glEnable()</span></tt></a></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_SCISSOR_TEST</span></tt></td>
+<td><a class="reference internal" href="glScissor.html#glScissor" title="glScissor"><tt class="xref c c-func docutils literal"><span class="pre">glScissor()</span></tt></a></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_STENCIL_TEST</span></tt></td>
+<td><a class="reference internal" href="glStencilFunc.html#glStencilFunc" title="glStencilFunc"><tt class="xref c c-func docutils literal"><span class="pre">glStencilFunc()</span></tt></a>, <a class="reference internal" href="glStencilOp.html#glStencilOp" title="glStencilOp"><tt class="xref c c-func docutils literal"><span class="pre">glStencilOp()</span></tt></a></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBEMAP_SEAMLESS</span></tt></td>
+<td><a class="reference internal" href="glEnable.html#glEnable" title="glEnable"><tt class="xref c c-func docutils literal"><span class="pre">glEnable()</span></tt></a></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If an error is generated,
+<a class="reference internal" href="#glIsEnabled" title="glIsEnabled"><tt class="xref c c-func docutils literal"><span class="pre">glIsEnabled()</span></tt></a> and <tt class="xref c c-func docutils literal"><span class="pre">glIsEnabledi()</span></tt> return <tt class="docutils literal"><span class="pre">GL_FALSE</span></tt>.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>cap</em> is not an accepted value.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated by <tt class="xref c c-func docutils literal"><span class="pre">glIsEnabledi()</span></tt> if <em>index</em> is outside the valid range for the indexed state <em>cap</em>.</li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. (c)2010-2011 Khronos Group. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glIsBuffer.html"
+                        title="previous chapter">function <cite>glIsBuffer</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glIsFramebuffer.html"
+                        title="next chapter">function <cite>glIsFramebuffer</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glIsEnabled.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glIsFramebuffer.html" title="function glIsFramebuffer"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glIsBuffer.html" title="function glIsBuffer"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

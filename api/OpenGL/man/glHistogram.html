@@ -1,0 +1,242 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glHistogram &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function glIndex" href="glIndex.html" />
+    <link rel="prev" title="function glGetTexGen" href="glGetTexGen.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glIndex.html" title="function glIndex"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glGetTexGen.html" title="function glGetTexGen"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glhistogram">
+<h1>function <cite>glHistogram</cite><a class="headerlink" href="#function-glhistogram" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Define histogram table</p>
+<dl class="function">
+<dt id="glHistogram">
+<tt class="descname">glHistogram</tt><big>(</big><big>)</big><a class="headerlink" href="#glHistogram" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>target</strong> &#8211; The histogram whose parameters are to be set.
+Must be one of
+<tt class="docutils literal"><span class="pre">GL_HISTOGRAM</span></tt> or
+<tt class="docutils literal"><span class="pre">GL_PROXY_HISTOGRAM</span></tt>.</li>
+<li><strong>width</strong> &#8211; The number of entries in the histogram table.  Must be a power of 2.</li>
+<li><strong>internalformat</strong> &#8211; The format of entries in the histogram table.
+Must be one of
+<tt class="docutils literal"><span class="pre">GL_ALPHA</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_ALPHA4</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_ALPHA8</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_ALPHA12</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_ALPHA16</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LUMINANCE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LUMINANCE4</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LUMINANCE8</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LUMINANCE12</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LUMINANCE16</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LUMINANCE_ALPHA</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LUMINANCE4_ALPHA4</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LUMINANCE6_ALPHA2</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LUMINANCE8_ALPHA8</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LUMINANCE12_ALPHA4</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LUMINANCE12_ALPHA12</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LUMINANCE16_ALPHA16</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_R3_G3_B2</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGB</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGB4</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGB5</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGB8</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGB10</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGB12</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGB16</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGBA</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGBA2</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGBA4</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGB5_A1</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGBA8</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGB10_A2</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGBA12</span></tt>, or
+<tt class="docutils literal"><span class="pre">GL_RGBA16</span></tt>.</li>
+<li><strong>sink</strong> &#8211; If <tt class="docutils literal"><span class="pre">GL_TRUE</span></tt>, pixels will be consumed by the histogramming
+process and no drawing or texture loading will take place.
+If <tt class="docutils literal"><span class="pre">GL_FALSE</span></tt>, pixels will proceed to the minmax process after
+histogramming.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glHistogram</tt><big>(</big>GLenum <em>&nbsp;target</em>, GLsizei <em>&nbsp;width</em>, GLenum <em>&nbsp;internalformat</em>, GLboolean <em>&nbsp;sink</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glGetHistogram.html#glGetHistogram" title="glGetHistogram"><tt class="xref c c-func docutils literal"><span class="pre">glGetHistogram()</span></tt></a>,
+<a class="reference internal" href="glResetHistogram.html#glResetHistogram" title="glResetHistogram"><tt class="xref c c-func docutils literal"><span class="pre">glResetHistogram()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p>When <tt class="docutils literal"><span class="pre">GL_HISTOGRAM</span></tt> is enabled, RGBA color components are converted to
+histogram table indices by clamping to the range [0,1], multiplying by
+the width of the histogram table, and rounding to the nearest integer.
+The table entries selected by the RGBA indices are then incremented.
+(If the internal format of the histogram table includes luminance, then
+the index derived from the R color component determines the luminance
+table entry to be incremented.)  If a histogram table entry is incremented
+beyond its maximum value, then its value becomes undefined.  (This is
+not an error.)</p>
+<p>Histogramming is performed only for RGBA pixels (though these may
+be specified originally as color indices and converted to RGBA by
+index table lookup).
+Histogramming is enabled with <a class="reference internal" href="../man4/glEnable.html#glEnable" title="glEnable"><tt class="xref c c-func docutils literal"><span class="pre">glEnable()</span></tt></a> and disabled with <a class="reference internal" href="../man4/glEnable.html#glDisable" title="glDisable"><tt class="xref c c-func docutils literal"><span class="pre">glDisable()</span></tt></a>.</p>
+<p>When <em>target</em> is <tt class="docutils literal"><span class="pre">GL_HISTOGRAM</span></tt>, <a class="reference internal" href="#glHistogram" title="glHistogram"><tt class="xref c c-func docutils literal"><span class="pre">glHistogram()</span></tt></a> redefines the current
+histogram table to have <em>width</em> entries of the format specified by
+<em>internalformat</em>.
+The entries are indexed 0 through <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">width</mi><mo>-</mo><mn>1</mn></mrow></math></span>,
+and
+all entries are initialized to zero.
+The values in the previous histogram table, if any, are lost.
+If <em>sink</em> is <tt class="docutils literal"><span class="pre">GL_TRUE</span></tt>, then pixels are discarded after histogramming;
+no further processing of the pixels takes place, and no drawing,
+texture loading, or pixel readback will result.</p>
+<p>When <em>target</em> is <tt class="docutils literal"><span class="pre">GL_PROXY_HISTOGRAM</span></tt>, <a class="reference internal" href="#glHistogram" title="glHistogram"><tt class="xref c c-func docutils literal"><span class="pre">glHistogram()</span></tt></a> computes all
+state information as if the histogram table were to be redefined,
+but does not actually define the new table.
+If the requested histogram table is too large to be supported, then the
+state information will be set to zero.
+This provides a way to determine if a histogram table with the given
+parameters can be supported.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><a class="reference internal" href="#glHistogram" title="glHistogram"><tt class="xref c c-func docutils literal"><span class="pre">glHistogram()</span></tt></a> is present only if <tt class="docutils literal"><span class="pre">ARB_imaging</span></tt> is returned when <a class="reference internal" href="../man4/glGetString.html#glGetString" title="glGetString"><tt class="xref c c-func docutils literal"><span class="pre">glGetString()</span></tt></a>
+is called with an argument of <tt class="docutils literal"><span class="pre">GL_EXTENSIONS</span></tt>.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>target</em> is not one of the allowable values.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>width</em> is less than zero or is not a power of 2.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>internalformat</em> is not one of the allowable values.</li>
+<li><tt class="docutils literal"><span class="pre">GL_TABLE_TOO_LARGE</span></tt> is generated if <em>target</em> is <tt class="docutils literal"><span class="pre">GL_HISTOGRAM</span></tt> and the histogram table specified is too large for the implementation.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <a class="reference internal" href="#glHistogram" title="glHistogram"><tt class="xref c c-func docutils literal"><span class="pre">glHistogram()</span></tt></a> is executed between the execution of <a class="reference internal" href="glBegin.html#glBegin" title="glBegin"><tt class="xref c c-func docutils literal"><span class="pre">glBegin()</span></tt></a> and the corresponding execution of <a class="reference internal" href="glBegin.html#glEnd" title="glEnd"><tt class="xref c c-func docutils literal"><span class="pre">glEnd()</span></tt></a>.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glGetHistogramParameter.html#glGetHistogramParameter" title="glGetHistogramParameter"><tt class="xref c c-func docutils literal"><span class="pre">glGetHistogramParameter()</span></tt></a></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glGetTexGen.html"
+                        title="previous chapter">function <cite>glGetTexGen</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glIndex.html"
+                        title="next chapter">function <cite>glIndex</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/glHistogram.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glIndex.html" title="function glIndex"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glGetTexGen.html" title="function glGetTexGen"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

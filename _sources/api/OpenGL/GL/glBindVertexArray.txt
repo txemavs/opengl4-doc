@@ -1,0 +1,47 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glBindVertexArray`
+----------------------------
+
+.. source file man4/glBindVertexArray
+
+.. currentmodule:: OpenGL.GL
+
+Bind a vertex array object
+
+.. c:function:: glBindVertexArray
+.. c:function:: void glBindVertexArray(GLuint  array)
+   :noindex: 
+
+
+   
+   :param array:
+      Specifies the name of the vertex array to bind.
+   
+
+.. seealso::
+
+   
+   :c:func:`glGenVertexArrays`, :c:func:`glDeleteVertexArrays` :c:func:`glVertexAttribPointer` :c:func:`glEnableVertexAttribArray`
+   
+.. rubric:: Description
+
+
+:c:func:`glBindVertexArray` binds the vertex array object with name *array* . *array* is the name of a vertex array object previously returned from a call to :c:func:`glGenVertexArrays`, or zero to break the existing vertex array object binding.
+
+If no vertex array object with name *array* exists, one is created when *array* is first bound. If the bind is successful no change is made to the state of the vertex array object, and any previous vertex array object binding is broken.
+
+
+**Errors:**
+
+   * ``GL_INVALID_OPERATION`` is generated if *array* is not zero or the name of a vertex array object previously returned from a call to :c:func:`glGenVertexArrays`.
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

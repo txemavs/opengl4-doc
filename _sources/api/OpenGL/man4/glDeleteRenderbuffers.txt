@@ -1,0 +1,91 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:29
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glDeleteRenderbuffers.xml'
+.. (c)2010 Khronos Group.
+.. See license details at http://opencontent.org/openpub/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glDeleteRenderbuffers`
+--------------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Delete renderbuffer objects
+
+.. c:function:: glDeleteRenderbuffers
+
+
+         :param n:
+
+                  Specifies the number of renderbuffer objects to be deleted.
+
+         :param renderbuffers:
+
+                  A pointer to an array containing *n* renderbuffer objects to be deleted.
+
+.. rubric:: Specification
+
+.. c:function:: void glDeleteRenderbuffers(GLsizei  n, GLuint * renderbuffers)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glGenRenderbuffers`\ ,
+            :c:func:`glFramebufferRenderbuffer`\ ,
+            :c:func:`glRenderbufferStorage`\ ,
+            :c:func:`glRenderbufferStorageMultisample`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glDeleteRenderbuffers` deletes the *n* renderbuffer objects whose names are stored in
+the array addressed by *renderbuffers*\ . The name zero is reserved by the GL and is silently ignored, should it
+occur in *renderbuffers*\ , as are other unused names. Once a renderbuffer object is deleted, its name is again
+unused and it has no contents. If a renderbuffer that is currently bound to the target ``GL_RENDERBUFFER``
+is deleted, it is as though :c:func:`glBindRenderbuffer`
+had been executed with a *target* of ``GL_RENDERBUFFER`` and a *name* of zero.
+
+
+If a renderbuffer object is attached to one or more attachment points in the currently bound framebuffer, then it as if
+:c:func:`glFramebufferRenderbuffer` had been called, with a *renderbuffer*
+of zero for each attachment point to which this image was attached in the currently bound framebuffer. In other words,
+this renderbuffer object is first detached from all attachment ponits in the currently bound framebuffer. Note that the renderbuffer
+image is specifically :strong:`not` detached from any non-bound framebuffers.
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_VALUE`` is generated if *n* is negative.
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glDeleteRenderbuffers'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )2010 Khronos Group. Open Publication License.
+

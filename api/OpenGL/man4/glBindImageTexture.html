@@ -1,0 +1,342 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glBindImageTexture &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glBindProgramPipeline" href="glBindProgramPipeline.html" />
+    <link rel="prev" title="function glBindFramebuffer" href="glBindFramebuffer.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glBindProgramPipeline.html" title="function glBindProgramPipeline"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glBindFramebuffer.html" title="function glBindFramebuffer"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glbindimagetexture">
+<h1>function <cite>glBindImageTexture</cite><a class="headerlink" href="#function-glbindimagetexture" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Bind a level of a texture to an image unit</p>
+<dl class="function">
+<dt id="glBindImageTexture">
+<tt class="descname">glBindImageTexture</tt><big>(</big><big>)</big><a class="headerlink" href="#glBindImageTexture" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>unit</strong> &#8211; Specifies the index of the image unit to which to bind the texture</li>
+<li><strong>texture</strong> &#8211; Specifies the name of the texture to bind to the image unit.</li>
+<li><strong>level</strong> &#8211; Specifies the level of the texture that is to be bound.</li>
+<li><strong>layered</strong> &#8211; Specifies whether a layered texture binding is to be established.</li>
+<li><strong>layer</strong> &#8211; If <em>layered</em> is <tt class="docutils literal"><span class="pre">GL_FALSE</span></tt>, specifies the layer of <em>texture</em> to be bound to the image unit. Ignored otherwise.</li>
+<li><strong>access</strong> &#8211; Specifies a token indicating the type of access that will be performed on the image.</li>
+<li><strong>format</strong> &#8211; Specifies the format that the elements of the image will be treated as for the purposes of formatted stores.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glBindImageTexture</tt><big>(</big>GLuint <em>&nbsp;unit</em>, GLuint <em>&nbsp;texture</em>, GLint <em>&nbsp;level</em>, GLboolean <em>&nbsp;layered</em>, GLint <em>&nbsp;layer</em>, GLenum <em>&nbsp;access</em>, GLenum <em>&nbsp;format</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glGenTextures.html#glGenTextures" title="glGenTextures"><tt class="xref c c-func docutils literal"><span class="pre">glGenTextures()</span></tt></a>,
+<a class="reference internal" href="glTexImage1D.html#glTexImage1D" title="glTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage1D()</span></tt></a>,
+<a class="reference internal" href="glTexImage2D.html#glTexImage2D" title="glTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage2D()</span></tt></a>,
+<a class="reference internal" href="glTexImage3D.html#glTexImage3D" title="glTexImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage3D()</span></tt></a>,
+<a class="reference internal" href="glTexStorage1D.html#glTexStorage1D" title="glTexStorage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexStorage1D()</span></tt></a>,
+<a class="reference internal" href="glTexStorage2D.html#glTexStorage2D" title="glTexStorage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexStorage2D()</span></tt></a>,
+<a class="reference internal" href="glTexStorage3D.html#glTexStorage3D" title="glTexStorage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexStorage3D()</span></tt></a>,
+<a class="reference internal" href="glBindTexture.html#glBindTexture" title="glBindTexture"><tt class="xref c c-func docutils literal"><span class="pre">glBindTexture()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glBindImageTexture" title="glBindImageTexture"><tt class="xref c c-func docutils literal"><span class="pre">glBindImageTexture()</span></tt></a> binds a single level of a texture to an image unit for the purpose of
+reading and writing it from shaders. <em>unit</em> specifies the zero-based index of the image
+unit to which to bind the texture level. <em>texture</em> specifies the name of an existing texture
+object to bind to the image unit. If <em>texture</em> is zero, then any existing binding to
+the image unit is broken. <em>level</em> specifies the level of the texture to bind to the image
+unit.</p>
+<p>If <em>texture</em> is the name of a one-, two-, or three-dimensional array texture, a cube map
+or cube map array texture, or a two-dimensional multisample array texture, then it is possible to bind either
+the entire array, or only a single layer of the array to the image unit. In such cases, if <em>layered</em>
+is <tt class="docutils literal"><span class="pre">GL_TRUE</span></tt>, the entire array is attached to the image unit and <em>layer</em>
+is ignored. However, if <em>layered</em> is <tt class="docutils literal"><span class="pre">GL_FALSE</span></tt> then <em>layer</em>
+specifies the layer of the array to attach to the image unit.</p>
+<p><em>access</em> specifies the access types to be performed by shaders and may be set to
+<tt class="docutils literal"><span class="pre">GL_READ_ONLY</span></tt>, <tt class="docutils literal"><span class="pre">GL_WRITE_ONLY</span></tt>, or <tt class="docutils literal"><span class="pre">GL_READ_WRITE</span></tt>
+to indicate read-only, write-only or read-write access, respectively. Violation of the access type specified in <em>access</em>
+(for example, if a shader writes to an image bound with <em>access</em> set to <tt class="docutils literal"><span class="pre">GL_READ_ONLY</span></tt>)
+will lead to undefined results, possibly including program termination.</p>
+<p><em>format</em> specifies the format that is to be used when performing formatted stores into the
+image from shaders. <em>format</em> must be compatible with the texture&#8217;s internal format and must
+be one of the formats listed in the following table.</p>
+<table border="1" class="docutils">
+<caption>Internal Image Formats</caption>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Image Unit Format</strong></th>
+<th class="head"><strong>Format Qualifier</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RGBA32F</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">rgba32f</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RGBA16F</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">rgba16f</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RG32F</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">rg32f</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RG16F</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">rg16f</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_R11F_G11F_B10F</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">r11f_g11f_b10f</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_R32F</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">r32f</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_R16F</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">r16f</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RGBA32UI</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">rgba32ui</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RGBA16UI</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">rgba16ui</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RGB10_A2UI</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">rgb10_a2ui</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RGBA8UI</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">rgba8ui</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RG32UI</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">rg32ui</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RG16UI</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">rg16ui</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RG8UI</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">rg8ui</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_R32UI</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">r32ui</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_R16UI</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">r16ui</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_R8UI</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">r8ui</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RGBA32I</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">rgba32i</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RGBA16I</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">rgba16i</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RGBA8I</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">rgba8i</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RG32I</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">rg32i</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RG16I</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">rg16i</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RG8I</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">rg8i</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_R32I</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">r32i</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_R16I</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">r16i</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_R8I</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">r8i</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RGBA16</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">rgba16</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RGB10_A2</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">rgb10_a2</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RGBA8</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">rgba8</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RG16</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">rg16</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RG8</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">rg8</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_R16</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">r16</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_R8</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">r8</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RGBA16_SNORM</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">rgba16_snorm</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RGBA8_SNORM</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">rgba8_snorm</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_RG16_SNORM</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">rg16_snorm</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_RG8_SNORM</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">rg8_snorm</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_R16_SNORM</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">r16_snorm</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_R8_SNORM</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">r8_snorm</span></tt></td>
+</tr>
+</tbody>
+</table>
+<p>When a texture is bound to an image unit, the <em>format</em> parameter for the image
+unit need not exactly match the texture internal format as long as the formats are
+considered compatible as defined in the OpenGL Specification. The matching criterion used
+for a given texture may be determined by calling <a class="reference internal" href="glGetTexParameter.html#glGetTexParameter" title="glGetTexParameter"><tt class="xref c c-func docutils literal"><span class="pre">glGetTexParameter()</span></tt></a>
+with <em>value</em>
+set to <tt class="docutils literal"><span class="pre">GL_IMAGE_FORMAT_COMPATIBILITY_TYPE</span></tt>, with return values of <tt class="docutils literal"><span class="pre">GL_IMAGE_FORMAT_COMPATIBILITY_BY_SIZE</span></tt>
+and <tt class="docutils literal"><span class="pre">GL_IMAGE_FORMAT_COMPATIBILITY_BY_CLASS</span></tt>, specifying matches by size and class, respectively.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <a class="reference internal" href="#glBindImageTexture" title="glBindImageTexture"><tt class="xref c c-func docutils literal"><span class="pre">glBindImageTexture()</span></tt></a> is available only if the GL version is 4.2 or greater.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>unit</em> greater than or equal to the value of <tt class="docutils literal"><span class="pre">GL_MAX_IMAGE_UNITS</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>texture</em> is not the name of an existing texture object.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>level</em> or <em>layer</em> is less than zero.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>access</em> or <em>format</em> is not one of the supported tokens.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_IMAGE_BINDING_NAME</span></tt>.</li>
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_IMAGE_BINDING_LEVEL</span></tt>.</li>
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_IMAGE_BINDING_LAYERED</span></tt>.</li>
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_IMAGE_BINDING_LAYER</span></tt>.</li>
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_IMAGE_BINDING_ACCESS</span></tt>.</li>
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_IMAGE_BINDING_FORMAT</span></tt>.</li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)2011 Khronos Group. Open Publication License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glBindFramebuffer.html"
+                        title="previous chapter">function <cite>glBindFramebuffer</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glBindProgramPipeline.html"
+                        title="next chapter">function <cite>glBindProgramPipeline</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glBindImageTexture.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glBindProgramPipeline.html" title="function glBindProgramPipeline"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glBindFramebuffer.html" title="function glBindFramebuffer"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,178 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:28
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glMultiTexCoord.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man3
+
+function `glMultiTexCoord`
+--------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 3 Vol. 3G
+
+Set the current texture coordinates
+
+.. c:function:: glMultiTexCoord
+
+
+         :param target:
+
+                  Specifies the texture unit whose coordinates should be modified. The number
+                  of texture units is implementation dependent, but must be at least
+                  two. Symbolic constant must be one of
+                  ``GL_TEXTURE`` |EQUATION_1_|\ ,
+                  where i ranges from 0 to ``GL_MAX_TEXTURE_COORDS`` - 1,
+                  which is an implementation-dependent value.
+
+         :param s:
+         :param t:
+         :param r:
+         :param q:
+
+                  Specify *s*\ , *t*\ , *r*\ , and *q* texture coordinates for
+                  *target* texture unit. Not all parameters are present in all forms
+                  of the command.
+
+.. rubric:: Specification
+
+.. c:function:: void glMultiTexCoord1s(GLenum  target, GLshort  s, GLenum  target, GLint  s, GLenum  target, GLfloat  s, GLenum  target, GLdouble  s, GLenum  target, GLshort  s, GLshort  t, GLenum  target, GLint  s, GLint  t, GLenum  target, GLfloat  s, GLfloat  t, GLenum  target, GLdouble  s, GLdouble  t, GLenum  target, GLshort  s, GLshort  t, GLshort  r, GLenum  target, GLint  s, GLint  t, GLint  r, GLenum  target, GLfloat  s, GLfloat  t, GLfloat  r, GLenum  target, GLdouble  s, GLdouble  t, GLdouble  r, GLenum  target, GLshort  s, GLshort  t, GLshort  r, GLshort  q, GLenum  target, GLint  s, GLint  t, GLint  r, GLint  q, GLenum  target, GLfloat  s, GLfloat  t, GLfloat  r, GLfloat  q, GLenum  target, GLdouble  s, GLdouble  t, GLdouble  r, GLdouble  q)
+.. c:function:: void glMultiTexCoord1sv(GLenum  target, const GLshort *  v, GLenum  target, const GLint *  v, GLenum  target, const GLfloat *  v, GLenum  target, const GLdouble *  v, GLenum  target, const GLshort *  v, GLenum  target, const GLint *  v, GLenum  target, const GLfloat *  v, GLenum  target, const GLdouble *  v, GLenum  target, const GLshort *  v, GLenum  target, const GLint *  v, GLenum  target, const GLfloat *  v, GLenum  target, const GLdouble *  v, GLenum  target, const GLshort *  v, GLenum  target, const GLint *  v, GLenum  target, const GLfloat *  v, GLenum  target, const GLdouble *  v)
+
+
+.. seealso::
+
+
+            :c:func:`glActiveTexture`\ ,
+            :c:func:`glTexCoord`\ ,
+            :c:func:`glVertex`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Parameters
+
+..
+
+
+      *target*
+
+
+            Specifies the texture unit whose coordinates should be modified. The number
+            of texture units is implementation dependent, but must be at least
+            two. Symbolic constant must be one of
+            ``GL_TEXTURE`` |EQUATION_2_|\ ,
+            where i ranges from 0 to ``GL_MAX_TEXTURE_COORDS`` - 1,
+            which is an implementation-dependent value.
+
+
+      *v*
+
+
+            Specifies a pointer to an array of one, two, three, or four elements,
+            which in turn specify the
+            |EQUATION_3_|\ ,
+            |EQUATION_4_|\ ,
+            |EQUATION_5_|\ ,
+            and |EQUATION_6_| texture coordinates.
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glMultiTexCoord` specifies texture coordinates in one, two, three, or four
+dimensions.
+:c:func:`glMultiTexCoord1` sets the current texture
+coordinates to |EQUATION_7_|\ ;
+a call to :c:func:`glMultiTexCoord2`
+sets them to |EQUATION_8_|\ .
+Similarly, :c:func:`glMultiTexCoord3` specifies the texture coordinates as |EQUATION_9_|\ ,
+and
+:c:func:`glMultiTexCoord4`
+defines all four components explicitly as |EQUATION_10_|\ .
+
+
+The current texture coordinates are part of the data
+that is associated with each vertex and with the current
+raster position.
+Initially, the values for
+|EQUATION_11_| are |EQUATION_12_|\ .
+
+
+.. note::
+
+
+   The current texture coordinates can be updated at any time.
+
+
+   It is always the case that ``GL_TEXTURE``
+   |EQUATION_13_| = ``GL_TEXTURE0`` + |EQUATION_14_|\ .
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGet` with argument ``GL_CURRENT_TEXTURE_COORDS`` with appropriate texture unit selected.
+* :c:func:`glGet` with argument ``GL_MAX_TEXTURE_COORDS``
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glMultiTexCoord'>
+
+.. role:: mml(raw)
+   :format: html
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">s</mi></math>` 
+
+.. |EQUATION_4_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">t</mi></math>` 
+
+.. |EQUATION_5_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">r</mi></math>` 
+
+.. |EQUATION_6_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">q</mi></math>` 
+
+.. |EQUATION_7_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mi mathvariant="italic">s</mi><mn>0</mn><mn>0</mn><mn>1</mn></mfenced></math>` 
+
+.. |EQUATION_8_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mi mathvariant="italic">s</mi><mi mathvariant="italic">t</mi><mn>0</mn><mn>1</mn></mfenced></math>` 
+
+.. |EQUATION_9_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mi mathvariant="italic">s</mi><mi mathvariant="italic">t</mi><mi mathvariant="italic">r</mi><mn>1</mn></mfenced></math>` 
+
+.. |EQUATION_10_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mi mathvariant="italic">s</mi><mi mathvariant="italic">t</mi><mi mathvariant="italic">r</mi><mi mathvariant="italic">q</mi></mfenced></math>` 
+
+.. |EQUATION_11_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mi mathvariant="italic">s</mi><mi mathvariant="italic">t</mi><mi mathvariant="italic">r</mi><mi mathvariant="italic">q</mi></mfenced></math>` 
+
+.. |EQUATION_12_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mn>0</mn><mn>0</mn><mn>0</mn><mn>1</mn></mfenced></math>` 
+
+.. |EQUATION_13_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math>` 
+
+.. |EQUATION_14_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math>` 
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

@@ -1,0 +1,668 @@
+Warnings
+********
+
+Processing module OpenGL.man
+----------------------------
+
+OK index_man1.txt
+
+Processing module OpenGL.man3
+-----------------------------
+
+OK index_man3.txt
+
+Processing module OpenGL.man4
+-----------------------------
+
+OK index_man4.txt
+
+Processing module OpenGL.GLSL
+-----------------------------
+
+
+.. _xml_man_abs:
+
+- **man/abs.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 72, column 14',),) in D:\OpenGL\xml\manglsl\abs.xml
+
+.. _xml_man_acos:
+
+- **man/acos.xml**
+   * Warning: ParseError(ExpatError('unbound prefix: line 67, column 0',),) in D:\OpenGL\xml\manglsl\acos.xml
+
+.. _xml_man_acosh:
+
+- **man/acosh.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 54, column 2',),) in D:\OpenGL\xml\manglsl\acosh.xml
+
+.. _xml_man_all:
+
+- **man/all.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 66, column 14',),) in D:\OpenGL\xml\manglsl\all.xml
+
+.. _xml_man_any:
+
+- **man/any.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 66, column 14',),) in D:\OpenGL\xml\manglsl\any.xml
+
+.. _xml_man_asin:
+
+- **man/asin.xml**
+   * Warning: ParseError(ExpatError('unbound prefix: line 76, column 0',),) in D:\OpenGL\xml\manglsl\asin.xml
+
+.. _xml_man_asinh:
+
+- **man/asinh.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 59, column 14',),) in D:\OpenGL\xml\manglsl\asinh.xml
+
+.. _xml_man_atan:
+
+- **man/atan.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 148, column 14',),) in D:\OpenGL\xml\manglsl\atan.xml
+
+.. _xml_man_atanh:
+
+- **man/atanh.xml**
+   * Warning: ParseError(ExpatError('unbound prefix: line 56, column 0',),) in D:\OpenGL\xml\manglsl\atanh.xml
+
+.. _xml_man_atomicCounter:
+
+- **man/atomicCounter.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 54, column 14',),) in D:\OpenGL\xml\manglsl\atomicCounter.xml
+
+.. _xml_man_atomicCounterDecrement:
+
+- **man/atomicCounterDecrement.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 54, column 14',),) in D:\OpenGL\xml\manglsl\atomicCounterDecrement.xml
+
+.. _xml_man_atomicCounterIncrement:
+
+- **man/atomicCounterIncrement.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 54, column 14',),) in D:\OpenGL\xml\manglsl\atomicCounterIncrement.xml
+
+.. _xml_man_barrier:
+
+- **man/barrier.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 53, column 14',),) in D:\OpenGL\xml\manglsl\barrier.xml
+
+.. _xml_man_bitCount:
+
+- **man/bitCount.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 56, column 14',),) in D:\OpenGL\xml\manglsl\bitCount.xml
+
+.. _xml_man_bitfieldExtract:
+
+- **man/bitfieldExtract.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 85, column 14',),) in D:\OpenGL\xml\manglsl\bitfieldExtract.xml
+
+.. _xml_man_bitfieldInsert:
+
+- **man/bitfieldInsert.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 92, column 14',),) in D:\OpenGL\xml\manglsl\bitfieldInsert.xml
+
+.. _xml_man_bitfieldReverse:
+
+- **man/bitfieldReverse.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 59, column 14',),) in D:\OpenGL\xml\manglsl\bitfieldReverse.xml
+
+.. _xml_man_ceil:
+
+- **man/ceil.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 63, column 14',),) in D:\OpenGL\xml\manglsl\ceil.xml
+
+.. _xml_man_clamp:
+
+- **man/clamp.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 140, column 14',),) in D:\OpenGL\xml\manglsl\clamp.xml
+
+.. _xml_man_cos:
+
+- **man/cos.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 53, column 14',),) in D:\OpenGL\xml\manglsl\cos.xml
+
+.. _xml_man_cosh:
+
+- **man/cosh.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 89, column 14',),) in D:\OpenGL\xml\manglsl\cosh.xml
+
+.. _xml_man_cross:
+
+- **man/cross.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 143, column 14',),) in D:\OpenGL\xml\manglsl\cross.xml
+
+.. _xml_man_degrees:
+
+- **man/degrees.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 68, column 14',),) in D:\OpenGL\xml\manglsl\degrees.xml
+
+.. _xml_man_determinant:
+
+- **man/determinant.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 76, column 14',),) in D:\OpenGL\xml\manglsl\determinant.xml
+
+.. _xml_man_dFdx:
+
+- **man/dFdx.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 65, column 14',),) in D:\OpenGL\xml\manglsl\dFdx.xml
+
+.. _xml_man_distance:
+
+- **man/distance.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 71, column 14',),) in D:\OpenGL\xml\manglsl\distance.xml
+
+.. _xml_man_dot:
+
+- **man/dot.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 97, column 14',),) in D:\OpenGL\xml\manglsl\dot.xml
+
+.. _xml_man_EmitStreamVertex:
+
+- **man/EmitStreamVertex.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 56, column 14',),) in D:\OpenGL\xml\manglsl\EmitStreamVertex.xml
+
+.. _xml_man_EmitVertex:
+
+- **man/EmitVertex.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 44, column 14',),) in D:\OpenGL\xml\manglsl\EmitVertex.xml
+
+.. _xml_man_EndPrimitive:
+
+- **man/EndPrimitive.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 44, column 14',),) in D:\OpenGL\xml\manglsl\EndPrimitive.xml
+
+.. _xml_man_EndStreamPrimitive:
+
+- **man/EndStreamPrimitive.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 55, column 14',),) in D:\OpenGL\xml\manglsl\EndStreamPrimitive.xml
+
+.. _xml_man_equal:
+
+- **man/equal.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 73, column 14',),) in D:\OpenGL\xml\manglsl\equal.xml
+
+.. _xml_man_exp:
+
+- **man/exp.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 58, column 14',),) in D:\OpenGL\xml\manglsl\exp.xml
+
+.. _xml_man_exp2:
+
+- **man/exp2.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 58, column 14',),) in D:\OpenGL\xml\manglsl\exp2.xml
+
+.. _xml_man_faceforward:
+
+- **man/faceforward.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 82, column 14',),) in D:\OpenGL\xml\manglsl\faceforward.xml
+
+.. _xml_man_findLSB:
+
+- **man/findLSB.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 57, column 14',),) in D:\OpenGL\xml\manglsl\findLSB.xml
+
+.. _xml_man_findMSB:
+
+- **man/findMSB.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 59, column 14',),) in D:\OpenGL\xml\manglsl\findMSB.xml
+
+.. _xml_man_floatBitsToInt:
+
+- **man/floatBitsToInt.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 62, column 14',),) in D:\OpenGL\xml\manglsl\floatBitsToInt.xml
+
+.. _xml_man_floor:
+
+- **man/floor.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 62, column 14',),) in D:\OpenGL\xml\manglsl\floor.xml
+
+.. _xml_man_fma:
+
+- **man/fma.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 97, column 14',),) in D:\OpenGL\xml\manglsl\fma.xml
+
+.. _xml_man_fract:
+
+- **man/fract.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 63, column 14',),) in D:\OpenGL\xml\manglsl\fract.xml
+
+.. _xml_man_frexp:
+
+- **man/frexp.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 93, column 14',),) in D:\OpenGL\xml\manglsl\frexp.xml
+
+.. _xml_man_fwidth:
+
+- **man/fwidth.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 55, column 14',),) in D:\OpenGL\xml\manglsl\fwidth.xml
+
+.. _xml_man_gl_ClipDistance:
+
+- **man/gl_ClipDistance.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 100, column 14',),) in D:\OpenGL\xml\manglsl\gl_ClipDistance.xml
+
+.. _xml_man_gl_FragCoord:
+
+- **man/gl_FragCoord.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 63, column 14',),) in D:\OpenGL\xml\manglsl\gl_FragCoord.xml
+
+.. _xml_man_gl_FragDepth:
+
+- **man/gl_FragDepth.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 46, column 14',),) in D:\OpenGL\xml\manglsl\gl_FragDepth.xml
+
+.. _xml_man_gl_SampleID:
+
+- **man/gl_SampleID.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 50, column 14',),) in D:\OpenGL\xml\manglsl\gl_SampleID.xml
+
+.. _xml_man_greaterThan:
+
+- **man/greaterThan.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 79, column 14',),) in D:\OpenGL\xml\manglsl\greaterThan.xml
+
+.. _xml_man_greaterThanEqual:
+
+- **man/greaterThanEqual.xml**
+   * Warning: ParseError(ExpatError(u'undefined entity &ge;: line 61, column 64',),) in D:\OpenGL\xml\manglsl\greaterThanEqual.xml
+
+.. _xml_man_imageAtomicAdd:
+
+- **man/imageAtomicAdd.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 211, column 14',),) in D:\OpenGL\xml\manglsl\imageAtomicAdd.xml
+
+.. _xml_man_imageAtomicAnd:
+
+- **man/imageAtomicAnd.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 211, column 14',),) in D:\OpenGL\xml\manglsl\imageAtomicAnd.xml
+
+.. _xml_man_imageAtomicCompSwap:
+
+- **man/imageAtomicCompSwap.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 212, column 14',),) in D:\OpenGL\xml\manglsl\imageAtomicCompSwap.xml
+
+.. _xml_man_imageAtomicExchange:
+
+- **man/imageAtomicExchange.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 211, column 14',),) in D:\OpenGL\xml\manglsl\imageAtomicExchange.xml
+
+.. _xml_man_imageAtomicMax:
+
+- **man/imageAtomicMax.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 211, column 14',),) in D:\OpenGL\xml\manglsl\imageAtomicMax.xml
+
+.. _xml_man_imageAtomicMin:
+
+- **man/imageAtomicMin.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 211, column 14',),) in D:\OpenGL\xml\manglsl\imageAtomicMin.xml
+
+.. _xml_man_imageAtomicOr:
+
+- **man/imageAtomicOr.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 211, column 14',),) in D:\OpenGL\xml\manglsl\imageAtomicOr.xml
+
+.. _xml_man_imageAtomicXor:
+
+- **man/imageAtomicXor.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 211, column 14',),) in D:\OpenGL\xml\manglsl\imageAtomicXor.xml
+
+.. _xml_man_imageLoad:
+
+- **man/imageLoad.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 126, column 14',),) in D:\OpenGL\xml\manglsl\imageLoad.xml
+
+.. _xml_man_imageStore:
+
+- **man/imageStore.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 145, column 14',),) in D:\OpenGL\xml\manglsl\imageStore.xml
+
+.. _xml_man_intBitsToFloat:
+
+- **man/intBitsToFloat.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 62, column 14',),) in D:\OpenGL\xml\manglsl\intBitsToFloat.xml
+
+.. _xml_man_interpolateAtCentroid:
+
+- **man/interpolateAtCentroid.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 67, column 14',),) in D:\OpenGL\xml\manglsl\interpolateAtCentroid.xml
+
+.. _xml_man_interpolateAtOffset:
+
+- **man/interpolateAtOffset.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 81, column 14',),) in D:\OpenGL\xml\manglsl\interpolateAtOffset.xml
+
+.. _xml_man_interpolateAtSample:
+
+- **man/interpolateAtSample.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 80, column 14',),) in D:\OpenGL\xml\manglsl\interpolateAtSample.xml
+
+.. _xml_man_inverse:
+
+- **man/inverse.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 77, column 14',),) in D:\OpenGL\xml\manglsl\inverse.xml
+
+.. _xml_man_inversesqrt:
+
+- **man/inversesqrt.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 59, column 2',),) in D:\OpenGL\xml\manglsl\inversesqrt.xml
+
+.. _xml_man_isinf:
+
+- **man/isinf.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 61, column 14',),) in D:\OpenGL\xml\manglsl\isinf.xml
+
+.. _xml_man_isnan:
+
+- **man/isnan.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 61, column 14',),) in D:\OpenGL\xml\manglsl\isnan.xml
+
+.. _xml_man_ldexp:
+
+- **man/ldexp.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 89, column 14',),) in D:\OpenGL\xml\manglsl\ldexp.xml
+
+.. _xml_man_length:
+
+- **man/length.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 73, column 14',),) in D:\OpenGL\xml\manglsl\length.xml
+
+.. _xml_man_lessThan:
+
+- **man/lessThan.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 79, column 14',),) in D:\OpenGL\xml\manglsl\lessThan.xml
+
+.. _xml_man_lessThanEqual:
+
+- **man/lessThanEqual.xml**
+   * Warning: ParseError(ExpatError(u'undefined entity &le;: line 61, column 64',),) in D:\OpenGL\xml\manglsl\lessThanEqual.xml
+
+.. _xml_man_log:
+
+- **man/log.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 53, column 2',),) in D:\OpenGL\xml\manglsl\log.xml
+
+.. _xml_man_log2:
+
+- **man/log2.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 53, column 2',),) in D:\OpenGL\xml\manglsl\log2.xml
+
+.. _xml_man_matrixCompMult:
+
+- **man/matrixCompMult.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 73, column 14',),) in D:\OpenGL\xml\manglsl\matrixCompMult.xml
+
+.. _xml_man_max:
+
+- **man/max.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 122, column 14',),) in D:\OpenGL\xml\manglsl\max.xml
+
+.. _xml_man_memoryBarrier:
+
+- **man/memoryBarrier.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 48, column 14',),) in D:\OpenGL\xml\manglsl\memoryBarrier.xml
+
+.. _xml_man_min:
+
+- **man/min.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 122, column 14',),) in D:\OpenGL\xml\manglsl\min.xml
+
+.. _xml_man_mix:
+
+- **man/mix.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 141, column 14',),) in D:\OpenGL\xml\manglsl\mix.xml
+
+.. _xml_man_mod:
+
+- **man/mod.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 80, column 14',),) in D:\OpenGL\xml\manglsl\mod.xml
+
+.. _xml_man_modf:
+
+- **man/modf.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 75, column 14',),) in D:\OpenGL\xml\manglsl\modf.xml
+
+.. _xml_man_noise:
+
+- **man/noise.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 89, column 14',),) in D:\OpenGL\xml\manglsl\noise.xml
+
+.. _xml_man_normalize:
+
+- **man/normalize.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 60, column 14',),) in D:\OpenGL\xml\manglsl\normalize.xml
+
+.. _xml_man_not:
+
+- **man/not.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 54, column 14',),) in D:\OpenGL\xml\manglsl\not.xml
+
+.. _xml_man_notEqual:
+
+- **man/notEqual.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 79, column 14',),) in D:\OpenGL\xml\manglsl\notEqual.xml
+
+.. _xml_man_outerProduct:
+
+- **man/outerProduct.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 154, column 14',),) in D:\OpenGL\xml\manglsl\outerProduct.xml
+
+.. _xml_man_packDouble2x32:
+
+- **man/packDouble2x32.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 57, column 14',),) in D:\OpenGL\xml\manglsl\packDouble2x32.xml
+
+.. _xml_man_packHalf2x16:
+
+- **man/packHalf2x16.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 58, column 14',),) in D:\OpenGL\xml\manglsl\packHalf2x16.xml
+
+.. _xml_man_packUnorm2x16:
+
+- **man/packUnorm2x16.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 90, column 14',),) in D:\OpenGL\xml\manglsl\packUnorm2x16.xml
+
+.. _xml_man_pow:
+
+- **man/pow.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 62, column 2',),) in D:\OpenGL\xml\manglsl\pow.xml
+
+.. _xml_man_radians:
+
+- **man/radians.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 67, column 14',),) in D:\OpenGL\xml\manglsl\radians.xml
+
+.. _xml_man_reflect:
+
+- **man/reflect.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 74, column 14',),) in D:\OpenGL\xml\manglsl\reflect.xml
+
+.. _xml_man_refract:
+
+- **man/refract.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 95, column 14',),) in D:\OpenGL\xml\manglsl\refract.xml
+
+.. _xml_man_round:
+
+- **man/round.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 66, column 14',),) in D:\OpenGL\xml\manglsl\round.xml
+
+.. _xml_man_roundEven:
+
+- **man/roundEven.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 64, column 14',),) in D:\OpenGL\xml\manglsl\roundEven.xml
+
+.. _xml_man_sign:
+
+- **man/sign.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 60, column 2',),) in D:\OpenGL\xml\manglsl\sign.xml
+
+.. _xml_man_sin:
+
+- **man/sin.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 53, column 14',),) in D:\OpenGL\xml\manglsl\sin.xml
+
+.. _xml_man_sinh:
+
+- **man/sinh.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 89, column 14',),) in D:\OpenGL\xml\manglsl\sinh.xml
+
+.. _xml_man_smoothstep:
+
+- **man/smoothstep.xml**
+   * Warning: ParseError(ExpatError(u'undefined entity &ge;: line 95, column 66',),) in D:\OpenGL\xml\manglsl\smoothstep.xml
+
+.. _xml_man_sqrt:
+
+- **man/sqrt.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 59, column 2',),) in D:\OpenGL\xml\manglsl\sqrt.xml
+
+.. _xml_man_step:
+
+- **man/step.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 90, column 14',),) in D:\OpenGL\xml\manglsl\step.xml
+
+.. _xml_man_tan:
+
+- **man/tan.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 53, column 14',),) in D:\OpenGL\xml\manglsl\tan.xml
+
+.. _xml_man_tanh:
+
+- **man/tanh.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 80, column 14',),) in D:\OpenGL\xml\manglsl\tanh.xml
+
+.. _xml_man_texelFetch:
+
+- **man/texelFetch.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 135, column 14',),) in D:\OpenGL\xml\manglsl\texelFetch.xml
+
+.. _xml_man_texelFetchOffset:
+
+- **man/texelFetchOffset.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 125, column 14',),) in D:\OpenGL\xml\manglsl\texelFetchOffset.xml
+
+.. _xml_man_texture:
+
+- **man/texture.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 192, column 14',),) in D:\OpenGL\xml\manglsl\texture.xml
+
+.. _xml_man_textureGather:
+
+- **man/textureGather.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 145, column 14',),) in D:\OpenGL\xml\manglsl\textureGather.xml
+
+.. _xml_man_textureGatherOffset:
+
+- **man/textureGatherOffset.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 141, column 14',),) in D:\OpenGL\xml\manglsl\textureGatherOffset.xml
+
+.. _xml_man_textureGatherOffsets:
+
+- **man/textureGatherOffsets.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 132, column 14',),) in D:\OpenGL\xml\manglsl\textureGatherOffsets.xml
+
+.. _xml_man_textureGrad:
+
+- **man/textureGrad.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 296, column 14',),) in D:\OpenGL\xml\manglsl\textureGrad.xml
+
+.. _xml_man_textureGradOffset:
+
+- **man/textureGradOffset.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 177, column 14',),) in D:\OpenGL\xml\manglsl\textureGradOffset.xml
+
+.. _xml_man_textureLod:
+
+- **man/textureLod.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 253, column 14',),) in D:\OpenGL\xml\manglsl\textureLod.xml
+
+.. _xml_man_textureLodOffset:
+
+- **man/textureLodOffset.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 138, column 14',),) in D:\OpenGL\xml\manglsl\textureLodOffset.xml
+
+.. _xml_man_textureOffset:
+
+- **man/textureOffset.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 145, column 14',),) in D:\OpenGL\xml\manglsl\textureOffset.xml
+
+.. _xml_man_textureProj:
+
+- **man/textureProj.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 138, column 14',),) in D:\OpenGL\xml\manglsl\textureProj.xml
+
+.. _xml_man_textureProjGrad:
+
+- **man/textureProjGrad.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 160, column 14',),) in D:\OpenGL\xml\manglsl\textureProjGrad.xml
+
+.. _xml_man_textureProjGradOffset:
+
+- **man/textureProjGradOffset.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 178, column 14',),) in D:\OpenGL\xml\manglsl\textureProjGradOffset.xml
+
+.. _xml_man_textureProjLod:
+
+- **man/textureProjLod.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 121, column 14',),) in D:\OpenGL\xml\manglsl\textureProjLod.xml
+
+.. _xml_man_textureProjLodOffset:
+
+- **man/textureProjLodOffset.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 138, column 14',),) in D:\OpenGL\xml\manglsl\textureProjLodOffset.xml
+
+.. _xml_man_textureProjOffset:
+
+- **man/textureProjOffset.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 157, column 14',),) in D:\OpenGL\xml\manglsl\textureProjOffset.xml
+
+.. _xml_man_textureQueryLod:
+
+- **man/textureQueryLod.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 129, column 14',),) in D:\OpenGL\xml\manglsl\textureQueryLod.xml
+
+.. _xml_man_textureSize:
+
+- **man/textureSize.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 150, column 14',),) in D:\OpenGL\xml\manglsl\textureSize.xml
+
+.. _xml_man_transpose:
+
+- **man/transpose.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 124, column 14',),) in D:\OpenGL\xml\manglsl\transpose.xml
+
+.. _xml_man_trunc:
+
+- **man/trunc.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 63, column 14',),) in D:\OpenGL\xml\manglsl\trunc.xml
+
+.. _xml_man_uaddCarry:
+
+- **man/uaddCarry.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 84, column 14',),) in D:\OpenGL\xml\manglsl\uaddCarry.xml
+
+.. _xml_man_umulExtended:
+
+- **man/umulExtended.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 90, column 14',),) in D:\OpenGL\xml\manglsl\umulExtended.xml
+
+.. _xml_man_unpackDouble2x32:
+
+- **man/unpackDouble2x32.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 57, column 14',),) in D:\OpenGL\xml\manglsl\unpackDouble2x32.xml
+
+.. _xml_man_unpackHalf2x16:
+
+- **man/unpackHalf2x16.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 61, column 14',),) in D:\OpenGL\xml\manglsl\unpackHalf2x16.xml
+
+.. _xml_man_unpackUnorm2x16:
+
+- **man/unpackUnorm2x16.xml**
+   * Warning: ParseError(ExpatError('mismatched tag: line 90, column 14',),) in D:\OpenGL\xml\manglsl\unpackUnorm2x16.xml
+
+.. _xml_man_usubBorrow:
+
+- **man/usubBorrow.xml**
+   * Warning: ParseError(ExpatError(u'undefined entity &ge;: line 67, column 92',),) in D:\OpenGL\xml\manglsl\usubBorrow.xml
+END 129 errors index_GLSL.txt
+

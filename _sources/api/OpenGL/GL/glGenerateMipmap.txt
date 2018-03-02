@@ -1,0 +1,67 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glGenerateMipmap`
+---------------------------
+
+.. source file man4/glGenerateMipmap
+
+.. currentmodule:: OpenGL.GL
+
+Generate mipmaps for a specified texture target
+
+.. c:function:: glGenerateMipmap
+.. c:function:: void glGenerateMipmap(GLenum  target)
+   :noindex: 
+
+
+   
+   :param target:
+      Specifies the target to which the texture whose mimaps to generate is bound. *target* must be ``GL_TEXTURE_1D``, ``GL_TEXTURE_2D``, ``GL_TEXTURE_3D``, ``GL_TEXTURE_1D_ARRAY``, ``GL_TEXTURE_2D_ARRAY`` or ``GL_TEXTURE_CUBE_MAP``.
+   
+
+.. seealso::
+
+   
+   :c:func:`glTexImage2D`, :c:func:`glBindTexture`, :c:func:`glGenTextures`
+   
+.. rubric:: Description
+
+
+:c:func:`glGenerateMipmap` generates mipmaps for the texture attached to *target* of the active texture unit. For cube map textures, a ``GL_INVALID_OPERATION`` error is generated if the texture attached to *target* is not cube complete.
+
+Mipmap generation replaces texel array levels |EQUATION_1_| through |EQUATION_2_| with arrays derived from the |EQUATION_3_| array, regardless of their previous contents. All other mimap arrays, including the |EQUATION_4_| array, are left unchanged by this computation.
+
+The internal formats of the derived mipmap arrays all match those of the |EQUATION_5_| array. The contents of the derived arrays are computed by repeated, filtered reduction of the |EQUATION_6_| array. For one- and two-dimensional texture arrays, each layer is filtered independently.
+
+
+**Errors:**
+
+   * ``GL_INVALID_ENUM`` is generated if *target* is not one of the accepted texture targets.
+   * ``GL_INVALID_OPERATION`` is generated if *target* is ``GL_TEXTURE_CUBE_MAP`` and the texture bound to the ``GL_TEXTURE_CUBE_MAP`` target of the active texture unit is not cube complete.
+
+
+.. role:: mml(raw)
+   :format: html
+
+
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <msub> <mi mathvariant="italic">level</mi> <mi>base</mi> </msub> <mo>+</mo> <mn>1</mn> </mrow> </math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mi mathvariant="italic">q</mi> </mrow> </math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <msub> <mi mathvariant="italic">level</mi> <mi>base</mi> </msub> </mrow> </math>` 
+
+.. |EQUATION_4_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <msub> <mi mathvariant="italic">level</mi> <mi>base</mi> </msub> </mrow> </math>` 
+
+.. |EQUATION_5_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <msub> <mi mathvariant="italic">level</mi> <mi>base</mi> </msub> </mrow> </math>` 
+
+.. |EQUATION_6_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <msub> <mi mathvariant="italic">level</mi> <mi>base</mi> </msub> </mrow> </math>` 
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

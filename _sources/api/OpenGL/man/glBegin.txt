@@ -1,0 +1,390 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:26
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glBegin.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glBegin`
+------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Delimit the vertices of a primitive or a group of like primitives
+
+.. c:function:: glBegin
+
+
+         :param mode:
+
+                  Specifies the primitive or primitives that will be created from vertices
+                  presented between :c:func:`glBegin` and the subsequent :c:func:`glEnd`\ .
+                  Ten symbolic constants are accepted:
+                  ``GL_POINTS``\ ,
+                  ``GL_LINES``\ ,
+                  ``GL_LINE_STRIP``\ ,
+                  ``GL_LINE_LOOP``\ ,
+                  ``GL_TRIANGLES``\ ,
+                  ``GL_TRIANGLE_STRIP``\ ,
+                  ``GL_TRIANGLE_FAN``\ ,
+                  ``GL_QUADS``\ ,
+                  ``GL_QUAD_STRIP``\ , and
+                  ``GL_POLYGON``\ .
+
+.. rubric:: Specification
+
+.. c:function:: void glBegin(GLenum  mode)
+   :noindex: 
+
+.. c:function:: void glEnd( void)
+
+
+.. seealso::
+
+
+            :c:func:`glArrayElement`\ ,
+            :c:func:`glCallList`\ ,
+            :c:func:`glCallLists`\ ,
+            :c:func:`glColor`\ ,
+            :c:func:`glEdgeFlag`\ ,
+            :c:func:`glEvalCoord`\ ,
+            :c:func:`glEvalPoint`\ ,
+            :c:func:`glFogCoord`\ ,
+            :c:func:`glIndex`\ ,
+            :c:func:`glMaterial`\ ,
+            :c:func:`glMultiTexCoord`\ ,
+            :c:func:`glNormal`\ ,
+            :c:func:`glSecondaryColor`\ ,
+            :c:func:`glTexCoord`\ ,
+            :c:func:`glVertex`\ ,
+            :c:func:`glVertexAttrib`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glBegin` and :c:func:`glEnd` delimit the vertices that define a primitive or
+a group of like primitives.
+:c:func:`glBegin` accepts a single argument that specifies in which of ten ways the
+vertices are interpreted.
+Taking |EQUATION_1_| as an integer count starting at one,
+and |EQUATION_2_| as the total number of vertices specified,
+the interpretations are as follows:
+
+
+         ``GL_POINTS``
+
+
+               Treats each vertex as a single point.
+               Vertex
+               |EQUATION_3_| defines point |EQUATION_4_|\ .
+               |EQUATION_5_| points are drawn.
+
+
+         ``GL_LINES``
+
+
+               Treats each pair of vertices as an independent line segment.
+               Vertices
+               |EQUATION_6_| and |EQUATION_7_| define line |EQUATION_8_|\ .
+               |EQUATION_9_| lines are drawn.
+
+
+         ``GL_LINE_STRIP``
+
+
+               Draws a connected group of line segments from the first vertex
+               to the last.
+               Vertices
+               |EQUATION_10_| and |EQUATION_11_| define line |EQUATION_12_|\ .
+               |EQUATION_13_| lines are drawn.
+
+
+         ``GL_LINE_LOOP``
+
+
+               Draws a connected group of line segments from the first vertex
+               to the last,
+               then back to the first.
+               Vertices
+               |EQUATION_14_| and |EQUATION_15_| define line |EQUATION_16_|\ .
+               The last line, however, is defined by vertices |EQUATION_17_| and |EQUATION_18_|\ .
+               |EQUATION_19_| lines are drawn.
+
+
+         ``GL_TRIANGLES``
+
+
+               Treats each triplet of vertices as an independent triangle.
+               Vertices
+               |EQUATION_20_|\ ,
+               |EQUATION_21_|\ ,
+               and |EQUATION_22_| define triangle |EQUATION_23_|\ .
+               |EQUATION_24_| triangles are drawn.
+
+
+         ``GL_TRIANGLE_STRIP``
+
+
+               Draws a connected group of triangles.  One triangle is defined for each
+               vertex presented after the first two vertices.  For odd
+               |EQUATION_25_|\ ,
+               vertices |EQUATION_26_|\ ,
+               |EQUATION_27_|\ ,
+               and |EQUATION_28_| define triangle |EQUATION_29_|\ .
+               For even |EQUATION_30_|\ ,
+               vertices |EQUATION_31_|\ ,
+               |EQUATION_32_|\ ,
+               and |EQUATION_33_| define triangle |EQUATION_34_|\ .
+               |EQUATION_35_| triangles are
+               drawn.
+
+
+         ``GL_TRIANGLE_FAN``
+
+
+               Draws a connected group of triangles.
+               One triangle is defined for each vertex presented after the first two vertices.
+               Vertices
+               |EQUATION_36_|\ ,
+               |EQUATION_37_|\ ,
+               and |EQUATION_38_| define triangle |EQUATION_39_|\ .
+               |EQUATION_40_| triangles are drawn.
+
+
+         ``GL_QUADS``
+
+
+               Treats each group of four vertices as an independent quadrilateral.
+               Vertices
+               |EQUATION_41_|\ ,
+               |EQUATION_42_|\ ,
+               |EQUATION_43_|\ ,
+               and |EQUATION_44_| define quadrilateral |EQUATION_45_|\ .
+               |EQUATION_46_| quadrilaterals are drawn.
+
+
+         ``GL_QUAD_STRIP``
+
+
+               Draws a connected group of quadrilaterals.
+               One quadrilateral is defined for each pair of vertices presented
+               after the first pair.
+               Vertices
+               |EQUATION_47_|\ ,
+               |EQUATION_48_|\ ,
+               |EQUATION_49_|\ ,
+               and |EQUATION_50_| define quadrilateral |EQUATION_51_|\ .
+               |EQUATION_52_| quadrilaterals are drawn.
+               Note that the order in which vertices are used to construct a quadrilateral
+               from strip data is different from that used with independent data.
+
+
+         ``GL_POLYGON``
+
+
+               Draws a single,
+               convex polygon.
+               Vertices
+               |EQUATION_53_| through |EQUATION_54_| define this polygon.
+
+
+Only a subset of GL commands can be used between :c:func:`glBegin` and :c:func:`glEnd`\ .
+The commands are
+:c:func:`glVertex`\ ,
+:c:func:`glColor`\ ,
+:c:func:`glSecondaryColor`\ ,
+:c:func:`glIndex`\ ,
+:c:func:`glNormal`\ ,
+:c:func:`glFogCoord`\ ,
+:c:func:`glTexCoord`\ ,
+:c:func:`glMultiTexCoord`\ ,
+:c:func:`glVertexAttrib`\ ,
+:c:func:`glEvalCoord`\ ,
+:c:func:`glEvalPoint`\ ,
+:c:func:`glArrayElement`\ ,
+:c:func:`glMaterial`\ , and
+:c:func:`glEdgeFlag`\ .
+Also,
+it is acceptable to use
+:c:func:`glCallList` or
+:c:func:`glCallLists` to execute
+display lists that include only the preceding commands.
+If any other GL command is executed between :c:func:`glBegin` and :c:func:`glEnd`\ ,
+the error flag is set and the command is ignored.
+
+
+Regardless of the value chosen for *mode*\ ,
+there is no limit to the number of vertices that can be defined
+between :c:func:`glBegin` and :c:func:`glEnd`\ .
+Lines,
+triangles,
+quadrilaterals,
+and polygons that are incompletely specified are not drawn.
+Incomplete specification results when either too few vertices are
+provided to specify even a single primitive or when an incorrect multiple
+of vertices is specified. The incomplete primitive is ignored; the rest are drawn.
+
+
+The minimum specification of vertices
+for each primitive is as follows:
+1 for a point,
+2 for a line,
+3 for a triangle,
+4 for a quadrilateral,
+and 3 for a polygon.
+Modes that require a certain multiple of vertices are
+``GL_LINES`` (2),
+``GL_TRIANGLES`` (3),
+``GL_QUADS`` (4),
+and ``GL_QUAD_STRIP`` (2).
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_ENUM`` is generated if *mode* is set to an unaccepted value.
+* ``GL_INVALID_OPERATION`` is generated if :c:func:`glBegin` is executed between a :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`\ .
+* ``GL_INVALID_OPERATION`` is generated if :c:func:`glEnd` is executed without being preceded by a :c:func:`glBegin`\ .
+* ``GL_INVALID_OPERATION`` is generated if a command other than :c:func:`glVertex`\ , :c:func:`glColor`\ , :c:func:`glSecondaryColor`\ , :c:func:`glIndex`\ , :c:func:`glNormal`\ , :c:func:`glFogCoord`\ , :c:func:`glTexCoord`\ , :c:func:`glMultiTexCoord`\ , :c:func:`glVertexAttrib`\ , :c:func:`glEvalCoord`\ , :c:func:`glEvalPoint`\ , :c:func:`glArrayElement`\ , :c:func:`glMaterial`\ , :c:func:`glEdgeFlag`\ , :c:func:`glCallList`\ , or :c:func:`glCallLists` is executed between the execution of :c:func:`glBegin` and the corresponding execution :c:func:`glEnd`\ .
+* Execution of :c:func:`glEnableClientState`\ , :c:func:`glDisableClientState`\ , :c:func:`glEdgeFlagPointer`\ , :c:func:`glFogCoordPointer`\ , :c:func:`glTexCoordPointer`\ , :c:func:`glColorPointer`\ , :c:func:`glSecondaryColorPointer`\ , :c:func:`glIndexPointer`\ , :c:func:`glNormalPointer`\ , :c:func:`glVertexPointer`\ , :c:func:`glVertexAttribPointer`\ , :c:func:`glInterleavedArrays`\ , or :c:func:`glPixelStore` is not allowed after a call to :c:func:`glBegin` and before the corresponding call to :c:func:`glEnd`\ , but an error may or may not be generated.
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glBegin'>
+
+.. role:: mml(raw)
+   :format: html
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">N</mi></math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math>` 
+
+.. |EQUATION_4_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math>` 
+
+.. |EQUATION_5_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">N</mi></math>` 
+
+.. |EQUATION_6_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>2</mn><mo>&it;</mo><mi mathvariant="italic">n</mi><mo>-</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_7_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>2</mn><mo>&it;</mo><mi mathvariant="italic">n</mi></mrow></math>` 
+
+.. |EQUATION_8_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math>` 
+
+.. |EQUATION_9_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfrac><mi mathvariant="italic">N</mi><mn>2</mn></mfrac></math>` 
+
+.. |EQUATION_10_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math>` 
+
+.. |EQUATION_11_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">n</mi><mo>+</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_12_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math>` 
+
+.. |EQUATION_13_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">N</mi><mo>-</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_14_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math>` 
+
+.. |EQUATION_15_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">n</mi><mo>+</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_16_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math>` 
+
+.. |EQUATION_17_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">N</mi></math>` 
+
+.. |EQUATION_18_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mn>1</mn></math>` 
+
+.. |EQUATION_19_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">N</mi></math>` 
+
+.. |EQUATION_20_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>3</mn><mo>&it;</mo><mi mathvariant="italic">n</mi><mo>-</mo><mn>2</mn></mrow></math>` 
+
+.. |EQUATION_21_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>3</mn><mo>&it;</mo><mi mathvariant="italic">n</mi><mo>-</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_22_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>3</mn><mo>&it;</mo><mi mathvariant="italic">n</mi></mrow></math>` 
+
+.. |EQUATION_23_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math>` 
+
+.. |EQUATION_24_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfrac><mi mathvariant="italic">N</mi><mn>3</mn></mfrac></math>` 
+
+.. |EQUATION_25_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math>` 
+
+.. |EQUATION_26_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math>` 
+
+.. |EQUATION_27_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">n</mi><mo>+</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_28_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">n</mi><mo>+</mo><mn>2</mn></mrow></math>` 
+
+.. |EQUATION_29_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math>` 
+
+.. |EQUATION_30_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math>` 
+
+.. |EQUATION_31_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">n</mi><mo>+</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_32_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math>` 
+
+.. |EQUATION_33_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">n</mi><mo>+</mo><mn>2</mn></mrow></math>` 
+
+.. |EQUATION_34_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math>` 
+
+.. |EQUATION_35_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">N</mi><mo>-</mo><mn>2</mn></mrow></math>` 
+
+.. |EQUATION_36_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mn>1</mn></math>` 
+
+.. |EQUATION_37_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">n</mi><mo>+</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_38_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">n</mi><mo>+</mo><mn>2</mn></mrow></math>` 
+
+.. |EQUATION_39_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math>` 
+
+.. |EQUATION_40_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">N</mi><mo>-</mo><mn>2</mn></mrow></math>` 
+
+.. |EQUATION_41_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>4</mn><mo>&it;</mo><mi mathvariant="italic">n</mi><mo>-</mo><mn>3</mn></mrow></math>` 
+
+.. |EQUATION_42_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>4</mn><mo>&it;</mo><mi mathvariant="italic">n</mi><mo>-</mo><mn>2</mn></mrow></math>` 
+
+.. |EQUATION_43_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>4</mn><mo>&it;</mo><mi mathvariant="italic">n</mi><mo>-</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_44_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>4</mn><mo>&it;</mo><mi mathvariant="italic">n</mi></mrow></math>` 
+
+.. |EQUATION_45_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math>` 
+
+.. |EQUATION_46_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfrac><mi mathvariant="italic">N</mi><mn>4</mn></mfrac></math>` 
+
+.. |EQUATION_47_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>2</mn><mo>&it;</mo><mi mathvariant="italic">n</mi><mo>-</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_48_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>2</mn><mo>&it;</mo><mi mathvariant="italic">n</mi></mrow></math>` 
+
+.. |EQUATION_49_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>2</mn><mo>&it;</mo><mi mathvariant="italic">n</mi><mo>+</mo><mn>2</mn></mrow></math>` 
+
+.. |EQUATION_50_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>2</mn><mo>&it;</mo><mi mathvariant="italic">n</mi><mo>+</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_51_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math>` 
+
+.. |EQUATION_52_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mfrac><mi mathvariant="italic">N</mi><mn>2</mn></mfrac><mo>-</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_53_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mn>1</mn></math>` 
+
+.. |EQUATION_54_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">N</mi></math>` 
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

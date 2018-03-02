@@ -1,0 +1,169 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:29
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glFramebufferTexture.xml'
+.. (c)2010 Khronos Group.
+.. See license details at http://opencontent.org/openpub/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glFramebufferTexture`
+-------------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Attach a level of a texture object as a logical buffer to the currently bound framebuffer object
+
+.. c:function:: glFramebufferTexture
+
+
+         :param target:
+
+                  Specifies the framebuffer target. *target* must be ``GL_DRAW_FRAMEBUFFER``\ ,
+                  ``GL_READ_FRAMEBUFFER``\ , or ``GL_FRAMEBUFFER``\ . ``GL_FRAMEBUFFER``
+                  is equivalent to ``GL_DRAW_FRAMEBUFFER``\ .
+
+         :param attachment:
+
+                  Specifies the attachment point of the framebuffer. *attachment* must be
+                  ``GL_COLOR_ATTACHMENT i``\ , ``GL_DEPTH_ATTACHMENT``\ ,
+                  ``GL_STENCIL_ATTACHMENT`` or ``GL_DEPTH_STENCIL_ATTACHMMENT``\ .
+
+         :param textarget:
+
+                  For :c:func:`glFramebufferTexture1D`\ , :c:func:`glFramebufferTexture2D` and
+                  :c:func:`glFramebufferTexture3D`\ , specifies what type of texture is expected
+                  in the *texture* parameter, or for cube map textures, which face is to be attached.
+
+         :param texture:
+
+                  Specifies the texture object to attach to the framebuffer attachment point named by *attachment*\ .
+
+         :param level:
+
+                  Specifies the mipmap level of *texture* to attach.
+
+.. rubric:: Specification
+
+.. c:function:: void glFramebufferTexture(GLenum  target, GLenum  attachment, GLuint  texture, GLint  level, GLenum  target, GLenum  attachment, GLenum  textarget, GLuint  texture, GLint  level, GLenum  target, GLenum  attachment, GLenum  textarget, GLuint  texture, GLint  level, GLenum  target, GLenum  attachment, GLenum  textarget, GLuint  texture, GLint  level, GLint  layer)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glGenFramebuffers`\ ,
+            :c:func:`glBindFramebuffer`\ ,
+            :c:func:`glGenRenderbuffers`\ ,
+            :c:func:`glFramebufferTexture`\ ,
+            :c:func:`glFramebufferTexture1D`\ ,
+            :c:func:`glFramebufferTexture2D`\ ,
+            :c:func:`glFramebufferTexture3D`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glFramebufferTexture`\ , :c:func:`glFramebufferTexture1D`\ , :c:func:`glFramebufferTexture2D`\ ,
+and :c:func:`glFramebufferTexture` attach a selected mipmap level or image of a texture object as one of the
+logical buffers of the framebuffer object currently bound to *target*\ . *target* must
+be ``GL_DRAW_FRAMEBUFFER``\ , ``GL_READ_FRAMEBUFFER``\ , or ``GL_FRAMEBUFFER``\ .
+``GL_FRAMEBUFFER`` is equivalent to ``GL_DRAW_FRAMEBUFFER``\ .
+
+
+*attachment* specifies the logical attachment of the framebuffer and must be
+``GL_COLOR_ATTACHMENT i``\ , ``GL_DEPTH_ATTACHMENT``\ ,
+``GL_STENCIL_ATTACHMENT`` or ``GL_DEPTH_STENCIL_ATTACHMMENT``\ .
+:strong:`i` in ``GL_COLOR_ATTACHMENT i`` may range from zero to
+the value of ``GL_MAX_COLOR_ATTACHMENTS`` - 1. Attaching a level of a texture to
+``GL_DEPTH_STENCIL_ATTACHMENT`` is equivalent to attaching that level to both the
+``GL_DEPTH_ATTACHMENT`` :strong:`and` the ``GL_STENCIL_ATTACHMENT``
+attachment points simultaneously.
+
+
+*textarget* specifies what type of texture is named by *texture*\ , and for
+cube map textures, specifies the face that is to be attached. If *texture* is not zero, it
+must be the name of an existing texture with type *textarget*\ , unless it is a cube map
+texture, in which case *textarget* must be ``GL_TEXTURE_CUBE_MAP_POSITIVE_X``
+``GL_TEXTURE_CUBE_MAP_NEGATIVE_X``\ , ``GL_TEXTURE_CUBE_MAP_POSITIVE_Y``\ ,
+``GL_TEXTURE_CUBE_MAP_NEGATIVE_Y``\ , ``GL_TEXTURE_CUBE_MAP_POSITIVE_Z``\ , or
+``GL_TEXTURE_CUBE_MAP_NEGATIVE_Z``\ .
+
+
+If *texture* is non-zero, the specified *level* of the texture object named
+*texture* is attached to the framebfufer attachment point named by *attachment*\ .
+For :c:func:`glFramebufferTexture1D`\ , :c:func:`glFramebufferTexture2D`\ , and
+:c:func:`glFramebufferTexture3D`\ , *texture* must be zero or the name of an existing
+texture with a target of *textarget*\ , or *texture* must be the name
+of an existing cube-map texture and *textarget* must be one of ``GL_TEXTURE_CUBE_MAP_POSITIVE_X``\ ,
+``GL_TEXTURE_CUBE_MAP_POSITIVE_Y``\ , ``GL_TEXTURE_CUBE_MAP_POSITIVE_Z``\ ,
+``GL_TEXTURE_CUBE_MAP_NEGATIVE_X``\ , ``GL_TEXTURE_CUBE_MAP_NEGATIVE_Y``\ , or
+``GL_TEXTURE_CUBE_MAP_NEGATIVE_Z``\ .
+
+
+If  *textarget* is ``GL_TEXTURE_RECTANGLE``\ , ``GL_TEXTURE_2D_MULTISAMPLE``\ ,
+or ``GL_TEXTURE_2D_MULTISAMPLE_ARRAY``\ , then *level* must be zero. If *textarget*
+is ``GL_TEXTURE_3D``\ , then level must be greater than or equal to zero and less than or equal to log :sub:`2`
+of the value of ``GL_MAX_3D_TEXTURE_SIZE``\ . If *textarget* is one of ``GL_TEXTURE_CUBE_MAP_POSITIVE_X``\ ,
+``GL_TEXTURE_CUBE_MAP_POSITIVE_Y``\ , ``GL_TEXTURE_CUBE_MAP_POSITIVE_Z``\ , ``GL_TEXTURE_CUBE_MAP_NEGATIVE_X``\ ,
+``GL_TEXTURE_CUBE_MAP_NEGATIVE_Y``\ , or ``GL_TEXTURE_CUBE_MAP_NEGATIVE_Z``\ , then *level* must be greater
+than or equal to zero and less than or equal to log :sub:`2` of the value of ``GL_MAX_CUBE_MAP_TEXTURE_SIZE``\ . For all other
+values of *textarget*\ , *level* must be greater than or equal to zero and no larger than log :sub:`2`
+of the value of ``GL_MAX_TEXTURE_SIZE``\ .
+
+
+*layer* specifies the layer of a 2-dimensional image within a 3-dimensional texture.
+
+
+For :c:func:`glFramebufferTexture1D`\ , if *texture* is not zero, then *textarget* must
+be ``GL_TEXTURE_1D``\ . For :c:func:`glFramebufferTexture2D`\ , if *texture* is not zero,
+*textarget* must be one of ``GL_TEXTURE_2D``\ , ``GL_TEXTURE_RECTANGLE``\ ,
+``GL_TEXTURE_CUBE_MAP_POSITIVE_X``\ , ``GL_TEXTURE_CUBE_MAP_POSITIVE_Y``\ , ``GL_TEXTURE_CUBE_MAP_POSITIVE_Z``\ ,
+``GL_TEXTURE_CUBE_MAP_NEGATIVE_X``\ , ``GL_TEXTURE_CUBE_MAP_NEGATIVE_Y``\ , ``GL_TEXTURE_CUBE_MAP_NEGATIVE_Z``\ , or
+``GL_TEXTURE_2D_MULTISAMPLE``\ . For :c:func:`glFramebufferTexture3D`\ , if *texture* is
+not zero, then *textarget* must be ``GL_TEXTURE_3D``\ .
+
+
+.. note::
+
+
+   :c:func:`glFramebufferTexture` is available only if the GL version is 3.2 or greater.
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_ENUM`` is generated if *target* is not one of the accepted tokens.
+* ``GL_INVALID_ENUM`` is generated if *renderbuffertarget* is not ``GL_RENDERBUFFER``\ .
+* ``GL_INVALID_OPERATION`` is generated if zero is bound to *target*\ .
+* ``GL_INVALID_OPERATION`` is generated if *textarget* and *texture* are not compatible.
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glFramebufferTexture'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )2010 Khronos Group. Open Publication License.
+

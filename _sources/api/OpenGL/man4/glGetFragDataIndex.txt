@@ -1,0 +1,90 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:29
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glGetFragDataIndex.xml'
+.. (c)2010 Khronos Group.
+.. See license details at http://opencontent.org/openpub/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glGetFragDataIndex`
+-----------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Query the bindings of color indices to user-defined varying out variables
+
+.. c:function:: glGetFragDataIndex
+
+
+         :param program:
+
+                  The name of the program containing varying out variable whose binding to query
+
+         :param name:
+
+                  The name of the user-defined varying out variable whose index to query
+
+.. rubric:: Specification
+
+.. c:function:: GLint glGetFragDataIndex(GLuint  program, const char *  name)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glCreateProgram`\ ,
+            :c:func:`glBindFragDataLocation`\ ,
+            :c:func:`glBindFragDataLocationIndexed`\ ,
+            :c:func:`glGetFragDataLocation`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glGetFragDataIndex` returns the index of the fragment color to which the variable *name*
+was bound when the program object *program* was last linked. If *name* is not a varying out
+variable of *program*\ , or if an error occurs, -1 will be returned.
+
+
+.. note::
+
+
+   :c:func:`glGetFragDataIndex` is available only if the GL version is 3.3 or greater.
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_OPERATION`` is generated if *program* is not the name of a program object.
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glGetFragDataIndex'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )2010 Khronos Group. Open Publication License.
+

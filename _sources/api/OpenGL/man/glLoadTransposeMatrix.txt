@@ -1,0 +1,152 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:27
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glLoadTransposeMatrix.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glLoadTransposeMatrix`
+--------------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Replace the current matrix with the specified row-major ordered matrix
+
+.. c:function:: glLoadTransposeMatrix
+
+
+         :param m:
+
+                  Specifies a pointer to 16 consecutive values, which are used as the
+                  elements of a
+                  |EQUATION_1_| row-major matrix.
+
+.. rubric:: Specification
+
+.. c:function:: void glLoadTransposeMatrixd(const GLdouble *  m, const GLfloat *  m)
+
+
+.. seealso::
+
+
+            :c:func:`glLoadIdentity`\ ,
+            :c:func:`glLoadMatrix`\ ,
+            :c:func:`glMatrixMode`\ ,
+            :c:func:`glMultMatrix`\ ,
+            :c:func:`glMultTransposeMatrix`\ ,
+            :c:func:`glPushMatrix`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glLoadTransposeMatrix` replaces the current matrix with the one whose elements are specified by
+*m*\ .
+The current matrix is the projection matrix,
+modelview matrix,
+or texture matrix,
+depending on the current matrix mode
+(see :c:func:`glMatrixMode`\ ).
+
+
+The current matrix, M, defines a transformation of coordinates.
+For instance, assume M refers to the modelview matrix.
+If
+|EQUATION_2_| is the set of object coordinates
+of a vertex,
+and *m* points to an array of |EQUATION_3_| single- or double-precision
+floating-point values |EQUATION_4_|\ ,
+then the modelview transformation |EQUATION_5_| does the following:
+
+
+|EQUATION_6_|
+
+
+Projection and texture transformations are similarly defined.
+
+
+Calling :c:func:`glLoadTransposeMatrix` with matrix |EQUATION_7_| is identical in operation to
+:c:func:`glLoadMatrix` with |EQUATION_8_|\ ,
+where |EQUATION_9_| represents the transpose.
+
+
+.. note::
+
+
+   :c:func:`glLoadTransposeMatrix` is available only if the GL version is 1.3 or greater.
+
+
+   While the elements of the matrix may be specified with
+   single or double precision, the GL implementation may
+   store or operate on these values in less than single
+   precision.
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_OPERATION`` is generated if :c:func:`glLoadTransposeMatrix` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`\ .
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGet` with argument ``GL_MATRIX_MODE``
+* :c:func:`glGet` with argument ``GL_COLOR_MATRIX``
+* :c:func:`glGet` with argument ``GL_MODELVIEW_MATRIX``
+* :c:func:`glGet` with argument ``GL_PROJECTION_MATRIX``
+* :c:func:`glGet` with argument ``GL_TEXTURE_MATRIX``
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glLoadTransposeMatrix'>
+
+.. role:: mml(raw)
+   :format: html
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>4</mn><mo>&times;</mo><mn>4</mn></mrow></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">v</mi><mo>=</mo><mfenced open="(" close=")"><mrow><mi mathvariant="italic">v</mi><mo>&af;</mo><mfenced open="[" close="]"><mn>0</mn></mfenced></mrow><mrow><mi mathvariant="italic">v</mi><mo>&af;</mo><mfenced open="[" close="]"><mn>1</mn></mfenced></mrow><mrow><mi mathvariant="italic">v</mi><mo>&af;</mo><mfenced open="[" close="]"><mn>2</mn></mfenced></mrow><mrow><mi mathvariant="italic">v</mi><mo>&af;</mo><mfenced open="[" close="]"><mn>3</mn></mfenced></mrow></mfenced></mrow></math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mn>16</mn></math>` 
+
+.. |EQUATION_4_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">m</mi><mo>=</mo><mfenced open="{" close="}"><mrow><mi mathvariant="italic">m</mi><mo>&af;</mo><mfenced open="[" close="]"><mn>0</mn></mfenced></mrow><mrow><mi mathvariant="italic">m</mi><mo>&af;</mo><mfenced open="[" close="]"><mn>1</mn></mfenced></mrow><mi mathvariant="italic">...</mi><mrow><mi mathvariant="italic">m</mi><mo>&af;</mo><mfenced open="[" close="]"><mn>15</mn></mfenced></mrow></mfenced></mrow></math>` 
+
+.. |EQUATION_5_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">M</mi><mo>&af;</mo><mfenced open="(" close=")"><mi mathvariant="italic">v</mi></mfenced></mrow></math>` 
+
+.. |EQUATION_6_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><mi mathvariant="italic">M</mi><mo>&af;</mo><mfenced open="(" close=")"><mi mathvariant="italic">v</mi></mfenced></mrow><mo>=</mo><mrow><mfenced open="(" close=")"><mtable><mtr><mtd><mrow><mi mathvariant="italic">m</mi><mo>&af;</mo><mfenced open="[" close="]"><mn>0</mn></mfenced></mrow></mtd><mtd><mrow><mi mathvariant="italic">m</mi><mo>&af;</mo><mfenced open="[" close="]"><mn>1</mn></mfenced></mrow></mtd><mtd><mrow><mi mathvariant="italic">m</mi><mo>&af;</mo><mfenced open="[" close="]"><mn>2</mn></mfenced></mrow></mtd><mtd><mrow><mi mathvariant="italic">m</mi><mo>&af;</mo><mfenced open="[" close="]"><mn>3</mn></mfenced></mrow></mtd></mtr><mtr><mtd><mrow><mi mathvariant="italic">m</mi><mo>&af;</mo><mfenced open="[" close="]"><mn>4</mn></mfenced></mrow></mtd><mtd><mrow><mi mathvariant="italic">m</mi><mo>&af;</mo><mfenced open="[" close="]"><mn>5</mn></mfenced></mrow></mtd><mtd><mrow><mi mathvariant="italic">m</mi><mo>&af;</mo><mfenced open="[" close="]"><mn>6</mn></mfenced></mrow></mtd><mtd><mrow><mi mathvariant="italic">m</mi><mo>&af;</mo><mfenced open="[" close="]"><mn>7</mn></mfenced></mrow></mtd></mtr><mtr><mtd><mrow><mi mathvariant="italic">m</mi><mo>&af;</mo><mfenced open="[" close="]"><mn>8</mn></mfenced></mrow></mtd><mtd><mrow><mi mathvariant="italic">m</mi><mo>&af;</mo><mfenced open="[" close="]"><mn>9</mn></mfenced></mrow></mtd><mtd><mrow><mi mathvariant="italic">m</mi><mo>&af;</mo><mfenced open="[" close="]"><mn>10</mn></mfenced></mrow></mtd><mtd><mrow><mi mathvariant="italic">m</mi><mo>&af;</mo><mfenced open="[" close="]"><mn>11</mn></mfenced></mrow></mtd></mtr><mtr><mtd><mrow><mi mathvariant="italic">m</mi><mo>&af;</mo><mfenced open="[" close="]"><mn>12</mn></mfenced></mrow></mtd><mtd><mrow><mi mathvariant="italic">m</mi><mo>&af;</mo><mfenced open="[" close="]"><mn>13</mn></mfenced></mrow></mtd><mtd><mrow><mi mathvariant="italic">m</mi><mo>&af;</mo><mfenced open="[" close="]"><mn>14</mn></mfenced></mrow></mtd><mtd><mrow><mi mathvariant="italic">m</mi><mo>&af;</mo><mfenced open="[" close="]"><mn>15</mn></mfenced></mrow></mtd></mtr></mtable></mfenced><mo>&times;</mo><mfenced open="(" close=")"><mtable><mtr><mtd><mrow><mi mathvariant="italic">v</mi><mo>&af;</mo><mfenced open="[" close="]"><mn>0</mn></mfenced></mrow></mtd></mtr><mtr><mtd><mrow><mi mathvariant="italic">v</mi><mo>&af;</mo><mfenced open="[" close="]"><mn>1</mn></mfenced></mrow></mtd></mtr><mtr><mtd><mrow><mi mathvariant="italic">v</mi><mo>&af;</mo><mfenced open="[" close="]"><mn>2</mn></mfenced></mrow></mtd></mtr><mtr><mtd><mrow><mi mathvariant="italic">v</mi><mo>&af;</mo><mfenced open="[" close="]"><mn>3</mn></mfenced></mrow></mtd></mtr></mtable></mfenced></mrow></mrow></math>` 
+
+.. |EQUATION_7_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">M</mi></math>` 
+
+.. |EQUATION_8_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msup><mi mathvariant="italic">M</mi><mi mathvariant="italic">T</mi></msup></math>` 
+
+.. |EQUATION_9_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">T</mi></math>` 
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

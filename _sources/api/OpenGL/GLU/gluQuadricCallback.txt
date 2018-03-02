@@ -1,0 +1,54 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `gluQuadricCallback`
+-----------------------------
+
+.. source file man/gluQuadricCallback
+
+.. currentmodule:: OpenGL.GLU
+
+Define a callback for a quadrics object
+
+.. c:function:: gluQuadricCallback
+.. c:function:: void gluQuadricCallback(GLUquadric*  quad, GLenum  which, _GLUfuncptr  CallBackFunc)
+   :noindex: 
+
+
+   
+   :param quad:
+      Specifies the quadrics object (created with :c:func:`gluNewQuadric`).
+   
+   :param which:
+      Specifies the callback being defined. The only valid value is ``GLU_ERROR``.
+   
+   :param CallBackFunc:
+      Specifies the function to be called.
+   
+
+.. seealso::
+
+   
+   :c:func:`gluErrorString`, :c:func:`gluNewQuadric`
+   
+.. rubric:: Description
+
+
+:c:func:`gluQuadricCallback` is used to define a new callback to be used by a quadrics object. If the specified callback is already defined, then it is replaced. If *CallBackFunc* is NULL, then any existing callback is erased.
+
+The one legal callback is ``GLU_ERROR``:
+
+
+   
+   ``GLU_ERROR``
+      The function is called when an error is encountered. Its single argument is of type GLenum, and it indicates the specific error that occurred. Character strings describing these errors can be retrieved with the :c:func:`gluErrorString` call.
+   
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

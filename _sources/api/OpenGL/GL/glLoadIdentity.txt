@@ -1,0 +1,63 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glLoadIdentity`
+-------------------------
+
+.. source file man/glLoadIdentity
+
+.. currentmodule:: OpenGL.GL
+
+Replace the current matrix with the identity matrix
+
+.. c:function:: glLoadIdentity
+.. c:function:: void glLoadIdentity(  void)
+   :noindex: 
+
+.. seealso::
+
+   
+   :c:func:`glLoadMatrix`, :c:func:`glLoadTransposeMatrix`, :c:func:`glMatrixMode`, :c:func:`glMultMatrix`, :c:func:`glMultTransposeMatrix`, :c:func:`glPushMatrix`
+   
+.. rubric:: Description
+
+
+:c:func:`glLoadIdentity` replaces the current matrix with the identity matrix. It is semantically equivalent to calling :c:func:`glLoadMatrix` with the identity matrix
+
+
+
+|EQUATION_1_|
+
+
+
+but in some cases it is more efficient.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGet` with argument ``GL_MATRIX_MODE``
+   * :c:func:`glGet` with argument ``GL_COLOR_MATRIX``
+   * :c:func:`glGet` with argument ``GL_MODELVIEW_MATRIX``
+   * :c:func:`glGet` with argument ``GL_PROJECTION_MATRIX``
+   * :c:func:`glGet` with argument ``GL_TEXTURE_MATRIX``
+
+**Errors:**
+
+   * ``GL_INVALID_OPERATION`` is generated if :c:func:`glLoadIdentity` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`.
+
+
+.. role:: mml(raw)
+   :format: html
+
+
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"> <mfenced open="" close=""> <mtable> <mtr> <mtd> <mn>1</mn> </mtd> <mtd> <mn>0</mn> </mtd> <mtd> <mn>0</mn> </mtd> <mtd> <mn>0</mn> </mtd> </mtr> <mtr> <mtd> <mn>0</mn> </mtd> <mtd> <mn>1</mn> </mtd> <mtd> <mn>0</mn> </mtd> <mtd> <mn>0</mn> </mtd> </mtr> <mtr> <mtd> <mn>0</mn> </mtd> <mtd> <mn>0</mn> </mtd> <mtd> <mn>1</mn> </mtd> <mtd> <mn>0</mn> </mtd> </mtr> <mtr> <mtd> <mn>0</mn> </mtd> <mtd> <mn>0</mn> </mtd> <mtd> <mn>0</mn> </mtd> <mtd> <mn>1</mn> </mtd> </mtr> </mtable> </mfenced> </mfenced> </math>` 
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

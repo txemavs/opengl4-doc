@@ -1,0 +1,292 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glGetTexParameter &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glGetTransformFeedbackVarying" href="glGetTransformFeedbackVarying.html" />
+    <link rel="prev" title="function glGetTexLevelParameter" href="glGetTexLevelParameter.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glGetTransformFeedbackVarying.html" title="function glGetTransformFeedbackVarying"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glGetTexLevelParameter.html" title="function glGetTexLevelParameter"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glgettexparameter">
+<h1>function <cite>glGetTexParameter</cite><a class="headerlink" href="#function-glgettexparameter" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Return texture parameter values</p>
+<dl class="function">
+<dt id="glGetTexParameter">
+<tt class="descname">glGetTexParameter</tt><big>(</big><big>)</big><a class="headerlink" href="#glGetTexParameter" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>target</strong> &#8211; Specifies the symbolic name of the target texture.
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_1D</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_2D</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_1D_ARRAY</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_2D_ARRAY</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_3D</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_RECTANGLE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP</span></tt>, and
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_ARRAY</span></tt>
+are accepted.</li>
+<li><strong>pname</strong> &#8211; Specifies the symbolic name of a texture parameter.
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_BASE_LEVEL</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_BORDER_COLOR</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_COMPARE_MODE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_COMPARE_FUNC</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_IMMUTABLE_FORMAT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_LOD_BIAS</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_MAG_FILTER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_MAX_LEVEL</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_MAX_LOD</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_MIN_FILTER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_MIN_LOD</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_SWIZZLE_R</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_SWIZZLE_G</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_SWIZZLE_B</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_SWIZZLE_A</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_SWIZZLE_RGBA</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_WRAP_S</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_WRAP_T</span></tt>, and
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_WRAP_R</span></tt>
+are accepted.</li>
+<li><strong>params</strong> &#8211; Returns the texture parameters.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt id="glGetTexParameterfv">
+void <tt class="descname">glGetTexParameterfv</tt><big>(</big>GLenum <em>&nbsp;target</em>, GLenum <em>&nbsp;pname</em>, GLfloat * <em>&nbsp;params</em>, GLenum <em>&nbsp;target</em>, GLenum <em>&nbsp;pname</em>, GLint * <em>&nbsp;params</em>, GLenum <em>&nbsp;target</em>, GLenum <em>&nbsp;pname</em>, GLint * <em>&nbsp;params</em>, GLenum <em>&nbsp;target</em>, GLenum <em>&nbsp;pname</em>, GLuint * <em>&nbsp;params</em><big>)</big><a class="headerlink" href="#glGetTexParameterfv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glTexParameter.html#glTexParameter" title="glTexParameter"><tt class="xref c c-func docutils literal"><span class="pre">glTexParameter()</span></tt></a>,
+<a class="reference internal" href="glTexStorage1D.html#glTexStorage1D" title="glTexStorage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexStorage1D()</span></tt></a>,
+<a class="reference internal" href="glTexStorage2D.html#glTexStorage2D" title="glTexStorage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexStorage2D()</span></tt></a>,
+<a class="reference internal" href="glTexStorage3D.html#glTexStorage3D" title="glTexStorage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexStorage3D()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glGetTexParameter" title="glGetTexParameter"><tt class="xref c c-func docutils literal"><span class="pre">glGetTexParameter()</span></tt></a> returns in <em>params</em> the value or values of the texture parameter
+specified as <em>pname</em>.
+<em>target</em> defines the target texture.
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_1D</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_2D</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_3D</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_1D_ARRAY</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_2D_ARRAY</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_RECTANGLE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_ARRAY</span></tt>
+specify one-, two-, or three-dimensional, one-dimensional array, two-dimensional array, rectangle, cube-mapped or cube-mapped array texturing, respectively.
+<em>pname</em> accepts the same symbols as <a class="reference internal" href="glTexParameter.html#glTexParameter" title="glTexParameter"><tt class="xref c c-func docutils literal"><span class="pre">glTexParameter()</span></tt></a>,
+with the same interpretations:</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">GL_TEXTURE_MAG_FILTER</span></tt></p>
+<blockquote>
+<div>Returns the single-valued texture magnification filter,
+a symbolic constant. The initial value is <tt class="docutils literal"><span class="pre">GL_LINEAR</span></tt>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_MIN_FILTER</span></tt></p>
+<blockquote>
+<div>Returns the single-valued texture minification filter,
+a symbolic constant. The initial value is <tt class="docutils literal"><span class="pre">GL_NEAREST_MIPMAP_LINEAR</span></tt>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_MIN_LOD</span></tt></p>
+<blockquote>
+<div>Returns the single-valued texture minimum level-of-detail value.  The
+initial value is
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mn>-1000</mn></math></span>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_MAX_LOD</span></tt></p>
+<blockquote>
+<div>Returns the single-valued texture maximum level-of-detail value. The
+initial value is 1000.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_BASE_LEVEL</span></tt></p>
+<blockquote>
+<div>Returns the single-valued base texture mipmap level.  The initial value is 0.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_MAX_LEVEL</span></tt></p>
+<blockquote>
+<div>Returns the single-valued maximum texture mipmap array level.  The initial
+value is 1000.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_SWIZZLE_R</span></tt></p>
+<blockquote>
+<div>Returns the red component swizzle. The initial value is <tt class="docutils literal"><span class="pre">GL_RED</span></tt>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_SWIZZLE_G</span></tt></p>
+<blockquote>
+<div>Returns the green component swizzle. The initial value is <tt class="docutils literal"><span class="pre">GL_GREEN</span></tt>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_SWIZZLE_B</span></tt></p>
+<blockquote>
+<div>Returns the blue component swizzle. The initial value is <tt class="docutils literal"><span class="pre">GL_BLUE</span></tt>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_SWIZZLE_A</span></tt></p>
+<blockquote>
+<div>Returns the alpha component swizzle. The initial value is <tt class="docutils literal"><span class="pre">GL_ALPHA</span></tt>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_SWIZZLE_RGBA</span></tt></p>
+<blockquote>
+<div>Returns the component swizzle for all channels in a single query.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_WRAP_S</span></tt></p>
+<blockquote>
+<div>Returns the single-valued wrapping function for texture coordinate
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">s</mi></math></span>,
+a symbolic constant. The initial value is <tt class="docutils literal"><span class="pre">GL_REPEAT</span></tt>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_WRAP_T</span></tt></p>
+<blockquote>
+<div>Returns the single-valued wrapping function for texture coordinate
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">t</mi></math></span>,
+a symbolic constant. The initial value is <tt class="docutils literal"><span class="pre">GL_REPEAT</span></tt>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_WRAP_R</span></tt></p>
+<blockquote>
+<div>Returns the single-valued wrapping function for texture coordinate
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">r</mi></math></span>,
+a symbolic constant. The initial value is <tt class="docutils literal"><span class="pre">GL_REPEAT</span></tt>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_BORDER_COLOR</span></tt></p>
+<blockquote>
+<div>Returns four integer or floating-point numbers that comprise the RGBA color
+of the texture border.
+Floating-point values are returned in the range
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"><mn>0</mn><mn>1</mn></mfenced></math></span>.
+Integer values are returned as a linear mapping of the internal floating-point
+representation such that 1.0 maps to the most positive representable
+integer and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mn>-1.0</mn></math></span> maps to the most negative representable
+integer. The initial value is (0, 0, 0, 0).</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_COMPARE_MODE</span></tt></p>
+<blockquote>
+<div>Returns a single-valued texture comparison mode, a symbolic constant.  The
+initial value is <tt class="docutils literal"><span class="pre">GL_NONE</span></tt>. See <a class="reference internal" href="glTexParameter.html#glTexParameter" title="glTexParameter"><tt class="xref c c-func docutils literal"><span class="pre">glTexParameter()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_COMPARE_FUNC</span></tt></p>
+<blockquote>
+<div>Returns a single-valued texture comparison function, a symbolic constant.  The
+initial value is <tt class="docutils literal"><span class="pre">GL_LEQUAL</span></tt>. See <a class="reference internal" href="glTexParameter.html#glTexParameter" title="glTexParameter"><tt class="xref c c-func docutils literal"><span class="pre">glTexParameter()</span></tt></a>.</div></blockquote>
+</div></blockquote>
+<p>In addition to the parameters that may be set with <a class="reference internal" href="glTexParameter.html#glTexParameter" title="glTexParameter"><tt class="xref c c-func docutils literal"><span class="pre">glTexParameter()</span></tt></a>,
+<a class="reference internal" href="#glGetTexParameter" title="glGetTexParameter"><tt class="xref c c-func docutils literal"><span class="pre">glGetTexParameter()</span></tt></a> accepts the following read-only parameters:</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">GL_TEXTURE_IMMUTABLE_FORMAT</span></tt></p>
+<blockquote>
+<div>Returns non-zero if the texture has an immutable format. Textures become
+immutable if their storage is specified with <a class="reference internal" href="glTexStorage1D.html#glTexStorage1D" title="glTexStorage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexStorage1D()</span></tt></a>,
+<a class="reference internal" href="glTexStorage2D.html#glTexStorage2D" title="glTexStorage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexStorage2D()</span></tt></a> or <a class="reference internal" href="glTexStorage3D.html#glTexStorage3D" title="glTexStorage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexStorage3D()</span></tt></a>.
+The initial value is <tt class="docutils literal"><span class="pre">GL_FALSE</span></tt>.</div></blockquote>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If an error is generated,
+no change is made to the contents of <em>params</em>.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>target</em> or <em>pname</em> is not an accepted value.</li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. (c)2010-2011 Khronos Group. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glGetTexLevelParameter.html"
+                        title="previous chapter">function <cite>glGetTexLevelParameter</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glGetTransformFeedbackVarying.html"
+                        title="next chapter">function <cite>glGetTransformFeedbackVarying</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glGetTexParameter.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glGetTransformFeedbackVarying.html" title="function glGetTransformFeedbackVarying"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glGetTexLevelParameter.html" title="function glGetTexLevelParameter"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

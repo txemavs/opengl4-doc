@@ -1,0 +1,227 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glDrawElementsIndirect &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glDrawElementsInstanced" href="glDrawElementsInstanced.html" />
+    <link rel="prev" title="function glDrawElementsBaseVertex" href="glDrawElementsBaseVertex.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glDrawElementsInstanced.html" title="function glDrawElementsInstanced"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glDrawElementsBaseVertex.html" title="function glDrawElementsBaseVertex"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-gldrawelementsindirect">
+<h1>function <cite>glDrawElementsIndirect</cite><a class="headerlink" href="#function-gldrawelementsindirect" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Render indexed primitives from array data, taking parameters from memory</p>
+<dl class="function">
+<dt id="glDrawElementsIndirect">
+<tt class="descname">glDrawElementsIndirect</tt><big>(</big><big>)</big><a class="headerlink" href="#glDrawElementsIndirect" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>mode</strong> &#8211; Specifies what kind of primitives to render.
+Symbolic constants
+<tt class="docutils literal"><span class="pre">GL_POINTS</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LINE_STRIP</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LINE_LOOP</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LINES</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LINE_STRIP_ADJACENCY</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LINES_ADJACENCY</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TRIANGLE_STRIP</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TRIANGLE_FAN</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TRIANGLES</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TRIANGLE_STRIP_ADJACENCY</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TRIANGLES_ADJACENCY</span></tt>, and
+<tt class="docutils literal"><span class="pre">GL_PATCHES</span></tt>
+are accepted.</li>
+<li><strong>type</strong> &#8211; Specifies the type of data in the buffer bound to the <tt class="docutils literal"><span class="pre">GL_ELEMENT_ARRAY_BUFFER</span></tt> binding.</li>
+<li><strong>indirect</strong> &#8211; Specifies the address of a structure containing the draw parameters.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glDrawElementsIndirect</tt><big>(</big>GLenum <em>&nbsp;mode</em>, GLenum <em>&nbsp;type</em>, const void *<em>&nbsp;indirect</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glDrawArrays.html#glDrawArrays" title="glDrawArrays"><tt class="xref c c-func docutils literal"><span class="pre">glDrawArrays()</span></tt></a>,
+<a class="reference internal" href="glDrawArraysInstanced.html#glDrawArraysInstanced" title="glDrawArraysInstanced"><tt class="xref c c-func docutils literal"><span class="pre">glDrawArraysInstanced()</span></tt></a>,
+<a class="reference internal" href="glDrawArraysIndirect.html#glDrawArraysIndirect" title="glDrawArraysIndirect"><tt class="xref c c-func docutils literal"><span class="pre">glDrawArraysIndirect()</span></tt></a>,
+<a class="reference internal" href="glDrawElements.html#glDrawElements" title="glDrawElements"><tt class="xref c c-func docutils literal"><span class="pre">glDrawElements()</span></tt></a>,
+<a class="reference internal" href="glDrawRangeElements.html#glDrawRangeElements" title="glDrawRangeElements"><tt class="xref c c-func docutils literal"><span class="pre">glDrawRangeElements()</span></tt></a>,</p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glDrawElementsIndirect" title="glDrawElementsIndirect"><tt class="xref c c-func docutils literal"><span class="pre">glDrawElementsIndirect()</span></tt></a> specifies multiple indexed geometric primitives
+with very few subroutine calls. <a class="reference internal" href="#glDrawElementsIndirect" title="glDrawElementsIndirect"><tt class="xref c c-func docutils literal"><span class="pre">glDrawElementsIndirect()</span></tt></a> behaves
+similarly to <a class="reference internal" href="glDrawElementsInstancedBaseVertexBaseInstance.html#glDrawElementsInstancedBaseVertexBaseInstance" title="glDrawElementsInstancedBaseVertexBaseInstance"><tt class="xref c c-func docutils literal"><span class="pre">glDrawElementsInstancedBaseVertexBaseInstance()</span></tt></a>,
+execpt that the parameters to <a class="reference internal" href="glDrawElementsInstancedBaseVertexBaseInstance.html#glDrawElementsInstancedBaseVertexBaseInstance" title="glDrawElementsInstancedBaseVertexBaseInstance"><tt class="xref c c-func docutils literal"><span class="pre">glDrawElementsInstancedBaseVertexBaseInstance()</span></tt></a>
+are stored in memory at the address given by <em>indirect</em>.</p>
+<p>The parameters addressed by <em>indirect</em> are packed into a structure
+that takes the form (in C):</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="k">typedef</span>  <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">uint</span>  <span class="n">count</span><span class="p">;</span>
+    <span class="n">uint</span>  <span class="n">primCount</span><span class="p">;</span>
+    <span class="n">uint</span>  <span class="n">firstIndex</span><span class="p">;</span>
+    <span class="n">uint</span>  <span class="n">baseVertex</span><span class="p">;</span>
+    <span class="n">uint</span>  <span class="n">baseInstance</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">DrawElementsIndirectCommand</span><span class="p">;</span>
+</pre></div>
+</div>
+<blockquote>
+<div><a class="reference internal" href="#glDrawElementsIndirect" title="glDrawElementsIndirect"><tt class="xref c c-func docutils literal"><span class="pre">glDrawElementsIndirect()</span></tt></a> is equivalent to:</div></blockquote>
+<div class="highlight-c"><pre>void glDrawElementsIndirect(GLenum mode, GLenum type, const void \* indirect)
+{
+    const DrawElementsIndirectCommand \*cmd  = (const DrawElementsIndirectCommand \*)indirect;
+    glDrawElementsInstancedBaseVertexBaseInstance(mode,
+                                                  cmd-&gt;count,
+                                                  type,
+                                                  cmd-&gt;firstIndex + size-of-type,
+                                                  cmd-&gt;primCount,
+                                                  cmd-&gt;baseVertex,
+                                                  cmd-&gt;baseInstance);
+}</pre>
+</div>
+<p>If a buffer is bound to the <tt class="docutils literal"><span class="pre">GL_DRAW_INDIRECT_BUFFER</span></tt> binding at the time
+of a call to <a class="reference internal" href="#glDrawElementsIndirect" title="glDrawElementsIndirect"><tt class="xref c c-func docutils literal"><span class="pre">glDrawElementsIndirect()</span></tt></a>, <em>indirect</em>
+is interpreted as an offset, in basic machine units, into that buffer and the parameter
+data is read from the buffer rather than from client memory.</p>
+<p>Note that indices stored in client memory are not supported. If no buffer is bound to the
+<tt class="docutils literal"><span class="pre">GL_ELEMENT_ARRAY_BUFFER</span></tt> binding, an error will be generated.</p>
+<p>The results of the operation are undefined if the <tt class="docutils literal"><span class="pre">reservedMustBeZero</span></tt> member
+of the parameter structure is non-zero. However, no error is generated in this case.</p>
+<p>Vertex attributes that are modified by <a class="reference internal" href="#glDrawElementsIndirect" title="glDrawElementsIndirect"><tt class="xref c c-func docutils literal"><span class="pre">glDrawElementsIndirect()</span></tt></a> have an
+unspecified value after <a class="reference internal" href="#glDrawElementsIndirect" title="glDrawElementsIndirect"><tt class="xref c c-func docutils literal"><span class="pre">glDrawElementsIndirect()</span></tt></a> returns. Attributes that aren&#8217;t
+modified remain well defined.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <em>baseInstance</em> member of the <em>DrawElementsIndirectCommand</em>
+structure is defined only if the GL version is 4.2 or greater. For versions of the GL less than 4.2,
+this parameter is present but is reserved and should be set to zero. On earlier versions of the GL,
+behavior is undefined if it is non-zero.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>mode</em> is not an accepted value.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if no buffer is bound to the <tt class="docutils literal"><span class="pre">GL_ELEMENT_ARRAY_BUFFER</span></tt> binding, or if such a buffer&#8217;s data store is currently mapped.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if a non-zero buffer object name is bound to an enabled array or to the <tt class="docutils literal"><span class="pre">GL_DRAW_INDIRECT_BUFFER</span></tt> binding and the buffer object&#8217;s data store is currently mapped.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if a geometry shader is active and <em>mode</em> is incompatible with the input primitive type of the geometry shader in the currently installed program object.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <em>mode</em> is <tt class="docutils literal"><span class="pre">GL_PATCHES</span></tt> and no tessellation control shader is active.</li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)2010 Khronos Group. Open Publication License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glDrawElementsBaseVertex.html"
+                        title="previous chapter">function <cite>glDrawElementsBaseVertex</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glDrawElementsInstanced.html"
+                        title="next chapter">function <cite>glDrawElementsInstanced</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glDrawElementsIndirect.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glDrawElementsInstanced.html" title="function glDrawElementsInstanced"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glDrawElementsBaseVertex.html" title="function glDrawElementsBaseVertex"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `gluNewNurbsRenderer`
+------------------------------
+
+.. source file man/gluNewNurbsRenderer
+
+.. currentmodule:: OpenGL.GLU
+
+Create a NURBS object
+
+.. c:function:: gluNewNurbsRenderer
+.. c:function:: GLUnurbs* gluNewNurbsRendere)
+
+.. seealso::
+
+   
+   :c:func:`gluBeginCurve`, :c:func:`gluBeginSurface`, :c:func:`gluBeginTrim`, :c:func:`gluDeleteNurbsRenderer`, :c:func:`gluNurbsCallback`, :c:func:`gluNurbsProperty`
+   
+.. rubric:: Description
+
+
+:c:func:`gluNewNurbsRenderer` creates and returns a pointer to a new NURBS object. This object must be referred to when calling NURBS rendering and control functions. A return value of 0 means that there is not enough memory to allocate the object.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

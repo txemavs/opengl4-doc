@@ -1,0 +1,291 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:27
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/gluBuild1DMipmapLevels.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `gluBuild1DMipmapLevels`
+---------------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Builds a subset of one-dimensional mipmap levels
+
+.. c:function:: gluBuild1DMipmapLevels
+
+
+         :param target:
+
+                  Specifies the target texture.  Must be ``GLU_TEXTURE_1D``\ .
+
+         :param internalFormat:
+
+                  Requests the internal storage format of the texture image.  The most
+                  current version of the SGI implementation of GLU does not check this
+                  value for validity before passing it on to the underlying OpenGL
+                  implementation.  A value that is not accepted by the OpenGL
+                  implementation will lead to an OpenGL error.  The benefit of not
+                  checking this value at the GLU level is that OpenGL extensions can add
+                  new internal texture formats without requiring a revision of the GLU
+                  implementation.  Older implementations of GLU check this value and
+                  raise a GLU error if it is not 1, 2, 3, or 4 or one of the following
+                  symbolic constants:
+                  ``GLU_ALPHA``\ ,
+                  ``GLU_ALPHA4``\ ,
+                  ``GLU_ALPHA8``\ ,
+                  ``GLU_ALPHA12``\ ,
+                  ``GLU_ALPHA16``\ ,
+                  ``GLU_LUMINANCE``\ ,
+                  ``GLU_LUMINANCE4``\ ,
+                  ``GLU_LUMINANCE8``\ ,
+                  ``GLU_LUMINANCE12``\ ,
+                  ``GLU_LUMINANCE16``\ ,
+                  ``GLU_LUMINANCE_ALPHA``\ ,
+                  ``GLU_LUMINANCE4_ALPHA4``\ ,
+                  ``GLU_LUMINANCE6_ALPHA2``\ ,
+                  ``GLU_LUMINANCE8_ALPHA8``\ ,
+                  ``GLU_LUMINANCE12_ALPHA4``\ ,
+                  ``GLU_LUMINANCE12_ALPHA12``\ ,
+                  ``GLU_LUMINANCE16_ALPHA16``\ ,
+                  ``GLU_INTENSITY``\ ,
+                  ``GLU_INTENSITY4``\ ,
+                  ``GLU_INTENSITY8``\ ,
+                  ``GLU_INTENSITY12``\ ,
+                  ``GLU_INTENSITY16``\ ,
+                  ``GLU_RGB``\ ,
+                  ``GLU_R3_G3_B2``\ ,
+                  ``GLU_RGB4``\ ,
+                  ``GLU_RGB5``\ ,
+                  ``GLU_RGB8``\ ,
+                  ``GLU_RGB10``\ ,
+                  ``GLU_RGB12``\ ,
+                  ``GLU_RGB16``\ ,
+                  ``GLU_RGBA``\ ,
+                  ``GLU_RGBA2``\ ,
+                  ``GLU_RGBA4``\ ,
+                  ``GLU_RGB5_A1``\ ,
+                  ``GLU_RGBA8``\ ,
+                  ``GLU_RGB10_A2``\ ,
+                  ``GLU_RGBA12``\ , or
+                  ``GLU_RGBA16``\ .
+
+         :param width:
+
+                  Specifies the width in pixels of the texture image.
+                  This should be a power of 2.
+
+         :param format:
+
+                  Specifies the format of the pixel data.
+                  Must be one of:
+                  ``GLU_COLOR_INDEX``\ ,
+                  ``GLU_DEPTH_COMPONENT``\ ,
+                  ``GLU_RED``\ ,
+                  ``GLU_GREEN``\ ,
+                  ``GLU_BLUE``\ ,
+                  ``GLU_ALPHA``\ ,
+                  ``GLU_RGB``\ ,
+                  ``GLU_RGBA``\ ,
+                  ``GLU_BGR``\ ,
+                  ``GLU_BGRA``\ ,
+                  ``GLU_LUMINANCE``\ , or
+                  ``GLU_LUMINANCE_ALPHA``\ .
+
+         :param type:
+
+                  Specifies the data type for *data*\ .
+                  Must be one of: ``GLU_UNSIGNED_BYTE``\ ,
+                  ``GLU_BYTE``\ ,
+                  ``GLU_BITMAP``\ ,
+                  ``GLU_UNSIGNED_SHORT``\ ,
+                  ``GLU_SHORT``\ ,
+                  ``GLU_UNSIGNED_INT``\ ,
+                  ``GLU_INT``\ ,
+                  ``GLU_FLOAT``\ ,
+                  ``GLU_UNSIGNED_BYTE_3_3_2``\ ,
+                  ``GLU_UNSIGNED_BYTE_2_3_3_REV``\ ,
+                  ``GLU_UNSIGNED_SHORT_5_6_5``\ ,
+                  ``GLU_UNSIGNED_SHORT_5_6_5_REV``\ ,
+                  ``GLU_UNSIGNED_SHORT_4_4_4_4``\ ,
+                  ``GLU_UNSIGNED_SHORT_4_4_4_4_REV``\ ,
+                  ``GLU_UNSIGNED_SHORT_5_5_5_1``\ ,
+                  ``GLU_UNSIGNED_SHORT_1_5_5_5_REV``\ ,
+                  ``GLU_UNSIGNED_INT_8_8_8_8``\ ,
+                  ``GLU_UNSIGNED_INT_8_8_8_8_REV``\ ,
+                  ``GLU_UNSIGNED_INT_10_10_10_2``\ , or
+                  ``GLU_UNSIGNED_INT_2_10_10_10_REV``\ .
+
+         :param level:
+
+                  Specifies the mipmap level of the image data.
+
+         :param base:
+
+                  Specifies the minimum mipmap level to pass to :c:func:`glTexImage1D`\ .
+
+         :param max:
+
+                  Specifies the maximum mipmap level to pass to :c:func:`glTexImage1D`\ .
+
+         :param data:
+
+                  Specifies a pointer to the image data in memory.
+
+.. rubric:: Specification
+
+.. c:function:: GLint gluBuild1DMipmapLevels(GLenum  target, GLint  internalFormat, GLsizei  width, GLenum  format, GLenum  type, GLint  level, GLint  base, GLint  max, const void *  data)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`gluBuild1DMipmaps`\ ,
+            :c:func:`gluBuild2DMipmapLevels`\ ,
+            :c:func:`gluBuild2DMipmaps`\ ,
+            :c:func:`gluBuild3DMipmapLevels`\ ,
+            :c:func:`gluBuild3DMipmaps`\ ,
+            :c:func:`gluErrorString`\ ,
+            :c:func:`glDrawPixels`\ ,
+            :c:func:`glGetTexImage`\ ,
+            :c:func:`glGetTexLevelParameter`\ ,
+            :c:func:`glTexImage1D`\ ,
+            :c:func:`glTexImage2D`\ ,
+            :c:func:`glTexImage3D`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`gluBuild1DMipmapLevels` builds a subset of prefiltered one-dimensional texture maps of decreasing
+resolutions called a mipmap. This is used for the antialiasing of
+texture mapped primitives.
+
+
+A return value of zero indicates success, otherwise a GLU error code is
+returned (see :c:func:`gluErrorString`\ ).
+
+
+A series of mipmap levels from *base* to *max* is built by decimating
+*data* in half
+until size |EQUATION_1_| is reached. At each level, each texel in the
+halved mipmap level is an average of the corresponding two texels in the larger
+mipmap level.
+:c:func:`glTexImage1D` is called to load these mipmap levels from *base*
+to *max*\ . If *max* is larger than the highest mipmap level for the
+texture of the specified size, then a GLU error code is returned (see
+:c:func:`gluErrorString`\ ) and nothing is loaded.
+
+
+For example, if *level* is 2 and *width* is 16, the
+following levels are possible: |EQUATION_2_|\ , |EQUATION_3_|\ , |EQUATION_4_|\ ,
+|EQUATION_5_|\ , |EQUATION_6_|\ .
+These correspond
+to levels 2 through 6 respectively.
+If *base* is 3 and *max* is 5, then only mipmap levels |EQUATION_7_|\ ,
+|EQUATION_8_| and |EQUATION_9_| are
+loaded. However, if *max* is 7, then an error is returned and nothing is
+loaded since *max* is larger than the highest mipmap level which is, in
+this case, 6.
+
+
+The highest mipmap level can be derived from the formula
+|EQUATION_10_|\ .
+
+
+See the :c:func:`glTexImage1D` reference page for a description of the
+acceptable values for *type* parameter. See the :c:func:`glDrawPixels`
+reference page for a description of the acceptable values
+for *level* parameter.
+
+
+.. note::
+
+
+   :c:func:`gluBuild1DMipmapLevels` is only available if the GLU version is 1.3 or greater.
+
+
+   Formats ``GLU_BGR``\ , and ``GLU_BGRA``\ , and types
+   ``GLU_UNSIGNED_BYTE_3_3_2``\ ,
+   ``GLU_UNSIGNED_BYTE_2_3_3_REV``\ ,
+   ``GLU_UNSIGNED_SHORT_5_6_5``\ ,
+   ``GLU_UNSIGNED_SHORT_5_6_5_REV``\ ,
+   ``GLU_UNSIGNED_SHORT_4_4_4_4``\ ,
+   ``GLU_UNSIGNED_SHORT_4_4_4_4_REV``\ ,
+   ``GLU_UNSIGNED_SHORT_5_5_5_1``\ ,
+   ``GLU_UNSIGNED_SHORT_1_5_5_5_REV``\ ,
+   ``GLU_UNSIGNED_INT_8_8_8_8``\ ,
+   ``GLU_UNSIGNED_INT_8_8_8_8_REV``\ ,
+   ``GLU_UNSIGNED_INT_10_10_10_2``\ , and
+   ``GLU_UNSIGNED_INT_2_10_10_10_REV`` are only available if the GL version
+   is 1.2 or greater.
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GLU_INVALID_VALUE`` is returned if *level* > *base*\ , *base* < 0, *max* < *base* or *max* is > the highest mipmap level for *data*\ .
+* ``GLU_INVALID_VALUE`` is returned if *width* is < 1.
+* ``GLU_INVALID_ENUM`` is returned if *internalFormat*\ , *format*\ , or *type* are not legal.
+* ``GLU_INVALID_OPERATION`` is returned if *type* is ``GLU_UNSIGNED_BYTE_3_3_2`` or ``GLU_UNSIGNED_BYTE_2_3_3_REV`` and *format* is not ``GLU_RGB``\ .
+* ``GLU_INVALID_OPERATION`` is returned if *type* is ``GLU_UNSIGNED_SHORT_5_6_5`` or ``GLU_UNSIGNED_SHORT_5_6_5_REV`` and *format* is not ``GLU_RGB``\ .
+* ``GLU_INVALID_OPERATION`` is returned if *type* is ``GLU_UNSIGNED_SHORT_4_4_4_4`` or ``GLU_UNSIGNED_SHORT_4_4_4_4_REV`` and *format* is neither ``GLU_RGBA`` nor ``GLU_BGRA``\ .
+* ``GLU_INVALID_OPERATION`` is returned if *type* is ``GLU_UNSIGNED_SHORT_5_5_5_1`` or ``GLU_UNSIGNED_SHORT_1_5_5_5_REV`` and *format* is neither ``GLU_RGBA`` nor ``GLU_BGRA``\ .
+* ``GLU_INVALID_OPERATION`` is returned if *type* is ``GLU_UNSIGNED_INT_8_8_8_8`` or ``GLU_UNSIGNED_INT_8_8_8_8_REV`` and *format* is neither ``GLU_RGBA`` nor ``GLU_BGRA``\ .
+* ``GLU_INVALID_OPERATION`` is returned if *type* is ``GLU_UNSIGNED_INT_10_10_10_2`` or ``GLU_UNSIGNED_INT_2_10_10_10_REV`` and *format* is neither ``GLU_RGBA`` nor ``GLU_BGRA``\ .
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'gluBuild1DMipmapLevels'>
+
+.. role:: mml(raw)
+   :format: html
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>1</mn><mo>&times;</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>16</mn><mo>&times;</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>8</mn><mo>&times;</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_4_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>4</mn><mo>&times;</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_5_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>2</mn><mo>&times;</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_6_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>1</mn><mo>&times;</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_7_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>8</mn><mo>&times;</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_8_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>4</mn><mo>&times;</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_9_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>2</mn><mo>&times;</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_10_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">log</mi><mn>2</mn></msub><mo>&af;</mo><mfenced open="(" close=")"><mrow><mi mathvariant="italic">width</mi><mo>&times;</mo><msup><mn>2</mn><mi mathvariant="italic">level</mi></msup></mrow></mfenced></mrow></math>` 
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

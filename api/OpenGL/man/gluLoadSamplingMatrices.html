@@ -1,0 +1,170 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function gluLoadSamplingMatrices &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function gluLookAt" href="gluLookAt.html" />
+    <link rel="prev" title="function gluGetTessProperty" href="gluGetTessProperty.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="gluLookAt.html" title="function gluLookAt"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="gluGetTessProperty.html" title="function gluGetTessProperty"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-gluloadsamplingmatrices">
+<h1>function <cite>gluLoadSamplingMatrices</cite><a class="headerlink" href="#function-gluloadsamplingmatrices" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Load NURBS sampling and culling matrices</p>
+<dl class="function">
+<dt id="gluLoadSamplingMatrices">
+<tt class="descname">gluLoadSamplingMatrices</tt><big>(</big><big>)</big><a class="headerlink" href="#gluLoadSamplingMatrices" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>nurb</strong> &#8211; Specifies the NURBS object (created with <a class="reference internal" href="gluNewNurbsRenderer.html#gluNewNurbsRenderer" title="gluNewNurbsRenderer"><tt class="xref c c-func docutils literal"><span class="pre">gluNewNurbsRenderer()</span></tt></a>).</li>
+<li><strong>model</strong> &#8211; Specifies a modelview matrix (as from a <a class="reference internal" href="../man4/glGet.html#glGetFloatv" title="glGetFloatv"><tt class="xref c c-func docutils literal"><span class="pre">glGetFloatv()</span></tt></a> call).</li>
+<li><strong>perspective</strong> &#8211; Specifies a projection matrix (as from a <a class="reference internal" href="../man4/glGet.html#glGetFloatv" title="glGetFloatv"><tt class="xref c c-func docutils literal"><span class="pre">glGetFloatv()</span></tt></a> call).</li>
+<li><strong>view</strong> &#8211; Specifies a viewport (as from a <a class="reference internal" href="../man4/glGet.html#glGetIntegerv" title="glGetIntegerv"><tt class="xref c c-func docutils literal"><span class="pre">glGetIntegerv()</span></tt></a> call).</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">gluLoadSamplingMatrices</tt><big>(</big>GLUnurbs* <em>&nbsp;nurb</em>, const GLfloat * <em>&nbsp;model</em>, const GLfloat * <em>&nbsp;perspective</em>, const GLint * <em>&nbsp;view</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="gluGetNurbsProperty.html#gluGetNurbsProperty" title="gluGetNurbsProperty"><tt class="xref c c-func docutils literal"><span class="pre">gluGetNurbsProperty()</span></tt></a>,
+<a class="reference internal" href="gluNewNurbsRenderer.html#gluNewNurbsRenderer" title="gluNewNurbsRenderer"><tt class="xref c c-func docutils literal"><span class="pre">gluNewNurbsRenderer()</span></tt></a>,
+<a class="reference internal" href="gluNurbsProperty.html#gluNurbsProperty" title="gluNurbsProperty"><tt class="xref c c-func docutils literal"><span class="pre">gluNurbsProperty()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#gluLoadSamplingMatrices" title="gluLoadSamplingMatrices"><tt class="xref c c-func docutils literal"><span class="pre">gluLoadSamplingMatrices()</span></tt></a> uses <em>model</em>, <em>perspective</em>, and <em>view</em> to recompute the sampling and culling
+matrices stored in <em>nurb</em>.
+The sampling matrix determines how finely a NURBS curve or surface
+must be tessellated to satisfy the sampling tolerance (as determined by the
+<tt class="docutils literal"><span class="pre">GLU_SAMPLING_TOLERANCE</span></tt> property).
+The culling matrix is used in deciding if a NURBS curve or surface
+should be culled before
+rendering (when the <tt class="docutils literal"><span class="pre">GLU_CULLING</span></tt> property is turned on).</p>
+<p><a class="reference internal" href="#gluLoadSamplingMatrices" title="gluLoadSamplingMatrices"><tt class="xref c c-func docutils literal"><span class="pre">gluLoadSamplingMatrices()</span></tt></a> is necessary only if the <tt class="docutils literal"><span class="pre">GLU_AUTO_LOAD_MATRIX</span></tt> property is turned
+off (see <a class="reference internal" href="gluNurbsProperty.html#gluNurbsProperty" title="gluNurbsProperty"><tt class="xref c c-func docutils literal"><span class="pre">gluNurbsProperty()</span></tt></a>).
+Although it can be convenient to leave the <tt class="docutils literal"><span class="pre">GLU_AUTO_LOAD_MATRIX</span></tt>
+property turned on, there can be a performance penalty for doing so.
+(A round trip to the GL server is needed to fetch the current values
+of the modelview matrix, projection matrix, and viewport.)</p>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="gluGetTessProperty.html"
+                        title="previous chapter">function <cite>gluGetTessProperty</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="gluLookAt.html"
+                        title="next chapter">function <cite>gluLookAt</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/gluLoadSamplingMatrices.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="gluLookAt.html" title="function gluLookAt"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="gluGetTessProperty.html" title="function gluGetTessProperty"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

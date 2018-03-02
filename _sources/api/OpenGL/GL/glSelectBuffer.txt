@@ -1,0 +1,82 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glSelectBuffer`
+-------------------------
+
+.. source file man/glSelectBuffer
+
+.. currentmodule:: OpenGL.GL
+
+Establish a buffer for selection mode values
+
+.. c:function:: glSelectBuffer
+.. c:function:: void glSelectBuffer(GLsizei  size, GLuint *  buffer)
+   :noindex: 
+
+
+   
+   :param size:
+      Specifies the size of *buffer* .
+   
+   :param buffer:
+      Returns the selection data.
+   
+
+.. seealso::
+
+   
+   :c:func:`glFeedbackBuffer`, :c:func:`glInitNames`, :c:func:`glLoadName`, :c:func:`glPushName`, :c:func:`glRenderMode`
+   
+.. rubric:: Description
+
+
+:c:func:`glSelectBuffer` has two arguments: *buffer* is a pointer to an array of unsigned integers, and *size* indicates the size of the array. *buffer* returns values from the name stack (see :c:func:`glInitNames`, :c:func:`glLoadName`, :c:func:`glPushName`) when the rendering mode is ``GL_SELECT`` (see :c:func:`glRenderMode`). :c:func:`glSelectBuffer` must be issued before selection mode is enabled, and it must not be issued while the rendering mode is ``GL_SELECT``.
+
+A programmer can use selection to determine which primitives are drawn into some region of a window. The region is defined by the current modelview and perspective matrices.
+
+In selection mode, no pixel fragments are produced from rasterization. Instead, if a primitive or a raster position intersects the clipping volume defined by the viewing frustum and the user-defined clipping planes, this primitive causes a selection hit. (With polygons, no hit occurs if the polygon is culled.) When a change is made to the name stack, or when :c:func:`glRenderMode` is called, a hit record is copied to *buffer* if any hits have occurred since the last such event (name stack change or :c:func:`glRenderMode` call). The hit record consists of the number of names in the name stack at the time of the event, followed by the minimum and maximum depth values of all vertices that hit since the previous event, followed by the name stack contents, bottom name first.
+
+Depth values (which are in the range [0,1]) are multiplied by |EQUATION_1_| , before being placed in the hit record.
+
+An internal index into *buffer* is reset to 0 whenever selection mode is entered. Each time a hit record is copied into *buffer* , the index is incremented to point to the cell just past the end of the block of names\(emthat is, to the next available cell If the hit record is larger than the number of remaining locations in *buffer* , as much data as can fit is copied, and the overflow flag is set. If the name stack is empty when a hit record is copied, that record consists of 0 followed by the minimum and maximum depth values.
+
+To exit selection mode, call :c:func:`glRenderMode` with an argument other than ``GL_SELECT``. Whenever :c:func:`glRenderMode` is called while the render mode is ``GL_SELECT``, it returns the number of hit records copied to *buffer* , resets the overflow flag and the selection buffer pointer, and initializes the name stack to be empty. If the overflow bit was set when :c:func:`glRenderMode` was called, a negative hit record count is returned.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGet` with argument ``GL_NAME_STACK_DEPTH``
+   * :c:func:`glGet` with argument ``GL_SELECTION_BUFFER_SIZE``
+   * :c:func:`glGetPointerv` with argument ``GL_SELECTION_BUFFER_POINTER``
+
+**Errors:**
+
+   * ``GL_INVALID_VALUE`` is generated if *size* is negative.
+   * ``GL_INVALID_OPERATION`` is generated if :c:func:`glSelectBuffer` is called while the render mode is ``GL_SELECT``, or if :c:func:`glRenderMode` is called with argument ``GL_SELECT`` before :c:func:`glSelectBuffer` is called at least once.
+   * ``GL_INVALID_OPERATION`` is generated if :c:func:`glSelectBuffer` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`.
+
+
+
+.. note::
+
+   * The contents of *buffer* is undefined until :c:func:`glRenderMode` is called with an argument other than ``GL_SELECT``.
+   * :c:func:`glBegin`/:c:func:`glEnd` primitives and calls to :c:func:`glRasterPos` can result in hits. :c:func:`glWindowPos` will always generate a selection hit.
+
+
+
+.. role:: mml(raw)
+   :format: html
+
+
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <msup><mn>2</mn> <mn>32</mn> </msup> <mo>-</mo> <mn>1</mn> </mrow> </math>` 
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

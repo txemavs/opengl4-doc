@@ -1,0 +1,191 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glActiveTexture &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glAttachShader" href="glAttachShader.html" />
+    <link rel="prev" title="function glActiveShaderProgram" href="glActiveShaderProgram.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glAttachShader.html" title="function glAttachShader"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glActiveShaderProgram.html" title="function glActiveShaderProgram"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glactivetexture">
+<h1>function <cite>glActiveTexture</cite><a class="headerlink" href="#function-glactivetexture" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Select active texture unit</p>
+<dl class="function">
+<dt id="glActiveTexture">
+<tt class="descname">glActiveTexture</tt><big>(</big><big>)</big><a class="headerlink" href="#glActiveTexture" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>texture</strong> &#8211; Specifies which texture unit to make active. The number
+of texture units is implementation dependent, but must be at least
+80. <em>texture</em> must be one of
+<tt class="docutils literal"><span class="pre">GL_TEXTURE</span> <span class="pre">i</span></tt>,
+where
+<strong>i</strong> ranges from 0 (<tt class="docutils literal"><span class="pre">GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS</span></tt> - 1).
+The initial value is <tt class="docutils literal"><span class="pre">GL_TEXTURE0</span></tt>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glActiveTexture</tt><big>(</big>GLenum <em>&nbsp;texture</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glGenTextures.html#glGenTextures" title="glGenTextures"><tt class="xref c c-func docutils literal"><span class="pre">glGenTextures()</span></tt></a>,
+<a class="reference internal" href="glBindTexture.html#glBindTexture" title="glBindTexture"><tt class="xref c c-func docutils literal"><span class="pre">glBindTexture()</span></tt></a>,
+<a class="reference internal" href="glCompressedTexImage1D.html#glCompressedTexImage1D" title="glCompressedTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glCompressedTexImage1D()</span></tt></a>,
+<a class="reference internal" href="glCompressedTexImage2D.html#glCompressedTexImage2D" title="glCompressedTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glCompressedTexImage2D()</span></tt></a>,
+<a class="reference internal" href="glCompressedTexImage3D.html#glCompressedTexImage3D" title="glCompressedTexImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glCompressedTexImage3D()</span></tt></a>,
+<a class="reference internal" href="glCompressedTexSubImage1D.html#glCompressedTexSubImage1D" title="glCompressedTexSubImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glCompressedTexSubImage1D()</span></tt></a>,
+<a class="reference internal" href="glCompressedTexSubImage2D.html#glCompressedTexSubImage2D" title="glCompressedTexSubImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glCompressedTexSubImage2D()</span></tt></a>,
+<a class="reference internal" href="glCompressedTexSubImage3D.html#glCompressedTexSubImage3D" title="glCompressedTexSubImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glCompressedTexSubImage3D()</span></tt></a>,
+<a class="reference internal" href="glCopyTexImage1D.html#glCopyTexImage1D" title="glCopyTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexImage1D()</span></tt></a>,
+<a class="reference internal" href="glCopyTexImage2D.html#glCopyTexImage2D" title="glCopyTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexImage2D()</span></tt></a>,
+<a class="reference internal" href="glCopyTexSubImage1D.html#glCopyTexSubImage1D" title="glCopyTexSubImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexSubImage1D()</span></tt></a>,
+<a class="reference internal" href="glCopyTexSubImage2D.html#glCopyTexSubImage2D" title="glCopyTexSubImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexSubImage2D()</span></tt></a>,
+<a class="reference internal" href="glCopyTexSubImage3D.html#glCopyTexSubImage3D" title="glCopyTexSubImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexSubImage3D()</span></tt></a>,
+<a class="reference internal" href="glDeleteTextures.html#glDeleteTextures" title="glDeleteTextures"><tt class="xref c c-func docutils literal"><span class="pre">glDeleteTextures()</span></tt></a>
+<a class="reference internal" href="glIsTexture.html#glIsTexture" title="glIsTexture"><tt class="xref c c-func docutils literal"><span class="pre">glIsTexture()</span></tt></a>,
+<a class="reference internal" href="glTexImage1D.html#glTexImage1D" title="glTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage1D()</span></tt></a>,
+<a class="reference internal" href="glTexImage2D.html#glTexImage2D" title="glTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage2D()</span></tt></a>,
+<a class="reference internal" href="glTexImage2DMultisample.html#glTexImage2DMultisample" title="glTexImage2DMultisample"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage2DMultisample()</span></tt></a>,
+<a class="reference internal" href="glTexImage3D.html#glTexImage3D" title="glTexImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage3D()</span></tt></a>,
+<a class="reference internal" href="glTexImage3DMultisample.html#glTexImage3DMultisample" title="glTexImage3DMultisample"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage3DMultisample()</span></tt></a>,
+<a class="reference internal" href="glTexSubImage1D.html#glTexSubImage1D" title="glTexSubImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage1D()</span></tt></a>,
+<a class="reference internal" href="glTexSubImage2D.html#glTexSubImage2D" title="glTexSubImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage2D()</span></tt></a>,
+<a class="reference internal" href="glTexSubImage3D.html#glTexSubImage3D" title="glTexSubImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage3D()</span></tt></a>,
+<a class="reference internal" href="glTexParameter.html#glTexParameter" title="glTexParameter"><tt class="xref c c-func docutils literal"><span class="pre">glTexParameter()</span></tt></a>,</p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glActiveTexture" title="glActiveTexture"><tt class="xref c c-func docutils literal"><span class="pre">glActiveTexture()</span></tt></a> selects which texture unit subsequent texture state calls will
+affect.  The number of texture units an implementation supports is
+implementation dependent, but must be at least 80.</p>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>texture</em> is not one of <tt class="docutils literal"><span class="pre">GL_TEXTURE</span> <span class="pre">i</span></tt>, where <strong>i</strong> ranges from 0 to (<tt class="docutils literal"><span class="pre">GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS</span></tt> - 1).</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_ACTIVE_TEXTURE</span></tt>, or <tt class="docutils literal"><span class="pre">GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS</span></tt>.</li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glActiveShaderProgram.html"
+                        title="previous chapter">function <cite>glActiveShaderProgram</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glAttachShader.html"
+                        title="next chapter">function <cite>glAttachShader</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glActiveTexture.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glAttachShader.html" title="function glAttachShader"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glActiveShaderProgram.html" title="function glActiveShaderProgram"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glBindBufferBase`
+---------------------------
+
+.. source file man4/glBindBufferBase
+
+.. currentmodule:: OpenGL.GL
+
+Bind a buffer object to an indexed buffer target
+
+.. c:function:: glBindBufferBase
+.. c:function:: void glBindBufferBase(GLenum  target, GLuint  index, GLuint  buffer)
+   :noindex: 
+
+
+   
+   :param target:
+      Specify the target of the bind operation. *target* must be one of ``GL_ATOMIC_COUNTER_BUFFER``, ``GL_TRANSFORM_FEEDBACK_BUFFER`` or ``GL_UNIFORM_BUFFER``.
+   
+   :param index:
+      Specify the index of the binding point within the array specified by *target* .
+   
+   :param buffer:
+      The name of a buffer object to bind to the specified binding point.
+   
+
+.. seealso::
+
+   
+   :c:func:`glGenBuffers`, :c:func:`glDeleteBuffers`, :c:func:`glBindBuffer`, :c:func:`glBindBufferRange`, :c:func:`glMapBuffer`, :c:func:`glUnmapBuffer`,
+   
+.. rubric:: Description
+
+
+:c:func:`glBindBufferBase` binds the buffer object *buffer* to the binding point at index *index* of the array of targets specified by *target* . Each *target* represents an indexed array of buffer binding points, as well as a single general binding point that can be used by other buffer manipulation functions such as :c:func:`glBindBuffer` or :c:func:`glMapBuffer`. In addition to binding *buffer* to the indexed buffer binding target, :c:func:`glBindBufferBase` also binds *buffer* to the generic buffer binding point specified by *target* .
+
+
+**Errors:**
+
+   * ``GL_INVALID_ENUM`` is generated if *target* is not ``GL_ATOMIC_COUNTER_BUFFER``, ``GL_TRANSFORM_FEEDBACK_BUFFER`` or ``GL_UNIFORM_BUFFER``.
+   * ``GL_INVALID_VALUE`` is generated if *index* is greater than or equal to the number of *target* -specific indexed binding points.
+   * ``GL_INVALID_VALUE`` is generated if *buffer* does not have an associated data store, or if the size of that store is zero.
+
+
+
+.. note::
+
+   * Calling :c:func:`glBindBufferBase` is equivalent to calling :c:func:`glBindBufferRange` with *offset* zero and *size* equal to the size of the buffer.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

@@ -1,0 +1,140 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:27
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glPrioritizeTextures.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glPrioritizeTextures`
+-------------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Set texture residence priority
+
+.. c:function:: glPrioritizeTextures
+
+
+         :param n:
+
+                  Specifies the number of textures to be prioritized.
+
+         :param textures:
+
+                  Specifies an array containing the names of the textures to be prioritized.
+
+         :param priorities:
+
+                  Specifies an array containing the texture priorities.
+                  A priority given in an element of *priorities* applies to the texture
+                  named by the corresponding element of *textures*\ .
+
+.. rubric:: Specification
+
+.. c:function:: void glPrioritizeTextures(GLsizei  n, const GLuint *  textures, const GLclampf *  priorities)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glAreTexturesResident`\ ,
+            :c:func:`glBindTexture`\ ,
+            :c:func:`glCopyTexImage1D`\ ,
+            :c:func:`glCopyTexImage2D`\ ,
+            :c:func:`glTexImage1D`\ ,
+            :c:func:`glTexImage2D`\ ,
+            :c:func:`glTexImage3D`\ ,
+            :c:func:`glTexParameter`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glPrioritizeTextures` assigns the *n* texture priorities given in *priorities* to the
+*n* textures named in *textures*\ .
+
+
+The GL establishes
+a "working set" of textures that are resident in texture memory.
+These textures may be bound to a texture target much more efficiently
+than textures that are not resident.
+By specifying a priority for each texture,
+:c:func:`glPrioritizeTextures` allows applications to guide the GL implementation in determining
+which textures should be resident.
+
+
+The priorities given in *priorities* are clamped to the range |EQUATION_1_| before they are assigned.
+0 indicates the lowest priority; textures with priority 0
+are least likely to be resident.
+1 indicates the highest priority; textures with priority 1
+are most likely to be resident.
+However, textures are not guaranteed to be resident until they are used.
+
+
+:c:func:`glPrioritizeTextures` silently ignores attempts to prioritize texture 0 or any texture
+name that does not correspond to an existing texture.
+
+
+:c:func:`glPrioritizeTextures` does not require that any of the textures named by *textures*
+be bound to a texture target.
+:c:func:`glTexParameter` may also be used to set a texture's priority,
+but only if the texture is currently bound.
+This is the only way to set the priority of a default texture.
+
+
+.. note::
+
+
+   :c:func:`glPrioritizeTextures` is available only if the GL version is 1.1 or greater.
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_VALUE`` is generated if *n* is negative.
+* ``GL_INVALID_OPERATION`` is generated if :c:func:`glPrioritizeTextures` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`\ .
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGetTexParameter` with parameter name ``GL_TEXTURE_PRIORITY`` retrieves the priority of a currently bound texture.
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glPrioritizeTextures'>
+
+.. role:: mml(raw)
+   :format: html
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"><mn>0</mn><mn>1</mn></mfenced></math>` 
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

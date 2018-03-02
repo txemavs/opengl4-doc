@@ -1,0 +1,82 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glNormal`
+-------------------
+
+.. source file man/glNormal
+
+.. currentmodule:: OpenGL.GL
+
+Set the current normal vector
+
+.. c:function:: glNormal
+.. c:function:: void glNormal3b(GLbyte  nx, GLbyte  ny, GLbyte  nz, GLdouble  nx, GLdouble  ny, GLdouble  nz, GLfloat  nx, GLfloat  ny, GLfloat  nz, GLint  nx, GLint  ny, GLint  nz, GLshort  nx, GLshort  ny, GLshort  nz)
+
+
+   
+   :param nx:
+      Specify the |EQUATION_1_| , |EQUATION_2_| , and |EQUATION_3_| coordinates of the new current normal. The initial value of the current normal is the unit vector, (0, 0, 1).
+   
+.. c:function:: void glNormal3bv(const GLbyte *  v, const GLdouble *  v, const GLfloat *  v, const GLint *  v, const GLshort *  v)
+
+
+   
+   :param v:
+      Specifies a pointer to an array of three elements: the |EQUATION_4_| , |EQUATION_5_| , and |EQUATION_6_| coordinates of the new current normal.
+   
+
+.. seealso::
+
+   
+   :c:func:`glBegin`, :c:func:`glColor`, :c:func:`glIndex`, :c:func:`glMultiTexCoord`, :c:func:`glNormalPointer`, :c:func:`glTexCoord`, :c:func:`glVertex`
+   
+.. rubric:: Description
+
+
+The current normal is set to the given coordinates whenever :c:func:`glNormal` is issued. Byte, short, or integer arguments are converted to floating-point format with a linear mapping that maps the most positive representable integer value to 1.0 and the most negative representable integer value to |EQUATION_7_| .
+
+Normals specified with :c:func:`glNormal` need not have unit length. If ``GL_NORMALIZE`` is enabled, then normals of any length specified with :c:func:`glNormal` are normalized after transformation. If ``GL_RESCALE_NORMAL`` is enabled, normals are scaled by a scaling factor derived from the modelview matrix. ``GL_RESCALE_NORMAL`` requires that the originally specified normals were of unit length, and that the modelview matrix contain only uniform scales for proper results. To enable and disable normalization, call :c:func:`glEnable` and :c:func:`glDisable` with either ``GL_NORMALIZE`` or ``GL_RESCALE_NORMAL``. Normalization is initially disabled.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGet` with argument ``GL_CURRENT_NORMAL``
+   * :c:func:`glIsEnabled` with argument ``GL_NORMALIZE``
+   * :c:func:`glIsEnabled` with argument ``GL_RESCALE_NORMAL``
+
+
+
+.. note::
+
+   * The current normal can be updated at any time. In particular, :c:func:`glNormal` can be called between a call to :c:func:`glBegin` and the corresponding call to :c:func:`glEnd`.
+
+
+
+.. role:: mml(raw)
+   :format: html
+
+
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">x</mi></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">y</mi></math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">z</mi></math>` 
+
+.. |EQUATION_4_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">x</mi></math>` 
+
+.. |EQUATION_5_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">y</mi></math>` 
+
+.. |EQUATION_6_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">z</mi></math>` 
+
+.. |EQUATION_7_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mn>-1.0</mn> </math>` 
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

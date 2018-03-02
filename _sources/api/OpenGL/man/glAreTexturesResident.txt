@@ -1,0 +1,142 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:26
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glAreTexturesResident.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glAreTexturesResident`
+--------------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Determine if textures are loaded in texture memory
+
+.. c:function:: glAreTexturesResident
+
+
+         :param n:
+
+                  Specifies the number of textures to be queried.
+
+         :param textures:
+
+                  Specifies an array containing the names of the textures to be queried.
+
+         :param residences:
+
+                  Specifies an array in which the texture residence status is returned.
+                  The residence status of a texture named by an element of *textures* is
+                  returned in the corresponding element of *residences*\ .
+
+.. rubric:: Specification
+
+.. c:function:: GLboolean glAreTexturesResident(GLsizei  n, const GLuint *  textures, GLboolean *  residences)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glBindTexture`\ ,
+            :c:func:`glGetTexParameter`\ ,
+            :c:func:`glPrioritizeTextures`\ ,
+            :c:func:`glTexImage1D`\ ,
+            :c:func:`glTexImage2D`\ ,
+            :c:func:`glTexImage3D`\ ,
+            :c:func:`glTexParameter`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+GL establishes
+a "working set" of textures that are resident in texture memory.
+These textures can be bound to a texture target much more efficiently
+than textures that are not resident.
+
+
+:c:func:`glAreTexturesResident` queries the texture residence status of the *n* textures named by
+the elements of *textures*\ .
+If all the named textures are resident,
+:c:func:`glAreTexturesResident` returns ``GL_TRUE``\ ,
+and the contents of *residences* are undisturbed.
+If not all the named textures are resident, :c:func:`glAreTexturesResident` returns ``GL_FALSE``\ ,
+and detailed status is returned in the *n* elements of *residences*\ .
+If an element of *residences* is ``GL_TRUE``\ , then the texture named by
+the corresponding element of *textures* is resident.
+
+
+The residence status of a single bound texture may also be queried
+by calling
+:c:func:`glGetTexParameter` with the :strong:`target` argument set to the
+target to which the texture is bound, and the :strong:`pname` argument
+set to ``GL_TEXTURE_RESIDENT``\ .
+This is the only way that the residence status of a default texture can be
+queried.
+
+
+.. note::
+
+
+   :c:func:`glAreTexturesResident` is available only if the GL version is 1.1 or greater.
+
+
+   :c:func:`glAreTexturesResident` returns the residency status of the textures at the time of
+   invocation. It does not guarantee that the textures will remain
+   resident at any other time.
+
+
+   If textures reside in virtual memory (there is no texture memory), they
+   are considered always resident.
+
+
+   Some implementations may not load a texture until the first use of
+   that texture.
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_VALUE`` is generated if *n* is negative.
+* ``GL_INVALID_VALUE`` is generated if any element in *textures* is 0 or does not name a texture. In that case, the function returns ``GL_FALSE`` and the contents of *residences* is indeterminate.
+* ``GL_INVALID_OPERATION`` is generated if :c:func:`glAreTexturesResident` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`\ .
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGetTexParameter` with parameter name ``GL_TEXTURE_RESIDENT`` retrieves the residence status of a currently bound texture.
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glAreTexturesResident'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

@@ -1,0 +1,227 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glGetShader &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glGetShaderInfoLog" href="glGetShaderInfoLog.html" />
+    <link rel="prev" title="function glGetSamplerParameter" href="glGetSamplerParameter.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glGetShaderInfoLog.html" title="function glGetShaderInfoLog"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glGetSamplerParameter.html" title="function glGetSamplerParameter"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glgetshader">
+<h1>function <cite>glGetShader</cite><a class="headerlink" href="#function-glgetshader" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Returns a parameter from a shader object</p>
+<dl class="function">
+<dt id="glGetShader">
+<tt class="descname">glGetShader</tt><big>(</big><big>)</big><a class="headerlink" href="#glGetShader" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>shader</strong> &#8211; Specifies the shader object to be
+queried.</li>
+<li><strong>pname</strong> &#8211; Specifies the object parameter. Accepted
+symbolic names are
+<tt class="docutils literal"><span class="pre">GL_SHADER_TYPE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_DELETE_STATUS</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_COMPILE_STATUS</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_INFO_LOG_LENGTH</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_SHADER_SOURCE_LENGTH</span></tt>.</li>
+<li><strong>params</strong> &#8211; Returns the requested object parameter.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt id="glGetShaderiv">
+void <tt class="descname">glGetShaderiv</tt><big>(</big>GLuint <em>&nbsp;shader</em>, GLenum <em>&nbsp;pname</em>, GLint *<em>&nbsp;params</em><big>)</big><a class="headerlink" href="#glGetShaderiv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glCompileShader.html#glCompileShader" title="glCompileShader"><tt class="xref c c-func docutils literal"><span class="pre">glCompileShader()</span></tt></a>,
+<a class="reference internal" href="glCreateShader.html#glCreateShader" title="glCreateShader"><tt class="xref c c-func docutils literal"><span class="pre">glCreateShader()</span></tt></a>,
+<a class="reference internal" href="glDeleteShader.html#glDeleteShader" title="glDeleteShader"><tt class="xref c c-func docutils literal"><span class="pre">glDeleteShader()</span></tt></a>,
+<a class="reference internal" href="glGetProgram.html#glGetProgram" title="glGetProgram"><tt class="xref c c-func docutils literal"><span class="pre">glGetProgram()</span></tt></a>,
+<a class="reference internal" href="glShaderSource.html#glShaderSource" title="glShaderSource"><tt class="xref c c-func docutils literal"><span class="pre">glShaderSource()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glGetShader" title="glGetShader"><tt class="xref c c-func docutils literal"><span class="pre">glGetShader()</span></tt></a>
+returns in <em>params</em>
+the value of a parameter for a specific shader object. The
+following parameters are defined:</p>
+<p><tt class="docutils literal"><span class="pre">GL_SHADER_TYPE</span></tt></p>
+<blockquote>
+<div><em>params</em> returns
+<tt class="docutils literal"><span class="pre">GL_VERTEX_SHADER</span></tt> if
+<em>shader</em> is a vertex shader
+object, <tt class="docutils literal"><span class="pre">GL_GEOMETRY_SHADER</span></tt> if <em>shader</em>
+is a geometry shader object, and <tt class="docutils literal"><span class="pre">GL_FRAGMENT_SHADER</span></tt>
+if <em>shader</em> is a fragment
+shader object.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_DELETE_STATUS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns
+<tt class="docutils literal"><span class="pre">GL_TRUE</span></tt> if
+<em>shader</em> is currently flagged
+for deletion, and <tt class="docutils literal"><span class="pre">GL_FALSE</span></tt>
+otherwise.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_COMPILE_STATUS</span></tt></p>
+<blockquote>
+<div><em>params</em> returns
+<tt class="docutils literal"><span class="pre">GL_TRUE</span></tt> if the last compile
+operation on <em>shader</em> was
+successful, and <tt class="docutils literal"><span class="pre">GL_FALSE</span></tt>
+otherwise.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_INFO_LOG_LENGTH</span></tt></p>
+<blockquote>
+<div><em>params</em> returns the
+number of characters in the information log for
+<em>shader</em> including the null
+termination character (i.e., the size of the
+character buffer required to store the information
+log). If <em>shader</em> has no
+information log, a value of 0 is returned.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_SHADER_SOURCE_LENGTH</span></tt></p>
+<blockquote>
+<div><em>params</em> returns the
+length of the concatenation of the source strings
+that make up the shader source for the
+<em>shader</em>, including the null
+termination character. (i.e., the size of the
+character buffer required to store the shader
+source). If no source code exists, 0 is
+returned.</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If an error is generated, no change is made to the
+contents of <em>params</em>.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>shader</em> is not a value generated by OpenGL.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <em>shader</em> does not refer to a shader object.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>pname</em> is not an accepted value.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glGetShaderInfoLog.html#glGetShaderInfoLog" title="glGetShaderInfoLog"><tt class="xref c c-func docutils literal"><span class="pre">glGetShaderInfoLog()</span></tt></a> with argument <em>shader</em></li>
+<li><a class="reference internal" href="glGetShaderSource.html#glGetShaderSource" title="glGetShaderSource"><tt class="xref c c-func docutils literal"><span class="pre">glGetShaderSource()</span></tt></a> with argument <em>shader</em></li>
+<li><a class="reference internal" href="glIsShader.html#glIsShader" title="glIsShader"><tt class="xref c c-func docutils literal"><span class="pre">glIsShader()</span></tt></a></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)2003-2005 3Dlabs Inc. Ltd. Open Publication License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glGetSamplerParameter.html"
+                        title="previous chapter">function <cite>glGetSamplerParameter</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glGetShaderInfoLog.html"
+                        title="next chapter">function <cite>glGetShaderInfoLog</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glGetShader.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glGetShaderInfoLog.html" title="function glGetShaderInfoLog"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glGetSamplerParameter.html" title="function glGetSamplerParameter"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

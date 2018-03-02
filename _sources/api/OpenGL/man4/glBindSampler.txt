@@ -1,0 +1,109 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:28
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glBindSampler.xml'
+.. (c)2010 Khronos Group.
+.. See license details at http://opencontent.org/openpub/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glBindSampler`
+------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Bind a named sampler to a texturing target
+
+.. c:function:: glBindSampler
+
+
+         :param unit:
+
+                  Specifies the index of the texture unit to which the sampler is bound.
+
+         :param sampler:
+
+                  Specifies the name of a sampler.
+
+.. rubric:: Specification
+
+.. c:function:: void glBindSampler(GLuint  unit, GLuint  sampler)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glGenSamplers`\ ,
+            :c:func:`glDeleteSamplers`\ ,
+            :c:func:`glGet`\ ,
+            :c:func:`glSamplerParameter`\ ,
+            :c:func:`glGetSamplerParameter`\ ,
+            :c:func:`glGenTextures`\ ,
+            :c:func:`glBindTexture`\ ,
+            :c:func:`glDeleteTextures`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glBindSampler` binds *sampler* to the texture unit at index *unit*\ .
+*sampler* must be zero or the name of a sampler object previously returned from a call to
+:c:func:`glGenSamplers`\ . *unit* must be less than the value
+of ``GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS``\ .
+
+
+When a sampler object is bound to a texture unit, its state supersedes that of
+the texture object bound to that texture unit. If the sampler name zero is bound to
+a texture unit, the currently bound texture's sampler state becomes active. A single
+sampler object may be bound to multiple texture units simultaneously.
+
+
+.. note::
+
+
+   :c:func:`glBindSampler` is available only if the GL version is 3.3 or higher.
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_VALUE`` is generated if *unit* is greater than or equal to the value of ``GL_MAX_COMBIED_TEXTURE_IMAGE_UNITS``\ .
+* ``GL_INVALID_OPERATION`` is generated if *sampler* is not zero or a name previously returned from a call to :c:func:`glGenSamplers`\ , or if such a name has been deleted by a call to :c:func:`glDeleteSamplers`\ .
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGet` with argument ``GL_SAMPLER_BINDING``
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glBindSampler'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )2010 Khronos Group. Open Publication License.
+

@@ -1,0 +1,377 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glEnable &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glEnableVertexAttribArray" href="glEnableVertexAttribArray.html" />
+    <link rel="prev" title="function glDrawTransformFeedbackStreamInstanced" href="glDrawTransformFeedbackStreamInstanced.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glEnableVertexAttribArray.html" title="function glEnableVertexAttribArray"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glDrawTransformFeedbackStreamInstanced.html" title="function glDrawTransformFeedbackStreamInstanced"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glenable">
+<h1>function <cite>glEnable</cite><a class="headerlink" href="#function-glenable" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Enable or disable server-side GL capabilities</p>
+<dl class="function">
+<dt id="glEnable">
+<tt class="descname">glEnable</tt><big>(</big><big>)</big><a class="headerlink" href="#glEnable" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>cap</strong> &#8211; Specifies a symbolic constant indicating a GL capability.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glEnable</tt><big>(</big>GLenum <em>&nbsp;cap</em><big>)</big></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="glDisable">
+void <tt class="descname">glDisable</tt><big>(</big>GLenum <em>&nbsp;cap</em><big>)</big><a class="headerlink" href="#glDisable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="glEnablei">
+void <tt class="descname">glEnablei</tt><big>(</big>GLenum <em>&nbsp;cap</em>, GLuint <em>&nbsp;index</em><big>)</big><a class="headerlink" href="#glEnablei" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="glDisablei">
+void <tt class="descname">glDisablei</tt><big>(</big>GLenum <em>&nbsp;cap</em>, GLuint <em>&nbsp;index</em><big>)</big><a class="headerlink" href="#glDisablei" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glActiveTexture.html#glActiveTexture" title="glActiveTexture"><tt class="xref c c-func docutils literal"><span class="pre">glActiveTexture()</span></tt></a>,
+<a class="reference internal" href="glBlendFunc.html#glBlendFunc" title="glBlendFunc"><tt class="xref c c-func docutils literal"><span class="pre">glBlendFunc()</span></tt></a>,
+<a class="reference internal" href="glCullFace.html#glCullFace" title="glCullFace"><tt class="xref c c-func docutils literal"><span class="pre">glCullFace()</span></tt></a>,
+<a class="reference internal" href="glDepthFunc.html#glDepthFunc" title="glDepthFunc"><tt class="xref c c-func docutils literal"><span class="pre">glDepthFunc()</span></tt></a>,
+<a class="reference internal" href="glDepthRange.html#glDepthRange" title="glDepthRange"><tt class="xref c c-func docutils literal"><span class="pre">glDepthRange()</span></tt></a>,
+<a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a>,
+<a class="reference internal" href="glIsEnabled.html#glIsEnabled" title="glIsEnabled"><tt class="xref c c-func docutils literal"><span class="pre">glIsEnabled()</span></tt></a>,
+<a class="reference internal" href="glLineWidth.html#glLineWidth" title="glLineWidth"><tt class="xref c c-func docutils literal"><span class="pre">glLineWidth()</span></tt></a>,
+<a class="reference internal" href="glLogicOp.html#glLogicOp" title="glLogicOp"><tt class="xref c c-func docutils literal"><span class="pre">glLogicOp()</span></tt></a>,
+<a class="reference internal" href="glPointSize.html#glPointSize" title="glPointSize"><tt class="xref c c-func docutils literal"><span class="pre">glPointSize()</span></tt></a>,
+<a class="reference internal" href="glPolygonMode.html#glPolygonMode" title="glPolygonMode"><tt class="xref c c-func docutils literal"><span class="pre">glPolygonMode()</span></tt></a>,
+<a class="reference internal" href="glPolygonOffset.html#glPolygonOffset" title="glPolygonOffset"><tt class="xref c c-func docutils literal"><span class="pre">glPolygonOffset()</span></tt></a>,
+<a class="reference internal" href="glSampleCoverage.html#glSampleCoverage" title="glSampleCoverage"><tt class="xref c c-func docutils literal"><span class="pre">glSampleCoverage()</span></tt></a>,
+<a class="reference internal" href="glScissor.html#glScissor" title="glScissor"><tt class="xref c c-func docutils literal"><span class="pre">glScissor()</span></tt></a>,
+<a class="reference internal" href="glStencilFunc.html#glStencilFunc" title="glStencilFunc"><tt class="xref c c-func docutils literal"><span class="pre">glStencilFunc()</span></tt></a>,
+<a class="reference internal" href="glStencilOp.html#glStencilOp" title="glStencilOp"><tt class="xref c c-func docutils literal"><span class="pre">glStencilOp()</span></tt></a>,
+<a class="reference internal" href="glTexImage1D.html#glTexImage1D" title="glTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage1D()</span></tt></a>,
+<a class="reference internal" href="glTexImage2D.html#glTexImage2D" title="glTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage2D()</span></tt></a>,
+<a class="reference internal" href="glTexImage3D.html#glTexImage3D" title="glTexImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage3D()</span></tt></a></p>
+</div>
+<p class="rubric">Parameters</p>
+<blockquote>
+<div><p><em>cap</em></p>
+<blockquote>
+<div>Specifies a symbolic constant indicating a GL capability.</div></blockquote>
+</div></blockquote>
+<p class="rubric">Parameters</p>
+<blockquote>
+<div><p><em>cap</em></p>
+<blockquote>
+<div>Specifies a symbolic constant indicating a GL capability.</div></blockquote>
+<p><em>index</em></p>
+<blockquote>
+<div>Specifies the index of the switch to enable.</div></blockquote>
+</div></blockquote>
+<p class="rubric">Parameters</p>
+<blockquote>
+<div><p><em>cap</em></p>
+<blockquote>
+<div>Specifies a symbolic constant indicating a GL capability.</div></blockquote>
+<p><em>index</em></p>
+<blockquote>
+<div>Specifies the index of the switch to disable.</div></blockquote>
+</div></blockquote>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glEnable" title="glEnable"><tt class="xref c c-func docutils literal"><span class="pre">glEnable()</span></tt></a> and <a class="reference internal" href="#glDisable" title="glDisable"><tt class="xref c c-func docutils literal"><span class="pre">glDisable()</span></tt></a> enable and disable various capabilities.
+Use <a class="reference internal" href="glIsEnabled.html#glIsEnabled" title="glIsEnabled"><tt class="xref c c-func docutils literal"><span class="pre">glIsEnabled()</span></tt></a> or <a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> to determine the current setting
+of any capability. The initial value for each capability with the
+exception of <tt class="docutils literal"><span class="pre">GL_DITHER</span></tt> and <tt class="docutils literal"><span class="pre">GL_MULTISAMPLE</span></tt> is
+<tt class="docutils literal"><span class="pre">GL_FALSE</span></tt>. The initial value for
+<tt class="docutils literal"><span class="pre">GL_DITHER</span></tt> and <tt class="docutils literal"><span class="pre">GL_MULTISAMPLE</span></tt> is <tt class="docutils literal"><span class="pre">GL_TRUE</span></tt>.</p>
+<p>Both <a class="reference internal" href="#glEnable" title="glEnable"><tt class="xref c c-func docutils literal"><span class="pre">glEnable()</span></tt></a> and <a class="reference internal" href="#glDisable" title="glDisable"><tt class="xref c c-func docutils literal"><span class="pre">glDisable()</span></tt></a> take a single argument, <em>cap</em>,
+which can assume one of the following values:</p>
+<p>Some of the GL&#8217;s capabilities are indexed. <a class="reference internal" href="#glEnablei" title="glEnablei"><tt class="xref c c-func docutils literal"><span class="pre">glEnablei()</span></tt></a> and <a class="reference internal" href="#glDisablei" title="glDisablei"><tt class="xref c c-func docutils literal"><span class="pre">glDisablei()</span></tt></a> enable and disable
+indexed capabilities.</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">GL_BLEND</span></tt></p>
+<blockquote>
+<div>If enabled,
+blend the computed fragment color values with the values in the color
+buffers. See <a class="reference internal" href="glBlendFunc.html#glBlendFunc" title="glBlendFunc"><tt class="xref c c-func docutils literal"><span class="pre">glBlendFunc()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_CLIP_DISTANCE</span></tt> <strong>i</strong></p>
+<blockquote>
+<div>If enabled, clip geometry against user-defined half space <strong>i</strong>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_COLOR_LOGIC_OP</span></tt></p>
+<blockquote>
+<div>If enabled,
+apply the currently selected logical operation to the computed fragment
+color and color buffer values. See <a class="reference internal" href="glLogicOp.html#glLogicOp" title="glLogicOp"><tt class="xref c c-func docutils literal"><span class="pre">glLogicOp()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_CULL_FACE</span></tt></p>
+<blockquote>
+<div>If enabled,
+cull polygons based on their winding in window coordinates.
+See <a class="reference internal" href="glCullFace.html#glCullFace" title="glCullFace"><tt class="xref c c-func docutils literal"><span class="pre">glCullFace()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_DEPTH_CLAMP</span></tt></p>
+<blockquote>
+<div><p>If enabled,
+the</p>
+<p><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mo>-</mo><msub><mi>w</mi><mi>c</mi></msub><mo>&le;</mo><msub><mi>z</mi><mi>c</mi></msub><mo>&le;</mo><msub><mi>w</mi><mi>c</mi></msub></math></span> plane equation is ignored by view volume clipping (effectively, there is no near or
+far plane clipping).
+See <a class="reference internal" href="glDepthRange.html#glDepthRange" title="glDepthRange"><tt class="xref c c-func docutils literal"><span class="pre">glDepthRange()</span></tt></a>.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_DEPTH_TEST</span></tt></p>
+<blockquote>
+<div>If enabled,
+do depth comparisons and update the depth buffer. Note that even if
+the depth buffer exists and the depth mask is non-zero, the
+depth buffer is not updated if the depth test is disabled. See
+<a class="reference internal" href="glDepthFunc.html#glDepthFunc" title="glDepthFunc"><tt class="xref c c-func docutils literal"><span class="pre">glDepthFunc()</span></tt></a> and
+<a class="reference internal" href="glDepthRange.html#glDepthRange" title="glDepthRange"><tt class="xref c c-func docutils literal"><span class="pre">glDepthRange()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_DITHER</span></tt></p>
+<blockquote>
+<div>If enabled,
+dither color components or indices before they are written to the
+color buffer.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_FRAMEBUFFER_SRGB</span></tt></p>
+<blockquote>
+<div>If enabled
+and the value of <tt class="docutils literal"><span class="pre">GL_FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING</span></tt> for the
+framebuffer attachment corresponding to the destination buffer is <tt class="docutils literal"><span class="pre">GL_SRGB</span></tt>,
+the R, G, and B destination color values (after conversion from fixed-point to floating-point)
+are considered to be encoded for the sRGB color space and hence are linearized prior to
+their use in blending.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_LINE_SMOOTH</span></tt></p>
+<blockquote>
+<div>If enabled,
+draw lines with correct filtering.
+Otherwise,
+draw aliased lines.
+See <a class="reference internal" href="glLineWidth.html#glLineWidth" title="glLineWidth"><tt class="xref c c-func docutils literal"><span class="pre">glLineWidth()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_MULTISAMPLE</span></tt></p>
+<blockquote>
+<div>If enabled,
+use multiple fragment samples in computing the final color of a pixel.
+See <a class="reference internal" href="glSampleCoverage.html#glSampleCoverage" title="glSampleCoverage"><tt class="xref c c-func docutils literal"><span class="pre">glSampleCoverage()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_POLYGON_OFFSET_FILL</span></tt></p>
+<blockquote>
+<div>If enabled, and if the polygon is rendered in
+<tt class="docutils literal"><span class="pre">GL_FILL</span></tt> mode, an offset is added to depth values of a polygon&#8217;s
+fragments before the depth comparison is performed.
+See <a class="reference internal" href="glPolygonOffset.html#glPolygonOffset" title="glPolygonOffset"><tt class="xref c c-func docutils literal"><span class="pre">glPolygonOffset()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_POLYGON_OFFSET_LINE</span></tt></p>
+<blockquote>
+<div>If enabled, and if the polygon is rendered in
+<tt class="docutils literal"><span class="pre">GL_LINE</span></tt> mode, an offset is added to depth values of a polygon&#8217;s
+fragments before the depth comparison is performed.
+See <a class="reference internal" href="glPolygonOffset.html#glPolygonOffset" title="glPolygonOffset"><tt class="xref c c-func docutils literal"><span class="pre">glPolygonOffset()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_POLYGON_OFFSET_POINT</span></tt></p>
+<blockquote>
+<div>If enabled, an offset is added to depth values of a polygon&#8217;s fragments
+before the depth comparison is performed, if the polygon is rendered in
+<tt class="docutils literal"><span class="pre">GL_POINT</span></tt> mode. See <a class="reference internal" href="glPolygonOffset.html#glPolygonOffset" title="glPolygonOffset"><tt class="xref c c-func docutils literal"><span class="pre">glPolygonOffset()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_POLYGON_SMOOTH</span></tt></p>
+<blockquote>
+<div>If enabled, draw polygons with proper filtering.
+Otherwise, draw aliased polygons. For correct antialiased polygons,
+an alpha buffer is needed and the polygons must be sorted front to
+back.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_PRIMITIVE_RESTART</span></tt></p>
+<blockquote>
+<div>Enables primitive restarting.  If enabled, any one of the draw commands
+which transfers a set of generic attribute array elements to the GL will restart
+the primitive when the index of the vertex is equal to the primitive restart index.
+See <a class="reference internal" href="glPrimitiveRestartIndex.html#glPrimitiveRestartIndex" title="glPrimitiveRestartIndex"><tt class="xref c c-func docutils literal"><span class="pre">glPrimitiveRestartIndex()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_SAMPLE_ALPHA_TO_COVERAGE</span></tt></p>
+<blockquote>
+<div>If enabled,
+compute a temporary coverage value where each bit is determined by the
+alpha value at the corresponding sample location.  The temporary coverage
+value is then ANDed with the fragment coverage value.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_SAMPLE_ALPHA_TO_ONE</span></tt></p>
+<blockquote>
+<div>If enabled,
+each sample alpha value is replaced by the maximum representable alpha value.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_SAMPLE_COVERAGE</span></tt></p>
+<blockquote>
+<div>If enabled,
+the fragment&#8217;s coverage is ANDed with the temporary coverage value.  If
+<tt class="docutils literal"><span class="pre">GL_SAMPLE_COVERAGE_INVERT</span></tt> is set to <tt class="docutils literal"><span class="pre">GL_TRUE</span></tt>, invert the coverage
+value.
+See <a class="reference internal" href="glSampleCoverage.html#glSampleCoverage" title="glSampleCoverage"><tt class="xref c c-func docutils literal"><span class="pre">glSampleCoverage()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_SAMPLE_SHADING</span></tt></p>
+<blockquote>
+<div>If enabled, the active fragment shader is run once for each covered sample, or at
+fraction of this rate as determined by the current value of <tt class="docutils literal"><span class="pre">GL_MIN_SAMPLE_SHADING_VALUE</span></tt>.
+See <a class="reference internal" href="glMinSampleShading.html#glMinSampleShading" title="glMinSampleShading"><tt class="xref c c-func docutils literal"><span class="pre">glMinSampleShading()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_SAMPLE_MASK</span></tt></p>
+<blockquote>
+<div>If enabled, the sample coverage mask generated for a fragment during rasterization
+will be ANDed with the value of <tt class="docutils literal"><span class="pre">GL_SAMPLE_MASK_VALUE</span></tt> before
+shading occurs.
+See <a class="reference internal" href="glSampleMaski.html#glSampleMaski" title="glSampleMaski"><tt class="xref c c-func docutils literal"><span class="pre">glSampleMaski()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_SCISSOR_TEST</span></tt></p>
+<blockquote>
+<div>If enabled,
+discard fragments that are outside the scissor rectangle.
+See <a class="reference internal" href="glScissor.html#glScissor" title="glScissor"><tt class="xref c c-func docutils literal"><span class="pre">glScissor()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_STENCIL_TEST</span></tt></p>
+<blockquote>
+<div>If enabled,
+do stencil testing and update the stencil buffer.
+See <a class="reference internal" href="glStencilFunc.html#glStencilFunc" title="glStencilFunc"><tt class="xref c c-func docutils literal"><span class="pre">glStencilFunc()</span></tt></a> and <a class="reference internal" href="glStencilOp.html#glStencilOp" title="glStencilOp"><tt class="xref c c-func docutils literal"><span class="pre">glStencilOp()</span></tt></a>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_SEAMLESS</span></tt></p>
+<blockquote>
+<div>If enabled, cubemap textures are sampled such that when linearly sampling from the border
+between two adjacent faces, texels from both faces are used to generate the final sample
+value. When disabled, texels from only a single face are used to construct the final
+sample value.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_PROGRAM_POINT_SIZE</span></tt></p>
+<blockquote>
+<div>If enabled
+and a vertex or geometry shader is active, then the derived point size is taken from the (potentially clipped) shader builtin
+<tt class="docutils literal"><span class="pre">gl_PointSize</span></tt> and clamped to the implementation-dependent point size range.</div></blockquote>
+</div></blockquote>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>cap</em> is not one of the values listed previously.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated by <a class="reference internal" href="#glEnablei" title="glEnablei"><tt class="xref c c-func docutils literal"><span class="pre">glEnablei()</span></tt></a> and <a class="reference internal" href="#glDisablei" title="glDisablei"><tt class="xref c c-func docutils literal"><span class="pre">glDisablei()</span></tt></a> if <em>index</em> is greater than or equal to the number of indexed capabilities for <em>cap</em>.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><tt class="docutils literal"><span class="pre">GL_PRIMITIVE_RESTART</span></tt> is available only if the GL version is 3.1 or greater.</p>
+<p><tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_SEAMLESS</span></tt> is available only if the GL version is 3.2 or greater.</p>
+<p>Any token accepted by <a class="reference internal" href="#glEnable" title="glEnable"><tt class="xref c c-func docutils literal"><span class="pre">glEnable()</span></tt></a> or <a class="reference internal" href="#glDisable" title="glDisable"><tt class="xref c c-func docutils literal"><span class="pre">glDisable()</span></tt></a> is also accepted by
+<a class="reference internal" href="#glEnablei" title="glEnablei"><tt class="xref c c-func docutils literal"><span class="pre">glEnablei()</span></tt></a> and <a class="reference internal" href="#glDisablei" title="glDisablei"><tt class="xref c c-func docutils literal"><span class="pre">glDisablei()</span></tt></a>, but if the capability is not indexed,
+the maximum value that <em>index</em> may take is zero.</p>
+<p class="last">In general, passing an indexed capability to <a class="reference internal" href="#glEnable" title="glEnable"><tt class="xref c c-func docutils literal"><span class="pre">glEnable()</span></tt></a> or <a class="reference internal" href="#glDisable" title="glDisable"><tt class="xref c c-func docutils literal"><span class="pre">glDisable()</span></tt></a>
+will enable or disable that capability for all indices, resepectively.</p>
+</div>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glIsEnabled.html#glIsEnabled" title="glIsEnabled"><tt class="xref c c-func docutils literal"><span class="pre">glIsEnabled()</span></tt></a></li>
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. (c)2010-2011 Khronos Group. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glDrawTransformFeedbackStreamInstanced.html"
+                        title="previous chapter">function <cite>glDrawTransformFeedbackStreamInstanced</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glEnableVertexAttribArray.html"
+                        title="next chapter">function <cite>glEnableVertexAttribArray</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glEnable.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glEnableVertexAttribArray.html" title="function glEnableVertexAttribArray"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glDrawTransformFeedbackStreamInstanced.html" title="function glDrawTransformFeedbackStreamInstanced"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

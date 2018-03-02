@@ -1,0 +1,222 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glProvokingVertex &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glQueryCounter" href="glQueryCounter.html" />
+    <link rel="prev" title="function glProgramUniform" href="glProgramUniform.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glQueryCounter.html" title="function glQueryCounter"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glProgramUniform.html" title="function glProgramUniform"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glprovokingvertex">
+<h1>function <cite>glProvokingVertex</cite><a class="headerlink" href="#function-glprovokingvertex" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Specifiy the vertex to be used as the source of data for flat shaded varyings</p>
+<dl class="function">
+<dt id="glProvokingVertex">
+<tt class="descname">glProvokingVertex</tt><big>(</big><big>)</big><a class="headerlink" href="#glProvokingVertex" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>provokeMode</strong> &#8211; Specifies the vertex to be used as the source of data for flat shaded varyings.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glProvokingVertex</tt><big>(</big>GLenum <em>&nbsp;provokeMode</em><big>)</big></dt>
+<dd></dd></dl>
+
+<p class="rubric">Description</p>
+<p><strong>Flatshading</strong> a vertex shader varying output means to assign all vetices of the primitive the same value
+for that output. The vertex from which these values is derived is known as the <strong>provoking vertex</strong> and
+<a class="reference internal" href="#glProvokingVertex" title="glProvokingVertex"><tt class="xref c c-func docutils literal"><span class="pre">glProvokingVertex()</span></tt></a> specifies which vertex is to be used as the source of data for flat shaded varyings.</p>
+<p><em>provokeMode</em> must be either <tt class="docutils literal"><span class="pre">GL_FIRST_VERTEX_CONVENTION</span></tt> or
+<tt class="docutils literal"><span class="pre">GL_LAST_VERTEX_CONVENTION</span></tt>, and controls the selection of the vertex whose values are assigned to flatshaded
+varying outputs. The interpretation of these values for the supported primitive types is:</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="21%" />
+<col width="48%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Primitive Type of Polygon :strong:`i`</strong></td>
+<td><strong>First Vertex Convention</strong></td>
+<td><strong>Last Vertex Convention</strong></td>
+</tr>
+<tr class="row-even"><td>point</td>
+<td><strong>i</strong></td>
+<td><strong>i</strong></td>
+</tr>
+<tr class="row-odd"><td>independent line</td>
+<td>2 <strong>i</strong> - 1</td>
+<td>2 <strong>i</strong></td>
+</tr>
+<tr class="row-even"><td>line loop</td>
+<td><strong>i</strong></td>
+<td><strong>i</strong> + 1, if <strong>i</strong> &lt; <strong>n</strong> 1, if <strong>i</strong> = <strong>n</strong></td>
+</tr>
+<tr class="row-odd"><td>line strip</td>
+<td><strong>i</strong></td>
+<td><strong>i</strong> + 1</td>
+</tr>
+<tr class="row-even"><td>independent triangle</td>
+<td>3 <strong>i</strong> - 2</td>
+<td>3 <strong>i</strong></td>
+</tr>
+<tr class="row-odd"><td>triangle strip</td>
+<td><strong>i</strong></td>
+<td><strong>i</strong> + 2</td>
+</tr>
+<tr class="row-even"><td>triangle fan</td>
+<td><strong>i</strong> + 1</td>
+<td><strong>i</strong> + 2</td>
+</tr>
+<tr class="row-odd"><td>line adjacency</td>
+<td>4 <strong>i</strong> - 2</td>
+<td>4 <strong>i</strong> - 1</td>
+</tr>
+<tr class="row-even"><td>line strip adjacency</td>
+<td><strong>i</strong> + 1</td>
+<td><strong>i</strong> + 2</td>
+</tr>
+<tr class="row-odd"><td>triangle adjacency</td>
+<td>6 <strong>i</strong> - 5</td>
+<td>6 <strong>i</strong> - 1</td>
+</tr>
+<tr class="row-even"><td>triangle strip adjacency</td>
+<td>2 <strong>i</strong> - 1</td>
+<td>2 <strong>i</strong> + 3</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>If a vertex or geometry shader is active, user-defined varying outputs may be flatshaded by using the
+<tt class="docutils literal"><span class="pre">flat</span></tt> qualifier when declaring the output.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><a class="reference internal" href="#glProvokingVertex" title="glProvokingVertex"><tt class="xref c c-func docutils literal"><span class="pre">glProvokingVertex()</span></tt></a> is available only if the GL version is 3.2 or greater.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>provokeMode</em> is not an accepted value.</li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)2010 Khronos Group. Open Publication License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glProgramUniform.html"
+                        title="previous chapter">function <cite>glProgramUniform</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glQueryCounter.html"
+                        title="next chapter">function <cite>glQueryCounter</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glProvokingVertex.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glQueryCounter.html" title="function glQueryCounter"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glProgramUniform.html" title="function glProgramUniform"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

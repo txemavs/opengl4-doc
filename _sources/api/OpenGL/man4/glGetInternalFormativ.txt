@@ -1,0 +1,129 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:29
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glGetInternalFormativ.xml'
+.. (c)2011 Khronos Group.
+.. See license details at http://opencontent.org/openpub/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glGetInternalFormativ`
+--------------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Retrieve information about implementation-dependent support for internal formats
+
+.. c:function:: glGetInternalFormativ
+
+
+         :param target:
+
+                  Indicates the usage of the internal format. *target* must be ``GL_RENDERBUFFER``\ ,
+                  ``GL_TEXTURE_2D_MULTISAMPLE`` or ``GL_TEXTURE_2D_MULTISAMPLE_ARRAY``\ .
+
+         :param internalformat:
+
+                  Specifies the internal format about which to retrieve information.
+
+         :param pname:
+
+                  Specifies the type of information to query.
+
+         :param bufSize:
+
+                  Specifies the maximum number of basic machine units that may be written to *params* by the function.
+
+         :param params:
+
+                  Specifies the address of a variable into which to write the retrieved information.
+
+.. rubric:: Specification
+
+.. c:function:: void glGetInternalFormativ(GLenum  target, GLenum  internalformat, GLenum  pname, GLsizei  bufSize, GLint * params)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glGet`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glGetInternalFormativ` retrieves information about implementation-dependent support for
+internal formats. *target* indicates the target with which the internal format will
+be used and must be one of ``GL_RENDERBUFFER``\ , ``GL_TEXTURE_2D_MULTISAMPLE``\ ,
+or ``GL_TEXTURE_2D_MULTISAMPLE_ARRAY``\ , corresponding to usage as a renderbuffer, two-dimensional
+multisample texture or two-dimensional multisample array texture, respectively.
+
+
+*internalformat* specifies the internal format about which to retrieve information and
+must be a color-renderable, depth-renderable or stencil-renderable format.
+
+
+The information retrieved will be written to memory addressed by the pointer specified in *params*\ . No
+more than *bufSize* basic machine units will be written to this memory.
+
+
+If *pname* is ``GL_NUM_SAMPLE_COUNTS``\ , the number of sample counts that would be
+returned by querying ``GL_SAMPLES`` will be returned in *params*\ .
+
+
+If *pname* is ``GL_SAMPLES``\ , the sample counts supported for *internalformat*
+and *target* are written into *params* in descending numeric order. Only positive values are returned.
+Querying ``GL_SAMPLES`` with *bufSize* of one will return just the maximum supported number of
+samples for this format. The maximum value in ``GL_SAMPLES`` is guaranteed to be at least the lowest of the following:
+
+         * The value of ``GL_MAX_INTEGER_SAMPLES`` if *internalformat* is a signed or unsigned integer format.
+         * The value of ``GL_MAX_DEPTH_TEXTURE_SAMPLES`` if *internalformat* is a depth- or stencil-renderable format and *target* is ``GL_TEXTURE_2D_MULTISAMPLE``\ , ``GL_TEXTURE_2D_MULTISAMPLE_ARRAY``\ .
+         * The value of ``GL_MAX_COLOR_TEXTURE_SAMPLES`` if *internalformat* is a color-renderable format and *target* is ``GL_TEXTURE_2D_MULTISAMPLE`` or ``GL_TEXTURE_2D_MULTISAMPLE_ARRAY``\ .
+         * The value of ``GL_MAX_SAMPLES``\ .
+
+
+.. note::
+
+
+   :c:func:`glGetInternalFormativ` is available only if the
+   GL version is 4.2 or higher.
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_VALUE`` is generated if *bufSize* is negative.
+* ``GL_INVALID_ENUM`` is generated if *pname* is not ``GL_SAMPLES`` or ``GL_NUM_SAMPLE_COUNTS``\ .
+* ``GL_INVALID_ENUM`` is generated if *internalformat* is not color-, depth-, or stencil-renderable.
+* ``GL_INVALID_ENUM`` is generated if *target* is not one of ``GL_TEXTURE_2D_MULTISAMPLE``\ , ``GL_TEXTURE_2D_MULTISAMPLE_ARRAY`` or ``GL_RENDERBUFFER``\ .
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glGetInternalFormativ'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )2011 Khronos Group. Open Publication License.
+

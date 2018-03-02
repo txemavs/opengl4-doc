@@ -1,0 +1,188 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function gluLookAt &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function gluNewNurbsRenderer" href="gluNewNurbsRenderer.html" />
+    <link rel="prev" title="function gluLoadSamplingMatrices" href="gluLoadSamplingMatrices.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="gluNewNurbsRenderer.html" title="function gluNewNurbsRenderer"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="gluLoadSamplingMatrices.html" title="function gluLoadSamplingMatrices"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glulookat">
+<h1>function <cite>gluLookAt</cite><a class="headerlink" href="#function-glulookat" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Define a viewing transformation</p>
+<dl class="function">
+<dt id="gluLookAt">
+<tt class="descname">gluLookAt</tt><big>(</big><big>)</big><a class="headerlink" href="#gluLookAt" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>eyeX</strong> &#8211; </li>
+<li><strong>eyeY</strong> &#8211; </li>
+<li><strong>eyeZ</strong> &#8211; Specifies the position of the eye point.</li>
+<li><strong>centerX</strong> &#8211; </li>
+<li><strong>centerY</strong> &#8211; </li>
+<li><strong>centerZ</strong> &#8211; Specifies the position of the reference point.</li>
+<li><strong>upX</strong> &#8211; </li>
+<li><strong>upY</strong> &#8211; </li>
+<li><strong>upZ</strong> &#8211; Specifies the direction of the <strong>up</strong> vector.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">gluLookAt</tt><big>(</big>GLdouble <em>&nbsp;eyeX</em>, GLdouble <em>&nbsp;eyeY</em>, GLdouble <em>&nbsp;eyeZ</em>, GLdouble <em>&nbsp;centerX</em>, GLdouble <em>&nbsp;centerY</em>, GLdouble <em>&nbsp;centerZ</em>, GLdouble <em>&nbsp;upX</em>, GLdouble <em>&nbsp;upY</em>, GLdouble <em>&nbsp;upZ</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="gluPerspective.html#gluPerspective" title="gluPerspective"><tt class="xref c c-func docutils literal"><span class="pre">gluPerspective()</span></tt></a>,
+<a class="reference internal" href="glFrustum.html#glFrustum" title="glFrustum"><tt class="xref c c-func docutils literal"><span class="pre">glFrustum()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#gluLookAt" title="gluLookAt"><tt class="xref c c-func docutils literal"><span class="pre">gluLookAt()</span></tt></a> creates a viewing matrix derived from an eye point, a reference
+point indicating the center of the scene, and an <strong>UP</strong> vector.</p>
+<p>The matrix
+maps the reference point to the negative <strong>z</strong> axis and the
+eye point to the origin.
+When a typical projection matrix is used,
+the center of the scene therefore maps to the center of the viewport.
+Similarly, the direction described by the <strong>UP</strong>
+vector projected onto the viewing plane is mapped to the positive <strong>y</strong>
+axis so that it points upward in the viewport.
+The <strong>UP</strong> vector must not be parallel to the line of sight from the
+eye point to the reference point.</p>
+<p>Let</p>
+<p><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">F</mi><mo>=</mo><mfenced open="(" close=")"><mtable><mtr><mtd><mrow><mi mathvariant="italic">centerX</mi><mo>-</mo><mi mathvariant="italic">eyeX</mi></mrow></mtd></mtr><mtr><mtd><mrow><mi mathvariant="italic">centerY</mi><mo>-</mo><mi mathvariant="italic">eyeY</mi></mrow></mtd></mtr><mtr><mtd><mrow><mi mathvariant="italic">centerZ</mi><mo>-</mo><mi mathvariant="italic">eyeZ</mi></mrow></mtd></mtr></mtable></mfenced></mrow></math></span></p>
+<p>Let <strong>UP</strong> be the vector <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mi mathvariant="italic">upX</mi><mi mathvariant="italic">upY</mi><mi mathvariant="italic">upZ</mi></mfenced></math></span>.</p>
+<p>Then normalize as follows:
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">f</mi><mo>=</mo><mfrac><mi mathvariant="italic">F</mi><mfenced open="" close=""><mfenced open="&DoubleVerticalBar;" close="&DoubleVerticalBar;"><mi mathvariant="italic">F</mi></mfenced></mfenced></mfrac></mrow></math></span></p>
+<p><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msup><mi mathvariant="italic">UP</mi><mo>&Prime;</mo></msup><mo>=</mo><mfrac><mi mathvariant="italic">UP</mi><mfenced open="" close=""><mfenced open="&DoubleVerticalBar;" close="&DoubleVerticalBar;"><mi mathvariant="italic">UP</mi></mfenced></mfenced></mfrac></mrow></math></span></p>
+<p>Finally, let
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">s</mi><mo>=</mo><mrow><mi mathvariant="italic">f</mi><mo>&times;</mo><msup><mi mathvariant="italic">UP</mi><mo>&Prime;</mo></msup></mrow></mrow></math></span>,
+and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">u</mi><mo>=</mo><mrow><mi mathvariant="italic">s</mi><mo>&times;</mo><mi mathvariant="italic">f</mi></mrow></mrow></math></span>.</p>
+<p>M is then constructed as follows:
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">M</mi><mo>=</mo><mfenced open="(" close=")"><mtable><mtr><mtd><mrow><mi mathvariant="italic">s</mi><mo>&af;</mo><mfenced open="[" close="]"><mn>0</mn></mfenced></mrow></mtd><mtd><mrow><mi mathvariant="italic">s</mi><mo>&af;</mo><mfenced open="[" close="]"><mn>1</mn></mfenced></mrow></mtd><mtd><mrow><mi mathvariant="italic">s</mi><mo>&af;</mo><mfenced open="[" close="]"><mn>2</mn></mfenced></mrow></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mrow><mi mathvariant="italic">u</mi><mo>&af;</mo><mfenced open="[" close="]"><mn>0</mn></mfenced></mrow></mtd><mtd><mrow><mi mathvariant="italic">u</mi><mo>&af;</mo><mfenced open="[" close="]"><mn>1</mn></mfenced></mrow></mtd><mtd><mrow><mi mathvariant="italic">u</mi><mo>&af;</mo><mfenced open="[" close="]"><mn>2</mn></mfenced></mrow></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mrow><mo>-</mo><mrow><mi mathvariant="italic">f</mi><mo>&af;</mo><mfenced open="[" close="]"><mn>0</mn></mfenced></mrow></mrow></mtd><mtd><mrow><mo>-</mo><mrow><mi mathvariant="italic">f</mi><mo>&af;</mo><mfenced open="[" close="]"><mn>1</mn></mfenced></mrow></mrow></mtd><mtd><mrow><mo>-</mo><mrow><mi mathvariant="italic">f</mi><mo>&af;</mo><mfenced open="[" close="]"><mn>2</mn></mfenced></mrow></mrow></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd></mtr></mtable></mfenced></mrow></math></span></p>
+<p>and <a class="reference internal" href="#gluLookAt" title="gluLookAt"><tt class="xref c c-func docutils literal"><span class="pre">gluLookAt()</span></tt></a> is equivalent to</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="n">glMultMatrixf</span><span class="p">(</span><span class="n">M</span><span class="p">);</span>
+<span class="n">glTranslated</span><span class="p">(</span><span class="o">-</span><span class="n">eyex</span><span class="p">,</span> <span class="o">-</span><span class="n">eyey</span><span class="p">,</span> <span class="o">-</span><span class="n">eyez</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="gluLoadSamplingMatrices.html"
+                        title="previous chapter">function <cite>gluLoadSamplingMatrices</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="gluNewNurbsRenderer.html"
+                        title="next chapter">function <cite>gluNewNurbsRenderer</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/gluLookAt.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="gluNewNurbsRenderer.html" title="function gluNewNurbsRenderer"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="gluLoadSamplingMatrices.html" title="function gluLoadSamplingMatrices"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

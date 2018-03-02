@@ -1,0 +1,112 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:29
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glGetProgramBinary.xml'
+.. (c)2010 Khronos Group.
+.. See license details at http://opencontent.org/openpub/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glGetProgramBinary`
+-----------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Return a binary representation of a program object's compiled and linked executable source
+
+.. c:function:: glGetProgramBinary
+
+
+         :param program:
+
+               Specifies the name of a program object whose binary representation to retrieve.
+
+         :param bufSize:
+
+               Specifies the size of the buffer whose address is given by *binary*\ .
+
+         :param length:
+
+               Specifies the address of a variable to receive the number of bytes written into *binary*\ .
+
+         :param binaryFormat:
+
+               Specifies the address of a variable to receive a token indicating the format of the binary data returned by the GL.
+
+         :param binary:
+
+               Specifies the address an array into which the GL will return *program* 's binary representation.
+
+.. rubric:: Specification
+
+.. c:function:: void glGetProgramBinary(GLuint  program, GLsizei  bufsize, GLsizei * length, GLenum * binaryFormat, void * binary)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glGetProgram`\ ,
+            :c:func:`glProgramBinary`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glGetProgramBinary` returns a binary representation of the compiled
+and linked executable for *program* into the array of bytes whose
+address is specified in *binary*\ . The maximum number of bytes that
+may be written into *binary* is specified by *bufSize*\ .
+If the program binary is greater in size than *bufSize* bytes,
+then an error is generated, otherwise the actual number of bytes written into *binary*
+is returned in the variable whose address is given by *length*\ . If
+*length* is ``NULL``\ , then no length is returned.
+
+
+The format of the program binary written into *binary* is returned in
+the variable whose address is given by *binaryFormat*\ , and may be implementation dependent. The binary produced
+by the GL may subsequently be returned to the GL by calling :c:func:`glProgramBinary`\ ,
+with *binaryFormat* and *length* set to the values
+returned by :c:func:`glGetProgramBinary`\ , and passing the returned binary data
+in the *binary* parameter.
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_OPERATION`` is generated if *bufSize* is less than the size of ``GL_PROGRAM_BINARY_LENGTH`` for *program*\ .
+* ``GL_INVALID_OPERATION`` is generated if ``GL_LINK_STATUS`` for the program object is false.
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGetProgram` with argument ``GL_PROGRAM_BINARY_LENGTH``
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glGetProgramBinary'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )2010 Khronos Group. Open Publication License.
+

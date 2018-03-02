@@ -1,0 +1,84 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:28
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glXDestroyContext.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glXDestroyContext`
+----------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Destroy a GLX context
+
+.. c:function:: glXDestroyContext
+
+
+         :param dpy:
+
+                  Specifies the connection to the X server.
+
+         :param ctx:
+
+                  Specifies the GLX context to be destroyed.
+
+.. rubric:: Specification
+
+.. c:function:: void glXDestroyContext(Display *  dpy, GLXContext  ctx)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glXCreateContext`\ ,
+            :c:func:`glXCreateNewContext`\ ,
+            :c:func:`glXMakeCurrent`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+If the GLX rendering context *ctx* is not current to any thread,
+:c:func:`glXDestroyContext`
+destroys it immediately.
+Otherwise,
+*ctx* is destroyed when it becomes not current to any thread.
+In either case, the resource ID
+referenced by *ctx* is freed immediately.
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GLXBadContext`` is generated if *ctx* is not a valid GLX context.
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glXDestroyContext'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

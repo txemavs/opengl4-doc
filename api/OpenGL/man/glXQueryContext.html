@@ -1,0 +1,185 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glXQueryContext &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function glXQueryContextInfoEXT" href="glXQueryContextInfoEXT.html" />
+    <link rel="prev" title="function glXMakeCurrent" href="glXMakeCurrent.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glXQueryContextInfoEXT.html" title="function glXQueryContextInfoEXT"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glXMakeCurrent.html" title="function glXMakeCurrent"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glxquerycontext">
+<h1>function <cite>glXQueryContext</cite><a class="headerlink" href="#function-glxquerycontext" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Query context information</p>
+<dl class="function">
+<dt id="glXQueryContext">
+<tt class="descname">glXQueryContext</tt><big>(</big><big>)</big><a class="headerlink" href="#glXQueryContext" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>dpy</strong> &#8211; Specifies the connection to the X server.</li>
+<li><strong>ctx</strong> &#8211; Specifies a GLX rendering context.</li>
+<li><strong>attribute</strong> &#8211; Specifies that a context parameter should be retrieved.  Must be one of
+<tt class="docutils literal"><span class="pre">GLX_FBCONFIG_ID</span></tt>, <tt class="docutils literal"><span class="pre">GLX_RENDER_TYPE</span></tt>, or <tt class="docutils literal"><span class="pre">GLX_SCREEN</span></tt>.</li>
+<li><strong>value</strong> &#8211; Contains the return value for <em>attribute</em>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+int <tt class="descname">glXQueryContext</tt><big>(</big>Display * <em>&nbsp;dpy</em>, GLXContext <em>&nbsp;ctx</em>, int <em>&nbsp;attribute</em>, int * <em>&nbsp;value</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glXCreateNewContext.html#glXCreateNewContext" title="glXCreateNewContext"><tt class="xref c c-func docutils literal"><span class="pre">glXCreateNewContext()</span></tt></a>,
+<a class="reference internal" href="glXGetCurrentContext.html#glXGetCurrentContext" title="glXGetCurrentContext"><tt class="xref c c-func docutils literal"><span class="pre">glXGetCurrentContext()</span></tt></a>,
+<a class="reference internal" href="glXQueryVersion.html#glXQueryVersion" title="glXQueryVersion"><tt class="xref c c-func docutils literal"><span class="pre">glXQueryVersion()</span></tt></a>,
+<a class="reference internal" href="glXQueryExtensionsString.html#glXQueryExtensionsString" title="glXQueryExtensionsString"><tt class="xref c c-func docutils literal"><span class="pre">glXQueryExtensionsString()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glXQueryContext" title="glXQueryContext"><tt class="xref c c-func docutils literal"><span class="pre">glXQueryContext()</span></tt></a> sets <em>value</em> to the value of <em>attribute</em> with respect to <em>ctx</em>.
+<em>attribute</em> may be one of the following:</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">GLX_FBCONFIG_ID</span></tt></p>
+<blockquote>
+<div>Returns the XID of the GLXFBConfig associated with <em>ctx</em>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLX_RENDER_TYPE</span></tt></p>
+<blockquote>
+<div>Returns the rendering type supported by <em>ctx</em>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLX_SCREEN</span></tt></p>
+<blockquote>
+<div>Returns the screen number associated with <em>ctx</em>.</div></blockquote>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">Success</span></tt> is returned unless <em>attribute</em> is not a valid GLX
+context attribute, in which case <tt class="docutils literal"><span class="pre">GLX_BAD_ATTRIBUTE</span></tt> is returned.</p>
+<p>This call may cause a round-trip to the server.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><a class="reference internal" href="#glXQueryContext" title="glXQueryContext"><tt class="xref c c-func docutils literal"><span class="pre">glXQueryContext()</span></tt></a> is available only if the GLX version is 1.3 or greater.</p>
+<p class="last">If the GLX version is 1.1 or 1.0, the GL version must be 1.0.
+If the GLX version is 1.2, then the GL version must be 1.1.
+If the GLX version is 1.3, then the GL version must be 1.2.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GLXBadContext</span></tt> is generated if <em>ctx</em> does not refer to a valid context.</li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glXMakeCurrent.html"
+                        title="previous chapter">function <cite>glXMakeCurrent</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glXQueryContextInfoEXT.html"
+                        title="next chapter">function <cite>glXQueryContextInfoEXT</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/glXQueryContext.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glXQueryContextInfoEXT.html" title="function glXQueryContextInfoEXT"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glXMakeCurrent.html" title="function glXMakeCurrent"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

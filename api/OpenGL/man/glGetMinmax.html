@@ -1,0 +1,259 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glGetMinmax &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function glGetMinmaxParameter" href="glGetMinmaxParameter.html" />
+    <link rel="prev" title="function glGetMaterial" href="glGetMaterial.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glGetMinmaxParameter.html" title="function glGetMinmaxParameter"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glGetMaterial.html" title="function glGetMaterial"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glgetminmax">
+<h1>function <cite>glGetMinmax</cite><a class="headerlink" href="#function-glgetminmax" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Get minimum and maximum pixel values</p>
+<dl class="function">
+<dt id="glGetMinmax">
+<tt class="descname">glGetMinmax</tt><big>(</big><big>)</big><a class="headerlink" href="#glGetMinmax" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>target</strong> &#8211; Must be
+<tt class="docutils literal"><span class="pre">GL_MINMAX</span></tt>.</li>
+<li><strong>reset</strong> &#8211; If <tt class="docutils literal"><span class="pre">GL_TRUE</span></tt>, all entries in the minmax table that are actually
+returned are reset to their initial values.  (Other entries are unaltered.)
+If <tt class="docutils literal"><span class="pre">GL_FALSE</span></tt>, the minmax table is unaltered.</li>
+<li><strong>format</strong> &#8211; The format of the data to be returned in <em>values</em>.
+Must be one of
+<tt class="docutils literal"><span class="pre">GL_RED</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_GREEN</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_BLUE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_ALPHA</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGB</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_BGR</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_RGBA</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_BGRA</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LUMINANCE</span></tt>, or
+<tt class="docutils literal"><span class="pre">GL_LUMINANCE_ALPHA</span></tt>.</li>
+<li><strong>types</strong> &#8211; The type of the data to be returned in <em>values</em>.
+Symbolic constants
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_BYTE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_BYTE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_BITMAP</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_SHORT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_INT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_FLOAT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_BYTE_3_3_2</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_BYTE_2_3_3_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_5_6_5</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_5_6_5_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_4_4_4_4</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_4_4_4_4_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_5_5_5_1</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_1_5_5_5_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_8_8_8_8</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_8_8_8_8_REV</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_10_10_10_2</span></tt>, and
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_2_10_10_10_REV</span></tt>
+are accepted.</li>
+<li><strong>values</strong> &#8211; A pointer to storage for the returned values.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glGetMinmax</tt><big>(</big>GLenum <em>&nbsp;target</em>, GLboolean <em>&nbsp;reset</em>, GLenum <em>&nbsp;format</em>, GLenum <em>&nbsp;types</em>, GLvoid * <em>&nbsp;values</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glMinmax.html#glMinmax" title="glMinmax"><tt class="xref c c-func docutils literal"><span class="pre">glMinmax()</span></tt></a>,
+<a class="reference internal" href="glResetMinmax.html#glResetMinmax" title="glResetMinmax"><tt class="xref c c-func docutils literal"><span class="pre">glResetMinmax()</span></tt></a>,</p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glGetMinmax" title="glGetMinmax"><tt class="xref c c-func docutils literal"><span class="pre">glGetMinmax()</span></tt></a> returns the accumulated minimum and maximum pixel values (computed on a
+per-component basis) in a one-dimensional image of width 2.  The first set
+of return values are the minima, and the second set of return values
+are the maxima.
+The format of the return values is determined by <em>format</em>, and their type is
+determined by <em>types</em>.</p>
+<p>If a non-zero named buffer object is bound to the <tt class="docutils literal"><span class="pre">GL_PIXEL_PACK_BUFFER</span></tt> target
+(see <a class="reference internal" href="../man4/glBindBuffer.html#glBindBuffer" title="glBindBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glBindBuffer()</span></tt></a>) while minimum and maximum pixel values are
+requested, <em>values</em> is treated as a byte offset into the buffer object&#8217;s data store.</p>
+<p>No pixel transfer operations are performed on the return values, but pixel
+storage modes that are applicable to one-dimensional images are performed.
+Color components that are requested in the specified <em>format</em>, but that
+are not included in the internal format of the minmax table, are
+returned as zero.  The assignment of internal color components to the
+components requested by <em>format</em> are as follows:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="49%" />
+<col width="51%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Internal Component</strong></td>
+<td><strong>Resulting Component</strong></td>
+</tr>
+<tr class="row-even"><td>Red</td>
+<td>Red</td>
+</tr>
+<tr class="row-odd"><td>Green</td>
+<td>Green</td>
+</tr>
+<tr class="row-even"><td>Blue</td>
+<td>Blue</td>
+</tr>
+<tr class="row-odd"><td>Alpha</td>
+<td>Alpha</td>
+</tr>
+<tr class="row-even"><td>Luminance</td>
+<td>Red</td>
+</tr>
+</tbody>
+</table>
+<p>If <em>reset</em> is <tt class="docutils literal"><span class="pre">GL_TRUE</span></tt>, the minmax table entries corresponding
+to the return values are reset to their initial
+values.  Minimum and maximum values that are not returned are not
+modified, even if <em>reset</em> is <tt class="docutils literal"><span class="pre">GL_TRUE</span></tt>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><a class="reference internal" href="#glGetMinmax" title="glGetMinmax"><tt class="xref c c-func docutils literal"><span class="pre">glGetMinmax()</span></tt></a> is present only if <tt class="docutils literal"><span class="pre">ARB_imaging</span></tt> is returned when <a class="reference internal" href="../man4/glGetString.html#glGetString" title="glGetString"><tt class="xref c c-func docutils literal"><span class="pre">glGetString()</span></tt></a>
+is called with an argument of <tt class="docutils literal"><span class="pre">GL_EXTENSIONS</span></tt>.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>target</em> is not <tt class="docutils literal"><span class="pre">GL_MINMAX</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>format</em> is not one of the allowable values.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>types</em> is not one of the allowable values.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <em>types</em> is one of <tt class="docutils literal"><span class="pre">GL_UNSIGNED_BYTE_3_3_2</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_BYTE_2_3_3_REV</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_5_6_5</span></tt>, or <tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_5_6_5_REV</span></tt> and <em>format</em> is not <tt class="docutils literal"><span class="pre">GL_RGB</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <em>types</em> is one of <tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_4_4_4_4</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_4_4_4_4_REV</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_5_5_5_1</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT_1_5_5_5_REV</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_8_8_8_8</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_8_8_8_8_REV</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_10_10_10_2</span></tt>, or <tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_2_10_10_10_REV</span></tt> and <em>format</em> is neither <tt class="docutils literal"><span class="pre">GL_RGBA</span></tt> nor <tt class="docutils literal"><span class="pre">GL_BGRA</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if a non-zero buffer object name is bound to the <tt class="docutils literal"><span class="pre">GL_PIXEL_PACK_BUFFER</span></tt> target and the buffer object&#8217;s data store is currently mapped.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if a non-zero buffer object name is bound to the <tt class="docutils literal"><span class="pre">GL_PIXEL_PACK_BUFFER</span></tt> target and the data would be packed to the buffer object such that the memory writes required would exceed the data store size.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if a non-zero buffer object name is bound to the <tt class="docutils literal"><span class="pre">GL_PIXEL_PACK_BUFFER</span></tt> target and <em>values</em> is not evenly divisible into the number of bytes needed to store in memory a datum indicated by <em>type</em>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <a class="reference internal" href="#glGetMinmax" title="glGetMinmax"><tt class="xref c c-func docutils literal"><span class="pre">glGetMinmax()</span></tt></a> is executed between the execution of <a class="reference internal" href="glBegin.html#glBegin" title="glBegin"><tt class="xref c c-func docutils literal"><span class="pre">glBegin()</span></tt></a> and the corresponding execution of <a class="reference internal" href="glBegin.html#glEnd" title="glEnd"><tt class="xref c c-func docutils literal"><span class="pre">glEnd()</span></tt></a>.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glGetMinmaxParameter.html#glGetMinmaxParameter" title="glGetMinmaxParameter"><tt class="xref c c-func docutils literal"><span class="pre">glGetMinmaxParameter()</span></tt></a></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_PIXEL_PACK_BUFFER_BINDING</span></tt></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glGetMaterial.html"
+                        title="previous chapter">function <cite>glGetMaterial</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glGetMinmaxParameter.html"
+                        title="next chapter">function <cite>glGetMinmaxParameter</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/glGetMinmax.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glGetMinmaxParameter.html" title="function glGetMinmaxParameter"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glGetMaterial.html" title="function glGetMaterial"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

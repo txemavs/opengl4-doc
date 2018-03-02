@@ -1,0 +1,331 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:26
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glEvalMesh.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glEvalMesh`
+---------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Compute a one- or two-dimensional grid of points or lines
+
+.. c:function:: glEvalMesh
+
+
+         :param mode:
+
+                  In :c:func:`glEvalMesh1`\ , specifies whether to compute a one-dimensional mesh of points or lines.
+                  Symbolic constants
+                  ``GL_POINT`` and
+                  ``GL_LINE`` are accepted.
+
+         :param i1:
+         :param i2:
+
+                  Specify the first and last integer values for grid domain variable
+                  |EQUATION_1_|\ .
+
+.. rubric:: Specification
+
+.. c:function:: void glEvalMesh1(GLenum  mode, GLint  i1, GLint  i2)
+.. c:function:: void glEvalMesh2(GLenum  mode, GLint  i1, GLint  i2, GLint  j1, GLint  j2)
+
+
+.. seealso::
+
+
+            :c:func:`glBegin`\ ,
+            :c:func:`glEvalCoord`\ ,
+            :c:func:`glEvalPoint`\ ,
+            :c:func:`glMap1`\ ,
+            :c:func:`glMap2`\ ,
+            :c:func:`glMapGrid`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Parameters
+
+..
+
+
+      *mode*
+
+
+            In :c:func:`glEvalMesh2`\ , specifies whether to compute a two-dimensional mesh of points, lines,
+            or polygons.
+            Symbolic constants
+            ``GL_POINT``\ ,
+            ``GL_LINE``\ , and
+            ``GL_FILL`` are accepted.
+
+
+      *i1*
+      *i2*
+
+
+            Specify the first and last integer values for grid domain variable
+            |EQUATION_2_|\ .
+
+
+      *j1*
+      *j2*
+
+
+            Specify the first and last integer values for grid domain variable
+            |EQUATION_3_|\ .
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glMapGrid` and :c:func:`glEvalMesh` are used in tandem to efficiently
+generate and evaluate a series of evenly-spaced map domain values.
+:c:func:`glEvalMesh` steps through the integer domain of a one- or two-dimensional grid,
+whose range is the domain of the evaluation maps specified by
+:c:func:`glMap1` and :c:func:`glMap2`\ .
+*mode* determines whether the resulting vertices are connected as
+points,
+lines,
+or filled polygons.
+
+
+In the one-dimensional case,
+:c:func:`glEvalMesh1`\ ,
+the mesh is generated as if the following code fragment were executed:
+
+
+.. code-block:: c
+
+
+   glBegin( type );
+   for ( i = i1; i <= i2; i += 1 )
+      glEvalCoord1( Expression[1] );
+   glEnd();
+
+..
+
+
+where  ``Expression[1]`` is |EQUATION_4_|
+
+
+where
+
+
+|EQUATION_5_|
+
+
+and
+|EQUATION_6_|\ , |EQUATION_7_|\ ,
+and |EQUATION_8_| are the arguments to the most recent
+:c:func:`glMapGrid1` command.
+:strong:`type` is ``GL_POINTS`` if *mode* is ``GL_POINT``\ ,
+or ``GL_LINES`` if *mode* is ``GL_LINE``\ .
+
+
+The one absolute numeric requirement is that if
+|EQUATION_9_|\ ,
+then the
+value computed from |EQUATION_10_| is exactly |EQUATION_11_|\ .
+
+
+In the two-dimensional case, :c:func:`glEvalMesh2`\ , let
+.cp
+|EQUATION_12_|
+
+
+|EQUATION_13_|
+
+
+where
+|EQUATION_14_|\ , |EQUATION_15_|\ , |EQUATION_16_|\ , |EQUATION_17_|\ , |EQUATION_18_|\ ,
+and |EQUATION_19_| are the
+arguments to the most recent :c:func:`glMapGrid2` command.  Then, if
+*mode* is ``GL_FILL``\ , the :c:func:`glEvalMesh2` command is equivalent
+to:
+
+
+.. code-block:: c
+
+
+   for ( j = j1; j < j2; j += 1 ) {
+      glBegin( GL_QUAD_STRIP );
+      for ( i = i1; i <= i2; i += 1 ) {
+         glEvalCoord2( Expression[1] );
+   glEvalCoord2(\ Expression[2] );
+   }
+   glEnd();
+   }
+
+..
+
+
+where  ``Expression[1]`` is |EQUATION_20_|
+
+and  ``Expression[2]`` is |EQUATION_21_|
+
+
+If *mode* is ``GL_LINE``\ , then a call to :c:func:`glEvalMesh2` is equivalent to:
+
+
+.. code-block:: c
+
+
+   for ( j = j1; j <= j2; j += 1 ) {
+      glBegin( GL_LINE_STRIP );
+      for ( i = i1; i <= i2; i += 1 )
+         glEvalCoord2( i1;  i <= i2; i += 1 ) {
+      glBegin( GL_LINE_STRIP );
+      for ( j = j1; j <= j1; j += 1 )
+         glEvalCoord2( Expression[1] );
+   glEnd();
+   }
+
+   for ( i = Expression[2] );
+   glEnd();
+   }
+
+..
+
+
+where  ``Expression[1]`` is |EQUATION_22_|
+
+and  ``Expression[2]`` is |EQUATION_23_|
+
+
+And finally, if *mode* is ``GL_POINT``\ , then a call to
+:c:func:`glEvalMesh2` is equivalent to:
+
+
+.. code-block:: c
+
+
+   glBegin( GL_POINTS );
+   for ( j = j1; j <= j2; j += 1 )
+      for ( i = i1; i <= i2; i += 1 )
+         glEvalCoord2( Expression[1] );
+   glEnd();
+
+..
+
+
+where  ``Expression[1]`` is |EQUATION_24_|
+
+
+In all three cases, the only absolute numeric requirements are that if
+|EQUATION_25_|\ ,
+then the value computed from |EQUATION_26_| is exactly |EQUATION_27_|\ ,
+and if |EQUATION_28_|\ ,
+then the value computed from |EQUATION_29_| is exactly |EQUATION_30_|\ .
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_ENUM`` is generated if *mode* is not an accepted value.
+* ``GL_INVALID_OPERATION`` is generated if :c:func:`glEvalMesh` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`\ .
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGet` with argument ``GL_MAP1_GRID_DOMAIN``
+* :c:func:`glGet` with argument ``GL_MAP2_GRID_DOMAIN``
+* :c:func:`glGet` with argument ``GL_MAP1_GRID_SEGMENTS``
+* :c:func:`glGet` with argument ``GL_MAP2_GRID_SEGMENTS``
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glEvalMesh'>
+
+.. role:: mml(raw)
+   :format: html
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">j</mi></math>` 
+
+.. |EQUATION_4_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><mn>i</mn><mo>&CenterDot;</mo><mo>&Delta;</mo><mi mathvariant="italic">u</mi></mrow><mo>+</mo><msub><mi mathvariant="italic">u</mi><mn>1</mn></msub></mrow></math>` 
+
+.. |EQUATION_5_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><mo>&Delta;</mo><mi mathvariant="italic">u</mi></mrow><mo>=</mo><mfrac><mfenced open="(" close=")"><mrow><msub><mi mathvariant="italic">u</mi><mn>2</mn></msub><mo>-</mo><msub><mi mathvariant="italic">u</mi><mn>1</mn></msub></mrow></mfenced><mi mathvariant="italic">n</mi></mfrac></mrow></math>` 
+
+.. |EQUATION_6_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math>` 
+
+.. |EQUATION_7_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">u</mi><mn>1</mn></msub></math>` 
+
+.. |EQUATION_8_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">u</mi><mn>2</mn></msub></math>` 
+
+.. |EQUATION_9_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">i</mi><mo>=</mo><mi mathvariant="italic">n</mi></mrow></math>` 
+
+.. |EQUATION_10_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><mi mathvariant="italic">i</mi><mo>&CenterDot;</mo><mrow><mo>&Delta;</mo><mi mathvariant="italic">u</mi></mrow></mrow><mo>+</mo><msub><mi mathvariant="italic">u</mi><mn>1</mn></msub></mrow></math>` 
+
+.. |EQUATION_11_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">u</mi><mn>2</mn></msub></math>` 
+
+.. |EQUATION_12_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><mo>&Delta;</mo><mi mathvariant="italic">u</mi></mrow><mo>=</mo><mfrac><mfenced open="(" close=")"><mrow><msub><mi mathvariant="italic">u</mi><mn>2</mn></msub><mo>-</mo><msub><mi mathvariant="italic">u</mi><mn>1</mn></msub></mrow></mfenced><mi mathvariant="italic">n</mi></mfrac></mrow></math>` 
+
+.. |EQUATION_13_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><mo>&Delta;</mo><mi mathvariant="italic">v</mi></mrow><mo>=</mo><mfrac><mfenced open="(" close=")"><mrow><msub><mi mathvariant="italic">v</mi><mn>2</mn></msub><mo>-</mo><msub><mi mathvariant="italic">v</mi><mn>1</mn></msub></mrow></mfenced><mi mathvariant="italic">m</mi></mfrac></mrow></math>` 
+
+.. |EQUATION_14_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math>` 
+
+.. |EQUATION_15_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">u</mi><mn>1</mn></msub></math>` 
+
+.. |EQUATION_16_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">u</mi><mn>2</mn></msub></math>` 
+
+.. |EQUATION_17_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">m</mi></math>` 
+
+.. |EQUATION_18_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">v</mi><mn>1</mn></msub></math>` 
+
+.. |EQUATION_19_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">v</mi><mn>2</mn></msub></math>` 
+
+.. |EQUATION_20_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>j</mn><mo>&CenterDot;</mo><mo>&Delta;</mo><mi mathvariant="italic">v</mi></mrow><mo>+</mo><msub><mi mathvariant="italic">v</mi><mn>1</mn></msub></mrow></math>` 
+
+.. |EQUATION_21_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><mfenced open="(" close=")"><mrow><mn>j</mn><mo>+</mo><mn>1</mn></mrow></mfenced></mrow><mo>&CenterDot;</mo><mo>&Delta;</mo><mi mathvariant="italic">v</mi></mrow><mo>+</mo><msub><mi mathvariant="italic">v</mi><mn>1</mn></msub></mrow></math>` 
+
+.. |EQUATION_22_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>j</mn><mo>&CenterDot;</mo><mo>&Delta;</mo><mi mathvariant="italic">v</mi></mrow><mo>+</mo><msub><mi mathvariant="italic">v</mi><mn>1</mn></msub></mrow></math>` 
+
+.. |EQUATION_23_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>j</mn><mo>&CenterDot;</mo><mo>&Delta;</mo><mi mathvariant="italic">v</mi></mrow><mo>+</mo><msub><mi mathvariant="italic">v</mi><mn>1</mn></msub></mrow></math>` 
+
+.. |EQUATION_24_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>j</mn><mo>&CenterDot;</mo><mo>&Delta;</mo><mi mathvariant="italic">v</mi></mrow><mo>+</mo><msub><mi mathvariant="italic">v</mi><mn>1</mn></msub></mrow></math>` 
+
+.. |EQUATION_25_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">i</mi><mo>=</mo><mi mathvariant="italic">n</mi></mrow></math>` 
+
+.. |EQUATION_26_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><mi mathvariant="italic">i</mi><mo>&CenterDot;</mo><mrow><mo>&Delta;</mo><mi mathvariant="italic">u</mi></mrow></mrow><mo>+</mo><msub><mi mathvariant="italic">u</mi><mn>1</mn></msub></mrow></math>` 
+
+.. |EQUATION_27_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">u</mi><mn>2</mn></msub></math>` 
+
+.. |EQUATION_28_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">j</mi><mo>=</mo><mi mathvariant="italic">m</mi></mrow></math>` 
+
+.. |EQUATION_29_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mrow><mi mathvariant="italic">j</mi><mo>&CenterDot;</mo><mrow><mo>&Delta;</mo><mi mathvariant="italic">v</mi></mrow></mrow><mo>+</mo><msub><mi mathvariant="italic">v</mi><mn>1</mn></msub></mrow></math>` 
+
+.. |EQUATION_30_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <msub><mi mathvariant="italic">v</mi><mn>2</mn></msub></math>` 
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

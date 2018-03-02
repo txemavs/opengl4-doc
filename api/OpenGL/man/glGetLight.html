@@ -1,0 +1,295 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glGetLight &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function glGetMap" href="glGetMap.html" />
+    <link rel="prev" title="function glGetHistogramParameter" href="glGetHistogramParameter.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glGetMap.html" title="function glGetMap"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glGetHistogramParameter.html" title="function glGetHistogramParameter"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glgetlight">
+<h1>function <cite>glGetLight</cite><a class="headerlink" href="#function-glgetlight" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Return light source parameter values</p>
+<dl class="function">
+<dt id="glGetLight">
+<tt class="descname">glGetLight</tt><big>(</big><big>)</big><a class="headerlink" href="#glGetLight" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>light</strong> &#8211; Specifies a light source.
+The number of possible lights depends on the implementation,
+but at least eight lights are supported.
+They are identified by symbolic names of the form <tt class="docutils literal"><span class="pre">GL_LIGHT</span></tt>
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math></span> where <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math></span> ranges from 0 to the value of <tt class="docutils literal"><span class="pre">GL_MAX_LIGHTS</span></tt> - 1.</li>
+<li><strong>pname</strong> &#8211; Specifies a light source parameter for <em>light</em>.
+Accepted symbolic names are
+<tt class="docutils literal"><span class="pre">GL_AMBIENT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_DIFFUSE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_SPECULAR</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_POSITION</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_SPOT_DIRECTION</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_SPOT_EXPONENT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_SPOT_CUTOFF</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_CONSTANT_ATTENUATION</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LINEAR_ATTENUATION</span></tt>, and
+<tt class="docutils literal"><span class="pre">GL_QUADRATIC_ATTENUATION</span></tt>.</li>
+<li><strong>params</strong> &#8211; Returns the requested data.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt id="glGetLightfv">
+void <tt class="descname">glGetLightfv</tt><big>(</big>GLenum <em>&nbsp;light</em>, GLenum <em>&nbsp;pname</em>, GLfloat * <em>&nbsp;params</em>, GLenum <em>&nbsp;light</em>, GLenum <em>&nbsp;pname</em>, GLint * <em>&nbsp;params</em><big>)</big><a class="headerlink" href="#glGetLightfv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glLight.html#glLight" title="glLight"><tt class="xref c c-func docutils literal"><span class="pre">glLight()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glGetLight" title="glGetLight"><tt class="xref c c-func docutils literal"><span class="pre">glGetLight()</span></tt></a> returns in <em>params</em> the value or values of a light source parameter.
+<em>light</em> names the light and is a symbolic name of the form <tt class="docutils literal"><span class="pre">GL_LIGHT</span></tt>
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math></span> where i ranges from 0 to the value of <tt class="docutils literal"><span class="pre">GL_MAX_LIGHTS</span></tt> - 1.
+<tt class="docutils literal"><span class="pre">GL_MAX_LIGHTS</span></tt> is an implementation dependent constant that is
+greater than or equal to eight.
+<em>pname</em> specifies one of ten light source parameters,
+again by symbolic name.</p>
+<p>The following parameters are defined:</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">GL_AMBIENT</span></tt></p>
+<blockquote>
+<div><em>params</em> returns four integer or floating-point values representing the
+ambient intensity of the light source.
+Integer values,
+when requested,
+are linearly mapped from the internal floating-point representation
+such that 1.0 maps to the most positive representable integer value,
+and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mn>-1.0</mn></math></span> maps to the most negative representable integer value.
+If the internal value is outside the range <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"><mn>-1</mn><mn>1</mn></mfenced></math></span>,
+the corresponding integer return value is undefined. The initial value is
+(0, 0, 0, 1).</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_DIFFUSE</span></tt></p>
+<blockquote>
+<div><em>params</em> returns four integer or floating-point values representing the
+diffuse intensity of the light source.
+Integer values,
+when requested,
+are linearly mapped from the internal floating-point representation
+such that 1.0 maps to the most positive representable integer value,
+and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mn>-1.0</mn></math></span> maps to the most negative representable integer value.
+If the internal value is outside the range <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"><mn>-1</mn><mn>1</mn></mfenced></math></span>,
+the corresponding integer return value is undefined. The initial value
+for <tt class="docutils literal"><span class="pre">GL_LIGHT0</span></tt> is (1, 1, 1, 1); for other lights, the
+initial value is (0, 0, 0, 0).</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_SPECULAR</span></tt></p>
+<blockquote>
+<div><em>params</em> returns four integer or floating-point values representing the
+specular intensity of the light source.
+Integer values,
+when requested,
+are linearly mapped from the internal floating-point representation
+such that 1.0 maps to the most positive representable integer value,
+and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mn>-1.0</mn></math></span> maps to the most negative representable integer value.
+If the internal value is outside the range <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="[" close="]"><mn>-1</mn><mn>1</mn></mfenced></math></span>,
+the corresponding integer return value is undefined. The initial value
+for <tt class="docutils literal"><span class="pre">GL_LIGHT0</span></tt> is (1, 1, 1, 1); for other lights, the
+initial value is (0, 0, 0, 0).</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_POSITION</span></tt></p>
+<blockquote>
+<div><em>params</em> returns four integer or floating-point values representing the
+position of the light source.
+Integer values,
+when requested,
+are computed by rounding the internal floating-point values to the
+nearest integer value.
+The returned values are those maintained in eye coordinates.
+They will not be equal to the values specified using <a class="reference internal" href="glLight.html#glLight" title="glLight"><tt class="xref c c-func docutils literal"><span class="pre">glLight()</span></tt></a>,
+unless the modelview matrix was identity at the time <a class="reference internal" href="glLight.html#glLight" title="glLight"><tt class="xref c c-func docutils literal"><span class="pre">glLight()</span></tt></a> was
+called. The initial value is (0, 0, 1, 0).</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_SPOT_DIRECTION</span></tt></p>
+<blockquote>
+<div><em>params</em> returns three integer or floating-point values representing the
+direction of the light source.
+Integer values,
+when requested,
+are computed by rounding the internal floating-point values to the
+nearest integer value.
+The returned values are those maintained in eye coordinates.
+They will not be equal to the values specified using <a class="reference internal" href="glLight.html#glLight" title="glLight"><tt class="xref c c-func docutils literal"><span class="pre">glLight()</span></tt></a>,
+unless the modelview matrix was identity at the time <a class="reference internal" href="glLight.html#glLight" title="glLight"><tt class="xref c c-func docutils literal"><span class="pre">glLight()</span></tt></a> was called.
+Although spot direction is normalized before being used in the lighting
+equation,
+the returned values are the transformed versions of the specified values
+prior to normalization. The initial value is <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mn>0</mn><mn>0</mn><mn>-1</mn></mfenced></math></span>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_SPOT_EXPONENT</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single integer or floating-point value representing the
+spot exponent of the light.
+An integer value,
+when requested,
+is computed by rounding the internal floating-point representation to
+the nearest integer. The initial value is 0.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_SPOT_CUTOFF</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single integer or floating-point value representing the
+spot cutoff angle of the light.
+An integer value,
+when requested,
+is computed by rounding the internal floating-point representation to
+the nearest integer. The initial value is 180.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_CONSTANT_ATTENUATION</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single integer or floating-point value representing the
+constant (not distance-related) attenuation of the light.
+An integer value,
+when requested,
+is computed by rounding the internal floating-point representation to
+the nearest integer. The initial value is 1.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_LINEAR_ATTENUATION</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single integer or floating-point value representing the
+linear attenuation of the light.
+An integer value,
+when requested,
+is computed by rounding the internal floating-point representation to
+the nearest integer. The initial value is 0.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_QUADRATIC_ATTENUATION</span></tt></p>
+<blockquote>
+<div><em>params</em> returns a single integer or floating-point value representing the
+quadratic attenuation of the light.
+An integer value,
+when requested,
+is computed by rounding the internal floating-point representation to
+the nearest integer. The initial value is 0.</div></blockquote>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>It is always the case that <tt class="docutils literal"><span class="pre">GL_LIGHT</span></tt>
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math></span> = <tt class="docutils literal"><span class="pre">GL_LIGHT0</span></tt> + <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">i</mi></math></span>.</p>
+<p class="last">If an error is generated,
+no change is made to the contents of <em>params</em>.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>light</em> or <em>pname</em> is not an accepted value.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <a class="reference internal" href="#glGetLight" title="glGetLight"><tt class="xref c c-func docutils literal"><span class="pre">glGetLight()</span></tt></a> is executed between the execution of <a class="reference internal" href="glBegin.html#glBegin" title="glBegin"><tt class="xref c c-func docutils literal"><span class="pre">glBegin()</span></tt></a> and the corresponding execution of <a class="reference internal" href="glBegin.html#glEnd" title="glEnd"><tt class="xref c c-func docutils literal"><span class="pre">glEnd()</span></tt></a>.</li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glGetHistogramParameter.html"
+                        title="previous chapter">function <cite>glGetHistogramParameter</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glGetMap.html"
+                        title="next chapter">function <cite>glGetMap</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/glGetLight.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glGetMap.html" title="function glGetMap"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glGetHistogramParameter.html" title="function glGetHistogramParameter"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

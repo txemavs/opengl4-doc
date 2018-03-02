@@ -1,0 +1,392 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glPixelMap &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function glPixelTransfer" href="glPixelTransfer.html" />
+    <link rel="prev" title="function glPassThrough" href="glPassThrough.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glPixelTransfer.html" title="function glPixelTransfer"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glPassThrough.html" title="function glPassThrough"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glpixelmap">
+<h1>function <cite>glPixelMap</cite><a class="headerlink" href="#function-glpixelmap" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Set up pixel transfer maps</p>
+<dl class="function">
+<dt id="glPixelMap">
+<tt class="descname">glPixelMap</tt><big>(</big><big>)</big><a class="headerlink" href="#glPixelMap" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>map</strong> &#8211; Specifies a symbolic map name.
+Must be one of the following:
+<tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_I_TO_I</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_S_TO_S</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_I_TO_R</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_I_TO_G</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_I_TO_B</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_I_TO_A</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_R_TO_R</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_G_TO_G</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_B_TO_B</span></tt>, or
+<tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_A_TO_A</span></tt>.</li>
+<li><strong>mapsize</strong> &#8211; Specifies the size of the map being defined.</li>
+<li><strong>values</strong> &#8211; Specifies an array of <em>mapsize</em> values.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt id="glPixelMapfv">
+void <tt class="descname">glPixelMapfv</tt><big>(</big>GLenum <em>&nbsp;map</em>, GLsizei <em>&nbsp;mapsize</em>, const GLfloat * <em>&nbsp;values</em>, GLenum <em>&nbsp;map</em>, GLsizei <em>&nbsp;mapsize</em>, const GLuint * <em>&nbsp;values</em>, GLenum <em>&nbsp;map</em>, GLsizei <em>&nbsp;mapsize</em>, const GLushort * <em>&nbsp;values</em><big>)</big><a class="headerlink" href="#glPixelMapfv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glColorTable.html#glColorTable" title="glColorTable"><tt class="xref c c-func docutils literal"><span class="pre">glColorTable()</span></tt></a>,
+<a class="reference internal" href="glColorSubTable.html#glColorSubTable" title="glColorSubTable"><tt class="xref c c-func docutils literal"><span class="pre">glColorSubTable()</span></tt></a>,
+<a class="reference internal" href="glConvolutionFilter1D.html#glConvolutionFilter1D" title="glConvolutionFilter1D"><tt class="xref c c-func docutils literal"><span class="pre">glConvolutionFilter1D()</span></tt></a>,
+<a class="reference internal" href="glConvolutionFilter2D.html#glConvolutionFilter2D" title="glConvolutionFilter2D"><tt class="xref c c-func docutils literal"><span class="pre">glConvolutionFilter2D()</span></tt></a>,
+<a class="reference internal" href="glCopyPixels.html#glCopyPixels" title="glCopyPixels"><tt class="xref c c-func docutils literal"><span class="pre">glCopyPixels()</span></tt></a>,
+<a class="reference internal" href="../man4/glCopyTexImage1D.html#glCopyTexImage1D" title="glCopyTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexImage1D()</span></tt></a>,
+<a class="reference internal" href="../man4/glCopyTexImage2D.html#glCopyTexImage2D" title="glCopyTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexImage2D()</span></tt></a>,
+<a class="reference internal" href="../man4/glCopyTexSubImage1D.html#glCopyTexSubImage1D" title="glCopyTexSubImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexSubImage1D()</span></tt></a>,
+<a class="reference internal" href="../man4/glCopyTexSubImage2D.html#glCopyTexSubImage2D" title="glCopyTexSubImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexSubImage2D()</span></tt></a>,
+<a class="reference internal" href="glDrawPixels.html#glDrawPixels" title="glDrawPixels"><tt class="xref c c-func docutils literal"><span class="pre">glDrawPixels()</span></tt></a>,
+<a class="reference internal" href="glHistogram.html#glHistogram" title="glHistogram"><tt class="xref c c-func docutils literal"><span class="pre">glHistogram()</span></tt></a>,
+<a class="reference internal" href="glMinmax.html#glMinmax" title="glMinmax"><tt class="xref c c-func docutils literal"><span class="pre">glMinmax()</span></tt></a>,
+<a class="reference internal" href="../man4/glPixelStore.html#glPixelStore" title="glPixelStore"><tt class="xref c c-func docutils literal"><span class="pre">glPixelStore()</span></tt></a>,
+<a class="reference internal" href="glPixelTransfer.html#glPixelTransfer" title="glPixelTransfer"><tt class="xref c c-func docutils literal"><span class="pre">glPixelTransfer()</span></tt></a>,
+<a class="reference internal" href="../man4/glReadPixels.html#glReadPixels" title="glReadPixels"><tt class="xref c c-func docutils literal"><span class="pre">glReadPixels()</span></tt></a>,
+<a class="reference internal" href="glSeparableFilter2D.html#glSeparableFilter2D" title="glSeparableFilter2D"><tt class="xref c c-func docutils literal"><span class="pre">glSeparableFilter2D()</span></tt></a>,
+<a class="reference internal" href="../man4/glTexImage1D.html#glTexImage1D" title="glTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage1D()</span></tt></a>,
+<a class="reference internal" href="../man4/glTexImage2D.html#glTexImage2D" title="glTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage2D()</span></tt></a>,
+<a class="reference internal" href="../man4/glTexImage3D.html#glTexImage3D" title="glTexImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage3D()</span></tt></a>,
+<a class="reference internal" href="../man4/glTexSubImage1D.html#glTexSubImage1D" title="glTexSubImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage1D()</span></tt></a>,
+<a class="reference internal" href="../man4/glTexSubImage2D.html#glTexSubImage2D" title="glTexSubImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage2D()</span></tt></a>,
+<a class="reference internal" href="../man4/glTexSubImage3D.html#glTexSubImage3D" title="glTexSubImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage3D()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glPixelMap" title="glPixelMap"><tt class="xref c c-func docutils literal"><span class="pre">glPixelMap()</span></tt></a> sets up translation tables,
+or <strong>maps</strong>,
+used by
+<a class="reference internal" href="glCopyPixels.html#glCopyPixels" title="glCopyPixels"><tt class="xref c c-func docutils literal"><span class="pre">glCopyPixels()</span></tt></a>,
+<a class="reference internal" href="../man4/glCopyTexImage1D.html#glCopyTexImage1D" title="glCopyTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexImage1D()</span></tt></a>,
+<a class="reference internal" href="../man4/glCopyTexImage2D.html#glCopyTexImage2D" title="glCopyTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexImage2D()</span></tt></a>,
+<a class="reference internal" href="../man4/glCopyTexSubImage1D.html#glCopyTexSubImage1D" title="glCopyTexSubImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexSubImage1D()</span></tt></a>,
+<a class="reference internal" href="../man4/glCopyTexSubImage2D.html#glCopyTexSubImage2D" title="glCopyTexSubImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexSubImage2D()</span></tt></a>,
+<a class="reference internal" href="../man4/glCopyTexSubImage3D.html#glCopyTexSubImage3D" title="glCopyTexSubImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glCopyTexSubImage3D()</span></tt></a>,
+<a class="reference internal" href="glDrawPixels.html#glDrawPixels" title="glDrawPixels"><tt class="xref c c-func docutils literal"><span class="pre">glDrawPixels()</span></tt></a>,
+<a class="reference internal" href="../man4/glReadPixels.html#glReadPixels" title="glReadPixels"><tt class="xref c c-func docutils literal"><span class="pre">glReadPixels()</span></tt></a>,
+<a class="reference internal" href="../man4/glTexImage1D.html#glTexImage1D" title="glTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage1D()</span></tt></a>,
+<a class="reference internal" href="../man4/glTexImage2D.html#glTexImage2D" title="glTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage2D()</span></tt></a>,
+<a class="reference internal" href="../man4/glTexImage3D.html#glTexImage3D" title="glTexImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage3D()</span></tt></a>,
+<a class="reference internal" href="../man4/glTexSubImage1D.html#glTexSubImage1D" title="glTexSubImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage1D()</span></tt></a>,
+<a class="reference internal" href="../man4/glTexSubImage2D.html#glTexSubImage2D" title="glTexSubImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage2D()</span></tt></a>, and
+<a class="reference internal" href="../man4/glTexSubImage3D.html#glTexSubImage3D" title="glTexSubImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage3D()</span></tt></a>.
+Additionally, if the <tt class="docutils literal"><span class="pre">ARB_imaging</span></tt> subset is supported, the
+routines
+<a class="reference internal" href="glColorTable.html#glColorTable" title="glColorTable"><tt class="xref c c-func docutils literal"><span class="pre">glColorTable()</span></tt></a>,
+<a class="reference internal" href="glColorSubTable.html#glColorSubTable" title="glColorSubTable"><tt class="xref c c-func docutils literal"><span class="pre">glColorSubTable()</span></tt></a>,
+<a class="reference internal" href="glConvolutionFilter1D.html#glConvolutionFilter1D" title="glConvolutionFilter1D"><tt class="xref c c-func docutils literal"><span class="pre">glConvolutionFilter1D()</span></tt></a>,
+<a class="reference internal" href="glConvolutionFilter2D.html#glConvolutionFilter2D" title="glConvolutionFilter2D"><tt class="xref c c-func docutils literal"><span class="pre">glConvolutionFilter2D()</span></tt></a>,
+<a class="reference internal" href="glHistogram.html#glHistogram" title="glHistogram"><tt class="xref c c-func docutils literal"><span class="pre">glHistogram()</span></tt></a>,
+<a class="reference internal" href="glMinmax.html#glMinmax" title="glMinmax"><tt class="xref c c-func docutils literal"><span class="pre">glMinmax()</span></tt></a>, and
+<a class="reference internal" href="glSeparableFilter2D.html#glSeparableFilter2D" title="glSeparableFilter2D"><tt class="xref c c-func docutils literal"><span class="pre">glSeparableFilter2D()</span></tt></a>.
+Use of these maps is described completely in the
+<a class="reference internal" href="glPixelTransfer.html#glPixelTransfer" title="glPixelTransfer"><tt class="xref c c-func docutils literal"><span class="pre">glPixelTransfer()</span></tt></a> reference page,
+and partly in the reference pages for the pixel and texture image commands.
+Only the specification of the maps is described in this reference page.</p>
+<p><em>map</em> is a symbolic map name,
+indicating one of ten maps to set.
+<em>mapsize</em> specifies the number of entries in the map,
+and <em>values</em> is a pointer to an array of <em>mapsize</em> map values.</p>
+<p>If a non-zero named buffer object is bound to the <tt class="docutils literal"><span class="pre">GL_PIXEL_UNPACK_BUFFER</span></tt> target
+(see <a class="reference internal" href="../man4/glBindBuffer.html#glBindBuffer" title="glBindBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glBindBuffer()</span></tt></a>) while a pixel transfer map is
+specified, <em>values</em> is treated as a byte offset into the buffer object&#8217;s data store.</p>
+<p>The ten maps are as follows:</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_I_TO_I</span></tt></p>
+<blockquote>
+<div>Maps color indices to color indices.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_S_TO_S</span></tt></p>
+<blockquote>
+<div>Maps stencil indices to stencil indices.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_I_TO_R</span></tt></p>
+<blockquote>
+<div>Maps color indices to red components.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_I_TO_G</span></tt></p>
+<blockquote>
+<div>Maps color indices to green components.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_I_TO_B</span></tt></p>
+<blockquote>
+<div>Maps color indices to blue components.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_I_TO_A</span></tt></p>
+<blockquote>
+<div>Maps color indices to alpha components.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_R_TO_R</span></tt></p>
+<blockquote>
+<div>Maps red components to red components.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_G_TO_G</span></tt></p>
+<blockquote>
+<div>Maps green components to green components.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_B_TO_B</span></tt></p>
+<blockquote>
+<div>Maps blue components to blue components.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_A_TO_A</span></tt></p>
+<blockquote>
+<div>Maps alpha components to alpha components.</div></blockquote>
+</div></blockquote>
+<p>The entries in a map can be specified as single-precision
+floating-point numbers,
+unsigned short integers,
+or unsigned int integers.
+Maps that store color component values
+(all but <tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_I_TO_I</span></tt> and <tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_S_TO_S</span></tt>)
+retain their values in floating-point format,
+with unspecified mantissa and exponent sizes.
+Floating-point values specified by <a class="reference internal" href="#glPixelMapfv" title="glPixelMapfv"><tt class="xref c c-func docutils literal"><span class="pre">glPixelMapfv()</span></tt></a> are converted directly
+to the internal floating-point format of these maps,
+then clamped to the range [0,1].
+Unsigned integer values specified by <tt class="xref c c-func docutils literal"><span class="pre">glPixelMapusv()</span></tt> and
+<tt class="xref c c-func docutils literal"><span class="pre">glPixelMapuiv()</span></tt> are converted linearly such that
+the largest representable integer maps to 1.0,
+and 0 maps to 0.0.</p>
+<p>Maps that store indices,
+<tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_I_TO_I</span></tt> and <tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_S_TO_S</span></tt>,
+retain their values in fixed-point format,
+with an unspecified number of bits to the right of the binary point.
+Floating-point values specified by <a class="reference internal" href="#glPixelMapfv" title="glPixelMapfv"><tt class="xref c c-func docutils literal"><span class="pre">glPixelMapfv()</span></tt></a> are converted directly
+to the internal fixed-point format of these maps.
+Unsigned integer values specified by <tt class="xref c c-func docutils literal"><span class="pre">glPixelMapusv()</span></tt> and
+<tt class="xref c c-func docutils literal"><span class="pre">glPixelMapuiv()</span></tt> specify integer values,
+with all 0&#8217;s to the right of the binary point.</p>
+<p>The following table shows the initial sizes and values for each of the maps.
+Maps that are indexed by either color or stencil indices must have
+<em>mapsize</em> = <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <msup><mn>2</mn><mi mathvariant="italic">n</mi></msup></math></span> for some <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math></span> or the results are undefined.
+The maximum allowable size for each map depends on the implementation
+and can be determined by calling <a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument
+<tt class="docutils literal"><span class="pre">GL_MAX_PIXEL_MAP_TABLE</span></tt>.
+The single maximum applies to all maps; it is at
+least 32.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>*map*</strong></td>
+<td><strong>Lookup Index</strong></td>
+<td><strong>Lookup Value</strong></td>
+<td><strong>Initial Size</strong></td>
+<td><strong>Initial Value</strong></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_I_TO_I</span></tt></td>
+<td>color index</td>
+<td>color index</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_S_TO_S</span></tt></td>
+<td>stencil index</td>
+<td>stencil index</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_I_TO_R</span></tt></td>
+<td>color index</td>
+<td>R</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_I_TO_G</span></tt></td>
+<td>color index</td>
+<td>G</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_I_TO_B</span></tt></td>
+<td>color index</td>
+<td>B</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_I_TO_A</span></tt></td>
+<td>color index</td>
+<td>A</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_R_TO_R</span></tt></td>
+<td>R</td>
+<td>R</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_G_TO_G</span></tt></td>
+<td>G</td>
+<td>G</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_B_TO_B</span></tt></td>
+<td>B</td>
+<td>B</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_A_TO_A</span></tt></td>
+<td>A</td>
+<td>A</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>map</em> is not an accepted value.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>mapsize</em> is less than one or larger than <tt class="docutils literal"><span class="pre">GL_MAX_PIXEL_MAP_TABLE</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>map</em> is <tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_I_TO_I</span></tt>, <tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_S_TO_S</span></tt>, <tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_I_TO_R</span></tt>, <tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_I_TO_G</span></tt>, <tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_I_TO_B</span></tt>, or <tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_I_TO_A</span></tt>, and <em>mapsize</em> is not a power of two.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if a non-zero buffer object name is bound to the <tt class="docutils literal"><span class="pre">GL_PIXEL_UNPACK_BUFFER</span></tt> target and the buffer object&#8217;s data store is currently mapped.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if a non-zero buffer object name is bound to the <tt class="docutils literal"><span class="pre">GL_PIXEL_UNPACK_BUFFER</span></tt> target and the data would be unpacked from the buffer object such that the memory reads required would exceed the data store size.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated by <a class="reference internal" href="#glPixelMapfv" title="glPixelMapfv"><tt class="xref c c-func docutils literal"><span class="pre">glPixelMapfv()</span></tt></a> if a non-zero buffer object name is bound to the <tt class="docutils literal"><span class="pre">GL_PIXEL_UNPACK_BUFFER</span></tt> target and <em>values</em> is not evenly divisible into the number of bytes needed to store in memory a GLfloat datum.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated by <tt class="xref c c-func docutils literal"><span class="pre">glPixelMapuiv()</span></tt> if a non-zero buffer object name is bound to the <tt class="docutils literal"><span class="pre">GL_PIXEL_UNPACK_BUFFER</span></tt> target and <em>values</em> is not evenly divisible into the number of bytes needed to store in memory a GLuint datum.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated by <tt class="xref c c-func docutils literal"><span class="pre">glPixelMapusv()</span></tt> if a non-zero buffer object name is bound to the <tt class="docutils literal"><span class="pre">GL_PIXEL_UNPACK_BUFFER</span></tt> target and <em>values</em> is not evenly divisible into the number of bytes needed to store in memory a GLushort datum.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <a class="reference internal" href="#glPixelMap" title="glPixelMap"><tt class="xref c c-func docutils literal"><span class="pre">glPixelMap()</span></tt></a> is executed between the execution of <a class="reference internal" href="glBegin.html#glBegin" title="glBegin"><tt class="xref c c-func docutils literal"><span class="pre">glBegin()</span></tt></a> and the corresponding execution of <a class="reference internal" href="glBegin.html#glEnd" title="glEnd"><tt class="xref c c-func docutils literal"><span class="pre">glEnd()</span></tt></a>.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glGetPixelMap.html#glGetPixelMap" title="glGetPixelMap"><tt class="xref c c-func docutils literal"><span class="pre">glGetPixelMap()</span></tt></a></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_I_TO_I_SIZE</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_S_TO_S_SIZE</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_I_TO_R_SIZE</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_I_TO_G_SIZE</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_I_TO_B_SIZE</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_I_TO_A_SIZE</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_R_TO_R_SIZE</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_G_TO_G_SIZE</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_B_TO_B_SIZE</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_PIXEL_MAP_A_TO_A_SIZE</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_MAX_PIXEL_MAP_TABLE</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_PIXEL_UNPACK_BUFFER_BINDING</span></tt></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glPassThrough.html"
+                        title="previous chapter">function <cite>glPassThrough</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glPixelTransfer.html"
+                        title="next chapter">function <cite>glPixelTransfer</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/glPixelMap.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glPixelTransfer.html" title="function glPixelTransfer"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glPassThrough.html" title="function glPassThrough"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glDeleteLists`
+------------------------
+
+.. source file man/glDeleteLists
+
+.. currentmodule:: OpenGL.GL
+
+Delete a contiguous group of display lists
+
+.. c:function:: glDeleteLists
+.. c:function:: void glDeleteLists(GLuint  list, GLsizei  range)
+   :noindex: 
+
+
+   
+   :param list:
+      Specifies the integer name of the first display list to delete.
+   
+   :param range:
+      Specifies the number of display lists to delete.
+   
+
+.. seealso::
+
+   
+   :c:func:`glCallList`, :c:func:`glCallLists`, :c:func:`glGenLists`, :c:func:`glIsList`, :c:func:`glNewList`
+   
+.. rubric:: Description
+
+
+:c:func:`glDeleteLists` causes a contiguous group of display lists to be deleted. *list* is the name of the first display list to be deleted, and *range* is the number of display lists to delete. All display lists |EQUATION_1_| with |EQUATION_2_| are deleted.
+
+All storage locations allocated to the specified display lists are freed, and the names are available for reuse at a later time. Names within the range that do not have an associated display list are ignored. If *range* is 0, nothing happens.
+
+
+**Errors:**
+
+   * ``GL_INVALID_VALUE`` is generated if *range* is negative.
+   * ``GL_INVALID_OPERATION`` is generated if :c:func:`glDeleteLists` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`.
+
+
+.. role:: mml(raw)
+   :format: html
+
+
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">d</mi></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow> <mi mathvariant="italic">list</mi> <mo>&lt;=</mo> <mi mathvariant="italic">d</mi> <mo>&lt;=</mo> <mrow> <mi mathvariant="italic">list</mi> <mo>+</mo> <mi mathvariant="italic">range</mi> <mo>-</mo> <mn>1</mn> </mrow> </mrow> </math>` 
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

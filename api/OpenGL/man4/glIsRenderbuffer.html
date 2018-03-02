@@ -1,0 +1,160 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glIsRenderbuffer &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glIsSampler" href="glIsSampler.html" />
+    <link rel="prev" title="function glIsQuery" href="glIsQuery.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glIsSampler.html" title="function glIsSampler"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glIsQuery.html" title="function glIsQuery"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glisrenderbuffer">
+<h1>function <cite>glIsRenderbuffer</cite><a class="headerlink" href="#function-glisrenderbuffer" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Determine if a name corresponds to a renderbuffer object</p>
+<dl class="function">
+<dt id="glIsRenderbuffer">
+<tt class="descname">glIsRenderbuffer</tt><big>(</big><big>)</big><a class="headerlink" href="#glIsRenderbuffer" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>renderbuffer</strong> &#8211; Specifies a value that may be the name of a renderbuffer object.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+GLboolean <tt class="descname">glIsRenderbuffer</tt><big>(</big>GLuint <em>&nbsp;renderbuffer</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glGenRenderbuffers.html#glGenRenderbuffers" title="glGenRenderbuffers"><tt class="xref c c-func docutils literal"><span class="pre">glGenRenderbuffers()</span></tt></a>,
+<a class="reference internal" href="glBindRenderbuffer.html#glBindRenderbuffer" title="glBindRenderbuffer"><tt class="xref c c-func docutils literal"><span class="pre">glBindRenderbuffer()</span></tt></a>,
+<a class="reference internal" href="glFramebufferRenderbuffer.html#glFramebufferRenderbuffer" title="glFramebufferRenderbuffer"><tt class="xref c c-func docutils literal"><span class="pre">glFramebufferRenderbuffer()</span></tt></a>,
+<a class="reference internal" href="glDeleteRenderbuffers.html#glDeleteRenderbuffers" title="glDeleteRenderbuffers"><tt class="xref c c-func docutils literal"><span class="pre">glDeleteRenderbuffers()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glIsRenderbuffer" title="glIsRenderbuffer"><tt class="xref c c-func docutils literal"><span class="pre">glIsRenderbuffer()</span></tt></a> returns <tt class="docutils literal"><span class="pre">GL_TRUE</span></tt> if <em>renderbuffer</em> is currently the name of a renderbuffer
+object. If <em>renderbuffer</em> is zero, or if <em>renderbuffer</em> is not the name of a renderbuffer object, or if an error
+occurs, <a class="reference internal" href="#glIsRenderbuffer" title="glIsRenderbuffer"><tt class="xref c c-func docutils literal"><span class="pre">glIsRenderbuffer()</span></tt></a> returns <tt class="docutils literal"><span class="pre">GL_FALSE</span></tt>. If <em>renderbuffer</em> is a name returned by
+<a class="reference internal" href="glGenRenderbuffers.html#glGenRenderbuffers" title="glGenRenderbuffers"><tt class="xref c c-func docutils literal"><span class="pre">glGenRenderbuffers()</span></tt></a>, by that has not yet been bound through a call to
+<a class="reference internal" href="glBindRenderbuffer.html#glBindRenderbuffer" title="glBindRenderbuffer"><tt class="xref c c-func docutils literal"><span class="pre">glBindRenderbuffer()</span></tt></a> or <a class="reference internal" href="glFramebufferRenderbuffer.html#glFramebufferRenderbuffer" title="glFramebufferRenderbuffer"><tt class="xref c c-func docutils literal"><span class="pre">glFramebufferRenderbuffer()</span></tt></a>,
+then the name is not a renderbuffer object and <a class="reference internal" href="#glIsRenderbuffer" title="glIsRenderbuffer"><tt class="xref c c-func docutils literal"><span class="pre">glIsRenderbuffer()</span></tt></a> returns <tt class="docutils literal"><span class="pre">GL_FALSE</span></tt>.</p>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)2010 Khronos Group. Open Publication License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glIsQuery.html"
+                        title="previous chapter">function <cite>glIsQuery</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glIsSampler.html"
+                        title="next chapter">function <cite>glIsSampler</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glIsRenderbuffer.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glIsSampler.html" title="function glIsSampler"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glIsQuery.html" title="function glIsQuery"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

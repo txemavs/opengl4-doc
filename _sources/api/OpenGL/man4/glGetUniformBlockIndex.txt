@@ -1,0 +1,102 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:29
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glGetUniformBlockIndex.xml'
+.. (c)2010 Khronos Group.
+.. See license details at http://opencontent.org/openpub/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glGetUniformBlockIndex`
+---------------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Retrieve the index of a named uniform block
+
+.. c:function:: glGetUniformBlockIndex
+
+
+         :param program:
+
+                  Specifies the name of a program containing the uniform block.
+
+         :param uniformBlockName:
+
+                  Specifies the address an array of characters to containing the name of the uniform block whose index to retrieve.
+
+.. rubric:: Specification
+
+.. c:function:: GLuint glGetUniformBlockIndex(GLuint  program, const GLchar * uniformBlockName)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glGetActiveUniformBlockName`\ ,
+            :c:func:`glGetActiveUniformBlock`\ ,
+            :c:func:`glLinkProgram`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glGetUniformBlockIndex` retrieves the index of a uniform block within *program*\ .
+
+
+*program* must be the name of a program object for which the command
+:c:func:`glLinkProgram` must have been called in the past, although it is not required that
+:c:func:`glLinkProgram` must have succeeded. The link could have failed because the number
+of active uniforms exceeded the limit.
+
+
+*uniformBlockName* must contain a nul-terminated string specifying the name of the uniform block.
+
+
+:c:func:`glGetUniformBlockIndex` returns the uniform block index for the uniform block named *uniformBlockName*
+of *program*\ . If *uniformBlockName* does not identify an active uniform block of *program*\ ,
+:c:func:`glGetUniformBlockIndex` returns the special identifier, ``GL_INVALID_INDEX``\ . Indices of the active uniform
+blocks of a program are assigned in consecutive order, beginning with zero.
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_OPERATION`` is generated if *program* is not the name of a program object for which :c:func:`glLinkProgram` has been called in the past.
+
+
+.. note::
+
+
+   :c:func:`glGetUniformBlockIndex` is available only if the GL version is 3.1 or greater.
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glGetUniformBlockIndex'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )2010 Khronos Group. Open Publication License.
+

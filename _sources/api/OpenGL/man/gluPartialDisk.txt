@@ -1,0 +1,133 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:28
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/gluPartialDisk.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `gluPartialDisk`
+-------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Draw an arc of a disk
+
+.. c:function:: gluPartialDisk
+
+
+         :param quad:
+
+                  Specifies a quadrics object (created with :c:func:`gluNewQuadric`\ ).
+
+         :param inner:
+
+                  Specifies the inner radius of the partial disk (can be 0).
+
+         :param outer:
+
+                  Specifies the outer radius of the partial disk.
+
+         :param slices:
+
+                  Specifies the number of subdivisions around the :strong:`z` axis.
+
+         :param loops:
+
+                  Specifies the number of concentric rings about the origin into which
+                  the partial disk is subdivided.
+
+         :param start:
+
+                  Specifies the starting angle, in degrees, of the disk portion.
+
+         :param sweep:
+
+                  Specifies the sweep angle, in degrees, of the disk portion.
+
+.. rubric:: Specification
+
+.. c:function:: void gluPartialDisk(GLUquadric*  quad, GLdouble  inner, GLdouble  outer, GLint  slices, GLint  loops, GLdouble  start, GLdouble  sweep)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`gluCylinder`\ ,
+            :c:func:`gluDisk`\ ,
+            :c:func:`gluNewQuadric`\ ,
+            :c:func:`gluQuadricOrientation`\ ,
+            :c:func:`gluQuadricTexture`\ ,
+            :c:func:`gluSphere`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`gluPartialDisk` renders a partial disk on the |EQUATION_1_| plane. A partial disk is
+similar to a full disk, except that only the subset of the disk from
+*start* through *start* + *sweep* is included (where 0 degrees is along the
++\f2y\f axis,
+90 degrees along the + :strong:`x` axis, 180 degrees along the \- :strong:`y` axis, and
+270 degrees along the \- :strong:`x` axis).
+
+
+The partial disk has a radius of
+*outer* and contains a concentric circular hole with a radius
+of *inner*\ . If *inner* is 0, then no hole is generated. The partial disk is
+subdivided around the :strong:`z` axis into slices (like pizza slices) and also
+about the :strong:`z` axis into rings
+(as specified by *slices* and *loops*\ , respectively).
+
+
+With respect to orientation, the + :strong:`z`
+side of the partial disk is considered to
+be outside (see :c:func:`gluQuadricOrientation`\ ).
+This means that if the
+orientation is set to ``GLU_OUTSIDE``\ , then any normals generated
+point along the + :strong:`z` axis. Otherwise, they point along the \- :strong:`z`
+axis.
+
+
+If texturing is turned on (with :c:func:`gluQuadricTexture`\ ), texture
+coordinates are generated
+linearly such that where |EQUATION_2_|\ ,
+the value at (\ :strong:`r`\ , 0, 0) is
+(1.0, 0.5), at (0, :strong:`r`\ , 0) it is (0.5, 1.0), at (\- :strong:`r`\ , 0, 0)
+it is (0.0, 0.5), and
+at (0, \- :strong:`r`\ , 0) it is (0.5, 0.0).
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'gluPartialDisk'>
+
+.. role:: mml(raw)
+   :format: html
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">z</mi><mo>=</mo><mn>0</mn></mrow></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">r</mi><mo>=</mo><mi mathvariant="italic">outer</mi></mrow></math>` 
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

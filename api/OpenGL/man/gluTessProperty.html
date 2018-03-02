@@ -1,0 +1,211 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function gluTessProperty &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function gluTessVertex" href="gluTessVertex.html" />
+    <link rel="prev" title="function gluTessNormal" href="gluTessNormal.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="gluTessVertex.html" title="function gluTessVertex"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="gluTessNormal.html" title="function gluTessNormal"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glutessproperty">
+<h1>function <cite>gluTessProperty</cite><a class="headerlink" href="#function-glutessproperty" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Set a tessellation object property</p>
+<dl class="function">
+<dt id="gluTessProperty">
+<tt class="descname">gluTessProperty</tt><big>(</big><big>)</big><a class="headerlink" href="#gluTessProperty" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>tess</strong> &#8211; Specifies the tessellation object (created with <a class="reference internal" href="gluNewTess.html#gluNewTess" title="gluNewTess"><tt class="xref c c-func docutils literal"><span class="pre">gluNewTess()</span></tt></a>).</li>
+<li><strong>which</strong> &#8211; Specifies the property to be set. Valid values are
+<tt class="docutils literal"><span class="pre">GLU_TESS_WINDING_RULE</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_TESS_BOUNDARY_ONLY</span></tt>, and
+<tt class="docutils literal"><span class="pre">GLU_TESS_TOLERANCE</span></tt>.</li>
+<li><strong>data</strong> &#8211; Specifies the value of the indicated property.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">gluTessProperty</tt><big>(</big>GLUtesselator* <em>&nbsp;tess</em>, GLenum <em>&nbsp;which</em>, GLdouble <em>&nbsp;data</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="gluGetTessProperty.html#gluGetTessProperty" title="gluGetTessProperty"><tt class="xref c c-func docutils literal"><span class="pre">gluGetTessProperty()</span></tt></a>,
+<a class="reference internal" href="gluNewTess.html#gluNewTess" title="gluNewTess"><tt class="xref c c-func docutils literal"><span class="pre">gluNewTess()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#gluTessProperty" title="gluTessProperty"><tt class="xref c c-func docutils literal"><span class="pre">gluTessProperty()</span></tt></a> is used to control properties stored in a tessellation object. These
+properties affect the way that the polygons are interpreted and rendered.
+The legal values for <em>which</em> are as follows:</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">GLU_TESS_WINDING_RULE</span></tt></p>
+<blockquote>
+<div><p>Determines which parts of the polygon are on the &#8220;interior&#8221;.
+<em>data</em> may be set to one of <tt class="docutils literal"><span class="pre">GLU_TESS_WINDING_ODD</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_TESS_WINDING_NONZERO</span></tt>, <tt class="docutils literal"><span class="pre">GLU_TESS_WINDING_POSITIVE</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_TESS_WINDING_NEGATIVE</span></tt>, or <tt class="docutils literal"><span class="pre">GLU_TESS_WINDING_ABS_GEQ_TWO</span></tt>.</p>
+<p>To understand how the winding rule works, consider that the input
+contours partition the plane into regions. The winding rule determines which
+of these regions are inside the polygon.</p>
+<p>For a single contour C, the winding number of a point x is simply the signed
+number of revolutions we make around x as we travel once around C
+(where CCW is positive). When there are several contours, the individual
+winding numbers are summed. This procedure associates a signed integer
+value with each point x in the plane. Note that the winding number is the
+same for all points in a single region.</p>
+<p>The winding rule classifies a region as &#8220;inside&#8221; if its winding number
+belongs to the chosen category (odd, nonzero, positive, negative, or
+absolute value of at least two). The previous GLU tessellator (prior to
+GLU 1.2) used the &#8220;odd&#8221; rule. The &#8220;nonzero&#8221; rule is another common way to
+define the interior. The other three rules are useful for polygon CSG
+operations.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLU_TESS_BOUNDARY_ONLY</span></tt></p>
+<blockquote>
+<div>Is a boolean value (&#8220;value&#8221; should be set
+to GL_TRUE or GL_FALSE). When set to GL_TRUE, a set of closed contours
+separating the polygon interior and exterior are returned instead of a
+tessellation. Exterior contours are oriented CCW with respect to the
+normal; interior contours are oriented CW. The <tt class="docutils literal"><span class="pre">GLU_TESS_BEGIN</span></tt>
+and <tt class="docutils literal"><span class="pre">GLU_TESS_BEGIN_DATA</span></tt> callbacks use the type GL_LINE_LOOP for
+each contour.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLU_TESS_TOLERANCE</span></tt></p>
+<blockquote>
+<div><p>Specifies a tolerance for merging features to reduce the size of the output.
+For example, two vertices that are very close to each other might be
+replaced by a single vertex. The tolerance is multiplied by the largest
+coordinate magnitude of any input vertex; this specifies the maximum
+distance that any feature can move as the result of a single merge
+operation. If a single feature takes part in several merge operations, the
+total distance moved could be larger.</p>
+<p>Feature merging is completely optional; the tolerance is only a hint.
+The implementation is free to merge in some cases and not in others, or to
+never merge features at all. The initial tolerance is 0.</p>
+<p>The current implementation merges vertices only if they are exactly
+coincident, regardless of the current tolerance. A vertex is spliced into
+an edge only if the implementation is unable to distinguish which side of
+the edge the vertex lies on. Two edges are merged only when both endpoints
+are identical.</p>
+</div></blockquote>
+</div></blockquote>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="gluTessNormal.html"
+                        title="previous chapter">function <cite>gluTessNormal</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="gluTessVertex.html"
+                        title="next chapter">function <cite>gluTessVertex</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/gluTessProperty.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="gluTessVertex.html" title="function gluTessVertex"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="gluTessNormal.html" title="function gluTessNormal"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

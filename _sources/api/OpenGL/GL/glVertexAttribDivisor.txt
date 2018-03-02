@@ -1,0 +1,57 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glVertexAttribDivisor`
+--------------------------------
+
+.. source file man4/glVertexAttribDivisor
+
+.. currentmodule:: OpenGL.GL
+
+Modify the rate at which generic vertex attributes advance during instanced rendering
+
+.. c:function:: glVertexAttribDivisor
+.. c:function:: void glVertexAttribDivisor(GLuint  index, GLuint  divisor)
+   :noindex: 
+
+
+   
+   :param index:
+      Specify the index of the generic vertex attribute.
+   
+   :param divisor:
+      Specify the number of instances that will pass between updates of the generic attribute at slot *index* .
+   
+
+.. seealso::
+
+   
+   :c:func:`glVertexAttribPointer`, :c:func:`glEnableVertexAttribArray`, :c:func:`glDisableVertexAttribArray`
+   
+.. rubric:: Description
+
+
+:c:func:`glVertexAttribDivisor` modifies the rate at which generic vertex attributes advance when rendering multiple instances of primitives in a single draw call. If *divisor* is zero, the attribute at slot *index* advances once per vertex. If *divisor* is non-zero, the attribute advances once per *divisor* instances of the set(s) of vertices being rendered. An attribute is referred to as instanced if its ``GL_VERTEX_ATTRIB_ARRAY_DIVISOR`` value is non-zero.
+
+*index* must be less than the value of ``GL_MAX_VERTEX_ATTRIBUTES``.
+
+
+**Errors:**
+
+   * ``GL_INVALID_VALUE`` is generated if *index* is greater than or equal to the value of ``GL_MAX_VERTEX_ATTRIBUTES``.
+
+
+
+.. note::
+
+   * :c:func:`glVertexAttribDivisor` is available only if the GL version is 3.3 or higher.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

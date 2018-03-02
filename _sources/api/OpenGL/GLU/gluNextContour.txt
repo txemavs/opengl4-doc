@@ -1,0 +1,71 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `gluNextContour`
+-------------------------
+
+.. source file man/gluNextContour
+
+.. currentmodule:: OpenGL.GLU
+
+Mark the beginning of another contour
+
+.. c:function:: gluNextContour
+.. c:function:: void gluNextContour(GLUtesselator*  tess, GLenum  type)
+   :noindex: 
+
+
+   
+   :param tess:
+      Specifies the tessellation object (created with :c:func:`gluNewTess`).
+   
+   :param type:
+      Specifies the type of the contour being defined. Valid values are ``GLU_EXTERIOR``, ``GLU_INTERIOR``, ``GLU_UNKNOWN``, ``GLU_CCW``, and ``GLU_CW``.
+   
+
+.. seealso::
+
+   
+   :c:func:`gluBeginPolygon`, :c:func:`gluNewTess`, :c:func:`gluTessBeginContour`, :c:func:`gluTessCallback`, :c:func:`gluTessVertex`
+   
+.. rubric:: Description
+
+
+:c:func:`gluNextContour` is used in describing polygons with multiple contours. After the first contour has been described through a series of :c:func:`gluTessVertex` calls, a :c:func:`gluNextContour` call indicates that the previous contour is complete and that the next contour is about to begin. Another series of :c:func:`gluTessVertex` calls is then used to describe the new contour. This process can be repeated until all contours have been described.
+
+*type* defines what type of contour follows. The legal contour types are as follows:
+
+
+   
+   ``GLU_EXTERIOR``
+      An exterior contour defines an exterior boundary of the polygon.
+   
+   ``GLU_INTERIOR``
+      An interior contour defines an interior boundary of the polygon (such as a hole).
+   
+   ``GLU_UNKNOWN``
+      An unknown contour is analyzed by the library to determine if it is interior or exterior.
+   
+   ``GLU_CCW``,
+      [empty]
+   
+   ``GLU_CW``
+      The first ``GLU_CCW`` or ``GLU_CW`` contour defined is considered to be exterior. All other contours are considered to be exterior if they are oriented in the same direction (clockwise or counterclockwise) as the first contour, and interior if they are not.
+   
+If one contour is of type ``GLU_CCW`` or ``GLU_CW``, then all contours must be of the same type (if they are not, then all ``GLU_CCW`` and ``GLU_CW`` contours will be changed to ``GLU_UNKNOWN``).
+
+Note that there is no real difference between the ``GLU_CCW`` and ``GLU_CW`` contour types.
+
+Before the first contour is described, :c:func:`gluNextContour` can be called to define the type of the first contour. If :c:func:`gluNextContour` is not called before the first contour, then the first contour is marked ``GLU_EXTERIOR``.
+
+This command is obsolete and is provided for backward compatibility only. Calls to :c:func:`gluNextContour` are mapped to :c:func:`gluTessEndContour` followed by :c:func:`gluTessBeginContour`.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

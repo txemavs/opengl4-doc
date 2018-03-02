@@ -1,0 +1,190 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glScissorIndexed &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glShaderBinary" href="glShaderBinary.html" />
+    <link rel="prev" title="function glScissorArray" href="glScissorArray.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glShaderBinary.html" title="function glShaderBinary"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glScissorArray.html" title="function glScissorArray"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glscissorindexed">
+<h1>function <cite>glScissorIndexed</cite><a class="headerlink" href="#function-glscissorindexed" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Define the scissor box for a specific viewport</p>
+<dl class="function">
+<dt id="glScissorIndexed">
+<tt class="descname">glScissorIndexed</tt><big>(</big><big>)</big><a class="headerlink" href="#glScissorIndexed" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>index</strong> &#8211; Specifies the index of the viewport whose scissor box to modify.</li>
+<li><strong>left</strong> &#8211; </li>
+<li><strong>bottom</strong> &#8211; Specify the coordinate of the bottom left corner of the scissor box, in pixels.</li>
+<li><strong>width</strong> &#8211; </li>
+<li><strong>height</strong> &#8211; Specify ths dimensions of the scissor box, in pixels.</li>
+<li><strong>v</strong> &#8211; For <tt class="xref c c-func docutils literal"><span class="pre">glScissorIndexedv()</span></tt>, specifies the address of an array containing the left, bottom, width and height of each
+scissor box, in that order.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glScissorIndexed</tt><big>(</big>GLuint <em>&nbsp;index</em>, GLint <em>&nbsp;left</em>, GLint <em>&nbsp;bottom</em>, GLsizei <em>&nbsp;width</em>, GLsizei <em>&nbsp;height</em>, GLuint <em>&nbsp;index</em>, const GLint *<em>&nbsp;v</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glEnable.html#glEnable" title="glEnable"><tt class="xref c c-func docutils literal"><span class="pre">glEnable()</span></tt></a>,
+<a class="reference internal" href="glScissor.html#glScissor" title="glScissor"><tt class="xref c c-func docutils literal"><span class="pre">glScissor()</span></tt></a>,
+<a class="reference internal" href="glScissorArray.html#glScissorArray" title="glScissorArray"><tt class="xref c c-func docutils literal"><span class="pre">glScissorArray()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glScissorIndexed" title="glScissorIndexed"><tt class="xref c c-func docutils literal"><span class="pre">glScissorIndexed()</span></tt></a> defines the scissor box for a specified viewport.
+<em>index</em> specifies the index of scissor box to modify.
+<em>index</em> must be less than the value of <tt class="docutils literal"><span class="pre">GL_MAX_VIEWPORTS</span></tt>.
+For <a class="reference internal" href="#glScissorIndexed" title="glScissorIndexed"><tt class="xref c c-func docutils literal"><span class="pre">glScissorIndexed()</span></tt></a>, <em>left</em>, <em>bottom</em>,
+<em>width</em> and <em>height</em> specify the left, bottom, width
+and height of the scissor box, in pixels, respectively.
+For <tt class="xref c c-func docutils literal"><span class="pre">glScissorIndexedv()</span></tt>, <em>v</em> specifies the address of an
+array containing integers specifying the lower left corner of the scissor box, and the width and
+height of the scissor box, in that order.</p>
+<p>To enable and disable the scissor test, call
+<a class="reference internal" href="glEnable.html#glEnable" title="glEnable"><tt class="xref c c-func docutils literal"><span class="pre">glEnable()</span></tt></a> and <a class="reference internal" href="glEnable.html#glDisable" title="glDisable"><tt class="xref c c-func docutils literal"><span class="pre">glDisable()</span></tt></a> with argument
+<tt class="docutils literal"><span class="pre">GL_SCISSOR_TEST</span></tt>. The test is initially disabled for all viewports.
+While the test is enabled, only pixels that lie within the scissor box
+can be modified by drawing commands.
+Window coordinates have integer values at the shared corners of
+frame buffer pixels.
+<tt class="docutils literal"><span class="pre">glScissor(0,0,1,1)</span></tt> allows modification of only the lower left
+pixel in the window, and <tt class="docutils literal"><span class="pre">glScissor(0,0,0,0)</span></tt> doesn&#8217;t allow
+modification of any pixels in the window.</p>
+<p>When the scissor test is disabled,
+it is as though the scissor box includes the entire window.</p>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>index</em> is greater than or equal to the value of <tt class="docutils literal"><span class="pre">GL_MAX_VIEWPORTS</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if any width or height specified in the array <em>v</em> is negative.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_SCISSOR_BOX</span></tt></li>
+<li><a class="reference internal" href="glIsEnabled.html#glIsEnabled" title="glIsEnabled"><tt class="xref c c-func docutils literal"><span class="pre">glIsEnabled()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_SCISSOR_TEST</span></tt></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)2010 Khronos Group. Open Publication License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glScissorArray.html"
+                        title="previous chapter">function <cite>glScissorArray</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glShaderBinary.html"
+                        title="next chapter">function <cite>glShaderBinary</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glScissorIndexed.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glShaderBinary.html" title="function glShaderBinary"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glScissorArray.html" title="function glScissorArray"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

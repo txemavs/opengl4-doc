@@ -1,0 +1,264 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glConvolutionParameter &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function glCopyColorSubTable" href="glCopyColorSubTable.html" />
+    <link rel="prev" title="function glConvolutionFilter2D" href="glConvolutionFilter2D.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glCopyColorSubTable.html" title="function glCopyColorSubTable"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glConvolutionFilter2D.html" title="function glConvolutionFilter2D"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glconvolutionparameter">
+<h1>function <cite>glConvolutionParameter</cite><a class="headerlink" href="#function-glconvolutionparameter" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Set convolution parameters</p>
+<dl class="function">
+<dt id="glConvolutionParameter">
+<tt class="descname">glConvolutionParameter</tt><big>(</big><big>)</big><a class="headerlink" href="#glConvolutionParameter" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>target</strong> &#8211; The target for the convolution parameter.
+Must be one of
+<tt class="docutils literal"><span class="pre">GL_CONVOLUTION_1D</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_CONVOLUTION_2D</span></tt>, or
+<tt class="docutils literal"><span class="pre">GL_SEPARABLE_2D</span></tt>.</li>
+<li><strong>pname</strong> &#8211; The parameter to be set.
+Must be
+<tt class="docutils literal"><span class="pre">GL_CONVOLUTION_BORDER_MODE</span></tt>.</li>
+<li><strong>params</strong> &#8211; The parameter value.
+Must be one of
+<tt class="docutils literal"><span class="pre">GL_REDUCE</span></tt>, <tt class="docutils literal"><span class="pre">GL_CONSTANT_BORDER</span></tt>, <tt class="docutils literal"><span class="pre">GL_REPLICATE_BORDER</span></tt>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt id="glConvolutionParameterf">
+void <tt class="descname">glConvolutionParameterf</tt><big>(</big>GLenum <em>&nbsp;target</em>, GLenum <em>&nbsp;pname</em>, GLfloat <em>&nbsp;params</em>, GLenum <em>&nbsp;target</em>, GLenum <em>&nbsp;pname</em>, GLint <em>&nbsp;params</em><big>)</big><a class="headerlink" href="#glConvolutionParameterf" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="glConvolutionParameterfv">
+void <tt class="descname">glConvolutionParameterfv</tt><big>(</big>GLenum <em>&nbsp;target</em>, GLenum <em>&nbsp;pname</em>, const GLfloat * <em>&nbsp;params</em>, GLenum <em>&nbsp;target</em>, GLenum <em>&nbsp;pname</em>, const GLint * <em>&nbsp;params</em><big>)</big><a class="headerlink" href="#glConvolutionParameterfv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glConvolutionFilter1D.html#glConvolutionFilter1D" title="glConvolutionFilter1D"><tt class="xref c c-func docutils literal"><span class="pre">glConvolutionFilter1D()</span></tt></a>,
+<a class="reference internal" href="glConvolutionFilter2D.html#glConvolutionFilter2D" title="glConvolutionFilter2D"><tt class="xref c c-func docutils literal"><span class="pre">glConvolutionFilter2D()</span></tt></a>,
+<a class="reference internal" href="glSeparableFilter2D.html#glSeparableFilter2D" title="glSeparableFilter2D"><tt class="xref c c-func docutils literal"><span class="pre">glSeparableFilter2D()</span></tt></a>,
+<a class="reference internal" href="glGetConvolutionParameter.html#glGetConvolutionParameter" title="glGetConvolutionParameter"><tt class="xref c c-func docutils literal"><span class="pre">glGetConvolutionParameter()</span></tt></a></p>
+</div>
+<p class="rubric">Parameters</p>
+<blockquote>
+<div><p><em>target</em></p>
+<blockquote>
+<div>The target for the convolution parameter.
+Must be one of
+<tt class="docutils literal"><span class="pre">GL_CONVOLUTION_1D</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_CONVOLUTION_2D</span></tt>, or
+<tt class="docutils literal"><span class="pre">GL_SEPARABLE_2D</span></tt>.</div></blockquote>
+<p><em>pname</em></p>
+<blockquote>
+<div>The parameter to be set.
+Must be one of
+<tt class="docutils literal"><span class="pre">GL_CONVOLUTION_BORDER_MODE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_CONVOLUTION_BORDER_COLOR</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_CONVOLUTION_FILTER_SCALE</span></tt>, or
+<tt class="docutils literal"><span class="pre">GL_CONVOLUTION_FILTER_BIAS</span></tt>.</div></blockquote>
+<p><em>params</em></p>
+<blockquote>
+<div>The parameter value.
+If <em>pname</em> v is <tt class="docutils literal"><span class="pre">GL_CONVOLUTION_BORDER_MODE</span></tt>, <em>params</em> v must be one of
+<tt class="docutils literal"><span class="pre">GL_REDUCE</span></tt>, <tt class="docutils literal"><span class="pre">GL_CONSTANT_BORDER</span></tt>, or <tt class="docutils literal"><span class="pre">GL_REPLICATE_BORDER</span></tt>.
+Otherwise, must be a vector of four values (for red, green, blue, and alpha,
+respectively) to be used for
+scaling (when <em>pname</em> v is <tt class="docutils literal"><span class="pre">GL_CONVOLUTION_FILTER_SCALE</span></tt>), or
+biasing (when <em>pname</em> v is <tt class="docutils literal"><span class="pre">GL_CONVOLUTION_FILTER_BIAS</span></tt>) a convolution
+filter kernel or setting the constant border color (when <em>pname</em> v is
+<tt class="docutils literal"><span class="pre">GL_CONVOLUTION_BORDER_COLOR</span></tt>.</div></blockquote>
+</div></blockquote>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glConvolutionParameter" title="glConvolutionParameter"><tt class="xref c c-func docutils literal"><span class="pre">glConvolutionParameter()</span></tt></a> sets the value of a convolution parameter.</p>
+<p><em>target</em> selects the convolution filter to be affected:
+<tt class="docutils literal"><span class="pre">GL_CONVOLUTION_1D</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_CONVOLUTION_2D</span></tt>, or
+<tt class="docutils literal"><span class="pre">GL_SEPARABLE_2D</span></tt>
+for the 1D, 2D, or separable 2D filter, respectively.</p>
+<p><em>pname</em> selects the parameter to be changed.
+<tt class="docutils literal"><span class="pre">GL_CONVOLUTION_FILTER_SCALE</span></tt> and <tt class="docutils literal"><span class="pre">GL_CONVOLUTION_FILTER_BIAS</span></tt>
+affect the definition of the convolution filter kernel; see
+<a class="reference internal" href="glConvolutionFilter1D.html#glConvolutionFilter1D" title="glConvolutionFilter1D"><tt class="xref c c-func docutils literal"><span class="pre">glConvolutionFilter1D()</span></tt></a>, <a class="reference internal" href="glConvolutionFilter2D.html#glConvolutionFilter2D" title="glConvolutionFilter2D"><tt class="xref c c-func docutils literal"><span class="pre">glConvolutionFilter2D()</span></tt></a>, and
+<a class="reference internal" href="glSeparableFilter2D.html#glSeparableFilter2D" title="glSeparableFilter2D"><tt class="xref c c-func docutils literal"><span class="pre">glSeparableFilter2D()</span></tt></a> for details.
+In these cases, <em>params</em> v is an array of four values to be applied to
+red, green, blue, and alpha values, respectively. The initial value for
+<tt class="docutils literal"><span class="pre">GL_CONVOLUTION_FILTER_SCALE</span></tt> is (1, 1, 1, 1), and the initial value
+for <tt class="docutils literal"><span class="pre">GL_CONVOLUTION_FILTER_BIAS</span></tt> is (0, 0, 0, 0).</p>
+<p>A <em>pname</em> value of <tt class="docutils literal"><span class="pre">GL_CONVOLUTION_BORDER_MODE</span></tt> controls the
+convolution border mode. The accepted modes are:</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">GL_REDUCE</span></tt></p>
+<blockquote>
+<div>The image resulting from convolution is
+smaller than the source image.
+If the filter width is
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">Wf</mi></math></span> and height is <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">Hf</mi></math></span>,
+and the source image width is <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">Ws</mi></math></span> and height is <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">Hs</mi></math></span>,
+then the convolved image width will be <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">Ws</mi><mo>-</mo><mi mathvariant="italic">Wf</mi><mo>+</mo><mn>1</mn></mrow></math></span> and height
+will be <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">Hs</mi><mo>-</mo><mi mathvariant="italic">Hf</mi><mo>+</mo><mn>1</mn></mrow></math></span>.
+(If this reduction would generate an image with zero or negative width
+and/or height, the output is simply null, with no error generated.)
+The coordinates of the image resulting from convolution are zero
+through <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">Ws</mi><mo>-</mo><mi mathvariant="italic">Wf</mi></mrow></math></span> in width and zero through <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">Hs</mi><mo>-</mo><mi mathvariant="italic">Hf</mi></mrow></math></span> in
+height.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_CONSTANT_BORDER</span></tt></p>
+<blockquote>
+<div>The image resulting from convolution is the same size as the source image, and
+processed as if the source image were surrounded by pixels with their color
+specified by the <tt class="docutils literal"><span class="pre">GL_CONVOLUTION_BORDER_COLOR</span></tt>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_REPLICATE_BORDER</span></tt></p>
+<blockquote>
+<div>The image resulting from convolution is the same size as the source image, and
+processed as if the outermost pixel on the border of the source image were
+replicated.</div></blockquote>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><a class="reference internal" href="#glConvolutionParameter" title="glConvolutionParameter"><tt class="xref c c-func docutils literal"><span class="pre">glConvolutionParameter()</span></tt></a> is present only if <tt class="docutils literal"><span class="pre">ARB_imaging</span></tt> is returned when <a class="reference internal" href="../man4/glGetString.html#glGetString" title="glGetString"><tt class="xref c c-func docutils literal"><span class="pre">glGetString()</span></tt></a>
+is called with an argument of <tt class="docutils literal"><span class="pre">GL_EXTENSIONS</span></tt>.</p>
+<p class="last">In cases where errors can result from the specification of invalid
+image dimensions, it is the dimensions after convolution that are
+tested, not the dimensions of the source image.
+For example, <a class="reference internal" href="../man4/glTexImage1D.html#glTexImage1D" title="glTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage1D()</span></tt></a> requires power-of-two image size.
+When <tt class="docutils literal"><span class="pre">GL_REDUCE</span></tt> border mode is in effect,
+the source image must be larger than the final power-of-two size
+by one less than the size of the 1D filter kernel.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>target</em> is not one of the allowable values.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>pname</em> is not one of the allowable values.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>pname</em> is <tt class="docutils literal"><span class="pre">GL_CONVOLUTION_BORDER_MODE</span></tt> and <em>params</em> is not one of <tt class="docutils literal"><span class="pre">GL_REDUCE</span></tt>, <tt class="docutils literal"><span class="pre">GL_CONSTANT_BORDER</span></tt>, or <tt class="docutils literal"><span class="pre">GL_REPLICATE_BORDER</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <a class="reference internal" href="#glConvolutionParameter" title="glConvolutionParameter"><tt class="xref c c-func docutils literal"><span class="pre">glConvolutionParameter()</span></tt></a> is executed between the execution of <a class="reference internal" href="glBegin.html#glBegin" title="glBegin"><tt class="xref c c-func docutils literal"><span class="pre">glBegin()</span></tt></a> and the corresponding execution of <a class="reference internal" href="glBegin.html#glEnd" title="glEnd"><tt class="xref c c-func docutils literal"><span class="pre">glEnd()</span></tt></a>.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glGetConvolutionParameter.html#glGetConvolutionParameter" title="glGetConvolutionParameter"><tt class="xref c c-func docutils literal"><span class="pre">glGetConvolutionParameter()</span></tt></a></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glConvolutionFilter2D.html"
+                        title="previous chapter">function <cite>glConvolutionFilter2D</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glCopyColorSubTable.html"
+                        title="next chapter">function <cite>glCopyColorSubTable</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/glConvolutionParameter.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glCopyColorSubTable.html" title="function glCopyColorSubTable"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glConvolutionFilter2D.html" title="function glConvolutionFilter2D"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

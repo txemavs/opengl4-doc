@@ -1,0 +1,142 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:28
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glXUseXFont.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glXUseXFont`
+----------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Create bitmap display lists from an X font
+
+.. c:function:: glXUseXFont
+
+
+         :param font:
+
+                  Specifies the font from which character glyphs are to be taken.
+
+         :param first:
+
+                  Specifies the index of the first glyph to be taken.
+
+         :param count:
+
+                  Specifies the number of glyphs to be taken.
+
+         :param listBase:
+
+                  Specifies the index of the first display list to be generated.
+
+.. rubric:: Specification
+
+.. c:function:: void glXUseXFont(Font  font, int  first, int  count, int  listBase)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glBitmap`\ ,
+            :c:func:`glXMakeCurrent`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glXUseXFont` generates *count* display lists,
+named *listBase* through |EQUATION_1_|\ ,
+each containing a single :c:func:`glBitmap` command.
+The parameters of the :c:func:`glBitmap` command of display list |EQUATION_2_| are derived from glyph |EQUATION_3_|\ .
+Bitmap parameters |EQUATION_4_|\ , |EQUATION_5_|\ , |EQUATION_6_|\ ,
+and |EQUATION_7_| are computed from font metrics as |EQUATION_8_|\ , |EQUATION_9_|\ ,
+|EQUATION_10_|\ ,
+and |EQUATION_11_|\ ,
+respectively. |EQUATION_12_| is taken from the glyph's |EQUATION_13_| metric,
+and |EQUATION_14_| is set to zero.
+Finally,
+the glyph's image is converted to the appropriate format for :c:func:`glBitmap`\ .
+
+
+Using :c:func:`glXUseXFont` may be more efficient than accessing the X font and generating
+the display lists explicitly,
+both because the display lists are created on the server without requiring
+a round trip of the glyph data,
+and because the server may choose to delay the creation of each
+bitmap until it is accessed.
+
+
+Empty display lists are created for all glyphs that are requested and
+are not defined in *font*\ .
+:c:func:`glXUseXFont` is ignored if there is no current GLX context.
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``BadFont`` is generated if *font* is not a valid font.
+* ``GLXBadContextState`` is generated if the current GLX context is in display-list construction mode.
+* ``GLXBadCurrentWindow`` is generated if the drawable associated with the current context of the calling thread is a window, and that window is no longer valid.
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glXUseXFont'>
+
+.. role:: mml(raw)
+   :format: html
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">listBase</mi><mo>+</mo><mi mathvariant="italic">count</mi><mo>-</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">listBase</mi><mo>+</mo><mi mathvariant="italic">i</mi></mrow></math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">first</mi><mo>+</mo><mi mathvariant="italic">i</mi></mrow></math>` 
+
+.. |EQUATION_4_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">xorig</mi></math>` 
+
+.. |EQUATION_5_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">yorig</mi></math>` 
+
+.. |EQUATION_6_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">width</mi></math>` 
+
+.. |EQUATION_7_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">height</mi></math>` 
+
+.. |EQUATION_8_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">descent</mi><mo>-</mo><mn>1</mn></mrow></math>` 
+
+.. |EQUATION_9_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mo>-</mo><mi mathvariant="italic">lbearing</mi></mrow></math>` 
+
+.. |EQUATION_10_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">rbearing</mi><mo>-</mo><mi mathvariant="italic">lbearing</mi></mrow></math>` 
+
+.. |EQUATION_11_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mi mathvariant="italic">ascent</mi><mo>+</mo><mi mathvariant="italic">descent</mi></mrow></math>` 
+
+.. |EQUATION_12_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">xmove</mi></math>` 
+
+.. |EQUATION_13_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">width</mi></math>` 
+
+.. |EQUATION_14_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">ymove</mi></math>` 
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

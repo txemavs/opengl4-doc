@@ -1,0 +1,191 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glGetQueryObject &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glGetRenderbufferParameter" href="glGetRenderbufferParameter.html" />
+    <link rel="prev" title="function glGetQueryiv" href="glGetQueryiv.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glGetRenderbufferParameter.html" title="function glGetRenderbufferParameter"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glGetQueryiv.html" title="function glGetQueryiv"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glgetqueryobject">
+<h1>function <cite>glGetQueryObject</cite><a class="headerlink" href="#function-glgetqueryobject" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Return parameters of a query object</p>
+<dl class="function">
+<dt id="glGetQueryObject">
+<tt class="descname">glGetQueryObject</tt><big>(</big><big>)</big><a class="headerlink" href="#glGetQueryObject" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>id</strong> &#8211; Specifies the name of a query object.</li>
+<li><strong>pname</strong> &#8211; Specifies the symbolic name of a query object parameter.
+Accepted values are <tt class="docutils literal"><span class="pre">GL_QUERY_RESULT</span></tt> or <tt class="docutils literal"><span class="pre">GL_QUERY_RESULT_AVAILABLE</span></tt>.</li>
+<li><strong>params</strong> &#8211; Returns the requested data.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt id="glGetQueryObjectiv">
+void <tt class="descname">glGetQueryObjectiv</tt><big>(</big>GLuint <em>&nbsp;id</em>, GLenum <em>&nbsp;pname</em>, GLint * <em>&nbsp;params</em>, GLuint <em>&nbsp;id</em>, GLenum <em>&nbsp;pname</em>, GLuint * <em>&nbsp;params</em>, GLuint <em>&nbsp;id</em>, GLenum <em>&nbsp;pname</em>, GLint64 * <em>&nbsp;params</em>, GLuint <em>&nbsp;id</em>, GLenum <em>&nbsp;pname</em>, GLuint64 * <em>&nbsp;params</em><big>)</big><a class="headerlink" href="#glGetQueryObjectiv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glBeginQuery.html#glBeginQuery" title="glBeginQuery"><tt class="xref c c-func docutils literal"><span class="pre">glBeginQuery()</span></tt></a>,
+<a class="reference internal" href="glBeginQuery.html#glEndQuery" title="glEndQuery"><tt class="xref c c-func docutils literal"><span class="pre">glEndQuery()</span></tt></a>,
+<a class="reference internal" href="glGetQueryiv.html#glGetQueryiv" title="glGetQueryiv"><tt class="xref c c-func docutils literal"><span class="pre">glGetQueryiv()</span></tt></a>,
+<a class="reference internal" href="glIsQuery.html#glIsQuery" title="glIsQuery"><tt class="xref c c-func docutils literal"><span class="pre">glIsQuery()</span></tt></a>,
+<a class="reference internal" href="glQueryCounter.html#glQueryCounter" title="glQueryCounter"><tt class="xref c c-func docutils literal"><span class="pre">glQueryCounter()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glGetQueryObject" title="glGetQueryObject"><tt class="xref c c-func docutils literal"><span class="pre">glGetQueryObject()</span></tt></a> returns in <em>params</em> a selected parameter of the query object
+specified by <em>id</em>.</p>
+<p><em>pname</em> names a specific query object parameter. <em>pname</em> can be as follows:</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">GL_QUERY_RESULT</span></tt></p>
+<blockquote>
+<div><em>params</em> returns the value of the query object&#8217;s passed samples counter.
+The initial value is 0.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GL_QUERY_RESULT_AVAILABLE</span></tt></p>
+<blockquote>
+<div><em>params</em> returns whether the passed samples counter is immediately available.
+If a delay would occur waiting for the query result, <tt class="docutils literal"><span class="pre">GL_FALSE</span></tt> is returned.
+Otherwise, <tt class="docutils literal"><span class="pre">GL_TRUE</span></tt> is returned, which also indicates that the results of all
+previous queries are available as well.</div></blockquote>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>If an error is generated,
+no change is made to the contents of <em>params</em>.</p>
+<p><a class="reference internal" href="#glGetQueryObject" title="glGetQueryObject"><tt class="xref c c-func docutils literal"><span class="pre">glGetQueryObject()</span></tt></a> implicitly flushes the GL pipeline so that any incomplete rendering
+delimited by the occlusion query completes in finite time.</p>
+<p>If multiple queries are issued using the same query object <em>id</em> before calling
+<a class="reference internal" href="#glGetQueryObject" title="glGetQueryObject"><tt class="xref c c-func docutils literal"><span class="pre">glGetQueryObject()</span></tt></a>, the results of the most recent query will be returned.  In this case,
+when issuing a new query, the results of the previous query are discarded.</p>
+<p class="last"><tt class="xref c c-func docutils literal"><span class="pre">glGetQueryObjecti64v()</span></tt> and <tt class="xref c c-func docutils literal"><span class="pre">glGetQueryObjectui64v()</span></tt> are available only
+if the GL version is 3.3 or greater.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>pname</em> is not an accepted value.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <em>id</em> is not the name of a query object.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <em>id</em> is the name of a currently active query object.</li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)2005 Addison-Wesley. Open Publication License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glGetQueryiv.html"
+                        title="previous chapter">function <cite>glGetQueryiv</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glGetRenderbufferParameter.html"
+                        title="next chapter">function <cite>glGetRenderbufferParameter</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glGetQueryObject.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glGetRenderbufferParameter.html" title="function glGetRenderbufferParameter"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glGetQueryiv.html" title="function glGetQueryiv"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

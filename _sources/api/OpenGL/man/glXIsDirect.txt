@@ -1,0 +1,82 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:28
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glXIsDirect.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glXIsDirect`
+----------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Indicate whether direct rendering is enabled
+
+.. c:function:: glXIsDirect
+
+
+         :param dpy:
+
+                  Specifies the connection to the X server.
+
+         :param ctx:
+
+                  Specifies the GLX context that is being queried.
+
+.. rubric:: Specification
+
+.. c:function:: Bool glXIsDirect(Display *  dpy, GLXContext  ctx)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glXCreateContext`\ ,
+            :c:func:`glXCreateNewContext`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glXIsDirect` returns ``True`` if *ctx* is a direct rendering context,
+``False`` otherwise.
+Direct rendering contexts pass rendering commands directly from the calling
+process's address space to the rendering system,
+bypassing the X server.
+Nondirect rendering contexts pass all rendering commands to the X server.
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GLXBadContext`` is generated if *ctx* is not a valid GLX context.
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glXIsDirect'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

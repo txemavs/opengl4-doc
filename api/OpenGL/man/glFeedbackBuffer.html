@@ -1,0 +1,333 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glFeedbackBuffer &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function glFog" href="glFog.html" />
+    <link rel="prev" title="function glEvalPoint" href="glEvalPoint.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glFog.html" title="function glFog"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glEvalPoint.html" title="function glEvalPoint"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glfeedbackbuffer">
+<h1>function <cite>glFeedbackBuffer</cite><a class="headerlink" href="#function-glfeedbackbuffer" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Controls feedback mode</p>
+<dl class="function">
+<dt id="glFeedbackBuffer">
+<tt class="descname">glFeedbackBuffer</tt><big>(</big><big>)</big><a class="headerlink" href="#glFeedbackBuffer" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>size</strong> &#8211; Specifies the maximum number of values that can be written into <em>buffer</em>.</li>
+<li><strong>type</strong> &#8211; Specifies a symbolic constant that describes the information
+that will be returned for each vertex.
+<tt class="docutils literal"><span class="pre">GL_2D</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_3D</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_3D_COLOR</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_3D_COLOR_TEXTURE</span></tt>, and
+<tt class="docutils literal"><span class="pre">GL_4D_COLOR_TEXTURE</span></tt> are accepted.</li>
+<li><strong>buffer</strong> &#8211; Returns the feedback data.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glFeedbackBuffer</tt><big>(</big>GLsizei <em>&nbsp;size</em>, GLenum <em>&nbsp;type</em>, GLfloat * <em>&nbsp;buffer</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glBegin.html#glBegin" title="glBegin"><tt class="xref c c-func docutils literal"><span class="pre">glBegin()</span></tt></a>,
+<a class="reference internal" href="glLineStipple.html#glLineStipple" title="glLineStipple"><tt class="xref c c-func docutils literal"><span class="pre">glLineStipple()</span></tt></a>,
+<a class="reference internal" href="glPassThrough.html#glPassThrough" title="glPassThrough"><tt class="xref c c-func docutils literal"><span class="pre">glPassThrough()</span></tt></a>,
+<a class="reference internal" href="../man4/glPolygonMode.html#glPolygonMode" title="glPolygonMode"><tt class="xref c c-func docutils literal"><span class="pre">glPolygonMode()</span></tt></a>,
+<a class="reference internal" href="glRenderMode.html#glRenderMode" title="glRenderMode"><tt class="xref c c-func docutils literal"><span class="pre">glRenderMode()</span></tt></a>,
+<a class="reference internal" href="glSelectBuffer.html#glSelectBuffer" title="glSelectBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glSelectBuffer()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p>The <a class="reference internal" href="#glFeedbackBuffer" title="glFeedbackBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glFeedbackBuffer()</span></tt></a> function controls feedback.
+Feedback, like selection, is a GL mode.
+The mode is selected by calling
+<a class="reference internal" href="glRenderMode.html#glRenderMode" title="glRenderMode"><tt class="xref c c-func docutils literal"><span class="pre">glRenderMode()</span></tt></a> with <tt class="docutils literal"><span class="pre">GL_FEEDBACK</span></tt>.
+When the GL is in feedback mode,
+no pixels are produced by rasterization.
+Instead, information about primitives that would have been
+rasterized is fed back to the application using the GL.</p>
+<p><a class="reference internal" href="#glFeedbackBuffer" title="glFeedbackBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glFeedbackBuffer()</span></tt></a> has three arguments:
+<em>buffer</em> is a pointer to an array of floating-point values
+into which feedback information is placed.
+<em>size</em> indicates the size of the array.
+<em>type</em> is a symbolic constant describing the information
+that is fed back for each vertex.
+<a class="reference internal" href="#glFeedbackBuffer" title="glFeedbackBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glFeedbackBuffer()</span></tt></a> must be issued before feedback mode is enabled
+(by calling <a class="reference internal" href="glRenderMode.html#glRenderMode" title="glRenderMode"><tt class="xref c c-func docutils literal"><span class="pre">glRenderMode()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_FEEDBACK</span></tt>).
+Setting <tt class="docutils literal"><span class="pre">GL_FEEDBACK</span></tt> without establishing the feedback buffer,
+or calling <a class="reference internal" href="#glFeedbackBuffer" title="glFeedbackBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glFeedbackBuffer()</span></tt></a> while the GL is in feedback mode,
+is an error.</p>
+<p>When <a class="reference internal" href="glRenderMode.html#glRenderMode" title="glRenderMode"><tt class="xref c c-func docutils literal"><span class="pre">glRenderMode()</span></tt></a> is called while in feedback mode, it returns the number of entries
+placed in the feedback array and resets the feedback array pointer to the base
+of the feedback buffer. The returned value never exceeds <em>size</em>. If the feedback
+data required more room than was available in <em>buffer</em>,
+<a class="reference internal" href="glRenderMode.html#glRenderMode" title="glRenderMode"><tt class="xref c c-func docutils literal"><span class="pre">glRenderMode()</span></tt></a> returns a negative value.
+To take the GL out of feedback mode, call
+<a class="reference internal" href="glRenderMode.html#glRenderMode" title="glRenderMode"><tt class="xref c c-func docutils literal"><span class="pre">glRenderMode()</span></tt></a> with a parameter value other than <tt class="docutils literal"><span class="pre">GL_FEEDBACK</span></tt>.</p>
+<p>While in feedback mode,
+each primitive, bitmap, or pixel rectangle that would be rasterized
+generates a block of values that are copied into the feedback array.
+If doing so would cause the number of entries to exceed the maximum,
+the block is partially written so as to fill the array
+(if there is any room left at all),
+and an overflow flag is set.
+Each block begins with a code indicating the primitive type,
+followed by values that describe the primitive&#8217;s vertices and
+associated data.
+Entries are also written for bitmaps and pixel rectangles.
+Feedback occurs after polygon culling and <a class="reference internal" href="../man4/glPolygonMode.html#glPolygonMode" title="glPolygonMode"><tt class="xref c c-func docutils literal"><span class="pre">glPolygonMode()</span></tt></a> interpretation
+of polygons has taken place,
+so polygons that are culled are not returned in the feedback buffer.
+It can also occur after polygons with more than three edges are broken up
+into triangles,
+if the GL implementation renders polygons by performing this decomposition.</p>
+<p>The <a class="reference internal" href="glPassThrough.html#glPassThrough" title="glPassThrough"><tt class="xref c c-func docutils literal"><span class="pre">glPassThrough()</span></tt></a> command can be used to insert a marker
+into the feedback buffer.
+See <a class="reference internal" href="glPassThrough.html#glPassThrough" title="glPassThrough"><tt class="xref c c-func docutils literal"><span class="pre">glPassThrough()</span></tt></a>.</p>
+<p>Following is the grammar for the blocks of values written
+into the feedback buffer.
+Each primitive is indicated with a unique identifying value
+followed by some number of vertices.
+Polygon entries include an integer value indicating how many vertices follow.
+A vertex is fed back as some number of floating-point values,
+as determined by <em>type</em>.
+Colors are fed back as four values in RGBA mode and one value
+in color index mode.</p>
+<blockquote>
+<div><p>feedbackList <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mn>&#x2190;</mn></mrow></math></span> feedbackItem feedbackList | feedbackItem</p>
+<p>feedbackItem <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mn>&#x2190;</mn></mrow></math></span> point | lineSegment | polygon | bitmap | pixelRectangle | passThru</p>
+<p>point <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mn>&#x2190;</mn></mrow></math></span> <tt class="docutils literal"><span class="pre">GL_POINT_TOKEN</span></tt> vertex</p>
+<p>lineSegment <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mn>&#x2190;</mn></mrow></math></span> <tt class="docutils literal"><span class="pre">GL_LINE_TOKEN</span></tt> vertex vertex | <tt class="docutils literal"><span class="pre">GL_LINE_RESET_TOKEN</span></tt> vertex vertex</p>
+<p>polygon <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mn>&#x2190;</mn></mrow></math></span> <tt class="docutils literal"><span class="pre">GL_POLYGON_TOKEN</span></tt> n polySpec</p>
+<p>polySpec <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mn>&#x2190;</mn></mrow></math></span> polySpec vertex | vertex vertex vertex</p>
+<p>bitmap <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mn>&#x2190;</mn></mrow></math></span> <tt class="docutils literal"><span class="pre">GL_BITMAP_TOKEN</span></tt> vertex</p>
+<p>pixelRectangle <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mn>&#x2190;</mn></mrow></math></span> <tt class="docutils literal"><span class="pre">GL_DRAW_PIXEL_TOKEN</span></tt> vertex | <tt class="docutils literal"><span class="pre">GL_COPY_PIXEL_TOKEN</span></tt> vertex</p>
+<p>passThru <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mn>&#x2190;</mn></mrow></math></span> <tt class="docutils literal"><span class="pre">GL_PASS_THROUGH_TOKEN</span></tt> value</p>
+<p>vertex <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mn>&#x2190;</mn></mrow></math></span> 2d | 3d | 3dColor | 3dColorTexture | 4dColorTexture</p>
+<p>2d <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mn>&#x2190;</mn></mrow></math></span> value value</p>
+<p>3d <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mn>&#x2190;</mn></mrow></math></span> value value value</p>
+<p>3dColor <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mn>&#x2190;</mn></mrow></math></span> value value value color</p>
+<p>3dColorTexture <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mn>&#x2190;</mn></mrow></math></span> value value value color tex</p>
+<p>4dColorTexture <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mn>&#x2190;</mn></mrow></math></span> value value value value color tex</p>
+<p>color <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mn>&#x2190;</mn></mrow></math></span> rgba | index</p>
+<p>rgba <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mn>&#x2190;</mn></mrow></math></span> value value value value</p>
+<p>index <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mn>&#x2190;</mn></mrow></math></span> value</p>
+<p>tex <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mn>&#x2190;</mn></mrow></math></span> value value value value</p>
+</div></blockquote>
+<p><strong>value</strong>
+is a floating-point number,
+and
+<strong>n</strong>
+is a floating-point integer giving the number of vertices in the polygon.
+<tt class="docutils literal"><span class="pre">GL_POINT_TOKEN</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LINE_TOKEN</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_LINE_RESET_TOKEN</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_POLYGON_TOKEN</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_BITMAP_TOKEN</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_DRAW_PIXEL_TOKEN</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_COPY_PIXEL_TOKEN</span></tt> and
+<tt class="docutils literal"><span class="pre">GL_PASS_THROUGH_TOKEN</span></tt> are symbolic floating-point constants.
+<tt class="docutils literal"><span class="pre">GL_LINE_RESET_TOKEN</span></tt> is returned whenever the line stipple pattern
+is reset.
+The data returned as a vertex depends on the feedback <em>type</em>.</p>
+<p>The following table gives the correspondence between <em>type</em>
+and the number of values per vertex.
+<strong>k</strong> is 1 in color index mode and 4 in RGBA mode.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="38%" />
+<col width="11%" />
+<col width="12%" />
+<col width="22%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Type</strong></td>
+<td><strong>Coordinates</strong></td>
+<td><strong>Color</strong></td>
+<td><strong>Texture</strong></td>
+<td><strong>Total Number of Values</strong></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_2D</span></tt></td>
+<td><strong>x</strong>, <strong>y</strong></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>2</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_3D</span></tt></td>
+<td><strong>x</strong>, <strong>y</strong>, <strong>z</strong></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>3</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_3D_COLOR</span></tt></td>
+<td><strong>x</strong>, <strong>y</strong>, <strong>z</strong></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">k</mi></math></span></td>
+<td>&nbsp;</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>3</mn><mo>+</mo><mi mathvariant="italic">k</mi></mrow></math></span></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GL_3D_COLOR_TEXTURE</span></tt></td>
+<td><strong>x</strong>, <strong>y</strong>, <strong>z</strong></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">k</mi></math></span></td>
+<td>4</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>7</mn><mo>+</mo><mi mathvariant="italic">k</mi></mrow></math></span></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GL_4D_COLOR_TEXTURE</span></tt></td>
+<td><strong>x</strong>, <strong>y</strong>, <strong>z</strong>, <strong>w</strong></td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">k</mi></math></span></td>
+<td>4</td>
+<td><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mn>8</mn><mo>+</mo><mi mathvariant="italic">k</mi></mrow></math></span></td>
+</tr>
+</tbody>
+</table>
+<p>Feedback vertex coordinates are in window coordinates,
+except <strong>w</strong>,
+which is in clip coordinates.
+Feedback colors are lighted, if lighting is enabled.
+Feedback texture coordinates are generated,
+if texture coordinate generation is enabled.
+They are always transformed by the texture matrix.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><a class="reference internal" href="#glFeedbackBuffer" title="glFeedbackBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glFeedbackBuffer()</span></tt></a>, when used in a display list, is not compiled into the display list
+but is executed immediately.</p>
+<p class="last"><a class="reference internal" href="#glFeedbackBuffer" title="glFeedbackBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glFeedbackBuffer()</span></tt></a> returns only the texture coordinate of texture unit <tt class="docutils literal"><span class="pre">GL_TEXTURE0</span></tt>.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>type</em> is not an accepted value.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>size</em> is negative.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <a class="reference internal" href="#glFeedbackBuffer" title="glFeedbackBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glFeedbackBuffer()</span></tt></a> is called while the render mode is <tt class="docutils literal"><span class="pre">GL_FEEDBACK</span></tt>, or if <a class="reference internal" href="glRenderMode.html#glRenderMode" title="glRenderMode"><tt class="xref c c-func docutils literal"><span class="pre">glRenderMode()</span></tt></a> is called with argument <tt class="docutils literal"><span class="pre">GL_FEEDBACK</span></tt> before <a class="reference internal" href="#glFeedbackBuffer" title="glFeedbackBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glFeedbackBuffer()</span></tt></a> is called at least once.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <a class="reference internal" href="#glFeedbackBuffer" title="glFeedbackBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glFeedbackBuffer()</span></tt></a> is executed between the execution of <a class="reference internal" href="glBegin.html#glBegin" title="glBegin"><tt class="xref c c-func docutils literal"><span class="pre">glBegin()</span></tt></a> and the corresponding execution of <a class="reference internal" href="glBegin.html#glEnd" title="glEnd"><tt class="xref c c-func docutils literal"><span class="pre">glEnd()</span></tt></a>.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_RENDER_MODE</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_FEEDBACK_BUFFER_POINTER</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_FEEDBACK_BUFFER_SIZE</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_FEEDBACK_BUFFER_TYPE</span></tt></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glEvalPoint.html"
+                        title="previous chapter">function <cite>glEvalPoint</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glFog.html"
+                        title="next chapter">function <cite>glFog</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/glFeedbackBuffer.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glFog.html" title="function glFog"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glEvalPoint.html" title="function glEvalPoint"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

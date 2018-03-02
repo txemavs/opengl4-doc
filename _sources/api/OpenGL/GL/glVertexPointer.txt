@@ -1,0 +1,84 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glVertexPointer`
+--------------------------
+
+.. source file man/glVertexPointer
+
+.. currentmodule:: OpenGL.GL
+
+Define an array of vertex data
+
+.. c:function:: glVertexPointer
+.. c:function:: void glVertexPointer(GLint  size, GLenum  type, GLsizei  stride, const GLvoid *  pointer)
+   :noindex: 
+
+
+   
+   :param size:
+      Specifies the number of coordinates per vertex. Must be 2, 3, or 4. The initial value is 4.
+   
+   :param type:
+      Specifies the data type of each coordinate in the array. Symbolic constants ``GL_SHORT``, ``GL_INT``, ``GL_FLOAT``, or ``GL_DOUBLE`` are accepted. The initial value is ``GL_FLOAT``.
+   
+   :param stride:
+      Specifies the byte offset between consecutive vertices. If *stride* is 0, the vertices are understood to be tightly packed in the array. The initial value is 0.
+   
+   :param pointer:
+      Specifies a pointer to the first coordinate of the first vertex in the array. The initial value is 0.
+   
+
+.. seealso::
+
+   
+   :c:func:`glArrayElement`, :c:func:`glBindBuffer`, :c:func:`glColorPointer`, :c:func:`glDisableClientState`, :c:func:`glDrawArrays`, :c:func:`glDrawElements`, :c:func:`glDrawRangeElements`, :c:func:`glEdgeFlagPointer`, :c:func:`glEnableClientState`, :c:func:`glFogCoordPointer`, :c:func:`glIndexPointer`, :c:func:`glInterleavedArrays`, :c:func:`glMultiDrawArrays`, :c:func:`glMultiDrawElements`, :c:func:`glNormalPointer`, :c:func:`glPopClientAttrib`, :c:func:`glPushClientAttrib`, :c:func:`glSecondaryColorPointer`, :c:func:`glTexCoordPointer`, :c:func:`glVertex`, :c:func:`glVertexAttribPointer`
+   
+.. rubric:: Description
+
+
+:c:func:`glVertexPointer` specifies the location and data format of an array of vertex coordinates to use when rendering. *size* specifies the number of coordinates per vertex, and must be 2, 3, or 4. *type* specifies the data type of each coordinate, and *stride* specifies the byte stride from one vertex to the next, allowing vertices and attributes to be packed into a single array or stored in separate arrays. (Single-array storage may be more efficient on some implementations; see :c:func:`glInterleavedArrays`.)
+
+If a non-zero named buffer object is bound to the ``GL_ARRAY_BUFFER`` target (see :c:func:`glBindBuffer`) while a vertex array is specified, *pointer* is treated as a byte offset into the buffer object's data store. Also, the buffer object binding (``GL_ARRAY_BUFFER_BINDING``) is saved as vertex array client-side state (``GL_VERTEX_ARRAY_BUFFER_BINDING``).
+
+When a vertex array is specified, *size* , *type* , *stride* , and *pointer* are saved as client-side state, in addition to the current vertex array buffer object binding.
+
+To enable and disable the vertex array, call :c:func:`glEnableClientState` and :c:func:`glDisableClientState` with the argument ``GL_VERTEX_ARRAY``. If enabled, the vertex array is used when :c:func:`glArrayElement`, :c:func:`glDrawArrays`, :c:func:`glMultiDrawArrays`, :c:func:`glDrawElements`, :c:func:`glMultiDrawElements`, or :c:func:`glDrawRangeElements` is called.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glIsEnabled` with argument ``GL_VERTEX_ARRAY``
+   * :c:func:`glGet` with argument ``GL_VERTEX_ARRAY_SIZE``
+   * :c:func:`glGet` with argument ``GL_VERTEX_ARRAY_TYPE``
+   * :c:func:`glGet` with argument ``GL_VERTEX_ARRAY_STRIDE``
+   * :c:func:`glGet` with argument ``GL_VERTEX_ARRAY_BUFFER_BINDING``
+   * :c:func:`glGet` with argument ``GL_ARRAY_BUFFER_BINDING``
+   * :c:func:`glGetPointerv` with argument ``GL_VERTEX_ARRAY_POINTER``
+
+**Errors:**
+
+   * ``GL_INVALID_VALUE`` is generated if *size* is not 2, 3, or 4.
+   * ``GL_INVALID_ENUM`` is generated if *type* is not an accepted value.
+   * ``GL_INVALID_VALUE`` is generated if *stride* is negative.
+
+
+
+.. note::
+
+   * :c:func:`glVertexPointer` is available only if the GL version is 1.1 or greater.
+   * The vertex array is initially disabled and isn't accessed when :c:func:`glArrayElement`, :c:func:`glDrawElements`, :c:func:`glDrawRangeElements`, :c:func:`glDrawArrays`, :c:func:`glMultiDrawArrays`, or :c:func:`glMultiDrawElements` is called.
+   * Execution of :c:func:`glVertexPointer` is not allowed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`, but an error may or may not be generated. If no error is generated, the operation is undefined.
+   * :c:func:`glVertexPointer` is typically implemented on the client side.
+   * Vertex array parameters are client-side state and are therefore not saved or restored by :c:func:`glPushAttrib` and :c:func:`glPopAttrib`. Use :c:func:`glPushClientAttrib` and :c:func:`glPopClientAttrib` instead.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

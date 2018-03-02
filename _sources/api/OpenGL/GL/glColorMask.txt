@@ -1,0 +1,51 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glColorMask`
+----------------------
+
+.. source file man4/glColorMask
+
+.. currentmodule:: OpenGL.GL
+
+Enable and disable writing of frame buffer color components
+
+.. c:function:: glColorMask
+.. c:function:: void glColorMask(GLboolean  red, GLboolean  green, GLboolean  blue, GLboolean  alpha, GLuint  buf, GLboolean  red, GLboolean  green, GLboolean  blue, GLboolean  alpha)
+   :noindex: 
+
+
+   
+   :param buf:
+      For :c:func:`glColorMaski`, specifies the index of the draw buffer whose color mask to set.
+   
+   :param red:
+      Specify whether red, green, blue, and alpha are to be written into the frame buffer. The initial values are all ``GL_TRUE``, indicating that the color components are written.
+   
+
+.. seealso::
+
+   
+   :c:func:`glClear`, :c:func:`glDepthMask`, :c:func:`glStencilMask`
+   
+.. rubric:: Description
+
+
+:c:func:`glColorMask` and :c:func:`glColorMaski` specify whether the individual color components in the frame buffer can or cannot be written. :c:func:`glColorMaski` sets the mask for a specific draw buffer, whereas :c:func:`glColorMask` sets the mask for all draw buffers. If *red* is ``GL_FALSE``, for example, no change is made to the red component of any pixel in any of the color buffers, regardless of the drawing operation attempted.
+
+Changes to individual bits of components cannot be controlled. Rather, changes are either enabled or disabled for entire color components.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGet` with argument ``GL_COLOR_WRITEMASK``
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

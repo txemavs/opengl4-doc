@@ -1,0 +1,157 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:28
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/gluTessVertex.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `gluTessVertex`
+------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Specify a vertex on a polygon
+
+.. c:function:: gluTessVertex
+
+
+         :param tess:
+
+                  Specifies the tessellation object (created with :c:func:`gluNewTess`\ ).
+
+         :param location:
+
+                  Specifies the location of the vertex.
+
+         :param data:
+
+                  Specifies an opaque pointer passed back to the program with the vertex callback
+                  (as specified by :c:func:`gluTessCallback`\ ).
+
+.. rubric:: Specification
+
+.. c:function:: void gluTessVertex(GLUtesselator*  tess, GLdouble *  location, GLvoid*  data)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`gluNewTess`\ ,
+            :c:func:`gluTessBeginContour`\ ,
+            :c:func:`gluTessBeginPolygon`\ ,
+            :c:func:`gluTessCallback`\ ,
+            :c:func:`gluTessEndPolygon`\ ,
+            :c:func:`gluTessNormal`\ ,
+            :c:func:`gluTessProperty`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`gluTessVertex` describes a vertex on a polygon that the program defines. Successive
+:c:func:`gluTessVertex` calls describe a closed contour. For example,
+to describe a quadrilateral, :c:func:`gluTessVertex` should be called four times.
+:c:func:`gluTessVertex` can only be called between :c:func:`gluTessBeginContour` and
+:c:func:`gluTessEndContour`\ .
+
+
+*data* normally points to a structure containing the vertex
+location, as well as other per-vertex attributes such as color and normal.
+This pointer is passed back to the user through the ``GLU_TESS_VERTEX``
+or ``GLU_TESS_VERTEX_DATA`` callback after tessellation
+(see the :c:func:`gluTessCallback` reference page).
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Example
+
+..
+
+
+A quadrilateral with a triangular hole in it can be described as follows:
+
+.. code-block:: c
+
+
+   gluTessBeginPolygon(tobj, NULL);
+      gluTessBeginContour(tobj);
+         gluTessVertex(tobj, v1, v1);
+         gluTessVertex(tobj, v2, v2);
+         gluTessVertex(tobj, v3, v3);
+         gluTessVertex(tobj, v4, v4);
+      gluTessEndContour(tobj);
+      gluTessBeginContour(tobj);
+         gluTessVertex(tobj, v5, v5);
+         gluTessVertex(tobj, v6, v6);
+         gluTessVertex(tobj, v7, v7);
+      gluTessEndContour(tobj);
+   gluTessEndPolygon(tobj);
+
+..
+
+
+.. note::
+
+
+   It is a common error to use a local variable for *location* or *data* and store
+   values into it as part of a loop.
+   For example:
+
+   .. code-block:: c
+
+
+      for (i = 0; i < NVERTICES; ++i) {
+         GLdouble data[3];
+         data[0] = vertex[i][0];
+         data[1] = vertex[i][1];
+         data[2] = vertex[i][2];
+         gluTessVertex(tobj, data, data);
+      }
+
+   ..
+
+
+   This doesn't work.
+   Because the pointers specified by *location* and *data* might not be
+   dereferenced until :c:func:`gluTessEndPolygon` is executed,
+   all the vertex coordinates but the very last set could be overwritten
+   before tessellation begins.
+
+
+   Two common symptoms of this problem are when the data consists of a single
+   point (when a local variable is used for *data*\ ) and a
+   ``GLU_TESS_NEED_COMBINE_CALLBACK`` error (when a local variable is
+   used for *location*\ ).
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'gluTessVertex'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

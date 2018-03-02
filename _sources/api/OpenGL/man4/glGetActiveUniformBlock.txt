@@ -1,0 +1,141 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:29
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glGetActiveUniformBlock.xml'
+.. (c)2010 Khronos Group.
+.. See license details at http://opencontent.org/openpub/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glGetActiveUniformBlock`
+----------------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Query information about an active uniform block
+
+.. c:function:: glGetActiveUniformBlock
+
+
+         :param program:
+
+                  Specifies the name of a program containing the uniform block.
+
+         :param uniformBlockIndex:
+
+                  Specifies the index of the uniform block within *program*\ .
+
+         :param pname:
+
+                  Specifies the name of the parameter to query.
+
+         :param params:
+
+                  Specifies the address of a variable to receive the result of the query.
+
+.. rubric:: Specification
+
+.. c:function:: void glGetActiveUniformBlockiv(GLuint  program, GLuint  uniformBlockIndex, GLenum  pname, GLint  params)
+
+
+.. seealso::
+
+
+            :c:func:`glGetActiveUniformBlockName`\ ,
+            :c:func:`glGetUniformBlockIndex`\ ,
+            :c:func:`glLinkProgram`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glGetActiveUniformBlockiv` retrieves information about an active uniform block within *program*\ .
+
+
+*program* must be the name of a program object for which the command
+:c:func:`glLinkProgram` must have been called in the past, although it is not required that
+:c:func:`glLinkProgram` must have succeeded. The link could have failed because the number
+of active uniforms exceeded the limit.
+
+
+*uniformBlockIndex* is an active uniform block index of *program*\ , and must be less than the value
+of ``GL_ACTIVE_UNIFORM_BLOCKS``\ .
+
+
+Upon success, the uniform block parameter(s) specified by *pname* are returned in *params*\ . If an error
+occurs, nothing will be written to *params*\ .
+
+
+If *pname* is ``GL_UNIFORM_BLOCK_BINDING``\ , then the index of the uniform buffer binding point
+last selected by the uniform block specified by *uniformBlockIndex* for *program* is returned. If
+no uniform block has been previously specified, zero is returned.
+
+
+If *pname* is ``GL_UNIFORM_BLOCK_DATA_SIZE``\ , then the implementation-dependent minimum total buffer
+object size, in basic machine units, required to hold all active uniforms in the uniform block identified by *uniformBlockIndex*
+is returned. It is neither guaranteed nor expected that a given implementation will arrange uniform values as tightly packed in a buffer
+object. The exception to this is the :strong:`std140 uniform block layout`\ , which guarantees specific packing behavior and does not
+require the application to query for offsets and strides. In this case the minimum size may still be queried, even though it is determined in
+advance based only on the uniform block declaration.
+
+
+If *pname* is ``GL_UNIFORM_BLOCK_NAME_LENGTH``\ , then the total length (including the nul terminator) of
+the name of the uniform block identified by *uniformBlockIndex* is returned.
+
+
+If *pname* is ``GL_UNIFORM_BLOCK_ACTIVE_UNIFORMS``\ , then the number of active uniforms in the uniform
+block identified by *uniformBlockIndex* is returned.
+
+
+If *pname* is ``GL_UNIFORM_BLOCK_ACTIVE_UNIFORM_INDICES``\ , then a list of the active uniform indices
+for the uniform block identified by *uniformBlockIndex* is returned. The number of elements that will be written to
+*params* is the value of ``GL_UNIFORM_BLOCK_ACTIVE_UNIFORMS`` for *uniformBlockIndex*\ .
+
+
+If *pname* is ``GL_UNIFORM_BLOCK_REFERENCED_BY_VERTEX_SHADER``\ , ``GL_UNIFORM_BLOCK_REFERENCED_BY_GEOMETRY_SHADER``\ ,
+or ``GL_UNIFORM_BLOCK_REFERENCED_BY_FRAGMENT_SHADER``\ , then a boolean value indicating whether the uniform block identified by
+*uniformBlockIndex* is referenced by the vertex, geometry, or fragment programming stages of program, respectively, is returned.
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_VALUE`` is generated if *uniformBlockIndex* is greater than or equal to the value of ``GL_ACTIVE_UNIFORM_BLOCKS`` or is not the index of an active uniform block in *program*\ .
+* ``GL_INVALID_ENUM`` is generated if *pname* is not one of the accepted tokens.
+* ``GL_INVALID_OPERATION`` is generated if *program* is not the name of a program object for which :c:func:`glLinkProgram` has been called in the past.
+
+
+.. note::
+
+
+   :c:func:`glGetActiveUniformBlockiv` is available only if the GL version is 3.1 or greater.
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glGetActiveUniformBlock'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )2010 Khronos Group. Open Publication License.
+

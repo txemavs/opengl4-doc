@@ -1,0 +1,46 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `gluBeginSurface`
+--------------------------
+
+.. source file man/gluBeginSurface
+
+.. currentmodule:: OpenGL.GLU
+
+Delimit a NURBS surface definition
+
+.. c:function:: gluBeginSurface
+.. c:function:: void gluBeginSurface(GLUnurbs*  nurb)
+   :noindex: 
+
+
+   
+   :param nurb:
+      Specifies the NURBS object (created with :c:func:`gluNewNurbsRenderer`).
+   
+.. c:function:: void gluEndSurface(GLUnurbs*  nurb)
+
+.. seealso::
+
+   
+   :c:func:`gluBeginCurve`, :c:func:`gluBeginTrim`, :c:func:`gluNewNurbsRenderer`, :c:func:`gluNurbsCurve`, :c:func:`gluNurbsSurface`, :c:func:`gluPwlCurve`, :c:func:`glPushAttrib`
+   
+.. rubric:: Description
+
+
+Use :c:func:`gluBeginSurface` to mark the beginning of a NURBS surface definition. After calling :c:func:`gluBeginSurface`, make one or more calls to :c:func:`gluNurbsSurface` to define the attributes of the surface. Exactly one of these calls to :c:func:`gluNurbsSurface` must have a surface type of ``GLU_MAP2_VERTEX_3`` or ``GLU_MAP2_VERTEX_4``. To mark the end of the NURBS surface definition, call :c:func:`gluEndSurface`.
+
+Trimming of NURBS surfaces is supported with :c:func:`gluBeginTrim`, :c:func:`gluPwlCurve`, :c:func:`gluNurbsCurve`, and :c:func:`gluEndTrim`. See the :c:func:`gluBeginTrim` reference page for details.
+
+GL evaluators are used to render the NURBS surface as a set of polygons. Evaluator state is preserved during rendering with :c:func:`glPushAttrib`(``GLU_EVAL_BIT``) and :c:func:`glPopAttrib`. See the :c:func:`glPushAttrib` reference page for details on exactly what state these calls preserve.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

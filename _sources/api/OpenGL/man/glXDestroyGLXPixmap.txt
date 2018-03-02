@@ -1,0 +1,83 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:28
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glXDestroyGLXPixmap.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glXDestroyGLXPixmap`
+------------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Destroy a GLX pixmap
+
+.. c:function:: glXDestroyGLXPixmap
+
+
+         :param dpy:
+
+                  Specifies the connection to the X server.
+
+         :param pix:
+
+                  Specifies the GLX pixmap to be destroyed.
+
+.. rubric:: Specification
+
+.. c:function:: void glXDestroyGLXPixmap(Display *  dpy, GLXPixmap  pix)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glXCreateGLXPixmap`\ ,
+            :c:func:`glXDestroyPixmap`\ ,
+            :c:func:`glXMakeCurrent`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+If the GLX pixmap *pix* is not current to any client,
+:c:func:`glXDestroyGLXPixmap` destroys it immediately.
+Otherwise,
+*pix* is destroyed when it becomes not current to any client.
+In either case, the resource ID
+is freed immediately.
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GLXBadPixmap`` is generated if *pix* is not a valid GLX pixmap.
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glXDestroyGLXPixmap'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

@@ -1,0 +1,101 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:28
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glXQueryServerString.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glXQueryServerString`
+-------------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Return string describing the server
+
+.. c:function:: glXQueryServerString
+
+
+         :param dpy:
+
+                  Specifies the connection to the X server.
+
+         :param screen:
+
+                  Specifies the screen number.
+
+         :param name:
+
+                  Specifies which string is returned:
+                  one of ``GLX_VENDOR``\ , ``GLX_VERSION``\ , or ``GLX_EXTENSIONS``\ .
+
+.. rubric:: Specification
+
+.. c:function:: const char * glXQueryServerString(Display *  dpy, int  screen, int  name)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glXQueryVersion`\ ,
+            :c:func:`glXGetClientString`\ ,
+            :c:func:`glXQueryExtensionsString`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glXQueryServerString`
+returns a pointer to a static, null-terminated string
+describing some aspect of the server's GLX extension. The possible values for
+*name* and the format of the strings is the same as for
+:c:func:`glXGetClientString`\ . If *name* is not set to a recognized value,
+``NULL`` is returned.
+
+
+.. note::
+
+
+   :c:func:`glXQueryServerString` is available only if the GLX version is 1.1 or greater.
+
+
+   If the GLX version is 1.1 or 1.0, the GL version must be 1.0.
+   If the GLX version is 1.2, the GL version must be 1.1.
+   If the GLX version is 1.3, the GL version must be 1.2.
+
+
+   :c:func:`glXQueryServerString` only returns information about GLX extensions supported by the server.
+   Call :c:func:`glGetString` to get a list of GL extensions.
+   Call :c:func:`glXGetClientString` to get a list of GLX extensions supported by the
+   client.
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glXQueryServerString'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

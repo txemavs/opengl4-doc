@@ -1,0 +1,174 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:29
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glDrawBuffers.xml'
+.. (c)2003-2005 3Dlabs Inc. Ltd.
+.. See license details at http://opencontent.org/openpub/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glDrawBuffers`
+------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Specifies a list of color buffers to be drawn into
+
+.. c:function:: glDrawBuffers
+
+
+      :param n:
+
+            Specifies the number of buffers in
+            *bufs*\ .
+
+      :param bufs:
+
+            Points to an array of symbolic constants
+            specifying the buffers into which fragment colors or
+            data values will be written.
+
+.. rubric:: Specification
+
+.. c:function:: void glDrawBuffers(GLsizei  n, const GLenum * bufs)
+   :noindex: 
+
+
+.. seealso::
+
+   :c:func:`glBlendFunc`\ ,
+   :c:func:`glColorMask`\ ,
+   :c:func:`glDrawBuffers`\ ,
+   :c:func:`glLogicOp`\ ,
+   :c:func:`glReadBuffer`
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glDrawBuffers` defines an array of
+buffers into which outputs from the fragment shader data will
+be written. If a fragment shader writes a value
+to one or more user defined output
+variables, then the value of each variable will be written into the
+buffer specified at a location within *bufs*
+corresponding to the location assigned to that user defined output.
+The draw buffer used for user defined outputs assigned to locations
+greater than or equal to *n* is implicitly set
+to ``GL_NONE`` and any data written to such an output
+is discarded.
+
+The symbolic constants contained in
+*bufs* may be any of the following:
+
+
+   ``GL_NONE``
+
+      The fragment shader output value is not written into
+      any color buffer.
+
+
+   ``GL_FRONT_LEFT``
+
+      The fragment shader output value is written into the
+      front left color buffer.
+
+
+   ``GL_FRONT_RIGHT``
+
+      The fragment shader output value is written into the
+      front right color buffer.
+
+
+   ``GL_BACK_LEFT``
+
+      The fragment shader output value is written into the
+      back left color buffer.
+
+
+   ``GL_BACK_RIGHT``
+
+      The fragment shader output value is written into the
+      back right color buffer.
+
+
+   ``GL_COLOR_ATTACHMENT n``
+
+      The fragment shader output value is written into the
+      :strong:`n` th color attachment of the current framebuffer.
+      :strong:`n` may range from 0 to the value of
+      ``GL_MAX_COLOR_ATTACHMENTS``\ .
+
+
+Except for ``GL_NONE``\ , the preceding
+symbolic constants may not appear more than once in
+*bufs*\ . The maximum number of draw buffers
+supported is implementation dependent and can be queried by
+calling
+:c:func:`glGet`
+with the argument ``GL_MAX_DRAW_BUFFERS``\ .
+
+
+.. note::
+
+   The symbolic constants ``GL_FRONT``\ ,
+   ``GL_BACK``\ , ``GL_LEFT``\ ,
+   ``GL_RIGHT``\ , and
+   ``GL_FRONT_AND_BACK`` are not allowed in the
+   *bufs* array since they may refer to
+   multiple buffers.
+
+   If a fragment shader does not write to a user defined output variable,
+   the values of the fragment
+   colors following shader execution are undefined. For each
+   fragment generated in this situation, a different value may be
+   written into each of the buffers specified by
+   *bufs*\ .
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_ENUM`` is generated if one of the values in *bufs* is not an accepted value.
+* ``GL_INVALID_ENUM`` is generated if the GL is bound to the default framebuffer and one or more of the values in *bufs* is one of the ``GL_COLOR_ATTACHMENT n`` tokens.
+* ``GL_INVALID_ENUM`` is generated if the GL is bound to a framebuffer object and one or more of the values in *bufs* is anything other than ``GL_NONE`` or one of the ``GL_COLOR_ATTACHMENTS n`` tokens.
+* ``GL_INVALID_ENUM`` is generated if *n* is less than 0.
+* ``GL_INVALID_OPERATION`` is generated if a symbolic constant other than ``GL_NONE`` appears more than once in *bufs*\ .
+* ``GL_INVALID_OPERATION`` is generated if any of the entries in *bufs* (other than ``GL_NONE`` ) indicates a color buffer that does not exist in the current GL context.
+* ``GL_INVALID_VALUE`` is generated if *n* is greater than ``GL_MAX_DRAW_BUFFERS``\ .
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGet` with argument ``GL_MAX_DRAW_BUFFERS``
+* :c:func:`glGet` with argument ``GL_DRAW_BUFFER i`` where ``:strong:`i``` indicates the number of the draw buffer whose value is to be queried
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glDrawBuffers'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )2003-2005 3Dlabs Inc. Ltd. Open Publication License.
+

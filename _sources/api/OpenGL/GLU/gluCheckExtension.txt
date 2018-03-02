@@ -1,0 +1,56 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `gluCheckExtension`
+----------------------------
+
+.. source file man/gluCheckExtension
+
+.. currentmodule:: OpenGL.GLU
+
+Determines if an extension name is supported
+
+.. c:function:: gluCheckExtension
+.. c:function:: GLboolean gluCheckExtension(const GLubyte *  extName, const GLubyte *  extString)
+   :noindex: 
+
+
+   
+   :param extName:
+      Specifies an extension name.
+   
+   :param extString:
+      Specifies a space-separated list of extension names supported.
+   
+
+.. seealso::
+
+   
+   :c:func:`gluGetString`, :c:func:`glGetString`, :c:func:`glXGetClientString`, :c:func:`glXQueryExtensionsString`, :c:func:`glXQueryServerString`
+   
+.. rubric:: Description
+
+
+:c:func:`gluCheckExtension` returns ``GLU_TRUE`` if *extName* is supported otherwise ``GLU_FALSE`` is returned.
+
+This is used to check for the presence for OpenGL, GLU, or GLX extension names by passing the extension strings returned by :c:func:`glGetString`, :c:func:`gluGetString`, :c:func:`glXGetClientString`, :c:func:`glXQueryExtensionsString`, or :c:func:`glXQueryServerString`, respectively, as *extString* .
+
+
+
+
+.. note::
+
+   * Cases where one extension name is a substring of another are correctly handled.
+   * There may or may not be leading or trailing blanks in *extString* .
+   * Extension names should not contain embedded spaces.
+   * All strings are null-terminated.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

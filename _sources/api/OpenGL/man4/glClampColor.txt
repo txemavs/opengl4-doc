@@ -1,0 +1,79 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:28
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glClampColor.xml'
+.. (c)2010 Khronos Group.
+.. See license details at http://opencontent.org/openpub/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glClampColor`
+-----------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Specify whether data read via 
+
+.. c:function:: glClampColor
+
+
+         :param target:
+
+                  Target for color clamping. *target* must be ``GL_CLAMP_READ_COLOR``\ .
+
+         :param clamp:
+
+                  Specifies whether to apply color clamping. *clamp* must be ``GL_TRUE`` or ``GL_FALSE``\ .
+
+.. rubric:: Specification
+
+.. c:function:: void glClampColor(GLenum  target, GLenum  clamp)
+   :noindex: 
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glClampColor` controls color clamping that is performed during :c:func:`glReadPixels`\ .
+*target* must be ``GL_CLAMP_READ_COLOR``\ . If *clamp* is ``GL_TRUE``\ ,
+read color clamping is enabled; if *clamp* is ``GL_FALSE``\ , read color clamping is disabled. If
+*clamp* is ``GL_FIXED_ONLY``\ , read color clamping is enabled only if the selected read buffer has
+fixed point components and disabled otherwise.
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_ENUM`` is generated if *target* is not ``GL_CLAMP_READ_COLOR``\ .
+* ``GL_INVALID_ENUM`` is generated if *clamp* is not ``GL_TRUE`` or ``GL_FALSE``\ .
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGet` with argument ``GL_CLAMP_READ_COLOR``\ .
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glClampColor'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )2010 Khronos Group. Open Publication License.
+

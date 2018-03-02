@@ -1,0 +1,109 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:27
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glPushName.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glPushName`
+---------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Push and pop the name stack
+
+.. c:function:: glPushName
+
+
+         :param name:
+
+                  Specifies a name that will be pushed onto the name stack.
+
+.. rubric:: Specification
+
+.. c:function:: void glPushName(GLuint  name)
+   :noindex: 
+
+.. c:function:: void glPopName(  void)
+
+
+.. seealso::
+
+
+            :c:func:`glInitNames`\ ,
+            :c:func:`glLoadName`\ ,
+            :c:func:`glRenderMode`\ ,
+            :c:func:`glSelectBuffer`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+The name stack is used during selection mode to allow sets of rendering
+commands to be uniquely identified.
+It consists of an ordered set of unsigned integers and is initially empty.
+
+
+:c:func:`glPushName` causes *name* to be pushed onto the name stack.
+:c:func:`glPopName` pops one name off the top of the stack.
+
+
+The maximum name stack depth is implementation-dependent; call
+``GL_MAX_NAME_STACK_DEPTH`` to find out the value for a particular
+implementation. It is an
+error to push a name onto a full stack
+or to pop a name off an empty stack.
+It is also an error to manipulate the name stack between the execution of
+:c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`\ .
+In any of these cases, the error flag is set and no other change is
+made to GL state.
+
+
+The name stack is always empty while the render mode is not ``GL_SELECT``\ .
+Calls to :c:func:`glPushName` or :c:func:`glPopName` while the render mode is not
+``GL_SELECT`` are ignored.
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_STACK_OVERFLOW`` is generated if :c:func:`glPushName` is called while the name stack is full.
+* ``GL_STACK_UNDERFLOW`` is generated if :c:func:`glPopName` is called while the name stack is empty.
+* ``GL_INVALID_OPERATION`` is generated if :c:func:`glPushName` or :c:func:`glPopName` is executed between a call to :c:func:`glBegin` and the corresponding call to :c:func:`glEnd`\ .
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGet` with argument ``GL_NAME_STACK_DEPTH``
+* :c:func:`glGet` with argument ``GL_MAX_NAME_STACK_DEPTH``
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glPushName'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

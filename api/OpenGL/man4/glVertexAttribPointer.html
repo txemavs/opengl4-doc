@@ -1,0 +1,261 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glVertexAttribPointer &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glViewport" href="glViewport.html" />
+    <link rel="prev" title="function glVertexAttribDivisor" href="glVertexAttribDivisor.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glViewport.html" title="function glViewport"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glVertexAttribDivisor.html" title="function glVertexAttribDivisor"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glvertexattribpointer">
+<h1>function <cite>glVertexAttribPointer</cite><a class="headerlink" href="#function-glvertexattribpointer" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Define an array of generic vertex attribute data</p>
+<dl class="function">
+<dt id="glVertexAttribPointer">
+<tt class="descname">glVertexAttribPointer</tt><big>(</big><big>)</big><a class="headerlink" href="#glVertexAttribPointer" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>index</strong> &#8211; Specifies the index of the generic vertex
+attribute to be modified.</li>
+<li><strong>size</strong> &#8211; Specifies the number of components per
+generic vertex attribute. Must
+be 1, 2, 3, 4. Additionally, the symbolic constant <tt class="docutils literal"><span class="pre">GL_BGRA</span></tt>
+is accepted by <a class="reference internal" href="#glVertexAttribPointer" title="glVertexAttribPointer"><tt class="xref c c-func docutils literal"><span class="pre">glVertexAttribPointer()</span></tt></a>. The initial value is 4.</li>
+<li><strong>type</strong> &#8211; Specifies the data type of each component in
+the array. The symbolic constants
+<tt class="docutils literal"><span class="pre">GL_BYTE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_BYTE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_SHORT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_INT</span></tt>, and
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT</span></tt> are accepted by <a class="reference internal" href="#glVertexAttribPointer" title="glVertexAttribPointer"><tt class="xref c c-func docutils literal"><span class="pre">glVertexAttribPointer()</span></tt></a> and <tt class="xref c c-func docutils literal"><span class="pre">glVertexAttribIPointer()</span></tt>. Additionally
+<tt class="docutils literal"><span class="pre">GL_HALF_FLOAT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_FLOAT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_DOUBLE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_FIXED</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_INT_2_10_10_10_REV</span></tt>, and
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_2_10_10_10_REV</span></tt> are accepted by <a class="reference internal" href="#glVertexAttribPointer" title="glVertexAttribPointer"><tt class="xref c c-func docutils literal"><span class="pre">glVertexAttribPointer()</span></tt></a>.
+<tt class="docutils literal"><span class="pre">GL_DOUBLE</span></tt> is also accepted by <tt class="xref c c-func docutils literal"><span class="pre">glVertexAttribLPointer()</span></tt> and is
+the only token accepted by the <em>type</em> parameter for that function.
+The initial value is <tt class="docutils literal"><span class="pre">GL_FLOAT</span></tt>.</li>
+<li><strong>normalized</strong> &#8211; For <a class="reference internal" href="#glVertexAttribPointer" title="glVertexAttribPointer"><tt class="xref c c-func docutils literal"><span class="pre">glVertexAttribPointer()</span></tt></a>, specifies whether fixed-point data values
+should be normalized (<tt class="docutils literal"><span class="pre">GL_TRUE</span></tt>)
+or converted directly as fixed-point values
+(<tt class="docutils literal"><span class="pre">GL_FALSE</span></tt>) when they are
+accessed.</li>
+<li><strong>stride</strong> &#8211; Specifies the byte offset between consecutive
+generic vertex attributes. If <em>stride</em>
+is 0, the generic vertex attributes are
+understood to be tightly packed in the
+array. The initial value is 0.</li>
+<li><strong>pointer</strong> &#8211; Specifies a offset of the first component of the first generic vertex attribute in the array in the data store of the
+buffer currently bound to the <tt class="docutils literal"><span class="pre">GL_ARRAY_BUFFER</span></tt> target. The initial value is 0.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glVertexAttribPointer</tt><big>(</big>GLuint <em>&nbsp;index</em>, GLint <em>&nbsp;size</em>, GLenum <em>&nbsp;type</em>, GLboolean <em>&nbsp;normalized</em>, GLsizei <em>&nbsp;stride</em>, const GLvoid * <em>&nbsp;pointer</em>, GLuint <em>&nbsp;index</em>, GLint <em>&nbsp;size</em>, GLenum <em>&nbsp;type</em>, GLsizei <em>&nbsp;stride</em>, const GLvoid * <em>&nbsp;pointer</em>, GLuint <em>&nbsp;index</em>, GLint <em>&nbsp;size</em>, GLenum <em>&nbsp;type</em>, GLsizei <em>&nbsp;stride</em>, const GLvoid * <em>&nbsp;pointer</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glBindAttribLocation.html#glBindAttribLocation" title="glBindAttribLocation"><tt class="xref c c-func docutils literal"><span class="pre">glBindAttribLocation()</span></tt></a>,
+<a class="reference internal" href="glBindBuffer.html#glBindBuffer" title="glBindBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glBindBuffer()</span></tt></a>,
+<tt class="xref c c-func docutils literal"><span class="pre">glDisableVertexAttribArray()</span></tt>,
+<a class="reference internal" href="glDrawArrays.html#glDrawArrays" title="glDrawArrays"><tt class="xref c c-func docutils literal"><span class="pre">glDrawArrays()</span></tt></a>,
+<a class="reference internal" href="glDrawElements.html#glDrawElements" title="glDrawElements"><tt class="xref c c-func docutils literal"><span class="pre">glDrawElements()</span></tt></a>,
+<a class="reference internal" href="glDrawRangeElements.html#glDrawRangeElements" title="glDrawRangeElements"><tt class="xref c c-func docutils literal"><span class="pre">glDrawRangeElements()</span></tt></a>,
+<a class="reference internal" href="glEnableVertexAttribArray.html#glEnableVertexAttribArray" title="glEnableVertexAttribArray"><tt class="xref c c-func docutils literal"><span class="pre">glEnableVertexAttribArray()</span></tt></a>,
+<a class="reference internal" href="glMultiDrawArrays.html#glMultiDrawArrays" title="glMultiDrawArrays"><tt class="xref c c-func docutils literal"><span class="pre">glMultiDrawArrays()</span></tt></a>,
+<a class="reference internal" href="glMultiDrawElements.html#glMultiDrawElements" title="glMultiDrawElements"><tt class="xref c c-func docutils literal"><span class="pre">glMultiDrawElements()</span></tt></a>,
+<a class="reference internal" href="glVertexAttrib.html#glVertexAttrib" title="glVertexAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glVertexAttrib()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glVertexAttribPointer" title="glVertexAttribPointer"><tt class="xref c c-func docutils literal"><span class="pre">glVertexAttribPointer()</span></tt></a>, <tt class="xref c c-func docutils literal"><span class="pre">glVertexAttribIPointer()</span></tt> and <tt class="xref c c-func docutils literal"><span class="pre">glVertexAttribLPointer()</span></tt>
+specify the
+location and data format of the array of generic vertex attributes at index <em>index</em>
+to use when rendering. <em>size</em> specifies the number of components per attribute and
+must be 1, 2, 3, 4, or <tt class="docutils literal"><span class="pre">GL_BGRA</span></tt>. <em>type</em> specifies the data type
+of each component, and <em>stride</em> specifies the byte stride from one attribute to the next,
+allowing vertices and attributes to be packed into a single array or stored in separate arrays.</p>
+<p>For <a class="reference internal" href="#glVertexAttribPointer" title="glVertexAttribPointer"><tt class="xref c c-func docutils literal"><span class="pre">glVertexAttribPointer()</span></tt></a>, if <em>normalized</em> is set to <tt class="docutils literal"><span class="pre">GL_TRUE</span></tt>,
+it indicates that values stored in an integer format are to be mapped to the range [-1,1] (for signed values) or [0,1] (for
+unsigned values) when they are accessed and converted to floating point. Otherwise, values will
+be converted to floats directly without normalization.</p>
+<p>For <tt class="xref c c-func docutils literal"><span class="pre">glVertexAttribIPointer()</span></tt>, only the integer types <tt class="docutils literal"><span class="pre">GL_BYTE</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_UNSIGNED_BYTE</span></tt>, <tt class="docutils literal"><span class="pre">GL_SHORT</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_SHORT</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_INT</span></tt>, <tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT</span></tt> are accepted. Values are always left as integer values.</p>
+<p><tt class="xref c c-func docutils literal"><span class="pre">glVertexAttribLPointer()</span></tt> specifies state for a generic vertex attribute array associated
+with a shader attribute variable declared with 64-bit double precision components. <em>type</em>
+must be <tt class="docutils literal"><span class="pre">GL_DOUBLE</span></tt>. <em>index</em>, <em>size</em>, and
+<em>stride</em> behave as described for <a class="reference internal" href="#glVertexAttribPointer" title="glVertexAttribPointer"><tt class="xref c c-func docutils literal"><span class="pre">glVertexAttribPointer()</span></tt></a> and
+<tt class="xref c c-func docutils literal"><span class="pre">glVertexAttribIPointer()</span></tt>.</p>
+<p>If <em>pointer</em> is not <tt class="docutils literal"><span class="pre">NULL</span></tt>, a non-zero named buffer object must be bound to the
+<tt class="docutils literal"><span class="pre">GL_ARRAY_BUFFER</span></tt> target (see <a class="reference internal" href="glBindBuffer.html#glBindBuffer" title="glBindBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glBindBuffer()</span></tt></a>),
+otherwise an error is generated. <em>pointer</em> is treated as a byte offset into the buffer object&#8217;s data store.
+The buffer object binding (<tt class="docutils literal"><span class="pre">GL_ARRAY_BUFFER_BINDING</span></tt>) is saved as generic vertex attribute array
+state (<tt class="docutils literal"><span class="pre">GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING</span></tt>) for index <em>index</em>.</p>
+<p>When a generic vertex attribute array is specified,
+<em>size</em>, <em>type</em>,
+<em>normalized</em>,
+<em>stride</em>, and
+<em>pointer</em> are saved as vertex array
+state, in addition to the current vertex array buffer object binding.</p>
+<p>To enable and disable a generic vertex attribute array, call
+<a class="reference internal" href="glEnableVertexAttribArray.html#glEnableVertexAttribArray" title="glEnableVertexAttribArray"><tt class="xref c c-func docutils literal"><span class="pre">glEnableVertexAttribArray()</span></tt></a> and
+<tt class="xref c c-func docutils literal"><span class="pre">glDisableVertexAttribArray()</span></tt> with <em>index</em>.
+If enabled, the generic vertex attribute array is used when <a class="reference internal" href="glDrawArrays.html#glDrawArrays" title="glDrawArrays"><tt class="xref c c-func docutils literal"><span class="pre">glDrawArrays()</span></tt></a>,
+<a class="reference internal" href="glMultiDrawArrays.html#glMultiDrawArrays" title="glMultiDrawArrays"><tt class="xref c c-func docutils literal"><span class="pre">glMultiDrawArrays()</span></tt></a>, <a class="reference internal" href="glDrawElements.html#glDrawElements" title="glDrawElements"><tt class="xref c c-func docutils literal"><span class="pre">glDrawElements()</span></tt></a>,
+<a class="reference internal" href="glMultiDrawElements.html#glMultiDrawElements" title="glMultiDrawElements"><tt class="xref c c-func docutils literal"><span class="pre">glMultiDrawElements()</span></tt></a>, or <a class="reference internal" href="glDrawRangeElements.html#glDrawRangeElements" title="glDrawRangeElements"><tt class="xref c c-func docutils literal"><span class="pre">glDrawRangeElements()</span></tt></a>
+is called.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Each generic vertex attribute array is initially disabled and isn&#8217;t accessed when
+<a class="reference internal" href="glDrawElements.html#glDrawElements" title="glDrawElements"><tt class="xref c c-func docutils literal"><span class="pre">glDrawElements()</span></tt></a>, <a class="reference internal" href="glDrawRangeElements.html#glDrawRangeElements" title="glDrawRangeElements"><tt class="xref c c-func docutils literal"><span class="pre">glDrawRangeElements()</span></tt></a>,
+<a class="reference internal" href="glDrawArrays.html#glDrawArrays" title="glDrawArrays"><tt class="xref c c-func docutils literal"><span class="pre">glDrawArrays()</span></tt></a>, <a class="reference internal" href="glMultiDrawArrays.html#glMultiDrawArrays" title="glMultiDrawArrays"><tt class="xref c c-func docutils literal"><span class="pre">glMultiDrawArrays()</span></tt></a>, or <a class="reference internal" href="glMultiDrawElements.html#glMultiDrawElements" title="glMultiDrawElements"><tt class="xref c c-func docutils literal"><span class="pre">glMultiDrawElements()</span></tt></a>
+is called.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>index</em> is greater than or equal to <tt class="docutils literal"><span class="pre">GL_MAX_VERTEX_ATTRIBS</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>size</em> is not 1, 2, 3, 4 or (for <a class="reference internal" href="#glVertexAttribPointer" title="glVertexAttribPointer"><tt class="xref c c-func docutils literal"><span class="pre">glVertexAttribPointer()</span></tt></a>), <tt class="docutils literal"><span class="pre">GL_BGRA</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>type</em> is not an accepted value.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>stride</em> is negative.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <em>size</em> is <tt class="docutils literal"><span class="pre">GL_BGRA</span></tt> and <em>type</em> is not <tt class="docutils literal"><span class="pre">GL_INT_2_10_10_10_REV</span></tt> or <tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_2_10_10_10_REV</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <em>type</em> is <tt class="docutils literal"><span class="pre">GL_INT_2_10_10_10_REV</span></tt> or <tt class="docutils literal"><span class="pre">GL_UNSIGNED_INT_2_10_10_10_REV</span></tt> and <em>size</em> is not 4 or <tt class="docutils literal"><span class="pre">GL_BGRA</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated by <a class="reference internal" href="#glVertexAttribPointer" title="glVertexAttribPointer"><tt class="xref c c-func docutils literal"><span class="pre">glVertexAttribPointer()</span></tt></a> if <em>size</em> is <tt class="docutils literal"><span class="pre">GL_BGRA</span></tt> and <em>noramlized</em> is <tt class="docutils literal"><span class="pre">GL_FALSE</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if zero is bound to the <tt class="docutils literal"><span class="pre">GL_ARRAY_BUFFER</span></tt> buffer object binding point and the <em>pointer</em> argument is not <tt class="docutils literal"><span class="pre">NULL</span></tt>.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_MAX_VERTEX_ATTRIBS</span></tt></li>
+<li><a class="reference internal" href="glGetVertexAttrib.html#glGetVertexAttrib" title="glGetVertexAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glGetVertexAttrib()</span></tt></a> with arguments <em>index</em> and <tt class="docutils literal"><span class="pre">GL_VERTEX_ATTRIB_ARRAY_ENABLED</span></tt></li>
+<li><a class="reference internal" href="glGetVertexAttrib.html#glGetVertexAttrib" title="glGetVertexAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glGetVertexAttrib()</span></tt></a> with arguments <em>index</em> and <tt class="docutils literal"><span class="pre">GL_VERTEX_ATTRIB_ARRAY_SIZE</span></tt></li>
+<li><a class="reference internal" href="glGetVertexAttrib.html#glGetVertexAttrib" title="glGetVertexAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glGetVertexAttrib()</span></tt></a> with arguments <em>index</em> and <tt class="docutils literal"><span class="pre">GL_VERTEX_ATTRIB_ARRAY_TYPE</span></tt></li>
+<li><a class="reference internal" href="glGetVertexAttrib.html#glGetVertexAttrib" title="glGetVertexAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glGetVertexAttrib()</span></tt></a> with arguments <em>index</em> and <tt class="docutils literal"><span class="pre">GL_VERTEX_ATTRIB_ARRAY_NORMALIZED</span></tt></li>
+<li><a class="reference internal" href="glGetVertexAttrib.html#glGetVertexAttrib" title="glGetVertexAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glGetVertexAttrib()</span></tt></a> with arguments <em>index</em> and <tt class="docutils literal"><span class="pre">GL_VERTEX_ATTRIB_ARRAY_STRIDE</span></tt></li>
+<li><a class="reference internal" href="glGetVertexAttrib.html#glGetVertexAttrib" title="glGetVertexAttrib"><tt class="xref c c-func docutils literal"><span class="pre">glGetVertexAttrib()</span></tt></a> with arguments <em>index</em> and <tt class="docutils literal"><span class="pre">GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING</span></tt></li>
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_ARRAY_BUFFER_BINDING</span></tt></li>
+<li><a class="reference internal" href="glGetVertexAttribPointerv.html#glGetVertexAttribPointerv" title="glGetVertexAttribPointerv"><tt class="xref c c-func docutils literal"><span class="pre">glGetVertexAttribPointerv()</span></tt></a> with arguments <em>index</em> and <tt class="docutils literal"><span class="pre">GL_VERTEX_ATTRIB_ARRAY_POINTER</span></tt></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)2003-2005 3Dlabs Inc. Ltd. Open Publication License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glVertexAttribDivisor.html"
+                        title="previous chapter">function <cite>glVertexAttribDivisor</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glViewport.html"
+                        title="next chapter">function <cite>glViewport</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glVertexAttribPointer.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glViewport.html" title="function glViewport"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glVertexAttribDivisor.html" title="function glVertexAttribDivisor"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

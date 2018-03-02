@@ -1,0 +1,92 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:28
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glBindProgramPipeline.xml'
+.. (c)2010 Khronos Group.
+.. See license details at http://opencontent.org/openpub/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glBindProgramPipeline`
+--------------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Bind a program pipeline to the current context
+
+.. c:function:: glBindProgramPipeline
+
+
+         :param pipeline:
+
+               Specifies the name of the pipeline object to bind to the context.
+
+.. rubric:: Specification
+
+.. c:function:: void glBindProgramPipeline(GLuint  pipeline)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glCreateShader`\ ,
+            :c:func:`glCreateProgram`\ ,
+            :c:func:`glCompileShader`\ ,
+            :c:func:`glLinkProgram`\ ,
+            :c:func:`glGenProgramPipelines`\ ,
+            :c:func:`glDeleteProgramPipelines`\ ,
+            :c:func:`glIsProgramPipeline`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glBindProgramPipeline` binds a program pipeline object to the current
+context. *pipeline* must be a name previously returned from a call
+to :c:func:`glGenProgramPipelines`\ . If
+no program pipeline exists with name *pipeline* then a new pipeline object
+is created with that name and initialized to the default state vector.
+
+
+When a program pipeline object is bound using :c:func:`glBindProgramPipeline`\ , any previous
+binding is broken and is replaced with a binding to the specified pipeline object. If *pipeline*
+is zero, the previous binding is broken and is not replaced, leaving no pipeline object bound.
+If no current program object has been established by :c:func:`glUseProgram`\ ,
+the program objects used for each stage and for uniform updates are taken from the bound program
+pipeline object, if any. If there is a current program object established by :c:func:`glUseProgram`\ ,
+the bound program pipeline object has no effect on rendering or uniform updates. When a bound program
+pipeline object is used for rendering, individual shader executables are taken from its program objects.
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_OPERATION`` is generated if *pipeline* is not zero or a name previously returned from a call to :c:func:`glGenProgramPipelines` or if such a name has been deleted by a call to :c:func:`glDeleteProgramPipelines`\ .
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glBindProgramPipeline'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )2010 Khronos Group. Open Publication License.
+

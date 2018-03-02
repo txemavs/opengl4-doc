@@ -1,0 +1,49 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glDeleteProgramPipelines`
+-----------------------------------
+
+.. source file man4/glDeleteProgramPipelines
+
+.. currentmodule:: OpenGL.GL
+
+Delete program pipeline objects
+
+.. c:function:: glDeleteProgramPipelines
+.. c:function:: void glDeleteProgramPipelines(GLsizei  n, const GLuint * pipelines)
+   :noindex: 
+
+
+   
+   :param n:
+      Specifies the number of program pipeline objects to delete.
+   
+   :param pipelines:
+      Specifies an array of names of program pipeline objects to delete.
+   
+
+.. seealso::
+
+   
+   :c:func:`glGenProgramPipelines`, :c:func:`glBindProgramPipeline`, :c:func:`glIsProgramPipeline`, :c:func:`glUseShaderPrograms`, :c:func:`glUseProgram`
+   
+.. rubric:: Description
+
+
+:c:func:`glDeleteProgramPipelines` deletes the *n* program pipeline objects whose names are stored in the array *pipelines* . Unused names in *pipelines* are ignored, as is the name zero. After a program pipeline object is deleted, its name is again unused and it has no contents. If program pipeline object that is currently bound is deleted, the binding for that object reverts to zero and no program pipeline object becomes current.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGet` with argument ``GL_PROGRAM_PIPELINE_BINDING``
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

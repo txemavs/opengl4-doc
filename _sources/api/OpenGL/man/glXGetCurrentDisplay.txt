@@ -1,0 +1,78 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:28
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glXGetCurrentDisplay.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glXGetCurrentDisplay`
+-------------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Get display for current context
+
+.. c:function:: glXGetCurrentDisplay
+
+
+.. rubric:: Specification
+
+.. c:function:: Display * glXGetCurrentDisplay()
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glXGetCurrentContext`\ ,
+            :c:func:`glXGetCurrentDrawable`\ ,
+            :c:func:`glXQueryVersion`\ ,
+            :c:func:`glXQueryExtensionsString`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glXGetCurrentDisplay` returns the display for the current context. If no
+context is current, ``NULL`` is returned.
+
+
+:c:func:`glXGetCurrentDisplay` returns client-side information. It does not make a round-trip
+to the server, and therefore does not flush any pending events.
+
+
+.. note::
+
+
+   :c:func:`glXGetCurrentDisplay` is only supported if the GLX version is 1.2 or greater.
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glXGetCurrentDisplay'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

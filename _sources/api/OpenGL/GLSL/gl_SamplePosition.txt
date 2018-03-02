@@ -1,0 +1,46 @@
+.. nabla.opengl-sphinx project
+
+.. ---------------------------
+
+.. this dodument source file 'man/gl_SamplePosition'is copyrighted by Khronos Group
+   See license details at http://opencontent.org/openpub/
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   
+
+function `gl_SamplePosition`
+----------------------------
+
+.. currentmodule:: OpenGL.GLSL
+
+Contains the location of the current sample within the current fragment
+
+.. c:function:: gl_SamplePosition
+
+
+.. rubric:: Specification
+
+.. c:function:: in vec2 gl_SamplePosition)
+
+.. seealso::
+
+   
+   :c:func:`gl_SampleID`, :c:func:`gl_SampleMask`, :c:func:`gl_FragCoord`
+   
+.. rubric:: Description
+
+
+:c:func:`gl_SamplePosition` is a fragment language input variable that contains the location within a fragment of the sample currently being processed. The x and y components of :c:func:`gl_SamplePosition` contain the sub-pixel coordinate of the current sample and will have values in the range 0.0 to 1.0. The sub-pixel coordinates of the center of the pixel are always (0.5, 0.5). Any static use of :c:func:`gl_SamplePosition` causes the entire fragment shader to be evaluated per-sample rather than per-fragment. When rendering to a non-multisample buffer, or if multisample rasterization is disabled, :c:func:`gl_SamplePosition` will be (0.5, 0.5).
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2011 Khronos Group. Open Publication License.
+

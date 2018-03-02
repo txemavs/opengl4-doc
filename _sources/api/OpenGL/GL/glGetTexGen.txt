@@ -1,0 +1,72 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glGetTexGen`
+----------------------
+
+.. source file man/glGetTexGen
+
+.. currentmodule:: OpenGL.GL
+
+Return texture coordinate generation parameters
+
+.. c:function:: glGetTexGen
+.. c:function:: void glGetTexGendv(GLenum  coord, GLenum  pname, GLdouble *  params, GLenum  coord, GLenum  pname, GLfloat *  params, GLenum  coord, GLenum  pname, GLint *  params)
+
+
+   
+   :param coord:
+      Specifies a texture coordinate. Must be ``GL_S``, ``GL_T``, ``GL_R``, or ``GL_Q``.
+   
+   :param pname:
+      Specifies the symbolic name of the value(s) to be returned. Must be either ``GL_TEXTURE_GEN_MODE`` or the name of one of the texture generation plane equations: ``GL_OBJECT_PLANE`` or ``GL_EYE_PLANE``.
+   
+   :param params:
+      Returns the requested data.
+   
+
+.. seealso::
+
+   
+   :c:func:`glActiveTexture`, :c:func:`glTexGen`
+   
+.. rubric:: Description
+
+
+:c:func:`glGetTexGen` returns in *params* selected parameters of a texture coordinate generation function that was specified using :c:func:`glTexGen`. *coord* names one of the ( *`s`* , *`t`* , *`r`* , *`q`* ) texture coordinates, using the symbolic constant ``GL_S``, ``GL_T``, ``GL_R``, or ``GL_Q``.
+
+*pname* specifies one of three symbolic names:
+
+
+   
+   ``GL_TEXTURE_GEN_MODE``
+      *params* returns the single-valued texture generation function, a symbolic constant. The initial value is ``GL_EYE_LINEAR``.
+   
+   ``GL_OBJECT_PLANE``
+      *params* returns the four plane equation coefficients that specify object linear-coordinate generation. Integer values, when requested, are mapped directly from the internal floating-point representation.
+   
+   ``GL_EYE_PLANE``
+      *params* returns the four plane equation coefficients that specify eye linear-coordinate generation. Integer values, when requested, are mapped directly from the internal floating-point representation. The returned values are those maintained in eye coordinates. They are not equal to the values specified using :c:func:`glTexGen`, unless the modelview matrix was identity when :c:func:`glTexGen` was called.
+   
+
+**Errors:**
+
+   * ``GL_INVALID_ENUM`` is generated if *coord* or *pname* is not an accepted value.
+   * ``GL_INVALID_OPERATION`` is generated if :c:func:`glGetTexGen` is executed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`.
+
+
+
+.. note::
+
+   * If an error is generated, no change is made to the contents of *params* .
+   * For OpenGL versions 1.3 and greater, or when the ``ARB_multitexture`` extension is supported, :c:func:`glGetTexGen` returns the texture coordinate generation parameters for the active texture unit.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

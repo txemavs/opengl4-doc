@@ -1,0 +1,52 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glGenVertexArrays`
+----------------------------
+
+.. source file man4/glGenVertexArrays
+
+.. currentmodule:: OpenGL.GL
+
+Generate vertex array object names
+
+.. c:function:: glGenVertexArrays
+.. c:function:: void glGenVertexArrays(GLsizei  n, GLuint * arrays)
+   :noindex: 
+
+
+   
+   :param n:
+      Specifies the number of vertex array object names to generate.
+   
+   :param arrays:
+      Specifies an array in which the generated vertex array object names are stored.
+   
+
+.. seealso::
+
+   
+   :c:func:`glBindVertexArray`, :c:func:`glDeleteVertexArrays`
+   
+.. rubric:: Description
+
+
+:c:func:`glGenVertexArrays` returns *n* vertex array object names in *arrays* . There is no guarantee that the names form a contiguous set of integers; however, it is guaranteed that none of the returned names was in use immediately before the call to :c:func:`glGenVertexArrays`.
+
+Vertex array object names returned by a call to :c:func:`glGenVertexArrays` are not returned by subsequent calls, unless they are first deleted with :c:func:`glDeleteVertexArrays`.
+
+The names returned in *arrays* are marked as used, for the purposes of :c:func:`glGenVertexArrays` only, but they acquire state and type only when they are first bound.
+
+
+**Errors:**
+
+   * ``GL_INVALID_VALUE`` is generated if *n* is negative.
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

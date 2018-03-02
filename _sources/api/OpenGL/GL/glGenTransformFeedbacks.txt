@@ -1,0 +1,50 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glGenTransformFeedbacks`
+----------------------------------
+
+.. source file man4/glGenTransformFeedbacks
+
+.. currentmodule:: OpenGL.GL
+
+Reserve transform feedback object names
+
+.. c:function:: glGenTransformFeedbacks
+.. c:function:: void glGenTransformFeedbacks(GLsizei  n, GLuint * ids)
+   :noindex: 
+
+
+   
+   :param n:
+      Specifies the number of transform feedback object names to reserve.
+   
+   :param ids:
+      Specifies an array of into which the reserved names will be written.
+   
+
+.. seealso::
+
+   
+   :c:func:`glDeleteTransformFeedbacks`, :c:func:`glBindTransformFeedback`, :c:func:`glIsTransformFeedback`, :c:func:`glBeginTransformFeedback`, :c:func:`glPauseTransformFeedback`, :c:func:`glResumeTransformFeedback`, :c:func:`glEndTransformFeedback`
+   
+.. rubric:: Description
+
+
+:c:func:`glGenTransformFeedbacks` returns *n* previously unused transform feedback object names in *ids* . These names are marked as used, for the purposes of :c:func:`glGenTransformFeedbacks` only, but they acquire transform feedback state only when they are first bound.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glGet` with argument ``GL_TRANSFORM_FEEDBACK_BINDING``
+   * :c:func:`glIsTransformFeedback`
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

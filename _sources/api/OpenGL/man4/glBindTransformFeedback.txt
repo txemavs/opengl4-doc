@@ -1,0 +1,110 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:28
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glBindTransformFeedback.xml'
+.. (c)2010 Khronos Group.
+.. See license details at http://opencontent.org/openpub/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glBindTransformFeedback`
+----------------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Bind a transform feedback object
+
+.. c:function:: glBindTransformFeedback
+
+
+         :param target:
+
+                  Specifies the target to which to bind the transform feedback object *id*\ . *target*
+                  must be ``GL_TRANSFORM_FEEDBACK``\ .
+
+         :param id:
+
+                  Specifies the name of a transform feedback object reserved by :c:func:`glGenTransformFeedbacks`\ .
+
+.. rubric:: Specification
+
+.. c:function:: void glBindTransformFeedback(GLenum  target, GLuint  id)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glGenTransformFeedbacks`\ ,
+            :c:func:`glDeleteTransformFeedbacks`\ ,
+            :c:func:`glIsTransformFeedback`\ ,
+            :c:func:`glBeginTransformFeedback`\ ,
+            :c:func:`glPauseTransformFeedback`\ ,
+            :c:func:`glResumeTransformFeedback`\ ,
+            :c:func:`glEndTransformFeedback`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glBindTransformFeedback` binds the transform feedback object with name *id* to the current
+GL state. *id* must be a name previously returned from a call to
+:c:func:`glGenTransformFeedbacks`\ . If *id* has not
+previously been bound, a new transform feedback object with name *id* and initialized with with the
+default transform state vector is created.
+
+
+In the initial state, a default transform feedback object is bound and treated as
+a transform feedback object with a name of zero. If the name zero is subsequently bound, the default
+transform feedback object is again bound to the GL state.
+
+
+While a transform feedback buffer object is bound, GL operations on the target
+to which it is bound affect the bound transform feedback object, and queries of the
+target to which a transform feedback object is bound return state from the bound
+object. When buffer objects are bound for transform feedback, they are attached to
+the currently bound transform feedback object. Buffer objects are used for trans-
+form feedback only if they are attached to the currently bound transform feedback
+object.
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_ENUM`` is generated if *target* is not ``GL_TRANSFORM_FEEDBACK``\ .
+* ``GL_INVALID_OPERATION`` is generated if the transform feedback operation is active on the currently bound transform feedback object, and that operation is not paused.
+* ``GL_INVALID_OPERATION`` is generated if *id* is not zero or the name of a transform feedback object returned from a previous call to :c:func:`glGenTransformFeedbacks`\ , or if such a name has been deleted by :c:func:`glDeleteTransformFeedbacks`\ .
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGet` with argument ``GL_TRANSFORM_FEEDBACK_BINDING``
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glBindTransformFeedback'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )2010 Khronos Group. Open Publication License.
+

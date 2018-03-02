@@ -1,0 +1,311 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function gluNurbsProperty &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function gluNurbsSurface" href="gluNurbsSurface.html" />
+    <link rel="prev" title="function gluNurbsCurve" href="gluNurbsCurve.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="gluNurbsSurface.html" title="function gluNurbsSurface"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="gluNurbsCurve.html" title="function gluNurbsCurve"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glunurbsproperty">
+<h1>function <cite>gluNurbsProperty</cite><a class="headerlink" href="#function-glunurbsproperty" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Set a NURBS property</p>
+<dl class="function">
+<dt id="gluNurbsProperty">
+<tt class="descname">gluNurbsProperty</tt><big>(</big><big>)</big><a class="headerlink" href="#gluNurbsProperty" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>nurb</strong> &#8211; Specifies the NURBS object (created with <a class="reference internal" href="gluNewNurbsRenderer.html#gluNewNurbsRenderer" title="gluNewNurbsRenderer"><tt class="xref c c-func docutils literal"><span class="pre">gluNewNurbsRenderer()</span></tt></a>).</li>
+<li><strong>property</strong> &#8211; Specifies the property to be set. Valid values are
+<tt class="docutils literal"><span class="pre">GLU_SAMPLING_TOLERANCE</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_DISPLAY_MODE</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_CULLING</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_AUTO_LOAD_MATRIX</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_PARAMETRIC_TOLERANCE</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_SAMPLING_METHOD</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_U_STEP</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_V_STEP</span></tt>, or
+<tt class="docutils literal"><span class="pre">GLU_NURBS_MODE</span></tt>.</li>
+<li><strong>value</strong> &#8211; Specifies the value of the indicated property.
+It may be a numeric value or one of
+<tt class="docutils literal"><span class="pre">GLU_OUTLINE_POLYGON</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_FILL</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_OUTLINE_PATCH</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_TRUE</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_FALSE</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_PATH_LENGTH</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_PARAMETRIC_ERROR</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_DOMAIN_DISTANCE</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_NURBS_RENDERER</span></tt>, or
+<tt class="docutils literal"><span class="pre">GLU_NURBS_TESSELLATOR</span></tt>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">gluNurbsProperty</tt><big>(</big>GLUnurbs* <em>&nbsp;nurb</em>, GLenum <em>&nbsp;property</em>, GLfloat <em>&nbsp;value</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="gluGetNurbsProperty.html#gluGetNurbsProperty" title="gluGetNurbsProperty"><tt class="xref c c-func docutils literal"><span class="pre">gluGetNurbsProperty()</span></tt></a>,
+<a class="reference internal" href="gluGetString.html#gluGetString" title="gluGetString"><tt class="xref c c-func docutils literal"><span class="pre">gluGetString()</span></tt></a>,
+<a class="reference internal" href="gluLoadSamplingMatrices.html#gluLoadSamplingMatrices" title="gluLoadSamplingMatrices"><tt class="xref c c-func docutils literal"><span class="pre">gluLoadSamplingMatrices()</span></tt></a>,
+<a class="reference internal" href="gluNewNurbsRenderer.html#gluNewNurbsRenderer" title="gluNewNurbsRenderer"><tt class="xref c c-func docutils literal"><span class="pre">gluNewNurbsRenderer()</span></tt></a>,
+<a class="reference internal" href="gluNurbsCallback.html#gluNurbsCallback" title="gluNurbsCallback"><tt class="xref c c-func docutils literal"><span class="pre">gluNurbsCallback()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#gluNurbsProperty" title="gluNurbsProperty"><tt class="xref c c-func docutils literal"><span class="pre">gluNurbsProperty()</span></tt></a> is used to control properties stored in a NURBS object. These
+properties affect the way that a NURBS curve is rendered. The accepted
+values for <em>property</em> are as follows:</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">GLU_NURBS_MODE</span></tt></p>
+<blockquote>
+<div><em>value</em> should be set to be either <tt class="docutils literal"><span class="pre">GLU_NURBS_RENDERER</span></tt> or
+<tt class="docutils literal"><span class="pre">GLU_NURBS_TESSELLATOR</span></tt>. When set to <tt class="docutils literal"><span class="pre">GLU_NURBS_RENDERER</span></tt>, NURBS objects
+are tessellated into OpenGL primitives and sent to the pipeline for
+rendering. When set to <tt class="docutils literal"><span class="pre">GLU_NURBS_TESSELLATOR</span></tt>, NURBS objects are
+tessellated into OpenGL primitives but the vertices, normals, colors, and/or textures are
+retrieved back through a callback interface (see <a class="reference internal" href="gluNurbsCallback.html#gluNurbsCallback" title="gluNurbsCallback"><tt class="xref c c-func docutils literal"><span class="pre">gluNurbsCallback()</span></tt></a>). This allows the user to cache the
+tessellated results for further processing.
+The initial value is <tt class="docutils literal"><span class="pre">GLU_NURBS_RENDERER</span></tt>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLU_SAMPLING_METHOD</span></tt></p>
+<blockquote>
+<div><p>Specifies how a NURBS surface should be
+tessellated.
+<em>value</em> may be one of <tt class="docutils literal"><span class="pre">GLU_PATH_LENGTH</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_PARAMETRIC_ERROR</span></tt>, <tt class="docutils literal"><span class="pre">GLU_DOMAIN_DISTANCE</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_OBJECT_PATH_LENGTH</span></tt>, or
+<tt class="docutils literal"><span class="pre">GLU_OBJECT_PARAMETRIC_ERROR</span></tt>.
+When set to <tt class="docutils literal"><span class="pre">GLU_PATH_LENGTH</span></tt>, the surface is rendered so that
+the maximum length, in
+pixels, of the edges of the tessellation polygons is no greater than
+what is specified by <tt class="docutils literal"><span class="pre">GLU_SAMPLING_TOLERANCE</span></tt>.</p>
+<p><tt class="docutils literal"><span class="pre">GLU_PARAMETRIC_ERROR</span></tt> specifies that the surface is rendered in such a
+way that the value specified by <tt class="docutils literal"><span class="pre">GLU_PARAMETRIC_TOLERANCE</span></tt> describes the
+maximum distance, in pixels, between the tessellation polygons and the
+surfaces they approximate.</p>
+<p><tt class="docutils literal"><span class="pre">GLU_DOMAIN_DISTANCE</span></tt> allows users to specify, in parametric coordinates,
+how many sample points per unit length are taken in <strong>u</strong>, <strong>v</strong>
+direction.</p>
+<p><tt class="docutils literal"><span class="pre">GLU_OBJECT_PATH_LENGTH</span></tt>  is similar to <tt class="docutils literal"><span class="pre">GLU_PATH_LENGTH</span></tt>
+except that it is view independent; that is, the surface is rendered so that the maximum length, in object space, of edges of the tessellation polygons is no greater than what is specified by <tt class="docutils literal"><span class="pre">GLU_SAMPLING_TOLERANCE</span></tt>.</p>
+<p><tt class="docutils literal"><span class="pre">GLU_OBJECT_PARAMETRIC_ERROR</span></tt> is similar to <tt class="docutils literal"><span class="pre">GLU_PARAMETRIC_ERROR</span></tt> except that it is view independent; that is, the surface is rendered in such a way that the value specified by <tt class="docutils literal"><span class="pre">GLU_PARAMETRIC_TOLERANCE</span></tt> describes the maximum distance, in object space, between the tessellation polygons and the surfaces they approximate.</p>
+<p>The initial value of <tt class="docutils literal"><span class="pre">GLU_SAMPLING_METHOD</span></tt> is <tt class="docutils literal"><span class="pre">GLU_PATH_LENGTH</span></tt>.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLU_SAMPLING_TOLERANCE</span></tt></p>
+<blockquote>
+<div>Specifies the maximum length, in pixels or in object space length unit,
+to use when the sampling method is set to <tt class="docutils literal"><span class="pre">GLU_PATH_LENGTH</span></tt> or
+<tt class="docutils literal"><span class="pre">GLU_OBJECT_PATH_LENGTH</span></tt>.
+The NURBS code is conservative when rendering a curve
+or surface, so the actual length can be somewhat shorter. The initial
+value is 50.0 pixels.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLU_PARAMETRIC_TOLERANCE</span></tt></p>
+<blockquote>
+<div>Specifies the maximum distance, in pixels or in object space length unit,
+to use when the sampling method is <tt class="docutils literal"><span class="pre">GLU_PARAMETRIC_ERROR</span></tt> or
+<tt class="docutils literal"><span class="pre">GLU_OBJECT_PARAMETRIC_ERROR</span></tt>.
+The initial value is 0.5.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLU_U_STEP</span></tt></p>
+<blockquote>
+<div>Specifies the number of sample points per unit length taken
+along the <strong>u</strong> axis in parametric coordinates. It is needed when
+<tt class="docutils literal"><span class="pre">GLU_SAMPLING_METHOD</span></tt> is set to <tt class="docutils literal"><span class="pre">GLU_DOMAIN_DISTANCE</span></tt>.
+The initial value is 100.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLU_V_STEP</span></tt></p>
+<blockquote>
+<div>Specifies the number of sample points per unit length taken
+along the <strong>v</strong> axis in parametric coordinate. It is needed when
+<tt class="docutils literal"><span class="pre">GLU_SAMPLING_METHOD</span></tt> is set to <tt class="docutils literal"><span class="pre">GLU_DOMAIN_DISTANCE</span></tt>. The initial
+value is 100.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLU_DISPLAY_MODE</span></tt></p>
+<blockquote>
+<div><p><em>value</em> can be set to
+<tt class="docutils literal"><span class="pre">GLU_OUTLINE_POLYGON</span></tt>, <tt class="docutils literal"><span class="pre">GLU_FILL</span></tt>, or
+<tt class="docutils literal"><span class="pre">GLU_OUTLINE_PATCH</span></tt>.
+When <tt class="docutils literal"><span class="pre">GLU_NURBS_MODE</span></tt> is set to be <tt class="docutils literal"><span class="pre">GLU_NURBS_RENDERER</span></tt>,
+<em>value</em> defines how a NURBS surface should be rendered.
+When <em>value</em> is set to <tt class="docutils literal"><span class="pre">GLU_FILL</span></tt>, the surface is rendered as a
+set of polygons. When <em>value</em> is set to
+<tt class="docutils literal"><span class="pre">GLU_OUTLINE_POLYGON</span></tt>, the NURBS library draws only the outlines
+of the polygons created by tessellation. When <em>value</em> is set to
+<tt class="docutils literal"><span class="pre">GLU_OUTLINE_PATCH</span></tt> just the outlines of patches and trim
+curves defined by the user are drawn.</p>
+<p>When <tt class="docutils literal"><span class="pre">GLU_NURBS_MODE</span></tt> is set to be <tt class="docutils literal"><span class="pre">GLU_NURBS_TESSELLATOR</span></tt>,
+<em>value</em> defines how a NURBS surface should be tessellated.
+When <tt class="docutils literal"><span class="pre">GLU_DISPLAY_MODE</span></tt> is set to <tt class="docutils literal"><span class="pre">GLU_FILL</span></tt> or
+<tt class="docutils literal"><span class="pre">GLU_OUTLINE_POLYGON</span></tt>,
+the NURBS surface is tessellated into OpenGL triangle primitives that can be
+retrieved back  through callback functions. If <tt class="docutils literal"><span class="pre">GLU_DISPLAY_MODE</span></tt> is set to
+<tt class="docutils literal"><span class="pre">GLU_OUTLINE_PATCH</span></tt>, only the outlines of the patches and trim curves are generated as a sequence of line strips that can be retrieved back through callback functions.</p>
+<p>The initial value is <tt class="docutils literal"><span class="pre">GLU_FILL</span></tt>.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLU_CULLING</span></tt></p>
+<blockquote>
+<div><em>value</em> is a boolean value that, when set to <tt class="docutils literal"><span class="pre">GLU_TRUE</span></tt>, indicates that
+a NURBS curve should be discarded prior to tessellation if its control points
+lie outside the current viewport. The initial value is <tt class="docutils literal"><span class="pre">GLU_FALSE</span></tt>.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">GLU_AUTO_LOAD_MATRIX</span></tt></p>
+<blockquote>
+<div><p><em>value</em> is a boolean value. When set to <tt class="docutils literal"><span class="pre">GLU_TRUE</span></tt>, the NURBS code
+downloads the projection matrix, the modelview matrix, and the
+viewport from the GL server to compute sampling and
+culling
+matrices for each NURBS curve that is rendered. Sampling and culling matrices
+are required to determine the tessellation of a NURBS surface into line segments
+or polygons and to cull a NURBS surface if it lies outside the viewport.</p>
+<p>If this mode is set to <tt class="docutils literal"><span class="pre">GLU_FALSE</span></tt>, then the program needs
+to provide a projection matrix, a modelview matrix, and a viewport
+for the NURBS renderer to use to construct sampling and culling matrices.
+This can be done with the <a class="reference internal" href="gluLoadSamplingMatrices.html#gluLoadSamplingMatrices" title="gluLoadSamplingMatrices"><tt class="xref c c-func docutils literal"><span class="pre">gluLoadSamplingMatrices()</span></tt></a> function.
+This mode is initially set to <tt class="docutils literal"><span class="pre">GLU_TRUE</span></tt>.
+Changing it from <tt class="docutils literal"><span class="pre">GLU_TRUE</span></tt> to <tt class="docutils literal"><span class="pre">GLU_FALSE</span></tt> does not affect
+the sampling and culling matrices until
+<a class="reference internal" href="gluLoadSamplingMatrices.html#gluLoadSamplingMatrices" title="gluLoadSamplingMatrices"><tt class="xref c c-func docutils literal"><span class="pre">gluLoadSamplingMatrices()</span></tt></a>
+is called.</p>
+</div></blockquote>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>If <tt class="docutils literal"><span class="pre">GLU_AUTO_LOAD_MATRIX</span></tt> is true, sampling and culling may be
+executed incorrectly if NURBS routines are compiled into a display list.</p>
+<p>A <em>property</em> of
+<tt class="docutils literal"><span class="pre">GLU_PARAMETRIC_TOLERANCE</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_SAMPLING_METHOD</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_U_STEP</span></tt>, or
+<tt class="docutils literal"><span class="pre">GLU_V_STEP</span></tt>,
+or a <em>value</em> of
+<tt class="docutils literal"><span class="pre">GLU_PATH_LENGTH</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_PARAMETRIC_ERROR</span></tt>,
+<tt class="docutils literal"><span class="pre">GLU_DOMAIN_DISTANCE</span></tt>
+are only available if the GLU version is 1.1 or greater. They are not
+valid parameters in GLU 1.0.</p>
+<p><a class="reference internal" href="gluGetString.html#gluGetString" title="gluGetString"><tt class="xref c c-func docutils literal"><span class="pre">gluGetString()</span></tt></a> can
+be used to determine the GLU version.</p>
+<p><tt class="docutils literal"><span class="pre">GLU_NURBS_MODE</span></tt> is only available if the GLU version is 1.3 or
+greater.</p>
+<p class="last">The <tt class="docutils literal"><span class="pre">GLU_OBJECT_PATH_LENGTH</span></tt> and <tt class="docutils literal"><span class="pre">GLU_OBJECT_PARAMETRIC_ERROR</span></tt>
+values for the <tt class="docutils literal"><span class="pre">GLU_SAMPLING_METHOD</span></tt> property are only available if
+the GLU version is 1.3 or greater.</p>
+</div>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="gluNurbsCurve.html"
+                        title="previous chapter">function <cite>gluNurbsCurve</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="gluNurbsSurface.html"
+                        title="next chapter">function <cite>gluNurbsSurface</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/gluNurbsProperty.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="gluNurbsSurface.html" title="function gluNurbsSurface"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="gluNurbsCurve.html" title="function gluNurbsCurve"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

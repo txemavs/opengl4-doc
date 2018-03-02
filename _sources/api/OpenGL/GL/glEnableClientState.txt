@@ -1,0 +1,88 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glEnableClientState`
+------------------------------
+
+.. source file man/glEnableClientState
+
+.. currentmodule:: OpenGL.GL
+
+Enable or disable client-side capability
+
+.. c:function:: glEnableClientState
+.. c:function:: void glEnableClientState(GLenum  cap)
+   :noindex: 
+
+
+   
+   :param cap:
+      Specifies the capability to enable. Symbolic constants ``GL_COLOR_ARRAY``, ``GL_EDGE_FLAG_ARRAY``, ``GL_FOG_COORD_ARRAY``, ``GL_INDEX_ARRAY``, ``GL_NORMAL_ARRAY``, ``GL_SECONDARY_COLOR_ARRAY``, ``GL_TEXTURE_COORD_ARRAY``, and ``GL_VERTEX_ARRAY`` are accepted.
+   
+.. c:function:: void glDisableClientState(GLenum  cap)
+
+
+   
+   :param cap:
+      Specifies the capability to disable.
+   
+
+.. seealso::
+
+   
+   :c:func:`glArrayElement`, :c:func:`glClientActiveTexture`, :c:func:`glColorPointer`, :c:func:`glDrawArrays`, :c:func:`glDrawElements`, :c:func:`glEdgeFlagPointer`, :c:func:`glFogCoordPointer`, :c:func:`glEnable`, :c:func:`glGetPointerv`, :c:func:`glIndexPointer`, :c:func:`glInterleavedArrays`, :c:func:`glNormalPointer`, :c:func:`glSecondaryColorPointer`, :c:func:`glTexCoordPointer`, :c:func:`glVertexPointer`
+   
+.. rubric:: Description
+
+
+:c:func:`glEnableClientState` and :c:func:`glDisableClientState` enable or disable individual client-side capabilities. By default, all client-side capabilities are disabled. Both :c:func:`glEnableClientState` and :c:func:`glDisableClientState` take a single argument, *cap* , which can assume one of the following values:
+
+
+   
+   ``GL_COLOR_ARRAY``
+      If enabled, the color array is enabled for writing and used during rendering when :c:func:`glArrayElement`, :c:func:`glDrawArrays`, :c:func:`glDrawElements`, :c:func:`glDrawRangeElements` :c:func:`glMultiDrawArrays`, or :c:func:`glMultiDrawElements` is called. See :c:func:`glColorPointer`.
+   
+   ``GL_EDGE_FLAG_ARRAY``
+      If enabled, the edge flag array is enabled for writing and used during rendering when :c:func:`glArrayElement`, :c:func:`glDrawArrays`, :c:func:`glDrawElements`, :c:func:`glDrawRangeElements` :c:func:`glMultiDrawArrays`, or :c:func:`glMultiDrawElements` is called. See :c:func:`glEdgeFlagPointer`.
+   
+   ``GL_FOG_COORD_ARRAY``
+      If enabled, the fog coordinate array is enabled for writing and used during rendering when :c:func:`glArrayElement`, :c:func:`glDrawArrays`, :c:func:`glDrawElements`, :c:func:`glDrawRangeElements` :c:func:`glMultiDrawArrays`, or :c:func:`glMultiDrawElements` is called. See :c:func:`glFogCoordPointer`.
+   
+   ``GL_INDEX_ARRAY``
+      If enabled, the index array is enabled for writing and used during rendering when :c:func:`glArrayElement`, :c:func:`glDrawArrays`, :c:func:`glDrawElements`, :c:func:`glDrawRangeElements` :c:func:`glMultiDrawArrays`, or :c:func:`glMultiDrawElements` is called. See :c:func:`glIndexPointer`.
+   
+   ``GL_NORMAL_ARRAY``
+      If enabled, the normal array is enabled for writing and used during rendering when :c:func:`glArrayElement`, :c:func:`glDrawArrays`, :c:func:`glDrawElements`, :c:func:`glDrawRangeElements` :c:func:`glMultiDrawArrays`, or :c:func:`glMultiDrawElements` is called. See :c:func:`glNormalPointer`.
+   
+   ``GL_SECONDARY_COLOR_ARRAY``
+      If enabled, the secondary color array is enabled for writing and used during rendering when :c:func:`glArrayElement`, :c:func:`glDrawArrays`, :c:func:`glDrawElements`, :c:func:`glDrawRangeElements` :c:func:`glMultiDrawArrays`, or :c:func:`glMultiDrawElements` is called. See :c:func:`glColorPointer`.
+   
+   ``GL_TEXTURE_COORD_ARRAY``
+      If enabled, the texture coordinate array is enabled for writing and used during rendering when :c:func:`glArrayElement`, :c:func:`glDrawArrays`, :c:func:`glDrawElements`, :c:func:`glDrawRangeElements` :c:func:`glMultiDrawArrays`, or :c:func:`glMultiDrawElements` is called. See :c:func:`glTexCoordPointer`.
+   
+   ``GL_VERTEX_ARRAY``
+      If enabled, the vertex array is enabled for writing and used during rendering when :c:func:`glArrayElement`, :c:func:`glDrawArrays`, :c:func:`glDrawElements`, :c:func:`glDrawRangeElements` :c:func:`glMultiDrawArrays`, or :c:func:`glMultiDrawElements` is called. See :c:func:`glVertexPointer`.
+   
+
+**Errors:**
+
+   * ``GL_INVALID_ENUM`` is generated if *cap* is not an accepted value.
+   * :c:func:`glEnableClientState` is not allowed between the execution of :c:func:`glBegin` and the corresponding :c:func:`glEnd`, but an error may or may not be generated. If no error is generated, the behavior is undefined.
+
+
+
+.. note::
+
+   * :c:func:`glEnableClientState` is available only if the GL version is 1.1 or greater.
+   * ``GL_FOG_COORD_ARRAY`` and ``GL_SECONDARY_COLOR_ARRAY`` are available only if the GL version is 1.4 or greater.
+   * For OpenGL versions 1.3 and greater, or when ``ARB_multitexture`` is supported, enabling and disabling ``GL_TEXTURE_COORD_ARRAY`` affects the active client texture unit. The active client texture unit is controlled with :c:func:`glClientActiveTexture`.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

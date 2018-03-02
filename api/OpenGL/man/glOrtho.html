@@ -1,0 +1,191 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glOrtho &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function glPassThrough" href="glPassThrough.html" />
+    <link rel="prev" title="function glNormalPointer" href="glNormalPointer.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glPassThrough.html" title="function glPassThrough"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glNormalPointer.html" title="function glNormalPointer"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glortho">
+<h1>function <cite>glOrtho</cite><a class="headerlink" href="#function-glortho" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Multiply the current matrix with an orthographic matrix</p>
+<dl class="function">
+<dt id="glOrtho">
+<tt class="descname">glOrtho</tt><big>(</big><big>)</big><a class="headerlink" href="#glOrtho" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>left</strong> &#8211; </li>
+<li><strong>right</strong> &#8211; Specify the coordinates for the left and right vertical clipping planes.</li>
+<li><strong>bottom</strong> &#8211; </li>
+<li><strong>top</strong> &#8211; Specify the coordinates for the bottom and top horizontal clipping planes.</li>
+<li><strong>nearVal</strong> &#8211; </li>
+<li><strong>farVal</strong> &#8211; Specify the distances to the nearer and farther depth clipping planes.
+These values are negative if the plane is to be behind the viewer.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glOrtho</tt><big>(</big>GLdouble <em>&nbsp;left</em>, GLdouble <em>&nbsp;right</em>, GLdouble <em>&nbsp;bottom</em>, GLdouble <em>&nbsp;top</em>, GLdouble <em>&nbsp;nearVal</em>, GLdouble <em>&nbsp;farVal</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glFrustum.html#glFrustum" title="glFrustum"><tt class="xref c c-func docutils literal"><span class="pre">glFrustum()</span></tt></a>,
+<a class="reference internal" href="glMatrixMode.html#glMatrixMode" title="glMatrixMode"><tt class="xref c c-func docutils literal"><span class="pre">glMatrixMode()</span></tt></a>,
+<a class="reference internal" href="glMultMatrix.html#glMultMatrix" title="glMultMatrix"><tt class="xref c c-func docutils literal"><span class="pre">glMultMatrix()</span></tt></a>,
+<a class="reference internal" href="glPushMatrix.html#glPushMatrix" title="glPushMatrix"><tt class="xref c c-func docutils literal"><span class="pre">glPushMatrix()</span></tt></a>,
+<a class="reference internal" href="../man4/glViewport.html#glViewport" title="glViewport"><tt class="xref c c-func docutils literal"><span class="pre">glViewport()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glOrtho" title="glOrtho"><tt class="xref c c-func docutils literal"><span class="pre">glOrtho()</span></tt></a> describes a transformation that produces a parallel projection.
+The current matrix (see <a class="reference internal" href="glMatrixMode.html#glMatrixMode" title="glMatrixMode"><tt class="xref c c-func docutils literal"><span class="pre">glMatrixMode()</span></tt></a>) is multiplied by this matrix
+and the result replaces the current matrix, as if
+<a class="reference internal" href="glMultMatrix.html#glMultMatrix" title="glMultMatrix"><tt class="xref c c-func docutils literal"><span class="pre">glMultMatrix()</span></tt></a> were called with the following matrix
+as its argument:</p>
+<p><span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mtable><mtr><mtd><mfenced open="" close=""><mfrac><mn>2</mn><mfenced open="" close=""><mrow><mi mathvariant="italic">right</mi><mo>-</mo><mi mathvariant="italic">left</mi></mrow></mfenced></mfrac></mfenced></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mfenced open="" close=""><msub><mi mathvariant="italic">t</mi><mi mathvariant="italic">x</mi></msub></mfenced></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mfenced open="" close=""><mfrac><mn>2</mn><mfenced open="" close=""><mrow><mi mathvariant="italic">top</mi><mo>-</mo><mi mathvariant="italic">bottom</mi></mrow></mfenced></mfrac></mfenced></mtd><mtd><mn>0</mn></mtd><mtd><mfenced open="" close=""><msub><mi mathvariant="italic">t</mi><mi mathvariant="italic">y</mi></msub></mfenced></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mfenced open="" close=""><mfrac><mn>-2</mn><mfenced open="" close=""><mrow><mi mathvariant="italic">farVal</mi><mo>-</mo><mi mathvariant="italic">nearVal</mi></mrow></mfenced></mfrac></mfenced></mtd><mtd><mfenced open="" close=""><msub><mi mathvariant="italic">t</mi><mi mathvariant="italic">z</mi></msub></mfenced></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd></mtr></mtable></mfenced></math></span></p>
+<p>where
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">t</mi><mi mathvariant="italic">x</mi></msub><mo>=</mo><mrow><mo>-</mo><mfenced open="" close=""><mfrac><mfenced open="" close=""><mrow><mi mathvariant="italic">right</mi><mo>+</mo><mi mathvariant="italic">left</mi></mrow></mfenced><mfenced open="" close=""><mrow><mi mathvariant="italic">right</mi><mo>-</mo><mi mathvariant="italic">left</mi></mrow></mfenced></mfrac></mfenced></mrow></mrow></math></span>
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">t</mi><mi mathvariant="italic">y</mi></msub><mo>=</mo><mrow><mo>-</mo><mfenced open="" close=""><mfrac><mfenced open="" close=""><mrow><mi mathvariant="italic">top</mi><mo>+</mo><mi mathvariant="italic">bottom</mi></mrow></mfenced><mfenced open="" close=""><mrow><mi mathvariant="italic">top</mi><mo>-</mo><mi mathvariant="italic">bottom</mi></mrow></mfenced></mfrac></mfenced></mrow></mrow></math></span>
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><msub><mi mathvariant="italic">t</mi><mi mathvariant="italic">z</mi></msub><mo>=</mo><mrow><mo>-</mo><mfenced open="" close=""><mfrac><mfenced open="" close=""><mrow><mi mathvariant="italic">farVal</mi><mo>+</mo><mi mathvariant="italic">nearVal</mi></mrow></mfenced><mfenced open="" close=""><mrow><mi mathvariant="italic">farVal</mi><mo>-</mo><mi mathvariant="italic">nearVal</mi></mrow></mfenced></mfrac></mfenced></mrow></mrow></math></span></p>
+<p>Typically, the matrix mode is <tt class="docutils literal"><span class="pre">GL_PROJECTION</span></tt>, and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mi mathvariant="italic">left</mi><mi mathvariant="italic">bottom</mi><mrow><mo>-</mo><mi mathvariant="italic">nearVal</mi></mrow></mfenced></math></span> and <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mfenced open="(" close=")"><mi mathvariant="italic">right</mi><mi mathvariant="italic">top</mi><mrow><mo>-</mo><mi mathvariant="italic">nearVal</mi></mrow></mfenced></math></span> specify the points on the near clipping plane that are mapped
+to the lower left and upper right corners of the window,
+respectively,
+assuming that the eye is located at (0, 0, 0). <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'> <mrow><mo>-</mo><mi mathvariant="italic">farVal</mi></mrow></math></span> specifies the location of the far clipping plane.
+Both <em>nearVal</em> and <em>farVal</em> can be either positive or negative.</p>
+<p>Use <a class="reference internal" href="glPushMatrix.html#glPushMatrix" title="glPushMatrix"><tt class="xref c c-func docutils literal"><span class="pre">glPushMatrix()</span></tt></a> and <a class="reference internal" href="glPushMatrix.html#glPopMatrix" title="glPopMatrix"><tt class="xref c c-func docutils literal"><span class="pre">glPopMatrix()</span></tt></a> to save and restore
+the current matrix stack.</p>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>left</em> = <em>right</em>, or <em>bottom</em> = <em>top</em>, or <em>near</em> = <em>far</em>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <a class="reference internal" href="#glOrtho" title="glOrtho"><tt class="xref c c-func docutils literal"><span class="pre">glOrtho()</span></tt></a> is executed between the execution of <a class="reference internal" href="glBegin.html#glBegin" title="glBegin"><tt class="xref c c-func docutils literal"><span class="pre">glBegin()</span></tt></a> and the corresponding execution of <a class="reference internal" href="glBegin.html#glEnd" title="glEnd"><tt class="xref c c-func docutils literal"><span class="pre">glEnd()</span></tt></a>.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_MATRIX_MODE</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_COLOR_MATRIX</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_MODELVIEW_MATRIX</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_PROJECTION_MATRIX</span></tt></li>
+<li><a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_TEXTURE_MATRIX</span></tt></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glNormalPointer.html"
+                        title="previous chapter">function <cite>glNormalPointer</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glPassThrough.html"
+                        title="next chapter">function <cite>glPassThrough</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/glOrtho.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glPassThrough.html" title="function glPassThrough"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glNormalPointer.html" title="function glNormalPointer"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

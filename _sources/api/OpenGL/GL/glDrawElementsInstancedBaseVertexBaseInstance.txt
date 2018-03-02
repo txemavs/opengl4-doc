@@ -1,0 +1,74 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glDrawElementsInstancedBaseVertexBaseInstance`
+--------------------------------------------------------
+
+.. source file man4/glDrawElementsInstancedBaseVertexBaseInstance
+
+.. currentmodule:: OpenGL.GL
+
+Render multiple instances of a set of primitives from array data with a per-element offset
+
+.. c:function:: glDrawElementsInstancedBaseVertexBaseInstance
+.. c:function:: void glDrawElementsInstancedBaseVertexBaseInstance(GLenum  mode, GLsizei  count, GLenum  type, GLvoid * indices, GLsizei  primcount, GLint  basevertex, GLuint  baseinstance)
+   :noindex: 
+
+
+   
+   :param mode:
+      Specifies what kind of primitives to render. Symbolic constants ``GL_POINTS``, ``GL_LINE_STRIP``, ``GL_LINE_LOOP``, ``GL_LINES``, ``GL_TRIANGLE_STRIP``, ``GL_TRIANGLE_FAN``, ``GL_TRIANGLES``, ``GL_LINES_ADJACENCY``, ``GL_LINE_STRIP_ADJACENCY``, ``GL_TRIANGLES_ADJACENCY``, ``GL_TRIANGLE_STRIP_ADJACENCY`` and ``GL_PATCHES`` are accepted.
+   
+   :param count:
+      Specifies the number of elements to be rendered.
+   
+   :param type:
+      Specifies the type of the values in indices. Must be one of ``GL_UNSIGNED_BYTE``, ``GL_UNSIGNED_SHORT``, or ``GL_UNSIGNED_INT``.
+   
+   :param indices:
+      Specifies a pointer to the location where the indices are stored.
+   
+   :param primcount:
+      Specifies the number of instances of the indexed geometry that should be drawn.
+   
+   :param basevertex:
+      Specifies a constant that should be added to each element of *indices* when chosing elements from the enabled vertex arrays.
+   
+   :param baseinstance:
+      Specifies the base instance for use in fetching instanced vertex attributes.
+   
+
+.. seealso::
+
+   
+   :c:func:`glDrawElements`, :c:func:`glDrawRangeElements`, :c:func:`glDrawRangeElementsBaseVertex`, :c:func:`glDrawElementsInstanced`, :c:func:`glDrawElementsInstancedBaseVertex`
+   
+.. rubric:: Description
+
+
+:c:func:`glDrawElementsInstancedBaseVertexBaseInstance` behaves identically to :c:func:`glDrawElementsInstanced` except that the *`i`* th element transferred by the corresponding draw call will be taken from element *indices* [i] + *basevertex* of each enabled array. If the resulting value is larger than the maximum value representable by *type* , it is as if the calculation were upconverted to 32-bit unsigned integers (with wrapping on overflow conditions). The operation is undefined if the sum would be negative. The *basevertex* has no effect on the shader-visible value of ``gl_VertexID``.
+
+Specific vertex attributes may be classified as *`instanced`* through the use of :c:func:`glVertexAttribDivisor`. Instanced vertex attributes supply per-instance vertex data to the vertex shader. The index of the vertex fetched from the enabled instanced vertex attribute arrays is calculated as <mml:math> <mml:mrow> <mml:mfenced open = '&lfloor;' close = '&rfloor;'> <mml:mfrac> <mml:mrow> <mml:mi>gl</mml:mi> <mml:mo>_</mml:mo> <mml:mi>InstanceID</mml:mi> </mml:mrow> <mml:mi>divisor</mml:mi> </mml:mfrac> </mml:mfenced> <mml:mo lspace='2px' rspace='2px'>&plus;</mml:mo> <mml:mi>baseInstance</mml:mi> </mml:mrow> </mml:math> . Note that *baseinstance* does not affect the shader-visible value of ``gl_InstanceID``.
+
+
+**Errors:**
+
+   * ``GL_INVALID_ENUM`` is generated if *mode* is not an accepted value.
+   * ``GL_INVALID_VALUE`` is generated if *count* or *primcount* is negative.
+   * ``GL_INVALID_OPERATION`` is generated if a geometry shader is active and *mode* is incompatible with the input primitive type of the geometry shader in the currently installed program object.
+   * ``GL_INVALID_OPERATION`` is generated if a non-zero buffer object name is bound to an enabled array or the element array and the buffer object's data store is currently mapped.
+
+
+
+.. note::
+
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

@@ -1,0 +1,148 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:30
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glIsEnabled.xml'
+.. (c)1991-2006 Silicon Graphics, Inc. 2010-2011 Khronos Group.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glIsEnabled`
+----------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Test whether a capability is enabled
+
+.. c:function:: glIsEnabled
+
+
+         :param cap:
+
+                  Specifies a symbolic constant indicating a GL capability.
+
+         :param index:
+
+                  Specifies the index of the capability.
+
+.. rubric:: Specification
+
+.. c:function:: GLboolean glIsEnabled(GLenum  cap, GLenum  cap, GLuint  index)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glEnable`\ ,
+            :c:func:`glDisable`\ ,
+            :c:func:`glGet`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glIsEnabled` returns ``GL_TRUE`` if *cap* is an enabled capability
+and returns ``GL_FALSE`` otherwise. Boolean states that are indexed may be tested with :c:func:`glIsEnabledi`\ .
+For :c:func:`glIsEnabledi`\ , *index* specifies the index of the capability to test. *index*
+must be between zero and the count of indexed capabilities for *cap*\ .
+Initially all capabilities except ``GL_DITHER`` are disabled;
+``GL_DITHER`` is initially enabled.
+
+
+The following capabilities are accepted for *cap* :
+
+
++----------------------------------+---------------------------------------------------------+
+| :strong:`Constant`               | :strong:`See`                                           |
++----------------------------------+---------------------------------------------------------+
+| ``GL_BLEND``                     | :c:func:`glBlendFunc`\ , :c:func:`glLogicOp`            |
++----------------------------------+---------------------------------------------------------+
+| ``GL_CLIP_DISTANCE`` :strong:`i` | :c:func:`glEnable`                                      |
++----------------------------------+---------------------------------------------------------+
+| ``GL_COLOR_LOGIC_OP``            | :c:func:`glLogicOp`                                     |
++----------------------------------+---------------------------------------------------------+
+| ``GL_CULL_FACE``                 | :c:func:`glCullFace`                                    |
++----------------------------------+---------------------------------------------------------+
+| ``GL_DEPTH_CLAMP``               | :c:func:`glEnable`                                      |
++----------------------------------+---------------------------------------------------------+
+| ``GL_DEPTH_TEST``                | :c:func:`glDepthFunc`\ , :c:func:`glDepthRange`         |
++----------------------------------+---------------------------------------------------------+
+| ``GL_DITHER``                    | :c:func:`glEnable`                                      |
++----------------------------------+---------------------------------------------------------+
+| ``GL_FRAMEBUFFER_SRGB``          | :c:func:`glEnable`                                      |
++----------------------------------+---------------------------------------------------------+
+| ``GL_LINE_SMOOTH``               | :c:func:`glLineWidth`                                   |
++----------------------------------+---------------------------------------------------------+
+| ``GL_MULTISAMPLE``               | :c:func:`glSampleCoverage`                              |
++----------------------------------+---------------------------------------------------------+
+| ``GL_POLYGON_SMOOTH``            | :c:func:`glPolygonMode`                                 |
++----------------------------------+---------------------------------------------------------+
+| ``GL_POLYGON_OFFSET_FILL``       | :c:func:`glPolygonOffset`                               |
++----------------------------------+---------------------------------------------------------+
+| ``GL_POLYGON_OFFSET_LINE``       | :c:func:`glPolygonOffset`                               |
++----------------------------------+---------------------------------------------------------+
+| ``GL_POLYGON_OFFSET_POINT``      | :c:func:`glPolygonOffset`                               |
++----------------------------------+---------------------------------------------------------+
+| ``GL_PROGRAM_POINT_SIZE``        | :c:func:`glEnable`                                      |
++----------------------------------+---------------------------------------------------------+
+| ``GL_PRIMITIVE_RESTART``         | :c:func:`glEnable`\ , :c:func:`glPrimitiveRestartIndex` |
++----------------------------------+---------------------------------------------------------+
+| ``GL_SAMPLE_ALPHA_TO_COVERAGE``  | :c:func:`glSampleCoverage`                              |
++----------------------------------+---------------------------------------------------------+
+| ``GL_SAMPLE_ALPHA_TO_ONE``       | :c:func:`glSampleCoverage`                              |
++----------------------------------+---------------------------------------------------------+
+| ``GL_SAMPLE_COVERAGE``           | :c:func:`glSampleCoverage`                              |
++----------------------------------+---------------------------------------------------------+
+| ``GL_SAMPLE_MASK``               | :c:func:`glEnable`                                      |
++----------------------------------+---------------------------------------------------------+
+| ``GL_SCISSOR_TEST``              | :c:func:`glScissor`                                     |
++----------------------------------+---------------------------------------------------------+
+| ``GL_STENCIL_TEST``              | :c:func:`glStencilFunc`\ , :c:func:`glStencilOp`        |
++----------------------------------+---------------------------------------------------------+
+| ``GL_TEXTURE_CUBEMAP_SEAMLESS``  | :c:func:`glEnable`                                      |
++----------------------------------+---------------------------------------------------------+
+
+
+.. note::
+
+
+   If an error is generated,
+   :c:func:`glIsEnabled` and :c:func:`glIsEnabledi` return ``GL_FALSE``\ .
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_ENUM`` is generated if *cap* is not an accepted value.
+* ``GL_INVALID_VALUE`` is generated by :c:func:`glIsEnabledi` if *index* is outside the valid range for the indexed state *cap*\ .
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glIsEnabled'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. (\ c\ )2010-2011 Khronos Group. SGI Free Software B License.
+

@@ -1,0 +1,247 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glBeginQuery &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glBeginQueryIndexed" href="glBeginQueryIndexed.html" />
+    <link rel="prev" title="function glBeginConditionalRender" href="glBeginConditionalRender.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glBeginQueryIndexed.html" title="function glBeginQueryIndexed"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glBeginConditionalRender.html" title="function glBeginConditionalRender"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glbeginquery">
+<h1>function <cite>glBeginQuery</cite><a class="headerlink" href="#function-glbeginquery" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Delimit the boundaries of a query object</p>
+<dl class="function">
+<dt id="glBeginQuery">
+<tt class="descname">glBeginQuery</tt><big>(</big><big>)</big><a class="headerlink" href="#glBeginQuery" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>target</strong> &#8211; Specifies the target type of query object established between
+<a class="reference internal" href="#glBeginQuery" title="glBeginQuery"><tt class="xref c c-func docutils literal"><span class="pre">glBeginQuery()</span></tt></a> and the subsequent <a class="reference internal" href="#glEndQuery" title="glEndQuery"><tt class="xref c c-func docutils literal"><span class="pre">glEndQuery()</span></tt></a>.
+The symbolic constant must be one of <tt class="docutils literal"><span class="pre">GL_SAMPLES_PASSED</span></tt>, <tt class="docutils literal"><span class="pre">GL_ANY_SAMPLES_PASSED</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_PRIMITIVES_GENERATED</span></tt>, <tt class="docutils literal"><span class="pre">GL_TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN</span></tt>, or
+<tt class="docutils literal"><span class="pre">GL_TIME_ELAPSED</span></tt>.</li>
+<li><strong>id</strong> &#8211; Specifies the name of a query object.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glBeginQuery</tt><big>(</big>GLenum <em>&nbsp;target</em>, GLuint <em>&nbsp;id</em><big>)</big></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="glEndQuery">
+void <tt class="descname">glEndQuery</tt><big>(</big>GLenum <em>&nbsp;target</em><big>)</big><a class="headerlink" href="#glEndQuery" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glDeleteQueries.html#glDeleteQueries" title="glDeleteQueries"><tt class="xref c c-func docutils literal"><span class="pre">glDeleteQueries()</span></tt></a>,
+<a class="reference internal" href="glGenQueries.html#glGenQueries" title="glGenQueries"><tt class="xref c c-func docutils literal"><span class="pre">glGenQueries()</span></tt></a>,
+<a class="reference internal" href="glGetQueryiv.html#glGetQueryiv" title="glGetQueryiv"><tt class="xref c c-func docutils literal"><span class="pre">glGetQueryiv()</span></tt></a>,
+<a class="reference internal" href="glGetQueryObject.html#glGetQueryObject" title="glGetQueryObject"><tt class="xref c c-func docutils literal"><span class="pre">glGetQueryObject()</span></tt></a>,
+<a class="reference internal" href="glIsQuery.html#glIsQuery" title="glIsQuery"><tt class="xref c c-func docutils literal"><span class="pre">glIsQuery()</span></tt></a></p>
+</div>
+<p class="rubric">Parameters</p>
+<blockquote>
+<div><p><em>target</em></p>
+<blockquote>
+<div>Specifies the target type of query object to be concluded.
+The symbolic constant must be one of <tt class="docutils literal"><span class="pre">GL_SAMPLES_PASSED</span></tt>, <tt class="docutils literal"><span class="pre">GL_ANY_SAMPLES_PASSED</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_PRIMITIVES_GENERATED</span></tt>, <tt class="docutils literal"><span class="pre">GL_TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN</span></tt>, or
+<tt class="docutils literal"><span class="pre">GL_TIME_ELAPSED</span></tt>.</div></blockquote>
+</div></blockquote>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glBeginQuery" title="glBeginQuery"><tt class="xref c c-func docutils literal"><span class="pre">glBeginQuery()</span></tt></a> and <a class="reference internal" href="#glEndQuery" title="glEndQuery"><tt class="xref c c-func docutils literal"><span class="pre">glEndQuery()</span></tt></a> delimit the
+boundaries of a query object. <em>query</em> must be a name previously returned from a call to
+<a class="reference internal" href="glGenQueries.html#glGenQueries" title="glGenQueries"><tt class="xref c c-func docutils literal"><span class="pre">glGenQueries()</span></tt></a>. If a query object with name <em>id</em>
+does not yet exist it is created with the type determined by <em>target</em>. <em>target</em> must
+be one of <tt class="docutils literal"><span class="pre">GL_SAMPLES_PASSED</span></tt>, <tt class="docutils literal"><span class="pre">GL_ANY_SAMPLES_PASSED</span></tt>, <tt class="docutils literal"><span class="pre">GL_PRIMITIVES_GENERATED</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN</span></tt>, or <tt class="docutils literal"><span class="pre">GL_TIME_ELAPSED</span></tt>. The behavior of the query
+object depends on its type and is as follows.</p>
+<p>If <em>target</em> is <tt class="docutils literal"><span class="pre">GL_SAMPLES_PASSED</span></tt>, <em>id</em> must be an unused name,
+or the name of an existing occlusion query object.
+When <a class="reference internal" href="#glBeginQuery" title="glBeginQuery"><tt class="xref c c-func docutils literal"><span class="pre">glBeginQuery()</span></tt></a> is executed, the query object&#8217;s samples-passed counter is reset to 0.  Subsequent
+rendering will increment the counter for every sample that passes the depth test.  If the value of <tt class="docutils literal"><span class="pre">GL_SAMPLE_BUFFERS</span></tt>
+is 0, then the samples-passed count is incremented by 1 for each fragment. If the value of <tt class="docutils literal"><span class="pre">GL_SAMPLE_BUFFERS</span></tt>
+is 1, then the samples-passed count is incremented by the number of samples whose coverage bit is set. However, implementations, at their
+discression may instead increase the samples-passed count by the value of <tt class="docutils literal"><span class="pre">GL_SAMPLES</span></tt> if any sample in the fragment
+is covered. When <a class="reference internal" href="#glEndQuery" title="glEndQuery"><tt class="xref c c-func docutils literal"><span class="pre">glEndQuery()</span></tt></a>
+is executed, the samples-passed counter is assigned to the query object&#8217;s result value.  This value can be queried by
+calling <a class="reference internal" href="glGetQueryObject.html#glGetQueryObject" title="glGetQueryObject"><tt class="xref c c-func docutils literal"><span class="pre">glGetQueryObject()</span></tt></a> with <em>pname</em>
+<tt class="docutils literal"><span class="pre">GL_QUERY_RESULT</span></tt>.</p>
+<p>If <em>target</em> is <tt class="docutils literal"><span class="pre">GL_ANY_SAMPLES_PASSED</span></tt>, <em>id</em> must be an unused name,
+or the name of an existing boolean occlusion query object.
+When <a class="reference internal" href="#glBeginQuery" title="glBeginQuery"><tt class="xref c c-func docutils literal"><span class="pre">glBeginQuery()</span></tt></a> is executed, the query object&#8217;s samples-passed flag is reset to <tt class="docutils literal"><span class="pre">GL_FALSE</span></tt>.
+Subsequent rendering causes the flag to be set to <tt class="docutils literal"><span class="pre">GL_TRUE</span></tt> if any sample passes the depth test.  When
+<a class="reference internal" href="#glEndQuery" title="glEndQuery"><tt class="xref c c-func docutils literal"><span class="pre">glEndQuery()</span></tt></a> is executed, the samples-passed flag is assigned to the query object&#8217;s result value.  This value can
+be queried by calling <a class="reference internal" href="glGetQueryObject.html#glGetQueryObject" title="glGetQueryObject"><tt class="xref c c-func docutils literal"><span class="pre">glGetQueryObject()</span></tt></a> with <em>pname</em>
+<tt class="docutils literal"><span class="pre">GL_QUERY_RESULT</span></tt>.</p>
+<p>If <em>target</em> is <tt class="docutils literal"><span class="pre">GL_PRIMITIVES_GENERATED</span></tt>, <em>id</em> must be an unused
+name, or the name of an existing primitive query object previously bound to the <tt class="docutils literal"><span class="pre">GL_PRIMITIVES_GENERATED</span></tt> query binding.
+When <a class="reference internal" href="#glBeginQuery" title="glBeginQuery"><tt class="xref c c-func docutils literal"><span class="pre">glBeginQuery()</span></tt></a> is executed, the query object&#8217;s primitives-generated counter is reset to 0.  Subsequent
+rendering will increment the counter once for every vertex that is emitted from the geometry shader, or from the vertex shader if
+no geometry shader is present.  When <a class="reference internal" href="#glEndQuery" title="glEndQuery"><tt class="xref c c-func docutils literal"><span class="pre">glEndQuery()</span></tt></a> is executed, the primitives-generated counter is assigned to
+the query object&#8217;s result value.  This value can be queried by calling <a class="reference internal" href="glGetQueryObject.html#glGetQueryObject" title="glGetQueryObject"><tt class="xref c c-func docutils literal"><span class="pre">glGetQueryObject()</span></tt></a> with <em>pname</em>
+<tt class="docutils literal"><span class="pre">GL_QUERY_RESULT</span></tt>.</p>
+<p>If <em>target</em> is <tt class="docutils literal"><span class="pre">GL_TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN</span></tt>, <em>id</em> must be
+an unused name, or the name of an existing primitive query object previously bound to the <tt class="docutils literal"><span class="pre">GL_TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN</span></tt>
+query binding. When <a class="reference internal" href="#glBeginQuery" title="glBeginQuery"><tt class="xref c c-func docutils literal"><span class="pre">glBeginQuery()</span></tt></a> is executed, the query object&#8217;s primitives-written counter is reset to 0.  Subsequent
+rendering will increment the counter once for every vertex that is written into the bound transform feedback buffer(s).  If transform feedback
+mode is not activated between the call to <a class="reference internal" href="#glBeginQuery" title="glBeginQuery"><tt class="xref c c-func docutils literal"><span class="pre">glBeginQuery()</span></tt></a> and <a class="reference internal" href="#glEndQuery" title="glEndQuery"><tt class="xref c c-func docutils literal"><span class="pre">glEndQuery()</span></tt></a>, the counter will not be
+incremented.  When <a class="reference internal" href="#glEndQuery" title="glEndQuery"><tt class="xref c c-func docutils literal"><span class="pre">glEndQuery()</span></tt></a> is executed, the primitives-written counter is assigned to
+the query object&#8217;s result value.  This value can be queried by calling <a class="reference internal" href="glGetQueryObject.html#glGetQueryObject" title="glGetQueryObject"><tt class="xref c c-func docutils literal"><span class="pre">glGetQueryObject()</span></tt></a> with <em>pname</em>
+<tt class="docutils literal"><span class="pre">GL_QUERY_RESULT</span></tt>.</p>
+<p>If <em>target</em> is <tt class="docutils literal"><span class="pre">GL_TIME_ELAPSED</span></tt>, <em>id</em> must be
+an unused name, or the name of an existing timer query object previously bound to the <tt class="docutils literal"><span class="pre">GL_TIME_ELAPSED</span></tt>
+query binding. When <a class="reference internal" href="#glBeginQuery" title="glBeginQuery"><tt class="xref c c-func docutils literal"><span class="pre">glBeginQuery()</span></tt></a> is executed, the query object&#8217;s time counter is reset to 0.  When <a class="reference internal" href="#glEndQuery" title="glEndQuery"><tt class="xref c c-func docutils literal"><span class="pre">glEndQuery()</span></tt></a>
+is executed, the elapsed server time that has passed since the call to <a class="reference internal" href="#glBeginQuery" title="glBeginQuery"><tt class="xref c c-func docutils literal"><span class="pre">glBeginQuery()</span></tt></a> is written into the query object&#8217;s
+time counter.  This value can be queried by calling <a class="reference internal" href="glGetQueryObject.html#glGetQueryObject" title="glGetQueryObject"><tt class="xref c c-func docutils literal"><span class="pre">glGetQueryObject()</span></tt></a> with <em>pname</em>
+<tt class="docutils literal"><span class="pre">GL_QUERY_RESULT</span></tt>.</p>
+<p>Querying the <tt class="docutils literal"><span class="pre">GL_QUERY_RESULT</span></tt> implicitly flushes the GL pipeline until the rendering delimited by the
+query object has completed and the result is available. <tt class="docutils literal"><span class="pre">GL_QUERY_RESULT_AVAILABLE</span></tt> can be queried to
+determine if the result is immediately available or if the rendering is not yet complete.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>If the query target&#8217;s count exceeds the maximum value representable in the number of available bits, as reported by
+<a class="reference internal" href="glGetQueryiv.html#glGetQueryiv" title="glGetQueryiv"><tt class="xref c c-func docutils literal"><span class="pre">glGetQueryiv()</span></tt></a> with <em>target</em> set to the
+appropriate query target and <em>pname</em>
+<tt class="docutils literal"><span class="pre">GL_QUERY_COUNTER_BITS</span></tt>, the count becomes undefined.</p>
+<p>An implementation may support 0 bits in its counter, in which case query results are always undefined
+and essentially useless.</p>
+<p>When <tt class="docutils literal"><span class="pre">GL_SAMPLE_BUFFERS</span></tt> is 0, the samples-passed counter of an occlusion query will increment once for each
+fragment that passes the depth test.  When <tt class="docutils literal"><span class="pre">GL_SAMPLE_BUFFERS</span></tt> is 1, an implementation may either increment
+the samples-passed counter individually for each sample of a fragment that passes the depth test, or it may choose to increment
+the counter for all samples of a fragment if any one of them passes the depth test.</p>
+<p class="last">The query targets <tt class="docutils literal"><span class="pre">GL_ANY_SAMPLES_PASSED</span></tt>, and <tt class="docutils literal"><span class="pre">GL_TIME_ELAPSED</span></tt> are availale only if
+the GL version is 3.3 or higher.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_ENUM</span></tt> is generated if <em>target</em> is not one of the accepted tokens.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <a class="reference internal" href="#glBeginQuery" title="glBeginQuery"><tt class="xref c c-func docutils literal"><span class="pre">glBeginQuery()</span></tt></a> is executed while a query object of the same <em>target</em> is already active.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <a class="reference internal" href="#glEndQuery" title="glEndQuery"><tt class="xref c c-func docutils literal"><span class="pre">glEndQuery()</span></tt></a> is executed when a query object of the same <em>target</em> is not active.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <em>id</em> is 0.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <em>id</em> is the name of an already active query object.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <em>id</em> refers to an existing query object whose type does not does not match <em>target</em>.</li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)2005 Addison-Wesley. Open Publication License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glBeginConditionalRender.html"
+                        title="previous chapter">function <cite>glBeginConditionalRender</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glBeginQueryIndexed.html"
+                        title="next chapter">function <cite>glBeginQueryIndexed</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glBeginQuery.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glBeginQueryIndexed.html" title="function glBeginQueryIndexed"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glBeginConditionalRender.html" title="function glBeginConditionalRender"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

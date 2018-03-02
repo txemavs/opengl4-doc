@@ -1,0 +1,169 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glFlushMappedBufferRange &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glFramebufferRenderbuffer" href="glFramebufferRenderbuffer.html" />
+    <link rel="prev" title="function glFlush" href="glFlush.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glFramebufferRenderbuffer.html" title="function glFramebufferRenderbuffer"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glFlush.html" title="function glFlush"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glflushmappedbufferrange">
+<h1>function <cite>glFlushMappedBufferRange</cite><a class="headerlink" href="#function-glflushmappedbufferrange" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Indicate modifications to a range of a mapped buffer</p>
+<dl class="function">
+<dt id="glFlushMappedBufferRange">
+<tt class="descname">glFlushMappedBufferRange</tt><big>(</big><big>)</big><a class="headerlink" href="#glFlushMappedBufferRange" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>target</strong> &#8211; Specifies the target of the flush operation. <em>target</em> must be <tt class="docutils literal"><span class="pre">GL_ARRAY_BUFFER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_COPY_READ_BUFFER</span></tt>, <tt class="docutils literal"><span class="pre">GL_COPY_WRITE_BUFFER</span></tt>, <tt class="docutils literal"><span class="pre">GL_ELEMENT_ARRAY_BUFFER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_PIXEL_PACK_BUFFER</span></tt>, <tt class="docutils literal"><span class="pre">GL_PIXEL_UNPACK_BUFFER</span></tt>, <tt class="docutils literal"><span class="pre">GL_TEXTURE_BUFFER</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TRANSFORM_FEEDBACK_BUFFER</span></tt>, or <tt class="docutils literal"><span class="pre">GL_UNIFORM_BUFFER</span></tt>.</li>
+<li><strong>offset</strong> &#8211; Specifies the start of the buffer subrange, in basic machine units.</li>
+<li><strong>length</strong> &#8211; Specifies the length of the buffer subrange, in basic machine units.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+GLsync <tt class="descname">glFlushMappedBufferRange</tt><big>(</big>GLenum <em>&nbsp;target</em>, GLintptr <em>&nbsp;offset</em>, GLsizeiptr <em>&nbsp;length</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glMapBufferRange.html#glMapBufferRange" title="glMapBufferRange"><tt class="xref c c-func docutils literal"><span class="pre">glMapBufferRange()</span></tt></a>,
+<a class="reference internal" href="glMapBuffer.html#glMapBuffer" title="glMapBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glMapBuffer()</span></tt></a>,
+<a class="reference internal" href="glMapBuffer.html#glUnmapBuffer" title="glUnmapBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glUnmapBuffer()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glFlushMappedBufferRange" title="glFlushMappedBufferRange"><tt class="xref c c-func docutils literal"><span class="pre">glFlushMappedBufferRange()</span></tt></a> indicates that modifications have been made to a range of a mapped buffer.
+The buffer must previously have been mapped with the <tt class="docutils literal"><span class="pre">GL_MAP_FLUSH_EXPLICIT</span></tt> flag. <em>offset</em>
+and <em>length</em> indicate the modified subrange of the mapping, in basic units. The specified subrange to flush
+is relative to the start of the currently mapped range of the buffer. <a class="reference internal" href="#glFlushMappedBufferRange" title="glFlushMappedBufferRange"><tt class="xref c c-func docutils literal"><span class="pre">glFlushMappedBufferRange()</span></tt></a> may be called
+multiple times to indicate distinct subranges of the mapping which require flushing.</p>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>offset</em> or <em>length</em> is negative, or if <em>offset</em> + <em>length</em> exceeds the size of the mapping.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if zero is bound to <em>target</em>.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if the buffer bound to <em>target</em> is not mapped, or is mapped without the <tt class="docutils literal"><span class="pre">GL_MAP_FLUSH_EXPLICIT</span></tt> flag.</li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)2010 Khronos Group. Open Publication License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glFlush.html"
+                        title="previous chapter">function <cite>glFlush</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glFramebufferRenderbuffer.html"
+                        title="next chapter">function <cite>glFramebufferRenderbuffer</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glFlushMappedBufferRange.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glFramebufferRenderbuffer.html" title="function glFramebufferRenderbuffer"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glFlush.html" title="function glFlush"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,152 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:28
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glXQueryDrawable.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glXQueryDrawable`
+---------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Returns an attribute assoicated with a GLX drawable
+
+.. c:function:: glXQueryDrawable
+
+
+         :param dpy:
+
+                  Specifies the connection to the X server.
+
+         :param draw:
+
+                  Specifies the GLX drawable to be queried.
+
+         :param attribute:
+
+                  Specifies the attribute to be returned.  Must be one of
+                  ``GLX_WIDTH``\ ,
+                  ``GLX_HEIGHT``\ ,
+                  ``GLX_PRESERVED_CONTENTS``\ ,
+                  ``GLX_LARGEST_PBUFFER``\ , or
+                  ``GLX_FBCONFIG_ID``\ .
+
+         :param value:
+
+                  Contains the return value for
+                  *attribute*\ .
+
+.. rubric:: Specification
+
+.. c:function:: int glXQueryDrawable(Display *  dpy, GLXDrawable  draw, int  attribute, unsigned int *  value)
+   :noindex: 
+
+
+.. seealso::
+
+
+   :c:func:`glXCreateWindow`\ ,
+   :c:func:`glXCreatePixmap`\ ,
+   :c:func:`glXCreatePbuffer`\ ,
+   :c:func:`glXGetFBConfigAttrib`\ ,
+   :c:func:`glXChooseFBConfig`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glXQueryDrawable` sets
+*value* to the value of
+*attribute* with respect to the GLXDrawable
+*draw*\ .
+
+
+*attribute* may be one of the following:
+
+
+         ``GLX_WIDTH``
+
+
+               Returns the width of *ctx*\ .
+
+
+         ``GLX_HEIGHT``
+
+
+               Returns the height of *ctx*\ .
+
+
+         ``GLX_PRESERVED_CONTENTS``
+
+
+               Returns ``True`` if the contents
+               of a GLXPbuffer are preserved when a resource
+               conflict occurs; ``False`` otherwise.
+
+
+         ``GLX_LARGEST_PBUFFER``
+
+
+               Returns the value set when
+               :c:func:`glXCreatePbuffer` was called to
+               create the GLXPbuffer. If
+               ``False`` is returned, then the
+               call to :c:func:`glXCreatePbuffer` will
+               fail to create a GLXPbuffer if the requested size
+               is larger than the implementation maximum or
+               available resources.  If ``True``
+               is returned, a GLXPbuffer of the maximum availble
+               size (if less than the requested width and height)
+               is created.
+
+
+``GLX_FBCONFIG_ID``
+
+
+Returns the XID for *draw*\ .
+
+
+If *draw* is a GLXWindow or GLXPixmap and
+*attribute* is set to
+``GLX_PRESERVED_CONTENTS`` or
+``GLX_LARGETST_PBUFFER``\ , the contents of
+*value* are undefined.  If
+*attribute* is not one of the attributes
+listed above, the contents of *value* are
+unedfined.
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* A ``GLXBadDrawable`` is generated if *draw* is not a valid GLXDrawable.
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glXQueryDrawable'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

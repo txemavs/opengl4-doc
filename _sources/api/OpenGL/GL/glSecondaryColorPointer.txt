@@ -1,0 +1,85 @@
+.. nabla.opengl-sphinx project at code.google.com
+
+.. license http://opencontent.org/openpub/
+
+function `glSecondaryColorPointer`
+----------------------------------
+
+.. source file man/glSecondaryColorPointer
+
+.. currentmodule:: OpenGL.GL
+
+Define an array of secondary colors
+
+.. c:function:: glSecondaryColorPointer
+.. c:function:: void glSecondaryColorPointer(GLint  size, GLenum  type, GLsizei  stride, const GLvoid *  pointer)
+   :noindex: 
+
+
+   
+   :param size:
+      Specifies the number of components per color. Must be 3.
+   
+   :param type:
+      Specifies the data type of each color component in the array. Symbolic constants ``GL_BYTE``, ``GL_UNSIGNED_BYTE``, ``GL_SHORT``, ``GL_UNSIGNED_SHORT``, ``GL_INT``, ``GL_UNSIGNED_INT``, ``GL_FLOAT``, or ``GL_DOUBLE`` are accepted. The initial value is ``GL_FLOAT``.
+   
+   :param stride:
+      Specifies the byte offset between consecutive colors. If *stride* is 0, the colors are understood to be tightly packed in the array. The initial value is 0.
+   
+   :param pointer:
+      Specifies a pointer to the first component of the first color element in the array. The initial value is 0.
+   
+
+.. seealso::
+
+   
+   :c:func:`glArrayElement`, :c:func:`glBindBuffer`, :c:func:`glColorPointer`, :c:func:`glDisableClientState`, :c:func:`glDrawArrays`, :c:func:`glDrawElements`, :c:func:`glDrawRangeElements`, :c:func:`glEdgeFlagPointer`, :c:func:`glEnableClientState`, :c:func:`glFogCoordPointer`, :c:func:`glIndexPointer`, :c:func:`glInterleavedArrays`, :c:func:`glMultiDrawArrays`, :c:func:`glMultiDrawElements`, :c:func:`glNormalPointer`, :c:func:`glPopClientAttrib`, :c:func:`glPushClientAttrib`, :c:func:`glSecondaryColor`, :c:func:`glTexCoordPointer`, :c:func:`glVertexAttribPointer`, :c:func:`glVertexPointer`
+   
+.. rubric:: Description
+
+
+:c:func:`glSecondaryColorPointer` specifies the location and data format of an array of color components to use when rendering. *size* specifies the number of components per color, and must be 3. *type* specifies the data type of each color component, and *stride* specifies the byte stride from one color to the next, allowing vertices and attributes to be packed into a single array or stored in separate arrays.
+
+If a non-zero named buffer object is bound to the ``GL_ARRAY_BUFFER`` target (see :c:func:`glBindBuffer`) while a secondary color array is specified, *pointer* is treated as a byte offset into the buffer object's data store. Also, the buffer object binding (``GL_ARRAY_BUFFER_BINDING``) is saved as secondary color vertex array client-side state (``GL_SECONDARY_COLOR_ARRAY_BUFFER_BINDING``).
+
+When a secondary color array is specified, *size* , *type* , *stride* , and *pointer* are saved as client-side state, in addition to the current vertex array buffer object binding.
+
+To enable and disable the secondary color array, call :c:func:`glEnableClientState` and :c:func:`glDisableClientState` with the argument ``GL_SECONDARY_COLOR_ARRAY``. If enabled, the secondary color array is used when :c:func:`glArrayElement`, :c:func:`glDrawArrays`, :c:func:`glMultiDrawArrays`, :c:func:`glDrawElements`, :c:func:`glMultiDrawElements`, or :c:func:`glDrawRangeElements` is called.
+
+
+**Associated gets:**
+
+
+   * :c:func:`glIsEnabled` with argument ``GL_SECONDARY_COLOR_ARRAY``
+   * :c:func:`glGet` with argument ``GL_SECONDARY_COLOR_ARRAY_SIZE``
+   * :c:func:`glGet` with argument ``GL_SECONDARY_COLOR_ARRAY_TYPE``
+   * :c:func:`glGet` with argument ``GL_SECONDARY_COLOR_ARRAY_STRIDE``
+   * :c:func:`glGet` with argument ``GL_SECONDARY_COLOR_ARRAY_BUFFER_BINDING``
+   * :c:func:`glGet` with argument ``GL_ARRAY_BUFFER_BINDING``
+   * :c:func:`glGetPointerv` with argument ``GL_SECONDARY_COLOR_ARRAY_POINTER``
+
+**Errors:**
+
+   * ``GL_INVALID_VALUE`` is generated if *size* is not 3.
+   * ``GL_INVALID_ENUM`` is generated if *type* is not an accepted value.
+   * ``GL_INVALID_VALUE`` is generated if *stride* is negative.
+
+
+
+.. note::
+
+   * :c:func:`glSecondaryColorPointer` is available only if the GL version is 1.4 or greater.
+   * Secondary colors are not supported for interleaved vertex array formats (see :c:func:`glInterleavedArrays`).
+   * The secondary color array is initially disabled and isn't accessed when :c:func:`glArrayElement`, :c:func:`glDrawElements`, :c:func:`glDrawRangeElements`, :c:func:`glDrawArrays`, :c:func:`glMultiDrawArrays`, or :c:func:`glMultiDrawElements` is called.
+   * Execution of :c:func:`glSecondaryColorPointer` is not allowed between the execution of :c:func:`glBegin` and the corresponding execution of :c:func:`glEnd`, but an error may or may not be generated. If no error is generated, the operation is undefined.
+   * :c:func:`glSecondaryColorPointer` is typically implemented on the client side.
+   * Secondary color array parameters are client-side state and are therefore not saved or restored by :c:func:`glPushAttrib` and :c:func:`glPopAttrib`. Use :c:func:`glPushClientAttrib` and :c:func:`glPopClientAttrib` instead.
+
+
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (c)2009 Khronos Group.
+

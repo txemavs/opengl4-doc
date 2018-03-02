@@ -1,0 +1,287 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glXSelectEvent &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function glXSwapBuffers" href="glXSwapBuffers.html" />
+    <link rel="prev" title="function glXQueryVersion" href="glXQueryVersion.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glXSwapBuffers.html" title="function glXSwapBuffers"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glXQueryVersion.html" title="function glXQueryVersion"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glxselectevent">
+<h1>function <cite>glXSelectEvent</cite><a class="headerlink" href="#function-glxselectevent" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Select GLX events for a window or a GLX pixel buffer</p>
+<dl class="function">
+<dt id="glXSelectEvent">
+<tt class="descname">glXSelectEvent</tt><big>(</big><big>)</big><a class="headerlink" href="#glXSelectEvent" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>dpy</strong> &#8211; Specifies the connection to the X server.</li>
+<li><strong>draw</strong> &#8211; Specifies a GLX drawable. Must be a GLX pixel buffer or a window.</li>
+<li><strong>event_mask</strong> &#8211; Specifies the events to be returned for <em>draw</em>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glXSelectEvent</tt><big>(</big>Display * <em>&nbsp;dpy</em>, GLXDrawable <em>&nbsp;draw</em>, unsigned long <em>&nbsp;event_mask</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glXCreatePbuffer.html#glXCreatePbuffer" title="glXCreatePbuffer"><tt class="xref c c-func docutils literal"><span class="pre">glXCreatePbuffer()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glXSelectEvent" title="glXSelectEvent"><tt class="xref c c-func docutils literal"><span class="pre">glXSelectEvent()</span></tt></a> sets the GLX event mask for a GLX pixel buffer or a window.
+Calling <a class="reference internal" href="#glXSelectEvent" title="glXSelectEvent"><tt class="xref c c-func docutils literal"><span class="pre">glXSelectEvent()</span></tt></a> overrides any previous event mask that was
+set by the client for <em>draw</em>. Note that it does not affect the
+event masks that other clients may have specified for <em>draw</em> since
+each client rendering to <em>draw</em> has a separate event mask for it.</p>
+<p>Currently, only one GLX event, <tt class="docutils literal"><span class="pre">GLX_PBUFFER_CLOBBER_MASK</span></tt>,
+can be selected. The following data is returned to the client when a
+<tt class="docutils literal"><span class="pre">GLX_PBUFFER_CLOBBER_MASK</span></tt> event occurs:</p>
+<p>typedef struct {</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="44%" />
+<col width="56%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>int <strong>event_type</strong>;</td>
+<td>/* GLX_DAMAGED or GLX_SAVED */</td>
+</tr>
+<tr class="row-even"><td>int <strong>draw_type</strong>;</td>
+<td>/* GLX_WINDOW or GLX_PBUFFER */</td>
+</tr>
+<tr class="row-odd"><td>unsigned long <strong>serial</strong>;</td>
+<td>/* # of last request processed by server */</td>
+</tr>
+<tr class="row-even"><td>Bool <strong>send_event</strong>;</td>
+<td>/* true if this came for SendEvent request */</td>
+</tr>
+<tr class="row-odd"><td>Display <strong>*display</strong>;</td>
+<td>/* display the event was read from */</td>
+</tr>
+<tr class="row-even"><td>GLXDrawable <strong>drawable</strong>;</td>
+<td>/* i.d. of Drawable */</td>
+</tr>
+<tr class="row-odd"><td>unsigned int <strong>buffer_mask</strong>;</td>
+<td>/* mask indicating affected buffers */</td>
+</tr>
+<tr class="row-even"><td>int <strong>x, y</strong>;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>int <strong>width, height</strong>;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>int <strong>count</strong>;</td>
+<td>/* if nonzero, at least this many more */</td>
+</tr>
+</tbody>
+</table>
+<p>} GLXPbufferClobberEvent;
+The valid bit masks used in <strong>buffer_mask</strong> are:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Bitmask</strong></td>
+<td><strong>Corresponding Buffer</strong></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GLX_FRONT_LEFT_BUFFER_BIT</span></tt></td>
+<td>Front left color buffer</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GLX_FRONT_RIGHT_BUFFER_BIT</span></tt></td>
+<td>Front right color buffer</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GLX_BACK_LEFT_BUFFER_BIT</span></tt></td>
+<td>Back left color buffer</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GLX_BACK_RIGHT_BUFFER_BIT</span></tt></td>
+<td>Back right color buffer</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GLX_AUX_BUFFERS_BIT</span></tt></td>
+<td>Auxiliary buffer</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GLX_DEPTH_BUFFER_BIT</span></tt></td>
+<td>Depth buffer</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">GLX_STENCIL_BUFFER_BIT</span></tt></td>
+<td>Stencil buffer</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">GLX_ACCUM_BUFFER_BIT</span></tt></td>
+<td>Accumulation buffer</td>
+</tr>
+</tbody>
+</table>
+<p>A single X server operation can cause several buffer clobber events to be
+sent. (e.g., a single GLX pixel buffer may be damaged and cause multiple
+buffer clobber events to be generated). Each event specifies one
+region of the GLX drawable that was affected by the X Server operation.
+The <strong>buffer_mask</strong> field indicates which color buffers and
+ancillary buffers were affected. All the buffer clobber events
+generated by a single X server action are guaranteed to be
+contiguous in the event queue. The conditions under which this event is
+generated and the <strong>event_type</strong> varies, depending on the type of the
+GLX drawable.</p>
+<p>When the <tt class="docutils literal"><span class="pre">GLX_AUX_BUFFERS_BIT</span></tt> is set in <strong>buffer_mask</strong>, then
+<strong>aux_buffer</strong> is set to indicate which buffer was affected. If more
+than one aux buffer was affected, then additional events are
+generated as part of the same contiguous event group. Each
+additional event will have only the <tt class="docutils literal"><span class="pre">GLX_AUX_BUFFERS_BIT</span></tt> set in
+<strong>buffer_mask</strong>, and the <strong>aux_buffer</strong> field will be set
+appropriately. For nonstereo drawables,
+<tt class="docutils literal"><span class="pre">GLX_FRONT_LEFT_BUFFER_BIT</span></tt> and <tt class="docutils literal"><span class="pre">GLX_BACK_LEFT_BUFFER_BIT</span></tt> are
+used to specify the front and back color buffers.</p>
+<p>For preserved GLX pixel buffers, a buffer clobber event with
+type <tt class="docutils literal"><span class="pre">GLX_SAVED</span></tt> is generated whenever the contents of the
+GLX pixel buffer is moved out of offscreen memory. The event(s) describes which
+portions of the GLX pixel buffer were affected. Clients who receive many
+buffer clobber events, referring to different save actions,
+should consider freeing the GLX pixel buffer resource in order to prevent
+the system from thrashing due to insufficient resources.</p>
+<p>For an unpreserved GLXPbuffer, a buffer clobber event, with type
+<tt class="docutils literal"><span class="pre">GLX_DAMAGED</span></tt>, is generated whenever a portion of the GLX pixel buffer
+becomes invalid. The client may wish to regenerate the invalid portions
+of the GLX pixel buffer.</p>
+<p>For Windows, buffer clobber events, with type <tt class="docutils literal"><span class="pre">GLX_SAVED</span></tt>, occur
+whenever an ancillary buffer, associated with the window, gets clobbered
+or moved out of off-screen memory. The event contains information
+indicating which color buffers and ancillary buffers(emand which portions
+of those buffers(emwere affected.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><a class="reference internal" href="#glXSelectEvent" title="glXSelectEvent"><tt class="xref c c-func docutils literal"><span class="pre">glXSelectEvent()</span></tt></a> is available only if the GLX version is 1.3 or greater.</p>
+<p class="last">If the GLX version is 1.1 or 1.0, the GL version must be 1.0.
+If the GLX version is 1.2, then the GL version must be 1.1.
+If the GLX version is 1.3, then the GL version must be 1.2.</p>
+</div>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GLXBadDrawable</span></tt> is generated if <em>draw</em> is not a valid window or a valid GLX pixel buffer.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glXGetSelectedEvent.html#glXGetSelectedEvent" title="glXGetSelectedEvent"><tt class="xref c c-func docutils literal"><span class="pre">glXGetSelectedEvent()</span></tt></a></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glXQueryVersion.html"
+                        title="previous chapter">function <cite>glXQueryVersion</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glXSwapBuffers.html"
+                        title="next chapter">function <cite>glXSwapBuffers</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/glXSelectEvent.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glXSwapBuffers.html" title="function glXSwapBuffers"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glXQueryVersion.html" title="function glXQueryVersion"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,199 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function gluPickMatrix &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.1 Reference" href="../../../index_man1.html" />
+    <link rel="next" title="function gluProject" href="gluProject.html" />
+    <link rel="prev" title="function gluPerspective" href="gluPerspective.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="gluProject.html" title="function gluProject"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="gluPerspective.html" title="function gluPerspective"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" accesskey="U">OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glupickmatrix">
+<h1>function <cite>gluPickMatrix</cite><a class="headerlink" href="#function-glupickmatrix" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 1 Vol. 3G</p>
+</div>
+<p>Define a picking region</p>
+<dl class="function">
+<dt id="gluPickMatrix">
+<tt class="descname">gluPickMatrix</tt><big>(</big><big>)</big><a class="headerlink" href="#gluPickMatrix" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> &#8211; </li>
+<li><strong>y</strong> &#8211; Specify the center of a picking region in window coordinates.</li>
+<li><strong>delX</strong> &#8211; </li>
+<li><strong>delY</strong> &#8211; Specify the width and height, respectively, of the picking region in window
+coordinates.</li>
+<li><strong>viewport</strong> &#8211; Specifies the current viewport (as from a <a class="reference internal" href="../man4/glGet.html#glGetIntegerv" title="glGetIntegerv"><tt class="xref c c-func docutils literal"><span class="pre">glGetIntegerv()</span></tt></a> call).</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">gluPickMatrix</tt><big>(</big>GLdouble <em>&nbsp;x</em>, GLdouble <em>&nbsp;y</em>, GLdouble <em>&nbsp;delX</em>, GLdouble <em>&nbsp;delY</em>, GLint * <em>&nbsp;viewport</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="gluPerspective.html#gluPerspective" title="gluPerspective"><tt class="xref c c-func docutils literal"><span class="pre">gluPerspective()</span></tt></a>,
+<a class="reference internal" href="../man4/glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a>,
+<a class="reference internal" href="glLoadIdentity.html#glLoadIdentity" title="glLoadIdentity"><tt class="xref c c-func docutils literal"><span class="pre">glLoadIdentity()</span></tt></a>,
+<a class="reference internal" href="glMultMatrix.html#glMultMatrix" title="glMultMatrix"><tt class="xref c c-func docutils literal"><span class="pre">glMultMatrix()</span></tt></a>,
+<a class="reference internal" href="glRenderMode.html#glRenderMode" title="glRenderMode"><tt class="xref c c-func docutils literal"><span class="pre">glRenderMode()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#gluPickMatrix" title="gluPickMatrix"><tt class="xref c c-func docutils literal"><span class="pre">gluPickMatrix()</span></tt></a> creates a projection matrix that can be used to restrict drawing
+to a small region of the viewport.
+This is typically useful to
+determine what objects are being drawn near the cursor.
+Use <a class="reference internal" href="#gluPickMatrix" title="gluPickMatrix"><tt class="xref c c-func docutils literal"><span class="pre">gluPickMatrix()</span></tt></a> to
+restrict drawing to a small region around the cursor.
+Then,
+enter selection mode (with <a class="reference internal" href="glRenderMode.html#glRenderMode" title="glRenderMode"><tt class="xref c c-func docutils literal"><span class="pre">glRenderMode()</span></tt></a>) and rerender the scene.
+All primitives that would have been drawn near
+the cursor are identified and stored in the selection buffer.</p>
+<p>The matrix created by <a class="reference internal" href="#gluPickMatrix" title="gluPickMatrix"><tt class="xref c c-func docutils literal"><span class="pre">gluPickMatrix()</span></tt></a> is multiplied by the current matrix just
+as if <a class="reference internal" href="glMultMatrix.html#glMultMatrix" title="glMultMatrix"><tt class="xref c c-func docutils literal"><span class="pre">glMultMatrix()</span></tt></a> is called with the generated matrix.
+To effectively use the generated pick matrix for picking,
+first call <a class="reference internal" href="glLoadIdentity.html#glLoadIdentity" title="glLoadIdentity"><tt class="xref c c-func docutils literal"><span class="pre">glLoadIdentity()</span></tt></a> to load an identity matrix onto the
+perspective matrix stack.
+Then call <a class="reference internal" href="#gluPickMatrix" title="gluPickMatrix"><tt class="xref c c-func docutils literal"><span class="pre">gluPickMatrix()</span></tt></a>,
+and, finally, call a command (such as <a class="reference internal" href="gluPerspective.html#gluPerspective" title="gluPerspective"><tt class="xref c c-func docutils literal"><span class="pre">gluPerspective()</span></tt></a>)
+to multiply the perspective matrix by the pick matrix.</p>
+<p>When using <a class="reference internal" href="#gluPickMatrix" title="gluPickMatrix"><tt class="xref c c-func docutils literal"><span class="pre">gluPickMatrix()</span></tt></a> to pick NURBS, be careful to turn off the NURBS
+property
+<tt class="docutils literal"><span class="pre">GLU_AUTO_LOAD_MATRIX</span></tt>.  If <tt class="docutils literal"><span class="pre">GLU_AUTO_LOAD_MATRIX</span></tt> is not
+turned off, then any NURBS surface rendered is subdivided differently with
+the pick matrix than the way it was subdivided without the pick matrix.</p>
+<p class="rubric">Example</p>
+<p>When rendering a scene as follows:</p>
+<div class="highlight-c"><pre>glMatrixMode(GL_PROJECTION);
+glLoadIdentity();
+gluPerspective(...);
+glMatrixMode(GL_MODELVIEW);
+/\* Draw the scene \*/</pre>
+</div>
+<p>a portion of the viewport can be selected as a pick region like this:</p>
+<div class="highlight-c"><pre>glMatrixMode(GL_PROJECTION);
+glLoadIdentity();
+gluPickMatrix(x, y, width, height, viewport);
+gluPerspective(...);
+glMatrixMode(GL_MODELVIEW);
+/\* Draw the scene \*/</pre>
+</div>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="gluPerspective.html"
+                        title="previous chapter">function <cite>gluPerspective</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="gluProject.html"
+                        title="next chapter">function <cite>gluProject</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man/gluPickMatrix.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="gluProject.html" title="function gluProject"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="gluPerspective.html" title="function gluPerspective"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man1.html" >OpenGL v.1 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

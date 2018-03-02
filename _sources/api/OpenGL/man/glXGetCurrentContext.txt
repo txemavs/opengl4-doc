@@ -1,0 +1,71 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:28
+.. *****************************************************************************
+
+.. following information was extracted from file 'man/glXGetCurrentContext.xml'
+.. (c)1991-2006 Silicon Graphics, Inc.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man
+
+function `glXGetCurrentContext`
+-------------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 1 Vol. 3G
+
+Return the current context
+
+.. c:function:: glXGetCurrentContext
+
+
+.. rubric:: Specification
+
+.. c:function:: GLXContext glXGetCurrentContext()
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glXCreateContext`\ ,
+            :c:func:`glXGetCurrentDisplay`\ ,
+            :c:func:`glXGetCurrentDrawable`\ ,
+            :c:func:`glXMakeCurrent`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+:c:func:`glXGetCurrentContext` returns the current context,
+as specified by :c:func:`glXMakeCurrent`\ .
+If there is no current context,
+``NULL`` is returned.
+
+
+:c:func:`glXGetCurrentContext` returns client-side information.
+It does not make a round trip to the server.
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glXGetCurrentContext'>
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. SGI Free Software B License.
+

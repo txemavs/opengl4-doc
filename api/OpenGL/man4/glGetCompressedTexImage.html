@@ -1,0 +1,214 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>function glGetCompressedTexImage &mdash; OpenGL documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="top" title="OpenGL documentation" href="../../../index.html" />
+    <link rel="up" title="OpenGL v.4 Reference" href="../../../index_man4.html" />
+    <link rel="next" title="function glGetError" href="glGetError.html" />
+    <link rel="prev" title="function glGetBufferSubData" href="glGetBufferSubData.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="glGetError.html" title="function glGetError"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="glGetBufferSubData.html" title="function glGetBufferSubData"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" accesskey="U">OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="function-glgetcompressedteximage">
+<h1>function <cite>glGetCompressedTexImage</cite><a class="headerlink" href="#function-glgetcompressedteximage" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">Version 4 Vol. 3G</p>
+</div>
+<p>Return a compressed texture image</p>
+<dl class="function">
+<dt id="glGetCompressedTexImage">
+<tt class="descname">glGetCompressedTexImage</tt><big>(</big><big>)</big><a class="headerlink" href="#glGetCompressedTexImage" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>target</strong> &#8211; Specifies which texture is to be obtained.
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_1D</span></tt>, <tt class="docutils literal"><span class="pre">GL_TEXTURE_2D</span></tt>, <tt class="docutils literal"><span class="pre">GL_TEXTURE_3D</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_POSITIVE_X</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_NEGATIVE_X</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_POSITIVE_Y</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_NEGATIVE_Y</span></tt>,
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_POSITIVE_Z</span></tt>, and
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_NEGATIVE_Z</span></tt>
+are accepted.</li>
+<li><strong>lod</strong> &#8211; Specifies the level-of-detail number of the desired image.
+Level 0 is the base image level.
+Level
+<span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math></span> is the <span class="mml"><math xmlns='http://www.w3.org/1998/Math/MathML'><mi mathvariant="italic">n</mi></math></span> th
+mipmap reduction image.</li>
+<li><strong>img</strong> &#8211; Returns the compressed texture image.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Specification</p>
+<dl class="function">
+<dt>
+void <tt class="descname">glGetCompressedTexImage</tt><big>(</big>GLenum <em>&nbsp;target</em>, GLint <em>&nbsp;lod</em>, GLvoid * <em>&nbsp;img</em><big>)</big></dt>
+<dd></dd></dl>
+
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="glActiveTexture.html#glActiveTexture" title="glActiveTexture"><tt class="xref c c-func docutils literal"><span class="pre">glActiveTexture()</span></tt></a>,
+<a class="reference internal" href="glCompressedTexImage1D.html#glCompressedTexImage1D" title="glCompressedTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glCompressedTexImage1D()</span></tt></a>,
+<a class="reference internal" href="glCompressedTexImage2D.html#glCompressedTexImage2D" title="glCompressedTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glCompressedTexImage2D()</span></tt></a>,
+<a class="reference internal" href="glCompressedTexImage3D.html#glCompressedTexImage3D" title="glCompressedTexImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glCompressedTexImage3D()</span></tt></a>,
+<a class="reference internal" href="glCompressedTexSubImage1D.html#glCompressedTexSubImage1D" title="glCompressedTexSubImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glCompressedTexSubImage1D()</span></tt></a>,
+<a class="reference internal" href="glCompressedTexSubImage2D.html#glCompressedTexSubImage2D" title="glCompressedTexSubImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glCompressedTexSubImage2D()</span></tt></a>,
+<a class="reference internal" href="glCompressedTexSubImage3D.html#glCompressedTexSubImage3D" title="glCompressedTexSubImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glCompressedTexSubImage3D()</span></tt></a>,
+<a class="reference internal" href="glReadPixels.html#glReadPixels" title="glReadPixels"><tt class="xref c c-func docutils literal"><span class="pre">glReadPixels()</span></tt></a>,
+<a class="reference internal" href="glTexImage1D.html#glTexImage1D" title="glTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage1D()</span></tt></a>,
+<a class="reference internal" href="glTexImage2D.html#glTexImage2D" title="glTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage2D()</span></tt></a>,
+<a class="reference internal" href="glTexImage3D.html#glTexImage3D" title="glTexImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage3D()</span></tt></a>,
+<a class="reference internal" href="glTexParameter.html#glTexParameter" title="glTexParameter"><tt class="xref c c-func docutils literal"><span class="pre">glTexParameter()</span></tt></a>,
+<a class="reference internal" href="glTexSubImage1D.html#glTexSubImage1D" title="glTexSubImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage1D()</span></tt></a>,
+<a class="reference internal" href="glTexSubImage2D.html#glTexSubImage2D" title="glTexSubImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage2D()</span></tt></a>,
+<a class="reference internal" href="glTexSubImage3D.html#glTexSubImage3D" title="glTexSubImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexSubImage3D()</span></tt></a></p>
+</div>
+<p class="rubric">Description</p>
+<p><a class="reference internal" href="#glGetCompressedTexImage" title="glGetCompressedTexImage"><tt class="xref c c-func docutils literal"><span class="pre">glGetCompressedTexImage()</span></tt></a> returns the compressed texture image associated with <em>target</em> and <em>lod</em>
+into <em>img</em>. <em>img</em> should be an array of
+<tt class="docutils literal"><span class="pre">GL_TEXTURE_COMPRESSED_IMAGE_SIZE</span></tt> bytes.
+<em>target</em> specifies whether the desired texture image was one specified by
+<a class="reference internal" href="glTexImage1D.html#glTexImage1D" title="glTexImage1D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage1D()</span></tt></a> (<tt class="docutils literal"><span class="pre">GL_TEXTURE_1D</span></tt>),
+<a class="reference internal" href="glTexImage2D.html#glTexImage2D" title="glTexImage2D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage2D()</span></tt></a> (<tt class="docutils literal"><span class="pre">GL_TEXTURE_2D</span></tt> or any of <tt class="docutils literal"><span class="pre">GL_TEXTURE_CUBE_MAP_\*</span></tt>), or
+<a class="reference internal" href="glTexImage3D.html#glTexImage3D" title="glTexImage3D"><tt class="xref c c-func docutils literal"><span class="pre">glTexImage3D()</span></tt></a> (<tt class="docutils literal"><span class="pre">GL_TEXTURE_3D</span></tt>).
+<em>lod</em> specifies the level-of-detail number of the desired image.</p>
+<p>If a non-zero named buffer object is bound to the <tt class="docutils literal"><span class="pre">GL_PIXEL_PACK_BUFFER</span></tt> target
+(see <a class="reference internal" href="glBindBuffer.html#glBindBuffer" title="glBindBuffer"><tt class="xref c c-func docutils literal"><span class="pre">glBindBuffer()</span></tt></a>) while a texture image is
+requested, <em>img</em> is treated as a byte offset into the buffer object&#8217;s data store.</p>
+<p>To minimize errors, first verify that the texture is compressed by calling
+<a class="reference internal" href="glGetTexLevelParameter.html#glGetTexLevelParameter" title="glGetTexLevelParameter"><tt class="xref c c-func docutils literal"><span class="pre">glGetTexLevelParameter()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_TEXTURE_COMPRESSED</span></tt>.  If
+the texture is compressed, then determine the amount of memory required to
+store the compressed texture by calling <a class="reference internal" href="glGetTexLevelParameter.html#glGetTexLevelParameter" title="glGetTexLevelParameter"><tt class="xref c c-func docutils literal"><span class="pre">glGetTexLevelParameter()</span></tt></a> with
+argument <tt class="docutils literal"><span class="pre">GL_TEXTURE_COMPRESSED_IMAGE_SIZE</span></tt>.  Finally, retrieve the
+internal format of the texture by calling <a class="reference internal" href="glGetTexLevelParameter.html#glGetTexLevelParameter" title="glGetTexLevelParameter"><tt class="xref c c-func docutils literal"><span class="pre">glGetTexLevelParameter()</span></tt></a> with
+argument <tt class="docutils literal"><span class="pre">GL_TEXTURE_INTERNAL_FORMAT</span></tt>.
+To store the texture for later use, associate the internal format and size
+with the retrieved texture image.  These data can be used by the respective
+texture or subtexture loading routine used for loading <em>target</em> textures.</p>
+<p><strong>Errors:</strong></p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_VALUE</span></tt> is generated if <em>lod</em> is less than zero or greater than the maximum number of LODs permitted by the implementation.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if <a class="reference internal" href="#glGetCompressedTexImage" title="glGetCompressedTexImage"><tt class="xref c c-func docutils literal"><span class="pre">glGetCompressedTexImage()</span></tt></a> is used to retrieve a texture that is in an uncompressed internal format.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if a non-zero buffer object name is bound to the <tt class="docutils literal"><span class="pre">GL_PIXEL_PACK_BUFFER</span></tt> target and the buffer object&#8217;s data store is currently mapped.</li>
+<li><tt class="docutils literal"><span class="pre">GL_INVALID_OPERATION</span></tt> is generated if a non-zero buffer object name is bound to the <tt class="docutils literal"><span class="pre">GL_PIXEL_PACK_BUFFER</span></tt> target and the data would be packed to the buffer object such that the memory writes required would exceed the data store size.</li>
+</ul>
+<p><strong>Associated Gets:</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="glGetTexLevelParameter.html#glGetTexLevelParameter" title="glGetTexLevelParameter"><tt class="xref c c-func docutils literal"><span class="pre">glGetTexLevelParameter()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_TEXTURE_COMPRESSED</span></tt></li>
+<li><a class="reference internal" href="glGetTexLevelParameter.html#glGetTexLevelParameter" title="glGetTexLevelParameter"><tt class="xref c c-func docutils literal"><span class="pre">glGetTexLevelParameter()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_TEXTURE_COMPRESSED_IMAGE_SIZE</span></tt></li>
+<li><a class="reference internal" href="glGetTexLevelParameter.html#glGetTexLevelParameter" title="glGetTexLevelParameter"><tt class="xref c c-func docutils literal"><span class="pre">glGetTexLevelParameter()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_TEXTURE_INTERNAL_FORMAT</span></tt></li>
+<li><a class="reference internal" href="glGet.html#glGet" title="glGet"><tt class="xref c c-func docutils literal"><span class="pre">glGet()</span></tt></a> with argument <tt class="docutils literal"><span class="pre">GL_PIXEL_PACK_BUFFER_BINDING</span></tt></li>
+</ul>
+<div class="figure align-right">
+<img alt="OpenGL" src="../../../_images/opengl.png" />
+<p class="caption">(c)1991-2006 Silicon Graphics, Inc. SGI Free Software B License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="glGetBufferSubData.html"
+                        title="previous chapter">function <cite>glGetBufferSubData</cite></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="glGetError.html"
+                        title="next chapter">function <cite>glGetError</cite></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/api/OpenGL/man4/glGetCompressedTexImage.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="glGetError.html" title="function glGetError"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="glGetBufferSubData.html" title="function glGetBufferSubData"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">[]</a> &raquo;</li>
+          <li><a href="../../../index_man4.html" >OpenGL v.4 Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009 Khronos Group.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

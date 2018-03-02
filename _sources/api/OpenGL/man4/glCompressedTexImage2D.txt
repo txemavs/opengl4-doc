@@ -1,0 +1,255 @@
+.. nabla.docbook2sphinx project, generated 2012-07-08 18:15:28
+.. *****************************************************************************
+
+.. following information was extracted from file 'man4/glCompressedTexImage2D.xml'
+.. (c)1991-2006 Silicon Graphics, Inc. 2011 Khronos Group.
+.. See license details at http://oss.sgi.com/projects/FreeB/
+
+
+.. currentmodule:: OpenGL.man4
+
+function `glCompressedTexImage2D`
+---------------------------------
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   Version 4 Vol. 3G
+
+Specify a two-dimensional texture image in a compressed format
+
+.. c:function:: glCompressedTexImage2D
+
+
+         :param target:
+
+                  Specifies the target texture.
+                  Must be ``GL_TEXTURE_2D``\ , ``GL_PROXY_TEXTURE_2D``\ ,
+                  ``GL_TEXTURE_1D_ARRAY``\ , ``GL_PROXY_TEXTURE_1D_ARRAY``\ ,
+                  ``GL_TEXTURE_CUBE_MAP_POSITIVE_X``\ ,
+                  ``GL_TEXTURE_CUBE_MAP_NEGATIVE_X``\ ,
+                  ``GL_TEXTURE_CUBE_MAP_POSITIVE_Y``\ ,
+                  ``GL_TEXTURE_CUBE_MAP_NEGATIVE_Y``\ ,
+                  ``GL_TEXTURE_CUBE_MAP_POSITIVE_Z``\ ,
+                  ``GL_TEXTURE_CUBE_MAP_NEGATIVE_Z``\ , or
+                  ``GL_PROXY_TEXTURE_CUBE_MAP``\ .
+
+         :param level:
+
+                  Specifies the level-of-detail number.
+                  Level 0 is the base image level.
+                  Level :strong:`n` is the :strong:`n` th mipmap reduction image.
+
+         :param internalformat:
+
+                  Specifies the format of the compressed image data stored at address *data*\ .
+
+         :param width:
+
+                  Specifies the width of the texture image.
+                  All implementations support 2D texture images that are at least 64 texels
+                  wide and cube-mapped texture images that are at least 16 texels wide.
+
+         :param height:
+
+                  Specifies the height of the texture image.
+                  All implementations support 2D texture images that are at least 64 texels
+                  high and cube-mapped texture images that are at least 16 texels high.
+
+         :param border:
+
+                  This value must be 0.
+
+         :param imageSize:
+
+                  Specifies the number of unsigned bytes of image data starting at the
+                  address specified by *data*\ .
+
+         :param data:
+
+                  Specifies a pointer to the compressed image data in memory.
+
+.. rubric:: Specification
+
+.. c:function:: void glCompressedTexImage2D(GLenum  target, GLint  level, GLenum  internalformat, GLsizei  width, GLsizei  height, GLint  border, GLsizei  imageSize, const GLvoid *  data)
+   :noindex: 
+
+
+.. seealso::
+
+
+            :c:func:`glActiveTexture`\ ,
+            :c:func:`glCompressedTexImage1D`\ ,
+            :c:func:`glCompressedTexImage3D`\ ,
+            :c:func:`glCompressedTexSubImage1D`\ ,
+            :c:func:`glCompressedTexSubImage2D`\ ,
+            :c:func:`glCompressedTexSubImage3D`\ ,
+            :c:func:`glCopyTexImage1D`\ ,
+            :c:func:`glCopyTexSubImage1D`\ ,
+            :c:func:`glCopyTexSubImage2D`\ ,
+            :c:func:`glCopyTexSubImage3D`\ ,
+            :c:func:`glPixelStore`\ ,
+            :c:func:`glTexImage2D`\ ,
+            :c:func:`glTexImage3D`\ ,
+            :c:func:`glTexSubImage1D`\ ,
+            :c:func:`glTexSubImage2D`\ ,
+            :c:func:`glTexSubImage3D`\ ,
+            :c:func:`glTexParameter`
+
+
+..
+
+
+.. -----------------------------------------------------------------------------
+
+.. rubric:: Description
+
+..
+
+
+Texturing allows elements of an image array to be read by shaders.
+
+
+:c:func:`glCompressedTexImage2D` loads a previously defined, and retrieved, compressed two-dimensional
+texture image if *target* is ``GL_TEXTURE_2D``\ , or one of the
+cube map faces such as ``GL_TEXTURE_CUBE_MAP_POSITIVE_X``\ .
+(see :c:func:`glTexImage2D`\ ).
+
+
+If *target* is ``GL_TEXTURE_1D_ARRAY``\ , *data*
+is treated as an array of compressed 1D textures.
+
+
+If *target* is ``GL_PROXY_TEXTURE_2D``\ , ``GL_PROXY_TEXTURE_1D_ARRAY``
+or ``GL_PROXY_CUBE_MAP``\ , no data is read from *data*\ , but
+all of the texture image state is recalculated, checked for consistency,
+and checked against the implementation's capabilities.  If the
+implementation cannot handle a texture of the requested texture size, it
+sets all of the image state to 0, but does not generate an error (see
+:c:func:`glGetError`\ ). To query for an entire mipmap array,
+use an image array level greater than or equal to 1.
+
+
+*internalformat* must be a known compressed image format (such as ``GL_RGTC``\ )
+or an extension-specified compressed-texture format.
+When a texture is loaded with :c:func:`glTexImage2D` using a generic compressed
+texture format (e.g., ``GL_COMPRESSED_RGB``\ ), the GL selects from one of
+its extensions supporting compressed textures.  In order to load the
+compressed texture image using :c:func:`glCompressedTexImage2D`\ , query the compressed texture image's
+size and format using :c:func:`glGetTexLevelParameter`\ .
+
+
+If a non-zero named buffer object is bound to the ``GL_PIXEL_UNPACK_BUFFER`` target
+(see :c:func:`glBindBuffer`\ ) while a texture image is
+specified, *data* is treated as a byte offset into the buffer object's data store.
+
+
+If the compressed data are arranged into fixed-size blocks of texels, the pixel
+storage modes can be used to select a sub-rectangle from a larger containing rectangle.
+These pixel storage modes operate in the same way as they do for :c:func:`glTexImage2D`\ .
+In the following description, denote by |EQUATION_1_|\ ,
+|EQUATION_2_|\ ,
+|EQUATION_3_|\ , and
+|EQUATION_4_|\ ,
+the values of pixel storage modes ``GL_UNPACK_COMPRESSED_BLOCK_SIZE``\ ,
+``GL_UNPACK_COMPRESSED_BLOCK_WIDTH``\ , ``GL_UNPACK_COMPRESSED_BLOCK_HEIGHT``\ ,
+and ``GL_UNPACK_COMPRESSED_BLOCK_DEPTH``\ , respectively.
+|EQUATION_5_| is
+the compressed block size in bytes; |EQUATION_6_|\ ,
+|EQUATION_7_|\ ,
+and |EQUATION_8_| are the compressed block width, height, and depth in pixels.
+
+
+By default the pixel storage modes ``GL_UNPACK_ROW_LENGTH``\ ,
+``GL_UNPACK_SKIP_ROWS``\ , ``GL_UNPACK_SKIP_PIXELS``\ ,
+``GL_UNPACK_IMAGE_HEIGHT`` and ``GL_UNPACK_SKIP_IMAGES``
+are ignored for compressed images. To enable ``GL_UNPACK_SKIP_PIXELS``
+and ``GL_UNPACK_ROW_LENGTH``\ , |EQUATION_9_|
+and |EQUATION_10_| must both be non-zero.
+To also enable ``GL_UNPACK_SKIP_ROWS`` and ``GL_UNPACK_IMAGE_HEIGHT``\ ,
+|EQUATION_11_| must be non-zero.
+To also enable ``GL_UNPACK_SKIP_IMAGES``\ , |EQUATION_12_|
+must be non-zero. All parameters must be consistent with the compressed format to produce the desired results.
+
+
+When selecting a sub-rectangle from a compressed image:
+
+         * the value of ``GL_UNPACK_SKIP_PIXELS`` must be a multiple of |EQUATION_13_|\ ;
+         * the value of ``GL_UNPACK_SKIP_ROWS`` must be a multiple of |EQUATION_14_|\ .
+
+
+*imageSize* must be equal to:
+
+
+|EQUATION_15_|
+
+
+.. -----------------------------------------------------------------------------
+
+**Errors:**
+
+* ``GL_INVALID_ENUM`` is generated if *internalformat* is not one of the generic compressed internal formats: ``GL_COMPRESSED_RED``\ , ``GL_COMPRESSED_RG``\ , ``GL_COMPRESSED_RGB``\ , ``GL_COMPRESSED_RGBA``\ . ``GL_COMPRESSED_SRGB``\ , or ``GL_COMPRESSED_SRGB_ALPHA``\ .
+* ``GL_INVALID_VALUE`` is generated if *imageSize* is not consistent with the format, dimensions, and contents of the specified compressed image data.
+* ``GL_INVALID_VALUE`` is generated if *border* is not 0.
+* ``GL_INVALID_OPERATION`` is generated if parameter combinations are not supported by the specific compressed internal format as specified in the specific texture compression extension.
+* ``GL_INVALID_OPERATION`` is generated if a non-zero buffer object name is bound to the ``GL_PIXEL_UNPACK_BUFFER`` target and the buffer object's data store is currently mapped.
+* ``GL_INVALID_OPERATION`` is generated if a non-zero buffer object name is bound to the ``GL_PIXEL_UNPACK_BUFFER`` target and the data would be unpacked from the buffer object such that the memory reads required would exceed the data store size.
+* Undefined results, including abnormal program termination, are generated if *data* is not encoded in a manner consistent with the extension specification defining the internal compression format.
+
+
+.. -----------------------------------------------------------------------------
+
+**Associated Gets:**
+
+* :c:func:`glGetCompressedTexImage`
+* :c:func:`glGet` with argument ``GL_TEXTURE_COMPRESSED``
+* :c:func:`glGet` with argument ``GL_PIXEL_UNPACK_BUFFER_BINDING``
+* :c:func:`glGetTexLevelParameter` with arguments ``GL_TEXTURE_INTERNAL_FORMAT`` and ``GL_TEXTURE_COMPRESSED_IMAGE_SIZE``
+
+
+.. -----------------------------------------------------------------------------
+
+.. <foot 'glCompressedTexImage2D'>
+
+.. role:: mml(raw)
+   :format: html
+
+.. |EQUATION_1_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msub><mi>b</mi><mi>s</mi></msub></mrow></math>` 
+
+.. |EQUATION_2_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msub><mi>b</mi><mi>w</mi></msub></mrow></math>` 
+
+.. |EQUATION_3_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msub><mi>b</mi><mi>h</mi></msub></mrow></math>` 
+
+.. |EQUATION_4_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msub><mi>b</mi><mi>d</mi></msub></mrow></math>` 
+
+.. |EQUATION_5_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msub><mi>b</mi><mi>s</mi></msub></mrow></math>` 
+
+.. |EQUATION_6_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msub><mi>b</mi><mi>w</mi></msub></mrow></math>` 
+
+.. |EQUATION_7_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msub><mi>b</mi><mi>h</mi></msub></mrow></math>` 
+
+.. |EQUATION_8_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msub><mi>b</mi><mi>d</mi></msub></mrow></math>` 
+
+.. |EQUATION_9_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msub><mi>b</mi><mi>s</mi></msub></mrow></math>` 
+
+.. |EQUATION_10_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msub><mi>b</mi><mi>w</mi></msub></mrow></math>` 
+
+.. |EQUATION_11_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msub><mi>b</mi><mi>h</mi></msub></mrow></math>` 
+
+.. |EQUATION_12_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msub><mi>b</mi><mi>d</mi></msub></mrow></math>` 
+
+.. |EQUATION_13_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msub><mi>b</mi><mi>w</mi></msub></mrow></math>` 
+
+.. |EQUATION_14_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msub><mi>b</mi><mi>w</mi></msub></mrow></math>` 
+
+.. |EQUATION_15_| replace::  :mml:`<math xmlns='http://www.w3.org/1998/Math/MathML' display = 'block'><mrow><msub><mi>b</mi><mi>s</mi></msub><mo lspace='2px' rspace='2px'>&times;</mo><mfenced open = '&lceil;' close = '&rceil;'><mfrac><mi>width</mi><msub><mi>b</mi><mi>w</mi></msub></mfrac></mfenced><mo lspace='2px' rspace='2px'>&times;</mo><mfenced open = '&lceil;' close = '&rceil;'><mfrac><mi>height</mi><msub><mi>b</mi><mi>h</mi></msub></mfrac></mfenced></mrow></math>` 
+
+.. <end foot>
+
+.. figure:: /_static/opengl.png
+   :alt: OpenGL
+   :align: right
+
+   (\ c\ )1991-2006 Silicon Graphics, Inc. 2011 Khronos Group. SGI Free Software B License.
+
